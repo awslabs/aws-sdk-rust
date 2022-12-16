@@ -1989,7 +1989,7 @@ version = '0.52.0'
 source_hash = '359b1362caa19ea5236d3709b566318d9a6ceacd6912e56297624f3af933ddb8'
 
 [release]
-tag = 'release-2022-12-16'
+tag = 'release-2022-12-15'
 
 [release.crates]
 aws-config = '0.52.0'
