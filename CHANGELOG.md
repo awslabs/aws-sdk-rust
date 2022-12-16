@@ -1,10 +1,4 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
-December 16th, 2022
-===================
-
-December 15th, 2022
-===================
-
 December 14th, 2022
 ===================
 **Breaking Changes:**
