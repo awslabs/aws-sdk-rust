@@ -1249,9 +1249,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-south-2",
-                                "UseDualStack": true
+                                "Region": "ap-south-2"
                             }
                         },
                         {
@@ -1262,9 +1262,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-south-2",
-                                "UseDualStack": false
+                                "Region": "ap-south-2"
                             }
                         },
                         {
@@ -1275,9 +1275,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-south-2",
-                                "UseDualStack": true
+                                "Region": "ap-south-2"
                             }
                         },
                         {
@@ -1288,9 +1288,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-south-2",
-                                "UseDualStack": false
+                                "Region": "ap-south-2"
                             }
                         },
                         {
@@ -1301,9 +1301,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-south-1",
-                                "UseDualStack": true
+                                "Region": "ap-south-1"
                             }
                         },
                         {
@@ -1314,9 +1314,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-south-1",
-                                "UseDualStack": false
+                                "Region": "ap-south-1"
                             }
                         },
                         {
@@ -1327,9 +1327,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-south-1",
-                                "UseDualStack": true
+                                "Region": "ap-south-1"
                             }
                         },
                         {
@@ -1340,9 +1340,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-south-1",
-                                "UseDualStack": false
+                                "Region": "ap-south-1"
                             }
                         },
                         {
@@ -1353,9 +1353,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "eu-south-1",
-                                "UseDualStack": true
+                                "Region": "eu-south-1"
                             }
                         },
                         {
@@ -1366,9 +1366,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "eu-south-1",
-                                "UseDualStack": false
+                                "Region": "eu-south-1"
                             }
                         },
                         {
@@ -1379,9 +1379,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "eu-south-1",
-                                "UseDualStack": true
+                                "Region": "eu-south-1"
                             }
                         },
                         {
@@ -1392,9 +1392,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "eu-south-1",
-                                "UseDualStack": false
+                                "Region": "eu-south-1"
                             }
                         },
                         {
@@ -1405,9 +1405,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "eu-south-2",
-                                "UseDualStack": true
+                                "Region": "eu-south-2"
                             }
                         },
                         {
@@ -1418,9 +1418,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "eu-south-2",
-                                "UseDualStack": false
+                                "Region": "eu-south-2"
                             }
                         },
                         {
@@ -1431,9 +1431,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "eu-south-2",
-                                "UseDualStack": true
+                                "Region": "eu-south-2"
                             }
                         },
                         {
@@ -1444,9 +1444,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "eu-south-2",
-                                "UseDualStack": false
+                                "Region": "eu-south-2"
                             }
                         },
                         {
@@ -1457,9 +1457,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-gov-east-1",
-                                "UseDualStack": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1470,9 +1470,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-gov-east-1",
-                                "UseDualStack": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1483,9 +1483,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-gov-east-1",
-                                "UseDualStack": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1496,9 +1496,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-gov-east-1",
-                                "UseDualStack": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1509,9 +1509,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "me-central-1",
-                                "UseDualStack": true
+                                "Region": "me-central-1"
                             }
                         },
                         {
@@ -1522,9 +1522,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "me-central-1",
-                                "UseDualStack": false
+                                "Region": "me-central-1"
                             }
                         },
                         {
@@ -1535,9 +1535,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "me-central-1",
-                                "UseDualStack": true
+                                "Region": "me-central-1"
                             }
                         },
                         {
@@ -1548,9 +1548,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "me-central-1",
-                                "UseDualStack": false
+                                "Region": "me-central-1"
                             }
                         },
                         {
@@ -1561,9 +1561,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ca-central-1",
-                                "UseDualStack": true
+                                "Region": "ca-central-1"
                             }
                         },
                         {
@@ -1574,9 +1574,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ca-central-1",
-                                "UseDualStack": false
+                                "Region": "ca-central-1"
                             }
                         },
                         {
@@ -1587,9 +1587,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ca-central-1",
-                                "UseDualStack": true
+                                "Region": "ca-central-1"
                             }
                         },
                         {
@@ -1600,9 +1600,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ca-central-1",
-                                "UseDualStack": false
+                                "Region": "ca-central-1"
                             }
                         },
                         {
@@ -1613,9 +1613,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "eu-central-1",
-                                "UseDualStack": true
+                                "Region": "eu-central-1"
                             }
                         },
                         {
@@ -1626,9 +1626,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "eu-central-1",
-                                "UseDualStack": false
+                                "Region": "eu-central-1"
                             }
                         },
                         {
@@ -1639,9 +1639,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "eu-central-1",
-                                "UseDualStack": true
+                                "Region": "eu-central-1"
                             }
                         },
                         {
@@ -1652,9 +1652,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "eu-central-1",
-                                "UseDualStack": false
+                                "Region": "eu-central-1"
                             }
                         },
                         {
@@ -1663,9 +1663,9 @@
                                 "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-iso-west-1",
-                                "UseDualStack": true
+                                "Region": "us-iso-west-1"
                             }
                         },
                         {
@@ -1676,9 +1676,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-iso-west-1",
-                                "UseDualStack": false
+                                "Region": "us-iso-west-1"
                             }
                         },
                         {
@@ -1687,9 +1687,9 @@
                                 "error": "DualStack is enabled but this partition does not support DualStack"
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-iso-west-1",
-                                "UseDualStack": true
+                                "Region": "us-iso-west-1"
                             }
                         },
                         {
@@ -1700,9 +1700,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-iso-west-1",
-                                "UseDualStack": false
+                                "Region": "us-iso-west-1"
                             }
                         },
                         {
@@ -1713,9 +1713,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "eu-central-2",
-                                "UseDualStack": true
+                                "Region": "eu-central-2"
                             }
                         },
                         {
@@ -1726,9 +1726,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "eu-central-2",
-                                "UseDualStack": false
+                                "Region": "eu-central-2"
                             }
                         },
                         {
@@ -1739,9 +1739,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "eu-central-2",
-                                "UseDualStack": true
+                                "Region": "eu-central-2"
                             }
                         },
                         {
@@ -1752,9 +1752,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "eu-central-2",
-                                "UseDualStack": false
+                                "Region": "eu-central-2"
                             }
                         },
                         {
@@ -1765,9 +1765,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-west-1",
-                                "UseDualStack": true
+                                "Region": "us-west-1"
                             }
                         },
                         {
@@ -1778,9 +1778,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-west-1",
-                                "UseDualStack": false
+                                "Region": "us-west-1"
                             }
                         },
                         {
@@ -1791,9 +1791,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-west-1",
-                                "UseDualStack": true
+                                "Region": "us-west-1"
                             }
                         },
                         {
@@ -1804,9 +1804,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-west-1",
-                                "UseDualStack": false
+                                "Region": "us-west-1"
                             }
                         },
                         {
@@ -1817,9 +1817,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-west-2",
-                                "UseDualStack": true
+                                "Region": "us-west-2"
                             }
                         },
                         {
@@ -1830,9 +1830,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-west-2",
-                                "UseDualStack": false
+                                "Region": "us-west-2"
                             }
                         },
                         {
@@ -1843,9 +1843,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-west-2",
-                                "UseDualStack": true
+                                "Region": "us-west-2"
                             }
                         },
                         {
@@ -1856,9 +1856,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-west-2",
-                                "UseDualStack": false
+                                "Region": "us-west-2"
                             }
                         },
                         {
@@ -1869,9 +1869,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "af-south-1",
-                                "UseDualStack": true
+                                "Region": "af-south-1"
                             }
                         },
                         {
@@ -1882,9 +1882,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "af-south-1",
-                                "UseDualStack": false
+                                "Region": "af-south-1"
                             }
                         },
                         {
@@ -1895,9 +1895,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "af-south-1",
-                                "UseDualStack": true
+                                "Region": "af-south-1"
                             }
                         },
                         {
@@ -1908,9 +1908,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "af-south-1",
-                                "UseDualStack": false
+                                "Region": "af-south-1"
                             }
                         },
                         {
@@ -1921,9 +1921,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "eu-north-1",
-                                "UseDualStack": true
+                                "Region": "eu-north-1"
                             }
                         },
                         {
@@ -1934,9 +1934,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "eu-north-1",
-                                "UseDualStack": false
+                                "Region": "eu-north-1"
                             }
                         },
                         {
@@ -1947,9 +1947,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "eu-north-1",
-                                "UseDualStack": true
+                                "Region": "eu-north-1"
                             }
                         },
                         {
@@ -1960,9 +1960,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "eu-north-1",
-                                "UseDualStack": false
+                                "Region": "eu-north-1"
                             }
                         },
                         {
@@ -1973,9 +1973,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "eu-west-3",
-                                "UseDualStack": true
+                                "Region": "eu-west-3"
                             }
                         },
                         {
@@ -1986,9 +1986,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "eu-west-3",
-                                "UseDualStack": false
+                                "Region": "eu-west-3"
                             }
                         },
                         {
@@ -1999,9 +1999,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "eu-west-3",
-                                "UseDualStack": true
+                                "Region": "eu-west-3"
                             }
                         },
                         {
@@ -2012,9 +2012,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "eu-west-3",
-                                "UseDualStack": false
+                                "Region": "eu-west-3"
                             }
                         },
                         {
@@ -2025,9 +2025,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "eu-west-2",
-                                "UseDualStack": true
+                                "Region": "eu-west-2"
                             }
                         },
                         {
@@ -2038,9 +2038,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "eu-west-2",
-                                "UseDualStack": false
+                                "Region": "eu-west-2"
                             }
                         },
                         {
@@ -2051,9 +2051,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "eu-west-2",
-                                "UseDualStack": true
+                                "Region": "eu-west-2"
                             }
                         },
                         {
@@ -2064,9 +2064,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "eu-west-2",
-                                "UseDualStack": false
+                                "Region": "eu-west-2"
                             }
                         },
                         {
@@ -2077,9 +2077,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "eu-west-1",
-                                "UseDualStack": true
+                                "Region": "eu-west-1"
                             }
                         },
                         {
@@ -2090,9 +2090,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "eu-west-1",
-                                "UseDualStack": false
+                                "Region": "eu-west-1"
                             }
                         },
                         {
@@ -2103,9 +2103,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "eu-west-1",
-                                "UseDualStack": true
+                                "Region": "eu-west-1"
                             }
                         },
                         {
@@ -2116,9 +2116,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "eu-west-1",
-                                "UseDualStack": false
+                                "Region": "eu-west-1"
                             }
                         },
                         {
@@ -2129,9 +2129,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-northeast-3",
-                                "UseDualStack": true
+                                "Region": "ap-northeast-3"
                             }
                         },
                         {
@@ -2142,9 +2142,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-northeast-3",
-                                "UseDualStack": false
+                                "Region": "ap-northeast-3"
                             }
                         },
                         {
@@ -2155,9 +2155,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-northeast-3",
-                                "UseDualStack": true
+                                "Region": "ap-northeast-3"
                             }
                         },
                         {
@@ -2168,9 +2168,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-northeast-3",
-                                "UseDualStack": false
+                                "Region": "ap-northeast-3"
                             }
                         },
                         {
@@ -2181,9 +2181,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": true
+                                "Region": "ap-northeast-2"
                             }
                         },
                         {
@@ -2194,9 +2194,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": false
+                                "Region": "ap-northeast-2"
                             }
                         },
                         {
@@ -2207,9 +2207,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": true
+                                "Region": "ap-northeast-2"
                             }
                         },
                         {
@@ -2220,9 +2220,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": false
+                                "Region": "ap-northeast-2"
                             }
                         },
                         {
@@ -2233,9 +2233,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": true
+                                "Region": "ap-northeast-1"
                             }
                         },
                         {
@@ -2246,9 +2246,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": false
+                                "Region": "ap-northeast-1"
                             }
                         },
                         {
@@ -2259,9 +2259,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": true
+                                "Region": "ap-northeast-1"
                             }
                         },
                         {
@@ -2272,9 +2272,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": false
+                                "Region": "ap-northeast-1"
                             }
                         },
                         {
@@ -2285,9 +2285,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "me-south-1",
-                                "UseDualStack": true
+                                "Region": "me-south-1"
                             }
                         },
                         {
@@ -2298,9 +2298,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "me-south-1",
-                                "UseDualStack": false
+                                "Region": "me-south-1"
                             }
                         },
                         {
@@ -2311,9 +2311,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "me-south-1",
-                                "UseDualStack": true
+                                "Region": "me-south-1"
                             }
                         },
                         {
@@ -2324,9 +2324,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "me-south-1",
-                                "UseDualStack": false
+                                "Region": "me-south-1"
                             }
                         },
                         {
@@ -2337,9 +2337,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "sa-east-1",
-                                "UseDualStack": true
+                                "Region": "sa-east-1"
                             }
                         },
                         {
@@ -2350,9 +2350,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "sa-east-1",
-                                "UseDualStack": false
+                                "Region": "sa-east-1"
                             }
                         },
                         {
@@ -2363,9 +2363,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "sa-east-1",
-                                "UseDualStack": true
+                                "Region": "sa-east-1"
                             }
                         },
                         {
@@ -2376,9 +2376,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "sa-east-1",
-                                "UseDualStack": false
+                                "Region": "sa-east-1"
                             }
                         },
                         {
@@ -2389,9 +2389,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-east-1",
-                                "UseDualStack": true
+                                "Region": "ap-east-1"
                             }
                         },
                         {
@@ -2402,9 +2402,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-east-1",
-                                "UseDualStack": false
+                                "Region": "ap-east-1"
                             }
                         },
                         {
@@ -2415,9 +2415,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-east-1",
-                                "UseDualStack": true
+                                "Region": "ap-east-1"
                             }
                         },
                         {
@@ -2428,9 +2428,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-east-1",
-                                "UseDualStack": false
+                                "Region": "ap-east-1"
                             }
                         },
                         {
@@ -2441,9 +2441,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "cn-north-1",
-                                "UseDualStack": true
+                                "Region": "cn-north-1"
                             }
                         },
                         {
@@ -2454,9 +2454,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "cn-north-1",
-                                "UseDualStack": false
+                                "Region": "cn-north-1"
                             }
                         },
                         {
@@ -2467,9 +2467,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "cn-north-1",
-                                "UseDualStack": true
+                                "Region": "cn-north-1"
                             }
                         },
                         {
@@ -2480,9 +2480,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "cn-north-1",
-                                "UseDualStack": false
+                                "Region": "cn-north-1"
                             }
                         },
                         {
@@ -2493,9 +2493,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-gov-west-1",
-                                "UseDualStack": true
+                                "Region": "us-gov-west-1"
                             }
                         },
                         {
@@ -2506,9 +2506,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-gov-west-1",
-                                "UseDualStack": false
+                                "Region": "us-gov-west-1"
                             }
                         },
                         {
@@ -2519,9 +2519,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-gov-west-1",
-                                "UseDualStack": true
+                                "Region": "us-gov-west-1"
                             }
                         },
                         {
@@ -2532,9 +2532,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-gov-west-1",
-                                "UseDualStack": false
+                                "Region": "us-gov-west-1"
                             }
                         },
                         {
@@ -2545,9 +2545,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": true
+                                "Region": "ap-southeast-1"
                             }
                         },
                         {
@@ -2558,9 +2558,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": false
+                                "Region": "ap-southeast-1"
                             }
                         },
                         {
@@ -2571,9 +2571,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": true
+                                "Region": "ap-southeast-1"
                             }
                         },
                         {
@@ -2584,9 +2584,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": false
+                                "Region": "ap-southeast-1"
                             }
                         },
                         {
@@ -2597,9 +2597,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": true
+                                "Region": "ap-southeast-2"
                             }
                         },
                         {
@@ -2610,9 +2610,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": false
+                                "Region": "ap-southeast-2"
                             }
                         },
                         {
@@ -2623,9 +2623,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": true
+                                "Region": "ap-southeast-2"
                             }
                         },
                         {
@@ -2636,9 +2636,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": false
+                                "Region": "ap-southeast-2"
                             }
                         },
                         {
@@ -2647,9 +2647,9 @@
                                 "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": true
+                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -2660,9 +2660,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false
+                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -2671,9 +2671,9 @@
                                 "error": "DualStack is enabled but this partition does not support DualStack"
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": true
+                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -2684,9 +2684,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false
+                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -2697,9 +2697,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-southeast-3",
-                                "UseDualStack": true
+                                "Region": "ap-southeast-3"
                             }
                         },
                         {
@@ -2710,9 +2710,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-southeast-3",
-                                "UseDualStack": false
+                                "Region": "ap-southeast-3"
                             }
                         },
                         {
@@ -2723,9 +2723,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-southeast-3",
-                                "UseDualStack": true
+                                "Region": "ap-southeast-3"
                             }
                         },
                         {
@@ -2736,9 +2736,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-southeast-3",
-                                "UseDualStack": false
+                                "Region": "ap-southeast-3"
                             }
                         },
                         {
@@ -2749,9 +2749,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "ap-southeast-4",
-                                "UseDualStack": true
+                                "Region": "ap-southeast-4"
                             }
                         },
                         {
@@ -2762,9 +2762,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "ap-southeast-4",
-                                "UseDualStack": false
+                                "Region": "ap-southeast-4"
                             }
                         },
                         {
@@ -2775,9 +2775,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "ap-southeast-4",
-                                "UseDualStack": true
+                                "Region": "ap-southeast-4"
                             }
                         },
                         {
@@ -2788,9 +2788,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-southeast-4",
-                                "UseDualStack": false
+                                "Region": "ap-southeast-4"
                             }
                         },
                         {
@@ -2801,9 +2801,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-east-1",
-                                "UseDualStack": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -2814,9 +2814,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-east-1",
-                                "UseDualStack": false
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -2827,9 +2827,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-east-1",
-                                "UseDualStack": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -2840,9 +2840,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-east-1",
-                                "UseDualStack": false
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -2853,9 +2853,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-east-2",
-                                "UseDualStack": true
+                                "Region": "us-east-2"
                             }
                         },
                         {
@@ -2866,9 +2866,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-east-2",
-                                "UseDualStack": false
+                                "Region": "us-east-2"
                             }
                         },
                         {
@@ -2879,9 +2879,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-east-2",
-                                "UseDualStack": true
+                                "Region": "us-east-2"
                             }
                         },
                         {
@@ -2892,9 +2892,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-east-2",
-                                "UseDualStack": false
+                                "Region": "us-east-2"
                             }
                         },
                         {
@@ -2905,9 +2905,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "cn-northwest-1",
-                                "UseDualStack": true
+                                "Region": "cn-northwest-1"
                             }
                         },
                         {
@@ -2918,9 +2918,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "cn-northwest-1",
-                                "UseDualStack": false
+                                "Region": "cn-northwest-1"
                             }
                         },
                         {
@@ -2931,9 +2931,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "cn-northwest-1",
-                                "UseDualStack": true
+                                "Region": "cn-northwest-1"
                             }
                         },
                         {
@@ -2944,9 +2944,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "cn-northwest-1",
-                                "UseDualStack": false
+                                "Region": "cn-northwest-1"
                             }
                         },
                         {
@@ -2955,9 +2955,9 @@
                                 "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": true,
-                                "Region": "us-isob-east-1",
-                                "UseDualStack": true
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
@@ -2968,9 +2968,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
-                                "Region": "us-isob-east-1",
-                                "UseDualStack": false
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
@@ -2979,9 +2979,9 @@
                                 "error": "DualStack is enabled but this partition does not support DualStack"
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
-                                "Region": "us-isob-east-1",
-                                "UseDualStack": true
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
@@ -2992,9 +2992,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "us-isob-east-1",
-                                "UseDualStack": false
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
@@ -3005,9 +3005,9 @@
                                 }
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": false,
                                 "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -3017,9 +3017,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
+                                "UseDualStack": false,
                                 "UseFIPS": true,
                                 "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -3029,9 +3029,9 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
+                                "UseDualStack": true,
                                 "UseFIPS": false,
                                 "Region": "us-east-1",
-                                "UseDualStack": true,
                                 "Endpoint": "https://example.com"
                             }
                         }
@@ -3633,6 +3633,12 @@
                 "smithy.api#pattern": ".*"
             }
         },
+        "com.amazonaws.rds#CACertificateIdentifiersList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.rds#String"
+            }
+        },
         "com.amazonaws.rds#CancelExportTask": {
             "type": "operation",
             "input": {
@@ -3718,7 +3724,27 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>A CA certificate for an Amazon Web Services account.</p>"
+                "smithy.api#documentation": "<p>A CA certificate for an Amazon Web Services account.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html\">Using SSL/TLS to encrypt a connection to a DB \n            instance</a> in the <i>Amazon RDS User Guide</i> and \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html\">\n            Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora \n            User Guide</i>.</p>"
+            }
+        },
+        "com.amazonaws.rds#CertificateDetails": {
+            "type": "structure",
+            "members": {
+                "CAIdentifier": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>"
+                    }
+                },
+                "ValidTill": {
+                    "target": "com.amazonaws.rds#TStamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The expiration date of the DB instance’s server certificate.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Returns the details of the DB instance’s server certificate.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html\">Using SSL/TLS to encrypt a connection to a DB \n            instance</a> in the <i>Amazon RDS User Guide</i> and \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html\">\n            Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora \n            User Guide</i>.</p>"
             }
         },
         "com.amazonaws.rds#CertificateList": {
@@ -4426,9 +4452,6 @@
                         "smithy.api#documentation": "<p>Tags to assign to the blue/green deployment.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#CreateBlueGreenDeploymentResponse": {
@@ -4437,9 +4460,6 @@
                 "BlueGreenDeployment": {
                     "target": "com.amazonaws.rds#BlueGreenDeployment"
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#CreateCustomDBEngineVersion": {
@@ -4458,11 +4478,14 @@
                     "target": "com.amazonaws.rds#CustomDBEngineVersionQuotaExceededFault"
                 },
                 {
+                    "target": "com.amazonaws.rds#Ec2ImagePropertiesNotSupportedFault"
+                },
+                {
                     "target": "com.amazonaws.rds#KMSKeyNotAccessibleFault"
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database engine and specific\n            AMI. The supported engines are the following:</p>\n         <ul>\n            <li>\n               <p>Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR</p>\n            </li>\n            <li>\n               <p>Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR</p>\n            </li>\n         </ul>\n         <p>Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI) and database software.\n            The Amazon RDS database software is preinstalled, so you need only select a DB engine and version, and create\n            your database. With Amazon RDS Custom for Oracle, you upload your database installation files in Amazon S3.</p>\n         <p>When you create a custom engine version, you specify the files in a JSON document called a CEV manifest. \n            This document describes installation .zip files stored in Amazon S3. RDS Custom creates your CEV from \n            the installation files that you provided. This service model is called Bring Your Own Media (BYOM).</p>\n         <p>Creation takes approximately two hours. If creation fails, RDS Custom issues <code>RDS-EVENT-0196</code> with \n            the message <code>Creation failed for custom engine version</code>, and includes details about the failure. \n            For example, the event prints missing files.</p>\n         <p>After you create the CEV, it is available for use. You can create multiple CEVs, and create multiple \n            RDS Custom instances from any CEV. You can also change the status of a CEV to make it available or\n            inactive.</p>\n         <note>\n            <p>The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated with \n            Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in CloudTrail, calls to the \n            <code>CreateCustomDbEngineVersion</code> event aren't logged. However, you might see calls from the \n            API gateway that accesses your Amazon S3 bucket. These calls originate from the MediaImport service for \n            the <code>CreateCustomDbEngineVersion</code> event.</p>\n         </note>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create\">\n                Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>"
+                "smithy.api#documentation": "<p>Creates a custom DB engine version (CEV).</p>"
             }
         },
         "com.amazonaws.rds#CreateCustomDBEngineVersionMessage": {
@@ -4485,8 +4508,7 @@
                 "DatabaseInstallationFilesS3BucketName": {
                     "target": "com.amazonaws.rds#BucketName",
                     "traits": {
-                        "smithy.api#documentation": "<p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid \n            bucket name is <code>my-custom-installation-files</code>.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid \n            bucket name is <code>my-custom-installation-files</code>.</p>"
                     }
                 },
                 "DatabaseInstallationFilesS3Prefix": {
@@ -4495,11 +4517,16 @@
                         "smithy.api#documentation": "<p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid \n            bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>"
                     }
                 },
+                "ImageId": {
+                    "target": "com.amazonaws.rds#String255",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for SQL Server.</p>"
+                    }
+                },
                 "KMSKeyId": {
                     "target": "com.amazonaws.rds#KmsKeyIdOrArn",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for \n            RDS Custom, but optional for Amazon RDS.</p>\n         <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. \n            No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, \n            follow the instructions in <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk\">\n                Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service\n                    Developer Guide</i>.</p>\n         <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for \n            RDS Custom, but optional for Amazon RDS.</p>\n         <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. \n            No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, \n            follow the instructions in <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk\">\n                Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service\n                    Developer Guide</i>.</p>\n         <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>"
                     }
                 },
                 "Description": {
@@ -4511,8 +4538,7 @@
                 "Manifest": {
                     "target": "com.amazonaws.rds#CustomDBEngineVersionManifest",
                     "traits": {
-                        "smithy.api#documentation": "<p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3. \n            Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which \n            they are listed.</p>\n         <p>The following JSON fields are valid:</p>\n         <dl>\n            <dt>MediaImportTemplateVersion</dt>\n            <dd>\n               <p>Version of the CEV manifest. The date is in the format <code>YYYY-MM-DD</code>.</p>\n            </dd>\n            <dt>databaseInstallationFileNames</dt>\n            <dd>\n               <p>Ordered list of installation files for the CEV.</p>\n            </dd>\n            <dt>opatchFileNames</dt>\n            <dd>\n               <p>Ordered list of OPatch installers used for the Oracle DB engine.</p>\n            </dd>\n            <dt>psuRuPatchFileNames</dt>\n            <dd>\n               <p>The PSU and RU patches for this CEV.</p>\n            </dd>\n            <dt>OtherPatchFileNames</dt>\n            <dd>\n               <p>The patches that are not in the list of PSU and RU patches. \n                    Amazon RDS applies these patches after applying the PSU and RU patches.</p>\n            </dd>\n         </dl>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest\">\n            Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3. \n            Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which \n            they are listed.</p>\n         <p>The following JSON fields are valid:</p>\n         <dl>\n            <dt>MediaImportTemplateVersion</dt>\n            <dd>\n               <p>Version of the CEV manifest. The date is in the format <code>YYYY-MM-DD</code>.</p>\n            </dd>\n            <dt>databaseInstallationFileNames</dt>\n            <dd>\n               <p>Ordered list of installation files for the CEV.</p>\n            </dd>\n            <dt>opatchFileNames</dt>\n            <dd>\n               <p>Ordered list of OPatch installers used for the Oracle DB engine.</p>\n            </dd>\n            <dt>psuRuPatchFileNames</dt>\n            <dd>\n               <p>The PSU and RU patches for this CEV.</p>\n            </dd>\n            <dt>OtherPatchFileNames</dt>\n            <dd>\n               <p>The patches that are not in the list of PSU and RU patches. \n                    Amazon RDS applies these patches after applying the PSU and RU patches.</p>\n            </dd>\n         </dl>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest\">\n            Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>"
                     }
                 },
                 "Tags": {
@@ -4744,7 +4770,7 @@
                 "MasterUserPassword": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The password for the master database user. This password can contain any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
+                        "smithy.api#documentation": "<p>The password for the master database user. This password can contain any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must contain from 8 to 41 characters.</p>\n            </li>\n            <li>\n               <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>\n            </li>\n         </ul>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
                     }
                 },
                 "OptionGroupName": {
@@ -4947,6 +4973,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Reserved for future use.</p>"
                     }
+                },
+                "ManageMasterUserPassword": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide</i> and <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon Aurora User Guide.</i>\n         </p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> \n                    is specified.</p>\n            </li>\n         </ul>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
+                    }
+                },
+                "MasterUserSecretKmsKeyId": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and \n            managed in Amazon Web Services Secrets Manager.</p>\n         <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets \n            Manager for the DB cluster.</p>\n         <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.\n            To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>\n         <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> \n            KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't \n            use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer \n            managed KMS key.</p>\n         <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account\n            has a different default KMS key for each Amazon Web Services Region.</p>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
+                    }
                 }
             },
             "traits": {
@@ -5105,6 +5143,9 @@
                     "target": "com.amazonaws.rds#BackupPolicyNotFoundFault"
                 },
                 {
+                    "target": "com.amazonaws.rds#CertificateNotFoundFault"
+                },
+                {
                     "target": "com.amazonaws.rds#DBClusterNotFoundFault"
                 },
                 {
@@ -5208,7 +5249,7 @@
                 "MasterUserPassword": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The password for the master user. The password can include any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>\n            <b>Amazon Aurora</b>\n         </p>\n         <p>Not applicable. The password for the master user is managed by the DB\n            cluster.</p>\n         <p>\n            <b>MariaDB</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Microsoft SQL Server</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>\n         <p>\n            <b>MySQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Oracle</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 30 characters.</p>\n         <p>\n            <b>PostgreSQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>"
+                        "smithy.api#documentation": "<p>The password for the master user. The password can include any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>\n            <b>Amazon Aurora</b>\n         </p>\n         <p>Not applicable. The password for the master user is managed by the DB\n            cluster.</p>\n         <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>\n         <p>\n            <b>MariaDB</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Microsoft SQL Server</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>\n         <p>\n            <b>MySQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Oracle</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 30 characters.</p>\n         <p>\n            <b>PostgreSQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>"
                     }
                 },
                 "DBSecurityGroups": {
@@ -5454,7 +5495,7 @@
                 "EnableCustomerOwnedIp": {
                     "target": "com.amazonaws.rds#BooleanOptional",
                     "traits": {
-                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS\n            on Outposts DB instance.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
+                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS\n            on Outposts DB instance.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
                     }
                 },
                 "CustomIamInstanceProfile": {
@@ -5479,6 +5520,24 @@
                     "target": "com.amazonaws.rds#IntegerOptional",
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies the storage throughput value for the DB instance.</p>\n         <p>This setting applies only to the <code>gp3</code> storage type.</p>\n         <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>"
+                    }
+                },
+                "ManageMasterUserPassword": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide.</i>\n         </p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> \n                    is specified.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "MasterUserSecretKmsKeyId": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and \n            managed in Amazon Web Services Secrets Manager.</p>\n         <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets \n            Manager for the DB instance.</p>\n         <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.\n            To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>\n         <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> \n            KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't \n            use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer \n            managed KMS key.</p>\n         <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account\n            has a different default KMS key for each Amazon Web Services Region.</p>"
+                    }
+                },
+                "CACertificateIdentifier": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html\">Using SSL/TLS to encrypt a connection to a DB \n            instance</a> in the <i>Amazon RDS User Guide</i> and \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html\">\n            Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora \n            User Guide</i>.</p>"
                     }
                 }
             },
@@ -5771,6 +5830,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies the storage throughput value for the read replica.</p>\n         <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>"
                     }
+                },
+                "EnableCustomerOwnedIp": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS\n            on Outposts read replica.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the read replica from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
+                    }
+                },
+                "AllocatedStorage": {
+                    "target": "com.amazonaws.rds#IntegerOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of storage (in gibibytes) to allocate initially for the read replica.\n            Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>\n         <note>\n            <p>Be sure to allocate enough memory for your read replica so that the create operation can succeed.\n                You can also allocate additional memory for future growth.</p>\n         </note>"
+                    }
                 }
             }
         },
@@ -5944,9 +6015,6 @@
                 "Tags": {
                     "target": "com.amazonaws.rds#TagList"
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#CreateDBProxyEndpointResponse": {
@@ -5958,9 +6026,6 @@
                         "smithy.api#documentation": "<p>The <code>DBProxyEndpoint</code> object that is created by the API operation.\n        The DB proxy endpoint that you create might provide capabilities such as read/write\n        or read-only operations, or using a different VPC than the proxy's default VPC.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#CreateDBProxyRequest": {
@@ -6033,9 +6098,6 @@
                         "smithy.api#documentation": "<p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#CreateDBProxyResponse": {
@@ -6047,9 +6109,6 @@
                         "smithy.api#documentation": "<p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#CreateDBSecurityGroup": {
@@ -6502,6 +6561,26 @@
                 "smithy.api#httpError": 404
             }
         },
+        "com.amazonaws.rds#CustomDBEngineVersionAMI": {
+            "type": "structure",
+            "members": {
+                "ImageId": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates the ID of the AMI.</p>"
+                    }
+                },
+                "Status": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates the status of a custom engine version (CEV).</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A value that indicates the AMI information.</p>"
+            }
+        },
         "com.amazonaws.rds#CustomDBEngineVersionAlreadyExistsFault": {
             "type": "structure",
             "members": {
@@ -6580,7 +6659,7 @@
                     "min": 1,
                     "max": 60
                 },
-                "smithy.api#pattern": "^(11\\.\\d{1}|12\\.\\d{1}|18|19)(\\.[a-zA-Z0-9_.-]{1,50})$"
+                "smithy.api#pattern": "^[a-z0-9_.-]{1,60}$"
             }
         },
         "com.amazonaws.rds#CustomEngineVersionStatus": {
@@ -7020,6 +7099,12 @@
                     "target": "com.amazonaws.rds#String",
                     "traits": {
                         "smithy.api#documentation": "<p>Reserved for future use.</p>"
+                    }
+                },
+                "MasterUserSecret": {
+                    "target": "com.amazonaws.rds#MasterUserSecret",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide</i> and <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon Aurora User Guide.</i>\n         </p>"
                     }
                 }
             },
@@ -7955,6 +8040,18 @@
                         "smithy.api#documentation": "<p>The default character set for new instances of this engine version,\n            if the <code>CharacterSetName</code> parameter of the CreateDBInstance API\n            isn't specified.</p>"
                     }
                 },
+                "Image": {
+                    "target": "com.amazonaws.rds#CustomDBEngineVersionAMI",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The EC2 image</p>"
+                    }
+                },
+                "DBEngineMediaType": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates the source media provider of the AMI based on the usage operation.  Applicable for RDS Custom for SQL Server.</p>"
+                    }
+                },
                 "SupportedCharacterSets": {
                     "target": "com.amazonaws.rds#SupportedCharacterSetsList",
                     "traits": {
@@ -8081,6 +8178,18 @@
                     "target": "com.amazonaws.rds#CustomDBEngineVersionManifest",
                     "traits": {
                         "smithy.api#documentation": "<p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). \n          RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, \n          and UNIX/Linux user and group using the installation parameters. For more information, \n          see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields\">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.\n      </p>"
+                    }
+                },
+                "SupportsCertificateRotationWithoutRestart": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether the engine version supports rotating the server certificate without \n              rebooting the DB instance.</p>"
+                    }
+                },
+                "SupportedCACertificateIdentifiers": {
+                    "target": "com.amazonaws.rds#CACertificateIdentifiersList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of the supported CA certificate identifiers.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html\">Using SSL/TLS to encrypt a connection to a DB \n            instance</a> in the <i>Amazon RDS User Guide</i> and \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html\">\n            Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora \n            User Guide</i>.</p>"
                     }
                 }
             },
@@ -8382,7 +8491,7 @@
                 "CACertificateIdentifier": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The identifier of the CA certificate for this DB instance.</p>"
+                        "smithy.api#documentation": "<p>The identifier of the CA certificate for this DB instance.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html\">Using SSL/TLS to encrypt a connection to a DB \n            instance</a> in the <i>Amazon RDS User Guide</i> and \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html\">\n            Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora \n            User Guide</i>.</p>"
                     }
                 },
                 "DomainMemberships": {
@@ -8508,7 +8617,7 @@
                 "CustomerOwnedIpEnabled": {
                     "target": "com.amazonaws.rds#BooleanOptional",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>\n         <p>A <i>CoIP </i>provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
+                        "smithy.api#documentation": "<p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>\n         <p>A <i>CoIP </i>provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
                     }
                 },
                 "AwsBackupRecoveryPointArn": {
@@ -8593,6 +8702,18 @@
                     "target": "com.amazonaws.rds#String",
                     "traits": {
                         "smithy.api#documentation": "<p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also\n            the name of the CDB. This setting is valid for RDS Custom only.</p>"
+                    }
+                },
+                "MasterUserSecret": {
+                    "target": "com.amazonaws.rds#MasterUserSecret",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide.</i>\n         </p>"
+                    }
+                },
+                "CertificateDetails": {
+                    "target": "com.amazonaws.rds#CertificateDetails",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The details of the DB instance's server certificate.</p>"
                     }
                 }
             },
@@ -10590,9 +10711,6 @@
                         "smithy.api#documentation": "<p>A value that indicates whether to delete the resources in the green environment.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DeleteBlueGreenDeploymentResponse": {
@@ -10601,9 +10719,6 @@
                 "BlueGreenDeployment": {
                     "target": "com.amazonaws.rds#BlueGreenDeployment"
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#DeleteCustomDBEngineVersion": {
@@ -11030,9 +11145,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DeleteDBProxyEndpointResponse": {
@@ -11044,9 +11156,6 @@
                         "smithy.api#documentation": "<p>The data structure representing the details of the DB proxy endpoint that you delete.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#DeleteDBProxyRequest": {
@@ -11059,9 +11168,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DeleteDBProxyResponse": {
@@ -11073,9 +11179,6 @@
                         "smithy.api#documentation": "<p>The data structure representing the details of the DB proxy that you delete.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#DeleteDBSecurityGroup": {
@@ -11366,17 +11469,11 @@
                         "smithy.api#documentation": "<p>One or more DB cluster identifiers.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DeregisterDBProxyTargetsResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.rds#DescribeAccountAttributes": {
             "type": "operation",
@@ -11447,9 +11544,6 @@
                         "smithy.api#documentation": "<p>The maximum number of records to include in the response.\n            If more records exist than the specified <code>MaxRecords</code> value,\n            a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>\n         <p>Default: 100</p>\n         <p>Constraints: Minimum 20, maximum 100.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DescribeBlueGreenDeploymentsResponse": {
@@ -11467,9 +11561,6 @@
                         "smithy.api#documentation": "<p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#DescribeCertificates": {
@@ -11486,7 +11577,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.</p>",
+                "smithy.api#documentation": "<p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html\">Using SSL/TLS to encrypt a connection to a DB \n            instance</a> in the <i>Amazon RDS User Guide</i> and \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html\">\n            Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora \n            User Guide</i>.</p>",
                 "smithy.api#paginated": {
                     "inputToken": "Marker",
                     "outputToken": "Marker",
@@ -12673,8 +12764,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The response from a call to <code>DescribeDBLogFiles</code>.</p>",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "<p>The response from a call to <code>DescribeDBLogFiles</code>.</p>"
             }
         },
         "com.amazonaws.rds#DescribeDBParameterGroups": {
@@ -12841,9 +12931,6 @@
                         "smithy.api#documentation": "<p>The maximum number of records to include in the response. If more records exist\n          than the specified <code>MaxRecords</code> value, a pagination token called a marker is\n          included in the response so that the remaining results can be retrieved.</p>\n         <p>Default: 100</p>\n         <p>Constraints: Minimum 20, maximum 100.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DescribeDBProxiesResponse": {
@@ -12861,9 +12948,6 @@
                         "smithy.api#documentation": "<p>An optional pagination token provided by a previous request.\n        If this parameter is specified, the response includes only records beyond the marker,\n        up to the value specified by <code>MaxRecords</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#DescribeDBProxyEndpoints": {
@@ -12925,9 +13009,6 @@
                         "smithy.api#documentation": "<p>The maximum number of records to include in the response. If more records exist\n          than the specified <code>MaxRecords</code> value, a pagination token called a marker is\n          included in the response so that the remaining results can be retrieved.</p>\n         <p>Default: 100</p>\n         <p>Constraints: Minimum 20, maximum 100.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DescribeDBProxyEndpointsResponse": {
@@ -12945,9 +13026,6 @@
                         "smithy.api#documentation": "<p>An optional pagination token provided by a previous request.\n        If this parameter is specified, the response includes only records beyond the marker,\n        up to the value specified by <code>MaxRecords</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#DescribeDBProxyTargetGroups": {
@@ -13013,9 +13091,6 @@
                         "smithy.api#documentation": "<p>The maximum number of records to include in the response.\n        If more records exist than the specified <code>MaxRecords</code> value,\n        a pagination token called a marker is included in the response so that the remaining\n        results can be retrieved.</p>\n         <p>Default: 100</p>\n         <p>Constraints: Minimum 20, maximum 100.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DescribeDBProxyTargetGroupsResponse": {
@@ -13033,9 +13108,6 @@
                         "smithy.api#documentation": "<p>An optional pagination token provided by a previous request.\n        If this parameter is specified, the response includes only records beyond the marker,\n        up to the value specified by <code>MaxRecords</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#DescribeDBProxyTargets": {
@@ -13104,9 +13176,6 @@
                         "smithy.api#documentation": "<p>The maximum number of records to include in the response.\n        If more records exist than the specified <code>MaxRecords</code> value,\n        a pagination token called a marker is included in the response so that the remaining\n        results can be retrieved.</p>\n         <p>Default: 100</p>\n         <p>Constraints: Minimum 20, maximum 100.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#DescribeDBProxyTargetsResponse": {
@@ -13124,9 +13193,6 @@
                         "smithy.api#documentation": "<p>An optional pagination token provided by a previous request.\n        If this parameter is specified, the response includes only records beyond the marker,\n        up to the value specified by <code>MaxRecords</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#DescribeDBSecurityGroups": {
@@ -14661,6 +14727,23 @@
                 "traits": {
                     "smithy.api#xmlName": "EC2SecurityGroup"
                 }
+            }
+        },
+        "com.amazonaws.rds#Ec2ImagePropertiesNotSupportedFault": {
+            "type": "structure",
+            "members": {
+                "message": {
+                    "target": "com.amazonaws.rds#ExceptionMessage"
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "Ec2ImagePropertiesNotSupportedFault",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>The AMI configuration prerequisite has not been met.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
             }
         },
         "com.amazonaws.rds#Endpoint": {
@@ -16297,6 +16380,32 @@
         "com.amazonaws.rds#LongOptional": {
             "type": "long"
         },
+        "com.amazonaws.rds#MasterUserSecret": {
+            "type": "structure",
+            "members": {
+                "SecretArn": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the secret.</p>"
+                    }
+                },
+                "SecretStatus": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status of the secret.</p>\n         <p>The possible status values include the following:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>creating</code> - The secret is being created.</p>\n            </li>\n            <li>\n               <p>\n                  <code>active</code> - The secret is available for normal use and rotation.</p>\n            </li>\n            <li>\n               <p>\n                  <code>rotating</code> - The secret is being rotated.</p>\n            </li>\n            <li>\n               <p>\n                  <code>impaired</code> - The secret can be used to access database credentials,\n                    but it can't be rotated. A secret might have this status if, for example,\n                    permissions are changed so that RDS can no longer access either the secret or\n                    the KMS key for the secret.</p>\n               <p>When a secret has this status, you can correct the condition that caused the\n                    status. Alternatively, modify the DB instance to turn off automatic management\n                    of database credentials, and then modify the DB instance again to turn on\n                    automatic management of database credentials.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "KmsKeyId": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide</i> and <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon Aurora User Guide.</i>\n         </p>"
+            }
+        },
         "com.amazonaws.rds#MaxRecords": {
             "type": "integer",
             "traits": {
@@ -16373,9 +16482,6 @@
                         "smithy.api#documentation": "<p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is\n            read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#ModifyActivityStreamResponse": {
@@ -16417,9 +16523,6 @@
                         "smithy.api#documentation": "<p>The status of the modification to the policy state of the database activity stream.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#ModifyCertificates": {
@@ -16690,7 +16793,7 @@
                 "NewDBClusterIdentifier": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must contain from 1 to 63 letters, numbers, or hyphens</p>\n            </li>\n            <li>\n               <p>The first character must be a letter</p>\n            </li>\n            <li>\n               <p>Can't end with a hyphen or contain two consecutive hyphens</p>\n            </li>\n         </ul>\n         <p>Example: <code>my-cluster2</code>\n         </p>\n         <p>Valid for: Aurora DB clusters only</p>"
+                        "smithy.api#documentation": "<p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must contain from 1 to 63 letters, numbers, or hyphens</p>\n            </li>\n            <li>\n               <p>The first character must be a letter</p>\n            </li>\n            <li>\n               <p>Can't end with a hyphen or contain two consecutive hyphens</p>\n            </li>\n         </ul>\n         <p>Example: <code>my-cluster2</code>\n         </p>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
                     }
                 },
                 "ApplyImmediately": {
@@ -16727,7 +16830,7 @@
                 "MasterUserPassword": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The new password for the master database user. This password can contain any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
+                        "smithy.api#documentation": "<p>The new password for the master database user. This password can contain any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must contain from 8 to 41 characters.</p>\n            </li>\n            <li>\n               <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>\n            </li>\n         </ul>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
                     }
                 },
                 "OptionGroupName": {
@@ -16894,6 +16997,24 @@
                     "target": "com.amazonaws.rds#String",
                     "traits": {
                         "smithy.api#documentation": "<p>The network type of the DB cluster.</p>\n         <p>Valid values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>IPV4</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>DUAL</code>\n               </p>\n            </li>\n         </ul>\n         <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. \n            A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 \n            protocols (<code>DUAL</code>).</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html\">\n            Working with a DB instance in a VPC</a> in the \n            <i>Amazon Aurora User Guide.</i>\n         </p>\n         <p>Valid for: Aurora DB clusters only</p>"
+                    }
+                },
+                "ManageMasterUserPassword": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>\n         <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn \n            on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>\n         <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the \n            master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. \n            In this case, RDS deletes the secret and uses the new password for the master user specified by \n            <code>MasterUserPassword</code>.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide</i> and <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon Aurora User Guide.</i>\n         </p>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
+                    }
+                },
+                "RotateMasterUserPassword": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the \n            master user password.</p>\n         <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets \n            Manager for the DB cluster. The secret value contains the updated password.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide</i> and <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon Aurora User Guide.</i>\n         </p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>You must apply the change immediately when rotating the master user password.</p>\n            </li>\n         </ul>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
+                    }
+                },
+                "MasterUserSecretKmsKeyId": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and \n            managed in Amazon Web Services Secrets Manager.</p>\n         <p>This setting is valid only if both of the following conditions are met:</p>\n         <ul>\n            <li>\n               <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>\n               <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets\n                    Manager, you can't change the KMS key that is used to encrypt the secret.</p>\n            </li>\n            <li>\n               <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password \n                    in Amazon Web Services Secrets Manager.</p>\n               <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify \n                    <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> \n                    KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't \n                    use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer \n                    managed KMS key.</p>\n            </li>\n         </ul>\n         <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.\n            To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>\n         <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account\n            has a different default KMS key for each Amazon Web Services Region.</p>\n         <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>"
                     }
                 }
             },
@@ -17109,7 +17230,7 @@
                 "DBInstanceClass": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all\n            Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and \n            availability for your engine, see\n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB instance \n                classes</a> in the <i>Amazon RDS User Guide</i> or \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html\">Aurora \n                DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>\n         <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window,\n            unless <code>ApplyImmediately</code> is enabled for this request.</p>\n         <p>This setting doesn't apply to RDS Custom for Oracle.</p>\n         <p>Default: Uses existing setting</p>"
+                        "smithy.api#documentation": "<p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all\n            Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the \n                <i>Amazon RDS User Guide</i> or \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html\">Aurora\n                DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances\">DB instance class support for RDS Custom for Oracle</a> and <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS\">\n                DB instance class support for RDS Custom for SQL Server</a>.</p>\n         <p>If you modify the DB instance class, an outage occurs during the change. The change is\n            applied during the next maintenance window, unless you specify\n                <code>ApplyImmediately</code> in your request. </p>\n         <p>Default: Uses existing setting</p>"
                     }
                 },
                 "DBSubnetGroupName": {
@@ -17140,7 +17261,7 @@
                 "MasterUserPassword": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The new password for the master user. The password can include any printable ASCII \n          character except \"/\", \"\"\", or \"@\".</p>\n         <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. \n        Between the time of the request and the completion of the request,\n        the <code>MasterUserPassword</code> element exists in the\n          <code>PendingModifiedValues</code> element of the operation response.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>\n         <p>\n            <b>Amazon Aurora</b>\n         </p>\n         <p>Not applicable. The password for the master user is managed by the DB cluster. For\n            more information, see <code>ModifyDBCluster</code>.</p>\n         <p>Default: Uses existing setting</p>\n         <p>\n            <b>MariaDB</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Microsoft SQL Server</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>\n         <p>\n            <b>MySQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Oracle</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 30 characters.</p>\n         <p>\n            <b>PostgreSQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>\n         <note>\n            <p>Amazon RDS API operations never return the password, \n              so this action provides a way to regain access to a primary instance user if the password is lost. \n              This includes restoring privileges that might have been accidentally revoked.</p>\n         </note>"
+                        "smithy.api#documentation": "<p>The new password for the master user. The password can include any printable ASCII \n          character except \"/\", \"\"\", or \"@\".</p>\n         <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. \n        Between the time of the request and the completion of the request,\n        the <code>MasterUserPassword</code> element exists in the\n          <code>PendingModifiedValues</code> element of the operation response.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>\n         <p>\n            <b>Amazon Aurora</b>\n         </p>\n         <p>Not applicable. The password for the master user is managed by the DB cluster. For\n            more information, see <code>ModifyDBCluster</code>.</p>\n         <p>Default: Uses existing setting</p>\n         <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>\n         <p>\n            <b>MariaDB</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Microsoft SQL Server</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>\n         <p>\n            <b>MySQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Oracle</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 30 characters.</p>\n         <p>\n            <b>PostgreSQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>\n         <note>\n            <p>Amazon RDS API operations never return the password, \n              so this action provides a way to regain access to a primary instance user if the password is lost. \n              This includes restoring privileges that might have been accidentally revoked.</p>\n         </note>"
                     }
                 },
                 "DBParameterGroupName": {
@@ -17237,7 +17358,7 @@
                 "CACertificateIdentifier": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specifies the certificate to associate with the DB instance.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>"
+                        "smithy.api#documentation": "<p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html\">Using SSL/TLS to encrypt a connection to a DB \n            instance</a> in the <i>Amazon RDS User Guide</i> and \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html\">\n            Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora \n            User Guide</i>.</p>"
                     }
                 },
                 "Domain": {
@@ -17357,7 +17478,7 @@
                 "EnableCustomerOwnedIp": {
                     "target": "com.amazonaws.rds#BooleanOptional",
                     "traits": {
-                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
+                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
                     }
                 },
                 "AwsBackupRecoveryPointArn": {
@@ -17388,6 +17509,24 @@
                     "target": "com.amazonaws.rds#IntegerOptional",
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies the storage throughput value for the DB instance.</p>\n         <p>This setting applies only to the <code>gp3</code> storage type.</p>\n         <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>"
+                    }
+                },
+                "ManageMasterUserPassword": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>\n         <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn \n            on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>\n         <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the \n            master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. \n            In this case, RDS deletes the secret and uses the new password for the master user specified by \n            <code>MasterUserPassword</code>.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide.</i>\n         </p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> \n                    is specified.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "RotateMasterUserPassword": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to rotate the secret managed by Amazon Web Services Secrets Manager for the \n            master user password.</p>\n         <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets \n            Manager for the DB cluster. The secret value contains the updated password.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide.</i>\n         </p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>You must apply the change immediately when rotating the master user password.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "MasterUserSecretKmsKeyId": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and \n            managed in Amazon Web Services Secrets Manager.</p>\n         <p>This setting is valid only if both of the following conditions are met:</p>\n         <ul>\n            <li>\n               <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>\n               <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, \n                    you can't change the KMS key used to encrypt the secret.</p>\n            </li>\n            <li>\n               <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password \n                    in Amazon Web Services Secrets Manager.</p>\n               <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify \n                    <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> \n                    KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't \n                    use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer \n                    managed KMS key.</p>\n            </li>\n         </ul>\n         <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.\n            To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>\n         <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account\n            has a different default KMS key for each Amazon Web Services Region.</p>"
                     }
                 }
             },
@@ -17516,9 +17655,6 @@
                         "smithy.api#documentation": "<p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint\n        uses a different VPC than the original proxy, you also specify a different\n        set of security group IDs than for the original proxy.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#ModifyDBProxyEndpointResponse": {
@@ -17530,9 +17666,6 @@
                         "smithy.api#documentation": "<p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#ModifyDBProxyRequest": {
@@ -17587,9 +17720,6 @@
                         "smithy.api#documentation": "<p>The new list of security groups for the <code>DBProxy</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#ModifyDBProxyResponse": {
@@ -17601,9 +17731,6 @@
                         "smithy.api#documentation": "<p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#ModifyDBProxyTargetGroup": {
@@ -17658,9 +17785,6 @@
                         "smithy.api#documentation": "<p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#ModifyDBProxyTargetGroupResponse": {
@@ -17672,9 +17796,6 @@
                         "smithy.api#documentation": "<p>The settings of the modified <code>DBProxyTarget</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#ModifyDBSnapshot": {
@@ -19272,7 +19393,7 @@
                 "CACertificateIdentifier": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The identifier of the CA certificate for the DB instance.</p>"
+                        "smithy.api#documentation": "<p>The identifier of the CA certificate for the DB instance.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html\">Using SSL/TLS to encrypt a connection to a DB \n            instance</a> in the <i>Amazon RDS User Guide</i> and \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html\">\n            Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora \n            User Guide</i>.</p>"
                     }
                 },
                 "DBSubnetGroupName": {
@@ -19802,9 +19923,6 @@
                         "smithy.api#documentation": "<p>One or more DB cluster identifiers.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#RegisterDBProxyTargetsResponse": {
@@ -19816,9 +19934,6 @@
                         "smithy.api#documentation": "<p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#RemoveFromGlobalCluster": {
@@ -20664,8 +20779,7 @@
                 "MasterUserPassword": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The password for the master database user. This password can contain any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The password for the master database user. This password can contain any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must contain from 8 to 41 characters.</p>\n            </li>\n            <li>\n               <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "OptionGroupName": {
@@ -20784,6 +20898,18 @@
                     "target": "com.amazonaws.rds#String",
                     "traits": {
                         "smithy.api#documentation": "<p>The network type of the DB cluster.</p>\n         <p>Valid values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>IPV4</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>DUAL</code>\n               </p>\n            </li>\n         </ul>\n         <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. \n            A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 \n            protocols (<code>DUAL</code>).</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html\">\n            Working with a DB instance in a VPC</a> in the \n            <i>Amazon Aurora User Guide.</i>\n         </p>"
+                    }
+                },
+                "ManageMasterUserPassword": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide</i> and <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon Aurora User Guide.</i>\n         </p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> \n                    is specified.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "MasterUserSecretKmsKeyId": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and \n            managed in Amazon Web Services Secrets Manager.</p>\n         <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets \n            Manager for the DB cluster.</p>\n         <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.\n            To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>\n         <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> \n            KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't \n            use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer \n            managed KMS key.</p>\n         <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account\n            has a different default KMS key for each Amazon Web Services Region.</p>"
                     }
                 }
             }
@@ -21543,7 +21669,7 @@
                 "EnableCustomerOwnedIp": {
                     "target": "com.amazonaws.rds#BooleanOptional",
                     "traits": {
-                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
+                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
                     }
                 },
                 "CustomIamInstanceProfile": {
@@ -21574,6 +21700,12 @@
                     "target": "com.amazonaws.rds#String",
                     "traits": {
                         "smithy.api#documentation": "<p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>\n         <p>For more information on Multi-AZ DB clusters, see \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html\">\n                Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.</p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must match the identifier of an existing Multi-AZ DB cluster snapshot.</p>\n            </li>\n            <li>\n               <p>Can't be specified when <code>DBSnapshotIdentifier</code> is specified.</p>\n            </li>\n            <li>\n               <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>\n            </li>\n            <li>\n               <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code>\n                    must be the ARN of the shared snapshot.</p>\n            </li>\n            <li>\n               <p>Can't be the identifier of an Aurora DB cluster snapshot.</p>\n            </li>\n            <li>\n               <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "AllocatedStorage": {
+                    "target": "com.amazonaws.rds#IntegerOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in\n            CreateDBInstance.</p>\n         <note>\n            <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed. You can also\n                allocate additional memory for future growth.</p>\n         </note>"
                     }
                 }
             },
@@ -21676,7 +21808,7 @@
                 "AllocatedStorage": {
                     "target": "com.amazonaws.rds#IntegerOptional",
                     "traits": {
-                        "smithy.api#documentation": "<p>The amount of storage (in gigabytes) to allocate initially for the DB instance.\n            Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>\n         <note>\n            <p>Be sure to allocate enough memory for your new DB instance\n                so that the restore operation can succeed.\n                You can also allocate additional memory for future growth.</p>\n         </note>"
+                        "smithy.api#documentation": "<p>The amount of storage (in gibibytes) to allocate initially for the DB instance.\n            Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>\n         <note>\n            <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed.\n                You can also allocate additional memory for future growth.</p>\n         </note>"
                     }
                 },
                 "DBInstanceClass": {
@@ -21702,7 +21834,7 @@
                 "MasterUserPassword": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The password for the master user. \n            The password can include any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>"
+                        "smithy.api#documentation": "<p>The password for the master user. \n            The password can include any printable ASCII character except \"/\", \"\"\", or \"@\".</p>\n         <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>\n         <p>\n            <b>MariaDB</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Microsoft SQL Server</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>\n         <p>\n            <b>MySQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 41 characters.</p>\n         <p>\n            <b>Oracle</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 30 characters.</p>\n         <p>\n            <b>PostgreSQL</b>\n         </p>\n         <p>Constraints: Must contain from 8 to 128 characters.</p>"
                     }
                 },
                 "DBSecurityGroups": {
@@ -21941,6 +22073,18 @@
                     "target": "com.amazonaws.rds#IntegerOptional",
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies the storage throughput value for the DB instance.</p>\n         <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>"
+                    }
+                },
+                "ManageMasterUserPassword": {
+                    "target": "com.amazonaws.rds#BooleanOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html\">Password management with Amazon Web Services Secrets Manager</a> \n            in the <i>Amazon RDS User Guide.</i>\n         </p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> \n                    is specified.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "MasterUserSecretKmsKeyId": {
+                    "target": "com.amazonaws.rds#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and \n            managed in Amazon Web Services Secrets Manager.</p>\n         <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets \n            Manager for the DB instance.</p>\n         <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.\n            To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>\n         <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> \n            KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't \n            use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer \n            managed KMS key.</p>\n         <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account\n            has a different default KMS key for each Amazon Web Services Region.</p>"
                     }
                 }
             }
@@ -22239,7 +22383,7 @@
                 "EnableCustomerOwnedIp": {
                     "target": "com.amazonaws.rds#BooleanOptional",
                     "traits": {
-                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
+                        "smithy.api#documentation": "<p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>\n         <p>A <i>CoIP</i> provides local or external connectivity to resources in\n            your Outpost subnets through your on-premises network. For some use cases, a CoIP can\n            provide lower latency for connections to the DB instance from outside of its virtual\n            private cloud (VPC) on your local network.</p>\n         <p>This setting doesn't apply to RDS Custom.</p>\n         <p>For more information about RDS on Outposts, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html\">Working with Amazon RDS on Amazon Web Services Outposts</a> \n            in the <i>Amazon RDS User Guide</i>.</p>\n         <p>For more information about CoIPs, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing\">Customer-owned IP addresses</a> \n            in the <i>Amazon Web Services Outposts User Guide</i>.</p>"
                     }
                 },
                 "CustomIamInstanceProfile": {
@@ -22264,6 +22408,12 @@
                     "target": "com.amazonaws.rds#IntegerOptional",
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies the storage throughput value for the DB instance.</p>\n         <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>"
+                    }
+                },
+                "AllocatedStorage": {
+                    "target": "com.amazonaws.rds#IntegerOptional",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of storage (in gibibytes) to allocate initially for the DB instance.\n            Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>\n         <note>\n            <p>Be sure to allocate enough memory for your new DB instance so that the restore operation can succeed.\n                You can also allocate additional memory for future growth.</p>\n         </note>"
                     }
                 }
             },
@@ -22792,7 +22942,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Starts a database activity stream to monitor activity on the database.\n            For more information, see <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html\">Database Activity Streams</a>\n            in the <i>Amazon Aurora User Guide</i>.</p>"
+                "smithy.api#documentation": "<p>Starts a database activity stream to monitor activity on the database.\n            For more information, see \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html\">\n                Monitoring Amazon Aurora with Database Activity Streams</a>\n            in the <i>Amazon Aurora User Guide</i> or\n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html\">\n                Monitoring Amazon RDS with Database Activity Streams</a>\n            in the <i>Amazon RDS User Guide</i>.</p>"
             }
         },
         "com.amazonaws.rds#StartActivityStreamRequest": {
@@ -22831,9 +22981,6 @@
                         "smithy.api#documentation": "<p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies\n        to an Oracle DB instance. By default, no engine-native audit fields are included.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#StartActivityStreamResponse": {
@@ -22876,9 +23023,6 @@
                         "smithy.api#documentation": "<p>Indicates whether engine-native audit fields are included in the database activity stream.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#StartDBCluster": {
@@ -23136,7 +23280,7 @@
                 "KmsKeyId": {
                     "target": "com.amazonaws.rds#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS \n            key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. \n            The caller of this operation must be authorized to execute the following operations. \n            These can be set in the Amazon Web Services KMS key policy:</p>\n         <ul>\n            <li>\n               <p>GrantOperation.Encrypt</p>\n            </li>\n            <li>\n               <p>GrantOperation.Decrypt</p>\n            </li>\n            <li>\n               <p>GrantOperation.GenerateDataKey</p>\n            </li>\n            <li>\n               <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p>\n            </li>\n            <li>\n               <p>GrantOperation.ReEncryptFrom</p>\n            </li>\n            <li>\n               <p>GrantOperation.ReEncryptTo</p>\n            </li>\n            <li>\n               <p>GrantOperation.CreateGrant</p>\n            </li>\n            <li>\n               <p>GrantOperation.DescribeKey</p>\n            </li>\n            <li>\n               <p>GrantOperation.RetireGrant</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS \n            key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. \n            The caller of this operation must be authorized to run the following operations. \n            These can be set in the Amazon Web Services KMS key policy:</p>\n         <ul>\n            <li>\n               <p>kms:Encrypt</p>\n            </li>\n            <li>\n               <p>kms:Decrypt</p>\n            </li>\n            <li>\n               <p>kms:GenerateDataKey</p>\n            </li>\n            <li>\n               <p>kms:GenerateDataKeyWithoutPlaintext</p>\n            </li>\n            <li>\n               <p>kms:ReEncryptFrom</p>\n            </li>\n            <li>\n               <p>kms:ReEncryptTo</p>\n            </li>\n            <li>\n               <p>kms:CreateGrant</p>\n            </li>\n            <li>\n               <p>kms:DescribeKey</p>\n            </li>\n            <li>\n               <p>kms:RetireGrant</p>\n            </li>\n         </ul>",
                         "smithy.api#required": {}
                     }
                 },
@@ -23180,7 +23324,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Stops a database activity stream that was started using the Amazon Web Services console, \n            the <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code> action.</p>\n         <p>For more information, see \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html\">Database Activity Streams</a>\n            in the <i>Amazon Aurora User Guide</i>.</p>"
+                "smithy.api#documentation": "<p>Stops a database activity stream that was started using the Amazon Web Services console, \n            the <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code> action.</p>\n         <p>For more information, see \n            <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html\">\n                Monitoring Amazon Aurora with Database Activity Streams</a>\n            in the <i>Amazon Aurora User Guide</i>\n            or <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html\">\n                Monitoring Amazon RDS with Database Activity Streams</a>\n            in the <i>Amazon RDS User Guide</i>.</p>"
             }
         },
         "com.amazonaws.rds#StopActivityStreamRequest": {
@@ -23199,9 +23343,6 @@
                         "smithy.api#documentation": "<p>Specifies whether or not the database activity stream is to stop as soon as possible, \n            regardless of the maintenance window for the database.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#StopActivityStreamResponse": {
@@ -23225,9 +23366,6 @@
                         "smithy.api#documentation": "<p>The status of the database activity stream.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#StopDBCluster": {
@@ -23590,9 +23728,6 @@
                         "smithy.api#documentation": "<p>The amount of time, in seconds, for the switchover to complete. The default is 300.</p>\n         <p>If the switchover takes longer than the specified duration, then any changes are rolled back, \n           and no changes are made to the environments.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.rds#SwitchoverBlueGreenDeploymentResponse": {
@@ -23601,9 +23736,6 @@
                 "BlueGreenDeployment": {
                     "target": "com.amazonaws.rds#BlueGreenDeployment"
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.rds#SwitchoverDetail": {
