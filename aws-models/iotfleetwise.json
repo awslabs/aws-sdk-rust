@@ -814,7 +814,7 @@
                 "expiryTime": {
                     "target": "com.amazonaws.iotfleetwise#timestamp",
                     "traits": {
-                        "smithy.api#documentation": "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at\n            midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>\n        <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>"
+                        "smithy.api#documentation": "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at\n            midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>\n        <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>"
                     }
                 },
                 "postTriggerCollectionDuration": {
@@ -2614,6 +2614,9 @@
                 },
                 {
                     "target": "com.amazonaws.iotfleetwise#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.iotfleetwise#ValidationException"
                 }
             ],
             "traits": {
@@ -3565,15 +3568,6 @@
                                                     "ref": "Endpoint"
                                                 }
                                             ]
-                                        },
-                                        {
-                                            "fn": "parseURL",
-                                            "argv": [
-                                                {
-                                                    "ref": "Endpoint"
-                                                }
-                                            ],
-                                            "assign": "url"
                                         }
                                     ],
                                     "type": "tree",
@@ -3837,8 +3831,8 @@
                             },
                             "params": {
                                 "UseDualStack": true,
-                                "UseFIPS": true,
-                                "Region": "eu-central-1"
+                                "Region": "eu-central-1",
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -3850,8 +3844,8 @@
                             },
                             "params": {
                                 "UseDualStack": false,
-                                "UseFIPS": true,
-                                "Region": "eu-central-1"
+                                "Region": "eu-central-1",
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -3863,8 +3857,8 @@
                             },
                             "params": {
                                 "UseDualStack": true,
-                                "UseFIPS": false,
-                                "Region": "eu-central-1"
+                                "Region": "eu-central-1",
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -3876,8 +3870,8 @@
                             },
                             "params": {
                                 "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "eu-central-1"
+                                "Region": "eu-central-1",
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -3889,8 +3883,8 @@
                             },
                             "params": {
                                 "UseDualStack": true,
-                                "UseFIPS": true,
-                                "Region": "us-east-1"
+                                "Region": "us-east-1",
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -3902,8 +3896,8 @@
                             },
                             "params": {
                                 "UseDualStack": false,
-                                "UseFIPS": true,
-                                "Region": "us-east-1"
+                                "Region": "us-east-1",
+                                "UseFIPS": true
                             }
                         },
                         {
@@ -3915,8 +3909,8 @@
                             },
                             "params": {
                                 "UseDualStack": true,
-                                "UseFIPS": false,
-                                "Region": "us-east-1"
+                                "Region": "us-east-1",
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -3928,8 +3922,8 @@
                             },
                             "params": {
                                 "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "us-east-1"
+                                "Region": "us-east-1",
+                                "UseFIPS": false
                             }
                         },
                         {
@@ -3941,8 +3935,8 @@
                             },
                             "params": {
                                 "UseDualStack": false,
-                                "UseFIPS": false,
                                 "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -3953,8 +3947,8 @@
                             },
                             "params": {
                                 "UseDualStack": false,
-                                "UseFIPS": true,
                                 "Region": "us-east-1",
+                                "UseFIPS": true,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -3965,8 +3959,8 @@
                             },
                             "params": {
                                 "UseDualStack": true,
-                                "UseFIPS": false,
                                 "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
                         }
@@ -6986,6 +6980,9 @@
                 },
                 {
                     "target": "com.amazonaws.iotfleetwise#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.iotfleetwise#ValidationException"
                 }
             ],
             "traits": {
