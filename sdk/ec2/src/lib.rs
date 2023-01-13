@@ -67,6 +67,9 @@ pub mod config;
 /// Endpoint resolution functionality
 pub mod endpoint;
 
+/// All error types that operations can return. Documentation on these types is copied from the model.
+pub mod error;
+
 mod error_meta;
 
 /// Input structures for operations. Documentation on these types is copied from the model.
@@ -83,9 +86,6 @@ pub mod output;
 
 /// Data primitives referenced by other data types.
 pub mod types;
-
-/// All error types that operations can return. Documentation on these types is copied from the model.
-pub mod error;
 
 mod idempotency_token;
 
