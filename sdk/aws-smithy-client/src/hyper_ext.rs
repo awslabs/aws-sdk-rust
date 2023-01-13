@@ -51,7 +51,14 @@
     not(all(feature = "rustls", feature = "client-hyper")),
     doc = "```no_run,ignore"
 )]
-#![cfg_attr(all(feature = "rustls", feature = "client-hyper"), doc = "```no_run")]
+#![cfg_attr(
+    all(
+        feature = "rustls",
+        feature = "client-hyper",
+        feature = "hyper-webpki-doctest-only"
+    ),
+    doc = "```no_run"
+)]
 //! use std::time::Duration;
 //! use aws_smithy_client::{Client, conns, hyper_ext};
 //! use aws_smithy_client::erase::DynConnector;
