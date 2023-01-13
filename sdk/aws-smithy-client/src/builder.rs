@@ -285,7 +285,8 @@ impl<C, M> Builder<C, M, retry::Standard> {
 }
 
 impl<C, M> Builder<C, M> {
-    /// Set the standard retry policy's configuration.
+    /// Set the standard retry policy's configuration. When `config` is `None`,
+    /// the default retry policy will be used.
     pub fn set_retry_config(&mut self, config: Option<retry::Config>) -> &mut Self {
         let config = config.unwrap_or_default();
         self.retry_policy =
@@ -299,7 +300,8 @@ impl<C, M> Builder<C, M> {
         self
     }
 
-    /// Set operation timeout config for the client.
+    /// Set operation timeout config for the client. If `operation_timeout_config` is
+    /// `None`, timeouts will be disabled.
     pub fn set_operation_timeout_config(
         &mut self,
         operation_timeout_config: Option<OperationTimeoutConfig>,
