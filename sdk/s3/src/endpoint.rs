@@ -6227,37 +6227,44 @@ pub struct ParamsBuilder {
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
     pub fn build(self) -> Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
-        Ok(crate::endpoint::Params {
-            bucket: self.bucket,
-            region: self.region,
-            use_fips: self
-                .use_fips
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_fips"))?,
-            use_dual_stack: self
-                .use_dual_stack
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_dual_stack"))?,
-            endpoint: self.endpoint,
-            force_path_style: self.force_path_style,
-            accelerate: self
-                .accelerate
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("accelerate"))?,
-            use_global_endpoint: self
-                .use_global_endpoint
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_global_endpoint"))?,
-            use_object_lambda_endpoint: self.use_object_lambda_endpoint,
-            disable_access_points: self.disable_access_points,
-            disable_multi_region_access_points: self
-                .disable_multi_region_access_points
-                .or(Some(false))
-                .ok_or_else(|| {
-                    crate::endpoint::InvalidParams::missing("disable_multi_region_access_points")
-                })?,
-            use_arn_region: self.use_arn_region,
-        })
+        Ok(
+            #[allow(clippy::unnecessary_lazy_evaluations)]
+            crate::endpoint::Params {
+                bucket: self.bucket,
+                region: self.region,
+                use_fips: self
+                    .use_fips
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_fips"))?,
+                use_dual_stack: self
+                    .use_dual_stack
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_dual_stack"))?,
+                endpoint: self.endpoint,
+                force_path_style: self.force_path_style,
+                accelerate: self
+                    .accelerate
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("accelerate"))?,
+                use_global_endpoint: self
+                    .use_global_endpoint
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| {
+                        crate::endpoint::InvalidParams::missing("use_global_endpoint")
+                    })?,
+                use_object_lambda_endpoint: self.use_object_lambda_endpoint,
+                disable_access_points: self.disable_access_points,
+                disable_multi_region_access_points: self
+                    .disable_multi_region_access_points
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| {
+                        crate::endpoint::InvalidParams::missing(
+                            "disable_multi_region_access_points",
+                        )
+                    })?,
+                use_arn_region: self.use_arn_region,
+            },
+        )
     }
     /// Sets the value for bucket
     ///

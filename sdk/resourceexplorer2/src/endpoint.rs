@@ -3002,16 +3002,19 @@ pub struct ParamsBuilder {
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
     pub fn build(self) -> Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
-        Ok(crate::endpoint::Params {
-            region: self
-                .region
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("region"))?,
-            use_fips: self
-                .use_fips
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_fips"))?,
-            endpoint: self.endpoint,
-        })
+        Ok(
+            #[allow(clippy::unnecessary_lazy_evaluations)]
+            crate::endpoint::Params {
+                region: self
+                    .region
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("region"))?,
+                use_fips: self
+                    .use_fips
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_fips"))?,
+                endpoint: self.endpoint,
+            },
+        )
     }
     /// Sets the value for region
     ///

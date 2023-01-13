@@ -3322,21 +3322,24 @@ pub struct ParamsBuilder {
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
     pub fn build(self) -> Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
-        Ok(crate::endpoint::Params {
-            region: self
-                .region
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("region"))?,
-            use_dual_stack: self
-                .use_dual_stack
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_dual_stack"))?,
-            use_fips: self
-                .use_fips
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_fips"))?,
-            endpoint: self.endpoint,
-            endpoint_id: self.endpoint_id,
-        })
+        Ok(
+            #[allow(clippy::unnecessary_lazy_evaluations)]
+            crate::endpoint::Params {
+                region: self
+                    .region
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("region"))?,
+                use_dual_stack: self
+                    .use_dual_stack
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_dual_stack"))?,
+                use_fips: self
+                    .use_fips
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_fips"))?,
+                endpoint: self.endpoint,
+                endpoint_id: self.endpoint_id,
+            },
+        )
     }
     /// Sets the value for region
     ///

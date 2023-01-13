@@ -3377,24 +3377,27 @@ pub struct ParamsBuilder {
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
     pub fn build(self) -> Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
-        Ok(crate::endpoint::Params {
-            region: self.region,
-            use_fips: self
-                .use_fips
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_fips"))?,
-            use_dual_stack: self
-                .use_dual_stack
-                .or(Some(false))
-                .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_dual_stack"))?,
-            endpoint: self.endpoint,
-            account_id: self.account_id,
-            requires_account_id: self.requires_account_id,
-            outpost_id: self.outpost_id,
-            bucket: self.bucket,
-            access_point_name: self.access_point_name,
-            use_arn_region: self.use_arn_region,
-        })
+        Ok(
+            #[allow(clippy::unnecessary_lazy_evaluations)]
+            crate::endpoint::Params {
+                region: self.region,
+                use_fips: self
+                    .use_fips
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_fips"))?,
+                use_dual_stack: self
+                    .use_dual_stack
+                    .or_else(|| Some(false))
+                    .ok_or_else(|| crate::endpoint::InvalidParams::missing("use_dual_stack"))?,
+                endpoint: self.endpoint,
+                account_id: self.account_id,
+                requires_account_id: self.requires_account_id,
+                outpost_id: self.outpost_id,
+                bucket: self.bucket,
+                access_point_name: self.access_point_name,
+                use_arn_region: self.use_arn_region,
+            },
+        )
     }
     /// Sets the value for region
     ///
