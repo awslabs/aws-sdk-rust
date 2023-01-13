@@ -1,4 +1,79 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+January 13th, 2023
+==================
+**Breaking Changes:**
+- ⚠🎉 ([smithy-rs#1784](https://github.com/awslabs/smithy-rs/issues/1784), [smithy-rs#2074](https://github.com/awslabs/smithy-rs/issues/2074)) Integrate Endpoints 2.0 into the Rust SDK. Endpoints 2.0 enables features like S3 virtual addressing & S3
+    object lambda. As part of this change, there are several breaking changes although efforts have been made to deprecate
+    where possible to smooth the upgrade path.
+    1. `aws_smithy_http::endpoint::Endpoint` and the `endpoint_resolver` methods have been deprecated. In general, these usages
+       should be replaced with usages of `endpoint_url` instead. `endpoint_url` accepts a string so an `aws_smithy_http::Endpoint`
+       does not need to be constructed. This structure and methods will be removed in a future release.
+    2. The `endpoint_resolver` method on `<service>::config::Builder` now accepts a service specific endpoint resolver instead
+       of an implementation of `ResolveAwsEndpoint`. Most users will be able to replace these usages with a usage of `endpoint_url`.
+    3. `ResolveAwsEndpoint` has been deprecated and will be removed in a future version of the SDK.
+    4. The SDK does not support "pseudo regions" anymore. Specifically, regions like `iam-fips` will no longer resolve to a FIPS endpoint.
+- ⚠🎉 ([smithy-rs#1784](https://github.com/awslabs/smithy-rs/issues/1784), [smithy-rs#2074](https://github.com/awslabs/smithy-rs/issues/2074)) Add additional configuration parameters to `aws_sdk_s3::Config`.
+
+    The launch of endpoints 2.0 includes more configuration options for S3. The default behavior for endpoint resolution has
+    been changed. Before, all requests hit the path-style endpoint. Going forward, all requests that can be routed to the
+    virtually hosted bucket will be routed there automatically.
+    - `force_path_style`: Requests will now default to the virtually-hosted endpoint `<bucketname>.s3.<region>.amazonaws.com`
+    - `use_arn_region`: Enables this client to use an ARN’s region when constructing an endpoint instead of the client’s configured region.
+    - `accelerate`: Enables this client to use S3 Transfer Acceleration endpoints.
+
+    Note: the AWS SDK for Rust does not currently support Multi Region Access Points (MRAP).
+- ⚠ ([smithy-rs#2108](https://github.com/awslabs/smithy-rs/issues/2108)) Move types for AWS SDK credentials to a separate crate.
+    A new AWS runtime crate called `aws-credential-types` has been introduced. Types for AWS SDK credentials have been moved to that crate from `aws-config` and `aws-types`. The new crate is placed at the top of the dependency graph among AWS runtime crates with the aim of the downstream crates having access to the types defined in it.
+- ⚠ ([smithy-rs#2162](https://github.com/awslabs/smithy-rs/issues/2162)) `aws_config::profile::retry_config` && `aws_config::environment::retry_config` have been removed. Use `aws_config::default_provider::retry_config` instead.
+
+**New this release:**
+- 🎉 ([smithy-rs#2168](https://github.com/awslabs/smithy-rs/issues/2168)) Add support for resolving FIPS and dual-stack endpoints.
+
+    FIPS and dual-stack endpoints can each be configured in multiple ways:
+    1. Automatically from the environment and AWS profile
+    2. Across all clients loaded from the same `SdkConfig` via `from_env().use_dual_stack(true).load().await`
+    3. At a client level when constructing the configuration for an individual client.
+
+    Note: Not all services support FIPS and dual-stack.
+- ([smithy-rs#2152](https://github.com/awslabs/smithy-rs/issues/2152)) Add support for overriding profile name and profile file location across all providers. Prior to this change, each provider needed to be updated individually.
+
+    ### Before
+    ```rust
+    use aws_config::profile::{ProfileFileCredentialsProvider, ProfileFileRegionProvider};
+    use aws_config::profile::profile_file::{ProfileFiles, ProfileFileKind};
+
+    let profile_files = ProfileFiles::builder()
+        .with_file(ProfileFileKind::Credentials, "some/path/to/credentials-file")
+        .build();
+    let credentials_provider = ProfileFileCredentialsProvider::builder()
+        .profile_files(profile_files.clone())
+        .build();
+    let region_provider = ProfileFileRegionProvider::builder()
+        .profile_files(profile_files)
+        .build();
+
+    let sdk_config = aws_config::from_env()
+        .credentials_provider(credentials_provider)
+        .region(region_provider)
+        .load()
+        .await;
+    ```
+
+    ### After
+    ```rust
+    use aws_config::profile::{ProfileFileCredentialsProvider, ProfileFileRegionProvider};
+    use aws_config::profile::profile_file::{ProfileFiles, ProfileFileKind};
+
+    let profile_files = ProfileFiles::builder()
+        .with_file(ProfileFileKind::Credentials, "some/path/to/credentials-file")
+        .build();
+    let sdk_config = aws_config::from_env()
+        .profile_files(profile_files)
+        .load()
+        .await;
+    /// ```
+
+
 December 14th, 2022
 ===================
 **Breaking Changes:**
