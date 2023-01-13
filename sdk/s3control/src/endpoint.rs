@@ -46,9 +46,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -84,9 +84,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -122,9 +122,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -160,9 +160,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out
                     })]
                 )
@@ -198,9 +198,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -236,9 +236,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -275,12 +275,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-east-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -316,9 +316,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out
                     })]
                 )
@@ -355,9 +355,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out
                     })]
                 )
@@ -394,12 +394,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-east-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -435,9 +435,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out
                     })]
                 )
@@ -473,9 +473,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out
                     })]
                 )
@@ -512,12 +512,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-east-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -552,9 +552,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -589,9 +589,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -625,9 +625,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -662,9 +662,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -698,9 +698,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -735,9 +735,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -907,9 +907,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -946,9 +946,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -998,9 +998,9 @@ mod test {
     .property("authSchemes", vec![aws_smithy_types::Document::from( {
         let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
         out.insert("name".to_string(), "sigv4".to_string().into());
+        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
         out.insert("signingName".to_string(), "s3".to_string().into());
         out.insert("disableDoubleEncoding".to_string(), true.into());
-        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
         out
     })])
     .build());
@@ -1034,9 +1034,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -1113,9 +1113,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -1150,9 +1150,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -1187,9 +1187,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -1224,9 +1224,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -1261,9 +1261,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -1342,9 +1342,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -1379,9 +1379,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -1416,12 +1416,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-east-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -1457,12 +1457,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-west-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -1497,9 +1497,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -1554,9 +1554,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out
                     })]
                 )
@@ -1591,9 +1591,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -1628,12 +1628,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-east-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -1669,12 +1669,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-west-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -1709,9 +1709,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -1766,9 +1766,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out
                     })]
                 )
@@ -1803,9 +1803,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -1840,12 +1840,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-east-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -1881,12 +1881,12 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-west-1".to_string().into(),
                         );
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
                     })]
                 )
@@ -1921,9 +1921,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out
                     })]
                 )
@@ -2065,9 +2065,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -2100,9 +2100,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2137,9 +2137,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2172,9 +2172,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2204,9 +2204,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2237,9 +2237,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2271,9 +2271,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2306,9 +2306,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2338,9 +2338,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out
                     })]
                 )
@@ -2392,9 +2392,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2448,9 +2448,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2483,9 +2483,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2518,9 +2518,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2605,9 +2605,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2638,9 +2638,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2671,9 +2671,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2704,9 +2704,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -2876,9 +2876,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -2913,9 +2913,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -3077,9 +3077,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out
                     })]
                 )
@@ -3153,9 +3153,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )
@@ -3190,9 +3190,9 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })]
                 )

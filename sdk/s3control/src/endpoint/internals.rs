@@ -114,16 +114,16 @@ pub(super) fn resolve_endpoint(
                                         );
                                         out.insert("name".to_string(), "sigv4".to_string().into());
                                         out.insert(
-                                            "signingName".to_string(),
-                                            "s3-outposts".to_string().into(),
+                                            "signingRegion".to_string(),
+                                            region.to_owned().into(),
                                         );
                                         out.insert(
                                             "disableDoubleEncoding".to_string(),
                                             true.into(),
                                         );
                                         out.insert(
-                                            "signingRegion".to_string(),
-                                            region.to_owned().into(),
+                                            "signingName".to_string(),
+                                            "s3-outposts".to_string().into(),
                                         );
                                         out
                                     })],
@@ -152,13 +152,13 @@ pub(super) fn resolve_endpoint(
                                     >::new();
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert(
-                                        "signingName".to_string(),
-                                        "s3-outposts".to_string().into(),
+                                        "signingRegion".to_string(),
+                                        region.to_owned().into(),
                                     );
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert(
-                                        "signingRegion".to_string(),
-                                        region.to_owned().into(),
+                                        "signingName".to_string(),
+                                        "s3-outposts".to_string().into(),
                                     );
                                     out
                                 })],
@@ -184,12 +184,12 @@ pub(super) fn resolve_endpoint(
                                     aws_smithy_types::Document,
                                 >::new();
                                 out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                out.insert("disableDoubleEncoding".to_string(), true.into());
                                 out.insert(
                                     "signingName".to_string(),
                                     "s3-outposts".to_string().into(),
                                 );
-                                out.insert("disableDoubleEncoding".to_string(), true.into());
-                                out.insert("signingRegion".to_string(), region.to_owned().into());
                                 out
                             })],
                         )
@@ -285,11 +285,11 @@ out })
     let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("signingRegion".to_string(), access_point_arn.region()
     .to_owned().into());
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("signingName".to_string(), "s3-outposts"
+    .to_string().into());
     out
 }),])
 .build());
@@ -307,11 +307,11 @@ out })
     let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("signingRegion".to_string(), access_point_arn.region()
     .to_owned().into());
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("signingName".to_string(), "s3-outposts"
+    .to_string().into());
     out
 }),])
 .build()); } }
@@ -328,11 +328,11 @@ out })
     let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("signingRegion".to_string(), access_point_arn.region()
     .to_owned().into());
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("signingName".to_string(), "s3-outposts"
+    .to_string().into());
     out
 }),])
 .build());
@@ -492,11 +492,11 @@ out })
     let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("signingRegion".to_string(), bucket_arn.region()
     .to_owned().into());
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("signingName".to_string(), "s3-outposts"
+    .to_string().into());
     out
 }),])
 .build());
@@ -514,11 +514,11 @@ out })
     let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("signingRegion".to_string(), bucket_arn.region()
     .to_owned().into());
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("signingName".to_string(), "s3-outposts"
+    .to_string().into());
     out
 }),])
 .build()); } }
@@ -535,11 +535,11 @@ out })
     let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
-    out.insert("signingName".to_string(), "s3-outposts"
-    .to_string().into());
-    out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("signingRegion".to_string(), bucket_arn.region()
     .to_owned().into());
+    out.insert("disableDoubleEncoding".to_string(), true.into());
+    out.insert("signingName".to_string(), "s3-outposts"
+    .to_string().into());
     out
 }),])
 .build());
@@ -699,16 +699,16 @@ out }));
                                                     "sigv4".to_string().into(),
                                                 );
                                                 out.insert(
-                                                    "signingName".to_string(),
-                                                    "s3".to_string().into(),
+                                                    "signingRegion".to_string(),
+                                                    region.to_owned().into(),
                                                 );
                                                 out.insert(
                                                     "disableDoubleEncoding".to_string(),
                                                     true.into(),
                                                 );
                                                 out.insert(
-                                                    "signingRegion".to_string(),
-                                                    region.to_owned().into(),
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
                                                 );
                                                 out
                                             })],
@@ -737,12 +737,12 @@ out }));
                                         aws_smithy_types::Document,
                                     >::new();
                                     out.insert("name".to_string(), "sigv4".to_string().into());
-                                    out.insert("signingName".to_string(), "s3".to_string().into());
-                                    out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert(
                                         "signingRegion".to_string(),
                                         region.to_owned().into(),
                                     );
+                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                    out.insert("signingName".to_string(), "s3".to_string().into());
                                     out
                                 })],
                             )
@@ -783,16 +783,16 @@ out }));
                                                     "sigv4".to_string().into(),
                                                 );
                                                 out.insert(
-                                                    "signingName".to_string(),
-                                                    "s3".to_string().into(),
+                                                    "signingRegion".to_string(),
+                                                    region.to_owned().into(),
                                                 );
                                                 out.insert(
                                                     "disableDoubleEncoding".to_string(),
                                                     true.into(),
                                                 );
                                                 out.insert(
-                                                    "signingRegion".to_string(),
-                                                    region.to_owned().into(),
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
                                                 );
                                                 out
                                             })],
@@ -824,12 +824,12 @@ out }));
                                         aws_smithy_types::Document,
                                     >::new();
                                     out.insert("name".to_string(), "sigv4".to_string().into());
-                                    out.insert("signingName".to_string(), "s3".to_string().into());
-                                    out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert(
                                         "signingRegion".to_string(),
                                         region.to_owned().into(),
                                     );
+                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                    out.insert("signingName".to_string(), "s3".to_string().into());
                                     out
                                 })],
                             )
@@ -870,16 +870,16 @@ out }));
                                                     "sigv4".to_string().into(),
                                                 );
                                                 out.insert(
-                                                    "signingName".to_string(),
-                                                    "s3".to_string().into(),
+                                                    "signingRegion".to_string(),
+                                                    region.to_owned().into(),
                                                 );
                                                 out.insert(
                                                     "disableDoubleEncoding".to_string(),
                                                     true.into(),
                                                 );
                                                 out.insert(
-                                                    "signingRegion".to_string(),
-                                                    region.to_owned().into(),
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
                                                 );
                                                 out
                                             })],
@@ -911,12 +911,12 @@ out }));
                                         aws_smithy_types::Document,
                                     >::new();
                                     out.insert("name".to_string(), "sigv4".to_string().into());
-                                    out.insert("signingName".to_string(), "s3".to_string().into());
-                                    out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert(
                                         "signingRegion".to_string(),
                                         region.to_owned().into(),
                                     );
+                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                    out.insert("signingName".to_string(), "s3".to_string().into());
                                     out
                                 })],
                             )
@@ -957,16 +957,16 @@ out }));
                                                     "sigv4".to_string().into(),
                                                 );
                                                 out.insert(
-                                                    "signingName".to_string(),
-                                                    "s3".to_string().into(),
+                                                    "signingRegion".to_string(),
+                                                    region.to_owned().into(),
                                                 );
                                                 out.insert(
                                                     "disableDoubleEncoding".to_string(),
                                                     true.into(),
                                                 );
                                                 out.insert(
-                                                    "signingRegion".to_string(),
-                                                    region.to_owned().into(),
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
                                                 );
                                                 out
                                             })],
@@ -998,12 +998,12 @@ out }));
                                         aws_smithy_types::Document,
                                     >::new();
                                     out.insert("name".to_string(), "sigv4".to_string().into());
-                                    out.insert("signingName".to_string(), "s3".to_string().into());
-                                    out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert(
                                         "signingRegion".to_string(),
                                         region.to_owned().into(),
                                     );
+                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                    out.insert("signingName".to_string(), "s3".to_string().into());
                                     out
                                 })],
                             )
@@ -1044,16 +1044,16 @@ out }));
                                                     "sigv4".to_string().into(),
                                                 );
                                                 out.insert(
-                                                    "signingName".to_string(),
-                                                    "s3".to_string().into(),
+                                                    "signingRegion".to_string(),
+                                                    region.to_owned().into(),
                                                 );
                                                 out.insert(
                                                     "disableDoubleEncoding".to_string(),
                                                     true.into(),
                                                 );
                                                 out.insert(
-                                                    "signingRegion".to_string(),
-                                                    region.to_owned().into(),
+                                                    "signingName".to_string(),
+                                                    "s3".to_string().into(),
                                                 );
                                                 out
                                             })],
@@ -1085,12 +1085,12 @@ out }));
                                         aws_smithy_types::Document,
                                     >::new();
                                     out.insert("name".to_string(), "sigv4".to_string().into());
-                                    out.insert("signingName".to_string(), "s3".to_string().into());
-                                    out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert(
                                         "signingRegion".to_string(),
                                         region.to_owned().into(),
                                     );
+                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                    out.insert("signingName".to_string(), "s3".to_string().into());
                                     out
                                 })],
                             )

@@ -3072,11 +3072,11 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert("signingName".to_string(), "events".to_string().into());
                         out.insert(
                             "signingRegionSet".to_string(),
                             vec![aws_smithy_types::Document::from("*".to_string())].into(),
                         );
+                        out.insert("signingName".to_string(), "events".to_string().into());
                         out
                     })]
                 )
@@ -3193,11 +3193,11 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert("signingName".to_string(), "events".to_string().into());
                         out.insert(
                             "signingRegionSet".to_string(),
                             vec![aws_smithy_types::Document::from("*".to_string())].into(),
                         );
+                        out.insert("signingName".to_string(), "events".to_string().into());
                         out
                     })]
                 )
@@ -3230,11 +3230,11 @@ mod test {
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert("signingName".to_string(), "events".to_string().into());
                         out.insert(
                             "signingRegionSet".to_string(),
                             vec![aws_smithy_types::Document::from("*".to_string())].into(),
                         );
+                        out.insert("signingName".to_string(), "events".to_string().into());
                         out
                     })]
                 )
