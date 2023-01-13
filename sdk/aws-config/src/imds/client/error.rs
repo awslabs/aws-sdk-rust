@@ -5,7 +5,6 @@
 
 //! Error types for [`ImdsClient`](crate::imds::client::Client)
 
-use crate::profile::credentials::ProfileFileError;
 use aws_smithy_client::SdkError;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::endpoint::error::InvalidEndpointError;
@@ -178,9 +177,6 @@ enum BuildErrorKind {
     /// The endpoint mode was invalid
     InvalidEndpointMode(InvalidEndpointMode),
 
-    /// The AWS Profile (e.g. `~/.aws/config`) was invalid
-    InvalidProfile(ProfileFileError),
-
     /// The specified endpoint was not a valid URI
     InvalidEndpointUri(Box<dyn Error + Send + Sync + 'static>),
 }
@@ -195,12 +191,6 @@ impl BuildError {
     pub(super) fn invalid_endpoint_mode(source: InvalidEndpointMode) -> Self {
         Self {
             kind: BuildErrorKind::InvalidEndpointMode(source),
-        }
-    }
-
-    pub(super) fn invalid_profile(source: ProfileFileError) -> Self {
-        Self {
-            kind: BuildErrorKind::InvalidProfile(source),
         }
     }
 
@@ -219,7 +209,6 @@ impl fmt::Display for BuildError {
         write!(f, "failed to build IMDS client: ")?;
         match self.kind {
             InvalidEndpointMode(_) => write!(f, "invalid endpoint mode"),
-            InvalidProfile(_) => write!(f, "profile file error"),
             InvalidEndpointUri(_) => write!(f, "invalid URI"),
         }
     }
@@ -230,7 +219,6 @@ impl Error for BuildError {
         use BuildErrorKind::*;
         match &self.kind {
             InvalidEndpointMode(e) => Some(e),
-            InvalidProfile(e) => Some(e),
             InvalidEndpointUri(e) => Some(e.as_ref()),
         }
     }

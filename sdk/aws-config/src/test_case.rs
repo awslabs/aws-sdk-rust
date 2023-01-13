@@ -78,7 +78,7 @@ pub(crate) fn no_traffic_connector() -> DynConnector {
 }
 
 #[derive(Debug)]
-struct InstantSleep;
+pub(crate) struct InstantSleep;
 impl AsyncSleep for InstantSleep {
     fn sleep(&self, _duration: Duration) -> Sleep {
         Sleep::new(std::future::ready(()))
@@ -95,6 +95,7 @@ impl<T> GenericTestResult<T>
 where
     T: PartialEq + Debug,
 {
+    #[track_caller]
     pub(crate) fn assert_matches(&self, result: Result<impl Into<T>, impl Error>) {
         match (result, &self) {
             (Ok(actual), GenericTestResult::Ok(expected)) => {
@@ -247,6 +248,7 @@ impl TestEnvironment {
         }
     }
 
+    #[track_caller]
     fn check_results(&self, result: provider::Result) {
         self.metadata.result.assert_matches(result);
     }

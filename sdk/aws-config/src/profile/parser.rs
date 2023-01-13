@@ -9,9 +9,12 @@ use crate::profile::profile_file::ProfileFiles;
 use aws_types::os_shim_internal::{Env, Fs};
 use std::borrow::Cow;
 use std::collections::HashMap;
+use std::error::Error;
+use std::fmt::{Display, Formatter};
+use std::path::PathBuf;
+use std::sync::Arc;
 
 pub use self::parse::ProfileParseError;
-use super::credentials::ProfileFileError;
 
 mod normalize;
 mod parse;
@@ -56,8 +59,13 @@ pub async fn load(
     fs: &Fs,
     env: &Env,
     profile_files: &ProfileFiles,
-) -> Result<ProfileSet, ProfileFileError> {
-    let source = source::load(env, fs, profile_files).await?;
+    selected_profile_override: Option<Cow<'static, str>>,
+) -> Result<ProfileSet, ProfileFileLoadError> {
+    let mut source = source::load(env, fs, profile_files).await?;
+    if let Some(profile) = selected_profile_override {
+        source.profile = profile;
+    }
+
     Ok(ProfileSet::parse(source)?)
 }
 
@@ -69,17 +77,11 @@ pub struct ProfileSet {
 }
 
 impl ProfileSet {
-    #[doc(hidden)]
     /// Create a new Profile set directly from a HashMap
     ///
-    /// This method creates a ProfileSet directly from a hashmap with no normalization.
-    ///
-    /// ## Warning
-    ///
-    /// This is probably not what you want! In general, [`load`](load) should be used instead
-    /// because it will perform input normalization. However, for tests which operate on the
-    /// normalized profile, this method exists to facilitate easy construction of a ProfileSet
-    pub fn new(
+    /// This method creates a ProfileSet directly from a hashmap with no normalization for test purposes.
+    #[cfg(test)]
+    pub(crate) fn new(
         profiles: HashMap<String, HashMap<String, String>>,
         selected_profile: impl Into<Cow<'static, str>>,
     ) -> Self {
@@ -193,6 +195,53 @@ impl Property {
     pub fn new(key: String, value: String) -> Self {
         Property { key, value }
     }
+}
+
+/// Failed to read or parse the profile file(s)
+#[derive(Debug, Clone)]
+pub enum ProfileFileLoadError {
+    /// The profile could not be parsed
+    #[non_exhaustive]
+    ParseError(ProfileParseError),
+
+    /// Attempt to read the AWS config file (`~/.aws/config` by default) failed with a filesystem error.
+    #[non_exhaustive]
+    CouldNotReadFile(CouldNotReadProfileFile),
+}
+
+impl Display for ProfileFileLoadError {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        match self {
+            ProfileFileLoadError::ParseError(_err) => {
+                write!(f, "could not parse profile file")
+            }
+            ProfileFileLoadError::CouldNotReadFile(err) => {
+                write!(f, "could not read file `{}`", err.path.display())
+            }
+        }
+    }
+}
+
+impl Error for ProfileFileLoadError {
+    fn source(&self) -> Option<&(dyn Error + 'static)> {
+        match self {
+            ProfileFileLoadError::ParseError(err) => Some(err),
+            ProfileFileLoadError::CouldNotReadFile(details) => Some(&details.cause),
+        }
+    }
+}
+
+impl From<ProfileParseError> for ProfileFileLoadError {
+    fn from(err: ProfileParseError) -> Self {
+        ProfileFileLoadError::ParseError(err)
+    }
+}
+
+#[doc(hidden)]
+#[derive(Debug, Clone)]
+pub struct CouldNotReadProfileFile {
+    pub(crate) path: PathBuf,
+    pub(crate) cause: Arc<std::io::Error>,
 }
 
 #[cfg(test)]

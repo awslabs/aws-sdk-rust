@@ -7,9 +7,7 @@
 
 use super::profile_file::ProfileFiles;
 use crate::provider_config::ProviderConfig;
-use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::app_name::AppName;
-use aws_types::os_shim_internal::{Env, Fs};
 
 /// Loads an app name from a profile file
 ///
@@ -36,10 +34,7 @@ use aws_types::os_shim_internal::{Env, Fs};
 /// This provider is part of the [default app name provider chain](crate::default_provider::app_name).
 #[derive(Debug, Default)]
 pub struct ProfileFileAppNameProvider {
-    fs: Fs,
-    env: Env,
-    profile_override: Option<String>,
-    profile_files: ProfileFiles,
+    provider_config: ProviderConfig,
 }
 
 impl ProfileFileAppNameProvider {
@@ -48,10 +43,7 @@ impl ProfileFileAppNameProvider {
     /// To override the selected profile, set the `AWS_PROFILE` environment variable or use the [`Builder`].
     pub fn new() -> Self {
         Self {
-            fs: Fs::real(),
-            env: Env::real(),
-            profile_override: None,
-            profile_files: Default::default(),
+            provider_config: ProviderConfig::default(),
         }
     }
 
@@ -62,26 +54,14 @@ impl ProfileFileAppNameProvider {
 
     /// Parses the profile config and attempts to find an app name.
     pub async fn app_name(&self) -> Option<AppName> {
-        let profile = super::parser::load(&self.fs, &self.env, &self.profile_files)
-            .await
-            .map_err(
-                |err| tracing::warn!(err = %DisplayErrorContext(&err), "failed to parse profile"),
-            )
-            .ok()?;
-        let selected_profile_name = self
-            .profile_override
-            .as_deref()
-            .unwrap_or_else(|| profile.selected_profile());
-        let selected_profile = profile.get_profile(selected_profile_name)?;
-        selected_profile
-            .get("sdk-ua-app-id")
-            .and_then(|name| match AppName::new(name.to_owned()) {
-                Ok(app_name) => Some(app_name),
-                Err(err) => {
-                    tracing::warn!(err = %err, "`sdk-ua-app-id` property in profile `{}` was invalid", selected_profile_name);
-                    None
-                }
-            })
+        let app_id = self.provider_config.profile().await?.get("sdk-ua-app-id")?;
+        match AppName::new(app_id.to_owned()) {
+            Ok(app_name) => Some(app_name),
+            Err(err) => {
+                tracing::warn!(err = %err, "`sdk-ua-app-id` property `{}` was invalid", app_id);
+                None
+            }
+        }
     }
 }
 
@@ -108,12 +88,12 @@ impl Builder {
 
     /// Build a [ProfileFileAppNameProvider] from this builder
     pub fn build(self) -> ProfileFileAppNameProvider {
-        let conf = self.config.unwrap_or_default();
+        let conf = self
+            .config
+            .unwrap_or_default()
+            .with_profile_config(self.profile_files, self.profile_override);
         ProfileFileAppNameProvider {
-            env: conf.env(),
-            fs: conf.fs(),
-            profile_override: self.profile_override,
-            profile_files: self.profile_files.unwrap_or_default(),
+            provider_config: conf,
         }
     }
 }
@@ -187,7 +167,7 @@ mod tests {
                 .await
         );
         assert!(logs_contain(
-            "`sdk-ua-app-id` property in profile `default` was invalid"
+            "`sdk-ua-app-id` property `definitely invalid` was invalid"
         ));
     }
 }

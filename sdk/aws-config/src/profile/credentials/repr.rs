@@ -108,10 +108,9 @@ pub(super) struct RoleArn<'a> {
 }
 
 /// Resolve a ProfileChain from a ProfileSet or return an error
-pub(super) fn resolve_chain<'a>(
-    profile_set: &'a ProfileSet,
-    profile_override: Option<&str>,
-) -> Result<ProfileChain<'a>, ProfileFileError> {
+pub(super) fn resolve_chain(
+    profile_set: &ProfileSet,
+) -> Result<ProfileChain<'_>, ProfileFileError> {
     // If there are no profiles, allow flowing into the next provider
     if profile_set.is_empty() {
         return Err(ProfileFileError::NoProfilesDefined);
@@ -120,18 +119,14 @@ pub(super) fn resolve_chain<'a>(
     // If:
     // - There is no explicit profile override
     // - We're looking for the default profile (no configuration)
-    // - There is not default profile
+    // - There is no default profile
     // Then:
     // - Treat this situation as if no profiles were defined
-    if profile_override.is_none()
-        && profile_set.selected_profile() == "default"
-        && profile_set.get_profile("default").is_none()
-    {
+    if profile_set.selected_profile() == "default" && profile_set.get_profile("default").is_none() {
         tracing::debug!("No default profile defined");
         return Err(ProfileFileError::NoProfilesDefined);
     }
-    let mut source_profile_name =
-        profile_override.unwrap_or_else(|| profile_set.selected_profile());
+    let mut source_profile_name = profile_set.selected_profile();
     let mut visited_profiles = vec![];
     let mut chain = vec![];
     let base = loop {
@@ -435,7 +430,7 @@ mod tests {
 
     fn check(test_case: TestCase) {
         let source = ProfileSet::new(test_case.input.profile, test_case.input.selected_profile);
-        let actual = resolve_chain(&source, None);
+        let actual = resolve_chain(&source);
         let expected = test_case.output;
         match (expected, actual) {
             (TestOutput::Error(s), Err(e)) => assert!(

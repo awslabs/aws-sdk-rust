@@ -52,8 +52,9 @@ impl Builder {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
     use crate::provider_config::ProviderConfig;
-    use crate::test_case::no_traffic_connector;
+    use crate::test_case::{no_traffic_connector, InstantSleep};
     use aws_types::os_shim_internal::{Env, Fs};
 
     #[tokio::test]
@@ -74,6 +75,28 @@ mod tests {
             .await;
 
         assert_eq!(Some(AppName::new("correct").unwrap()), app_name);
+    }
+
+    // test that overriding profile_name on the root level is deprecated
+    #[tokio::test]
+    async fn profile_name_override() {
+        let fs = Fs::from_slice(&[("test_config", "[profile custom]\nsdk-ua-app-id = correct")]);
+        let conf = crate::from_env()
+            .configure(
+                ProviderConfig::empty()
+                    .with_fs(fs)
+                    .with_sleep(InstantSleep)
+                    .with_http_connector(no_traffic_connector()),
+            )
+            .profile_name("custom")
+            .profile_files(
+                ProfileFiles::builder()
+                    .with_file(ProfileFileKind::Config, "test_config")
+                    .build(),
+            )
+            .load()
+            .await;
+        assert_eq!(conf.app_name(), Some(&AppName::new("correct").unwrap()));
     }
 
     #[tokio::test]

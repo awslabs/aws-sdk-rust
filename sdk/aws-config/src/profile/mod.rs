@@ -16,7 +16,7 @@ mod parser;
 #[doc(inline)]
 pub use parser::ProfileParseError;
 #[doc(inline)]
-pub use parser::{load, Profile, ProfileSet, Property};
+pub use parser::{load, Profile, ProfileFileLoadError, ProfileSet, Property};
 
 pub mod app_name;
 pub mod credentials;

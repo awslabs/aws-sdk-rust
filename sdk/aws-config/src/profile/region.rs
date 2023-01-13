@@ -9,8 +9,6 @@ use crate::meta::region::{future, ProvideRegion};
 use crate::profile::profile_file::ProfileFiles;
 use crate::profile::ProfileSet;
 use crate::provider_config::ProviderConfig;
-use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::region::Region;
 
 /// Load a region from a profile file
@@ -39,10 +37,7 @@ use aws_types::region::Region;
 /// This provider is part of the [default region provider chain](crate::default_provider::region).
 #[derive(Debug, Default)]
 pub struct ProfileFileRegionProvider {
-    fs: Fs,
-    env: Env,
-    profile_override: Option<String>,
-    profile_files: ProfileFiles,
+    provider_config: ProviderConfig,
 }
 
 /// Builder for [ProfileFileRegionProvider]
@@ -74,12 +69,12 @@ impl Builder {
 
     /// Build a [ProfileFileRegionProvider] from this builder
     pub fn build(self) -> ProfileFileRegionProvider {
-        let conf = self.config.unwrap_or_default();
+        let conf = self
+            .config
+            .unwrap_or_default()
+            .with_profile_config(self.profile_files, self.profile_override);
         ProfileFileRegionProvider {
-            env: conf.env(),
-            fs: conf.fs(),
-            profile_override: self.profile_override,
-            profile_files: self.profile_files.unwrap_or_default(),
+            provider_config: conf,
         }
     }
 }
@@ -90,10 +85,7 @@ impl ProfileFileRegionProvider {
     /// To override the selected profile, set the `AWS_PROFILE` environment variable or use the [`Builder`].
     pub fn new() -> Self {
         Self {
-            fs: Fs::real(),
-            env: Env::real(),
-            profile_override: None,
-            profile_files: ProfileFiles::default(),
+            provider_config: ProviderConfig::default(),
         }
     }
 
@@ -103,26 +95,18 @@ impl ProfileFileRegionProvider {
     }
 
     async fn region(&self) -> Option<Region> {
-        let profile_set = super::parser::load(&self.fs, &self.env, &self.profile_files)
-            .await
-            .map_err(
-                |err| tracing::warn!(err = %DisplayErrorContext(&err), "failed to parse profile"),
-            )
-            .ok()?;
+        let profile_set = self.provider_config.profile().await?;
 
-        resolve_profile_chain_for_region(&profile_set, self.profile_override.as_deref())
+        resolve_profile_chain_for_region(profile_set)
     }
 }
 
-fn resolve_profile_chain_for_region(
-    profile_set: &'_ ProfileSet,
-    profile_override: Option<&str>,
-) -> Option<Region> {
+fn resolve_profile_chain_for_region(profile_set: &'_ ProfileSet) -> Option<Region> {
     if profile_set.is_empty() {
         return None;
     }
 
-    let mut selected_profile = profile_override.unwrap_or_else(|| profile_set.selected_profile());
+    let mut selected_profile = profile_set.selected_profile();
     let mut visited_profiles = vec![];
 
     loop {
