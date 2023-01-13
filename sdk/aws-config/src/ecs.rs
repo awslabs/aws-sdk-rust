@@ -52,7 +52,7 @@ use std::io;
 use std::net::IpAddr;
 
 use aws_smithy_client::erase::boxclone::BoxCloneService;
-use aws_smithy_http::endpoint::Endpoint;
+use aws_smithy_http::endpoint::apply_endpoint;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::credentials;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
@@ -190,10 +190,8 @@ impl Provider {
                 });
             }
         };
-        let endpoint =
-            Endpoint::immutable_uri(Uri::from_static(BASE_HOST)).expect("BASE_HOST is valid");
-        endpoint
-            .set_endpoint(&mut relative_uri, None)
+        let endpoint = Uri::from_static(BASE_HOST);
+        apply_endpoint(&mut relative_uri, &endpoint, None)
             .expect("appending relative URLs to the ECS endpoint should always succeed");
         Ok(relative_uri)
     }

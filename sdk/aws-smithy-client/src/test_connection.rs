@@ -116,6 +116,7 @@ pub struct ValidateRequest {
 impl ValidateRequest {
     pub fn assert_matches(&self, ignore_headers: &[HeaderName]) {
         let (actual, expected) = (&self.actual, &self.expected);
+        assert_eq!(actual.uri(), expected.uri());
         for (name, value) in expected.headers() {
             if !ignore_headers.contains(name) {
                 let actual_header = actual
@@ -146,7 +147,6 @@ impl ValidateRequest {
             (Ok(actual), Ok(expected)) => assert_ok(validate_body(actual, expected, media_type)),
             _ => assert_eq!(actual.body().bytes(), expected.body().bytes()),
         };
-        assert_eq!(actual.uri(), expected.uri());
     }
 }
 
@@ -201,6 +201,7 @@ impl<B> TestConnection<B> {
         self.requests.lock().unwrap()
     }
 
+    #[track_caller]
     pub fn assert_requests_match(&self, ignore_headers: &[HeaderName]) {
         for req in self.requests().iter() {
             req.assert_matches(ignore_headers)

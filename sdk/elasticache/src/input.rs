@@ -74,6 +74,23 @@ impl AddTagsToResourceInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddTagsToResourceInput,
@@ -116,6 +133,10 @@ impl AddTagsToResourceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -139,12 +160,6 @@ impl AddTagsToResourceInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -252,6 +267,23 @@ impl AuthorizeCacheSecurityGroupIngressInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AuthorizeCacheSecurityGroupIngressInput,
@@ -293,6 +325,10 @@ impl AuthorizeCacheSecurityGroupIngressInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -316,12 +352,6 @@ impl AuthorizeCacheSecurityGroupIngressInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -438,6 +468,23 @@ impl BatchApplyUpdateActionInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchApplyUpdateActionInput,
@@ -482,6 +529,10 @@ impl BatchApplyUpdateActionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -505,12 +556,6 @@ impl BatchApplyUpdateActionInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -627,6 +672,23 @@ impl BatchStopUpdateActionInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchStopUpdateActionInput,
@@ -671,6 +733,10 @@ impl BatchStopUpdateActionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -694,12 +760,6 @@ impl BatchStopUpdateActionInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -786,6 +846,23 @@ impl CompleteMigrationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CompleteMigrationInput,
@@ -828,6 +905,10 @@ impl CompleteMigrationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -851,12 +932,6 @@ impl CompleteMigrationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -996,6 +1071,23 @@ impl CopySnapshotInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CopySnapshotInput,
@@ -1038,6 +1130,10 @@ impl CopySnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -1061,12 +1157,6 @@ impl CopySnapshotInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1767,6 +1857,23 @@ impl CreateCacheClusterInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCacheClusterInput,
@@ -1809,6 +1916,10 @@ impl CreateCacheClusterInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -1832,12 +1943,6 @@ impl CreateCacheClusterInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1965,6 +2070,23 @@ impl CreateCacheParameterGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCacheParameterGroupInput,
@@ -2009,6 +2131,10 @@ impl CreateCacheParameterGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2032,12 +2158,6 @@ impl CreateCacheParameterGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2149,6 +2269,23 @@ impl CreateCacheSecurityGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCacheSecurityGroupInput,
@@ -2193,6 +2330,10 @@ impl CreateCacheSecurityGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2216,12 +2357,6 @@ impl CreateCacheSecurityGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2360,6 +2495,23 @@ impl CreateCacheSubnetGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCacheSubnetGroupInput,
@@ -2404,6 +2556,10 @@ impl CreateCacheSubnetGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2427,12 +2583,6 @@ impl CreateCacheSubnetGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2548,6 +2698,23 @@ impl CreateGlobalReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateGlobalReplicationGroupInput,
@@ -2589,6 +2756,10 @@ impl CreateGlobalReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2612,12 +2783,6 @@ impl CreateGlobalReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3456,6 +3621,23 @@ impl CreateReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateReplicationGroupInput,
@@ -3500,6 +3682,10 @@ impl CreateReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3523,12 +3709,6 @@ impl CreateReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3664,6 +3844,23 @@ impl CreateSnapshotInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateSnapshotInput,
@@ -3706,6 +3903,10 @@ impl CreateSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3729,12 +3930,6 @@ impl CreateSnapshotInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3912,6 +4107,23 @@ impl CreateUserInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateUserInput,
@@ -3954,6 +4166,10 @@ impl CreateUserInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3977,12 +4193,6 @@ impl CreateUserInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4109,6 +4319,23 @@ impl CreateUserGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateUserGroupInput,
@@ -4151,6 +4378,10 @@ impl CreateUserGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4174,12 +4405,6 @@ impl CreateUserGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4333,6 +4558,23 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput,
@@ -4374,6 +4616,10 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4397,12 +4643,6 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4563,6 +4803,23 @@ impl DecreaseReplicaCountInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DecreaseReplicaCountInput,
@@ -4607,6 +4864,10 @@ impl DecreaseReplicaCountInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4630,12 +4891,6 @@ impl DecreaseReplicaCountInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4725,6 +4980,23 @@ impl DeleteCacheClusterInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCacheClusterInput,
@@ -4767,6 +5039,10 @@ impl DeleteCacheClusterInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4790,12 +5066,6 @@ impl DeleteCacheClusterInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4874,6 +5144,23 @@ impl DeleteCacheParameterGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCacheParameterGroupInput,
@@ -4918,6 +5205,10 @@ impl DeleteCacheParameterGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4941,12 +5232,6 @@ impl DeleteCacheParameterGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5025,6 +5310,23 @@ impl DeleteCacheSecurityGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCacheSecurityGroupInput,
@@ -5069,6 +5371,10 @@ impl DeleteCacheSecurityGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5092,12 +5398,6 @@ impl DeleteCacheSecurityGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5174,6 +5474,23 @@ impl DeleteCacheSubnetGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCacheSubnetGroupInput,
@@ -5218,6 +5535,10 @@ impl DeleteCacheSubnetGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5241,12 +5562,6 @@ impl DeleteCacheSubnetGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5341,6 +5656,23 @@ impl DeleteGlobalReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGlobalReplicationGroupInput,
@@ -5382,6 +5714,10 @@ impl DeleteGlobalReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5405,12 +5741,6 @@ impl DeleteGlobalReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5512,6 +5842,23 @@ impl DeleteReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteReplicationGroupInput,
@@ -5556,6 +5903,10 @@ impl DeleteReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5579,12 +5930,6 @@ impl DeleteReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5657,6 +6002,23 @@ impl DeleteSnapshotInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSnapshotInput,
@@ -5699,6 +6061,10 @@ impl DeleteSnapshotInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5722,12 +6088,6 @@ impl DeleteSnapshotInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5797,6 +6157,23 @@ impl DeleteUserInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteUserInput,
@@ -5839,6 +6216,10 @@ impl DeleteUserInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5862,12 +6243,6 @@ impl DeleteUserInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5940,6 +6315,23 @@ impl DeleteUserGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteUserGroupInput,
@@ -5982,6 +6374,10 @@ impl DeleteUserGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6005,12 +6401,6 @@ impl DeleteUserGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6141,6 +6531,23 @@ impl DescribeCacheClustersInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCacheClustersInput,
@@ -6185,6 +6592,10 @@ impl DescribeCacheClustersInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6208,12 +6619,6 @@ impl DescribeCacheClustersInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6374,6 +6779,23 @@ impl DescribeCacheEngineVersionsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCacheEngineVersionsInput,
@@ -6415,6 +6837,10 @@ impl DescribeCacheEngineVersionsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6438,12 +6864,6 @@ impl DescribeCacheEngineVersionsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6546,6 +6966,23 @@ impl DescribeCacheParameterGroupsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCacheParameterGroupsInput,
@@ -6587,6 +7024,10 @@ impl DescribeCacheParameterGroupsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6610,12 +7051,6 @@ impl DescribeCacheParameterGroupsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6732,6 +7167,23 @@ impl DescribeCacheParametersInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCacheParametersInput,
@@ -6776,6 +7228,10 @@ impl DescribeCacheParametersInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6799,12 +7255,6 @@ impl DescribeCacheParametersInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6907,6 +7357,23 @@ impl DescribeCacheSecurityGroupsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCacheSecurityGroupsInput,
@@ -6948,6 +7415,10 @@ impl DescribeCacheSecurityGroupsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6971,12 +7442,6 @@ impl DescribeCacheSecurityGroupsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7079,6 +7544,23 @@ impl DescribeCacheSubnetGroupsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCacheSubnetGroupsInput,
@@ -7123,6 +7605,10 @@ impl DescribeCacheSubnetGroupsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7146,12 +7632,6 @@ impl DescribeCacheSubnetGroupsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7259,6 +7739,23 @@ impl DescribeEngineDefaultParametersInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEngineDefaultParametersInput,
@@ -7300,6 +7797,10 @@ impl DescribeEngineDefaultParametersInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7323,12 +7824,6 @@ impl DescribeEngineDefaultParametersInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7490,6 +7985,23 @@ impl DescribeEventsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEventsInput,
@@ -7532,6 +8044,10 @@ impl DescribeEventsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7555,12 +8071,6 @@ impl DescribeEventsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7674,6 +8184,23 @@ impl DescribeGlobalReplicationGroupsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGlobalReplicationGroupsInput,
@@ -7715,6 +8242,10 @@ impl DescribeGlobalReplicationGroupsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7738,12 +8269,6 @@ impl DescribeGlobalReplicationGroupsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7848,6 +8373,23 @@ impl DescribeReplicationGroupsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeReplicationGroupsInput,
@@ -7892,6 +8434,10 @@ impl DescribeReplicationGroupsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7915,12 +8461,6 @@ impl DescribeReplicationGroupsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8158,6 +8698,23 @@ impl DescribeReservedCacheNodesInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeReservedCacheNodesInput,
@@ -8199,6 +8756,10 @@ impl DescribeReservedCacheNodesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8222,12 +8783,6 @@ impl DescribeReservedCacheNodesInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8452,6 +9007,23 @@ impl DescribeReservedCacheNodesOfferingsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeReservedCacheNodesOfferingsInput,
@@ -8493,6 +9065,10 @@ impl DescribeReservedCacheNodesOfferingsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8516,12 +9092,6 @@ impl DescribeReservedCacheNodesOfferingsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8642,6 +9212,23 @@ impl DescribeServiceUpdatesInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeServiceUpdatesInput,
@@ -8686,6 +9273,10 @@ impl DescribeServiceUpdatesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8709,12 +9300,6 @@ impl DescribeServiceUpdatesInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8874,6 +9459,23 @@ impl DescribeSnapshotsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeSnapshotsInput,
@@ -8916,6 +9518,10 @@ impl DescribeSnapshotsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8939,12 +9545,6 @@ impl DescribeSnapshotsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9171,6 +9771,23 @@ impl DescribeUpdateActionsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeUpdateActionsInput,
@@ -9215,6 +9832,10 @@ impl DescribeUpdateActionsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9238,12 +9859,6 @@ impl DescribeUpdateActionsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9342,6 +9957,23 @@ impl DescribeUserGroupsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeUserGroupsInput,
@@ -9384,6 +10016,10 @@ impl DescribeUserGroupsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9407,12 +10043,6 @@ impl DescribeUserGroupsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9539,6 +10169,23 @@ impl DescribeUsersInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeUsersInput,
@@ -9581,6 +10228,10 @@ impl DescribeUsersInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9604,12 +10255,6 @@ impl DescribeUsersInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9717,6 +10362,23 @@ impl DisassociateGlobalReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateGlobalReplicationGroupInput,
@@ -9758,6 +10420,10 @@ impl DisassociateGlobalReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9781,12 +10447,6 @@ impl DisassociateGlobalReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9897,6 +10557,23 @@ impl FailoverGlobalReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::FailoverGlobalReplicationGroupInput,
@@ -9938,6 +10615,10 @@ impl FailoverGlobalReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9961,12 +10642,6 @@ impl FailoverGlobalReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10095,6 +10770,23 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput,
@@ -10136,6 +10828,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -10159,12 +10855,6 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10286,6 +10976,23 @@ impl IncreaseReplicaCountInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::IncreaseReplicaCountInput,
@@ -10330,6 +11037,10 @@ impl IncreaseReplicaCountInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -10353,12 +11064,6 @@ impl IncreaseReplicaCountInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10456,6 +11161,23 @@ impl ListAllowedNodeTypeModificationsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAllowedNodeTypeModificationsInput,
@@ -10497,6 +11219,10 @@ impl ListAllowedNodeTypeModificationsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -10520,12 +11246,6 @@ impl ListAllowedNodeTypeModificationsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10602,6 +11322,23 @@ impl ListTagsForResourceInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
@@ -10646,6 +11383,10 @@ impl ListTagsForResourceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -10669,12 +11410,6 @@ impl ListTagsForResourceInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11252,6 +11987,23 @@ impl ModifyCacheClusterInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyCacheClusterInput,
@@ -11294,6 +12046,10 @@ impl ModifyCacheClusterInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11317,12 +12073,6 @@ impl ModifyCacheClusterInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11419,6 +12169,23 @@ impl ModifyCacheParameterGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyCacheParameterGroupInput,
@@ -11463,6 +12230,10 @@ impl ModifyCacheParameterGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11486,12 +12257,6 @@ impl ModifyCacheParameterGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11609,6 +12374,23 @@ impl ModifyCacheSubnetGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyCacheSubnetGroupInput,
@@ -11653,6 +12435,10 @@ impl ModifyCacheSubnetGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11676,12 +12462,6 @@ impl ModifyCacheSubnetGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11846,6 +12626,23 @@ impl ModifyGlobalReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyGlobalReplicationGroupInput,
@@ -11887,6 +12684,10 @@ impl ModifyGlobalReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11910,12 +12711,6 @@ impl ModifyGlobalReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -12501,6 +13296,23 @@ impl ModifyReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyReplicationGroupInput,
@@ -12545,6 +13357,10 @@ impl ModifyReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12568,12 +13384,6 @@ impl ModifyReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -12749,6 +13559,23 @@ impl ModifyReplicationGroupShardConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyReplicationGroupShardConfigurationInput,
@@ -12790,6 +13617,10 @@ impl ModifyReplicationGroupShardConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12813,12 +13644,6 @@ impl ModifyReplicationGroupShardConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -12966,6 +13791,23 @@ impl ModifyUserInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyUserInput,
@@ -13008,6 +13850,10 @@ impl ModifyUserInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13031,12 +13877,6 @@ impl ModifyUserInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13151,6 +13991,23 @@ impl ModifyUserGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ModifyUserGroupInput,
@@ -13193,6 +14050,10 @@ impl ModifyUserGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13216,12 +14077,6 @@ impl ModifyUserGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13357,6 +14212,23 @@ impl PurchaseReservedCacheNodesOfferingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PurchaseReservedCacheNodesOfferingInput,
@@ -13398,6 +14270,10 @@ impl PurchaseReservedCacheNodesOfferingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13421,12 +14297,6 @@ impl PurchaseReservedCacheNodesOfferingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13516,6 +14386,23 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RebalanceSlotsInGlobalReplicationGroupInput,
@@ -13557,6 +14444,10 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13580,12 +14471,6 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13682,6 +14567,23 @@ impl RebootCacheClusterInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RebootCacheClusterInput,
@@ -13724,6 +14626,10 @@ impl RebootCacheClusterInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13747,12 +14653,6 @@ impl RebootCacheClusterInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13850,6 +14750,23 @@ impl RemoveTagsFromResourceInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveTagsFromResourceInput,
@@ -13894,6 +14811,10 @@ impl RemoveTagsFromResourceInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13917,12 +14838,6 @@ impl RemoveTagsFromResourceInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -14033,6 +14948,23 @@ impl ResetCacheParameterGroupInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ResetCacheParameterGroupInput,
@@ -14077,6 +15009,10 @@ impl ResetCacheParameterGroupInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14100,12 +15036,6 @@ impl ResetCacheParameterGroupInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -14213,6 +15143,23 @@ impl RevokeCacheSecurityGroupIngressInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RevokeCacheSecurityGroupIngressInput,
@@ -14254,6 +15201,10 @@ impl RevokeCacheSecurityGroupIngressInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14277,12 +15228,6 @@ impl RevokeCacheSecurityGroupIngressInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -14380,6 +15325,23 @@ impl StartMigrationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartMigrationInput,
@@ -14422,6 +15384,10 @@ impl StartMigrationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14445,12 +15411,6 @@ impl StartMigrationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -14538,6 +15498,23 @@ impl TestFailoverInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TestFailoverInput,
@@ -14580,6 +15557,10 @@ impl TestFailoverInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14603,12 +15584,6 @@ impl TestFailoverInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }

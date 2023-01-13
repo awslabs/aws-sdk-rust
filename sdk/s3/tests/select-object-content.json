@@ -4,7 +4,7 @@
     "action": {
       "Request": {
         "request": {
-          "uri": "https://s3.us-east-2.amazonaws.com/aws-rust-sdk/sample_data.csv?select&select-type=2&x-id=SelectObjectContent",
+          "uri": "https://aws-rust-sdk.s3.us-east-2.amazonaws.com/sample_data.csv?select&select-type=2&x-id=SelectObjectContent",
           "headers": {
             "x-amz-date": [
               "20211126T205841Z"

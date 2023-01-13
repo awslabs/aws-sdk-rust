@@ -149,6 +149,27 @@ impl CreateAccessPointInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAccessPointInput,
@@ -212,17 +233,10 @@ impl CreateAccessPointInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -247,12 +261,6 @@ impl CreateAccessPointInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -351,6 +359,26 @@ impl CreateAccessPointForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateAccessPointForObjectLambdaInput,
@@ -419,17 +447,10 @@ impl CreateAccessPointForObjectLambdaInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -454,12 +475,6 @@ impl CreateAccessPointForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -697,6 +712,26 @@ impl CreateBucketInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_outpost_id(self.outpost_id.clone())
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBucketInput,
@@ -762,6 +797,10 @@ impl CreateBucketInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -800,12 +839,6 @@ impl CreateBucketInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1016,6 +1049,26 @@ impl CreateJobInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
@@ -1062,17 +1115,10 @@ impl CreateJobInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -1097,12 +1143,6 @@ impl CreateJobInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1199,6 +1239,26 @@ impl CreateMultiRegionAccessPointInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
@@ -1247,17 +1307,10 @@ impl CreateMultiRegionAccessPointInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -1296,12 +1349,6 @@ impl CreateMultiRegionAccessPointInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1409,6 +1456,27 @@ impl DeleteAccessPointInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_access_point_name(self.name.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointInput,
@@ -1458,17 +1526,10 @@ impl DeleteAccessPointInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -1493,12 +1554,6 @@ impl DeleteAccessPointInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1582,6 +1637,26 @@ impl DeleteAccessPointForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointForObjectLambdaInput,
@@ -1637,17 +1712,10 @@ impl DeleteAccessPointForObjectLambdaInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -1672,12 +1740,6 @@ impl DeleteAccessPointForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1785,6 +1847,27 @@ impl DeleteAccessPointPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_access_point_name(self.name.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointPolicyInput,
@@ -1835,17 +1918,10 @@ impl DeleteAccessPointPolicyInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -1870,12 +1946,6 @@ impl DeleteAccessPointPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1959,6 +2029,26 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
@@ -2015,17 +2105,10 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2050,12 +2133,6 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2161,6 +2238,27 @@ impl DeleteBucketInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketInput,
@@ -2210,17 +2308,10 @@ impl DeleteBucketInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2245,12 +2336,6 @@ impl DeleteBucketInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2358,6 +2443,27 @@ impl DeleteBucketLifecycleConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketLifecycleConfigurationInput,
@@ -2413,17 +2519,10 @@ impl DeleteBucketLifecycleConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2448,12 +2547,6 @@ impl DeleteBucketLifecycleConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2561,6 +2654,27 @@ impl DeleteBucketPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketPolicyInput,
@@ -2610,17 +2724,10 @@ impl DeleteBucketPolicyInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2645,12 +2752,6 @@ impl DeleteBucketPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2758,6 +2859,27 @@ impl DeleteBucketTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketTaggingInput,
@@ -2811,17 +2933,10 @@ impl DeleteBucketTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2846,12 +2961,6 @@ impl DeleteBucketTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2935,6 +3044,26 @@ impl DeleteJobTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteJobTaggingInput,
@@ -2984,17 +3113,10 @@ impl DeleteJobTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3019,12 +3141,6 @@ impl DeleteJobTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3123,6 +3239,26 @@ impl DeleteMultiRegionAccessPointInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
@@ -3171,17 +3307,10 @@ impl DeleteMultiRegionAccessPointInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -3220,12 +3349,6 @@ impl DeleteMultiRegionAccessPointInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3297,6 +3420,26 @@ impl DeletePublicAccessBlockInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePublicAccessBlockInput,
@@ -3328,17 +3471,10 @@ impl DeletePublicAccessBlockInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3363,12 +3499,6 @@ impl DeletePublicAccessBlockInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3452,6 +3582,26 @@ impl DeleteStorageLensConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteStorageLensConfigurationInput,
@@ -3507,17 +3657,10 @@ impl DeleteStorageLensConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3542,12 +3685,6 @@ impl DeleteStorageLensConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3631,6 +3768,26 @@ impl DeleteStorageLensConfigurationTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteStorageLensConfigurationTaggingInput,
@@ -3687,17 +3844,10 @@ impl DeleteStorageLensConfigurationTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3722,12 +3872,6 @@ impl DeleteStorageLensConfigurationTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3809,6 +3953,26 @@ impl DescribeJobInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeJobInput,
@@ -3858,17 +4022,10 @@ impl DescribeJobInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3893,12 +4050,6 @@ impl DescribeJobInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3985,6 +4136,26 @@ impl DescribeMultiRegionAccessPointOperationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeMultiRegionAccessPointOperationInput,
@@ -4041,17 +4212,10 @@ impl DescribeMultiRegionAccessPointOperationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -4090,12 +4254,6 @@ impl DescribeMultiRegionAccessPointOperationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4201,6 +4359,27 @@ impl GetAccessPointInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_access_point_name(self.name.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointInput,
@@ -4250,17 +4429,10 @@ impl GetAccessPointInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4285,12 +4457,6 @@ impl GetAccessPointInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4376,6 +4542,26 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointConfigurationForObjectLambdaInput,
@@ -4429,17 +4615,10 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4464,12 +4643,6 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4554,6 +4727,26 @@ impl GetAccessPointForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointForObjectLambdaInput,
@@ -4609,17 +4802,10 @@ impl GetAccessPointForObjectLambdaInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4644,12 +4830,6 @@ impl GetAccessPointForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4757,6 +4937,27 @@ impl GetAccessPointPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_access_point_name(self.name.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointPolicyInput,
@@ -4807,17 +5008,10 @@ impl GetAccessPointPolicyInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4842,12 +5036,6 @@ impl GetAccessPointPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4931,6 +5119,26 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointPolicyForObjectLambdaInput,
@@ -4987,17 +5195,10 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5022,12 +5223,6 @@ impl GetAccessPointPolicyForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5111,6 +5306,27 @@ impl GetAccessPointPolicyStatusInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_access_point_name(self.name.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointPolicyStatusInput,
@@ -5165,17 +5381,10 @@ impl GetAccessPointPolicyStatusInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5200,12 +5409,6 @@ impl GetAccessPointPolicyStatusInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5291,6 +5494,26 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
@@ -5344,17 +5567,10 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5379,12 +5595,6 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5491,6 +5701,27 @@ impl GetBucketInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketInput,
@@ -5540,17 +5771,10 @@ impl GetBucketInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5575,12 +5799,6 @@ impl GetBucketInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5686,6 +5904,27 @@ impl GetBucketLifecycleConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketLifecycleConfigurationInput,
@@ -5741,17 +5980,10 @@ impl GetBucketLifecycleConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5776,12 +6008,6 @@ impl GetBucketLifecycleConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5887,6 +6113,27 @@ impl GetBucketPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketPolicyInput,
@@ -5936,17 +6183,10 @@ impl GetBucketPolicyInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5971,12 +6211,6 @@ impl GetBucketPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6084,6 +6318,27 @@ impl GetBucketTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketTaggingInput,
@@ -6137,17 +6392,10 @@ impl GetBucketTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6172,12 +6420,6 @@ impl GetBucketTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6261,6 +6503,24 @@ impl GetBucketVersioningInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketVersioningInput,
@@ -6314,17 +6574,10 @@ impl GetBucketVersioningInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6349,12 +6602,6 @@ impl GetBucketVersioningInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6436,6 +6683,26 @@ impl GetJobTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetJobTaggingInput,
@@ -6485,17 +6752,10 @@ impl GetJobTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6520,12 +6780,6 @@ impl GetJobTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6609,6 +6863,26 @@ impl GetMultiRegionAccessPointInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMultiRegionAccessPointInput,
@@ -6659,17 +6933,10 @@ impl GetMultiRegionAccessPointInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -6708,12 +6975,6 @@ impl GetMultiRegionAccessPointInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6797,6 +7058,26 @@ impl GetMultiRegionAccessPointPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMultiRegionAccessPointPolicyInput,
@@ -6852,17 +7133,10 @@ impl GetMultiRegionAccessPointPolicyInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -6901,12 +7175,6 @@ impl GetMultiRegionAccessPointPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6990,6 +7258,26 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMultiRegionAccessPointPolicyStatusInput,
@@ -7046,17 +7334,10 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -7095,12 +7376,6 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7184,6 +7459,26 @@ impl GetMultiRegionAccessPointRoutesInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMultiRegionAccessPointRoutesInput,
@@ -7239,17 +7534,10 @@ impl GetMultiRegionAccessPointRoutesInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -7288,12 +7576,6 @@ impl GetMultiRegionAccessPointRoutesInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7365,6 +7647,26 @@ impl GetPublicAccessBlockInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPublicAccessBlockInput,
@@ -7396,17 +7698,10 @@ impl GetPublicAccessBlockInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7431,12 +7726,6 @@ impl GetPublicAccessBlockInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7520,6 +7809,26 @@ impl GetStorageLensConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetStorageLensConfigurationInput,
@@ -7574,17 +7883,10 @@ impl GetStorageLensConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7609,12 +7911,6 @@ impl GetStorageLensConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7698,6 +7994,26 @@ impl GetStorageLensConfigurationTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetStorageLensConfigurationTaggingInput,
@@ -7754,17 +8070,10 @@ impl GetStorageLensConfigurationTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7789,12 +8098,6 @@ impl GetStorageLensConfigurationTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7926,6 +8229,27 @@ impl ListAccessPointsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAccessPointsInput,
@@ -7979,17 +8303,10 @@ impl ListAccessPointsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8014,12 +8331,6 @@ impl ListAccessPointsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8115,6 +8426,26 @@ impl ListAccessPointsForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAccessPointsForObjectLambdaInput,
@@ -8166,17 +8497,10 @@ impl ListAccessPointsForObjectLambdaInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8201,12 +8525,6 @@ impl ListAccessPointsForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8321,6 +8639,26 @@ impl ListJobsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListJobsInput,
@@ -8381,17 +8719,10 @@ impl ListJobsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8416,12 +8747,6 @@ impl ListJobsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8515,6 +8840,26 @@ impl ListMultiRegionAccessPointsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMultiRegionAccessPointsInput,
@@ -8564,17 +8909,10 @@ impl ListMultiRegionAccessPointsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -8613,12 +8951,6 @@ impl ListMultiRegionAccessPointsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8730,6 +9062,27 @@ impl ListRegionalBucketsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_outpost_id(self.outpost_id.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRegionalBucketsInput,
@@ -8778,17 +9131,10 @@ impl ListRegionalBucketsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8813,12 +9159,6 @@ impl ListRegionalBucketsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8902,6 +9242,26 @@ impl ListStorageLensConfigurationsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListStorageLensConfigurationsInput,
@@ -8946,17 +9306,10 @@ impl ListStorageLensConfigurationsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8981,12 +9334,6 @@ impl ListStorageLensConfigurationsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9087,6 +9434,26 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
@@ -9153,17 +9520,10 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9188,12 +9548,6 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9314,6 +9668,27 @@ impl PutAccessPointPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_access_point_name(self.name.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccessPointPolicyInput,
@@ -9380,17 +9755,10 @@ impl PutAccessPointPolicyInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9415,12 +9783,6 @@ impl PutAccessPointPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9516,6 +9878,26 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
@@ -9585,17 +9967,10 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9620,12 +9995,6 @@ impl PutAccessPointPolicyForObjectLambdaInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9728,6 +10097,27 @@ impl PutBucketLifecycleConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
@@ -9799,17 +10189,10 @@ impl PutBucketLifecycleConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -9848,12 +10231,6 @@ impl PutBucketLifecycleConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9992,6 +10369,27 @@ impl PutBucketPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketPolicyInput,
@@ -10055,17 +10453,10 @@ impl PutBucketPolicyInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -10104,12 +10495,6 @@ impl PutBucketPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10229,6 +10614,27 @@ impl PutBucketTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketTaggingInput,
@@ -10296,17 +10702,10 @@ impl PutBucketTaggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -10345,12 +10744,6 @@ impl PutBucketTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10465,6 +10858,24 @@ impl PutBucketVersioningInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketVersioningInput,
@@ -10534,17 +10945,10 @@ impl PutBucketVersioningInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -10583,12 +10987,6 @@ impl PutBucketVersioningInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10691,6 +11089,26 @@ impl PutJobTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutJobTaggingInput,
@@ -10754,17 +11172,10 @@ impl PutJobTaggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -10789,12 +11200,6 @@ impl PutJobTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10896,6 +11301,26 @@ impl PutMultiRegionAccessPointPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
@@ -10944,17 +11369,10 @@ impl PutMultiRegionAccessPointPolicyInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -10993,12 +11411,6 @@ impl PutMultiRegionAccessPointPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11089,6 +11501,26 @@ impl PutPublicAccessBlockInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPublicAccessBlockInput,
@@ -11136,17 +11568,10 @@ impl PutPublicAccessBlockInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11171,12 +11596,6 @@ impl PutPublicAccessBlockInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11304,6 +11723,26 @@ impl PutStorageLensConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutStorageLensConfigurationInput,
@@ -11371,17 +11810,10 @@ impl PutStorageLensConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11406,12 +11838,6 @@ impl PutStorageLensConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11520,6 +11946,26 @@ impl PutStorageLensConfigurationTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutStorageLensConfigurationTaggingInput,
@@ -11589,17 +12035,10 @@ impl PutStorageLensConfigurationTaggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11624,12 +12063,6 @@ impl PutStorageLensConfigurationTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11735,6 +12168,26 @@ impl SubmitMultiRegionAccessPointRoutesInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SubmitMultiRegionAccessPointRoutesInput,
@@ -11804,17 +12257,10 @@ impl SubmitMultiRegionAccessPointRoutesInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request = request.augment(|mut req, _| {
             let data = req
                 .body()
@@ -11853,12 +12299,6 @@ impl SubmitMultiRegionAccessPointRoutesInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11954,6 +12394,26 @@ impl UpdateJobPriorityInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateJobPriorityInput,
@@ -12016,17 +12476,10 @@ impl UpdateJobPriorityInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12051,12 +12504,6 @@ impl UpdateJobPriorityInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -12168,6 +12615,26 @@ impl UpdateJobStatusInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_use_arn_region(_config.use_arn_region)
+            .set_requires_account_id(Some(true))
+            .set_account_id(self.account_id.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateJobStatusInput,
@@ -12244,17 +12711,10 @@ impl UpdateJobStatusInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        let endpoint_prefix = {
-            let account_id = self.account_id.as_deref().unwrap_or_default();
-            if account_id.is_empty() {
-                return Err(aws_smithy_http::operation::error::BuildError::invalid_field("account_id", "account_id was unset or empty but must be set as part of the endpoint prefix"));
-            }
-            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
-                "{AccountId}.",
-                AccountId = account_id
-            ))
-        }?;
-        request.properties_mut().insert(endpoint_prefix);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12279,12 +12739,6 @@ impl UpdateJobStatusInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }

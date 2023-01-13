@@ -6,7 +6,10 @@
 use aws_sdk_iam::{Credentials, Region};
 use aws_smithy_client::test_connection::capture_request;
 
+// this test is ignored because pseudoregions have been removed. This test should be re-enabled
+// once FIPS support is added in aws-config
 #[tokio::test]
+#[ignore]
 async fn correct_endpoint_resolver() {
     let (conn, request) = capture_request(None);
     let conf = aws_sdk_iam::Config::builder()

@@ -174,6 +174,7 @@ mod loader {
         app_name: Option<AppName>,
         credentials_provider: Option<SharedCredentialsProvider>,
         endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
+        endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
         retry_config: Option<RetryConfig>,
         sleep: Option<Arc<dyn AsyncSleep>>,
@@ -315,6 +316,8 @@ mod loader {
 
         /// Override the endpoint resolver used for **all** AWS Services
         ///
+        /// This method is deprecated. Use [`Self::endpoint_url`] instead.
+        ///
         /// This method will override the endpoint resolver used for **all** AWS services. This mainly
         /// exists to set a static endpoint for tools like `LocalStack`. For live traffic, AWS services
         /// require the service-specific endpoint resolver they load by default.
@@ -332,11 +335,36 @@ mod loader {
         ///     .await;
         /// # Ok(())
         /// # }
+        #[deprecated(note = "use `.endpoint_url(...)` instead")]
         pub fn endpoint_resolver(
             mut self,
             endpoint_resolver: impl ResolveAwsEndpoint + 'static,
         ) -> Self {
             self.endpoint_resolver = Some(Arc::new(endpoint_resolver));
+            self
+        }
+
+        /// Override the endpoint URL used for **all** AWS services.
+        ///
+        /// This method will override the endpoint URL used for **all** AWS services. This primarily
+        /// exists to set a static endpoint for tools like `LocalStack`. When sending requests to
+        /// production AWS services, this method should only be used for service-specific behavior.
+        ///
+        /// When this method is used, the [`Region`](aws_types::region::Region) is only used for
+        /// signing; it is not used to route the request.
+        ///
+        /// # Examples
+        ///
+        /// Use a static endpoint for all services
+        /// ```no_run
+        /// # async fn create_config() {
+        /// let sdk_config = aws_config::from_env()
+        ///     .endpoint_url("http://localhost:1234")
+        ///     .load()
+        ///     .await;
+        /// # }
+        pub fn endpoint_url(mut self, endpoint_url: impl Into<String>) -> Self {
+            self.endpoint_url = Some(endpoint_url.into());
             self
         }
 
@@ -458,6 +486,7 @@ mod loader {
             builder.set_endpoint_resolver(endpoint_resolver);
             builder.set_app_name(app_name);
             builder.set_sleep_impl(sleep_impl);
+            builder.set_endpoint_url(self.endpoint_url);
             builder.build()
         }
     }

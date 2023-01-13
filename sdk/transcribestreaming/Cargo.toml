@@ -69,11 +69,17 @@ version = "0.2.0"
 version = "0.14.12"
 features = ["stream"]
 
+[dependencies.regex]
+version = "1.5.5"
+
 [dependencies.tower]
 version = "0.4"
 
 [dependencies.tracing]
 version = "0.1"
+
+[dependencies.url]
+version = "2.3.1"
 [dev-dependencies.async-stream]
 version = "0.3.0"
 

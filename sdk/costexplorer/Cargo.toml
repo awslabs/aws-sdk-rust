@@ -59,6 +59,9 @@ version = "1.0.0"
 [dependencies.http]
 version = "0.2.0"
 
+[dependencies.regex]
+version = "1.5.5"
+
 [dependencies.tokio-stream]
 version = "0.1.7"
 

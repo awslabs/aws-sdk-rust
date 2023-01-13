@@ -23,7 +23,7 @@ use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_client::retry;
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::endpoint::Endpoint;
+use aws_smithy_http::endpoint::apply_endpoint;
 use aws_smithy_http::middleware::AsyncMapRequest;
 use aws_smithy_http::operation;
 use aws_smithy_http::operation::Operation;
@@ -66,7 +66,7 @@ pub(super) struct TokenMiddleware {
     token_parser: GetTokenResponseHandler,
     token: ExpiringCache<Token, ImdsError>,
     time_source: TimeSource,
-    endpoint: Endpoint,
+    endpoint: Uri,
     token_ttl: Duration,
 }
 
@@ -80,7 +80,7 @@ impl TokenMiddleware {
     pub(super) fn new(
         connector: DynConnector,
         time_source: TimeSource,
-        endpoint: Endpoint,
+        endpoint: Uri,
         token_ttl: Duration,
         retry_config: retry::Config,
         timeout_config: TimeoutConfig,
@@ -128,9 +128,7 @@ impl TokenMiddleware {
 
     async fn get_token(&self) -> Result<(Token, SystemTime), ImdsError> {
         let mut uri = Uri::from_static("/latest/api/token");
-        self.endpoint
-            .set_endpoint(&mut uri, None)
-            .map_err(ImdsError::unexpected)?;
+        apply_endpoint(&mut uri, &self.endpoint, None).map_err(ImdsError::unexpected)?;
         let request = http::Request::builder()
             .header(
                 X_AWS_EC2_METADATA_TOKEN_TTL_SECONDS,

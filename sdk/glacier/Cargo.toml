@@ -65,6 +65,9 @@ version = "0.4.3"
 [dependencies.http]
 version = "0.2.0"
 
+[dependencies.regex]
+version = "1.5.5"
+
 [dependencies.ring]
 version = "0.16.0"
 
@@ -76,6 +79,9 @@ version = "0.4"
 
 [dependencies.tracing]
 version = "0.1"
+
+[dependencies.url]
+version = "2.3.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 version = "0.52.0"

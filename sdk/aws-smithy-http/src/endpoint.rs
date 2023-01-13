@@ -21,17 +21,35 @@ pub trait ResolveEndpoint<Params>: Send + Sync {
     fn resolve_endpoint(&self, params: &Params) -> Result;
 }
 
-// TODO(endpoints 2.0): when `endpoint_url` is added, deprecate & delete `Endpoint`
+impl<T> ResolveEndpoint<T> for &'static str {
+    fn resolve_endpoint(&self, _params: &T) -> Result {
+        Ok(aws_smithy_types::endpoint::Endpoint::builder()
+            .url(*self)
+            .build())
+    }
+}
+
 /// API Endpoint
 ///
 /// This implements an API endpoint as specified in the
 /// [Smithy Endpoint Specification](https://awslabs.github.io/smithy/1.0/spec/core/endpoint-traits.html)
 #[derive(Clone, Debug)]
+#[deprecated(note = "Use `.endpoint_url(...)` directly instead")]
 pub struct Endpoint {
     uri: http::Uri,
 
     /// If true, endpointPrefix does ignored when setting the endpoint on a request
     immutable: bool,
+}
+
+#[allow(deprecated)]
+/// This allows customers that use `Endpoint` to override the endpoint to continue to do so
+impl<T> ResolveEndpoint<T> for Endpoint {
+    fn resolve_endpoint(&self, _params: &T) -> Result {
+        Ok(aws_smithy_types::endpoint::Endpoint::builder()
+            .url(self.uri.to_string())
+            .build())
+    }
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -57,9 +75,6 @@ impl EndpointPrefix {
 /// Apply `endpoint` to `uri`
 ///
 /// This method mutates `uri` by setting the `endpoint` on it
-///
-/// # Panics
-/// This method panics if `uri` does not have a scheme
 pub fn apply_endpoint(
     uri: &mut Uri,
     endpoint: &Uri,
@@ -84,13 +99,14 @@ pub fn apply_endpoint(
     let new_uri = Uri::builder()
         .authority(authority)
         .scheme(scheme.clone())
-        .path_and_query(Endpoint::merge_paths(endpoint, uri).as_ref())
+        .path_and_query(merge_paths(endpoint, uri).as_ref())
         .build()
         .map_err(InvalidEndpointError::failed_to_construct_uri)?;
     *uri = new_uri;
     Ok(())
 }
 
+#[allow(deprecated)]
 impl Endpoint {
     /// Create a new endpoint from a URI
     ///
@@ -177,26 +193,27 @@ impl Endpoint {
             Ok(endpoint)
         }
     }
+}
 
-    fn merge_paths<'a>(endpoint: &'a Uri, uri: &'a Uri) -> Cow<'a, str> {
-        if let Some(query) = endpoint.path_and_query().and_then(|pq| pq.query()) {
-            tracing::warn!(query = %query, "query specified in endpoint will be ignored during endpoint resolution");
-        }
-        let endpoint_path = endpoint.path();
-        let uri_path_and_query = uri.path_and_query().map(|pq| pq.as_str()).unwrap_or("");
-        if endpoint_path.is_empty() {
-            Cow::Borrowed(uri_path_and_query)
-        } else {
-            let ep_no_slash = endpoint_path.strip_suffix('/').unwrap_or(endpoint_path);
-            let uri_path_no_slash = uri_path_and_query
-                .strip_prefix('/')
-                .unwrap_or(uri_path_and_query);
-            Cow::Owned(format!("{}/{}", ep_no_slash, uri_path_no_slash))
-        }
+fn merge_paths<'a>(endpoint: &'a Uri, uri: &'a Uri) -> Cow<'a, str> {
+    if let Some(query) = endpoint.path_and_query().and_then(|pq| pq.query()) {
+        tracing::warn!(query = %query, "query specified in endpoint will be ignored during endpoint resolution");
+    }
+    let endpoint_path = endpoint.path();
+    let uri_path_and_query = uri.path_and_query().map(|pq| pq.as_str()).unwrap_or("");
+    if endpoint_path.is_empty() {
+        Cow::Borrowed(uri_path_and_query)
+    } else {
+        let ep_no_slash = endpoint_path.strip_suffix('/').unwrap_or(endpoint_path);
+        let uri_path_no_slash = uri_path_and_query
+            .strip_prefix('/')
+            .unwrap_or(uri_path_and_query);
+        Cow::Owned(format!("{}/{}", ep_no_slash, uri_path_no_slash))
     }
 }
 
 #[cfg(test)]
+#[allow(deprecated)]
 mod test {
     use crate::endpoint::error::{InvalidEndpointError, InvalidEndpointErrorKind};
     use crate::endpoint::{Endpoint, EndpointPrefix};

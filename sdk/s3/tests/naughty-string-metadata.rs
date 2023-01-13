@@ -63,8 +63,11 @@ async fn test_s3_signer_with_naughty_string_metadata() {
         .region(Region::new("us-east-1"))
         .http_connector(conn.clone())
         .build();
+    let config = aws_sdk_s3::config::Builder::from(&sdk_config)
+        .force_path_style(true)
+        .build();
 
-    let client = Client::new(&sdk_config);
+    let client = Client::from_conf(config);
     let mut builder = client
         .put_object()
         .bucket("test-bucket")

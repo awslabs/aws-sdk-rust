@@ -8,6 +8,7 @@ use aws_sdk_s3::{model::ObjectAttributes, Client, Credentials, Region};
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
 use aws_types::{credentials::SharedCredentialsProvider, SdkConfig};
+use http::header::AUTHORIZATION;
 use std::{
     convert::Infallible,
     time::{Duration, UNIX_EPOCH},
@@ -25,7 +26,7 @@ async fn ignore_invalid_xml_body_root() {
              .header("authorization", "AWS4-HMAC-SHA256 Credential=ANOTREAL/20210618/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-object-attributes;x-amz-security-token;x-amz-user-agent, Signature=0e6ec749db5a0af07890a83f553319eda95be0e498d058c64880471a474c5378")
              .header("x-amz-content-sha256", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
              .header("x-amz-security-token", "notarealsessiontoken")
-             .uri(http::Uri::from_static("https://s3.us-east-1.amazonaws.com/some-test-bucket/test.txt?attributes"))
+             .uri(http::Uri::from_static("https://some-test-bucket.s3.us-east-1.amazonaws.com/test.txt?attributes"))
              .body(SdkBody::empty())
              .unwrap(),
          http::Response::builder()
@@ -76,5 +77,5 @@ async fn ignore_invalid_xml_body_root() {
         .await
         .unwrap();
 
-    conn.assert_requests_match(&[]);
+    conn.assert_requests_match(&[AUTHORIZATION]);
 }

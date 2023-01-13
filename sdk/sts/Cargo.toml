@@ -41,6 +41,10 @@ version = "0.52.0"
 path = "../aws-smithy-http-tower"
 version = "0.52.0"
 
+[dependencies.aws-smithy-json]
+path = "../aws-smithy-json"
+version = "0.52.0"
+
 [dependencies.aws-smithy-query]
 path = "../aws-smithy-query"
 version = "0.52.0"
@@ -63,11 +67,17 @@ version = "1.0.0"
 [dependencies.http]
 version = "0.2.0"
 
+[dependencies.regex]
+version = "1.5.5"
+
 [dependencies.tower]
 version = "0.4"
 
 [dependencies.tracing]
 version = "0.1"
+
+[dependencies.url]
+version = "2.3.1"
 [dev-dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 features = ["test-util"]

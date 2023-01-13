@@ -4,6 +4,7 @@
  */
 
 //! AWS SDK endpoint support.
+#![allow(deprecated)]
 
 use crate::region::{Region, SigningRegion};
 use crate::SigningService;

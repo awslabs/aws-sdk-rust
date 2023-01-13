@@ -106,39 +106,42 @@ impl AbortMultipartUploadInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AbortMultipartUploadInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_1 = &_input.bucket;
+                let input_1 = &_input.key;
                 let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_2 = &_input.key;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_2,
+                    input_1,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -149,8 +152,7 @@ impl AbortMultipartUploadInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -159,14 +161,14 @@ impl AbortMultipartUploadInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "AbortMultipartUpload");
-                let inner_3 = &_input.upload_id;
-                let inner_3 = inner_3.as_ref().ok_or_else(|| {
+                let inner_2 = &_input.upload_id;
+                let inner_2 = inner_2.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_3.is_empty() {
+                if inner_2.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "upload_id",
@@ -174,7 +176,7 @@ impl AbortMultipartUploadInput {
                         ),
                     );
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_2));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -200,6 +202,10 @@ impl AbortMultipartUploadInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -226,12 +232,6 @@ impl AbortMultipartUploadInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -500,39 +500,42 @@ impl CompleteMultipartUploadInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CompleteMultipartUploadInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_4 = &_input.bucket;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_5 = &_input.key;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
+                let input_3 = &_input.key;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_5,
+                    input_3,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -543,8 +546,7 @@ impl CompleteMultipartUploadInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -553,14 +555,14 @@ impl CompleteMultipartUploadInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "CompleteMultipartUpload");
-                let inner_6 = &_input.upload_id;
-                let inner_6 = inner_6.as_ref().ok_or_else(|| {
+                let inner_4 = &_input.upload_id;
+                let inner_4 = inner_4.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_6.is_empty() {
+                if inner_4.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "upload_id",
@@ -568,7 +570,7 @@ impl CompleteMultipartUploadInput {
                         ),
                     );
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_4));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -610,6 +612,10 @@ impl CompleteMultipartUploadInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -636,12 +642,6 @@ impl CompleteMultipartUploadInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1472,39 +1472,42 @@ impl CopyObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CopyObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_7 = &_input.bucket;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_7,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_8 = &_input.key;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
+                let input_5 = &_input.key;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_8,
+                    input_5,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -1515,8 +1518,7 @@ impl CopyObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -1549,6 +1551,10 @@ impl CopyObjectInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -1575,12 +1581,6 @@ impl CopyObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -1793,31 +1793,35 @@ impl CreateBucketInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_disable_access_points(Some(true))
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBucketInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_9 = &_input.bucket;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_9,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -1857,6 +1861,10 @@ impl CreateBucketInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -1883,12 +1891,6 @@ impl CreateBucketInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2459,39 +2461,42 @@ impl CreateMultipartUploadInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateMultipartUploadInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_10 = &_input.bucket;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_10,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_11 = &_input.key;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
+                let input_6 = &_input.key;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_11,
+                    input_6,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -2502,8 +2507,7 @@ impl CreateMultipartUploadInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -2538,6 +2542,10 @@ impl CreateMultipartUploadInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2564,12 +2572,6 @@ impl CreateMultipartUploadInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2654,31 +2656,34 @@ impl DeleteBucketInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_12 = &_input.bucket;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_12,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2702,6 +2707,10 @@ impl DeleteBucketInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2728,12 +2737,6 @@ impl DeleteBucketInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -2832,31 +2835,34 @@ impl DeleteBucketAnalyticsConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketAnalyticsConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_13 = &_input.bucket;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_13,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -2865,14 +2871,14 @@ impl DeleteBucketAnalyticsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
-                let inner_14 = &_input.id;
-                let inner_14 = inner_14.as_ref().ok_or_else(|| {
+                let inner_7 = &_input.id;
+                let inner_7 = inner_7.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_14.is_empty() {
+                if inner_7.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -2880,7 +2886,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_14));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_7));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -2907,6 +2913,10 @@ impl DeleteBucketAnalyticsConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -2933,12 +2943,6 @@ impl DeleteBucketAnalyticsConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3025,31 +3029,34 @@ impl DeleteBucketCorsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketCorsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_15 = &_input.bucket;
-                let input_15 = input_15.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_15,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -3082,6 +3089,10 @@ impl DeleteBucketCorsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3108,12 +3119,6 @@ impl DeleteBucketCorsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3200,31 +3205,34 @@ impl DeleteBucketEncryptionInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketEncryptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_16 = &_input.bucket;
-                let input_16 = input_16.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_16,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -3258,6 +3266,10 @@ impl DeleteBucketEncryptionInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3284,12 +3296,6 @@ impl DeleteBucketEncryptionInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3375,31 +3381,34 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketIntelligentTieringConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_17 = &_input.bucket;
-                let input_17 = input_17.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_17,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -3408,14 +3417,14 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
-                let inner_18 = &_input.id;
-                let inner_18 = inner_18.as_ref().ok_or_else(|| {
+                let inner_8 = &_input.id;
+                let inner_8 = inner_8.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_18.is_empty() {
+                if inner_8.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -3423,7 +3432,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_18));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_8));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3447,6 +3456,10 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3473,12 +3486,6 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3578,31 +3585,34 @@ impl DeleteBucketInventoryConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketInventoryConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_19 = &_input.bucket;
-                let input_19 = input_19.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_19,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -3611,14 +3621,14 @@ impl DeleteBucketInventoryConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
-                let inner_20 = &_input.id;
-                let inner_20 = inner_20.as_ref().ok_or_else(|| {
+                let inner_9 = &_input.id;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_20.is_empty() {
+                if inner_9.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -3626,7 +3636,7 @@ impl DeleteBucketInventoryConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_20));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_9));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -3653,6 +3663,10 @@ impl DeleteBucketInventoryConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3679,12 +3693,6 @@ impl DeleteBucketInventoryConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3771,31 +3779,34 @@ impl DeleteBucketLifecycleInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketLifecycleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_21 = &_input.bucket;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_21,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -3829,6 +3840,10 @@ impl DeleteBucketLifecycleInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -3855,12 +3870,6 @@ impl DeleteBucketLifecycleInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -3959,31 +3968,34 @@ impl DeleteBucketMetricsConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketMetricsConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_22 = &_input.bucket;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_22,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -3992,14 +4004,14 @@ impl DeleteBucketMetricsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
-                let inner_23 = &_input.id;
-                let inner_23 = inner_23.as_ref().ok_or_else(|| {
+                let inner_10 = &_input.id;
+                let inner_10 = inner_10.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_23.is_empty() {
+                if inner_10.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -4007,7 +4019,7 @@ impl DeleteBucketMetricsConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_23));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_10));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -4034,6 +4046,10 @@ impl DeleteBucketMetricsConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4060,12 +4076,6 @@ impl DeleteBucketMetricsConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4152,31 +4162,34 @@ impl DeleteBucketOwnershipControlsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketOwnershipControlsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_24 = &_input.bucket;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_24,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -4211,6 +4224,10 @@ impl DeleteBucketOwnershipControlsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4237,12 +4254,6 @@ impl DeleteBucketOwnershipControlsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4329,31 +4340,34 @@ impl DeleteBucketPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_25 = &_input.bucket;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_25,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -4386,6 +4400,10 @@ impl DeleteBucketPolicyInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4412,12 +4430,6 @@ impl DeleteBucketPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4504,31 +4516,34 @@ impl DeleteBucketReplicationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketReplicationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_26 = &_input.bucket;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_26,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -4562,6 +4577,10 @@ impl DeleteBucketReplicationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4588,12 +4607,6 @@ impl DeleteBucketReplicationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4680,31 +4693,34 @@ impl DeleteBucketTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_27 = &_input.bucket;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_27,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -4737,6 +4753,10 @@ impl DeleteBucketTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4763,12 +4783,6 @@ impl DeleteBucketTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -4855,31 +4869,34 @@ impl DeleteBucketWebsiteInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBucketWebsiteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_28 = &_input.bucket;
-                let input_28 = input_28.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_28,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -4912,6 +4929,10 @@ impl DeleteBucketWebsiteInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -4938,12 +4959,6 @@ impl DeleteBucketWebsiteInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5095,39 +5110,42 @@ impl DeleteObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_29 = &_input.bucket;
-                let input_29 = input_29.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_29,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_30 = &_input.key;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
+                let input_11 = &_input.key;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_30,
+                    input_11,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -5138,8 +5156,7 @@ impl DeleteObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -5148,9 +5165,9 @@ impl DeleteObjectInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "DeleteObject");
-                if let Some(inner_31) = &_input.version_id {
+                if let Some(inner_12) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_31));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_12));
                     }
                 }
                 Ok(())
@@ -5177,6 +5194,10 @@ impl DeleteObjectInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5203,12 +5224,6 @@ impl DeleteObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5283,39 +5298,42 @@ impl DeleteObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_32 = &_input.bucket;
-                let input_32 = input_32.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_32,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_33 = &_input.key;
-                let input_33 = input_33.as_ref().ok_or_else(|| {
+                let input_13 = &_input.key;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_33,
+                    input_13,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -5326,8 +5344,7 @@ impl DeleteObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -5336,9 +5353,9 @@ impl DeleteObjectInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "DeleteObject");
-                if let Some(inner_34) = &_input.version_id {
+                if let Some(inner_14) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_34));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_14));
                     }
                 }
                 Ok(())
@@ -5365,6 +5382,10 @@ impl DeleteObjectInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5391,12 +5412,6 @@ impl DeleteObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5555,32 +5570,35 @@ impl DeleteObjectsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_35 = &_input.bucket;
-                let input_35 = input_35.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_35,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -5628,6 +5646,10 @@ impl DeleteObjectsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5675,12 +5697,6 @@ impl DeleteObjectsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5795,39 +5811,42 @@ impl DeleteObjectTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_36 = &_input.bucket;
-                let input_36 = input_36.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_36,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_37 = &_input.key;
-                let input_37 = input_37.as_ref().ok_or_else(|| {
+                let input_15 = &_input.key;
+                let input_15 = input_15.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_37,
+                    input_15,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -5838,8 +5857,7 @@ impl DeleteObjectTaggingInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -5848,9 +5866,9 @@ impl DeleteObjectTaggingInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
-                if let Some(inner_38) = &_input.version_id {
+                if let Some(inner_16) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_38));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_16));
                     }
                 }
                 Ok(())
@@ -5877,6 +5895,10 @@ impl DeleteObjectTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5903,12 +5925,6 @@ impl DeleteObjectTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -5995,31 +6011,34 @@ impl DeletePublicAccessBlockInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePublicAccessBlockInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_39 = &_input.bucket;
-                let input_39 = input_39.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_39,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -6053,6 +6072,10 @@ impl DeletePublicAccessBlockInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6079,12 +6102,6 @@ impl DeletePublicAccessBlockInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6171,31 +6188,34 @@ impl GetBucketAccelerateConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketAccelerateConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_40 = &_input.bucket;
-                let input_40 = input_40.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_40,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -6230,6 +6250,10 @@ impl GetBucketAccelerateConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6256,12 +6280,6 @@ impl GetBucketAccelerateConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6346,31 +6364,34 @@ impl GetBucketAclInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketAclInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_41 = &_input.bucket;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_41,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -6403,6 +6424,10 @@ impl GetBucketAclInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6429,12 +6454,6 @@ impl GetBucketAclInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6533,31 +6552,34 @@ impl GetBucketAnalyticsConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketAnalyticsConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_42 = &_input.bucket;
-                let input_42 = input_42.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_42,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -6567,14 +6589,14 @@ impl GetBucketAnalyticsConfigurationInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
                 query.push_kv("x-id", "GetBucketAnalyticsConfiguration");
-                let inner_43 = &_input.id;
-                let inner_43 = inner_43.as_ref().ok_or_else(|| {
+                let inner_17 = &_input.id;
+                let inner_17 = inner_17.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_43.is_empty() {
+                if inner_17.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -6582,7 +6604,7 @@ impl GetBucketAnalyticsConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_43));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_17));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6609,6 +6631,10 @@ impl GetBucketAnalyticsConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6635,12 +6661,6 @@ impl GetBucketAnalyticsConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6725,31 +6745,34 @@ impl GetBucketCorsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketCorsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_44 = &_input.bucket;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_44,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -6782,6 +6805,10 @@ impl GetBucketCorsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6808,12 +6835,6 @@ impl GetBucketCorsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -6900,31 +6921,34 @@ impl GetBucketEncryptionInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketEncryptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_45 = &_input.bucket;
-                let input_45 = input_45.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_45,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -6957,6 +6981,10 @@ impl GetBucketEncryptionInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -6983,12 +7011,6 @@ impl GetBucketEncryptionInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7074,31 +7096,34 @@ impl GetBucketIntelligentTieringConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketIntelligentTieringConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_46 = &_input.bucket;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_46,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -7108,14 +7133,14 @@ impl GetBucketIntelligentTieringConfigurationInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
                 query.push_kv("x-id", "GetBucketIntelligentTieringConfiguration");
-                let inner_47 = &_input.id;
-                let inner_47 = inner_47.as_ref().ok_or_else(|| {
+                let inner_18 = &_input.id;
+                let inner_18 = inner_18.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_47.is_empty() {
+                if inner_18.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -7123,7 +7148,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_47));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_18));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7147,6 +7172,10 @@ impl GetBucketIntelligentTieringConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7173,12 +7202,6 @@ impl GetBucketIntelligentTieringConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7277,31 +7300,34 @@ impl GetBucketInventoryConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketInventoryConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_48 = &_input.bucket;
-                let input_48 = input_48.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_48,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -7311,14 +7337,14 @@ impl GetBucketInventoryConfigurationInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
                 query.push_kv("x-id", "GetBucketInventoryConfiguration");
-                let inner_49 = &_input.id;
-                let inner_49 = inner_49.as_ref().ok_or_else(|| {
+                let inner_19 = &_input.id;
+                let inner_19 = inner_19.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_49.is_empty() {
+                if inner_19.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -7326,7 +7352,7 @@ impl GetBucketInventoryConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_49));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_19));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7353,6 +7379,10 @@ impl GetBucketInventoryConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7379,12 +7409,6 @@ impl GetBucketInventoryConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7471,31 +7495,34 @@ impl GetBucketLifecycleConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketLifecycleConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_50 = &_input.bucket;
-                let input_50 = input_50.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_50,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -7530,6 +7557,10 @@ impl GetBucketLifecycleConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7556,12 +7587,6 @@ impl GetBucketLifecycleConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7648,31 +7673,34 @@ impl GetBucketLocationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketLocationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_51 = &_input.bucket;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_51,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -7705,6 +7733,10 @@ impl GetBucketLocationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7731,12 +7763,6 @@ impl GetBucketLocationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -7823,31 +7849,34 @@ impl GetBucketLoggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketLoggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_52 = &_input.bucket;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_52,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -7880,6 +7909,10 @@ impl GetBucketLoggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -7906,12 +7939,6 @@ impl GetBucketLoggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8010,31 +8037,34 @@ impl GetBucketMetricsConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketMetricsConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_53 = &_input.bucket;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_53,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -8044,14 +8074,14 @@ impl GetBucketMetricsConfigurationInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
                 query.push_kv("x-id", "GetBucketMetricsConfiguration");
-                let inner_54 = &_input.id;
-                let inner_54 = inner_54.as_ref().ok_or_else(|| {
+                let inner_20 = &_input.id;
+                let inner_20 = inner_20.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_54.is_empty() {
+                if inner_20.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -8059,7 +8089,7 @@ impl GetBucketMetricsConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_54));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_20));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -8086,6 +8116,10 @@ impl GetBucketMetricsConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8112,12 +8146,6 @@ impl GetBucketMetricsConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8204,31 +8232,34 @@ impl GetBucketNotificationConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketNotificationConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_55 = &_input.bucket;
-                let input_55 = input_55.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_55,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -8263,6 +8294,10 @@ impl GetBucketNotificationConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8289,12 +8324,6 @@ impl GetBucketNotificationConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8381,31 +8410,34 @@ impl GetBucketOwnershipControlsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketOwnershipControlsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_56 = &_input.bucket;
-                let input_56 = input_56.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_56,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -8439,6 +8471,10 @@ impl GetBucketOwnershipControlsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8465,12 +8501,6 @@ impl GetBucketOwnershipControlsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8555,31 +8585,34 @@ impl GetBucketPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_57 = &_input.bucket;
-                let input_57 = input_57.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_57,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -8612,6 +8645,10 @@ impl GetBucketPolicyInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8638,12 +8675,6 @@ impl GetBucketPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8730,31 +8761,34 @@ impl GetBucketPolicyStatusInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketPolicyStatusInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_58 = &_input.bucket;
-                let input_58 = input_58.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_58,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -8788,6 +8822,10 @@ impl GetBucketPolicyStatusInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8814,12 +8852,6 @@ impl GetBucketPolicyStatusInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -8906,31 +8938,34 @@ impl GetBucketReplicationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketReplicationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_59 = &_input.bucket;
-                let input_59 = input_59.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_59,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -8964,6 +8999,10 @@ impl GetBucketReplicationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -8990,12 +9029,6 @@ impl GetBucketReplicationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9082,31 +9115,34 @@ impl GetBucketRequestPaymentInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketRequestPaymentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_60 = &_input.bucket;
-                let input_60 = input_60.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_60,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -9140,6 +9176,10 @@ impl GetBucketRequestPaymentInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9166,12 +9206,6 @@ impl GetBucketRequestPaymentInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9258,31 +9292,34 @@ impl GetBucketTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_61 = &_input.bucket;
-                let input_61 = input_61.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_61,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -9315,6 +9352,10 @@ impl GetBucketTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9341,12 +9382,6 @@ impl GetBucketTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9433,31 +9468,34 @@ impl GetBucketVersioningInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketVersioningInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_62 = &_input.bucket;
-                let input_62 = input_62.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_62,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -9490,6 +9528,10 @@ impl GetBucketVersioningInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9516,12 +9558,6 @@ impl GetBucketVersioningInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -9608,31 +9644,34 @@ impl GetBucketWebsiteInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBucketWebsiteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_63 = &_input.bucket;
-                let input_63 = input_63.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_63,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -9665,6 +9704,10 @@ impl GetBucketWebsiteInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -9691,12 +9734,6 @@ impl GetBucketWebsiteInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10094,39 +10131,42 @@ impl GetObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_64 = &_input.bucket;
-                let input_64 = input_64.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_64,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_65 = &_input.key;
-                let input_65 = input_65.as_ref().ok_or_else(|| {
+                let input_21 = &_input.key;
+                let input_21 = input_21.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_65,
+                    input_21,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -10137,8 +10177,7 @@ impl GetObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -10147,60 +10186,60 @@ impl GetObjectInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "GetObject");
-                if let Some(inner_66) = &_input.response_cache_control {
+                if let Some(inner_22) = &_input.response_cache_control {
                     {
                         query.push_kv(
                             "response-cache-control",
-                            &aws_smithy_http::query::fmt_string(&inner_66),
+                            &aws_smithy_http::query::fmt_string(&inner_22),
                         );
                     }
                 }
-                if let Some(inner_67) = &_input.response_content_disposition {
+                if let Some(inner_23) = &_input.response_content_disposition {
                     {
                         query.push_kv(
                             "response-content-disposition",
-                            &aws_smithy_http::query::fmt_string(&inner_67),
+                            &aws_smithy_http::query::fmt_string(&inner_23),
                         );
                     }
                 }
-                if let Some(inner_68) = &_input.response_content_encoding {
+                if let Some(inner_24) = &_input.response_content_encoding {
                     {
                         query.push_kv(
                             "response-content-encoding",
-                            &aws_smithy_http::query::fmt_string(&inner_68),
+                            &aws_smithy_http::query::fmt_string(&inner_24),
                         );
                     }
                 }
-                if let Some(inner_69) = &_input.response_content_language {
+                if let Some(inner_25) = &_input.response_content_language {
                     {
                         query.push_kv(
                             "response-content-language",
-                            &aws_smithy_http::query::fmt_string(&inner_69),
+                            &aws_smithy_http::query::fmt_string(&inner_25),
                         );
                     }
                 }
-                if let Some(inner_70) = &_input.response_content_type {
+                if let Some(inner_26) = &_input.response_content_type {
                     {
                         query.push_kv(
                             "response-content-type",
-                            &aws_smithy_http::query::fmt_string(&inner_70),
+                            &aws_smithy_http::query::fmt_string(&inner_26),
                         );
                     }
                 }
-                if let Some(inner_71) = &_input.response_expires {
+                if let Some(inner_27) = &_input.response_expires {
                     {
                         query.push_kv(
                             "response-expires",
                             &aws_smithy_http::query::fmt_timestamp(
-                                inner_71,
+                                inner_27,
                                 aws_smithy_types::date_time::Format::HttpDate,
                             )?,
                         );
                     }
                 }
-                if let Some(inner_72) = &_input.version_id {
+                if let Some(inner_28) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_72));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_28));
                     }
                 }
                 if _input.part_number != 0 {
@@ -10233,6 +10272,10 @@ impl GetObjectInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -10266,12 +10309,6 @@ impl GetObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10341,39 +10378,42 @@ impl GetObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_73 = &_input.bucket;
-                let input_73 = input_73.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_73,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_74 = &_input.key;
-                let input_74 = input_74.as_ref().ok_or_else(|| {
+                let input_29 = &_input.key;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_74,
+                    input_29,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -10384,8 +10424,7 @@ impl GetObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -10394,60 +10433,60 @@ impl GetObjectInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "GetObject");
-                if let Some(inner_75) = &_input.response_cache_control {
+                if let Some(inner_30) = &_input.response_cache_control {
                     {
                         query.push_kv(
                             "response-cache-control",
-                            &aws_smithy_http::query::fmt_string(&inner_75),
+                            &aws_smithy_http::query::fmt_string(&inner_30),
                         );
                     }
                 }
-                if let Some(inner_76) = &_input.response_content_disposition {
+                if let Some(inner_31) = &_input.response_content_disposition {
                     {
                         query.push_kv(
                             "response-content-disposition",
-                            &aws_smithy_http::query::fmt_string(&inner_76),
+                            &aws_smithy_http::query::fmt_string(&inner_31),
                         );
                     }
                 }
-                if let Some(inner_77) = &_input.response_content_encoding {
+                if let Some(inner_32) = &_input.response_content_encoding {
                     {
                         query.push_kv(
                             "response-content-encoding",
-                            &aws_smithy_http::query::fmt_string(&inner_77),
+                            &aws_smithy_http::query::fmt_string(&inner_32),
                         );
                     }
                 }
-                if let Some(inner_78) = &_input.response_content_language {
+                if let Some(inner_33) = &_input.response_content_language {
                     {
                         query.push_kv(
                             "response-content-language",
-                            &aws_smithy_http::query::fmt_string(&inner_78),
+                            &aws_smithy_http::query::fmt_string(&inner_33),
                         );
                     }
                 }
-                if let Some(inner_79) = &_input.response_content_type {
+                if let Some(inner_34) = &_input.response_content_type {
                     {
                         query.push_kv(
                             "response-content-type",
-                            &aws_smithy_http::query::fmt_string(&inner_79),
+                            &aws_smithy_http::query::fmt_string(&inner_34),
                         );
                     }
                 }
-                if let Some(inner_80) = &_input.response_expires {
+                if let Some(inner_35) = &_input.response_expires {
                     {
                         query.push_kv(
                             "response-expires",
                             &aws_smithy_http::query::fmt_timestamp(
-                                inner_80,
+                                inner_35,
                                 aws_smithy_types::date_time::Format::HttpDate,
                             )?,
                         );
                     }
                 }
-                if let Some(inner_81) = &_input.version_id {
+                if let Some(inner_36) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_81));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_36));
                     }
                 }
                 if _input.part_number != 0 {
@@ -10480,6 +10519,10 @@ impl GetObjectInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -10513,12 +10556,6 @@ impl GetObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10639,39 +10676,42 @@ impl GetObjectAclInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectAclInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_82 = &_input.bucket;
-                let input_82 = input_82.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_82,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_83 = &_input.key;
-                let input_83 = input_83.as_ref().ok_or_else(|| {
+                let input_37 = &_input.key;
+                let input_37 = input_37.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_83,
+                    input_37,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -10682,8 +10722,7 @@ impl GetObjectAclInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -10692,9 +10731,9 @@ impl GetObjectAclInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("acl");
-                if let Some(inner_84) = &_input.version_id {
+                if let Some(inner_38) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_84));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
                 Ok(())
@@ -10721,6 +10760,10 @@ impl GetObjectAclInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -10747,12 +10790,6 @@ impl GetObjectAclInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -10993,39 +11030,42 @@ impl GetObjectAttributesInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectAttributesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_85 = &_input.bucket;
-                let input_85 = input_85.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_85,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_86 = &_input.key;
-                let input_86 = input_86.as_ref().ok_or_else(|| {
+                let input_39 = &_input.key;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_86,
+                    input_39,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -11036,8 +11076,7 @@ impl GetObjectAttributesInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -11046,9 +11085,9 @@ impl GetObjectAttributesInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("attributes");
-                if let Some(inner_87) = &_input.version_id {
+                if let Some(inner_40) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_87));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_40));
                     }
                 }
                 Ok(())
@@ -11075,6 +11114,10 @@ impl GetObjectAttributesInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11101,12 +11144,6 @@ impl GetObjectAttributesInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11234,39 +11271,42 @@ impl GetObjectLegalHoldInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectLegalHoldInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_88 = &_input.bucket;
-                let input_88 = input_88.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_88,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_89 = &_input.key;
-                let input_89 = input_89.as_ref().ok_or_else(|| {
+                let input_41 = &_input.key;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_89,
+                    input_41,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -11277,8 +11317,7 @@ impl GetObjectLegalHoldInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -11287,9 +11326,9 @@ impl GetObjectLegalHoldInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("legal-hold");
-                if let Some(inner_90) = &_input.version_id {
+                if let Some(inner_42) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_90));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_42));
                     }
                 }
                 Ok(())
@@ -11316,6 +11355,10 @@ impl GetObjectLegalHoldInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11342,12 +11385,6 @@ impl GetObjectLegalHoldInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11436,31 +11473,34 @@ impl GetObjectLockConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectLockConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_91 = &_input.bucket;
-                let input_91 = input_91.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_91,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -11494,6 +11534,10 @@ impl GetObjectLockConfigurationInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11520,12 +11564,6 @@ impl GetObjectLockConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11653,39 +11691,42 @@ impl GetObjectRetentionInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectRetentionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_92 = &_input.bucket;
-                let input_92 = input_92.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_92,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_93 = &_input.key;
-                let input_93 = input_93.as_ref().ok_or_else(|| {
+                let input_43 = &_input.key;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_93,
+                    input_43,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -11696,8 +11737,7 @@ impl GetObjectRetentionInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -11706,9 +11746,9 @@ impl GetObjectRetentionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("retention");
-                if let Some(inner_94) = &_input.version_id {
+                if let Some(inner_44) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_94));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_44));
                     }
                 }
                 Ok(())
@@ -11735,6 +11775,10 @@ impl GetObjectRetentionInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -11761,12 +11805,6 @@ impl GetObjectRetentionInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -11896,39 +11934,42 @@ impl GetObjectTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_95 = &_input.bucket;
-                let input_95 = input_95.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_95,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_96 = &_input.key;
-                let input_96 = input_96.as_ref().ok_or_else(|| {
+                let input_45 = &_input.key;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_96,
+                    input_45,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -11939,8 +11980,7 @@ impl GetObjectTaggingInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -11949,9 +11989,9 @@ impl GetObjectTaggingInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
-                if let Some(inner_97) = &_input.version_id {
+                if let Some(inner_46) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_97));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_46));
                     }
                 }
                 Ok(())
@@ -11978,6 +12018,10 @@ impl GetObjectTaggingInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12004,12 +12048,6 @@ impl GetObjectTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -12123,39 +12161,42 @@ impl GetObjectTorrentInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectTorrentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_98 = &_input.bucket;
-                let input_98 = input_98.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_98,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_99 = &_input.key;
-                let input_99 = input_99.as_ref().ok_or_else(|| {
+                let input_47 = &_input.key;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_99,
+                    input_47,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -12166,8 +12207,7 @@ impl GetObjectTorrentInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -12200,6 +12240,10 @@ impl GetObjectTorrentInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12226,12 +12270,6 @@ impl GetObjectTorrentInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -12318,31 +12356,34 @@ impl GetPublicAccessBlockInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPublicAccessBlockInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_100 = &_input.bucket;
-                let input_100 = input_100.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_100,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -12376,6 +12417,10 @@ impl GetPublicAccessBlockInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12402,12 +12447,6 @@ impl GetPublicAccessBlockInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -12496,31 +12535,34 @@ impl HeadBucketInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::HeadBucketInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_101 = &_input.bucket;
-                let input_101 = input_101.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_101,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -12544,6 +12586,10 @@ impl HeadBucketInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12570,12 +12616,6 @@ impl HeadBucketInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -12867,39 +12907,42 @@ impl HeadObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::HeadObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_102 = &_input.bucket;
-                let input_102 = input_102.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_102,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_103 = &_input.key;
-                let input_103 = input_103.as_ref().ok_or_else(|| {
+                let input_48 = &_input.key;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_103,
+                    input_48,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -12910,8 +12953,7 @@ impl HeadObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -12919,9 +12961,9 @@ impl HeadObjectInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_104) = &_input.version_id {
+                if let Some(inner_49) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_104));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_49));
                     }
                 }
                 if _input.part_number != 0 {
@@ -12954,6 +12996,10 @@ impl HeadObjectInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -12980,12 +13026,6 @@ impl HeadObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13087,31 +13127,34 @@ impl ListBucketAnalyticsConfigurationsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketAnalyticsConfigurationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_105 = &_input.bucket;
-                let input_105 = input_105.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_105,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -13121,11 +13164,11 @@ impl ListBucketAnalyticsConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
                 query.push_kv("x-id", "ListBucketAnalyticsConfigurations");
-                if let Some(inner_106) = &_input.continuation_token {
+                if let Some(inner_50) = &_input.continuation_token {
                     {
                         query.push_kv(
                             "continuation-token",
-                            &aws_smithy_http::query::fmt_string(&inner_106),
+                            &aws_smithy_http::query::fmt_string(&inner_50),
                         );
                     }
                 }
@@ -13155,6 +13198,10 @@ impl ListBucketAnalyticsConfigurationsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13181,12 +13228,6 @@ impl ListBucketAnalyticsConfigurationsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13275,31 +13316,34 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketIntelligentTieringConfigurationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_107 = &_input.bucket;
-                let input_107 = input_107.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_107,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -13309,11 +13353,11 @@ impl ListBucketIntelligentTieringConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
                 query.push_kv("x-id", "ListBucketIntelligentTieringConfigurations");
-                if let Some(inner_108) = &_input.continuation_token {
+                if let Some(inner_51) = &_input.continuation_token {
                     {
                         query.push_kv(
                             "continuation-token",
-                            &aws_smithy_http::query::fmt_string(&inner_108),
+                            &aws_smithy_http::query::fmt_string(&inner_51),
                         );
                     }
                 }
@@ -13340,6 +13384,10 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13366,12 +13414,6 @@ impl ListBucketIntelligentTieringConfigurationsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13474,31 +13516,34 @@ impl ListBucketInventoryConfigurationsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketInventoryConfigurationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_109 = &_input.bucket;
-                let input_109 = input_109.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_109,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -13508,11 +13553,11 @@ impl ListBucketInventoryConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
                 query.push_kv("x-id", "ListBucketInventoryConfigurations");
-                if let Some(inner_110) = &_input.continuation_token {
+                if let Some(inner_52) = &_input.continuation_token {
                     {
                         query.push_kv(
                             "continuation-token",
-                            &aws_smithy_http::query::fmt_string(&inner_110),
+                            &aws_smithy_http::query::fmt_string(&inner_52),
                         );
                     }
                 }
@@ -13542,6 +13587,10 @@ impl ListBucketInventoryConfigurationsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13568,12 +13617,6 @@ impl ListBucketInventoryConfigurationsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13675,31 +13718,34 @@ impl ListBucketMetricsConfigurationsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketMetricsConfigurationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_111 = &_input.bucket;
-                let input_111 = input_111.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_111,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -13709,11 +13755,11 @@ impl ListBucketMetricsConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
                 query.push_kv("x-id", "ListBucketMetricsConfigurations");
-                if let Some(inner_112) = &_input.continuation_token {
+                if let Some(inner_53) = &_input.continuation_token {
                     {
                         query.push_kv(
                             "continuation-token",
-                            &aws_smithy_http::query::fmt_string(&inner_112),
+                            &aws_smithy_http::query::fmt_string(&inner_53),
                         );
                     }
                 }
@@ -13743,6 +13789,10 @@ impl ListBucketMetricsConfigurationsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13769,12 +13819,6 @@ impl ListBucketMetricsConfigurationsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -13830,6 +13874,27 @@ impl ListBucketsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBucketsInput,
@@ -13858,6 +13923,10 @@ impl ListBucketsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -13884,12 +13953,6 @@ impl ListBucketsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -14064,31 +14127,34 @@ impl ListMultipartUploadsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMultipartUploadsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_113 = &_input.bucket;
-                let input_113 = input_113.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_113,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -14097,25 +14163,22 @@ impl ListMultipartUploadsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("uploads");
-                if let Some(inner_114) = &_input.delimiter {
+                if let Some(inner_54) = &_input.delimiter {
                     {
-                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_114));
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_54));
                     }
                 }
-                if let Some(inner_115) = &_input.encoding_type {
+                if let Some(inner_55) = &_input.encoding_type {
                     {
                         query.push_kv(
                             "encoding-type",
-                            &aws_smithy_http::query::fmt_string(&inner_115),
+                            &aws_smithy_http::query::fmt_string(&inner_55),
                         );
                     }
                 }
-                if let Some(inner_116) = &_input.key_marker {
+                if let Some(inner_56) = &_input.key_marker {
                     {
-                        query.push_kv(
-                            "key-marker",
-                            &aws_smithy_http::query::fmt_string(&inner_116),
-                        );
+                        query.push_kv("key-marker", &aws_smithy_http::query::fmt_string(&inner_56));
                     }
                 }
                 if _input.max_uploads != 0 {
@@ -14124,16 +14187,16 @@ impl ListMultipartUploadsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_uploads).encode(),
                     );
                 }
-                if let Some(inner_117) = &_input.prefix {
+                if let Some(inner_57) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_117));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_57));
                     }
                 }
-                if let Some(inner_118) = &_input.upload_id_marker {
+                if let Some(inner_58) = &_input.upload_id_marker {
                     {
                         query.push_kv(
                             "upload-id-marker",
-                            &aws_smithy_http::query::fmt_string(&inner_118),
+                            &aws_smithy_http::query::fmt_string(&inner_58),
                         );
                     }
                 }
@@ -14162,6 +14225,10 @@ impl ListMultipartUploadsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14188,12 +14255,6 @@ impl ListMultipartUploadsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -14360,31 +14421,34 @@ impl ListObjectsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_119 = &_input.bucket;
-                let input_119 = input_119.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_119,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -14392,22 +14456,22 @@ impl ListObjectsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_120) = &_input.delimiter {
+                if let Some(inner_59) = &_input.delimiter {
                     {
-                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_120));
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_59));
                     }
                 }
-                if let Some(inner_121) = &_input.encoding_type {
+                if let Some(inner_60) = &_input.encoding_type {
                     {
                         query.push_kv(
                             "encoding-type",
-                            &aws_smithy_http::query::fmt_string(&inner_121),
+                            &aws_smithy_http::query::fmt_string(&inner_60),
                         );
                     }
                 }
-                if let Some(inner_122) = &_input.marker {
+                if let Some(inner_61) = &_input.marker {
                     {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_122));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_61));
                     }
                 }
                 if _input.max_keys != 0 {
@@ -14416,9 +14480,9 @@ impl ListObjectsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                     );
                 }
-                if let Some(inner_123) = &_input.prefix {
+                if let Some(inner_62) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_123));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_62));
                     }
                 }
                 Ok(())
@@ -14445,6 +14509,10 @@ impl ListObjectsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14471,12 +14539,6 @@ impl ListObjectsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -14670,31 +14732,34 @@ impl ListObjectsV2Input {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectsV2Input,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_124 = &_input.bucket;
-                let input_124 = input_124.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_124,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -14703,16 +14768,16 @@ impl ListObjectsV2Input {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("list-type", "2");
-                if let Some(inner_125) = &_input.delimiter {
+                if let Some(inner_63) = &_input.delimiter {
                     {
-                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_125));
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_63));
                     }
                 }
-                if let Some(inner_126) = &_input.encoding_type {
+                if let Some(inner_64) = &_input.encoding_type {
                     {
                         query.push_kv(
                             "encoding-type",
-                            &aws_smithy_http::query::fmt_string(&inner_126),
+                            &aws_smithy_http::query::fmt_string(&inner_64),
                         );
                     }
                 }
@@ -14722,16 +14787,16 @@ impl ListObjectsV2Input {
                         aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                     );
                 }
-                if let Some(inner_127) = &_input.prefix {
+                if let Some(inner_65) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_127));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_65));
                     }
                 }
-                if let Some(inner_128) = &_input.continuation_token {
+                if let Some(inner_66) = &_input.continuation_token {
                     {
                         query.push_kv(
                             "continuation-token",
-                            &aws_smithy_http::query::fmt_string(&inner_128),
+                            &aws_smithy_http::query::fmt_string(&inner_66),
                         );
                     }
                 }
@@ -14741,11 +14806,11 @@ impl ListObjectsV2Input {
                         aws_smithy_types::primitive::Encoder::from(_input.fetch_owner).encode(),
                     );
                 }
-                if let Some(inner_129) = &_input.start_after {
+                if let Some(inner_67) = &_input.start_after {
                     {
                         query.push_kv(
                             "start-after",
-                            &aws_smithy_http::query::fmt_string(&inner_129),
+                            &aws_smithy_http::query::fmt_string(&inner_67),
                         );
                     }
                 }
@@ -14773,6 +14838,10 @@ impl ListObjectsV2Input {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14799,12 +14868,6 @@ impl ListObjectsV2Input {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -14973,31 +15036,34 @@ impl ListObjectVersionsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_130 = &_input.bucket;
-                let input_130 = input_130.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_130,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -15006,25 +15072,22 @@ impl ListObjectVersionsInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("versions");
-                if let Some(inner_131) = &_input.delimiter {
+                if let Some(inner_68) = &_input.delimiter {
                     {
-                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_131));
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_68));
                     }
                 }
-                if let Some(inner_132) = &_input.encoding_type {
+                if let Some(inner_69) = &_input.encoding_type {
                     {
                         query.push_kv(
                             "encoding-type",
-                            &aws_smithy_http::query::fmt_string(&inner_132),
+                            &aws_smithy_http::query::fmt_string(&inner_69),
                         );
                     }
                 }
-                if let Some(inner_133) = &_input.key_marker {
+                if let Some(inner_70) = &_input.key_marker {
                     {
-                        query.push_kv(
-                            "key-marker",
-                            &aws_smithy_http::query::fmt_string(&inner_133),
-                        );
+                        query.push_kv("key-marker", &aws_smithy_http::query::fmt_string(&inner_70));
                     }
                 }
                 if _input.max_keys != 0 {
@@ -15033,16 +15096,16 @@ impl ListObjectVersionsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                     );
                 }
-                if let Some(inner_134) = &_input.prefix {
+                if let Some(inner_71) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_134));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_71));
                     }
                 }
-                if let Some(inner_135) = &_input.version_id_marker {
+                if let Some(inner_72) = &_input.version_id_marker {
                     {
                         query.push_kv(
                             "version-id-marker",
-                            &aws_smithy_http::query::fmt_string(&inner_135),
+                            &aws_smithy_http::query::fmt_string(&inner_72),
                         );
                     }
                 }
@@ -15070,6 +15133,10 @@ impl ListObjectVersionsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -15096,12 +15163,6 @@ impl ListObjectVersionsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -15317,39 +15378,42 @@ impl ListPartsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPartsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_136 = &_input.bucket;
-                let input_136 = input_136.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_136,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_137 = &_input.key;
-                let input_137 = input_137.as_ref().ok_or_else(|| {
+                let input_73 = &_input.key;
+                let input_73 = input_73.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_137,
+                    input_73,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -15360,8 +15424,7 @@ impl ListPartsInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -15376,22 +15439,22 @@ impl ListPartsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_parts).encode(),
                     );
                 }
-                if let Some(inner_138) = &_input.part_number_marker {
+                if let Some(inner_74) = &_input.part_number_marker {
                     {
                         query.push_kv(
                             "part-number-marker",
-                            &aws_smithy_http::query::fmt_string(&inner_138),
+                            &aws_smithy_http::query::fmt_string(&inner_74),
                         );
                     }
                 }
-                let inner_139 = &_input.upload_id;
-                let inner_139 = inner_139.as_ref().ok_or_else(|| {
+                let inner_75 = &_input.upload_id;
+                let inner_75 = inner_75.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_139.is_empty() {
+                if inner_75.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "upload_id",
@@ -15399,7 +15462,7 @@ impl ListPartsInput {
                         ),
                     );
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_139));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_75));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -15424,6 +15487,10 @@ impl ListPartsInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -15450,12 +15517,6 @@ impl ListPartsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -15573,32 +15634,35 @@ impl PutBucketAccelerateConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketAccelerateConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_140 = &_input.bucket;
-                let input_140 = input_140.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_140,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -15649,6 +15713,10 @@ impl PutBucketAccelerateConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -15694,12 +15762,6 @@ impl PutBucketAccelerateConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -15916,32 +15978,35 @@ impl PutBucketAclInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketAclInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_141 = &_input.bucket;
-                let input_141 = input_141.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_141,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -15990,6 +16055,10 @@ impl PutBucketAclInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -16037,12 +16106,6 @@ impl PutBucketAclInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -16160,31 +16223,34 @@ impl PutBucketAnalyticsConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketAnalyticsConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_142 = &_input.bucket;
-                let input_142 = input_142.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_142,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -16193,14 +16259,14 @@ impl PutBucketAnalyticsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
-                let inner_143 = &_input.id;
-                let inner_143 = inner_143.as_ref().ok_or_else(|| {
+                let inner_76 = &_input.id;
+                let inner_76 = inner_76.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_143.is_empty() {
+                if inner_76.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -16208,7 +16274,7 @@ impl PutBucketAnalyticsConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_143));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_76));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -16251,6 +16317,10 @@ impl PutBucketAnalyticsConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -16277,12 +16347,6 @@ impl PutBucketAnalyticsConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -16413,32 +16477,35 @@ impl PutBucketCorsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketCorsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_144 = &_input.bucket;
-                let input_144 = input_144.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_144,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -16487,6 +16554,10 @@ impl PutBucketCorsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -16534,12 +16605,6 @@ impl PutBucketCorsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -16676,32 +16741,35 @@ impl PutBucketEncryptionInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketEncryptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_145 = &_input.bucket;
-                let input_145 = input_145.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_145,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -16750,6 +16818,10 @@ impl PutBucketEncryptionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -16797,12 +16869,6 @@ impl PutBucketEncryptionInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -16907,31 +16973,34 @@ impl PutBucketIntelligentTieringConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketIntelligentTieringConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_146 = &_input.bucket;
-                let input_146 = input_146.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_146,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -16940,14 +17009,14 @@ impl PutBucketIntelligentTieringConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
-                let inner_147 = &_input.id;
-                let inner_147 = inner_147.as_ref().ok_or_else(|| {
+                let inner_77 = &_input.id;
+                let inner_77 = inner_77.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_147.is_empty() {
+                if inner_77.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -16955,7 +17024,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_147));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_77));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -16992,6 +17061,10 @@ impl PutBucketIntelligentTieringConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -17018,12 +17091,6 @@ impl PutBucketIntelligentTieringConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -17141,31 +17208,34 @@ impl PutBucketInventoryConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketInventoryConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_148 = &_input.bucket;
-                let input_148 = input_148.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_148,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -17174,14 +17244,14 @@ impl PutBucketInventoryConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
-                let inner_149 = &_input.id;
-                let inner_149 = inner_149.as_ref().ok_or_else(|| {
+                let inner_78 = &_input.id;
+                let inner_78 = inner_78.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_149.is_empty() {
+                if inner_78.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -17189,7 +17259,7 @@ impl PutBucketInventoryConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_149));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_78));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -17232,6 +17302,10 @@ impl PutBucketInventoryConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -17258,12 +17332,6 @@ impl PutBucketInventoryConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -17386,32 +17454,35 @@ impl PutBucketLifecycleConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_150 = &_input.bucket;
-                let input_150 = input_150.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_150,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -17462,6 +17533,10 @@ impl PutBucketLifecycleConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -17509,12 +17584,6 @@ impl PutBucketLifecycleConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -17647,32 +17716,35 @@ impl PutBucketLoggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketLoggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_151 = &_input.bucket;
-                let input_151 = input_151.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_151,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -17721,6 +17793,10 @@ impl PutBucketLoggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -17768,12 +17844,6 @@ impl PutBucketLoggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -17887,31 +17957,34 @@ impl PutBucketMetricsConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketMetricsConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_152 = &_input.bucket;
-                let input_152 = input_152.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_152,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -17920,14 +17993,14 @@ impl PutBucketMetricsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
-                let inner_153 = &_input.id;
-                let inner_153 = inner_153.as_ref().ok_or_else(|| {
+                let inner_79 = &_input.id;
+                let inner_79 = inner_79.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_153.is_empty() {
+                if inner_79.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
@@ -17935,7 +18008,7 @@ impl PutBucketMetricsConfigurationInput {
                         ),
                     );
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_153));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_79));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -17978,6 +18051,10 @@ impl PutBucketMetricsConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -18004,12 +18081,6 @@ impl PutBucketMetricsConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -18127,31 +18198,34 @@ impl PutBucketNotificationConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketNotificationConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_154 = &_input.bucket;
-                let input_154 = input_154.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_154,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -18202,6 +18276,10 @@ impl PutBucketNotificationConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -18228,12 +18306,6 @@ impl PutBucketNotificationConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -18349,31 +18421,34 @@ impl PutBucketOwnershipControlsInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketOwnershipControlsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_155 = &_input.bucket;
-                let input_155 = input_155.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_155,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -18423,6 +18498,10 @@ impl PutBucketOwnershipControlsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -18467,12 +18546,6 @@ impl PutBucketOwnershipControlsInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -18617,32 +18690,35 @@ impl PutBucketPolicyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_156 = &_input.bucket;
-                let input_156 = input_156.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_156,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -18689,6 +18765,10 @@ impl PutBucketPolicyInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -18736,12 +18816,6 @@ impl PutBucketPolicyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -18890,32 +18964,35 @@ impl PutBucketReplicationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketReplicationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_157 = &_input.bucket;
-                let input_157 = input_157.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_157,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -18965,6 +19042,10 @@ impl PutBucketReplicationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -19012,12 +19093,6 @@ impl PutBucketReplicationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -19154,32 +19229,35 @@ impl PutBucketRequestPaymentInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketRequestPaymentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_158 = &_input.bucket;
-                let input_158 = input_158.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_158,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -19229,6 +19307,10 @@ impl PutBucketRequestPaymentInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -19276,12 +19358,6 @@ impl PutBucketRequestPaymentInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -19411,32 +19487,35 @@ impl PutBucketTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_159 = &_input.bucket;
-                let input_159 = input_159.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_159,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -19483,6 +19562,10 @@ impl PutBucketTaggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -19530,12 +19613,6 @@ impl PutBucketTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -19684,32 +19761,35 @@ impl PutBucketVersioningInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketVersioningInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_160 = &_input.bucket;
-                let input_160 = input_160.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_160,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -19758,6 +19838,10 @@ impl PutBucketVersioningInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -19805,12 +19889,6 @@ impl PutBucketVersioningInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -19943,32 +20021,35 @@ impl PutBucketWebsiteInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutBucketWebsiteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_161 = &_input.bucket;
-                let input_161 = input_161.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_161,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -20017,6 +20098,10 @@ impl PutBucketWebsiteInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -20064,12 +20149,6 @@ impl PutBucketWebsiteInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -20756,40 +20835,43 @@ impl PutObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_162 = &_input.bucket;
-                let input_162 = input_162.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_162,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_163 = &_input.key;
-                let input_163 = input_163.as_ref().ok_or_else(|| {
+                let input_80 = &_input.key;
+                let input_80 = input_80.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_163,
+                    input_80,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -20800,8 +20882,7 @@ impl PutObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -20836,6 +20917,10 @@ impl PutObjectInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -20881,12 +20966,6 @@ impl PutObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -20956,40 +21035,43 @@ impl PutObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_164 = &_input.bucket;
-                let input_164 = input_164.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_164,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_165 = &_input.key;
-                let input_165 = input_165.as_ref().ok_or_else(|| {
+                let input_81 = &_input.key;
+                let input_81 = input_81.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_165,
+                    input_81,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -21000,8 +21082,7 @@ impl PutObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -21048,6 +21129,10 @@ impl PutObjectInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -21093,12 +21178,6 @@ impl PutObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -21363,40 +21442,43 @@ impl PutObjectAclInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectAclInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_166 = &_input.bucket;
-                let input_166 = input_166.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_166,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_167 = &_input.key;
-                let input_167 = input_167.as_ref().ok_or_else(|| {
+                let input_82 = &_input.key;
+                let input_82 = input_82.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_167,
+                    input_82,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -21407,8 +21489,7 @@ impl PutObjectAclInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -21417,9 +21498,9 @@ impl PutObjectAclInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("acl");
-                if let Some(inner_168) = &_input.version_id {
+                if let Some(inner_83) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_168));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_83));
                     }
                 }
                 Ok(())
@@ -21462,6 +21543,10 @@ impl PutObjectAclInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -21509,12 +21594,6 @@ impl PutObjectAclInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -21688,40 +21767,43 @@ impl PutObjectLegalHoldInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectLegalHoldInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_169 = &_input.bucket;
-                let input_169 = input_169.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_169,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_170 = &_input.key;
-                let input_170 = input_170.as_ref().ok_or_else(|| {
+                let input_84 = &_input.key;
+                let input_84 = input_84.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_170,
+                    input_84,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -21732,8 +21814,7 @@ impl PutObjectLegalHoldInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -21742,9 +21823,9 @@ impl PutObjectLegalHoldInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("legal-hold");
-                if let Some(inner_171) = &_input.version_id {
+                if let Some(inner_85) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_171));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_85));
                     }
                 }
                 Ok(())
@@ -21785,6 +21866,10 @@ impl PutObjectLegalHoldInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -21832,12 +21917,6 @@ impl PutObjectLegalHoldInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -22001,32 +22080,35 @@ impl PutObjectLockConfigurationInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectLockConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_172 = &_input.bucket;
-                let input_172 = input_172.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_172,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -22076,6 +22158,10 @@ impl PutObjectLockConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -22123,12 +22209,6 @@ impl PutObjectLockConfigurationInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -22314,40 +22394,43 @@ impl PutObjectRetentionInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectRetentionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_173 = &_input.bucket;
-                let input_173 = input_173.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_173,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_174 = &_input.key;
-                let input_174 = input_174.as_ref().ok_or_else(|| {
+                let input_86 = &_input.key;
+                let input_86 = input_86.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_174,
+                    input_86,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -22358,8 +22441,7 @@ impl PutObjectRetentionInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -22368,9 +22450,9 @@ impl PutObjectRetentionInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("retention");
-                if let Some(inner_175) = &_input.version_id {
+                if let Some(inner_87) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_175));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_87));
                     }
                 }
                 Ok(())
@@ -22411,6 +22493,10 @@ impl PutObjectRetentionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -22458,12 +22544,6 @@ impl PutObjectRetentionInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -22636,40 +22716,43 @@ impl PutObjectTaggingInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutObjectTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_176 = &_input.bucket;
-                let input_176 = input_176.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_176,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_177 = &_input.key;
-                let input_177 = input_177.as_ref().ok_or_else(|| {
+                let input_88 = &_input.key;
+                let input_88 = input_88.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_177,
+                    input_88,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -22680,8 +22763,7 @@ impl PutObjectTaggingInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -22690,9 +22772,9 @@ impl PutObjectTaggingInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
-                if let Some(inner_178) = &_input.version_id {
+                if let Some(inner_89) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_178));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_89));
                     }
                 }
                 Ok(())
@@ -22733,6 +22815,10 @@ impl PutObjectTaggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -22780,12 +22866,6 @@ impl PutObjectTaggingInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -22922,32 +23002,35 @@ impl PutPublicAccessBlockInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPublicAccessBlockInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_179 = &_input.bucket;
-                let input_179 = input_179.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_179,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+                write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -22997,6 +23080,10 @@ impl PutPublicAccessBlockInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -23044,12 +23131,6 @@ impl PutPublicAccessBlockInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -23209,40 +23290,43 @@ impl RestoreObjectInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_180 = &_input.bucket;
-                let input_180 = input_180.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_180,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_181 = &_input.key;
-                let input_181 = input_181.as_ref().ok_or_else(|| {
+                let input_90 = &_input.key;
+                let input_90 = input_90.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_181,
+                    input_90,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -23253,8 +23337,7 @@ impl RestoreObjectInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -23264,9 +23347,9 @@ impl RestoreObjectInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("restore");
                 query.push_kv("x-id", "RestoreObject");
-                if let Some(inner_182) = &_input.version_id {
+                if let Some(inner_91) = &_input.version_id {
                     {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_182));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_91));
                     }
                 }
                 Ok(())
@@ -23307,6 +23390,10 @@ impl RestoreObjectInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -23352,12 +23439,6 @@ impl RestoreObjectInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -23654,39 +23735,42 @@ impl SelectObjectContentInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SelectObjectContentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_183 = &_input.bucket;
-                let input_183 = input_183.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_183,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_184 = &_input.key;
-                let input_184 = input_184.as_ref().ok_or_else(|| {
+                let input_92 = &_input.key;
+                let input_92 = input_92.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_184,
+                    input_92,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -23697,8 +23781,7 @@ impl SelectObjectContentInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -23747,6 +23830,10 @@ impl SelectObjectContentInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -23773,12 +23860,6 @@ impl SelectObjectContentInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -24104,40 +24185,43 @@ impl UploadPartInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadPartInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_185 = &_input.bucket;
-                let input_185 = input_185.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_185,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_186 = &_input.key;
-                let input_186 = input_186.as_ref().ok_or_else(|| {
+                let input_93 = &_input.key;
+                let input_93 = input_93.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_186,
+                    input_93,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -24148,8 +24232,7 @@ impl UploadPartInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -24158,19 +24241,19 @@ impl UploadPartInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
-                let inner_187 = &_input.part_number;
+                let inner_94 = &_input.part_number;
                 query.push_kv(
                     "partNumber",
-                    aws_smithy_types::primitive::Encoder::from(*inner_187).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_94).encode(),
                 );
-                let inner_188 = &_input.upload_id;
-                let inner_188 = inner_188.as_ref().ok_or_else(|| {
+                let inner_95 = &_input.upload_id;
+                let inner_95 = inner_95.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_188.is_empty() {
+                if inner_95.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "upload_id",
@@ -24178,7 +24261,7 @@ impl UploadPartInput {
                         ),
                     );
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_188));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_95));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -24205,6 +24288,10 @@ impl UploadPartInput {
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -24250,12 +24337,6 @@ impl UploadPartInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -24330,40 +24411,43 @@ impl UploadPartInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadPartInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_189 = &_input.bucket;
-                let input_189 = input_189.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_189,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_190 = &_input.key;
-                let input_190 = input_190.as_ref().ok_or_else(|| {
+                let input_96 = &_input.key;
+                let input_96 = input_96.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_190,
+                    input_96,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -24374,8 +24458,7 @@ impl UploadPartInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -24384,19 +24467,19 @@ impl UploadPartInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
-                let inner_191 = &_input.part_number;
+                let inner_97 = &_input.part_number;
                 query.push_kv(
                     "partNumber",
-                    aws_smithy_types::primitive::Encoder::from(*inner_191).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_97).encode(),
                 );
-                let inner_192 = &_input.upload_id;
-                let inner_192 = inner_192.as_ref().ok_or_else(|| {
+                let inner_98 = &_input.upload_id;
+                let inner_98 = inner_98.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_192.is_empty() {
+                if inner_98.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "upload_id",
@@ -24404,7 +24487,7 @@ impl UploadPartInput {
                         ),
                     );
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_192));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_98));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -24443,6 +24526,10 @@ impl UploadPartInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -24488,12 +24575,6 @@ impl UploadPartInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -24939,39 +25020,42 @@ impl UploadPartCopyInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadPartCopyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_193 = &_input.bucket;
-                let input_193 = input_193.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "bucket",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let bucket = aws_smithy_http::label::fmt_string(
-                    input_193,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bucket.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bucket",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                let input_194 = &_input.key;
-                let input_194 = input_194.as_ref().ok_or_else(|| {
+                let input_99 = &_input.key;
+                let input_99 = input_99.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     )
                 })?;
                 let key = aws_smithy_http::label::fmt_string(
-                    input_194,
+                    input_99,
                     aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if key.is_empty() {
@@ -24982,8 +25066,7 @@ impl UploadPartCopyInput {
                         ),
                     );
                 }
-                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
-                    .expect("formatting should succeed");
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
@@ -24992,19 +25075,19 @@ impl UploadPartCopyInput {
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPartCopy");
-                let inner_195 = &_input.part_number;
+                let inner_100 = &_input.part_number;
                 query.push_kv(
                     "partNumber",
-                    aws_smithy_types::primitive::Encoder::from(*inner_195).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_100).encode(),
                 );
-                let inner_196 = &_input.upload_id;
-                let inner_196 = inner_196.as_ref().ok_or_else(|| {
+                let inner_101 = &_input.upload_id;
+                let inner_101 = inner_101.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_196.is_empty() {
+                if inner_101.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "upload_id",
@@ -25012,7 +25095,7 @@ impl UploadPartCopyInput {
                         ),
                     );
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_196));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_101));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -25037,6 +25120,10 @@ impl UploadPartCopyInput {
         let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -25063,12 +25150,6 @@ impl UploadPartCopyInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
@@ -25813,6 +25894,28 @@ impl WriteGetObjectResponseInput {
         >,
         aws_smithy_http::operation::error::BuildError,
     > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_endpoint(_config.endpoint_url().map(|url| url.to_string()))
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_use_object_lambda_endpoint(Some(true))
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
             fn uri_base(
                 _input: &crate::input::WriteGetObjectResponseInput,
@@ -25867,6 +25970,10 @@ impl WriteGetObjectResponseInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
         let endpoint_prefix = {
             let request_route = self.request_route.as_deref().unwrap_or_default();
             if request_route.is_empty() {
@@ -25908,12 +26015,6 @@ impl WriteGetObjectResponseInput {
                 .properties_mut()
                 .insert(aws_types::region::SigningRegion::from(region.clone()));
         }
-        let endpoint_params = aws_endpoint::Params::new(_config.region.clone());
-        request
-            .properties_mut()
-            .insert::<aws_smithy_http::endpoint::Result>(
-                _config.endpoint_resolver.resolve_endpoint(&endpoint_params),
-            );
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }

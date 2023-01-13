@@ -56,6 +56,9 @@ pub mod client;
 /// Configuration for the service.
 pub mod config;
 
+/// Endpoint resolution functionality
+pub mod endpoint;
+
 /// All error types that operations can return. Documentation on these types is copied from the model.
 pub mod error;
 
@@ -76,8 +79,6 @@ pub mod output;
 /// Data primitives referenced by other data types.
 pub mod types;
 
-mod aws_endpoint;
-
 pub mod middleware;
 
 mod no_credentials;
@@ -95,6 +96,9 @@ mod lens;
 mod query_ser;
 
 mod xml_deser;
+
+/// Endpoints standard library functions
+mod endpoint_lib;
 
 mod rest_xml_wrapped_errors;
 

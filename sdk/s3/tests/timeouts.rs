@@ -8,7 +8,7 @@ use aws_sdk_s3::model::{
     CompressionType, CsvInput, CsvOutput, ExpressionType, FileHeaderInfo, InputSerialization,
     OutputSerialization,
 };
-use aws_sdk_s3::{Client, Credentials, Endpoint, Region};
+use aws_sdk_s3::{Client, Credentials, Region};
 use aws_smithy_async::assert_elapsed;
 use aws_smithy_async::rt::sleep::{default_async_sleep, TokioSleep};
 use aws_smithy_client::never::NeverConnector;
@@ -103,9 +103,7 @@ async fn test_read_timeout() {
                 .read_timeout(Duration::from_millis(300))
                 .build(),
         )
-        .endpoint_resolver(
-            Endpoint::immutable(format!("http://{server_addr}")).expect("valid endpoint"),
-        )
+        .endpoint_url(format!("http://{server_addr}"))
         .region(Some(Region::from_static("us-east-1")))
         .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
             "test", "test", None, None, "test",
@@ -147,12 +145,9 @@ async fn test_connect_timeout() {
                 .connect_timeout(Duration::from_millis(300))
                 .build(),
         )
-        .endpoint_resolver(
-            Endpoint::immutable(
-                // Emulate a connect timeout error by hitting an unroutable IP
-                "http://172.255.255.0:18104",
-            )
-            .expect("valid endpoint"),
+        .endpoint_url(
+            // Emulate a connect timeout error by hitting an unroutable IP
+            "http://172.255.255.0:18104",
         )
         .region(Some(Region::from_static("us-east-1")))
         .credentials_provider(SharedCredentialsProvider::new(Credentials::new(

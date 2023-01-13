@@ -9,7 +9,6 @@ use std::net::SocketAddr;
 use std::sync::Arc;
 
 use aws_sdk_s3::Client;
-use aws_smithy_http::endpoint::Endpoint;
 use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::credentials::SharedCredentialsProvider;
 use aws_types::region::Region;
@@ -47,9 +46,7 @@ async fn test_concurrency_on_multi_thread_against_dummy_server() {
             "test",
         )))
         .region(Region::new("us-east-1"))
-        .endpoint_resolver(
-            Endpoint::immutable(format!("http://{server_addr}")).expect("valid endpoint"),
-        )
+        .endpoint_url(format!("http://{server_addr}"))
         .build();
 
     test_concurrency(sdk_config).await;
@@ -68,9 +65,7 @@ async fn test_concurrency_on_single_thread_against_dummy_server() {
             "test",
         )))
         .region(Region::new("us-east-1"))
-        .endpoint_resolver(
-            Endpoint::immutable(format!("http://{server_addr}")).expect("valid endpoint"),
-        )
+        .endpoint_url(format!("http://{server_addr}"))
         .build();
 
     test_concurrency(sdk_config).await;

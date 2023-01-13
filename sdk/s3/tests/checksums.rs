@@ -9,6 +9,7 @@ use aws_sdk_s3::{model::ChecksumAlgorithm, output::GetObjectOutput, Client, Cred
 use aws_smithy_client::test_connection::{capture_request, TestConnection};
 use aws_smithy_http::body::SdkBody;
 use aws_types::credentials::SharedCredentialsProvider;
+use http::header::AUTHORIZATION;
 use http::{HeaderValue, Uri};
 use std::{
     convert::Infallible,
@@ -30,7 +31,7 @@ fn new_checksum_validated_response_test_connection(
              .header("x-amz-content-sha256", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
              .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
              .header("authorization", "AWS4-HMAC-SHA256 Credential=ANOTREAL/20210618/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-checksum-mode;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-user-agent, Signature=eb9e58fa4fb04c8e6f160705017fdbb497ccff0efee4227b3a56f900006c3882")
-             .uri(Uri::from_static("https://s3.us-east-1.amazonaws.com/some-test-bucket/test.txt?x-id=GetObject")).body(SdkBody::empty()).unwrap(),
+             .uri(Uri::from_static("https://some-test-bucket.s3.us-east-1.amazonaws.com/test.txt?x-id=GetObject")).body(SdkBody::empty()).unwrap(),
          http::Response::builder()
              .header("x-amz-request-id", "4B4NGF0EAWN0GE63")
              .header("content-length", "11")
@@ -90,7 +91,10 @@ async fn test_checksum_on_streaming_response(
         .await
         .unwrap();
 
-    conn.assert_requests_match(&[http::header::HeaderName::from_static("x-amz-checksum-mode")]);
+    conn.assert_requests_match(&[
+        http::header::HeaderName::from_static("x-amz-checksum-mode"),
+        AUTHORIZATION,
+    ]);
 
     res
 }

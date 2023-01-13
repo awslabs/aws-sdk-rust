@@ -17,15 +17,20 @@
 /// The service config can also be constructed manually using its builder.
 ///
 pub struct Config {
+    pub(crate) force_path_style: std::option::Option<bool>,
+    pub(crate) use_arn_region: std::option::Option<bool>,
+    pub(crate) disable_multi_region_access_points: std::option::Option<bool>,
+    pub(crate) accelerate: std::option::Option<bool>,
+    pub(crate) endpoint_resolver:
+        std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     app_name: Option<aws_types::app_name::AppName>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
-    pub(crate) endpoint_resolver:
-        std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<aws_endpoint::Params>>,
     pub(crate) region: Option<aws_types::region::Region>,
     pub(crate) credentials_provider: aws_types::credentials::SharedCredentialsProvider,
+    endpoint_url: Option<String>,
 }
 impl std::fmt::Debug for Config {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37,6 +42,13 @@ impl Config {
     /// Constructs a config builder.
     pub fn builder() -> Builder {
         Builder::default()
+    }
+    /// Returns the endpoint resolver.
+    pub fn endpoint_resolver(
+        &self,
+    ) -> std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>
+    {
+        self.endpoint_resolver.clone()
     }
     /// Return a reference to the retry configuration contained in this config, if any.
     pub fn retry_config(&self) -> Option<&aws_smithy_types::retry::RetryConfig> {
@@ -91,25 +103,134 @@ impl Config {
     pub fn credentials_provider(&self) -> aws_types::credentials::SharedCredentialsProvider {
         self.credentials_provider.clone()
     }
+    #[allow(dead_code)]
+    pub(crate) fn endpoint_url(&self) -> Option<&str> {
+        self.endpoint_url.as_deref()
+    }
 }
 /// Builder for creating a `Config`.
 #[derive(Default)]
 pub struct Builder {
+    force_path_style: std::option::Option<bool>,
+    use_arn_region: std::option::Option<bool>,
+    disable_multi_region_access_points: std::option::Option<bool>,
+    accelerate: std::option::Option<bool>,
+    endpoint_resolver: Option<
+        std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
+    >,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     app_name: Option<aws_types::app_name::AppName>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
-    endpoint_resolver: Option<
-        std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<aws_endpoint::Params>>,
-    >,
     region: Option<aws_types::region::Region>,
     credentials_provider: Option<aws_types::credentials::SharedCredentialsProvider>,
+    endpoint_url: Option<String>,
 }
 impl Builder {
     /// Constructs a config builder.
     pub fn new() -> Self {
         Self::default()
+    }
+    /// Forces this client to use path-style addressing for buckets.
+    pub fn force_path_style(mut self, force_path_style: impl Into<bool>) -> Self {
+        self.force_path_style = Some(force_path_style.into());
+        self
+    }
+    /// Forces this client to use path-style addressing for buckets.
+    pub fn set_force_path_style(&mut self, force_path_style: Option<bool>) -> &mut Self {
+        self.force_path_style = force_path_style;
+        self
+    }
+    /// Enables this client to use an ARN's region when constructing an endpoint instead of the client's configured region.
+    pub fn use_arn_region(mut self, use_arn_region: impl Into<bool>) -> Self {
+        self.use_arn_region = Some(use_arn_region.into());
+        self
+    }
+    /// Enables this client to use an ARN's region when constructing an endpoint instead of the client's configured region.
+    pub fn set_use_arn_region(&mut self, use_arn_region: Option<bool>) -> &mut Self {
+        self.use_arn_region = use_arn_region;
+        self
+    }
+    /// Disables this client's usage of Multi-Region Access Points.
+    pub fn disable_multi_region_access_points(
+        mut self,
+        disable_multi_region_access_points: impl Into<bool>,
+    ) -> Self {
+        self.disable_multi_region_access_points = Some(disable_multi_region_access_points.into());
+        self
+    }
+    /// Disables this client's usage of Multi-Region Access Points.
+    pub fn set_disable_multi_region_access_points(
+        &mut self,
+        disable_multi_region_access_points: Option<bool>,
+    ) -> &mut Self {
+        self.disable_multi_region_access_points = disable_multi_region_access_points;
+        self
+    }
+    /// Enables this client to use S3 Transfer Acceleration endpoints.
+    pub fn accelerate(mut self, accelerate: impl Into<bool>) -> Self {
+        self.accelerate = Some(accelerate.into());
+        self
+    }
+    /// Enables this client to use S3 Transfer Acceleration endpoints.
+    pub fn set_accelerate(&mut self, accelerate: Option<bool>) -> &mut Self {
+        self.accelerate = accelerate;
+        self
+    }
+    /// Sets the endpoint resolver to use when making requests.
+
+    ///
+    /// When unset, the client will used a generated endpoint resolver based on the endpoint resolution
+    /// rules for `aws_sdk_s3`.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// use aws_smithy_http::endpoint;
+    /// use aws_sdk_s3::endpoint::{Params as EndpointParams, DefaultResolver};
+    /// /// Endpoint resolver which adds a prefix to the generated endpoint
+    /// struct PrefixResolver {
+    ///     base_resolver: DefaultResolver,
+    ///     prefix: String
+    /// }
+    /// impl endpoint::ResolveEndpoint<EndpointParams> for PrefixResolver {
+    ///   fn resolve_endpoint(&self, params: &EndpointParams) -> endpoint::Result {
+    ///        self.base_resolver
+    ///              .resolve_endpoint(params)
+    ///              .map(|ep|{
+    ///                   let url = ep.url().to_string();
+    ///                   ep.into_builder().url(format!("{}.{}", &self.prefix, url)).build()
+    ///               })
+    ///   }
+    /// }
+    /// let prefix_resolver = PrefixResolver {
+    ///     base_resolver: DefaultResolver::new(),
+    ///     prefix: "subdomain".to_string()
+    /// };
+    /// let config = aws_sdk_s3::Config::builder().endpoint_resolver(prefix_resolver);
+    /// ```
+
+    pub fn endpoint_resolver(
+        mut self,
+        endpoint_resolver: impl aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>
+            + 'static,
+    ) -> Self {
+        self.endpoint_resolver = Some(std::sync::Arc::new(endpoint_resolver) as _);
+        self
+    }
+
+    /// Sets the endpoint resolver to use when making requests.
+    ///
+    /// When unset, the client will used a generated endpoint resolver based on the endpoint resolution
+    /// rules for `aws_sdk_s3`.
+    pub fn set_endpoint_resolver(
+        &mut self,
+        endpoint_resolver: Option<
+            std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
+        >,
+    ) -> &mut Self {
+        self.endpoint_resolver = endpoint_resolver;
+        self
     }
     /// Set the retry_config for the builder
     ///
@@ -360,43 +481,6 @@ impl Builder {
         self.http_connector = http_connector.map(|inner| inner.into());
         self
     }
-    /// Overrides the endpoint resolver to use when making requests.
-    ///
-    /// When unset, the client will used a generated endpoint resolver based on the endpoint metadata
-    /// for `aws_sdk_s3`.
-    ///
-    /// # Examples
-    /// ```no_run
-    /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
-    /// use aws_types::region::Region;
-    /// use aws_sdk_s3::config::{Builder, Config};
-    /// use aws_sdk_s3::Endpoint;
-    ///
-    /// let config = aws_sdk_s3::Config::builder()
-    ///     .endpoint_resolver(Endpoint::immutable("http://localhost:8080")?)
-    ///     .build();
-    /// # Ok(())
-    /// # }
-    /// ```
-    pub fn endpoint_resolver(
-        mut self,
-        endpoint_resolver: impl aws_endpoint::ResolveAwsEndpoint + 'static,
-    ) -> Self {
-        self.endpoint_resolver = Some(std::sync::Arc::new(
-            aws_endpoint::EndpointShim::from_resolver(endpoint_resolver),
-        ) as _);
-        self
-    }
-
-    /// Sets the endpoint resolver to use when making requests.
-    pub fn set_endpoint_resolver(
-        &mut self,
-        endpoint_resolver: Option<std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
-    ) -> &mut Self {
-        self.endpoint_resolver = endpoint_resolver
-            .map(|res| std::sync::Arc::new(aws_endpoint::EndpointShim::from_arc(res)) as _);
-        self
-    }
     /// Sets the AWS region to use when making requests.
     ///
     /// # Examples
@@ -431,25 +515,91 @@ impl Builder {
         self.credentials_provider = credentials_provider;
         self
     }
+    /// Overrides the endpoint resolver to use when making requests.
+    ///
+    /// This method is deprecated, use [`Builder::endpoint_url`] or [`Builder::endpoint_resolver`] instead.
+    ///
+    /// When unset, the client will used a generated endpoint resolver based on the endpoint metadata
+    /// for `aws_sdk_s3`.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
+    /// use aws_types::region::Region;
+    /// use aws_sdk_s3::config::{Builder, Config};
+    /// use aws_sdk_s3::Endpoint;
+    ///
+    /// let config = aws_sdk_s3::Config::builder()
+    ///     .endpoint_resolver(Endpoint::immutable("http://localhost:8080")?)
+    ///     .build();
+    /// # Ok(())
+    /// # }
+    /// ```
+    #[deprecated(note = "use endpoint_url or set the endpoint resolver directly")]
+    pub fn aws_endpoint_resolver(
+        mut self,
+        endpoint_resolver: impl aws_endpoint::ResolveAwsEndpoint + 'static,
+    ) -> Self {
+        self.endpoint_resolver = Some(std::sync::Arc::new(
+            aws_endpoint::EndpointShim::from_resolver(endpoint_resolver),
+        ) as _);
+        self
+    }
+
+    #[deprecated(note = "use endpoint_url or set the endpoint resolver directly")]
+    /// Sets the endpoint resolver to use when making requests.
+    ///
+    /// This method is deprecated, use [`Builder::endpoint_url`] or [`Builder::endpoint_resolver`] instead.
+    pub fn set_aws_endpoint_resolver(
+        &mut self,
+        endpoint_resolver: Option<std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
+    ) -> &mut Self {
+        self.endpoint_resolver = endpoint_resolver
+            .map(|res| std::sync::Arc::new(aws_endpoint::EndpointShim::from_arc(res)) as _);
+        self
+    }
+
+    /// Sets the endpoint url used to communicate with this service
+    ///
+    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
+    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
+    /// [`Builder::endpoint_resolver`].
+    pub fn endpoint_url(mut self, endpoint_url: impl Into<String>) -> Self {
+        self.endpoint_url = Some(endpoint_url.into());
+        self
+    }
+
+    /// Sets the endpoint url used to communicate with this service
+    ///
+    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
+    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
+    /// [`Builder::endpoint_resolver`].
+    pub fn set_endpoint_url(&mut self, endpoint_url: Option<String>) -> &mut Self {
+        self.endpoint_url = endpoint_url;
+        self
+    }
     /// Builds a [`Config`].
     pub fn build(self) -> Config {
         Config {
+            force_path_style: self.force_path_style,
+            use_arn_region: self.use_arn_region,
+            disable_multi_region_access_points: self.disable_multi_region_access_points,
+            accelerate: self.accelerate,
+            endpoint_resolver: self
+                .endpoint_resolver
+                .unwrap_or_else(|| std::sync::Arc::new(crate::endpoint::DefaultResolver::new())),
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl,
             timeout_config: self.timeout_config,
             app_name: self.app_name,
             http_connector: self.http_connector,
-            endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
-                std::sync::Arc::new(aws_endpoint::EndpointShim::from_resolver(
-                    crate::aws_endpoint::endpoint_resolver(),
-                ))
-            }),
             region: self.region,
             credentials_provider: self.credentials_provider.unwrap_or_else(|| {
                 aws_types::credentials::SharedCredentialsProvider::new(
                     crate::no_credentials::NoCredentials,
                 )
             }),
+            endpoint_url: self.endpoint_url,
         }
     }
 }
@@ -458,7 +608,8 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
         builder = builder.region(input.region().cloned());
-        builder.set_endpoint_resolver(input.endpoint_resolver().clone());
+        builder.set_aws_endpoint_resolver(input.endpoint_resolver().clone());
+        builder.set_endpoint_url(input.endpoint_url().map(|url| url.to_string()));
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
         builder.set_sleep_impl(input.sleep_impl());

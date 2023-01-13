@@ -18,7 +18,7 @@ use aws_smithy_client::http_connector::ConnectorSettings;
 use aws_smithy_client::{erase::DynConnector, SdkSuccess};
 use aws_smithy_client::{retry, SdkError};
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::endpoint::Endpoint;
+use aws_smithy_http::endpoint::apply_endpoint;
 use aws_smithy_http::operation;
 use aws_smithy_http::operation::{Metadata, Operation};
 use aws_smithy_http::response::ParseStrictResponse;
@@ -128,7 +128,7 @@ pub struct Client {
 
 #[derive(Debug)]
 struct ClientInner {
-    endpoint: Endpoint,
+    endpoint: Uri,
     smithy_client: aws_smithy_client::Client<DynConnector, ImdsMiddleware>,
 }
 
@@ -235,10 +235,7 @@ impl Client {
         let mut base_uri: Uri = path.parse().map_err(|_| {
             ImdsError::unexpected("IMDS path was not a valid URI. Hint: does it begin with `/`?")
         })?;
-        self.inner
-            .endpoint
-            .set_endpoint(&mut base_uri, None)
-            .map_err(ImdsError::unexpected)?;
+        apply_endpoint(&mut base_uri, &self.inner.endpoint, None).map_err(ImdsError::unexpected)?;
         let request = http::Request::builder()
             .uri(base_uri)
             .body(SdkBody::empty())
@@ -434,7 +431,6 @@ impl Builder {
             .endpoint
             .unwrap_or_else(|| EndpointSource::Env(config.env(), config.fs()));
         let endpoint = endpoint_source.endpoint(self.mode_override).await?;
-        let endpoint = Endpoint::immutable_uri(endpoint)?;
         let retry_config = retry::Config::default()
             .with_max_attempts(self.max_attempts.unwrap_or(DEFAULT_ATTEMPTS));
         let token_loader = token::TokenMiddleware::new(
