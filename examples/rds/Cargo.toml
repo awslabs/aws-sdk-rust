@@ -6,7 +6,7 @@ version = "0.1.0"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.52.0"
+version = "0.53.0"
 
 [dependencies.aws-sdk-rds]
 path = "../../sdk/rds"

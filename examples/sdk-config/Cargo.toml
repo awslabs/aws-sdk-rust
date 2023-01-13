@@ -12,7 +12,7 @@ tracing = "0.1.37"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.52.0"
+version = "0.53.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
@@ -21,11 +21,11 @@ version = "0.23.0"
 [dependencies.aws-smithy-client]
 features = ["rustls"]
 path = "../../sdk/aws-smithy-client"
-version = "0.52.0"
+version = "0.53.0"
 
 [dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"
-version = "0.52.0"
+version = "0.53.0"
 
 [dependencies.tokio]
 version = "1.20.1"
