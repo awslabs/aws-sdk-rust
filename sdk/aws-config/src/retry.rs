@@ -15,7 +15,6 @@ pub use aws_smithy_types::retry::RetryMode;
 
 /// Errors for retry configuration
 pub mod error {
-    use std::borrow::Cow;
     use std::fmt;
     use std::num::ParseIntError;
 
@@ -28,20 +27,13 @@ pub mod error {
         InvalidRetryMode {
             /// Cause of the error.
             source: RetryModeParseError,
-            /// Where the invalid retry mode value originated from.
-            set_by: Cow<'static, str>,
         },
         /// Max attempts must be greater than zero.
-        MaxAttemptsMustNotBeZero {
-            /// Where the invalid max attempts value originated from.
-            set_by: Cow<'static, str>,
-        },
+        MaxAttemptsMustNotBeZero,
         /// The max attempts value couldn't be parsed to an integer.
         FailedToParseMaxAttempts {
             /// Cause of the error.
             source: ParseIntError,
-            /// Where the invalid max attempts value originated from.
-            set_by: Cow<'static, str>,
         },
     }
 
@@ -55,14 +47,14 @@ pub mod error {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
             use RetryConfigErrorKind::*;
             match &self.kind {
-                InvalidRetryMode { set_by, .. } => {
-                    write!(f, "invalid configuration set by {set_by}")
+                InvalidRetryMode { .. } => {
+                    write!(f, "invalid retry configuration")
                 }
-                MaxAttemptsMustNotBeZero { set_by } => {
-                    write!(f, "invalid configuration set by {set_by}: It is invalid to set max attempts to 0. Unset it or set it to an integer greater than or equal to one.")
+                MaxAttemptsMustNotBeZero { .. } => {
+                    write!(f, "invalid configuration: It is invalid to set max attempts to 0. Unset it or set it to an integer greater than or equal to one.")
                 }
-                FailedToParseMaxAttempts { set_by, .. } => {
-                    write!(f, "failed to parse max attempts set by {set_by}",)
+                FailedToParseMaxAttempts { .. } => {
+                    write!(f, "failed to parse max attempts",)
                 }
             }
         }

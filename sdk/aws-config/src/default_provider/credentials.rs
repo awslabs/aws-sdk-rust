@@ -496,7 +496,7 @@ retry_mode = standard
     }
 
     #[tokio::test]
-    #[should_panic = "failed to parse max attempts set by aws profile: invalid digit found in string"]
+    #[should_panic = "failed to parse max attempts. source: profile `default`, key: `max_attempts`: invalid digit found in string"]
     async fn test_invalid_profile_retry_config_panics() {
         let env = Env::from_slice(&[("AWS_CONFIG_FILE", "config")]);
         let fs = Fs::from_slice(&[(

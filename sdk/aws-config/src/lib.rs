@@ -122,6 +122,7 @@ pub mod profile;
 pub mod provider_config;
 pub mod retry;
 pub mod sso;
+pub(crate) mod standard_property;
 pub mod sts;
 pub mod timeout;
 pub mod web_identity_token;

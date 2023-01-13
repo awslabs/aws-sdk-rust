@@ -22,7 +22,6 @@ pub mod app_name;
 pub mod credentials;
 pub mod profile_file;
 pub mod region;
-pub mod retry_config;
 
 #[doc(inline)]
 pub use credentials::ProfileFileCredentialsProvider;

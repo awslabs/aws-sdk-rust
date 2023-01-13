@@ -3,11 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::environment::retry_config::EnvironmentVariableRetryConfigProvider;
-use crate::profile;
 use crate::provider_config::ProviderConfig;
+use crate::retry::error::{RetryConfigError, RetryConfigErrorKind};
+use crate::standard_property::{PropertyResolutionError, StandardProperty};
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_smithy_types::retry::RetryConfig;
+use aws_smithy_types::retry::{RetryConfig, RetryMode};
+use std::str::FromStr;
 
 /// Default RetryConfig Provider chain
 ///
@@ -15,8 +16,8 @@ use aws_smithy_types::retry::RetryConfig;
 /// a builder struct is returned which has a similar API.
 ///
 /// This provider will check the following sources in order:
-/// 1. [Environment variables](EnvironmentVariableRetryConfigProvider)
-/// 2. [Profile file](crate::profile::retry_config::ProfileFileRetryConfigProvider)
+/// 1. Environment variables: `AWS_MAX_ATTEMPTS` & `AWS_RETRY_MODE`
+/// 2. Profile file: `max_attempts` and `retry_mode`
 ///
 /// # Example
 ///
@@ -49,11 +50,20 @@ pub fn default_provider() -> Builder {
     Builder::default()
 }
 
+mod env {
+    pub(super) const MAX_ATTEMPTS: &str = "AWS_MAX_ATTEMPTS";
+    pub(super) const RETRY_MODE: &str = "AWS_RETRY_MODE";
+}
+
+mod profile_keys {
+    pub(super) const MAX_ATTEMPTS: &str = "max_attempts";
+    pub(super) const RETRY_MODE: &str = "retry_mode";
+}
+
 /// Builder for RetryConfig that checks the environment and aws profile for configuration
 #[derive(Debug, Default)]
 pub struct Builder {
-    env_provider: EnvironmentVariableRetryConfigProvider,
-    profile_file: profile::retry_config::Builder,
+    provider_config: ProviderConfig,
 }
 
 impl Builder {
@@ -61,21 +71,19 @@ impl Builder {
     ///
     /// Exposed for overriding the environment when unit-testing providers
     pub fn configure(mut self, configuration: &ProviderConfig) -> Self {
-        self.env_provider =
-            EnvironmentVariableRetryConfigProvider::new_with_env(configuration.env());
-        self.profile_file = self.profile_file.configure(configuration);
+        self.provider_config = configuration.clone();
         self
     }
 
     /// Override the profile name used by this provider
     pub fn profile_name(mut self, name: &str) -> Self {
-        self.profile_file = self.profile_file.profile_name(name);
+        self.provider_config = self.provider_config.with_profile_name(name.to_string());
         self
     }
 
     /// Attempt to create a [RetryConfig](aws_smithy_types::retry::RetryConfig) from following sources in order:
-    /// 1. [Environment variables](crate::environment::retry_config::EnvironmentVariableRetryConfigProvider)
-    /// 2. [Profile file](crate::profile::retry_config::ProfileFileRetryConfigProvider)
+    /// 1. Environment variables: `AWS_MAX_ATTEMPTS` & `AWS_RETRY_MODE`
+    /// 2. Profile file: `max_attempts` and `retry_mode`
     /// 3. [RetryConfig::standard()](aws_smithy_types::retry::RetryConfig::standard)
     ///
     /// Precedence is considered on a per-field basis
@@ -85,20 +93,133 @@ impl Builder {
     /// - Panics if the `AWS_MAX_ATTEMPTS` env var or `max_attempts` profile var is set to 0
     /// - Panics if the `AWS_RETRY_MODE` env var or `retry_mode` profile var is set to "adaptive" (it's not yet supported)
     pub async fn retry_config(self) -> RetryConfig {
+        match self.try_retry_config().await {
+            Ok(conf) => conf,
+            Err(e) => panic!("{}", DisplayErrorContext(e)),
+        }
+    }
+
+    pub(crate) async fn try_retry_config(
+        self,
+    ) -> Result<RetryConfig, PropertyResolutionError<RetryConfigError>> {
         // Both of these can return errors due to invalid config settings and we want to surface those as early as possible
         // hence, we'll panic if any config values are invalid (missing values are OK though)
         // We match this instead of unwrapping so we can print the error with the `Display` impl instead of the `Debug` impl that unwrap uses
-        let builder_from_env = match self.env_provider.retry_config_builder() {
-            Ok(retry_config_builder) => retry_config_builder,
-            Err(err) => panic!("{}", DisplayErrorContext(&err)),
-        };
-        let builder_from_profile = match self.profile_file.build().retry_config_builder().await {
-            Ok(retry_config_builder) => retry_config_builder,
-            Err(err) => panic!("{}", DisplayErrorContext(&err)),
-        };
+        let mut retry_config = RetryConfig::standard();
+        let max_attempts = StandardProperty::new()
+            .env(env::MAX_ATTEMPTS)
+            .profile(profile_keys::MAX_ATTEMPTS)
+            .validate(&self.provider_config, validate_max_attempts);
 
-        builder_from_env
-            .take_unset_from(builder_from_profile)
-            .build()
+        let retry_mode = StandardProperty::new()
+            .env(env::RETRY_MODE)
+            .profile(profile_keys::RETRY_MODE)
+            .validate(&self.provider_config, |s| {
+                RetryMode::from_str(s)
+                    .map_err(|err| RetryConfigErrorKind::InvalidRetryMode { source: err }.into())
+            });
+
+        if let Some(max_attempts) = max_attempts.await? {
+            retry_config = retry_config.with_max_attempts(max_attempts);
+        }
+
+        if let Some(retry_mode) = retry_mode.await? {
+            retry_config = retry_config.with_retry_mode(retry_mode);
+        }
+
+        Ok(retry_config)
+    }
+}
+
+fn validate_max_attempts(max_attempts: &str) -> Result<u32, RetryConfigError> {
+    match max_attempts.parse::<u32>() {
+        Ok(max_attempts) if max_attempts == 0 => {
+            Err(RetryConfigErrorKind::MaxAttemptsMustNotBeZero.into())
+        }
+        Ok(max_attempts) => Ok(max_attempts),
+        Err(source) => Err(RetryConfigErrorKind::FailedToParseMaxAttempts { source }.into()),
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use crate::default_provider::retry_config::env;
+    use crate::provider_config::ProviderConfig;
+    use crate::retry::{
+        error::RetryConfigError, error::RetryConfigErrorKind, RetryConfig, RetryMode,
+    };
+    use crate::standard_property::PropertyResolutionError;
+    use aws_types::os_shim_internal::Env;
+
+    async fn test_provider(
+        vars: &[(&str, &str)],
+    ) -> Result<RetryConfig, PropertyResolutionError<RetryConfigError>> {
+        super::Builder::default()
+            .configure(&ProviderConfig::no_configuration().with_env(Env::from_slice(vars)))
+            .try_retry_config()
+            .await
+    }
+
+    #[tokio::test]
+    async fn defaults() {
+        let built = test_provider(&[]).await.unwrap();
+
+        assert_eq!(built.mode(), RetryMode::Standard);
+        assert_eq!(built.max_attempts(), 3);
+    }
+
+    #[tokio::test]
+    async fn max_attempts_is_read_correctly() {
+        assert_eq!(
+            test_provider(&[(env::MAX_ATTEMPTS, "88")]).await.unwrap(),
+            RetryConfig::standard().with_max_attempts(88)
+        );
+    }
+
+    #[tokio::test]
+    async fn max_attempts_errors_when_it_cant_be_parsed_as_an_integer() {
+        assert!(matches!(
+            test_provider(&[(env::MAX_ATTEMPTS, "not an integer")])
+                .await
+                .unwrap_err()
+                .err,
+            RetryConfigError {
+                kind: RetryConfigErrorKind::FailedToParseMaxAttempts { .. }
+            }
+        ));
+    }
+
+    #[tokio::test]
+    async fn retry_mode_is_read_correctly() {
+        assert_eq!(
+            test_provider(&[(env::RETRY_MODE, "standard")])
+                .await
+                .unwrap(),
+            RetryConfig::standard()
+        );
+    }
+
+    #[tokio::test]
+    async fn both_fields_can_be_set_at_once() {
+        assert_eq!(
+            test_provider(&[(env::RETRY_MODE, "standard"), (env::MAX_ATTEMPTS, "13")])
+                .await
+                .unwrap(),
+            RetryConfig::standard().with_max_attempts(13)
+        );
+    }
+
+    #[tokio::test]
+    async fn disallow_zero_max_attempts() {
+        let err = test_provider(&[(env::MAX_ATTEMPTS, "0")])
+            .await
+            .unwrap_err()
+            .err;
+        assert!(matches!(
+            err,
+            RetryConfigError {
+                kind: RetryConfigErrorKind::MaxAttemptsMustNotBeZero { .. }
+            }
+        ));
     }
 }
