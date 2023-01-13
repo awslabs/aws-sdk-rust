@@ -14,9 +14,10 @@
 //! - Retry token loading when it fails
 //! - Attach the token to the request in the `x-aws-ec2-metadata-token` header
 
-use crate::cache::ExpiringCache;
 use crate::imds::client::error::{ImdsError, TokenError, TokenErrorKind};
 use crate::imds::client::ImdsResponseRetryClassifier;
+use aws_credential_types::cache::ExpiringCache;
+use aws_credential_types::time_source::TimeSource;
 use aws_http::user_agent::UserAgentStage;
 use aws_sdk_sso::config::timeout::TimeoutConfig;
 use aws_smithy_async::rt::sleep::AsyncSleep;
@@ -30,7 +31,6 @@ use aws_smithy_http::operation::Operation;
 use aws_smithy_http::operation::{Metadata, Request};
 use aws_smithy_http::response::ParseStrictResponse;
 use aws_smithy_http_tower::map_request::MapRequestLayer;
-use aws_types::os_shim_internal::TimeSource;
 use http::{HeaderValue, Uri};
 use std::fmt::{Debug, Formatter};
 use std::future::Future;

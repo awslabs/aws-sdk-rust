@@ -8,6 +8,8 @@
 //!
 //! Future work will stabilize this interface and enable it to be used directly.
 
+use aws_credential_types::provider::{self, error::CredentialsError};
+use aws_credential_types::Credentials;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_client::http_connector::ConnectorSettings;
 use aws_smithy_http::body::SdkBody;
@@ -16,8 +18,6 @@ use aws_smithy_http::response::ParseStrictResponse;
 use aws_smithy_http::result::{SdkError, SdkSuccess};
 use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
-use aws_types::credentials::CredentialsError;
-use aws_types::{credentials, Credentials};
 
 use crate::connector::expect_connector;
 use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
@@ -44,7 +44,7 @@ impl HttpCredentialProvider {
         Builder::default()
     }
 
-    pub(crate) async fn credentials(&self, auth: Option<HeaderValue>) -> credentials::Result {
+    pub(crate) async fn credentials(&self, auth: Option<HeaderValue>) -> provider::Result {
         let credentials = self.client.call(self.operation(auth)).await;
         match credentials {
             Ok(creds) => Ok(creds),
@@ -119,7 +119,7 @@ struct CredentialsResponseParser {
     provider_name: &'static str,
 }
 impl ParseStrictResponse for CredentialsResponseParser {
-    type Output = credentials::Result;
+    type Output = provider::Result;
 
     fn parse(&self, response: &Response<Bytes>) -> Self::Output {
         if !response.status().is_success() {
@@ -159,7 +159,7 @@ impl ClassifyRetry<SdkSuccess<Credentials>, SdkError<CredentialsError>>
 {
     fn classify_retry(
         &self,
-        response: Result<&SdkSuccess<credentials::Credentials>, &SdkError<CredentialsError>>,
+        response: Result<&SdkSuccess<Credentials>, &SdkError<CredentialsError>>,
     ) -> RetryKind {
         /* The following errors are retryable:
          *   - Socket errors
@@ -203,14 +203,14 @@ mod test {
     use crate::http_credential_provider::{
         CredentialsResponseParser, HttpCredentialRetryClassifier,
     };
+    use aws_credential_types::provider::error::CredentialsError;
+    use aws_credential_types::Credentials;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::operation;
     use aws_smithy_http::response::ParseStrictResponse;
     use aws_smithy_http::result::{SdkError, SdkSuccess};
     use aws_smithy_http::retry::ClassifyRetry;
     use aws_smithy_types::retry::{ErrorKind, RetryKind};
-    use aws_types::credentials::CredentialsError;
-    use aws_types::Credentials;
     use bytes::Bytes;
 
     fn sdk_resp(

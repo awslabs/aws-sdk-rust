@@ -10,11 +10,3 @@ set -e
 
 echo "### Checking for duplicate dependency versions in the normal dependency graph with all features enabled"
 cargo tree -d --edges normal --all-features
-
-FEATURES=(
-    "hardcoded-credentials"
-)
-for feature in "${FEATURES[@]}"; do
-    echo "### Checking feature '${feature}'..."
-    cargo test --no-default-features --features "${feature}"
-done

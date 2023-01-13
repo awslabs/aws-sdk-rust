@@ -4,9 +4,9 @@
  */
 
 use aws_config::SdkConfig;
+use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::{AppName, Client, Credentials, Region};
 use aws_smithy_client::test_connection::capture_request;
-use aws_types::credentials::SharedCredentialsProvider;
 
 #[tokio::test]
 async fn user_agent_app_name() {

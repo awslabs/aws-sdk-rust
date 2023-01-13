@@ -5,19 +5,19 @@
 
 //! Assume credentials for a role through the AWS Security Token Service (STS).
 
+use aws_credential_types::lazy_caching::LazyCachingCredentialsProvider;
+use aws_credential_types::provider::{
+    self, error::CredentialsError, future, ProvideCredentials, SharedCredentialsProvider,
+};
 use aws_sdk_sts::error::AssumeRoleErrorKind;
 use aws_sdk_sts::middleware::DefaultMiddleware;
 use aws_sdk_sts::model::PolicyDescriptorType;
 use aws_sdk_sts::operation::AssumeRole;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_http::result::SdkError;
-use aws_types::credentials::{
-    self, future, CredentialsError, ProvideCredentials, SharedCredentialsProvider,
-};
 use aws_types::region::Region;
 use std::time::Duration;
 
-use crate::meta::credentials::LazyCachingCredentialsProvider;
 use crate::provider_config::ProviderConfig;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use tracing::Instrument;
@@ -31,8 +31,9 @@ use tracing::Instrument;
 ///
 /// # Examples
 /// ```no_run
+/// use aws_credential_types::Credentials;
 /// use aws_config::sts::{AssumeRoleProvider};
-/// use aws_types::{Credentials, region::Region};
+/// use aws_types::region::Region;
 /// use aws_config::environment;
 /// use aws_config::environment::credentials::EnvironmentVariableCredentialsProvider;
 /// use std::sync::Arc;
@@ -226,7 +227,7 @@ impl AssumeRoleProviderBuilder {
             op: operation,
         };
         let cache = LazyCachingCredentialsProvider::builder()
-            .configure(&conf)
+            .configure(conf.sleep(), conf.time_source())
             .load(inner)
             .build();
         AssumeRoleProvider { cache }
@@ -234,7 +235,7 @@ impl AssumeRoleProviderBuilder {
 }
 
 impl Inner {
-    async fn credentials(&self) -> credentials::Result {
+    async fn credentials(&self) -> provider::Result {
         tracing::debug!("retrieving assumed credentials");
         let op = self
             .op
@@ -297,14 +298,14 @@ impl ProvideCredentials for AssumeRoleProvider {
 mod test {
     use crate::provider_config::ProviderConfig;
     use crate::sts::AssumeRoleProvider;
+    use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
+    use aws_credential_types::time_source::{TestingTimeSource, TimeSource};
+    use aws_credential_types::Credentials;
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::capture_request;
     use aws_smithy_http::body::SdkBody;
-    use aws_types::credentials::{ProvideCredentials, SharedCredentialsProvider};
-    use aws_types::os_shim_internal::{ManualTimeSource, TimeSource};
     use aws_types::region::Region;
-    use aws_types::Credentials;
     use std::time::{Duration, UNIX_EPOCH};
 
     #[tokio::test]
@@ -312,7 +313,7 @@ mod test {
         let (server, request) = capture_request(None);
         let provider_conf = ProviderConfig::empty()
             .with_sleep(TokioSleep::new())
-            .with_time_source(TimeSource::manual(&ManualTimeSource::new(
+            .with_time_source(TimeSource::testing(&TestingTimeSource::new(
                 UNIX_EPOCH + Duration::from_secs(1234567890 - 120),
             )))
             .with_http_connector(DynConnector::new(server));
@@ -341,7 +342,7 @@ mod test {
         let (server, _request) = capture_request(Some(resp));
         let provider_conf = ProviderConfig::empty()
             .with_sleep(TokioSleep::new())
-            .with_time_source(TimeSource::manual(&ManualTimeSource::new(
+            .with_time_source(TimeSource::testing(&TestingTimeSource::new(
                 UNIX_EPOCH + Duration::from_secs(1234567890 - 120),
             )))
             .with_http_connector(DynConnector::new(server));

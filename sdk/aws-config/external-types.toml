@@ -3,6 +3,9 @@
 # require manual version bumping every time an automated version bump
 # to the exposed SDK crates happens.
 allowed_external_types = [
+   "aws_credential_types::provider::ProvideCredentials",
+   "aws_credential_types::provider::Result",
+   "aws_credential_types::provider::SharedCredentialsProvider",
    "aws_sdk_sts::model::PolicyDescriptorType",
    "aws_smithy_async::rt::sleep::AsyncSleep",
    "aws_smithy_client::bounds::SmithyConnector",

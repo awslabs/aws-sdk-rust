@@ -1,4 +1,5 @@
 allowed_external_types = [
+    "aws_credential_types::credentials_impl::Credentials",
     "aws_sigv4::http_request::sign::SignableBody",
     "aws_sigv4::http_request::error::SigningError",
     "aws_smithy_http::*",

@@ -11,9 +11,9 @@ use aws_smithy_http::middleware::MapRequest;
 use aws_smithy_http::operation::Request;
 use aws_smithy_http::property_bag::PropertyBag;
 
+use aws_credential_types::Credentials;
 use aws_sigv4::http_request::SignableBody;
 use aws_types::region::SigningRegion;
-use aws_types::Credentials;
 use aws_types::SigningService;
 
 use crate::signer::{
@@ -197,9 +197,9 @@ mod test {
     use aws_smithy_http::operation;
     use http::header::AUTHORIZATION;
 
+    use aws_credential_types::Credentials;
     use aws_endpoint::AwsAuthStage;
     use aws_types::region::{Region, SigningRegion};
-    use aws_types::Credentials;
     use aws_types::SigningService;
 
     use crate::middleware::{

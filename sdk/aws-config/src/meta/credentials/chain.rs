@@ -3,18 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_types::credentials::{self, future, CredentialsError, ProvideCredentials};
 use std::borrow::Cow;
 use tracing::Instrument;
 
 /// Credentials provider that checks a series of inner providers
 ///
 /// Each provider will be evaluated in order:
-/// * If a provider returns valid [`Credentials`](aws_types::Credentials) they will be returned immediately.
+/// * If a provider returns valid [`Credentials`](aws_credential_types::Credentials) they will be returned immediately.
 ///   No other credential providers will be used.
 /// * Otherwise, if a provider returns
-///   [`CredentialsError::CredentialsNotLoaded`](aws_types::credentials::CredentialsError::CredentialsNotLoaded),
+///   [`CredentialsError::CredentialsNotLoaded`](aws_credential_types::provider::error::CredentialsError::CredentialsNotLoaded),
 ///   the next provider will be checked.
 /// * Finally, if a provider returns any other error condition, an error will be returned immediately.
 ///
@@ -74,7 +74,7 @@ impl CredentialsProviderChain {
         )
     }
 
-    async fn credentials(&self) -> credentials::Result {
+    async fn credentials(&self) -> provider::Result {
         for (name, provider) in &self.providers {
             let span = tracing::debug_span!("load_credentials", provider = %name);
             match provider.provide_credentials().instrument(span).await {

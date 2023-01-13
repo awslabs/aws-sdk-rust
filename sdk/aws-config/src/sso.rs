@@ -14,16 +14,16 @@ use crate::fs_util::{home_dir, Os};
 use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials};
 use crate::provider_config::ProviderConfig;
 
+use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
+use aws_credential_types::Credentials;
 use aws_sdk_sso::middleware::DefaultMiddleware as SsoMiddleware;
 use aws_sdk_sso::model::RoleCredentials;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_json::deserialize::Token;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
-use aws_types::credentials::{CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::region::Region;
-use aws_types::{credentials, Credentials};
 
 use std::convert::TryInto;
 use std::error::Error;
@@ -80,17 +80,17 @@ impl SsoCredentialsProvider {
         }
     }
 
-    async fn credentials(&self) -> credentials::Result {
+    async fn credentials(&self) -> provider::Result {
         load_sso_credentials(&self.sso_config, &self.client, &self.env, &self.fs).await
     }
 }
 
 impl ProvideCredentials for SsoCredentialsProvider {
-    fn provide_credentials<'a>(&'a self) -> credentials::future::ProvideCredentials<'a>
+    fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
     where
         Self: 'a,
     {
-        credentials::future::ProvideCredentials::new(self.credentials())
+        future::ProvideCredentials::new(self.credentials())
     }
 }
 
@@ -204,7 +204,7 @@ async fn load_sso_credentials(
     sso: &aws_smithy_client::Client<DynConnector, SsoMiddleware>,
     env: &Env,
     fs: &Fs,
-) -> credentials::Result {
+) -> provider::Result {
     let token = load_token(&sso_config.start_url, env, fs)
         .await
         .map_err(CredentialsError::provider_error)?;

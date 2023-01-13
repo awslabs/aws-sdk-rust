@@ -8,6 +8,7 @@ use std::iter::FromIterator;
 
 use tokio_stream::StreamExt;
 
+use aws_credential_types::Credentials;
 use aws_sdk_dynamodb::model::AttributeValue;
 use aws_sdk_dynamodb::{Client, Config};
 use aws_smithy_client::http_connector::HttpConnector;
@@ -15,7 +16,6 @@ use aws_smithy_client::test_connection::{capture_request, TestConnection};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
 use aws_types::region::Region;
-use aws_types::Credentials;
 
 fn stub_config(conn: impl Into<HttpConnector>) -> Config {
     Config::builder()

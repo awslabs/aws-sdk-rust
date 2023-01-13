@@ -21,6 +21,10 @@ tracing = "0.1"
 percent-encoding = "2.1.0"
 pin-project-lite = "0.2.9"
 
+[dependencies.aws-credential-types]
+path = "../aws-credential-types"
+version = "0.52.0"
+
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
 version = "0.52.0"

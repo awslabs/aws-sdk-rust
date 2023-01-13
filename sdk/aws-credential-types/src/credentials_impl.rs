@@ -94,23 +94,18 @@ impl Credentials {
     /// This function requires the `hardcoded-credentials` feature to be enabled.
     ///
     /// [`Credentials`](crate::Credentials) implement
-    /// [`ProvideCredentials`](crate::credentials::ProvideCredentials) directly, so no custom provider
+    /// [`ProvideCredentials`](crate::provider::ProvideCredentials) directly, so no custom provider
     /// implementation is required when wiring these up to a client:
     /// ```rust
-    /// use aws_types::Credentials;
-    /// use aws_types::region::Region;
+    /// use aws_credential_types::Credentials;
     /// # mod service {
-    /// #     use aws_types::credentials::ProvideCredentials;
-    /// #     use aws_types::region::Region;
+    /// #     use aws_credential_types::provider::ProvideCredentials;
     /// #     pub struct Config;
     /// #     impl Config {
     /// #        pub fn builder() -> Self {
     /// #            Config
     /// #        }
     /// #        pub fn credentials_provider(self, provider: impl ProvideCredentials + 'static) -> Self {
-    /// #            self
-    /// #        }
-    /// #        pub fn region(self, region: Region) -> Self {
     /// #            self
     /// #        }
     /// #        pub fn build(self) -> Config { Config }
@@ -127,7 +122,6 @@ impl Credentials {
     /// let creds = Credentials::from_keys("akid", "secret_key", None);
     /// let config = Config::builder()
     ///     .credentials_provider(creds)
-    ///     .region(Region::new("us-east-1"))
     ///     .build();
     /// let client = Client::from_conf(config);
     /// ```

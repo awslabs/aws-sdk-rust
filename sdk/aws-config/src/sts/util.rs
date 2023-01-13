@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_credential_types::provider::{self, error::CredentialsError};
+use aws_credential_types::Credentials as AwsCredentials;
 use aws_sdk_sts::model::Credentials as StsCredentials;
-use aws_types::credentials::{self, CredentialsError};
-use aws_types::Credentials as AwsCredentials;
 
 use std::convert::TryFrom;
 use std::time::{SystemTime, UNIX_EPOCH};
@@ -14,7 +14,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 pub(crate) fn into_credentials(
     sts_credentials: Option<StsCredentials>,
     provider_name: &'static str,
-) -> credentials::Result {
+) -> provider::Result {
     let sts_credentials = sts_credentials
         .ok_or_else(|| CredentialsError::unhandled("STS credentials must be defined"))?;
     let expiration = SystemTime::try_from(

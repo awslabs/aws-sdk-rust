@@ -4,10 +4,6 @@
  */
 
 //! Expiry-aware cache
-//!
-//! [`ExpiringCache`] implements two important features:
-//! 1. Respect expiry of contents
-//! 2. Deduplicate load requests to prevent thundering herds when no value is present.
 
 use std::future::Future;
 use std::marker::PhantomData;
@@ -15,8 +11,11 @@ use std::sync::Arc;
 use std::time::{Duration, SystemTime};
 use tokio::sync::{OnceCell, RwLock};
 
+/// [`ExpiringCache`] implements two important features:
+/// 1. Respect expiry of contents
+/// 2. Deduplicate load requests to prevent thundering herds when no value is present.
 #[derive(Debug)]
-pub(crate) struct ExpiringCache<T, E> {
+pub struct ExpiringCache<T, E> {
     /// Amount of time before the actual expiration time
     /// when the value is considered expired.
     buffer_time: Duration,
@@ -38,7 +37,8 @@ impl<T, E> ExpiringCache<T, E>
 where
     T: Clone,
 {
-    pub(crate) fn new(buffer_time: Duration) -> Self {
+    /// Creates `ExpiringCache` with the given `buffer_time`.
+    pub fn new(buffer_time: Duration) -> Self {
         ExpiringCache {
             buffer_time,
             value: Arc::new(RwLock::new(OnceCell::new())),
@@ -64,7 +64,7 @@ where
     /// and the others will await that thread's result rather than multiple refreshes occurring.
     /// The function given to acquire a value future, `f`, will not be called
     /// if another thread is chosen to load the value.
-    pub(crate) async fn get_or_load<F, Fut>(&self, f: F) -> Result<T, E>
+    pub async fn get_or_load<F, Fut>(&self, f: F) -> Result<T, E>
     where
         F: FnOnce() -> Fut,
         Fut: Future<Output = Result<(T, SystemTime), E>>,
@@ -75,7 +75,7 @@ where
     }
 
     /// If the value is expired, clears the cache. Otherwise, yields the current value.
-    pub(crate) async fn yield_or_clear_if_expired(&self, now: SystemTime) -> Option<T> {
+    pub async fn yield_or_clear_if_expired(&self, now: SystemTime) -> Option<T> {
         // Short-circuit if the value is not expired
         if let Some((value, expiry)) = self.value.read().await.get() {
             if !expired(*expiry, self.buffer_time, now) {
@@ -105,8 +105,7 @@ fn expired(expiration: SystemTime, buffer_time: Duration, now: SystemTime) -> bo
 #[cfg(test)]
 mod tests {
     use super::{expired, ExpiringCache};
-    use aws_types::credentials::CredentialsError;
-    use aws_types::Credentials;
+    use crate::{provider::error::CredentialsError, Credentials};
     use std::time::{Duration, SystemTime};
     use tracing_test::traced_test;
 

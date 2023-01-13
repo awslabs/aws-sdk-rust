@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_s3control::{Client, Credentials, Region};
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
-use aws_types::credentials::SharedCredentialsProvider;
 use aws_types::SdkConfig;
 use std::convert::Infallible;
 use std::time::{Duration, UNIX_EPOCH};

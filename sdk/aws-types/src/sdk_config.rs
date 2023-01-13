@@ -11,13 +11,13 @@
 
 use std::sync::Arc;
 
+use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_client::http_connector::HttpConnector;
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
 
 use crate::app_name::AppName;
-use crate::credentials::SharedCredentialsProvider;
 use crate::endpoint::ResolveAwsEndpoint;
 use crate::region::Region;
 
@@ -317,11 +317,11 @@ impl Builder {
     ///
     /// # Examples
     /// ```rust
-    /// use aws_types::credentials::{ProvideCredentials, SharedCredentialsProvider};
+    /// use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     /// use aws_types::SdkConfig;
     /// fn make_provider() -> impl ProvideCredentials {
     ///   // ...
-    ///   # use aws_types::Credentials;
+    ///   # use aws_credential_types::Credentials;
     ///   # Credentials::new("test", "test", None, None, "example")
     /// }
     ///
@@ -338,11 +338,11 @@ impl Builder {
     ///
     /// # Examples
     /// ```rust
-    /// use aws_types::credentials::{ProvideCredentials, SharedCredentialsProvider};
+    /// use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     /// use aws_types::SdkConfig;
     /// fn make_provider() -> impl ProvideCredentials {
     ///   // ...
-    ///   # use aws_types::Credentials;
+    ///   # use aws_credential_types::Credentials;
     ///   # Credentials::new("test", "test", None, None, "example")
     /// }
     ///

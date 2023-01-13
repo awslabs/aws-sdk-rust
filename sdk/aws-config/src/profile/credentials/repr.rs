@@ -15,7 +15,7 @@
 use crate::credential_process::CommandWithSensitiveArgs;
 use crate::profile::credentials::ProfileFileError;
 use crate::profile::{Profile, ProfileSet};
-use aws_types::Credentials;
+use aws_credential_types::Credentials;
 
 /// Chain of Profile Providers
 ///

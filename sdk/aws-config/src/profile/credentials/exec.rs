@@ -17,9 +17,9 @@ use crate::provider_config::ProviderConfig;
 use crate::sso::{SsoConfig, SsoCredentialsProvider};
 use crate::sts;
 use crate::web_identity_token::{StaticConfiguration, WebIdentityTokenCredentialsProvider};
+use aws_credential_types::provider::{self, error::CredentialsError, ProvideCredentials};
 use aws_sdk_sts::middleware::DefaultMiddleware;
 use aws_smithy_client::erase::DynConnector;
-use aws_types::credentials::{self, CredentialsError, ProvideCredentials};
 
 use std::fmt::Debug;
 
@@ -41,7 +41,7 @@ impl AssumeRoleProvider {
         &self,
         input_credentials: Credentials,
         client_config: &ClientConfiguration,
-    ) -> credentials::Result {
+    ) -> provider::Result {
         let config = Config::builder()
             .credentials_provider(input_credentials)
             .region(client_config.region.clone())
@@ -157,7 +157,7 @@ pub(super) mod named {
     use std::collections::HashMap;
     use std::sync::Arc;
 
-    use aws_types::credentials::ProvideCredentials;
+    use aws_credential_types::provider::ProvideCredentials;
     use std::borrow::Cow;
 
     #[derive(Debug)]
@@ -197,7 +197,7 @@ mod test {
     use crate::provider_config::ProviderConfig;
     use crate::test_case::no_traffic_connector;
 
-    use aws_types::Credentials;
+    use aws_credential_types::Credentials;
     use std::collections::HashMap;
     use std::sync::Arc;
 

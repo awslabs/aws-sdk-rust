@@ -19,6 +19,10 @@ sign-eventstream = ["aws-smithy-eventstream", "aws-sigv4/sign-eventstream"]
 http = "0.2.2"
 tracing = "0.1"
 
+[dependencies.aws-credential-types]
+path = "../aws-credential-types"
+version = "0.52.0"
+
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
 version = "0.52.0"

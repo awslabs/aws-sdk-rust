@@ -55,6 +55,7 @@
 //! Override configuration after construction of `SdkConfig`:
 //!
 //! ```no_run
+//! # use aws_credential_types::provider::ProvideCredentials;
 //! # use aws_types::SdkConfig;
 //! # mod aws_sdk_dynamodb {
 //! #   pub mod config {
@@ -62,7 +63,7 @@
 //! #     impl Builder {
 //! #       pub fn credentials_provider(
 //! #         self,
-//! #         credentials_provider: impl aws_types::credentials::ProvideCredentials + 'static) -> Self { self }
+//! #         credentials_provider: impl aws_credential_types::provider::ProvideCredentials + 'static) -> Self { self }
 //! #       pub fn build(self) -> Builder { self }
 //! #     }
 //! #     impl From<&aws_types::SdkConfig> for Builder {
@@ -79,7 +80,7 @@
 //! # }
 //! # async fn docs() {
 //! # use aws_config::meta::region::RegionProviderChain;
-//! # fn custom_provider(base: &SdkConfig) -> impl aws_types::credentials::ProvideCredentials {
+//! # fn custom_provider(base: &SdkConfig) -> impl ProvideCredentials {
 //! #   base.credentials_provider().unwrap().clone()
 //! # }
 //! let sdk_config = aws_config::load_from_env().await;
@@ -106,7 +107,6 @@ const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 #[cfg(test)]
 mod test_case;
 
-mod cache;
 mod fs_util;
 mod http_credential_provider;
 mod json_credentials;
@@ -149,12 +149,12 @@ pub async fn load_from_env() -> aws_types::SdkConfig {
 mod loader {
     use std::sync::Arc;
 
+    use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
     use aws_smithy_client::http_connector::{ConnectorSettings, HttpConnector};
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
     use aws_types::app_name::AppName;
-    use aws_types::credentials::{ProvideCredentials, SharedCredentialsProvider};
     use aws_types::endpoint::ResolveAwsEndpoint;
     use aws_types::SdkConfig;
 
@@ -295,7 +295,7 @@ mod loader {
         ///
         /// Override the credentials provider but load the default value for region:
         /// ```no_run
-        /// # use aws_types::Credentials;
+        /// # use aws_credential_types::Credentials;
         /// # fn create_my_credential_provider() -> Credentials {
         /// #     Credentials::new("example", "example", None, None, "example")
         /// # }
@@ -493,10 +493,10 @@ mod loader {
 
     #[cfg(test)]
     mod test {
+        use aws_credential_types::provider::ProvideCredentials;
         use aws_smithy_async::rt::sleep::TokioSleep;
         use aws_smithy_client::erase::DynConnector;
         use aws_smithy_client::never::NeverConnector;
-        use aws_types::credentials::ProvideCredentials;
         use aws_types::os_shim_internal::Env;
 
         use crate::from_env;

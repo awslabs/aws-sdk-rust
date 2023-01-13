@@ -25,7 +25,7 @@ pub struct Config {
     app_name: Option<aws_types::app_name::AppName>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     pub(crate) region: Option<aws_types::region::Region>,
-    pub(crate) credentials_provider: aws_types::credentials::SharedCredentialsProvider,
+    pub(crate) credentials_provider: aws_credential_types::provider::SharedCredentialsProvider,
     endpoint_url: Option<String>,
 }
 impl std::fmt::Debug for Config {
@@ -82,7 +82,9 @@ impl Config {
         self.region.as_ref()
     }
     /// Returns the credentials provider.
-    pub fn credentials_provider(&self) -> aws_types::credentials::SharedCredentialsProvider {
+    pub fn credentials_provider(
+        &self,
+    ) -> aws_credential_types::provider::SharedCredentialsProvider {
         self.credentials_provider.clone()
     }
     #[allow(dead_code)]
@@ -102,7 +104,7 @@ pub struct Builder {
     app_name: Option<aws_types::app_name::AppName>,
     http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     region: Option<aws_types::region::Region>,
-    credentials_provider: Option<aws_types::credentials::SharedCredentialsProvider>,
+    credentials_provider: Option<aws_credential_types::provider::SharedCredentialsProvider>,
     endpoint_url: Option<String>,
 }
 impl Builder {
@@ -431,18 +433,18 @@ impl Builder {
     /// Sets the credentials provider for this service
     pub fn credentials_provider(
         mut self,
-        credentials_provider: impl aws_types::credentials::ProvideCredentials + 'static,
+        credentials_provider: impl aws_credential_types::provider::ProvideCredentials + 'static,
     ) -> Self {
-        self.credentials_provider = Some(aws_types::credentials::SharedCredentialsProvider::new(
-            credentials_provider,
-        ));
+        self.credentials_provider = Some(
+            aws_credential_types::provider::SharedCredentialsProvider::new(credentials_provider),
+        );
         self
     }
 
     /// Sets the credentials provider for this service
     pub fn set_credentials_provider(
         &mut self,
-        credentials_provider: Option<aws_types::credentials::SharedCredentialsProvider>,
+        credentials_provider: Option<aws_credential_types::provider::SharedCredentialsProvider>,
     ) -> &mut Self {
         self.credentials_provider = credentials_provider;
         self
@@ -523,7 +525,7 @@ impl Builder {
             http_connector: self.http_connector,
             region: self.region,
             credentials_provider: self.credentials_provider.unwrap_or_else(|| {
-                aws_types::credentials::SharedCredentialsProvider::new(
+                aws_credential_types::provider::SharedCredentialsProvider::new(
                     crate::no_credentials::NoCredentials,
                 )
             }),

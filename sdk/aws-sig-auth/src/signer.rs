@@ -4,13 +4,13 @@
  */
 
 use crate::middleware::Signature;
+use aws_credential_types::Credentials;
 use aws_sigv4::http_request::{
     sign, PayloadChecksumKind, PercentEncodingMode, SignableRequest, SignatureLocation,
     SigningParams, SigningSettings, UriPathNormalizationMode,
 };
 use aws_smithy_http::body::SdkBody;
 use aws_types::region::SigningRegion;
-use aws_types::Credentials;
 use aws_types::SigningService;
 use std::fmt;
 use std::time::{Duration, SystemTime};
@@ -227,9 +227,10 @@ impl SigV4Signer {
 #[cfg(test)]
 mod tests {
     use super::{RequestConfig, SigV4Signer, EXPIRATION_WARNING};
+    use aws_credential_types::Credentials;
     use aws_sigv4::http_request::SigningSettings;
     use aws_types::region::SigningRegion;
-    use aws_types::{Credentials, SigningService};
+    use aws_types::SigningService;
     use std::time::{Duration, SystemTime};
     use tracing_test::traced_test;
 

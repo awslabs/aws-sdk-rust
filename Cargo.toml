@@ -82,6 +82,7 @@ members = [
     "sdk/autoscaling",
     "sdk/autoscalingplans",
     "sdk/aws-config",
+    "sdk/aws-credential-types",
     "sdk/aws-endpoint",
     "sdk/aws-http",
     "sdk/aws-hyper",

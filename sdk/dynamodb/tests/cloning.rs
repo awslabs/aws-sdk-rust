@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_types::credentials::SharedCredentialsProvider;
+use aws_credential_types::provider::SharedCredentialsProvider;
+use aws_credential_types::Credentials;
 use aws_types::region::Region;
-use aws_types::Credentials;
 
 // compiling this function validates that fluent builders are cloneable
 #[allow(dead_code)]

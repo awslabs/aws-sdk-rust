@@ -11,13 +11,10 @@ use std::collections::HashMap;
 use std::env::VarError;
 use std::ffi::OsString;
 use std::fmt::Debug;
-use std::ops::Deref;
 use std::path::{Path, PathBuf};
-use std::sync::{Arc, Mutex};
-use std::time::{Duration, SystemTime};
+use std::sync::Arc;
 
 use crate::os_shim_internal::fs::Fake;
-use crate::os_shim_internal::time_source::Inner;
 
 /// File system abstraction
 ///
@@ -241,107 +238,13 @@ mod env {
     }
 }
 
-#[derive(Debug, Clone)]
-pub struct TimeSource(time_source::Inner);
-
-impl TimeSource {
-    pub fn real() -> Self {
-        TimeSource(time_source::Inner::Real)
-    }
-
-    pub fn manual(time_source: &ManualTimeSource) -> Self {
-        TimeSource(time_source::Inner::Manual(time_source.clone()))
-    }
-
-    pub fn now(&self) -> SystemTime {
-        match &self.0 {
-            Inner::Real => SystemTime::now(),
-            Inner::Manual(manual) => manual.now(),
-        }
-    }
-}
-
-impl Default for TimeSource {
-    fn default() -> Self {
-        TimeSource::real()
-    }
-}
-
-/// Time Source that can be manually moved for tests
-///
-/// # Examples
-///
-/// ```rust
-/// # struct Client {
-/// #  // stub
-/// # }
-/// #
-/// # impl Client {
-/// #     fn with_timesource(ts: TimeSource) -> Self {
-/// #         Client { }
-/// #     }
-/// # }
-/// use aws_types::os_shim_internal::{ManualTimeSource, TimeSource};
-/// use std::time::{UNIX_EPOCH, Duration};
-/// let mut time = ManualTimeSource::new(UNIX_EPOCH);
-/// let client = Client::with_timesource(TimeSource::manual(&time));
-/// time.advance(Duration::from_secs(100));
-/// ```
-#[derive(Clone, Debug)]
-pub struct ManualTimeSource {
-    queries: Arc<Mutex<Vec<SystemTime>>>,
-    now: Arc<Mutex<SystemTime>>,
-}
-
-impl ManualTimeSource {
-    pub fn new(start_time: SystemTime) -> Self {
-        Self {
-            queries: Default::default(),
-            now: Arc::new(Mutex::new(start_time)),
-        }
-    }
-
-    pub fn set_time(&mut self, time: SystemTime) {
-        let mut now = self.now.lock().unwrap();
-        *now = time;
-    }
-
-    pub fn advance(&mut self, delta: Duration) {
-        let mut now = self.now.lock().unwrap();
-        *now += delta;
-    }
-
-    pub fn queries(&self) -> impl Deref<Target = Vec<SystemTime>> + '_ {
-        self.queries.lock().unwrap()
-    }
-
-    pub fn now(&self) -> SystemTime {
-        let ts = *self.now.lock().unwrap();
-        self.queries.lock().unwrap().push(ts);
-        ts
-    }
-}
-
-mod time_source {
-    use crate::os_shim_internal::ManualTimeSource;
-
-    // in the future, if needed we can add a time source trait, however, the manual time source
-    // should cover most test use cases.
-    #[derive(Debug, Clone)]
-    pub(super) enum Inner {
-        Real,
-        Manual(ManualTimeSource),
-    }
-}
-
 #[cfg(test)]
 mod test {
     use std::env::VarError;
-    use std::time::{Duration, UNIX_EPOCH};
 
     use futures_util::FutureExt;
 
-    use crate::os_shim_internal::{Env, Fs, ManualTimeSource, TimeSource};
+    use crate::os_shim_internal::{Env, Fs};
 
     #[test]
     fn env_works() {
@@ -367,18 +270,5 @@ mod test {
             .now_or_never()
             .expect("future should not poll")
             .expect_err("file doesnt exists");
-    }
-
-    #[test]
-    fn ts_works() {
-        let real = TimeSource::real();
-        // no panics
-        let _ = real.now();
-
-        let mut manual = ManualTimeSource::new(UNIX_EPOCH);
-        let ts = TimeSource::manual(&manual);
-        assert_eq!(ts.now(), UNIX_EPOCH);
-        manual.advance(Duration::from_secs(10));
-        assert_eq!(ts.now(), UNIX_EPOCH + Duration::from_secs(10));
     }
 }

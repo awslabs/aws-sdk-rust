@@ -5,9 +5,10 @@
 
 //! Configuration Options for Credential Providers
 
+use aws_credential_types::time_source::TimeSource;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_client::erase::DynConnector;
-use aws_types::os_shim_internal::{Env, Fs, TimeSource};
+use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::{
     http_connector::{ConnectorSettings, HttpConnector},
     region::Region,
@@ -73,13 +74,13 @@ impl ProviderConfig {
     /// Unlike [`ProviderConfig::empty`] where `env` and `fs` will use their non-mocked implementations,
     /// this method will use an empty mock environment and an empty mock file system.
     pub fn no_configuration() -> Self {
-        use aws_types::os_shim_internal::ManualTimeSource;
+        use aws_credential_types::time_source::TestingTimeSource;
         use std::collections::HashMap;
         use std::time::UNIX_EPOCH;
         Self {
             env: Env::from_slice(&[]),
             fs: Fs::from_raw_map(HashMap::new()),
-            time_source: TimeSource::manual(&ManualTimeSource::new(UNIX_EPOCH)),
+            time_source: TimeSource::testing(&TestingTimeSource::new(UNIX_EPOCH)),
             connector: HttpConnector::Prebuilt(None),
             sleep: None,
             region: None,

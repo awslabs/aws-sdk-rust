@@ -51,11 +51,10 @@ use std::fmt::{Display, Formatter};
 use std::io;
 use std::net::IpAddr;
 
+use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_smithy_client::erase::boxclone::BoxCloneService;
 use aws_smithy_http::endpoint::apply_endpoint;
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_types::credentials;
-use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use http::uri::{InvalidUri, Scheme};
 use http::{HeaderValue, Uri};
 use tower::{Service, ServiceExt};
@@ -96,7 +95,7 @@ impl EcsCredentialsProvider {
     }
 
     /// Load credentials from this credentials provider
-    pub async fn credentials(&self) -> credentials::Result {
+    pub async fn credentials(&self) -> provider::Result {
         let auth = match self.env.get(ENV_AUTHORIZATION).ok() {
             Some(auth) => Some(HeaderValue::from_str(&auth).map_err(|err| {
                 tracing::warn!(token = %auth, "invalid auth token");
@@ -477,9 +476,9 @@ mod test {
     use crate::provider_config::ProviderConfig;
     use crate::test_case::GenericTestResult;
 
-    use aws_types::credentials::ProvideCredentials;
+    use aws_credential_types::provider::ProvideCredentials;
+    use aws_credential_types::Credentials;
     use aws_types::os_shim_internal::Env;
-    use aws_types::Credentials;
 
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;

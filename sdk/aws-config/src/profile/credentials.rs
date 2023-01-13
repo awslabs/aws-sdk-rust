@@ -28,8 +28,8 @@ use crate::profile::parser::ProfileParseError;
 use crate::profile::profile_file::ProfileFiles;
 use crate::profile::Profile;
 use crate::provider_config::ProviderConfig;
+use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_types::credentials::{self, future, CredentialsError, ProvideCredentials};
 use std::borrow::Cow;
 use std::collections::HashMap;
 use std::error::Error;
@@ -63,7 +63,7 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 /// ```
 ///
 /// _Note: Profile providers to not implement any caching. They will reload and reparse the profile
-/// from the file system when called. See [lazy_caching](crate::meta::credentials::LazyCachingCredentialsProvider) for
+/// from the file system when called. See [lazy_caching](aws_credential_types::lazy_caching::LazyCachingCredentialsProvider) for
 /// more information about caching._
 ///
 /// This provider supports several different credentials formats:
@@ -84,12 +84,12 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 /// NOTE: Currently only the `Environment` credential source is supported although it is possible to
 /// provide custom sources:
 /// ```no_run
-/// use aws_types::credentials::{self, ProvideCredentials, future};
+/// use aws_credential_types::provider::{self, future, ProvideCredentials};
 /// use aws_config::profile::ProfileFileCredentialsProvider;
 /// #[derive(Debug)]
 /// struct MyCustomProvider;
 /// impl MyCustomProvider {
-///     async fn load_credentials(&self) -> credentials::Result {
+///     async fn load_credentials(&self) -> provider::Result {
 ///         todo!()
 ///     }
 /// }
@@ -155,7 +155,7 @@ impl ProfileFileCredentialsProvider {
         Builder::default()
     }
 
-    async fn load_credentials(&self) -> credentials::Result {
+    async fn load_credentials(&self) -> provider::Result {
         let inner_provider = build_provider_chain(
             &self.provider_config,
             &self.factory,
@@ -380,12 +380,12 @@ impl Builder {
     /// # Examples
     ///
     /// ```no_run
-    /// use aws_types::credentials::{self, ProvideCredentials, future};
+    /// use aws_credential_types::provider::{self, future, ProvideCredentials};
     /// use aws_config::profile::ProfileFileCredentialsProvider;
     /// #[derive(Debug)]
     /// struct MyCustomProvider;
     /// impl MyCustomProvider {
-    ///     async fn load_credentials(&self) -> credentials::Result {
+    ///     async fn load_credentials(&self) -> provider::Result {
     ///         todo!()
     ///     }
     /// }

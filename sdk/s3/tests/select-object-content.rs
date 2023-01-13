@@ -4,6 +4,7 @@
  */
 
 use aws_config::SdkConfig;
+use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::model::{
     CompressionType, CsvInput, CsvOutput, ExpressionType, FileHeaderInfo, InputSerialization,
     OutputSerialization, SelectObjectContentEventStream,
@@ -11,7 +12,6 @@ use aws_sdk_s3::model::{
 use aws_sdk_s3::{Client, Credentials, Region};
 use aws_smithy_client::dvr::{Event, ReplayingConnection};
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
-use aws_types::credentials::SharedCredentialsProvider;
 use std::error::Error;
 
 #[tokio::test]
