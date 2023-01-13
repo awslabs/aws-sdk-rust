@@ -48,7 +48,7 @@ features = ["derive"]
 
 [dependencies.serde_dynamo]
 version = "4"
-features = ["aws-sdk-dynamodb+0_19"]
+features = ["aws-sdk-dynamodb+0_22"]
 
 [dependencies.structopt]
 version = "0.3"
