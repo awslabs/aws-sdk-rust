@@ -22,13 +22,7 @@ async fn test_streaming_response_fails_when_eof_comes_before_content_length_reac
     let _ = tokio::spawn(server);
 
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
-            "ANOTREAL",
-            "notrealrnrELgWzOk3IfjzDKtFBhDby",
-            Some("notarealsessiontoken".to_string()),
-            None,
-            "test",
-        )))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .endpoint_url(format!("http://{server_addr}"))
         .build();

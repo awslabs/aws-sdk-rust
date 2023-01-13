@@ -220,7 +220,7 @@ mod test {
                 properties.insert(UNIX_EPOCH + Duration::new(1611160427, 0));
                 properties.insert(SigningService::from_static("kinesis"));
                 properties.insert(OperationSigningConfig::default_config());
-                properties.insert(Credentials::new("AKIAfoo", "bar", None, None, "test"));
+                properties.insert(Credentials::for_tests());
                 properties.insert(SigningRegion::from(region));
                 Result::<_, Infallible>::Ok(req)
             })
@@ -270,8 +270,7 @@ mod test {
                 .apply(req.try_clone().expect("can clone"))
                 .expect_err("no cred provider"),
         );
-        req.properties_mut()
-            .insert(Credentials::new("AKIAfoo", "bar", None, None, "test"));
+        req.properties_mut().insert(Credentials::for_tests());
         let req = signer.apply(req).expect("signing succeeded");
         // make sure we got the correct error types in any order
         assert!(errs.iter().all(|el| matches!(
@@ -292,7 +291,9 @@ mod test {
         let auth_header = req
             .headers()
             .get(AUTHORIZATION)
-            .expect("auth header must be present");
-        assert_eq!(auth_header, "AWS4-HMAC-SHA256 Credential=AKIAfoo/20210120/us-east-1/kinesis/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=af71a409f0229dfd6e88409cd1b11f5c2803868d6869888e53bbf9ee12a97ea0");
+            .expect("auth header must be present")
+            .to_str()
+            .unwrap();
+        assert_eq!(auth_header, "AWS4-HMAC-SHA256 Credential=ANOTREAL/20210120/us-east-1/kinesis/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=228edaefb06378ac8d050252ea18a219da66117dd72759f4d1d60f02ebc3db64");
     }
 }

@@ -54,13 +54,7 @@ const NAUGHTY_STRINGS: &str = include_str!("blns/blns.txt");
 async fn test_s3_signer_with_naughty_string_metadata() {
     let (conn, rcvr) = capture_request(None);
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
-            "ANOTREAL",
-            "notrealrnrELgWzOk3IfjzDKtFBhDby",
-            Some("notarealsessiontoken".to_string()),
-            None,
-            "test",
-        )))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .http_connector(conn.clone())
         .build();

@@ -106,11 +106,10 @@ async fn start_request(
     let replayer = ReplayingConnection::new(events);
 
     let region = Region::from_static(region);
-    let credentials = Credentials::new("test", "test", None, None, "test");
     let config = Config::builder()
         .region(region)
         .http_connector(replayer.clone())
-        .credentials_provider(credentials)
+        .credentials_provider(Credentials::for_tests())
         .build();
     let client = Client::from_conf(config);
 

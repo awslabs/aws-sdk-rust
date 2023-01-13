@@ -14,7 +14,7 @@ async fn correct_endpoint_resolver() {
     let (conn, request) = capture_request(None);
     let conf = aws_sdk_iam::Config::builder()
         .region(Region::from_static("iam-fips"))
-        .credentials_provider(Credentials::new("asdf", "asdf", None, None, "tests"))
+        .credentials_provider(Credentials::for_tests())
         .http_connector(conn)
         .build();
     let client = aws_sdk_iam::Client::from_conf(conf);

@@ -149,13 +149,7 @@ async fn movies_it() {
     let conf = dynamodb::Config::builder()
         .region(Region::new("us-east-1"))
         .http_connector(conn.clone())
-        .credentials_provider(Credentials::new(
-            "AKNOTREAL",
-            "NOT_A_SECRET",
-            None,
-            None,
-            "test",
-        ))
+        .credentials_provider(Credentials::for_tests())
         .build();
     let client = Client::from_conf(conf);
 

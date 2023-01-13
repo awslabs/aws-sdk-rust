@@ -321,13 +321,7 @@ mod test {
             .configure(&provider_conf)
             .region(Region::new("us-east-1"))
             .session_length(Duration::from_secs(1234567))
-            .build(SharedCredentialsProvider::new(Credentials::new(
-                "base",
-                "basesecret",
-                Some("token".to_string()),
-                None,
-                "inner",
-            )));
+            .build(SharedCredentialsProvider::new(Credentials::for_tests()));
         let _ = provider.provide_credentials().await;
         let req = request.expect_request();
         let str_body = std::str::from_utf8(req.body().bytes().unwrap()).unwrap();
@@ -349,13 +343,7 @@ mod test {
         let provider = AssumeRoleProvider::builder("myrole")
             .configure(&provider_conf)
             .region(Region::new("us-east-1"))
-            .build(SharedCredentialsProvider::new(Credentials::new(
-                "base",
-                "basesecret",
-                Some("token".to_string()),
-                None,
-                "inner",
-            )));
+            .build(SharedCredentialsProvider::new(Credentials::for_tests()));
         let creds_first = provider
             .provide_credentials()
             .await

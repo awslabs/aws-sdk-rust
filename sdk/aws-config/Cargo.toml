@@ -106,6 +106,11 @@ features = ["full", "test-util"]
 version = "1"
 features = ["derive"]
 
+[dev-dependencies.aws-credential-types]
+path = "../aws-credential-types"
+features = ["test-util"]
+version = "0.52.0"
+
 [dev-dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 features = ["test-util"]

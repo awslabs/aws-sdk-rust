@@ -206,7 +206,7 @@ mod test {
         let mut base = HashMap::new();
         base.insert(
             "Environment".into(),
-            Arc::new(Credentials::new("key", "secret", None, None, "test")) as _,
+            Arc::new(Credentials::for_tests()) as _,
         );
         let provider = NamedProviderFactory::new(base);
         assert!(provider.provider("environment").is_some());

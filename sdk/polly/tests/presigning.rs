@@ -11,15 +11,8 @@ use std::time::{Duration, SystemTime};
 
 #[tokio::test]
 async fn test_presigning() -> Result<(), Box<dyn Error>> {
-    let creds = polly::Credentials::new(
-        "ANOTREAL",
-        "notrealrnrELgWzOk3IfjzDKtFBhDby",
-        Some("notarealsessiontoken".to_string()),
-        None,
-        "test",
-    );
     let config = polly::Config::builder()
-        .credentials_provider(creds)
+        .credentials_provider(polly::Credentials::for_tests())
         .region(polly::Region::new("us-east-1"))
         .build();
 

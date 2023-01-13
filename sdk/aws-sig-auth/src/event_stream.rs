@@ -106,7 +106,7 @@ mod tests {
         properties.insert(region.clone());
         properties.insert(UNIX_EPOCH + Duration::new(1611160427, 0));
         properties.insert(SigningService::from_static("transcribe"));
-        properties.insert(Credentials::new("AKIAfoo", "bar", None, None, "test"));
+        properties.insert(Credentials::for_tests());
         properties.insert(SigningRegion::from(region));
         properties.insert(Signature::new("initial-signature".into()));
 

@@ -140,6 +140,18 @@ impl Credentials {
         )
     }
 
+    /// Creates a test `Credentials`.
+    #[cfg(feature = "test-util")]
+    pub fn for_tests() -> Self {
+        Self::new(
+            "ANOTREAL",
+            "notrealrnrELgWzOk3IfjzDKtFBhDby",
+            Some("notarealsessiontoken".to_string()),
+            None,
+            "test",
+        )
+    }
+
     /// Returns the access key ID.
     pub fn access_key_id(&self) -> &str {
         &self.0.access_key_id

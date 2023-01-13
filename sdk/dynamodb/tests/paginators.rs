@@ -20,7 +20,7 @@ use aws_types::region::Region;
 fn stub_config(conn: impl Into<HttpConnector>) -> Config {
     Config::builder()
         .region(Region::new("us-east-1"))
-        .credentials_provider(Credentials::new("akid", "secret", None, None, "test"))
+        .credentials_provider(Credentials::for_tests())
         .http_connector(conn)
         .build()
 }

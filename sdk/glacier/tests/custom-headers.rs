@@ -13,7 +13,7 @@ async fn set_correct_headers() {
     let (conn, handler) = capture_request(None);
     let conf = aws_sdk_glacier::Config::builder()
         .region(Region::new("us-east-1"))
-        .credentials_provider(Credentials::new("key", "secret", None, None, "test"))
+        .credentials_provider(Credentials::for_tests())
         .http_connector(conn)
         .build();
 

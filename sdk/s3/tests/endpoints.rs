@@ -14,13 +14,7 @@ use std::time::{Duration, UNIX_EPOCH};
 fn test_client(update_builder: fn(Builder) -> Builder) -> (CaptureRequestReceiver, Client) {
     let (conn, captured_request) = capture_request(None);
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
-            "ANOTREAL",
-            "notrealrnrELgWzOk3IfjzDKtFBhDby",
-            Some("notarealsessiontoken".to_string()),
-            None,
-            "test",
-        )))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-west-4"))
         .http_connector(conn.clone())
         .build();

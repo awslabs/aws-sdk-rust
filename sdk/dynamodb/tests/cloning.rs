@@ -12,9 +12,7 @@ use aws_types::region::Region;
 async fn ensure_builders_clone() {
     let shared_config = aws_types::SdkConfig::builder()
         .region(Region::new("us-east-4"))
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
-            "asdf", "asdf", None, None, "test",
-        )))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .build();
     let client = aws_sdk_dynamodb::Client::new(&shared_config);
     let base_query = client.list_tables();

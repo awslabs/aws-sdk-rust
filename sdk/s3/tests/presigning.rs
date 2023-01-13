@@ -15,13 +15,7 @@ use std::time::{Duration, SystemTime};
 /// Assumes that that input has a `presigned` method on it.
 macro_rules! presign_input {
     ($input:expr) => {{
-        let creds = s3::Credentials::new(
-            "ANOTREAL",
-            "notrealrnrELgWzOk3IfjzDKtFBhDby",
-            Some("notarealsessiontoken".to_string()),
-            None,
-            "test",
-        );
+        let creds = s3::Credentials::for_tests();
         let config = s3::Config::builder()
             .credentials_provider(creds)
             .region(s3::Region::new("us-east-1"))

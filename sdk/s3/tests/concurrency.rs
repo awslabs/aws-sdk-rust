@@ -43,13 +43,7 @@ async fn test_concurrency_on_multi_thread_against_dummy_server() {
     let (server, server_addr) = start_agreeable_server().await;
     let _ = tokio::spawn(server);
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
-            "ANOTREAL",
-            "notrealrnrELgWzOk3IfjzDKtFBhDby",
-            Some("notarealsessiontoken".to_string()),
-            None,
-            "test",
-        )))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .endpoint_url(format!("http://{server_addr}"))
         .build();
@@ -62,13 +56,7 @@ async fn test_concurrency_on_single_thread_against_dummy_server() {
     let (server, server_addr) = start_agreeable_server().await;
     let _ = tokio::spawn(server);
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
-            "ANOTREAL",
-            "notrealrnrELgWzOk3IfjzDKtFBhDby",
-            Some("notarealsessiontoken".to_string()),
-            None,
-            "test",
-        )))
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .endpoint_url(format!("http://{server_addr}"))
         .build();
