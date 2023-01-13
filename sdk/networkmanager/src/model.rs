@@ -1450,9 +1450,9 @@ impl Location {
 impl std::fmt::Debug for Location {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Location");
-        formatter.field("address", &self.address);
-        formatter.field("latitude", &self.latitude);
-        formatter.field("longitude", &self.longitude);
+        formatter.field("address", &"*** Sensitive Data Redacted ***");
+        formatter.field("latitude", &"*** Sensitive Data Redacted ***");
+        formatter.field("longitude", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -1509,9 +1509,9 @@ pub mod location {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("address", &self.address);
-            formatter.field("latitude", &self.latitude);
-            formatter.field("longitude", &self.longitude);
+            formatter.field("address", &"*** Sensitive Data Redacted ***");
+            formatter.field("latitude", &"*** Sensitive Data Redacted ***");
+            formatter.field("longitude", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

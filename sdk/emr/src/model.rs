@@ -13026,8 +13026,8 @@ impl UsernamePassword {
 impl std::fmt::Debug for UsernamePassword {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UsernamePassword");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -13072,8 +13072,8 @@ pub mod username_password {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("username", &self.username);
-            formatter.field("password", &self.password);
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("password", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

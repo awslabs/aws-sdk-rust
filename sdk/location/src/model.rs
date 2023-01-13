@@ -5388,7 +5388,7 @@ impl std::fmt::Debug for Circle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Circle");
         formatter.field("center", &"*** Sensitive Data Redacted ***");
-        formatter.field("radius", &self.radius);
+        formatter.field("radius", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -5440,7 +5440,7 @@ pub mod circle {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("center", &"*** Sensitive Data Redacted ***");
-            formatter.field("radius", &self.radius);
+            formatter.field("radius", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

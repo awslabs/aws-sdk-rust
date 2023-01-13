@@ -59880,9 +59880,9 @@ impl DataSourceCredentials {
 impl std::fmt::Debug for DataSourceCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceCredentials");
-        formatter.field("credential_pair", &self.credential_pair);
-        formatter.field("copy_source_arn", &self.copy_source_arn);
-        formatter.field("secret_arn", &self.secret_arn);
+        formatter.field("credential_pair", &"*** Sensitive Data Redacted ***");
+        formatter.field("copy_source_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -59945,9 +59945,9 @@ pub mod data_source_credentials {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("credential_pair", &self.credential_pair);
-            formatter.field("copy_source_arn", &self.copy_source_arn);
-            formatter.field("secret_arn", &self.secret_arn);
+            formatter.field("credential_pair", &"*** Sensitive Data Redacted ***");
+            formatter.field("copy_source_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_arn", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

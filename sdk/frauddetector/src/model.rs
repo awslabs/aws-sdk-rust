@@ -955,8 +955,8 @@ impl Entity {
 impl std::fmt::Debug for Entity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Entity");
-        formatter.field("entity_type", &self.entity_type);
-        formatter.field("entity_id", &self.entity_id);
+        formatter.field("entity_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("entity_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -1001,8 +1001,8 @@ pub mod entity {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("entity_type", &self.entity_type);
-            formatter.field("entity_id", &self.entity_id);
+            formatter.field("entity_type", &"*** Sensitive Data Redacted ***");
+            formatter.field("entity_id", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
@@ -3831,16 +3831,19 @@ impl EventType {
 impl std::fmt::Debug for EventType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventType");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("event_variables", &self.event_variables);
-        formatter.field("labels", &self.labels);
-        formatter.field("entity_types", &self.entity_types);
-        formatter.field("event_ingestion", &self.event_ingestion);
-        formatter.field("ingested_event_statistics", &self.ingested_event_statistics);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("labels", &"*** Sensitive Data Redacted ***");
+        formatter.field("entity_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_ingestion", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "ingested_event_statistics",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("last_updated_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -4021,16 +4024,19 @@ pub mod event_type {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("name", &self.name);
-            formatter.field("description", &self.description);
-            formatter.field("event_variables", &self.event_variables);
-            formatter.field("labels", &self.labels);
-            formatter.field("entity_types", &self.entity_types);
-            formatter.field("event_ingestion", &self.event_ingestion);
-            formatter.field("ingested_event_statistics", &self.ingested_event_statistics);
-            formatter.field("last_updated_time", &self.last_updated_time);
-            formatter.field("created_time", &self.created_time);
-            formatter.field("arn", &self.arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("event_variables", &"*** Sensitive Data Redacted ***");
+            formatter.field("labels", &"*** Sensitive Data Redacted ***");
+            formatter.field("entity_types", &"*** Sensitive Data Redacted ***");
+            formatter.field("event_ingestion", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "ingested_event_statistics",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("last_updated_time", &"*** Sensitive Data Redacted ***");
+            formatter.field("created_time", &"*** Sensitive Data Redacted ***");
+            formatter.field("arn", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

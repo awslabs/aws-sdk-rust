@@ -274,7 +274,7 @@ impl SearchFilter {
 impl std::fmt::Debug for SearchFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchFilter");
-        formatter.field("filter_string", &self.filter_string);
+        formatter.field("filter_string", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -310,7 +310,7 @@ pub mod search_filter {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("filter_string", &self.filter_string);
+            formatter.field("filter_string", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

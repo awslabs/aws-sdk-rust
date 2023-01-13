@@ -679,20 +679,20 @@ impl ContactDetail {
 impl std::fmt::Debug for ContactDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContactDetail");
-        formatter.field("first_name", &self.first_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("contact_type", &self.contact_type);
-        formatter.field("organization_name", &self.organization_name);
-        formatter.field("address_line1", &self.address_line1);
-        formatter.field("address_line2", &self.address_line2);
-        formatter.field("city", &self.city);
-        formatter.field("state", &self.state);
-        formatter.field("country_code", &self.country_code);
-        formatter.field("zip_code", &self.zip_code);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("email", &self.email);
-        formatter.field("fax", &self.fax);
-        formatter.field("extra_params", &self.extra_params);
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("contact_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("organization_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("address_line1", &"*** Sensitive Data Redacted ***");
+        formatter.field("address_line2", &"*** Sensitive Data Redacted ***");
+        formatter.field("city", &"*** Sensitive Data Redacted ***");
+        formatter.field("state", &"*** Sensitive Data Redacted ***");
+        formatter.field("country_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("zip_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.field("fax", &"*** Sensitive Data Redacted ***");
+        formatter.field("extra_params", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -919,20 +919,20 @@ pub mod contact_detail {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("first_name", &self.first_name);
-            formatter.field("last_name", &self.last_name);
-            formatter.field("contact_type", &self.contact_type);
-            formatter.field("organization_name", &self.organization_name);
-            formatter.field("address_line1", &self.address_line1);
-            formatter.field("address_line2", &self.address_line2);
-            formatter.field("city", &self.city);
-            formatter.field("state", &self.state);
-            formatter.field("country_code", &self.country_code);
-            formatter.field("zip_code", &self.zip_code);
-            formatter.field("phone_number", &self.phone_number);
-            formatter.field("email", &self.email);
-            formatter.field("fax", &self.fax);
-            formatter.field("extra_params", &self.extra_params);
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("contact_type", &"*** Sensitive Data Redacted ***");
+            formatter.field("organization_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("address_line1", &"*** Sensitive Data Redacted ***");
+            formatter.field("address_line2", &"*** Sensitive Data Redacted ***");
+            formatter.field("city", &"*** Sensitive Data Redacted ***");
+            formatter.field("state", &"*** Sensitive Data Redacted ***");
+            formatter.field("country_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("zip_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("email", &"*** Sensitive Data Redacted ***");
+            formatter.field("fax", &"*** Sensitive Data Redacted ***");
+            formatter.field("extra_params", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

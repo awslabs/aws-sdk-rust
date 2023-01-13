@@ -3535,8 +3535,8 @@ impl Output {
 impl std::fmt::Debug for Output {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Output");
-        formatter.field("key", &self.key);
-        formatter.field("value_string", &self.value_string);
+        formatter.field("key", &"*** Sensitive Data Redacted ***");
+        formatter.field("value_string", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -3581,8 +3581,8 @@ pub mod output {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("key", &self.key);
-            formatter.field("value_string", &self.value_string);
+            formatter.field("key", &"*** Sensitive Data Redacted ***");
+            formatter.field("value_string", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

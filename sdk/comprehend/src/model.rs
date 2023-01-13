@@ -5708,11 +5708,14 @@ impl std::fmt::Debug for EntityRecognizerMetadata {
         let mut formatter = f.debug_struct("EntityRecognizerMetadata");
         formatter.field(
             "number_of_trained_documents",
-            &self.number_of_trained_documents,
+            &"*** Sensitive Data Redacted ***",
         );
-        formatter.field("number_of_test_documents", &self.number_of_test_documents);
-        formatter.field("evaluation_metrics", &self.evaluation_metrics);
-        formatter.field("entity_types", &self.entity_types);
+        formatter.field(
+            "number_of_test_documents",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("evaluation_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.field("entity_types", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -5806,11 +5809,14 @@ pub mod entity_recognizer_metadata {
             let mut formatter = f.debug_struct("Builder");
             formatter.field(
                 "number_of_trained_documents",
-                &self.number_of_trained_documents,
+                &"*** Sensitive Data Redacted ***",
             );
-            formatter.field("number_of_test_documents", &self.number_of_test_documents);
-            formatter.field("evaluation_metrics", &self.evaluation_metrics);
-            formatter.field("entity_types", &self.entity_types);
+            formatter.field(
+                "number_of_test_documents",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("evaluation_metrics", &"*** Sensitive Data Redacted ***");
+            formatter.field("entity_types", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
@@ -9373,13 +9379,16 @@ impl ClassifierMetadata {
 impl std::fmt::Debug for ClassifierMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifierMetadata");
-        formatter.field("number_of_labels", &self.number_of_labels);
+        formatter.field("number_of_labels", &"*** Sensitive Data Redacted ***");
         formatter.field(
             "number_of_trained_documents",
-            &self.number_of_trained_documents,
+            &"*** Sensitive Data Redacted ***",
         );
-        formatter.field("number_of_test_documents", &self.number_of_test_documents);
-        formatter.field("evaluation_metrics", &self.evaluation_metrics);
+        formatter.field(
+            "number_of_test_documents",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("evaluation_metrics", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -9455,13 +9464,16 @@ pub mod classifier_metadata {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("number_of_labels", &self.number_of_labels);
+            formatter.field("number_of_labels", &"*** Sensitive Data Redacted ***");
             formatter.field(
                 "number_of_trained_documents",
-                &self.number_of_trained_documents,
+                &"*** Sensitive Data Redacted ***",
             );
-            formatter.field("number_of_test_documents", &self.number_of_test_documents);
-            formatter.field("evaluation_metrics", &self.evaluation_metrics);
+            formatter.field(
+                "number_of_test_documents",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("evaluation_metrics", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

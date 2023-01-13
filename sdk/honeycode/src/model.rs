@@ -882,10 +882,10 @@ impl std::fmt::Debug for Cell {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Cell");
         formatter.field("formula", &"*** Sensitive Data Redacted ***");
-        formatter.field("format", &self.format);
-        formatter.field("raw_value", &self.raw_value);
-        formatter.field("formatted_value", &self.formatted_value);
-        formatter.field("formatted_values", &self.formatted_values);
+        formatter.field("format", &"*** Sensitive Data Redacted ***");
+        formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
+        formatter.field("formatted_value", &"*** Sensitive Data Redacted ***");
+        formatter.field("formatted_values", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -997,10 +997,10 @@ pub mod cell {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("formula", &"*** Sensitive Data Redacted ***");
-            formatter.field("format", &self.format);
-            formatter.field("raw_value", &self.raw_value);
-            formatter.field("formatted_value", &self.formatted_value);
-            formatter.field("formatted_values", &self.formatted_values);
+            formatter.field("format", &"*** Sensitive Data Redacted ***");
+            formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
+            formatter.field("formatted_value", &"*** Sensitive Data Redacted ***");
+            formatter.field("formatted_values", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
@@ -1427,7 +1427,7 @@ impl VariableValue {
 impl std::fmt::Debug for VariableValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VariableValue");
-        formatter.field("raw_value", &self.raw_value);
+        formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -1460,7 +1460,7 @@ pub mod variable_value {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("raw_value", &self.raw_value);
+            formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
@@ -1668,9 +1668,9 @@ impl DataItem {
 impl std::fmt::Debug for DataItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataItem");
-        formatter.field("override_format", &self.override_format);
-        formatter.field("raw_value", &self.raw_value);
-        formatter.field("formatted_value", &self.formatted_value);
+        formatter.field("override_format", &"*** Sensitive Data Redacted ***");
+        formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
+        formatter.field("formatted_value", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -1733,9 +1733,9 @@ pub mod data_item {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("override_format", &self.override_format);
-            formatter.field("raw_value", &self.raw_value);
-            formatter.field("formatted_value", &self.formatted_value);
+            formatter.field("override_format", &"*** Sensitive Data Redacted ***");
+            formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
+            formatter.field("formatted_value", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

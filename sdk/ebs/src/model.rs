@@ -886,9 +886,9 @@ impl ChangedBlock {
 impl std::fmt::Debug for ChangedBlock {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangedBlock");
-        formatter.field("block_index", &self.block_index);
-        formatter.field("first_block_token", &self.first_block_token);
-        formatter.field("second_block_token", &self.second_block_token);
+        formatter.field("block_index", &"*** Sensitive Data Redacted ***");
+        formatter.field("first_block_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("second_block_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -951,9 +951,9 @@ pub mod changed_block {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("block_index", &self.block_index);
-            formatter.field("first_block_token", &self.first_block_token);
-            formatter.field("second_block_token", &self.second_block_token);
+            formatter.field("block_index", &"*** Sensitive Data Redacted ***");
+            formatter.field("first_block_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("second_block_token", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

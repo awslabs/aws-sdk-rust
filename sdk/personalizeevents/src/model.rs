@@ -255,15 +255,15 @@ impl Event {
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Event");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("event_value", &self.event_value);
+        formatter.field("event_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_value", &"*** Sensitive Data Redacted ***");
         formatter.field("item_id", &"*** Sensitive Data Redacted ***");
         formatter.field("properties", &"*** Sensitive Data Redacted ***");
-        formatter.field("sent_at", &self.sent_at);
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("impression", &self.impression);
-        formatter.field("metric_attribution", &self.metric_attribution);
+        formatter.field("sent_at", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommendation_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("impression", &"*** Sensitive Data Redacted ***");
+        formatter.field("metric_attribution", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -418,15 +418,15 @@ pub mod event {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("event_id", &self.event_id);
-            formatter.field("event_type", &self.event_type);
-            formatter.field("event_value", &self.event_value);
+            formatter.field("event_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("event_type", &"*** Sensitive Data Redacted ***");
+            formatter.field("event_value", &"*** Sensitive Data Redacted ***");
             formatter.field("item_id", &"*** Sensitive Data Redacted ***");
             formatter.field("properties", &"*** Sensitive Data Redacted ***");
-            formatter.field("sent_at", &self.sent_at);
-            formatter.field("recommendation_id", &self.recommendation_id);
-            formatter.field("impression", &self.impression);
-            formatter.field("metric_attribution", &self.metric_attribution);
+            formatter.field("sent_at", &"*** Sensitive Data Redacted ***");
+            formatter.field("recommendation_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("impression", &"*** Sensitive Data Redacted ***");
+            formatter.field("metric_attribution", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

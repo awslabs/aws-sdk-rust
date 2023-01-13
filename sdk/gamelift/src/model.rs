@@ -7928,9 +7928,9 @@ impl AwsCredentials {
 impl std::fmt::Debug for AwsCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsCredentials");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.field("secret_access_key", &self.secret_access_key);
-        formatter.field("session_token", &self.session_token);
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -7996,9 +7996,9 @@ pub mod aws_credentials {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("access_key_id", &self.access_key_id);
-            formatter.field("secret_access_key", &self.secret_access_key);
-            formatter.field("session_token", &self.session_token);
+            formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("session_token", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
@@ -10086,8 +10086,8 @@ impl InstanceCredentials {
 impl std::fmt::Debug for InstanceCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceCredentials");
-        formatter.field("user_name", &self.user_name);
-        formatter.field("secret", &self.secret);
+        formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -10132,8 +10132,8 @@ pub mod instance_credentials {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("user_name", &self.user_name);
-            formatter.field("secret", &self.secret);
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("secret", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }

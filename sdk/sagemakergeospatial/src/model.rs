@@ -3143,8 +3143,8 @@ impl TimeRangeFilterInput {
 impl std::fmt::Debug for TimeRangeFilterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeRangeFilterInput");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
+        formatter.field("start_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("end_time", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -3195,8 +3195,8 @@ pub mod time_range_filter_input {
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field("start_time", &self.start_time);
-            formatter.field("end_time", &self.end_time);
+            formatter.field("start_time", &"*** Sensitive Data Redacted ***");
+            formatter.field("end_time", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
