@@ -149,7 +149,7 @@ mod test {
         error::RetryConfigError, error::RetryConfigErrorKind, RetryConfig, RetryMode,
     };
     use crate::standard_property::PropertyResolutionError;
-    use aws_types::os_shim_internal::Env;
+    use aws_types::os_shim_internal::{Env, Fs};
 
     async fn test_provider(
         vars: &[(&str, &str)],
@@ -158,6 +158,122 @@ mod test {
             .configure(&ProviderConfig::no_configuration().with_env(Env::from_slice(vars)))
             .try_retry_config()
             .await
+    }
+
+    #[tokio::test]
+    async fn test_returns_default_retry_config_from_empty_profile() {
+        let env = Env::from_slice(&[("AWS_CONFIG_FILE", "config")]);
+        let fs = Fs::from_slice(&[("config", "[default]\n")]);
+
+        let provider_config = ProviderConfig::no_configuration().with_env(env).with_fs(fs);
+
+        let actual_retry_config = super::default_provider()
+            .configure(&provider_config)
+            .retry_config()
+            .await;
+
+        let expected_retry_config = RetryConfig::standard();
+
+        assert_eq!(actual_retry_config, expected_retry_config);
+        // This is redundant but it's really important to make sure that
+        // we're setting these exact values by default so we check twice
+        assert_eq!(actual_retry_config.max_attempts(), 3);
+        assert_eq!(actual_retry_config.mode(), RetryMode::Standard);
+    }
+
+    #[tokio::test]
+    async fn test_no_retry_config_in_empty_profile() {
+        let env = Env::from_slice(&[("AWS_CONFIG_FILE", "config")]);
+        let fs = Fs::from_slice(&[("config", "[default]\n")]);
+
+        let provider_config = ProviderConfig::no_configuration().with_env(env).with_fs(fs);
+
+        let actual_retry_config = super::default_provider()
+            .configure(&provider_config)
+            .retry_config()
+            .await;
+
+        let expected_retry_config = RetryConfig::standard();
+
+        assert_eq!(actual_retry_config, expected_retry_config)
+    }
+
+    #[tokio::test]
+    async fn test_creation_of_retry_config_from_profile() {
+        let env = Env::from_slice(&[("AWS_CONFIG_FILE", "config")]);
+        // TODO(https://github.com/awslabs/aws-sdk-rust/issues/247): standard is the default mode;
+        // this test would be better if it was setting it to adaptive mode
+        // adaptive mode is currently unsupported so that would panic
+        let fs = Fs::from_slice(&[(
+            "config",
+            // If the lines with the vars have preceding spaces, they don't get read
+            r#"[default]
+max_attempts = 1
+retry_mode = standard
+            "#,
+        )]);
+
+        let provider_config = ProviderConfig::no_configuration().with_env(env).with_fs(fs);
+
+        let actual_retry_config = super::default_provider()
+            .configure(&provider_config)
+            .retry_config()
+            .await;
+
+        let expected_retry_config = RetryConfig::standard().with_max_attempts(1);
+
+        assert_eq!(actual_retry_config, expected_retry_config)
+    }
+
+    #[tokio::test]
+    async fn test_env_retry_config_takes_precedence_over_profile_retry_config() {
+        let env = Env::from_slice(&[
+            ("AWS_CONFIG_FILE", "config"),
+            ("AWS_MAX_ATTEMPTS", "42"),
+            ("AWS_RETRY_MODE", "standard"),
+        ]);
+        // TODO(https://github.com/awslabs/aws-sdk-rust/issues/247) standard is the default mode;
+        // this test would be better if it was setting it to adaptive mode
+        // adaptive mode is currently unsupported so that would panic
+        let fs = Fs::from_slice(&[(
+            "config",
+            // If the lines with the vars have preceding spaces, they don't get read
+            r#"[default]
+max_attempts = 88
+retry_mode = standard
+            "#,
+        )]);
+
+        let provider_config = ProviderConfig::no_configuration().with_env(env).with_fs(fs);
+
+        let actual_retry_config = super::default_provider()
+            .configure(&provider_config)
+            .retry_config()
+            .await;
+
+        let expected_retry_config = RetryConfig::standard().with_max_attempts(42);
+
+        assert_eq!(actual_retry_config, expected_retry_config)
+    }
+
+    #[tokio::test]
+    #[should_panic = "failed to parse max attempts. source: profile `default`, key: `max_attempts`: invalid digit found in string"]
+    async fn test_invalid_profile_retry_config_panics() {
+        let env = Env::from_slice(&[("AWS_CONFIG_FILE", "config")]);
+        let fs = Fs::from_slice(&[(
+            "config",
+            // If the lines with the vars have preceding spaces, they don't get read
+            r#"[default]
+max_attempts = potato
+            "#,
+        )]);
+
+        let provider_config = ProviderConfig::no_configuration().with_env(env).with_fs(fs);
+
+        let _ = super::default_provider()
+            .configure(&provider_config)
+            .retry_config()
+            .await;
     }
 
     #[tokio::test]

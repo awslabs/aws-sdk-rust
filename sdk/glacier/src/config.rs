@@ -573,6 +573,10 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
 
         builder = builder.region(input.region().cloned());
 
+        builder.set_use_fips(input.use_fips());
+
+        builder.set_use_dual_stack(input.use_dual_stack());
+
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
