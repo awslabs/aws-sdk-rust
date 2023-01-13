@@ -124,7 +124,8 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_approval_rule_template_with_repository(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -321,7 +322,8 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_approval_rule_template_with_repositories(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -631,7 +633,8 @@ impl BatchDescribeMergeConflictsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_describe_merge_conflicts(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -827,7 +830,8 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_approval_rule_template_from_repositories(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1425,7 +1429,8 @@ impl CreateApprovalRuleTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_approval_rule_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2358,7 +2363,8 @@ impl CreatePullRequestApprovalRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_pull_request_approval_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2895,7 +2901,8 @@ impl CreateUnreferencedMergeCommitInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_unreferenced_merge_commit(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3064,7 +3071,8 @@ impl DeleteApprovalRuleTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_approval_rule_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3843,7 +3851,8 @@ impl DeletePullRequestApprovalRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_pull_request_approval_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4710,7 +4719,8 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_approval_rule_template_from_repository(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4889,7 +4899,8 @@ impl EvaluatePullRequestApprovalRulesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_evaluate_pull_request_approval_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5996,7 +6007,8 @@ impl GetCommentsForComparedCommitInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_comments_for_compared_commit(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6231,7 +6243,8 @@ impl GetCommentsForPullRequestInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_comments_for_pull_request(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8121,7 +8134,8 @@ impl GetPullRequestApprovalStatesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_pull_request_approval_states(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8299,7 +8313,8 @@ impl GetPullRequestOverrideStateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_pull_request_override_state(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9003,7 +9018,8 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_associated_approval_rule_templates_for_repository(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9781,7 +9797,8 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_repositories_for_approval_rule_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10173,7 +10190,8 @@ impl MergeBranchesByFastForwardInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_merge_branches_by_fast_forward(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11011,7 +11029,8 @@ impl MergePullRequestByFastForwardInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_merge_pull_request_by_fast_forward(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11614,7 +11633,8 @@ impl MergePullRequestByThreeWayInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_merge_pull_request_by_three_way(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11807,7 +11827,8 @@ impl OverridePullRequestApprovalRulesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_override_pull_request_approval_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12045,7 +12066,8 @@ impl PostCommentForComparedCommitInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_post_comment_for_compared_commit(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12298,7 +12320,8 @@ impl PostCommentForPullRequestInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_post_comment_for_pull_request(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13904,7 +13927,8 @@ impl UpdateApprovalRuleTemplateContentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_content(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14091,7 +14115,8 @@ impl UpdateApprovalRuleTemplateDescriptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_description(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14278,7 +14303,8 @@ impl UpdateApprovalRuleTemplateNameInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_approval_rule_template_name(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14870,7 +14896,8 @@ impl UpdatePullRequestApprovalRuleContentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_pull_request_approval_rule_content(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15063,7 +15090,8 @@ impl UpdatePullRequestApprovalStateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_pull_request_approval_state(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15241,7 +15269,8 @@ impl UpdatePullRequestDescriptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_pull_request_description(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15787,7 +15816,8 @@ impl UpdateRepositoryDescriptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_repository_description(&self)?
         );
         if let Some(content_length) = body.content_length() {

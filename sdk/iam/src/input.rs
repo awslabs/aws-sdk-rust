@@ -114,7 +114,8 @@ impl AddClientIdToOpenIdConnectProviderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_add_client_id_to_open_id_connect_provider(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2309,7 +2310,8 @@ impl CreateOpenIdConnectProviderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_open_id_connect_provider(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3619,7 +3621,8 @@ impl CreateServiceSpecificCredentialInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_service_specific_credential(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4703,7 +4706,8 @@ impl DeleteAccountPasswordPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_account_password_policy(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -5521,7 +5525,8 @@ impl DeleteOpenIdConnectProviderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_open_id_connect_provider(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6174,7 +6179,8 @@ impl DeleteRolePermissionsBoundaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_role_permissions_boundary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7018,7 +7024,8 @@ impl DeleteServiceSpecificCredentialInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_service_specific_credential(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7693,7 +7700,8 @@ impl DeleteUserPermissionsBoundaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_user_permissions_boundary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9092,7 +9100,8 @@ impl GenerateOrganizationsAccessReportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_generate_organizations_access_report(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9269,7 +9278,8 @@ impl GenerateServiceLastAccessedDetailsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_generate_service_last_accessed_details(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9630,7 +9640,8 @@ impl GetAccountAuthorizationDetailsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_account_authorization_details(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10087,7 +10098,8 @@ impl GetContextKeysForCustomPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_context_keys_for_custom_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10283,7 +10295,8 @@ impl GetContextKeysForPrincipalPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_context_keys_for_principal_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11465,7 +11478,8 @@ impl GetOrganizationsAccessReportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_organizations_access_report(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12636,7 +12650,8 @@ impl GetServiceLastAccessedDetailsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_service_last_accessed_details(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12839,7 +12854,8 @@ impl GetServiceLastAccessedDetailsWithEntitiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_service_last_accessed_details_with_entities(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13015,7 +13031,8 @@ impl GetServiceLinkedRoleDeletionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_service_linked_role_deletion_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15673,7 +15690,8 @@ impl ListInstanceProfilesForRoleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_instance_profiles_for_role(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16384,7 +16402,8 @@ impl ListOpenIdConnectProvidersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_open_id_connect_providers(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -16569,7 +16588,8 @@ impl ListOpenIdConnectProviderTagsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_open_id_connect_provider_tags(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16997,7 +17017,8 @@ impl ListPoliciesGrantingServiceAccessInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_policies_granting_service_access(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18807,7 +18828,8 @@ impl ListServiceSpecificCredentialsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_service_specific_credentials(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20303,7 +20325,8 @@ impl PutRolePermissionsBoundaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_role_permissions_boundary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20678,7 +20701,8 @@ impl PutUserPermissionsBoundaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_user_permissions_boundary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21058,7 +21082,8 @@ impl RemoveClientIdFromOpenIdConnectProviderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_client_id_from_open_id_connect_provider(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21236,7 +21261,8 @@ impl RemoveRoleFromInstanceProfileInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_role_from_instance_profile(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21593,7 +21619,8 @@ impl ResetServiceSpecificCredentialInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_reset_service_specific_credential(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22147,7 +22174,8 @@ impl SetSecurityTokenServicePreferencesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_security_token_service_preferences(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -24995,7 +25023,8 @@ impl UntagOpenIdConnectProviderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_untag_open_id_connect_provider(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -26380,7 +26409,8 @@ impl UpdateAccountPasswordPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_account_password_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -27157,7 +27187,8 @@ impl UpdateOpenIdConnectProviderThumbprintInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_open_id_connect_provider_thumbprint(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -28084,7 +28115,8 @@ impl UpdateServiceSpecificCredentialInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_service_specific_credential(&self)?
         );
         if let Some(content_length) = body.content_length() {

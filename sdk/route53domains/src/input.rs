@@ -115,7 +115,8 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_accept_domain_transfer_from_another_aws_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -294,7 +295,8 @@ impl AssociateDelegationSignerToDomainInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_delegation_signer_to_domain(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -457,7 +459,8 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_cancel_domain_transfer_to_another_aws_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1710,7 +1713,8 @@ impl DisassociateDelegationSignerFromDomainInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_delegation_signer_from_domain(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2205,7 +2209,8 @@ impl GetContactReachabilityStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_contact_reachability_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4264,7 +4269,8 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_reject_domain_transfer_from_another_aws_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4616,7 +4622,8 @@ impl ResendContactReachabilityEmailInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_resend_contact_reachability_email(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4779,7 +4786,8 @@ impl ResendOperationAuthorizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_resend_operation_authorization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5507,7 +5515,8 @@ impl TransferDomainToAnotherAwsAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_transfer_domain_to_another_aws_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5950,7 +5959,8 @@ impl UpdateDomainContactPrivacyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_domain_contact_privacy(&self)?
         );
         if let Some(content_length) = body.content_length() {

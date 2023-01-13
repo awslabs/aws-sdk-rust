@@ -4877,7 +4877,8 @@ impl ListBuildBatchesForProjectInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_build_batches_for_project(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5416,7 +5417,8 @@ impl ListCuratedEnvironmentImagesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_curated_environment_images(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -6271,7 +6273,8 @@ impl ListReportsForReportGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_reports_for_report_group(&self)?
         );
         if let Some(content_length) = body.content_length() {

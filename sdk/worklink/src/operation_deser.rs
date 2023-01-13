@@ -153,9 +153,11 @@ pub fn parse_associate_website_authorization_provider_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::AssociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::AssociateWebsiteAuthorizationProviderErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -167,9 +169,11 @@ pub fn parse_associate_website_authorization_provider_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::AssociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::AssociateWebsiteAuthorizationProviderErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -181,9 +185,11 @@ pub fn parse_associate_website_authorization_provider_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::AssociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::AssociateWebsiteAuthorizationProviderErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -195,9 +201,11 @@ pub fn parse_associate_website_authorization_provider_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::AssociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -209,9 +217,11 @@ pub fn parse_associate_website_authorization_provider_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::AssociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::AssociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -223,9 +233,11 @@ pub fn parse_associate_website_authorization_provider_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::AssociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::AssociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -276,9 +288,11 @@ pub fn parse_associate_website_certificate_authority_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::AssociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::AssociateWebsiteCertificateAuthorityErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -290,9 +304,11 @@ pub fn parse_associate_website_certificate_authority_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::AssociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::AssociateWebsiteCertificateAuthorityErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -304,9 +320,11 @@ pub fn parse_associate_website_certificate_authority_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::AssociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::AssociateWebsiteCertificateAuthorityErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -318,9 +336,11 @@ pub fn parse_associate_website_certificate_authority_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::AssociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -332,9 +352,11 @@ pub fn parse_associate_website_certificate_authority_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::AssociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::AssociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -346,9 +368,11 @@ pub fn parse_associate_website_certificate_authority_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::AssociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::AssociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -652,9 +676,11 @@ pub fn parse_describe_audit_stream_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::DescribeAuditStreamConfigurationError { meta: generic, kind: crate::error::DescribeAuditStreamConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAuditStreamConfigurationError::unhandled)?;
                     output.build()
@@ -666,9 +692,11 @@ pub fn parse_describe_audit_stream_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeAuditStreamConfigurationError { meta: generic, kind: crate::error::DescribeAuditStreamConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAuditStreamConfigurationError::unhandled)?;
                     output.build()
@@ -680,9 +708,11 @@ pub fn parse_describe_audit_stream_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeAuditStreamConfigurationError { meta: generic, kind: crate::error::DescribeAuditStreamConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAuditStreamConfigurationError::unhandled)?;
                     output.build()
@@ -694,9 +724,11 @@ pub fn parse_describe_audit_stream_configuration_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeAuditStreamConfigurationError { meta: generic, kind: crate::error::DescribeAuditStreamConfigurationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAuditStreamConfigurationError::unhandled)?;
                     output.build()
@@ -708,9 +740,11 @@ pub fn parse_describe_audit_stream_configuration_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DescribeAuditStreamConfigurationError { meta: generic, kind: crate::error::DescribeAuditStreamConfigurationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAuditStreamConfigurationError::unhandled)?;
                     output.build()
@@ -766,9 +800,11 @@ pub fn parse_describe_company_network_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::DescribeCompanyNetworkConfigurationError { meta: generic, kind: crate::error::DescribeCompanyNetworkConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -780,9 +816,11 @@ pub fn parse_describe_company_network_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeCompanyNetworkConfigurationError { meta: generic, kind: crate::error::DescribeCompanyNetworkConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -794,9 +832,11 @@ pub fn parse_describe_company_network_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeCompanyNetworkConfigurationError { meta: generic, kind: crate::error::DescribeCompanyNetworkConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -808,9 +848,11 @@ pub fn parse_describe_company_network_configuration_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeCompanyNetworkConfigurationError { meta: generic, kind: crate::error::DescribeCompanyNetworkConfigurationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -822,9 +864,11 @@ pub fn parse_describe_company_network_configuration_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DescribeCompanyNetworkConfigurationError { meta: generic, kind: crate::error::DescribeCompanyNetworkConfigurationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -995,9 +1039,11 @@ pub fn parse_describe_device_policy_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::DescribeDevicePolicyConfigurationError { meta: generic, kind: crate::error::DescribeDevicePolicyConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDevicePolicyConfigurationError::unhandled)?;
                     output.build()
@@ -1009,9 +1055,11 @@ pub fn parse_describe_device_policy_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeDevicePolicyConfigurationError { meta: generic, kind: crate::error::DescribeDevicePolicyConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDevicePolicyConfigurationError::unhandled)?;
                     output.build()
@@ -1023,9 +1071,11 @@ pub fn parse_describe_device_policy_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeDevicePolicyConfigurationError { meta: generic, kind: crate::error::DescribeDevicePolicyConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDevicePolicyConfigurationError::unhandled)?;
                     output.build()
@@ -1037,9 +1087,11 @@ pub fn parse_describe_device_policy_configuration_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeDevicePolicyConfigurationError { meta: generic, kind: crate::error::DescribeDevicePolicyConfigurationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDevicePolicyConfigurationError::unhandled)?;
                     output.build()
@@ -1051,9 +1103,11 @@ pub fn parse_describe_device_policy_configuration_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DescribeDevicePolicyConfigurationError { meta: generic, kind: crate::error::DescribeDevicePolicyConfigurationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDevicePolicyConfigurationError::unhandled)?;
                     output.build()
@@ -1352,9 +1406,11 @@ pub fn parse_describe_identity_provider_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::DescribeIdentityProviderConfigurationError { meta: generic, kind: crate::error::DescribeIdentityProviderConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -1366,9 +1422,11 @@ pub fn parse_describe_identity_provider_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeIdentityProviderConfigurationError { meta: generic, kind: crate::error::DescribeIdentityProviderConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -1380,9 +1438,11 @@ pub fn parse_describe_identity_provider_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeIdentityProviderConfigurationError { meta: generic, kind: crate::error::DescribeIdentityProviderConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -1394,9 +1454,11 @@ pub fn parse_describe_identity_provider_configuration_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeIdentityProviderConfigurationError { meta: generic, kind: crate::error::DescribeIdentityProviderConfigurationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -1408,9 +1470,11 @@ pub fn parse_describe_identity_provider_configuration_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DescribeIdentityProviderConfigurationError { meta: generic, kind: crate::error::DescribeIdentityProviderConfigurationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -1461,9 +1525,11 @@ pub fn parse_describe_website_certificate_authority_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::DescribeWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DescribeWebsiteCertificateAuthorityErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1475,9 +1541,11 @@ pub fn parse_describe_website_certificate_authority_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DescribeWebsiteCertificateAuthorityErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1489,9 +1557,11 @@ pub fn parse_describe_website_certificate_authority_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DescribeWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1503,9 +1573,11 @@ pub fn parse_describe_website_certificate_authority_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DescribeWebsiteCertificateAuthorityErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1517,9 +1589,11 @@ pub fn parse_describe_website_certificate_authority_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DescribeWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DescribeWebsiteCertificateAuthorityErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1693,9 +1767,11 @@ pub fn parse_disassociate_website_authorization_provider_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::DisassociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -1707,9 +1783,11 @@ pub fn parse_disassociate_website_authorization_provider_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DisassociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -1721,9 +1799,11 @@ pub fn parse_disassociate_website_authorization_provider_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::DisassociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -1735,9 +1815,11 @@ pub fn parse_disassociate_website_authorization_provider_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -1749,9 +1831,11 @@ pub fn parse_disassociate_website_authorization_provider_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DisassociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -1763,9 +1847,11 @@ pub fn parse_disassociate_website_authorization_provider_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DisassociateWebsiteAuthorizationProviderError { meta: generic, kind: crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteAuthorizationProviderError::unhandled)?;
                     output.build()
@@ -1817,9 +1903,11 @@ pub fn parse_disassociate_website_certificate_authority_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::DisassociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1831,9 +1919,11 @@ pub fn parse_disassociate_website_certificate_authority_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DisassociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1845,9 +1935,11 @@ pub fn parse_disassociate_website_certificate_authority_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1859,9 +1951,11 @@ pub fn parse_disassociate_website_certificate_authority_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DisassociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -1873,9 +1967,11 @@ pub fn parse_disassociate_website_certificate_authority_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DisassociateWebsiteCertificateAuthorityError { meta: generic, kind: crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWebsiteCertificateAuthorityError::unhandled)?;
                     output.build()
@@ -2325,9 +2421,11 @@ pub fn parse_list_website_authorization_providers_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::ListWebsiteAuthorizationProvidersError { meta: generic, kind: crate::error::ListWebsiteAuthorizationProvidersErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteAuthorizationProvidersError::unhandled)?;
                     output.build()
@@ -2339,9 +2437,11 @@ pub fn parse_list_website_authorization_providers_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListWebsiteAuthorizationProvidersError { meta: generic, kind: crate::error::ListWebsiteAuthorizationProvidersErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteAuthorizationProvidersError::unhandled)?;
                     output.build()
@@ -2353,9 +2453,11 @@ pub fn parse_list_website_authorization_providers_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListWebsiteAuthorizationProvidersError { meta: generic, kind: crate::error::ListWebsiteAuthorizationProvidersErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteAuthorizationProvidersError::unhandled)?;
                     output.build()
@@ -2367,9 +2469,11 @@ pub fn parse_list_website_authorization_providers_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListWebsiteAuthorizationProvidersError { meta: generic, kind: crate::error::ListWebsiteAuthorizationProvidersErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteAuthorizationProvidersError::unhandled)?;
                     output.build()
@@ -2381,9 +2485,11 @@ pub fn parse_list_website_authorization_providers_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::ListWebsiteAuthorizationProvidersError { meta: generic, kind: crate::error::ListWebsiteAuthorizationProvidersErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteAuthorizationProvidersError::unhandled)?;
                     output.build()
@@ -2434,9 +2540,11 @@ pub fn parse_list_website_certificate_authorities_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::ListWebsiteCertificateAuthoritiesError { meta: generic, kind: crate::error::ListWebsiteCertificateAuthoritiesErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteCertificateAuthoritiesError::unhandled)?;
                     output.build()
@@ -2448,9 +2556,11 @@ pub fn parse_list_website_certificate_authorities_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListWebsiteCertificateAuthoritiesError { meta: generic, kind: crate::error::ListWebsiteCertificateAuthoritiesErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteCertificateAuthoritiesError::unhandled)?;
                     output.build()
@@ -2462,9 +2572,11 @@ pub fn parse_list_website_certificate_authorities_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListWebsiteCertificateAuthoritiesError { meta: generic, kind: crate::error::ListWebsiteCertificateAuthoritiesErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteCertificateAuthoritiesError::unhandled)?;
                     output.build()
@@ -2476,9 +2588,11 @@ pub fn parse_list_website_certificate_authorities_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::ListWebsiteCertificateAuthoritiesError { meta: generic, kind: crate::error::ListWebsiteCertificateAuthoritiesErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebsiteCertificateAuthoritiesError::unhandled)?;
                     output.build()
@@ -3109,9 +3223,11 @@ pub fn parse_update_company_network_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::UpdateCompanyNetworkConfigurationError { meta: generic, kind: crate::error::UpdateCompanyNetworkConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -3123,9 +3239,11 @@ pub fn parse_update_company_network_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateCompanyNetworkConfigurationError { meta: generic, kind: crate::error::UpdateCompanyNetworkConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -3137,9 +3255,11 @@ pub fn parse_update_company_network_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateCompanyNetworkConfigurationError { meta: generic, kind: crate::error::UpdateCompanyNetworkConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -3151,9 +3271,11 @@ pub fn parse_update_company_network_configuration_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::UpdateCompanyNetworkConfigurationError { meta: generic, kind: crate::error::UpdateCompanyNetworkConfigurationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -3165,9 +3287,11 @@ pub fn parse_update_company_network_configuration_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::UpdateCompanyNetworkConfigurationError { meta: generic, kind: crate::error::UpdateCompanyNetworkConfigurationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCompanyNetworkConfigurationError::unhandled)?;
                     output.build()
@@ -3593,9 +3717,11 @@ pub fn parse_update_identity_provider_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::UpdateIdentityProviderConfigurationError { meta: generic, kind: crate::error::UpdateIdentityProviderConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -3607,9 +3733,11 @@ pub fn parse_update_identity_provider_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateIdentityProviderConfigurationError { meta: generic, kind: crate::error::UpdateIdentityProviderConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -3621,9 +3749,11 @@ pub fn parse_update_identity_provider_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateIdentityProviderConfigurationError { meta: generic, kind: crate::error::UpdateIdentityProviderConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -3635,9 +3765,11 @@ pub fn parse_update_identity_provider_configuration_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::UpdateIdentityProviderConfigurationError { meta: generic, kind: crate::error::UpdateIdentityProviderConfigurationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIdentityProviderConfigurationError::unhandled)?;
                     output.build()
@@ -3649,9 +3781,11 @@ pub fn parse_update_identity_provider_configuration_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::UpdateIdentityProviderConfigurationError { meta: generic, kind: crate::error::UpdateIdentityProviderConfigurationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIdentityProviderConfigurationError::unhandled)?;
                     output.build()

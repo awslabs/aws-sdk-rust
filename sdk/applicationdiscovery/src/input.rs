@@ -130,7 +130,8 @@ impl AssociateConfigurationItemsToApplicationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_configuration_items_to_application(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1830,7 +1831,8 @@ impl DescribeExportConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_export_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2638,7 +2640,8 @@ impl DisassociateConfigurationItemsFromApplicationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_configuration_items_from_application(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3704,7 +3707,8 @@ impl StartDataCollectionByAgentIdsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_data_collection_by_agent_ids(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4463,7 +4467,8 @@ impl StopDataCollectionByAgentIdsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_data_collection_by_agent_ids(&self)?
         );
         if let Some(content_length) = body.content_length() {

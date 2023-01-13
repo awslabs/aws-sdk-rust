@@ -157,7 +157,8 @@ impl AssociateFileSystemAliasesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_file_system_aliases(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1083,7 +1084,8 @@ impl CreateDataRepositoryAssociationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_data_repository_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2588,7 +2590,8 @@ impl CreateFileSystemFromBackupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_file_system_from_backup(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3100,7 +3103,8 @@ impl CreateStorageVirtualMachineInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_storage_virtual_machine(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3966,7 +3970,8 @@ impl DeleteDataRepositoryAssociationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_data_repository_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4755,7 +4760,8 @@ impl DeleteStorageVirtualMachineInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_storage_virtual_machine(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5406,7 +5412,8 @@ impl DescribeDataRepositoryAssociationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_data_repository_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5624,7 +5631,8 @@ impl DescribeDataRepositoryTasksInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_data_repository_tasks(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6669,7 +6677,8 @@ impl DescribeStorageVirtualMachinesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_storage_virtual_machines(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7090,7 +7099,8 @@ impl DisassociateFileSystemAliasesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_file_system_aliases(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7464,7 +7474,8 @@ impl ReleaseFileSystemNfsV3LocksInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_release_file_system_nfs_v3_locks(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8269,7 +8280,8 @@ impl UpdateDataRepositoryAssociationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_data_repository_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9192,7 +9204,8 @@ impl UpdateStorageVirtualMachineInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_storage_virtual_machine(&self)?
         );
         if let Some(content_length) = body.content_length() {

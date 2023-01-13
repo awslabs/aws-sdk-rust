@@ -446,9 +446,11 @@ pub fn parse_decode_authorization_message_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidAuthorizationMessageException" => crate::error::DecodeAuthorizationMessageError { meta: generic, kind: crate::error::DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_authorization_message_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_authorization_message_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_authorization_message_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
                     output.build()

@@ -380,7 +380,8 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_update_attendee_capabilities_except(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1321,7 +1322,8 @@ impl CreateMeetingWithAttendeesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_meeting_with_attendees(&self)?
         );
         if let Some(content_length) = body.content_length() {

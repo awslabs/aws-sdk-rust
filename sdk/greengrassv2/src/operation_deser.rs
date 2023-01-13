@@ -104,9 +104,11 @@ pub fn parse_batch_associate_client_device_with_core_device_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::BatchAssociateClientDeviceWithCoreDeviceError { meta: generic, kind: crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateClientDeviceWithCoreDeviceError::unhandled)?;
                     output.build()
@@ -118,9 +120,11 @@ pub fn parse_batch_associate_client_device_with_core_device_error(
             tmp
         })},
         "InternalServerException" => crate::error::BatchAssociateClientDeviceWithCoreDeviceError { meta: generic, kind: crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateClientDeviceWithCoreDeviceError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -136,9 +140,11 @@ pub fn parse_batch_associate_client_device_with_core_device_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchAssociateClientDeviceWithCoreDeviceError { meta: generic, kind: crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateClientDeviceWithCoreDeviceError::unhandled)?;
                     output.build()
@@ -150,9 +156,11 @@ pub fn parse_batch_associate_client_device_with_core_device_error(
             tmp
         })},
         "ThrottlingException" => crate::error::BatchAssociateClientDeviceWithCoreDeviceError { meta: generic, kind: crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateClientDeviceWithCoreDeviceError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -168,9 +176,11 @@ pub fn parse_batch_associate_client_device_with_core_device_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchAssociateClientDeviceWithCoreDeviceError { meta: generic, kind: crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateClientDeviceWithCoreDeviceError::unhandled)?;
                     output.build()
@@ -224,9 +234,11 @@ pub fn parse_batch_disassociate_client_device_from_core_device_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::BatchDisassociateClientDeviceFromCoreDeviceError { meta: generic, kind: crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateClientDeviceFromCoreDeviceError::unhandled)?;
                     output.build()
@@ -238,9 +250,11 @@ pub fn parse_batch_disassociate_client_device_from_core_device_error(
             tmp
         })},
         "InternalServerException" => crate::error::BatchDisassociateClientDeviceFromCoreDeviceError { meta: generic, kind: crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateClientDeviceFromCoreDeviceError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -256,9 +270,11 @@ pub fn parse_batch_disassociate_client_device_from_core_device_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchDisassociateClientDeviceFromCoreDeviceError { meta: generic, kind: crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateClientDeviceFromCoreDeviceError::unhandled)?;
                     output.build()
@@ -270,9 +286,11 @@ pub fn parse_batch_disassociate_client_device_from_core_device_error(
             tmp
         })},
         "ThrottlingException" => crate::error::BatchDisassociateClientDeviceFromCoreDeviceError { meta: generic, kind: crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateClientDeviceFromCoreDeviceError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -288,9 +306,11 @@ pub fn parse_batch_disassociate_client_device_from_core_device_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchDisassociateClientDeviceFromCoreDeviceError { meta: generic, kind: crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateClientDeviceFromCoreDeviceError::unhandled)?;
                     output.build()
@@ -313,7 +333,8 @@ pub fn parse_batch_disassociate_client_device_from_core_device_response(
     crate::error::BatchDisassociateClientDeviceFromCoreDeviceError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::batch_disassociate_client_device_from_core_device_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_disassociate_client_device_from_core_device_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_batch_disassociate_client_device_from_core_device(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateClientDeviceFromCoreDeviceError::unhandled)?;
         output.build()
@@ -2113,9 +2134,11 @@ pub fn parse_list_client_devices_associated_with_core_device_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListClientDevicesAssociatedWithCoreDeviceError { meta: generic, kind: crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListClientDevicesAssociatedWithCoreDeviceError::unhandled)?;
                     output.build()
@@ -2127,9 +2150,11 @@ pub fn parse_list_client_devices_associated_with_core_device_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListClientDevicesAssociatedWithCoreDeviceError { meta: generic, kind: crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListClientDevicesAssociatedWithCoreDeviceError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -2145,9 +2170,11 @@ pub fn parse_list_client_devices_associated_with_core_device_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListClientDevicesAssociatedWithCoreDeviceError { meta: generic, kind: crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListClientDevicesAssociatedWithCoreDeviceError::unhandled)?;
                     output.build()
@@ -2159,9 +2186,11 @@ pub fn parse_list_client_devices_associated_with_core_device_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListClientDevicesAssociatedWithCoreDeviceError { meta: generic, kind: crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListClientDevicesAssociatedWithCoreDeviceError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -2177,9 +2206,11 @@ pub fn parse_list_client_devices_associated_with_core_device_error(
             tmp
         })},
         "ValidationException" => crate::error::ListClientDevicesAssociatedWithCoreDeviceError { meta: generic, kind: crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListClientDevicesAssociatedWithCoreDeviceError::unhandled)?;
                     output.build()

@@ -18,9 +18,11 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListRealtimeContactAnalysisSegmentsError { meta: generic, kind: crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
@@ -32,9 +34,11 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
             tmp
         })},
         "InternalServiceException" => crate::error::ListRealtimeContactAnalysisSegmentsError { meta: generic, kind: crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InternalServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
@@ -46,9 +50,11 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListRealtimeContactAnalysisSegmentsError { meta: generic, kind: crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
@@ -60,9 +66,11 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListRealtimeContactAnalysisSegmentsError { meta: generic, kind: crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()
@@ -74,9 +82,11 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListRealtimeContactAnalysisSegmentsError { meta: generic, kind: crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
                     output.build()

@@ -2526,7 +2526,8 @@ pub fn parse_start_workflow_execution_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::workflow_execution_already_started_fault::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::workflow_execution_already_started_fault::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_workflow_execution_already_started_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
                             output.build()

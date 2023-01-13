@@ -11908,7 +11908,8 @@ pub fn parse_list_training_jobs_for_hyper_parameter_tuning_job_response(
     crate::error::ListTrainingJobsForHyperParameterTuningJobError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::list_training_jobs_for_hyper_parameter_tuning_job_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_training_jobs_for_hyper_parameter_tuning_job_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_training_jobs_for_hyper_parameter_tuning_job(response.body().as_ref(), output).map_err(crate::error::ListTrainingJobsForHyperParameterTuningJobError::unhandled)?;
         output.build()

@@ -4611,7 +4611,8 @@ impl DescribeReservedNodesOfferingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_reserved_nodes_offerings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5810,7 +5811,8 @@ impl ListAllowedNodeTypeUpdatesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_allowed_node_type_updates(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6183,7 +6185,8 @@ impl PurchaseReservedNodesOfferingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_nodes_offering(&self)?
         );
         if let Some(content_length) = body.content_length() {

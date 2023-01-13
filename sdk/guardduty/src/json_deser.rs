@@ -4192,7 +4192,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::organization_malware_protection_configuration_result::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::organization_malware_protection_configuration_result::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -5740,7 +5741,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::organization_kubernetes_audit_logs_configuration_result::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::organization_kubernetes_audit_logs_configuration_result::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

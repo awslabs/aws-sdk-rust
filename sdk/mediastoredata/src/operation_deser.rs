@@ -354,24 +354,24 @@ pub fn parse_get_object_error(
                 tmp
             }),
         },
-        "RequestedRangeNotSatisfiableException" => {
-            crate::error::GetObjectError {
-                meta: generic,
-                kind: crate::error::GetObjectErrorKind::RequestedRangeNotSatisfiableException({
+        "RequestedRangeNotSatisfiableException" => crate::error::GetObjectError {
+            meta: generic,
+            kind: crate::error::GetObjectErrorKind::RequestedRangeNotSatisfiableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::requested_range_not_satisfiable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_requested_range_not_satisfiable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::requested_range_not_satisfiable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_requested_range_not_satisfiable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetObjectError::generic(generic),
     })
 }

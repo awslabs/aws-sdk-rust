@@ -1272,7 +1272,8 @@ pub fn parse_request_certificate_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_domain_validation_options_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_domain_validation_options_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_domain_validation_options_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCertificateError::unhandled)?;
                             output.build()
@@ -1410,9 +1411,11 @@ pub fn parse_resend_validation_email_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidArnException" => crate::error::ResendValidationEmailError { meta: generic, kind: crate::error::ResendValidationEmailErrorKind::InvalidArnException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_arn_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendValidationEmailError::unhandled)?;
                     output.build()
@@ -1424,9 +1427,11 @@ pub fn parse_resend_validation_email_error(
             tmp
         })},
         "InvalidDomainValidationOptionsException" => crate::error::ResendValidationEmailError { meta: generic, kind: crate::error::ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_domain_validation_options_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_domain_validation_options_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_domain_validation_options_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendValidationEmailError::unhandled)?;
                     output.build()
@@ -1438,9 +1443,11 @@ pub fn parse_resend_validation_email_error(
             tmp
         })},
         "InvalidStateException" => crate::error::ResendValidationEmailError { meta: generic, kind: crate::error::ResendValidationEmailErrorKind::InvalidStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendValidationEmailError::unhandled)?;
                     output.build()
@@ -1452,9 +1459,11 @@ pub fn parse_resend_validation_email_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ResendValidationEmailError { meta: generic, kind: crate::error::ResendValidationEmailErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendValidationEmailError::unhandled)?;
                     output.build()

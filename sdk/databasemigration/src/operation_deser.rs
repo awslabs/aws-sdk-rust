@@ -729,9 +729,11 @@ pub fn parse_create_replication_instance_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedFault" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::AccessDeniedFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -743,9 +745,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "InsufficientResourceCapacityFault" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::InsufficientResourceCapacityFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_resource_capacity_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_resource_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_resource_capacity_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -757,9 +761,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "InvalidResourceStateFault" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::InvalidResourceStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_state_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -771,9 +777,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "InvalidSubnet" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::InvalidSubnet({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_subnet::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_subnet::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_subnet_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -785,9 +793,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "KMSKeyNotAccessibleFault" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::KmsKeyNotAccessibleFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_key_not_accessible_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -799,9 +809,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "ReplicationSubnetGroupDoesNotCoverEnoughAZs" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_subnet_group_does_not_cover_enough_a_zs::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_subnet_group_does_not_cover_enough_a_zs::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replication_subnet_group_does_not_cover_enough_a_zs_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -813,9 +825,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "ResourceAlreadyExistsFault" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::ResourceAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -827,9 +841,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "ResourceNotFoundFault" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::ResourceNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -841,9 +857,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "ResourceQuotaExceededFault" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::ResourceQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -855,9 +873,11 @@ pub fn parse_create_replication_instance_error(
             tmp
         })},
         "StorageQuotaExceededFault" => crate::error::CreateReplicationInstanceError { meta: generic, kind: crate::error::CreateReplicationInstanceErrorKind::StorageQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_storage_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationInstanceError::unhandled)?;
                     output.build()
@@ -913,9 +933,11 @@ pub fn parse_create_replication_subnet_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedFault" => crate::error::CreateReplicationSubnetGroupError { meta: generic, kind: crate::error::CreateReplicationSubnetGroupErrorKind::AccessDeniedFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -927,9 +949,11 @@ pub fn parse_create_replication_subnet_group_error(
             tmp
         })},
         "InvalidSubnet" => crate::error::CreateReplicationSubnetGroupError { meta: generic, kind: crate::error::CreateReplicationSubnetGroupErrorKind::InvalidSubnet({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_subnet::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_subnet::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_subnet_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -941,9 +965,11 @@ pub fn parse_create_replication_subnet_group_error(
             tmp
         })},
         "ReplicationSubnetGroupDoesNotCoverEnoughAZs" => crate::error::CreateReplicationSubnetGroupError { meta: generic, kind: crate::error::CreateReplicationSubnetGroupErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_subnet_group_does_not_cover_enough_a_zs::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_subnet_group_does_not_cover_enough_a_zs::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replication_subnet_group_does_not_cover_enough_a_zs_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -955,9 +981,11 @@ pub fn parse_create_replication_subnet_group_error(
             tmp
         })},
         "ResourceAlreadyExistsFault" => crate::error::CreateReplicationSubnetGroupError { meta: generic, kind: crate::error::CreateReplicationSubnetGroupErrorKind::ResourceAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -969,9 +997,11 @@ pub fn parse_create_replication_subnet_group_error(
             tmp
         })},
         "ResourceNotFoundFault" => crate::error::CreateReplicationSubnetGroupError { meta: generic, kind: crate::error::CreateReplicationSubnetGroupErrorKind::ResourceNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -983,9 +1013,11 @@ pub fn parse_create_replication_subnet_group_error(
             tmp
         })},
         "ResourceQuotaExceededFault" => crate::error::CreateReplicationSubnetGroupError { meta: generic, kind: crate::error::CreateReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -1995,9 +2027,11 @@ pub fn parse_describe_applicable_individual_assessments_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedFault" => crate::error::DescribeApplicableIndividualAssessmentsError { meta: generic, kind: crate::error::DescribeApplicableIndividualAssessmentsErrorKind::AccessDeniedFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeApplicableIndividualAssessmentsError::unhandled)?;
                     output.build()
@@ -2009,9 +2043,11 @@ pub fn parse_describe_applicable_individual_assessments_error(
             tmp
         })},
         "InvalidResourceStateFault" => crate::error::DescribeApplicableIndividualAssessmentsError { meta: generic, kind: crate::error::DescribeApplicableIndividualAssessmentsErrorKind::InvalidResourceStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_state_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeApplicableIndividualAssessmentsError::unhandled)?;
                     output.build()
@@ -2023,9 +2059,11 @@ pub fn parse_describe_applicable_individual_assessments_error(
             tmp
         })},
         "ResourceNotFoundFault" => crate::error::DescribeApplicableIndividualAssessmentsError { meta: generic, kind: crate::error::DescribeApplicableIndividualAssessmentsErrorKind::ResourceNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeApplicableIndividualAssessmentsError::unhandled)?;
                     output.build()
@@ -2619,9 +2657,11 @@ pub fn parse_describe_fleet_advisor_schema_object_summary_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidResourceStateFault" => crate::error::DescribeFleetAdvisorSchemaObjectSummaryError { meta: generic, kind: crate::error::DescribeFleetAdvisorSchemaObjectSummaryErrorKind::InvalidResourceStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_state_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetAdvisorSchemaObjectSummaryError::unhandled)?;
                     output.build()
@@ -2960,9 +3000,11 @@ pub fn parse_describe_replication_instance_task_logs_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidResourceStateFault" => crate::error::DescribeReplicationInstanceTaskLogsError { meta: generic, kind: crate::error::DescribeReplicationInstanceTaskLogsErrorKind::InvalidResourceStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_resource_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_state_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationInstanceTaskLogsError::unhandled)?;
                     output.build()
@@ -2974,9 +3016,11 @@ pub fn parse_describe_replication_instance_task_logs_error(
             tmp
         })},
         "ResourceNotFoundFault" => crate::error::DescribeReplicationInstanceTaskLogsError { meta: generic, kind: crate::error::DescribeReplicationInstanceTaskLogsErrorKind::ResourceNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationInstanceTaskLogsError::unhandled)?;
                     output.build()
@@ -3088,9 +3132,11 @@ pub fn parse_describe_replication_task_assessment_results_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundFault" => crate::error::DescribeReplicationTaskAssessmentResultsError { meta: generic, kind: crate::error::DescribeReplicationTaskAssessmentResultsErrorKind::ResourceNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationTaskAssessmentResultsError::unhandled)?;
                     output.build()
@@ -3205,9 +3251,11 @@ pub fn parse_describe_replication_task_individual_assessments_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundFault" => crate::error::DescribeReplicationTaskIndividualAssessmentsError { meta: generic, kind: crate::error::DescribeReplicationTaskIndividualAssessmentsErrorKind::ResourceNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationTaskIndividualAssessmentsError::unhandled)?;
                     output.build()
@@ -3230,7 +3278,8 @@ pub fn parse_describe_replication_task_individual_assessments_response(
     crate::error::DescribeReplicationTaskIndividualAssessmentsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_replication_task_individual_assessments_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_replication_task_individual_assessments_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_replication_task_individual_assessments(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationTaskIndividualAssessmentsError::unhandled)?;
         output.build()
@@ -3954,7 +4003,8 @@ pub fn parse_modify_replication_instance_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::insufficient_resource_capacity_fault::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_resource_capacity_fault::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_insufficient_resource_capacity_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationInstanceError::unhandled)?;
                             output.build()
@@ -4100,9 +4150,11 @@ pub fn parse_modify_replication_subnet_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedFault" => crate::error::ModifyReplicationSubnetGroupError { meta: generic, kind: crate::error::ModifyReplicationSubnetGroupErrorKind::AccessDeniedFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -4114,9 +4166,11 @@ pub fn parse_modify_replication_subnet_group_error(
             tmp
         })},
         "InvalidSubnet" => crate::error::ModifyReplicationSubnetGroupError { meta: generic, kind: crate::error::ModifyReplicationSubnetGroupErrorKind::InvalidSubnet({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_subnet::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_subnet::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_subnet_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -4128,9 +4182,11 @@ pub fn parse_modify_replication_subnet_group_error(
             tmp
         })},
         "ReplicationSubnetGroupDoesNotCoverEnoughAZs" => crate::error::ModifyReplicationSubnetGroupError { meta: generic, kind: crate::error::ModifyReplicationSubnetGroupErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_subnet_group_does_not_cover_enough_a_zs::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_subnet_group_does_not_cover_enough_a_zs::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replication_subnet_group_does_not_cover_enough_a_zs_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -4142,9 +4198,11 @@ pub fn parse_modify_replication_subnet_group_error(
             tmp
         })},
         "ResourceNotFoundFault" => crate::error::ModifyReplicationSubnetGroupError { meta: generic, kind: crate::error::ModifyReplicationSubnetGroupErrorKind::ResourceNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -4156,9 +4214,11 @@ pub fn parse_modify_replication_subnet_group_error(
             tmp
         })},
         "ResourceQuotaExceededFault" => crate::error::ModifyReplicationSubnetGroupError { meta: generic, kind: crate::error::ModifyReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationSubnetGroupError::unhandled)?;
                     output.build()
@@ -4170,9 +4230,11 @@ pub fn parse_modify_replication_subnet_group_error(
             tmp
         })},
         "SubnetAlreadyInUse" => crate::error::ModifyReplicationSubnetGroupError { meta: generic, kind: crate::error::ModifyReplicationSubnetGroupErrorKind::SubnetAlreadyInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::subnet_already_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::subnet_already_in_use::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_subnet_already_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationSubnetGroupError::unhandled)?;
                     output.build()

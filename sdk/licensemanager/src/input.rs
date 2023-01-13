@@ -2088,7 +2088,8 @@ impl CreateLicenseConversionTaskForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_license_conversion_task_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2358,7 +2359,8 @@ impl CreateLicenseManagerReportGeneratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_license_manager_report_generator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3622,7 +3624,8 @@ impl DeleteLicenseManagerReportGeneratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_license_manager_report_generator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5001,7 +5004,8 @@ impl GetLicenseManagerReportGeneratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_license_manager_report_generator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5496,7 +5500,8 @@ impl ListAssociationsForLicenseConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_associations_for_license_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5922,7 +5927,8 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_failures_for_license_configuration_operations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6350,7 +6356,8 @@ impl ListLicenseConversionTasksInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_license_conversion_tasks(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6552,7 +6559,8 @@ impl ListLicenseManagerReportGeneratorsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_license_manager_report_generators(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6967,7 +6975,8 @@ impl ListLicenseSpecificationsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_license_specifications_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7603,7 +7612,8 @@ impl ListReceivedGrantsForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_received_grants_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8041,7 +8051,8 @@ impl ListReceivedLicensesForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_received_licenses_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8867,7 +8878,8 @@ impl ListUsageForLicenseConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_usage_for_license_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9953,7 +9965,8 @@ impl UpdateLicenseManagerReportGeneratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_license_manager_report_generator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10166,7 +10179,8 @@ impl UpdateLicenseSpecificationsForResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_license_specifications_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {

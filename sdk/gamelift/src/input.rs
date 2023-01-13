@@ -3042,7 +3042,8 @@ impl CreateMatchmakingConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_matchmaking_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4056,7 +4057,8 @@ impl CreateVpcPeeringAuthorizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_vpc_peering_authorization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4246,7 +4248,8 @@ impl CreateVpcPeeringConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_vpc_peering_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5603,7 +5606,8 @@ impl DeleteMatchmakingConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_matchmaking_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6283,7 +6287,8 @@ impl DeleteVpcPeeringAuthorizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_vpc_peering_authorization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6461,7 +6466,8 @@ impl DeleteVpcPeeringConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_vpc_peering_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8324,7 +8330,8 @@ impl DescribeFleetLocationAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8499,7 +8506,8 @@ impl DescribeFleetLocationCapacityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_capacity(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8674,7 +8682,8 @@ impl DescribeFleetLocationUtilizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_utilization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9613,7 +9622,8 @@ impl DescribeGameServerInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_game_server_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9854,7 +9864,8 @@ impl DescribeGameSessionDetailsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_game_session_details(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10017,7 +10028,8 @@ impl DescribeGameSessionPlacementInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_game_session_placement(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11056,7 +11068,8 @@ impl DescribeMatchmakingConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_matchmaking_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11252,7 +11265,8 @@ impl DescribeMatchmakingRuleSetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_matchmaking_rule_sets(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11667,7 +11681,8 @@ impl DescribeRuntimeConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_runtime_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12213,7 +12228,8 @@ impl DescribeVpcPeeringAuthorizationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_vpc_peering_authorizations(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -12369,7 +12385,8 @@ impl DescribeVpcPeeringConnectionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_vpc_peering_connections(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20820,7 +20837,8 @@ impl UpdateMatchmakingConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_matchmaking_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21382,7 +21400,8 @@ impl ValidateMatchmakingRuleSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_validate_matchmaking_rule_set(&self)?
         );
         if let Some(content_length) = body.content_length() {

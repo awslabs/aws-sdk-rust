@@ -1399,27 +1399,27 @@ pub fn parse_modify_backup_attributes_error(
                 tmp
             }),
         },
-        "CloudHsmResourceNotFoundException" => {
-            crate::error::ModifyBackupAttributesError {
-                meta: generic,
-                kind:
-                    crate::error::ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_resource_not_found_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyBackupAttributesError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "CloudHsmResourceNotFoundException" => crate::error::ModifyBackupAttributesError {
+            meta: generic,
+            kind: crate::error::ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::cloud_hsm_resource_not_found_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_cloud_hsm_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyBackupAttributesError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "CloudHsmServiceException" => crate::error::ModifyBackupAttributesError {
             meta: generic,
             kind: crate::error::ModifyBackupAttributesErrorKind::CloudHsmServiceException({

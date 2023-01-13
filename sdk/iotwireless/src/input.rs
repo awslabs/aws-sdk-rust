@@ -138,7 +138,8 @@ impl AssociateAwsAccountWithPartnerAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_aws_account_with_partner_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -331,7 +332,8 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_multicast_group_with_fuota_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -524,7 +526,8 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_wireless_device_with_fuota_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -719,7 +722,8 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_wireless_device_with_multicast_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -910,7 +914,8 @@ impl AssociateWirelessDeviceWithThingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_wireless_device_with_thing(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1103,7 +1108,8 @@ impl AssociateWirelessGatewayWithCertificateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_wireless_gateway_with_certificate(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1293,7 +1299,8 @@ impl AssociateWirelessGatewayWithThingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_wireless_gateway_with_thing(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2665,7 +2672,8 @@ impl CreateNetworkAnalyzerConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_network_analyzer_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3803,7 +3811,8 @@ impl CreateWirelessGatewayTaskDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_wireless_gateway_task_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15853,7 +15862,8 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_bulk_associate_wireless_device_with_multicast_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16068,7 +16078,8 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_bulk_disassociate_wireless_device_from_multicast_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16454,7 +16465,8 @@ impl StartMulticastGroupSessionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_multicast_group_session(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17498,7 +17510,8 @@ impl UpdateEventConfigurationByResourceTypesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_event_configuration_by_resource_types(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17954,7 +17967,8 @@ impl UpdateLogLevelsByResourceTypesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_log_levels_by_resource_types(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18476,7 +18490,8 @@ impl UpdateNetworkAnalyzerConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_network_analyzer_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -19275,7 +19290,8 @@ impl UpdateResourceEventConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_resource_event_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {

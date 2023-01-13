@@ -623,7 +623,8 @@ pub fn parse_admin_create_user_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminCreateUserError::unhandled)?;
                         output.build()
@@ -1560,7 +1561,8 @@ pub fn parse_admin_forget_device_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminForgetDeviceError::unhandled)?;
                         output.build()
@@ -2021,7 +2023,8 @@ pub fn parse_admin_initiate_auth_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminInitiateAuthError::unhandled)?;
                             output.build()
@@ -2039,7 +2042,8 @@ pub fn parse_admin_initiate_auth_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminInitiateAuthError::unhandled)?;
                         output.build()
@@ -2811,27 +2815,27 @@ pub fn parse_admin_list_user_auth_events_error(
                 tmp
             }),
         },
-        "UserPoolAddOnNotEnabledException" => {
-            crate::error::AdminListUserAuthEventsError {
-                meta: generic,
-                kind:
-                    crate::error::AdminListUserAuthEventsErrorKind::UserPoolAddOnNotEnabledException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::user_pool_add_on_not_enabled_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_user_pool_add_on_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminListUserAuthEventsError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "UserPoolAddOnNotEnabledException" => crate::error::AdminListUserAuthEventsError {
+            meta: generic,
+            kind: crate::error::AdminListUserAuthEventsErrorKind::UserPoolAddOnNotEnabledException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::user_pool_add_on_not_enabled_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_user_pool_add_on_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminListUserAuthEventsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::AdminListUserAuthEventsError::generic(generic),
     })
 }
@@ -3018,9 +3022,11 @@ pub fn parse_admin_reset_user_password_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalErrorException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3032,9 +3038,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "InvalidEmailRoleAccessPolicyException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::InvalidEmailRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3046,9 +3054,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "InvalidLambdaResponseException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::InvalidLambdaResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3060,9 +3070,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3074,9 +3086,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "InvalidSmsRoleAccessPolicyException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::InvalidSmsRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3088,9 +3102,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "InvalidSmsRoleTrustRelationshipException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::InvalidSmsRoleTrustRelationshipException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3102,9 +3118,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "LimitExceededException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3116,9 +3134,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3130,9 +3150,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3144,9 +3166,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3158,9 +3182,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "UnexpectedLambdaException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::UnexpectedLambdaException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unexpected_lambda_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unexpected_lambda_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3172,9 +3198,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "UserLambdaValidationException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::UserLambdaValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_lambda_validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_lambda_validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3186,9 +3214,11 @@ pub fn parse_admin_reset_user_password_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::AdminResetUserPasswordError { meta: generic, kind: crate::error::AdminResetUserPasswordErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminResetUserPasswordError::unhandled)?;
                     output.build()
@@ -3239,9 +3269,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AliasExistsException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::AliasExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::alias_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::alias_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_alias_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3253,9 +3285,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "CodeMismatchException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::CodeMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3267,9 +3301,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "ExpiredCodeException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::ExpiredCodeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::expired_code_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::expired_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3281,9 +3317,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "InternalErrorException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3295,9 +3333,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidLambdaResponseException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::InvalidLambdaResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3309,9 +3349,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3323,9 +3365,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidPasswordException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::InvalidPasswordException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_password_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_password_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_password_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3337,9 +3381,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidSmsRoleAccessPolicyException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3351,9 +3397,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidSmsRoleTrustRelationshipException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3365,9 +3413,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidUserPoolConfigurationException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3379,9 +3429,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "MFAMethodNotFoundException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::MfaMethodNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::mfa_method_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::mfa_method_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_mfa_method_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3393,9 +3445,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3407,9 +3461,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "PasswordResetRequiredException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::PasswordResetRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::password_reset_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::password_reset_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_password_reset_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3421,9 +3477,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3435,9 +3493,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "SoftwareTokenMFANotFoundException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::software_token_mfa_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::software_token_mfa_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_software_token_mfa_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3449,9 +3509,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3463,9 +3525,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "UnexpectedLambdaException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::UnexpectedLambdaException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unexpected_lambda_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unexpected_lambda_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3477,9 +3541,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "UserLambdaValidationException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::UserLambdaValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_lambda_validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_lambda_validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3491,9 +3557,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "UserNotConfirmedException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::UserNotConfirmedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_confirmed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_confirmed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_confirmed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3505,9 +3573,11 @@ pub fn parse_admin_respond_to_auth_challenge_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::AdminRespondToAuthChallengeError { meta: generic, kind: crate::error::AdminRespondToAuthChallengeErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminRespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -3999,9 +4069,11 @@ pub fn parse_admin_update_auth_event_feedback_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalErrorException" => crate::error::AdminUpdateAuthEventFeedbackError { meta: generic, kind: crate::error::AdminUpdateAuthEventFeedbackErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateAuthEventFeedbackError::unhandled)?;
                     output.build()
@@ -4013,9 +4085,11 @@ pub fn parse_admin_update_auth_event_feedback_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::AdminUpdateAuthEventFeedbackError { meta: generic, kind: crate::error::AdminUpdateAuthEventFeedbackErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateAuthEventFeedbackError::unhandled)?;
                     output.build()
@@ -4027,9 +4101,11 @@ pub fn parse_admin_update_auth_event_feedback_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::AdminUpdateAuthEventFeedbackError { meta: generic, kind: crate::error::AdminUpdateAuthEventFeedbackErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateAuthEventFeedbackError::unhandled)?;
                     output.build()
@@ -4041,9 +4117,11 @@ pub fn parse_admin_update_auth_event_feedback_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AdminUpdateAuthEventFeedbackError { meta: generic, kind: crate::error::AdminUpdateAuthEventFeedbackErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateAuthEventFeedbackError::unhandled)?;
                     output.build()
@@ -4055,9 +4133,11 @@ pub fn parse_admin_update_auth_event_feedback_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::AdminUpdateAuthEventFeedbackError { meta: generic, kind: crate::error::AdminUpdateAuthEventFeedbackErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateAuthEventFeedbackError::unhandled)?;
                     output.build()
@@ -4069,9 +4149,11 @@ pub fn parse_admin_update_auth_event_feedback_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::AdminUpdateAuthEventFeedbackError { meta: generic, kind: crate::error::AdminUpdateAuthEventFeedbackErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateAuthEventFeedbackError::unhandled)?;
                     output.build()
@@ -4083,9 +4165,11 @@ pub fn parse_admin_update_auth_event_feedback_error(
             tmp
         })},
         "UserPoolAddOnNotEnabledException" => crate::error::AdminUpdateAuthEventFeedbackError { meta: generic, kind: crate::error::AdminUpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_pool_add_on_not_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_pool_add_on_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_pool_add_on_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateAuthEventFeedbackError::unhandled)?;
                     output.build()
@@ -4136,9 +4220,11 @@ pub fn parse_admin_update_device_status_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalErrorException" => crate::error::AdminUpdateDeviceStatusError { meta: generic, kind: crate::error::AdminUpdateDeviceStatusErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateDeviceStatusError::unhandled)?;
                     output.build()
@@ -4150,9 +4236,11 @@ pub fn parse_admin_update_device_status_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::AdminUpdateDeviceStatusError { meta: generic, kind: crate::error::AdminUpdateDeviceStatusErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateDeviceStatusError::unhandled)?;
                     output.build()
@@ -4164,9 +4252,11 @@ pub fn parse_admin_update_device_status_error(
             tmp
         })},
         "InvalidUserPoolConfigurationException" => crate::error::AdminUpdateDeviceStatusError { meta: generic, kind: crate::error::AdminUpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateDeviceStatusError::unhandled)?;
                     output.build()
@@ -4178,9 +4268,11 @@ pub fn parse_admin_update_device_status_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::AdminUpdateDeviceStatusError { meta: generic, kind: crate::error::AdminUpdateDeviceStatusErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateDeviceStatusError::unhandled)?;
                     output.build()
@@ -4192,9 +4284,11 @@ pub fn parse_admin_update_device_status_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AdminUpdateDeviceStatusError { meta: generic, kind: crate::error::AdminUpdateDeviceStatusErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateDeviceStatusError::unhandled)?;
                     output.build()
@@ -4206,9 +4300,11 @@ pub fn parse_admin_update_device_status_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::AdminUpdateDeviceStatusError { meta: generic, kind: crate::error::AdminUpdateDeviceStatusErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateDeviceStatusError::unhandled)?;
                     output.build()
@@ -4220,9 +4316,11 @@ pub fn parse_admin_update_device_status_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::AdminUpdateDeviceStatusError { meta: generic, kind: crate::error::AdminUpdateDeviceStatusErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateDeviceStatusError::unhandled)?;
                     output.build()
@@ -4273,9 +4371,11 @@ pub fn parse_admin_update_user_attributes_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AliasExistsException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::AliasExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::alias_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::alias_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_alias_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4287,9 +4387,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "InternalErrorException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4301,9 +4403,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "InvalidEmailRoleAccessPolicyException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4315,9 +4419,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "InvalidLambdaResponseException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::InvalidLambdaResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4329,9 +4435,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4343,9 +4451,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "InvalidSmsRoleAccessPolicyException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4357,9 +4467,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "InvalidSmsRoleTrustRelationshipException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4371,9 +4483,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4385,9 +4499,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4399,9 +4515,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4413,9 +4531,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "UnexpectedLambdaException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::UnexpectedLambdaException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unexpected_lambda_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unexpected_lambda_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4427,9 +4547,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "UserLambdaValidationException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::UserLambdaValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_lambda_validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_lambda_validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4441,9 +4563,11 @@ pub fn parse_admin_update_user_attributes_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::AdminUpdateUserAttributesError { meta: generic, kind: crate::error::AdminUpdateUserAttributesErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdminUpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -4737,27 +4861,27 @@ pub fn parse_associate_software_token_error(
                 tmp
             }),
         },
-        "SoftwareTokenMFANotFoundException" => {
-            crate::error::AssociateSoftwareTokenError {
-                meta: generic,
-                kind:
-                    crate::error::AssociateSoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::software_token_mfa_not_found_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_software_token_mfa_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateSoftwareTokenError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "SoftwareTokenMFANotFoundException" => crate::error::AssociateSoftwareTokenError {
+            meta: generic,
+            kind: crate::error::AssociateSoftwareTokenErrorKind::SoftwareTokenMfaNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::software_token_mfa_not_found_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_software_token_mfa_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateSoftwareTokenError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::AssociateSoftwareTokenError::generic(generic),
     })
 }
@@ -6538,31 +6662,32 @@ pub fn parse_create_user_pool_error(
                 tmp
             }),
         },
-        "InvalidSmsRoleAccessPolicyException" => {
-            crate::error::CreateUserPoolError {
-                meta: generic,
-                kind: crate::error::CreateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException({
+        "InvalidSmsRoleAccessPolicyException" => crate::error::CreateUserPoolError {
+            meta: generic,
+            kind: crate::error::CreateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserPoolError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserPoolError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidSmsRoleTrustRelationshipException" => crate::error::CreateUserPoolError {
             meta: generic,
             kind: crate::error::CreateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserPoolError::unhandled)?;
                         output.build()
@@ -7210,7 +7335,8 @@ pub fn parse_delete_identity_provider_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::unsupported_identity_provider_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_identity_provider_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_unsupported_identity_provider_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIdentityProviderError::unhandled)?;
                             output.build()
@@ -8476,7 +8602,8 @@ pub fn parse_describe_risk_configuration_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::user_pool_add_on_not_enabled_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::user_pool_add_on_not_enabled_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_user_pool_add_on_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRiskConfigurationError::unhandled)?;
                             output.build()
@@ -9080,24 +9207,24 @@ pub fn parse_forget_device_error(
                 tmp
             }),
         },
-        "InvalidUserPoolConfigurationException" => {
-            crate::error::ForgetDeviceError {
-                meta: generic,
-                kind: crate::error::ForgetDeviceErrorKind::InvalidUserPoolConfigurationException({
+        "InvalidUserPoolConfigurationException" => crate::error::ForgetDeviceError {
+            meta: generic,
+            kind: crate::error::ForgetDeviceErrorKind::InvalidUserPoolConfigurationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgetDeviceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgetDeviceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NotAuthorizedException" => crate::error::ForgetDeviceError {
             meta: generic,
             kind: crate::error::ForgetDeviceErrorKind::NotAuthorizedException({
@@ -9336,31 +9463,32 @@ pub fn parse_forgot_password_error(
                 tmp
             }),
         },
-        "InvalidSmsRoleAccessPolicyException" => {
-            crate::error::ForgotPasswordError {
-                meta: generic,
-                kind: crate::error::ForgotPasswordErrorKind::InvalidSmsRoleAccessPolicyException({
+        "InvalidSmsRoleAccessPolicyException" => crate::error::ForgotPasswordError {
+            meta: generic,
+            kind: crate::error::ForgotPasswordErrorKind::InvalidSmsRoleAccessPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgotPasswordError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgotPasswordError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidSmsRoleTrustRelationshipException" => crate::error::ForgotPasswordError {
             meta: generic,
             kind: crate::error::ForgotPasswordErrorKind::InvalidSmsRoleTrustRelationshipException(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgotPasswordError::unhandled)?;
                         output.build()
@@ -9696,24 +9824,24 @@ pub fn parse_get_device_error(
                 tmp
             }),
         },
-        "InvalidUserPoolConfigurationException" => {
-            crate::error::GetDeviceError {
-                meta: generic,
-                kind: crate::error::GetDeviceErrorKind::InvalidUserPoolConfigurationException({
+        "InvalidUserPoolConfigurationException" => crate::error::GetDeviceError {
+            meta: generic,
+            kind: crate::error::GetDeviceErrorKind::InvalidUserPoolConfigurationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NotAuthorizedException" => crate::error::GetDeviceError {
             meta: generic,
             kind: crate::error::GetDeviceErrorKind::NotAuthorizedException({
@@ -10516,9 +10644,11 @@ pub fn parse_get_user_attribute_verification_code_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CodeDeliveryFailureException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_delivery_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_delivery_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_delivery_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10530,9 +10660,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "ForbiddenException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10544,9 +10676,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "InternalErrorException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10558,9 +10692,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "InvalidEmailRoleAccessPolicyException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidEmailRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10572,9 +10708,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "InvalidLambdaResponseException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidLambdaResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10586,9 +10724,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10600,9 +10740,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "InvalidSmsRoleAccessPolicyException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10614,9 +10756,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "InvalidSmsRoleTrustRelationshipException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidSmsRoleTrustRelationshipException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10628,9 +10772,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "LimitExceededException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10642,9 +10788,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10656,9 +10804,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "PasswordResetRequiredException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::PasswordResetRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::password_reset_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::password_reset_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_password_reset_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10670,9 +10820,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10684,9 +10836,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10698,9 +10852,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "UnexpectedLambdaException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::UnexpectedLambdaException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unexpected_lambda_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unexpected_lambda_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10712,9 +10868,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "UserLambdaValidationException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::UserLambdaValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_lambda_validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_lambda_validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10726,9 +10884,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "UserNotConfirmedException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::UserNotConfirmedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_confirmed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_confirmed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_confirmed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -10740,9 +10900,11 @@ pub fn parse_get_user_attribute_verification_code_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
@@ -11147,30 +11309,31 @@ pub fn parse_initiate_auth_error(
                 tmp
             }),
         },
-        "InvalidSmsRoleAccessPolicyException" => {
-            crate::error::InitiateAuthError {
-                meta: generic,
-                kind: crate::error::InitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException({
+        "InvalidSmsRoleAccessPolicyException" => crate::error::InitiateAuthError {
+            meta: generic,
+            kind: crate::error::InitiateAuthErrorKind::InvalidSmsRoleAccessPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateAuthError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateAuthError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidSmsRoleTrustRelationshipException" => crate::error::InitiateAuthError {
             meta: generic,
             kind: crate::error::InitiateAuthErrorKind::InvalidSmsRoleTrustRelationshipException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateAuthError::unhandled)?;
                     output.build()
@@ -11181,24 +11344,24 @@ pub fn parse_initiate_auth_error(
                 tmp
             }),
         },
-        "InvalidUserPoolConfigurationException" => {
-            crate::error::InitiateAuthError {
-                meta: generic,
-                kind: crate::error::InitiateAuthErrorKind::InvalidUserPoolConfigurationException({
+        "InvalidUserPoolConfigurationException" => crate::error::InitiateAuthError {
+            meta: generic,
+            kind: crate::error::InitiateAuthErrorKind::InvalidUserPoolConfigurationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateAuthError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateAuthError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NotAuthorizedException" => crate::error::InitiateAuthError {
             meta: generic,
             kind: crate::error::InitiateAuthErrorKind::NotAuthorizedException({
@@ -11422,24 +11585,24 @@ pub fn parse_list_devices_error(
                 tmp
             }),
         },
-        "InvalidUserPoolConfigurationException" => {
-            crate::error::ListDevicesError {
-                meta: generic,
-                kind: crate::error::ListDevicesErrorKind::InvalidUserPoolConfigurationException({
+        "InvalidUserPoolConfigurationException" => crate::error::ListDevicesError {
+            meta: generic,
+            kind: crate::error::ListDevicesErrorKind::InvalidUserPoolConfigurationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDevicesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDevicesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "NotAuthorizedException" => crate::error::ListDevicesError {
             meta: generic,
             kind: crate::error::ListDevicesErrorKind::NotAuthorizedException({
@@ -12671,9 +12834,11 @@ pub fn parse_resend_confirmation_code_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CodeDeliveryFailureException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::CodeDeliveryFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_delivery_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_delivery_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_delivery_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12685,9 +12850,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "ForbiddenException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12699,9 +12866,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "InternalErrorException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12713,9 +12882,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "InvalidEmailRoleAccessPolicyException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::InvalidEmailRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12727,9 +12898,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "InvalidLambdaResponseException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::InvalidLambdaResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12741,9 +12914,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12755,9 +12930,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "InvalidSmsRoleAccessPolicyException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::InvalidSmsRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12769,9 +12946,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "InvalidSmsRoleTrustRelationshipException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::InvalidSmsRoleTrustRelationshipException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12783,9 +12962,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "LimitExceededException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12797,9 +12978,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12811,9 +12994,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12825,9 +13010,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12839,9 +13026,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "UnexpectedLambdaException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::UnexpectedLambdaException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unexpected_lambda_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unexpected_lambda_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12853,9 +13042,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "UserLambdaValidationException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::UserLambdaValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_lambda_validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_lambda_validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12867,9 +13058,11 @@ pub fn parse_resend_confirmation_code_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
                     output.build()
@@ -12925,9 +13118,11 @@ pub fn parse_respond_to_auth_challenge_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AliasExistsException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::AliasExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::alias_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::alias_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_alias_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -12939,9 +13134,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "CodeMismatchException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::CodeMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -12953,9 +13150,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "ExpiredCodeException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::ExpiredCodeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::expired_code_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::expired_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -12967,9 +13166,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "ForbiddenException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -12981,9 +13182,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "InternalErrorException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -12995,9 +13198,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidLambdaResponseException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::InvalidLambdaResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13009,9 +13214,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13023,9 +13230,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidPasswordException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::InvalidPasswordException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_password_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_password_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_password_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13037,9 +13246,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidSmsRoleAccessPolicyException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::InvalidSmsRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13051,9 +13262,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidSmsRoleTrustRelationshipException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::InvalidSmsRoleTrustRelationshipException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13065,9 +13278,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "InvalidUserPoolConfigurationException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::InvalidUserPoolConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13079,9 +13294,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "MFAMethodNotFoundException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::MfaMethodNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::mfa_method_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::mfa_method_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_mfa_method_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13093,9 +13310,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13107,9 +13326,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "PasswordResetRequiredException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::PasswordResetRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::password_reset_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::password_reset_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_password_reset_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13121,9 +13342,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13135,9 +13358,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "SoftwareTokenMFANotFoundException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::SoftwareTokenMfaNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::software_token_mfa_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::software_token_mfa_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_software_token_mfa_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13149,9 +13374,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13163,9 +13390,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "UnexpectedLambdaException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::UnexpectedLambdaException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unexpected_lambda_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unexpected_lambda_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13177,9 +13406,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "UserLambdaValidationException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::UserLambdaValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_lambda_validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_lambda_validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13191,9 +13422,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "UserNotConfirmedException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::UserNotConfirmedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_confirmed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_confirmed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_confirmed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13205,9 +13438,11 @@ pub fn parse_respond_to_auth_challenge_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
@@ -13450,7 +13685,8 @@ pub fn parse_set_risk_configuration_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_email_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetRiskConfigurationError::unhandled)?;
                             output.build()
@@ -13886,9 +14122,11 @@ pub fn parse_set_user_pool_mfa_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalErrorException" => crate::error::SetUserPoolMfaConfigError { meta: generic, kind: crate::error::SetUserPoolMfaConfigErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserPoolMfaConfigError::unhandled)?;
                     output.build()
@@ -13900,9 +14138,11 @@ pub fn parse_set_user_pool_mfa_config_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::SetUserPoolMfaConfigError { meta: generic, kind: crate::error::SetUserPoolMfaConfigErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserPoolMfaConfigError::unhandled)?;
                     output.build()
@@ -13914,9 +14154,11 @@ pub fn parse_set_user_pool_mfa_config_error(
             tmp
         })},
         "InvalidSmsRoleAccessPolicyException" => crate::error::SetUserPoolMfaConfigError { meta: generic, kind: crate::error::SetUserPoolMfaConfigErrorKind::InvalidSmsRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserPoolMfaConfigError::unhandled)?;
                     output.build()
@@ -13928,9 +14170,11 @@ pub fn parse_set_user_pool_mfa_config_error(
             tmp
         })},
         "InvalidSmsRoleTrustRelationshipException" => crate::error::SetUserPoolMfaConfigError { meta: generic, kind: crate::error::SetUserPoolMfaConfigErrorKind::InvalidSmsRoleTrustRelationshipException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserPoolMfaConfigError::unhandled)?;
                     output.build()
@@ -13942,9 +14186,11 @@ pub fn parse_set_user_pool_mfa_config_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::SetUserPoolMfaConfigError { meta: generic, kind: crate::error::SetUserPoolMfaConfigErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserPoolMfaConfigError::unhandled)?;
                     output.build()
@@ -13956,9 +14202,11 @@ pub fn parse_set_user_pool_mfa_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::SetUserPoolMfaConfigError { meta: generic, kind: crate::error::SetUserPoolMfaConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserPoolMfaConfigError::unhandled)?;
                     output.build()
@@ -13970,9 +14218,11 @@ pub fn parse_set_user_pool_mfa_config_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::SetUserPoolMfaConfigError { meta: generic, kind: crate::error::SetUserPoolMfaConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserPoolMfaConfigError::unhandled)?;
                     output.build()
@@ -14244,7 +14494,8 @@ pub fn parse_sign_up_error(
                 kind: crate::error::SignUpErrorKind::InvalidEmailRoleAccessPolicyException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_email_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignUpError::unhandled)?;
                         output.build()
@@ -14308,30 +14559,31 @@ pub fn parse_sign_up_error(
                 tmp
             }),
         },
-        "InvalidSmsRoleAccessPolicyException" => {
-            crate::error::SignUpError {
-                meta: generic,
-                kind: crate::error::SignUpErrorKind::InvalidSmsRoleAccessPolicyException({
+        "InvalidSmsRoleAccessPolicyException" => crate::error::SignUpError {
+            meta: generic,
+            kind: crate::error::SignUpErrorKind::InvalidSmsRoleAccessPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignUpError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignUpError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidSmsRoleTrustRelationshipException" => crate::error::SignUpError {
             meta: generic,
             kind: crate::error::SignUpErrorKind::InvalidSmsRoleTrustRelationshipException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignUpError::unhandled)?;
                     output.build()
@@ -15098,27 +15350,27 @@ pub fn parse_update_auth_event_feedback_error(
                 tmp
             }),
         },
-        "UserPoolAddOnNotEnabledException" => {
-            crate::error::UpdateAuthEventFeedbackError {
-                meta: generic,
-                kind:
-                    crate::error::UpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::user_pool_add_on_not_enabled_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_user_pool_add_on_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAuthEventFeedbackError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "UserPoolAddOnNotEnabledException" => crate::error::UpdateAuthEventFeedbackError {
+            meta: generic,
+            kind: crate::error::UpdateAuthEventFeedbackErrorKind::UserPoolAddOnNotEnabledException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::user_pool_add_on_not_enabled_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_user_pool_add_on_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAuthEventFeedbackError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         _ => crate::error::UpdateAuthEventFeedbackError::generic(generic),
     })
 }
@@ -15211,7 +15463,8 @@ pub fn parse_update_device_status_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDeviceStatusError::unhandled)?;
                         output.build()
@@ -15594,7 +15847,8 @@ pub fn parse_update_identity_provider_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::unsupported_identity_provider_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_identity_provider_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_unsupported_identity_provider_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIdentityProviderError::unhandled)?;
                             output.build()
@@ -15772,9 +16026,11 @@ pub fn parse_update_user_attributes_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AliasExistsException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::AliasExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::alias_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::alias_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_alias_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15786,9 +16042,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "CodeDeliveryFailureException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::CodeDeliveryFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_delivery_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_delivery_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_delivery_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15800,9 +16058,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "CodeMismatchException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::CodeMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15814,9 +16074,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "ExpiredCodeException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::ExpiredCodeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::expired_code_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::expired_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15828,9 +16090,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "ForbiddenException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15842,9 +16106,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "InternalErrorException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15856,9 +16122,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "InvalidEmailRoleAccessPolicyException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15870,9 +16138,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "InvalidLambdaResponseException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::InvalidLambdaResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_lambda_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15884,9 +16154,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15898,9 +16170,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "InvalidSmsRoleAccessPolicyException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::InvalidSmsRoleAccessPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15912,9 +16186,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "InvalidSmsRoleTrustRelationshipException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::InvalidSmsRoleTrustRelationshipException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15926,9 +16202,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15940,9 +16218,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "PasswordResetRequiredException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::PasswordResetRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::password_reset_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::password_reset_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_password_reset_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15954,9 +16234,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15968,9 +16250,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15982,9 +16266,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "UnexpectedLambdaException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::UnexpectedLambdaException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unexpected_lambda_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unexpected_lambda_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unexpected_lambda_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -15996,9 +16282,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "UserLambdaValidationException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::UserLambdaValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_lambda_validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_lambda_validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_lambda_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -16010,9 +16298,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "UserNotConfirmedException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::UserNotConfirmedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_confirmed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_confirmed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_confirmed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -16024,9 +16314,11 @@ pub fn parse_update_user_attributes_error(
             tmp
         })},
         "UserNotFoundException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::UserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
@@ -16145,31 +16437,32 @@ pub fn parse_update_user_pool_error(
                 tmp
             }),
         },
-        "InvalidSmsRoleAccessPolicyException" => {
-            crate::error::UpdateUserPoolError {
-                meta: generic,
-                kind: crate::error::UpdateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException({
+        "InvalidSmsRoleAccessPolicyException" => crate::error::UpdateUserPoolError {
+            meta: generic,
+            kind: crate::error::UpdateUserPoolErrorKind::InvalidSmsRoleAccessPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_access_policy_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserPoolError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_sms_role_access_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_access_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserPoolError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidSmsRoleTrustRelationshipException" => crate::error::UpdateUserPoolError {
             meta: generic,
             kind: crate::error::UpdateUserPoolErrorKind::InvalidSmsRoleTrustRelationshipException(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sms_role_trust_relationship_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_sms_role_trust_relationship_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserPoolError::unhandled)?;
                         output.build()
@@ -16695,7 +16988,8 @@ pub fn parse_verify_software_token_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_user_pool_configuration_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_user_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifySoftwareTokenError::unhandled)?;
                         output.build()

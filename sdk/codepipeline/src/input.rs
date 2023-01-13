@@ -1452,7 +1452,8 @@ impl DeregisterWebhookWithThirdPartyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_deregister_webhook_with_third_party(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5490,7 +5491,8 @@ impl PutThirdPartyJobFailureResultInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_third_party_job_failure_result(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5710,7 +5712,8 @@ impl PutThirdPartyJobSuccessResultInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_third_party_job_success_result(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6059,7 +6062,8 @@ impl RegisterWebhookWithThirdPartyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_register_webhook_with_third_party(&self)?
         );
         if let Some(content_length) = body.content_length() {

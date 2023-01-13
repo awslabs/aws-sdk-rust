@@ -3056,7 +3056,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::associate_client_device_with_core_device_error_entry::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::associate_client_device_with_core_device_error_entry::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3132,7 +3133,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::disassociate_client_device_from_core_device_error_entry::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::disassociate_client_device_from_core_device_error_entry::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

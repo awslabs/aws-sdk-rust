@@ -77,9 +77,11 @@ pub fn parse_apply_environment_managed_action_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ElasticBeanstalkServiceException" => crate::error::ApplyEnvironmentManagedActionError { meta: generic, kind: crate::error::ApplyEnvironmentManagedActionErrorKind::ElasticBeanstalkServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
                     output.build()
@@ -91,9 +93,11 @@ pub fn parse_apply_environment_managed_action_error(
             tmp
         })},
         "ManagedActionInvalidStateException" => crate::error::ApplyEnvironmentManagedActionError { meta: generic, kind: crate::error::ApplyEnvironmentManagedActionErrorKind::ManagedActionInvalidStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::managed_action_invalid_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::managed_action_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_managed_action_invalid_state_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
                     output.build()
@@ -148,9 +152,11 @@ pub fn parse_associate_environment_operations_role_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientPrivilegesException" => crate::error::AssociateEnvironmentOperationsRoleError { meta: generic, kind: crate::error::AssociateEnvironmentOperationsRoleErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateEnvironmentOperationsRoleError::unhandled)?;
                     output.build()
@@ -364,9 +370,11 @@ pub fn parse_create_application_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CodeBuildNotInServiceRegionException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::CodeBuildNotInServiceRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_build_not_in_service_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_build_not_in_service_region_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_code_build_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
@@ -378,9 +386,11 @@ pub fn parse_create_application_version_error(
             tmp
         })},
         "InsufficientPrivilegesException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
@@ -392,9 +402,11 @@ pub fn parse_create_application_version_error(
             tmp
         })},
         "S3LocationNotInServiceRegionException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::S3LocationNotInServiceRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::s3_location_not_in_service_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::s3_location_not_in_service_region_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
@@ -406,9 +418,11 @@ pub fn parse_create_application_version_error(
             tmp
         })},
         "TooManyApplicationsException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::TooManyApplicationsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_applications_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_applications_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
@@ -420,9 +434,11 @@ pub fn parse_create_application_version_error(
             tmp
         })},
         "TooManyApplicationVersionsException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::TooManyApplicationVersionsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_application_versions_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_application_versions_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_application_versions_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
                     output.build()
@@ -478,9 +494,11 @@ pub fn parse_create_configuration_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientPrivilegesException" => crate::error::CreateConfigurationTemplateError { meta: generic, kind: crate::error::CreateConfigurationTemplateErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -492,9 +510,11 @@ pub fn parse_create_configuration_template_error(
             tmp
         })},
         "TooManyBucketsException" => crate::error::CreateConfigurationTemplateError { meta: generic, kind: crate::error::CreateConfigurationTemplateErrorKind::TooManyBucketsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_buckets_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -506,9 +526,11 @@ pub fn parse_create_configuration_template_error(
             tmp
         })},
         "TooManyConfigurationTemplatesException" => crate::error::CreateConfigurationTemplateError { meta: generic, kind: crate::error::CreateConfigurationTemplateErrorKind::TooManyConfigurationTemplatesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_configuration_templates_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_configuration_templates_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_configuration_templates_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -871,9 +893,11 @@ pub fn parse_delete_application_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientPrivilegesException" => crate::error::DeleteApplicationVersionError { meta: generic, kind: crate::error::DeleteApplicationVersionErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
                     output.build()
@@ -885,9 +909,11 @@ pub fn parse_delete_application_version_error(
             tmp
         })},
         "OperationInProgressFailure" => crate::error::DeleteApplicationVersionError { meta: generic, kind: crate::error::DeleteApplicationVersionErrorKind::OperationInProgressException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_in_progress_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
                     output.build()
@@ -899,9 +925,11 @@ pub fn parse_delete_application_version_error(
             tmp
         })},
         "S3LocationNotInServiceRegionException" => crate::error::DeleteApplicationVersionError { meta: generic, kind: crate::error::DeleteApplicationVersionErrorKind::S3LocationNotInServiceRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::s3_location_not_in_service_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::s3_location_not_in_service_region_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
                     output.build()
@@ -913,9 +941,11 @@ pub fn parse_delete_application_version_error(
             tmp
         })},
         "SourceBundleDeletionFailure" => crate::error::DeleteApplicationVersionError { meta: generic, kind: crate::error::DeleteApplicationVersionErrorKind::SourceBundleDeletionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::source_bundle_deletion_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::source_bundle_deletion_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_source_bundle_deletion_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
                     output.build()
@@ -1050,9 +1080,11 @@ pub fn parse_delete_platform_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ElasticBeanstalkServiceException" => crate::error::DeletePlatformVersionError { meta: generic, kind: crate::error::DeletePlatformVersionErrorKind::ElasticBeanstalkServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
                     output.build()
@@ -1064,9 +1096,11 @@ pub fn parse_delete_platform_version_error(
             tmp
         })},
         "InsufficientPrivilegesException" => crate::error::DeletePlatformVersionError { meta: generic, kind: crate::error::DeletePlatformVersionErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
                     output.build()
@@ -1078,9 +1112,11 @@ pub fn parse_delete_platform_version_error(
             tmp
         })},
         "OperationInProgressFailure" => crate::error::DeletePlatformVersionError { meta: generic, kind: crate::error::DeletePlatformVersionErrorKind::OperationInProgressException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_in_progress_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
                     output.build()
@@ -1092,9 +1128,11 @@ pub fn parse_delete_platform_version_error(
             tmp
         })},
         "PlatformVersionStillReferencedException" => crate::error::DeletePlatformVersionError { meta: generic, kind: crate::error::DeletePlatformVersionErrorKind::PlatformVersionStillReferencedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::platform_version_still_referenced_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::platform_version_still_referenced_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_platform_version_still_referenced_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
                     output.build()
@@ -1485,9 +1523,11 @@ pub fn parse_describe_environment_managed_action_history_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ElasticBeanstalkServiceException" => crate::error::DescribeEnvironmentManagedActionHistoryError { meta: generic, kind: crate::error::DescribeEnvironmentManagedActionHistoryErrorKind::ElasticBeanstalkServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionHistoryError::unhandled)?;
                     output.build()
@@ -1538,9 +1578,11 @@ pub fn parse_describe_environment_managed_actions_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ElasticBeanstalkServiceException" => crate::error::DescribeEnvironmentManagedActionsError { meta: generic, kind: crate::error::DescribeEnvironmentManagedActionsErrorKind::ElasticBeanstalkServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
                     output.build()
@@ -1886,9 +1928,11 @@ pub fn parse_disassociate_environment_operations_role_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientPrivilegesException" => crate::error::DisassociateEnvironmentOperationsRoleError { meta: generic, kind: crate::error::DisassociateEnvironmentOperationsRoleErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateEnvironmentOperationsRoleError::unhandled)?;
                     output.build()
@@ -2421,9 +2465,11 @@ pub fn parse_update_application_resource_lifecycle_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientPrivilegesException" => crate::error::UpdateApplicationResourceLifecycleError { meta: generic, kind: crate::error::UpdateApplicationResourceLifecycleErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
                     output.build()
@@ -2788,9 +2834,11 @@ pub fn parse_validate_configuration_settings_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientPrivilegesException" => crate::error::ValidateConfigurationSettingsError { meta: generic, kind: crate::error::ValidateConfigurationSettingsErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
                     output.build()
@@ -2802,9 +2850,11 @@ pub fn parse_validate_configuration_settings_error(
             tmp
         })},
         "TooManyBucketsException" => crate::error::ValidateConfigurationSettingsError { meta: generic, kind: crate::error::ValidateConfigurationSettingsErrorKind::TooManyBucketsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_buckets_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
                     output.build()

@@ -6064,7 +6064,8 @@ impl GetTypedLinkFacetInformationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_typed_link_facet_information(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10096,7 +10097,8 @@ impl ListTypedLinkFacetAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_typed_link_facet_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {

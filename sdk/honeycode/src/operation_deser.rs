@@ -1055,7 +1055,8 @@ pub fn parse_invoke_screen_automation_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::automation_execution_timeout_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::automation_execution_timeout_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_automation_execution_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeScreenAutomationError::unhandled)?;
                             output.build()

@@ -1902,7 +1902,8 @@ impl CreateUpdatedWorkspaceImageInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_updated_workspace_image(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3920,7 +3921,8 @@ impl DeregisterWorkspaceDirectoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_deregister_workspace_directory(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4224,7 +4226,8 @@ impl DescribeAccountModificationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_account_modifications(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4752,7 +4755,8 @@ impl DescribeConnectClientAddInsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_connect_client_add_ins(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5150,7 +5154,8 @@ impl DescribeConnectionAliasPermissionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_connection_alias_permissions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5906,7 +5911,8 @@ impl DescribeWorkspaceDirectoriesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_workspace_directories(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6093,7 +6099,8 @@ impl DescribeWorkspaceImagePermissionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_workspace_image_permissions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6726,7 +6733,8 @@ impl DescribeWorkspacesConnectionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_workspaces_connection_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7055,7 +7063,8 @@ impl DisassociateConnectionAliasInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_connection_alias(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7979,7 +7988,8 @@ impl ListAvailableManagementCidrRangesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_available_management_cidr_ranges(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8556,7 +8566,8 @@ impl ModifyCertificateBasedAuthPropertiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_certificate_based_auth_properties(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9132,7 +9143,8 @@ impl ModifySelfservicePermissionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_selfservice_permissions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9314,7 +9326,8 @@ impl ModifyWorkspaceAccessPropertiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_workspace_access_properties(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9496,7 +9509,8 @@ impl ModifyWorkspaceCreationPropertiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_workspace_creation_properties(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11702,7 +11716,8 @@ impl UpdateConnectionAliasPermissionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_connection_alias_permission(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12261,7 +12276,8 @@ impl UpdateWorkspaceImagePermissionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_workspace_image_permission(&self)?
         );
         if let Some(content_length) = body.content_length() {

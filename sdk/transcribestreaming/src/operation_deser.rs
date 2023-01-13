@@ -99,9 +99,11 @@ pub fn parse_start_call_analytics_stream_transcription_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ServiceUnavailableException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
                     output.build()
@@ -113,9 +115,11 @@ pub fn parse_start_call_analytics_stream_transcription_error(
             tmp
         })},
         "BadRequestException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
                     output.build()
@@ -127,9 +131,11 @@ pub fn parse_start_call_analytics_stream_transcription_error(
             tmp
         })},
         "InternalFailureException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
                     output.build()
@@ -141,9 +147,11 @@ pub fn parse_start_call_analytics_stream_transcription_error(
             tmp
         })},
         "ConflictException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
                     output.build()
@@ -155,9 +163,11 @@ pub fn parse_start_call_analytics_stream_transcription_error(
             tmp
         })},
         "LimitExceededException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
                     output.build()

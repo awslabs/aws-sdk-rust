@@ -2749,7 +2749,8 @@ impl DeregisterContainerInstanceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_deregister_container_instance(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6605,7 +6606,8 @@ impl ListTaskDefinitionFamiliesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_task_definition_families(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7881,7 +7883,8 @@ impl PutClusterCapacityProvidersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_cluster_capacity_providers(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9965,7 +9968,8 @@ impl SubmitAttachmentStateChangesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_submit_attachment_state_changes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10225,7 +10229,8 @@ impl SubmitContainerStateChangeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_submit_container_state_change(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11899,7 +11904,8 @@ impl UpdateContainerInstancesStateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_container_instances_state(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12574,7 +12580,8 @@ impl UpdateServicePrimaryTaskSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_service_primary_task_set(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -16,9 +16,11 @@ pub fn parse_create_slack_channel_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateSlackChannelConfigurationError { meta: generic, kind: crate::error::CreateSlackChannelConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSlackChannelConfigurationError::unhandled)?;
                     output.build()
@@ -30,9 +32,11 @@ pub fn parse_create_slack_channel_configuration_error(
             tmp
         })},
         "ConflictException" => crate::error::CreateSlackChannelConfigurationError { meta: generic, kind: crate::error::CreateSlackChannelConfigurationErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSlackChannelConfigurationError::unhandled)?;
                     output.build()
@@ -44,9 +48,11 @@ pub fn parse_create_slack_channel_configuration_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateSlackChannelConfigurationError { meta: generic, kind: crate::error::CreateSlackChannelConfigurationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSlackChannelConfigurationError::unhandled)?;
                     output.build()
@@ -58,9 +64,11 @@ pub fn parse_create_slack_channel_configuration_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::CreateSlackChannelConfigurationError { meta: generic, kind: crate::error::CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSlackChannelConfigurationError::unhandled)?;
                     output.build()
@@ -72,9 +80,11 @@ pub fn parse_create_slack_channel_configuration_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateSlackChannelConfigurationError { meta: generic, kind: crate::error::CreateSlackChannelConfigurationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSlackChannelConfigurationError::unhandled)?;
                     output.build()
@@ -765,9 +775,11 @@ pub fn parse_register_slack_workspace_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
                     output.build()
@@ -779,9 +791,11 @@ pub fn parse_register_slack_workspace_for_organization_error(
             tmp
         })},
         "ConflictException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
                     output.build()
@@ -793,9 +807,11 @@ pub fn parse_register_slack_workspace_for_organization_error(
             tmp
         })},
         "InternalServerException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
                     output.build()
@@ -807,9 +823,11 @@ pub fn parse_register_slack_workspace_for_organization_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
                     output.build()
@@ -821,9 +839,11 @@ pub fn parse_register_slack_workspace_for_organization_error(
             tmp
         })},
         "ValidationException" => crate::error::RegisterSlackWorkspaceForOrganizationError { meta: generic, kind: crate::error::RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterSlackWorkspaceForOrganizationError::unhandled)?;
                     output.build()

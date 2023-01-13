@@ -687,7 +687,8 @@ impl AuthorizeVpcEndpointAccessInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_authorize_vpc_endpoint_access(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -848,7 +849,8 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_cancel_elasticsearch_service_software_update(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1482,7 +1484,8 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_outbound_cross_cluster_search_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3774,7 +3777,8 @@ impl DescribeElasticsearchDomainsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_elasticsearch_domains(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4216,7 +4220,8 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_inbound_cross_cluster_search_connections(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4427,7 +4432,8 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_outbound_cross_cluster_search_connections(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8049,7 +8055,8 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_elasticsearch_instance_offering(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8762,7 +8769,8 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_elasticsearch_service_software_update(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9199,7 +9207,8 @@ impl UpdateElasticsearchDomainConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_elasticsearch_domain_config(&self)?
         );
         if let Some(content_length) = body.content_length() {

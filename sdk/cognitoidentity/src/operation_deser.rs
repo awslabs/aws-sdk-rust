@@ -615,9 +615,11 @@ pub fn parse_get_credentials_for_identity_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ExternalServiceException" => crate::error::GetCredentialsForIdentityError { meta: generic, kind: crate::error::GetCredentialsForIdentityErrorKind::ExternalServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::external_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::external_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_external_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialsForIdentityError::unhandled)?;
                     output.build()
@@ -629,9 +631,11 @@ pub fn parse_get_credentials_for_identity_error(
             tmp
         })},
         "InternalErrorException" => crate::error::GetCredentialsForIdentityError { meta: generic, kind: crate::error::GetCredentialsForIdentityErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialsForIdentityError::unhandled)?;
                     output.build()
@@ -643,9 +647,11 @@ pub fn parse_get_credentials_for_identity_error(
             tmp
         })},
         "InvalidIdentityPoolConfigurationException" => crate::error::GetCredentialsForIdentityError { meta: generic, kind: crate::error::GetCredentialsForIdentityErrorKind::InvalidIdentityPoolConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_identity_pool_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_identity_pool_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_identity_pool_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialsForIdentityError::unhandled)?;
                     output.build()
@@ -657,9 +663,11 @@ pub fn parse_get_credentials_for_identity_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::GetCredentialsForIdentityError { meta: generic, kind: crate::error::GetCredentialsForIdentityErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialsForIdentityError::unhandled)?;
                     output.build()
@@ -671,9 +679,11 @@ pub fn parse_get_credentials_for_identity_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::GetCredentialsForIdentityError { meta: generic, kind: crate::error::GetCredentialsForIdentityErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialsForIdentityError::unhandled)?;
                     output.build()
@@ -685,9 +695,11 @@ pub fn parse_get_credentials_for_identity_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::GetCredentialsForIdentityError { meta: generic, kind: crate::error::GetCredentialsForIdentityErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialsForIdentityError::unhandled)?;
                     output.build()
@@ -699,9 +711,11 @@ pub fn parse_get_credentials_for_identity_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetCredentialsForIdentityError { meta: generic, kind: crate::error::GetCredentialsForIdentityErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialsForIdentityError::unhandled)?;
                     output.build()
@@ -713,9 +727,11 @@ pub fn parse_get_credentials_for_identity_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::GetCredentialsForIdentityError { meta: generic, kind: crate::error::GetCredentialsForIdentityErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialsForIdentityError::unhandled)?;
                     output.build()
@@ -1234,9 +1250,11 @@ pub fn parse_get_open_id_token_for_developer_identity_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DeveloperUserAlreadyRegisteredException" => crate::error::GetOpenIdTokenForDeveloperIdentityError { meta: generic, kind: crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::DeveloperUserAlreadyRegisteredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::developer_user_already_registered_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::developer_user_already_registered_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_developer_user_already_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIdTokenForDeveloperIdentityError::unhandled)?;
                     output.build()
@@ -1248,9 +1266,11 @@ pub fn parse_get_open_id_token_for_developer_identity_error(
             tmp
         })},
         "InternalErrorException" => crate::error::GetOpenIdTokenForDeveloperIdentityError { meta: generic, kind: crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIdTokenForDeveloperIdentityError::unhandled)?;
                     output.build()
@@ -1262,9 +1282,11 @@ pub fn parse_get_open_id_token_for_developer_identity_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::GetOpenIdTokenForDeveloperIdentityError { meta: generic, kind: crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIdTokenForDeveloperIdentityError::unhandled)?;
                     output.build()
@@ -1276,9 +1298,11 @@ pub fn parse_get_open_id_token_for_developer_identity_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::GetOpenIdTokenForDeveloperIdentityError { meta: generic, kind: crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIdTokenForDeveloperIdentityError::unhandled)?;
                     output.build()
@@ -1290,9 +1314,11 @@ pub fn parse_get_open_id_token_for_developer_identity_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::GetOpenIdTokenForDeveloperIdentityError { meta: generic, kind: crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIdTokenForDeveloperIdentityError::unhandled)?;
                     output.build()
@@ -1304,9 +1330,11 @@ pub fn parse_get_open_id_token_for_developer_identity_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetOpenIdTokenForDeveloperIdentityError { meta: generic, kind: crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIdTokenForDeveloperIdentityError::unhandled)?;
                     output.build()
@@ -1318,9 +1346,11 @@ pub fn parse_get_open_id_token_for_developer_identity_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::GetOpenIdTokenForDeveloperIdentityError { meta: generic, kind: crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIdTokenForDeveloperIdentityError::unhandled)?;
                     output.build()

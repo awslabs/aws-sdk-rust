@@ -689,7 +689,8 @@ pub fn parse_create_rate_based_rule_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
                         output.build()
@@ -1086,7 +1087,8 @@ pub fn parse_create_rule_error(
                 kind: crate::error::CreateRuleErrorKind::WafTagOperationInternalErrorException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
                         output.build()
@@ -1737,7 +1739,8 @@ pub fn parse_create_web_acl_error(
                 kind: crate::error::CreateWebACLErrorKind::WafTagOperationInternalErrorException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
                         output.build()
@@ -2804,7 +2807,8 @@ pub fn parse_delete_rate_based_rule_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
                         output.build()
@@ -3274,7 +3278,8 @@ pub fn parse_delete_rule_error(
                 kind: crate::error::DeleteRuleErrorKind::WafTagOperationInternalErrorException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
                         output.build()
@@ -3925,7 +3930,8 @@ pub fn parse_delete_web_acl_error(
                 kind: crate::error::DeleteWebACLErrorKind::WafTagOperationInternalErrorException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
                         output.build()
@@ -7083,7 +7089,8 @@ pub fn parse_list_tags_for_resource_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                         output.build()
@@ -7321,7 +7328,8 @@ pub fn parse_put_logging_configuration_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::waf_service_linked_role_error_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::waf_service_linked_role_error_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_waf_service_linked_role_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
                             output.build()
@@ -7407,27 +7415,27 @@ pub fn parse_put_permission_policy_error(
                 tmp
             }),
         },
-        "WAFInvalidPermissionPolicyException" => {
-            crate::error::PutPermissionPolicyError {
-                meta: generic,
-                kind:
-                    crate::error::PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::waf_invalid_permission_policy_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_waf_invalid_permission_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPermissionPolicyError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "WAFInvalidPermissionPolicyException" => crate::error::PutPermissionPolicyError {
+            meta: generic,
+            kind: crate::error::PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_invalid_permission_policy_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_permission_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPermissionPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "WAFNonexistentItemException" => crate::error::PutPermissionPolicyError {
             meta: generic,
             kind: crate::error::PutPermissionPolicyErrorKind::WafNonexistentItemException({
@@ -7606,7 +7614,8 @@ pub fn parse_tag_resource_error(
                 kind: crate::error::TagResourceErrorKind::WafTagOperationInternalErrorException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()

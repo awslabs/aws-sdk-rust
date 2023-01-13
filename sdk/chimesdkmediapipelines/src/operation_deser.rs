@@ -186,9 +186,11 @@ pub fn parse_create_media_concatenation_pipeline_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::CreateMediaConcatenationPipelineError { meta: generic, kind: crate::error::CreateMediaConcatenationPipelineErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaConcatenationPipelineError::unhandled)?;
                     output.build()
@@ -200,9 +202,11 @@ pub fn parse_create_media_concatenation_pipeline_error(
             tmp
         })},
         "ForbiddenException" => crate::error::CreateMediaConcatenationPipelineError { meta: generic, kind: crate::error::CreateMediaConcatenationPipelineErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaConcatenationPipelineError::unhandled)?;
                     output.build()
@@ -214,9 +218,11 @@ pub fn parse_create_media_concatenation_pipeline_error(
             tmp
         })},
         "ResourceLimitExceededException" => crate::error::CreateMediaConcatenationPipelineError { meta: generic, kind: crate::error::CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaConcatenationPipelineError::unhandled)?;
                     output.build()
@@ -228,9 +234,11 @@ pub fn parse_create_media_concatenation_pipeline_error(
             tmp
         })},
         "ServiceFailureException" => crate::error::CreateMediaConcatenationPipelineError { meta: generic, kind: crate::error::CreateMediaConcatenationPipelineErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaConcatenationPipelineError::unhandled)?;
                     output.build()
@@ -242,9 +250,11 @@ pub fn parse_create_media_concatenation_pipeline_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::CreateMediaConcatenationPipelineError { meta: generic, kind: crate::error::CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaConcatenationPipelineError::unhandled)?;
                     output.build()
@@ -256,9 +266,11 @@ pub fn parse_create_media_concatenation_pipeline_error(
             tmp
         })},
         "ThrottledClientException" => crate::error::CreateMediaConcatenationPipelineError { meta: generic, kind: crate::error::CreateMediaConcatenationPipelineErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttled_client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaConcatenationPipelineError::unhandled)?;
                     output.build()
@@ -270,9 +282,11 @@ pub fn parse_create_media_concatenation_pipeline_error(
             tmp
         })},
         "UnauthorizedClientException" => crate::error::CreateMediaConcatenationPipelineError { meta: generic, kind: crate::error::CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaConcatenationPipelineError::unhandled)?;
                     output.build()
@@ -328,9 +342,11 @@ pub fn parse_create_media_live_connector_pipeline_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::CreateMediaLiveConnectorPipelineError { meta: generic, kind: crate::error::CreateMediaLiveConnectorPipelineErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaLiveConnectorPipelineError::unhandled)?;
                     output.build()
@@ -342,9 +358,11 @@ pub fn parse_create_media_live_connector_pipeline_error(
             tmp
         })},
         "ForbiddenException" => crate::error::CreateMediaLiveConnectorPipelineError { meta: generic, kind: crate::error::CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaLiveConnectorPipelineError::unhandled)?;
                     output.build()
@@ -356,9 +374,11 @@ pub fn parse_create_media_live_connector_pipeline_error(
             tmp
         })},
         "ResourceLimitExceededException" => crate::error::CreateMediaLiveConnectorPipelineError { meta: generic, kind: crate::error::CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaLiveConnectorPipelineError::unhandled)?;
                     output.build()
@@ -370,9 +390,11 @@ pub fn parse_create_media_live_connector_pipeline_error(
             tmp
         })},
         "ServiceFailureException" => crate::error::CreateMediaLiveConnectorPipelineError { meta: generic, kind: crate::error::CreateMediaLiveConnectorPipelineErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaLiveConnectorPipelineError::unhandled)?;
                     output.build()
@@ -384,9 +406,11 @@ pub fn parse_create_media_live_connector_pipeline_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::CreateMediaLiveConnectorPipelineError { meta: generic, kind: crate::error::CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaLiveConnectorPipelineError::unhandled)?;
                     output.build()
@@ -398,9 +422,11 @@ pub fn parse_create_media_live_connector_pipeline_error(
             tmp
         })},
         "ThrottledClientException" => crate::error::CreateMediaLiveConnectorPipelineError { meta: generic, kind: crate::error::CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttled_client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaLiveConnectorPipelineError::unhandled)?;
                     output.build()
@@ -412,9 +438,11 @@ pub fn parse_create_media_live_connector_pipeline_error(
             tmp
         })},
         "UnauthorizedClientException" => crate::error::CreateMediaLiveConnectorPipelineError { meta: generic, kind: crate::error::CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaLiveConnectorPipelineError::unhandled)?;
                     output.build()

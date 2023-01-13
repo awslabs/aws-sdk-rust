@@ -510,7 +510,8 @@ impl AddSourceIdentifierToSubscriptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_add_source_identifier_to_subscription(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -892,7 +893,8 @@ impl ApplyPendingMaintenanceActionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_apply_pending_maintenance_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1113,7 +1115,8 @@ impl AuthorizeDbSecurityGroupIngressInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_authorize_db_security_group_ingress(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1761,7 +1764,8 @@ impl CopyDbClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_copy_db_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3528,7 +3532,8 @@ impl CreateCustomDbEngineVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_custom_db_engine_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5388,7 +5393,8 @@ impl CreateDbClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_db_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8288,7 +8294,8 @@ impl CreateDbInstanceReadReplicaInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_db_instance_read_replica(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10972,7 +10979,8 @@ impl DeleteCustomDbEngineVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_custom_db_engine_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11533,7 +11541,8 @@ impl DeleteDbClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_db_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12125,7 +12134,8 @@ impl DeleteDbInstanceAutomatedBackupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_db_instance_automated_backup(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14231,7 +14241,8 @@ impl DescribeBlueGreenDeploymentsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_blue_green_deployments(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14719,7 +14730,8 @@ impl DescribeDbClusterBacktracksInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_backtracks(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14947,7 +14959,8 @@ impl DescribeDbClusterEndpointsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_endpoints(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15168,7 +15181,8 @@ impl DescribeDbClusterParameterGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_parameter_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15401,7 +15415,8 @@ impl DescribeDbClusterParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15810,7 +15825,8 @@ impl DescribeDbClusterSnapshotAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_snapshot_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16129,7 +16145,8 @@ impl DescribeDbClusterSnapshotsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_cluster_snapshots(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16775,7 +16792,8 @@ impl DescribeDbInstanceAutomatedBackupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_instance_automated_backups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18386,7 +18404,8 @@ impl DescribeDbProxyTargetGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_proxy_target_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18988,7 +19007,8 @@ impl DescribeDbSnapshotAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_db_snapshot_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -19751,7 +19771,8 @@ impl DescribeEngineDefaultClusterParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_cluster_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20061,7 +20082,8 @@ impl DescribeEngineDefaultParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21514,7 +21536,8 @@ impl DescribeOptionGroupOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_option_group_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22103,7 +22126,8 @@ impl DescribeOrderableDbInstanceOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_orderable_db_instance_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22323,7 +22347,8 @@ impl DescribePendingMaintenanceActionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_pending_maintenance_actions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22640,7 +22665,8 @@ impl DescribeReservedDbInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_reserved_db_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22932,7 +22958,8 @@ impl DescribeReservedDbInstancesOfferingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_reserved_db_instances_offerings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -23311,7 +23338,8 @@ impl DescribeValidDbInstanceModificationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_valid_db_instance_modifications(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -24681,7 +24709,8 @@ impl ModifyCurrentDbClusterCapacityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_current_db_cluster_capacity(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -24911,7 +24940,8 @@ impl ModifyCustomDbEngineVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_custom_db_engine_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -26355,7 +26385,8 @@ impl ModifyDbClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -26586,7 +26617,8 @@ impl ModifyDbClusterSnapshotAttributeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_db_cluster_snapshot_attribute(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30572,7 +30604,8 @@ impl PromoteReadReplicaDbClusterInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_promote_read_replica_db_cluster(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30790,7 +30823,8 @@ impl PurchaseReservedDbInstancesOfferingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_db_instances_offering(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -32094,7 +32128,8 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_source_identifier_from_subscription(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -32476,7 +32511,8 @@ impl ResetDbClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_reset_db_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -34359,7 +34395,8 @@ impl RestoreDbClusterFromSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_restore_db_cluster_from_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -35131,7 +35168,8 @@ impl RestoreDbClusterToPointInTimeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_restore_db_cluster_to_point_in_time(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -36014,7 +36052,8 @@ impl RestoreDbInstanceFromDbSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_restore_db_instance_from_db_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -38009,7 +38048,8 @@ impl RestoreDbInstanceToPointInTimeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_restore_db_instance_to_point_in_time(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -38230,7 +38270,8 @@ impl RevokeDbSecurityGroupIngressInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_revoke_db_security_group_ingress(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -38973,7 +39014,8 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_db_instance_automated_backups_replication(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -39921,7 +39963,8 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_db_instance_automated_backups_replication(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -40108,7 +40151,8 @@ impl SwitchoverBlueGreenDeploymentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_switchover_blue_green_deployment(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -241,7 +241,8 @@ pub fn parse_create_replication_job_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::replication_job_already_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::replication_job_already_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_replication_job_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationJobError::unhandled)?;
                         output.build()
@@ -474,9 +475,11 @@ pub fn parse_delete_app_launch_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalError" => crate::error::DeleteAppLaunchConfigurationError { meta: generic, kind: crate::error::DeleteAppLaunchConfigurationErrorKind::InternalError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppLaunchConfigurationError::unhandled)?;
                     output.build()
@@ -488,9 +491,11 @@ pub fn parse_delete_app_launch_configuration_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DeleteAppLaunchConfigurationError { meta: generic, kind: crate::error::DeleteAppLaunchConfigurationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppLaunchConfigurationError::unhandled)?;
                     output.build()
@@ -502,9 +507,11 @@ pub fn parse_delete_app_launch_configuration_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::DeleteAppLaunchConfigurationError { meta: generic, kind: crate::error::DeleteAppLaunchConfigurationErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppLaunchConfigurationError::unhandled)?;
                     output.build()
@@ -516,9 +523,11 @@ pub fn parse_delete_app_launch_configuration_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DeleteAppLaunchConfigurationError { meta: generic, kind: crate::error::DeleteAppLaunchConfigurationErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppLaunchConfigurationError::unhandled)?;
                     output.build()
@@ -530,9 +539,11 @@ pub fn parse_delete_app_launch_configuration_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::DeleteAppLaunchConfigurationError { meta: generic, kind: crate::error::DeleteAppLaunchConfigurationErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppLaunchConfigurationError::unhandled)?;
                     output.build()
@@ -581,9 +592,11 @@ pub fn parse_delete_app_replication_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalError" => crate::error::DeleteAppReplicationConfigurationError { meta: generic, kind: crate::error::DeleteAppReplicationConfigurationErrorKind::InternalError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -595,9 +608,11 @@ pub fn parse_delete_app_replication_configuration_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DeleteAppReplicationConfigurationError { meta: generic, kind: crate::error::DeleteAppReplicationConfigurationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -609,9 +624,11 @@ pub fn parse_delete_app_replication_configuration_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::DeleteAppReplicationConfigurationError { meta: generic, kind: crate::error::DeleteAppReplicationConfigurationErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -623,9 +640,11 @@ pub fn parse_delete_app_replication_configuration_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DeleteAppReplicationConfigurationError { meta: generic, kind: crate::error::DeleteAppReplicationConfigurationErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -637,9 +656,11 @@ pub fn parse_delete_app_replication_configuration_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::DeleteAppReplicationConfigurationError { meta: generic, kind: crate::error::DeleteAppReplicationConfigurationErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -689,9 +710,11 @@ pub fn parse_delete_app_validation_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalError" => crate::error::DeleteAppValidationConfigurationError { meta: generic, kind: crate::error::DeleteAppValidationConfigurationErrorKind::InternalError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -703,9 +726,11 @@ pub fn parse_delete_app_validation_configuration_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DeleteAppValidationConfigurationError { meta: generic, kind: crate::error::DeleteAppValidationConfigurationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -717,9 +742,11 @@ pub fn parse_delete_app_validation_configuration_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::DeleteAppValidationConfigurationError { meta: generic, kind: crate::error::DeleteAppValidationConfigurationErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -731,9 +758,11 @@ pub fn parse_delete_app_validation_configuration_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DeleteAppValidationConfigurationError { meta: generic, kind: crate::error::DeleteAppValidationConfigurationErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -745,9 +774,11 @@ pub fn parse_delete_app_validation_configuration_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::DeleteAppValidationConfigurationError { meta: generic, kind: crate::error::DeleteAppValidationConfigurationErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -1567,7 +1598,8 @@ pub fn parse_get_app_launch_configuration_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppLaunchConfigurationError::unhandled)?;
                             output.build()
@@ -1660,9 +1692,11 @@ pub fn parse_get_app_replication_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalError" => crate::error::GetAppReplicationConfigurationError { meta: generic, kind: crate::error::GetAppReplicationConfigurationErrorKind::InternalError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -1674,9 +1708,11 @@ pub fn parse_get_app_replication_configuration_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::GetAppReplicationConfigurationError { meta: generic, kind: crate::error::GetAppReplicationConfigurationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -1688,9 +1724,11 @@ pub fn parse_get_app_replication_configuration_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::GetAppReplicationConfigurationError { meta: generic, kind: crate::error::GetAppReplicationConfigurationErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -1702,9 +1740,11 @@ pub fn parse_get_app_replication_configuration_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::GetAppReplicationConfigurationError { meta: generic, kind: crate::error::GetAppReplicationConfigurationErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -1716,9 +1756,11 @@ pub fn parse_get_app_replication_configuration_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::GetAppReplicationConfigurationError { meta: generic, kind: crate::error::GetAppReplicationConfigurationErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -1776,9 +1818,11 @@ pub fn parse_get_app_validation_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalError" => crate::error::GetAppValidationConfigurationError { meta: generic, kind: crate::error::GetAppValidationConfigurationErrorKind::InternalError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -1790,9 +1834,11 @@ pub fn parse_get_app_validation_configuration_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::GetAppValidationConfigurationError { meta: generic, kind: crate::error::GetAppValidationConfigurationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -1804,9 +1850,11 @@ pub fn parse_get_app_validation_configuration_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::GetAppValidationConfigurationError { meta: generic, kind: crate::error::GetAppValidationConfigurationErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -1818,9 +1866,11 @@ pub fn parse_get_app_validation_configuration_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::GetAppValidationConfigurationError { meta: generic, kind: crate::error::GetAppValidationConfigurationErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -1832,9 +1882,11 @@ pub fn parse_get_app_validation_configuration_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::GetAppValidationConfigurationError { meta: generic, kind: crate::error::GetAppValidationConfigurationErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -2919,7 +2971,8 @@ pub fn parse_notify_app_validation_output_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyAppValidationOutputError::unhandled)?;
                             output.build()
@@ -3056,7 +3109,8 @@ pub fn parse_put_app_launch_configuration_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppLaunchConfigurationError::unhandled)?;
                             output.build()
@@ -3144,9 +3198,11 @@ pub fn parse_put_app_replication_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalError" => crate::error::PutAppReplicationConfigurationError { meta: generic, kind: crate::error::PutAppReplicationConfigurationErrorKind::InternalError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -3158,9 +3214,11 @@ pub fn parse_put_app_replication_configuration_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::PutAppReplicationConfigurationError { meta: generic, kind: crate::error::PutAppReplicationConfigurationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -3172,9 +3230,11 @@ pub fn parse_put_app_replication_configuration_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::PutAppReplicationConfigurationError { meta: generic, kind: crate::error::PutAppReplicationConfigurationErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -3186,9 +3246,11 @@ pub fn parse_put_app_replication_configuration_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::PutAppReplicationConfigurationError { meta: generic, kind: crate::error::PutAppReplicationConfigurationErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -3200,9 +3262,11 @@ pub fn parse_put_app_replication_configuration_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::PutAppReplicationConfigurationError { meta: generic, kind: crate::error::PutAppReplicationConfigurationErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -3254,9 +3318,11 @@ pub fn parse_put_app_validation_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalError" => crate::error::PutAppValidationConfigurationError { meta: generic, kind: crate::error::PutAppValidationConfigurationErrorKind::InternalError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -3268,9 +3334,11 @@ pub fn parse_put_app_validation_configuration_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::PutAppValidationConfigurationError { meta: generic, kind: crate::error::PutAppValidationConfigurationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -3282,9 +3350,11 @@ pub fn parse_put_app_validation_configuration_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::PutAppValidationConfigurationError { meta: generic, kind: crate::error::PutAppValidationConfigurationErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -3296,9 +3366,11 @@ pub fn parse_put_app_validation_configuration_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::PutAppValidationConfigurationError { meta: generic, kind: crate::error::PutAppValidationConfigurationErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -3310,9 +3382,11 @@ pub fn parse_put_app_validation_configuration_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::PutAppValidationConfigurationError { meta: generic, kind: crate::error::PutAppValidationConfigurationErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppValidationConfigurationError::unhandled)?;
                     output.build()
@@ -3491,9 +3565,11 @@ pub fn parse_start_on_demand_app_replication_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalError" => crate::error::StartOnDemandAppReplicationError { meta: generic, kind: crate::error::StartOnDemandAppReplicationErrorKind::InternalError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandAppReplicationError::unhandled)?;
                     output.build()
@@ -3505,9 +3581,11 @@ pub fn parse_start_on_demand_app_replication_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::StartOnDemandAppReplicationError { meta: generic, kind: crate::error::StartOnDemandAppReplicationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandAppReplicationError::unhandled)?;
                     output.build()
@@ -3519,9 +3597,11 @@ pub fn parse_start_on_demand_app_replication_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::StartOnDemandAppReplicationError { meta: generic, kind: crate::error::StartOnDemandAppReplicationErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandAppReplicationError::unhandled)?;
                     output.build()
@@ -3533,9 +3613,11 @@ pub fn parse_start_on_demand_app_replication_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::StartOnDemandAppReplicationError { meta: generic, kind: crate::error::StartOnDemandAppReplicationErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandAppReplicationError::unhandled)?;
                     output.build()
@@ -3547,9 +3629,11 @@ pub fn parse_start_on_demand_app_replication_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::StartOnDemandAppReplicationError { meta: generic, kind: crate::error::StartOnDemandAppReplicationErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandAppReplicationError::unhandled)?;
                     output.build()
@@ -3600,9 +3684,11 @@ pub fn parse_start_on_demand_replication_run_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DryRunOperationException" => crate::error::StartOnDemandReplicationRunError { meta: generic, kind: crate::error::StartOnDemandReplicationRunErrorKind::DryRunOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::dry_run_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dry_run_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dry_run_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandReplicationRunError::unhandled)?;
                     output.build()
@@ -3614,9 +3700,11 @@ pub fn parse_start_on_demand_replication_run_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::StartOnDemandReplicationRunError { meta: generic, kind: crate::error::StartOnDemandReplicationRunErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandReplicationRunError::unhandled)?;
                     output.build()
@@ -3628,9 +3716,11 @@ pub fn parse_start_on_demand_replication_run_error(
             tmp
         })},
         "MissingRequiredParameterException" => crate::error::StartOnDemandReplicationRunError { meta: generic, kind: crate::error::StartOnDemandReplicationRunErrorKind::MissingRequiredParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandReplicationRunError::unhandled)?;
                     output.build()
@@ -3642,9 +3732,11 @@ pub fn parse_start_on_demand_replication_run_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::StartOnDemandReplicationRunError { meta: generic, kind: crate::error::StartOnDemandReplicationRunErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandReplicationRunError::unhandled)?;
                     output.build()
@@ -3656,9 +3748,11 @@ pub fn parse_start_on_demand_replication_run_error(
             tmp
         })},
         "ReplicationRunLimitExceededException" => crate::error::StartOnDemandReplicationRunError { meta: generic, kind: crate::error::StartOnDemandReplicationRunErrorKind::ReplicationRunLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_run_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_run_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replication_run_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandReplicationRunError::unhandled)?;
                     output.build()
@@ -3670,9 +3764,11 @@ pub fn parse_start_on_demand_replication_run_error(
             tmp
         })},
         "UnauthorizedOperationException" => crate::error::StartOnDemandReplicationRunError { meta: generic, kind: crate::error::StartOnDemandReplicationRunErrorKind::UnauthorizedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOnDemandReplicationRunError::unhandled)?;
                     output.build()

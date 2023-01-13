@@ -149,7 +149,8 @@ impl DeleteRecommendationPreferencesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_recommendation_preferences(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -372,7 +373,8 @@ impl DescribeRecommendationExportJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_recommendation_export_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -673,7 +675,8 @@ impl ExportAutoScalingGroupRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_export_auto_scaling_group_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -950,7 +953,8 @@ impl ExportEbsVolumeRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_export_ebs_volume_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1244,7 +1248,8 @@ impl ExportEc2InstanceRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_export_ec2_instance_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1520,7 +1525,8 @@ impl ExportEcsServiceRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_export_ecs_service_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1803,7 +1809,8 @@ impl ExportLambdaFunctionRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_export_lambda_function_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2066,7 +2073,8 @@ impl GetAutoScalingGroupRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_auto_scaling_group_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2310,7 +2318,8 @@ impl GetEbsVolumeRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_ebs_volume_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2573,7 +2582,8 @@ impl GetEc2InstanceRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_ec2_instance_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2812,7 +2822,8 @@ impl GetEc2RecommendationProjectedMetricsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_ec2_recommendation_projected_metrics(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3038,7 +3049,8 @@ impl GetEcsServiceRecommendationProjectedMetricsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_ecs_service_recommendation_projected_metrics(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3288,7 +3300,8 @@ impl GetEcsServiceRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_ecs_service_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3451,7 +3464,8 @@ impl GetEffectiveRecommendationPreferencesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_effective_recommendation_preferences(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3792,7 +3806,8 @@ impl GetEnrollmentStatusesForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_enrollment_statuses_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4041,7 +4056,8 @@ impl GetLambdaFunctionRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_lambda_function_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4253,7 +4269,8 @@ impl GetRecommendationPreferencesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_recommendation_preferences(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4723,7 +4740,8 @@ impl PutRecommendationPreferencesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_recommendation_preferences(&self)?
         );
         if let Some(content_length) = body.content_length() {

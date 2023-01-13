@@ -7337,9 +7337,11 @@ pub fn parse_start_input_device_maintenance_window_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadGatewayException" => crate::error::StartInputDeviceMaintenanceWindowError { meta: generic, kind: crate::error::StartInputDeviceMaintenanceWindowErrorKind::BadGatewayException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_gateway_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_gateway_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_gateway_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInputDeviceMaintenanceWindowError::unhandled)?;
                     output.build()
@@ -7351,9 +7353,11 @@ pub fn parse_start_input_device_maintenance_window_error(
             tmp
         })},
         "BadRequestException" => crate::error::StartInputDeviceMaintenanceWindowError { meta: generic, kind: crate::error::StartInputDeviceMaintenanceWindowErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInputDeviceMaintenanceWindowError::unhandled)?;
                     output.build()
@@ -7365,9 +7369,11 @@ pub fn parse_start_input_device_maintenance_window_error(
             tmp
         })},
         "ForbiddenException" => crate::error::StartInputDeviceMaintenanceWindowError { meta: generic, kind: crate::error::StartInputDeviceMaintenanceWindowErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInputDeviceMaintenanceWindowError::unhandled)?;
                     output.build()
@@ -7379,9 +7385,11 @@ pub fn parse_start_input_device_maintenance_window_error(
             tmp
         })},
         "GatewayTimeoutException" => crate::error::StartInputDeviceMaintenanceWindowError { meta: generic, kind: crate::error::StartInputDeviceMaintenanceWindowErrorKind::GatewayTimeoutException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::gateway_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_gateway_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInputDeviceMaintenanceWindowError::unhandled)?;
                     output.build()
@@ -7393,9 +7401,11 @@ pub fn parse_start_input_device_maintenance_window_error(
             tmp
         })},
         "InternalServerErrorException" => crate::error::StartInputDeviceMaintenanceWindowError { meta: generic, kind: crate::error::StartInputDeviceMaintenanceWindowErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInputDeviceMaintenanceWindowError::unhandled)?;
                     output.build()
@@ -7407,9 +7417,11 @@ pub fn parse_start_input_device_maintenance_window_error(
             tmp
         })},
         "NotFoundException" => crate::error::StartInputDeviceMaintenanceWindowError { meta: generic, kind: crate::error::StartInputDeviceMaintenanceWindowErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInputDeviceMaintenanceWindowError::unhandled)?;
                     output.build()
@@ -7421,9 +7433,11 @@ pub fn parse_start_input_device_maintenance_window_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::StartInputDeviceMaintenanceWindowError { meta: generic, kind: crate::error::StartInputDeviceMaintenanceWindowErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInputDeviceMaintenanceWindowError::unhandled)?;
                     output.build()
@@ -7435,9 +7449,11 @@ pub fn parse_start_input_device_maintenance_window_error(
             tmp
         })},
         "UnprocessableEntityException" => crate::error::StartInputDeviceMaintenanceWindowError { meta: generic, kind: crate::error::StartInputDeviceMaintenanceWindowErrorKind::UnprocessableEntityException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unprocessable_entity_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unprocessable_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartInputDeviceMaintenanceWindowError::unhandled)?;
                     output.build()

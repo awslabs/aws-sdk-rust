@@ -4106,7 +4106,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::list_resources_associated_to_custom_line_item_response_element::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::list_resources_associated_to_custom_line_item_response_element::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

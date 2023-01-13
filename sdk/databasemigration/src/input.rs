@@ -329,7 +329,8 @@ impl ApplyPendingMaintenanceActionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_apply_pending_maintenance_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -498,7 +499,8 @@ impl CancelReplicationTaskAssessmentRunInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_cancel_replication_task_assessment_run(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1705,7 +1707,8 @@ impl CreateFleetAdvisorCollectorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_fleet_advisor_collector(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2367,7 +2370,8 @@ impl CreateReplicationSubnetGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_replication_subnet_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3595,7 +3599,8 @@ impl DeleteFleetAdvisorCollectorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_fleet_advisor_collector(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3767,7 +3772,8 @@ impl DeleteFleetAdvisorDatabasesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_fleet_advisor_databases(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4105,7 +4111,8 @@ impl DeleteReplicationSubnetGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_replication_subnet_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4443,7 +4450,8 @@ impl DeleteReplicationTaskAssessmentRunInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_replication_task_assessment_run(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4838,7 +4846,8 @@ impl DescribeApplicableIndividualAssessmentsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_applicable_individual_assessments(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6747,7 +6756,8 @@ impl DescribeFleetAdvisorCollectorsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_collectors(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6961,7 +6971,8 @@ impl DescribeFleetAdvisorDatabasesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_databases(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7136,7 +7147,8 @@ impl DescribeFleetAdvisorLsaAnalysisInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_lsa_analysis(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7340,7 +7352,8 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_schema_object_summary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7560,7 +7573,8 @@ impl DescribeFleetAdvisorSchemasInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_advisor_schemas(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7739,7 +7753,8 @@ impl DescribeOrderableReplicationInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_orderable_replication_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7954,7 +7969,8 @@ impl DescribePendingMaintenanceActionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_pending_maintenance_actions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8117,7 +8133,8 @@ impl DescribeRefreshSchemasStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_refresh_schemas_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8319,7 +8336,8 @@ impl DescribeReplicationInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8513,7 +8531,8 @@ impl DescribeReplicationInstanceTaskLogsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_instance_task_logs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8715,7 +8734,8 @@ impl DescribeReplicationSubnetGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_subnet_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8911,7 +8931,8 @@ impl DescribeReplicationTaskAssessmentResultsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_assessment_results(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9109,7 +9130,8 @@ impl DescribeReplicationTaskAssessmentRunsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_assessment_runs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9309,7 +9331,8 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_task_individual_assessments(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11854,7 +11877,8 @@ impl ModifyReplicationSubnetGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_replication_subnet_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13270,7 +13294,8 @@ impl RunFleetAdvisorLsaAnalysisInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_run_fleet_advisor_lsa_analysis(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -13684,7 +13709,8 @@ impl StartReplicationTaskAssessmentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_replication_task_assessment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14002,7 +14028,8 @@ impl StartReplicationTaskAssessmentRunInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_replication_task_assessment_run(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14509,7 +14536,8 @@ impl UpdateSubscriptionsToEventBridgeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_subscriptions_to_event_bridge(&self)?
         );
         if let Some(content_length) = body.content_length() {

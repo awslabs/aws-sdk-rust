@@ -2932,9 +2932,11 @@ pub fn parse_disassociate_from_administrator_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalException" => crate::error::DisassociateFromAdministratorAccountError { meta: generic, kind: crate::error::DisassociateFromAdministratorAccountErrorKind::InternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFromAdministratorAccountError::unhandled)?;
                     output.build()
@@ -2946,9 +2948,11 @@ pub fn parse_disassociate_from_administrator_account_error(
             tmp
         })},
         "InvalidAccessException" => crate::error::DisassociateFromAdministratorAccountError { meta: generic, kind: crate::error::DisassociateFromAdministratorAccountErrorKind::InvalidAccessException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_access_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_access_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFromAdministratorAccountError::unhandled)?;
                     output.build()
@@ -2960,9 +2964,11 @@ pub fn parse_disassociate_from_administrator_account_error(
             tmp
         })},
         "InvalidInputException" => crate::error::DisassociateFromAdministratorAccountError { meta: generic, kind: crate::error::DisassociateFromAdministratorAccountErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFromAdministratorAccountError::unhandled)?;
                     output.build()
@@ -2974,9 +2980,11 @@ pub fn parse_disassociate_from_administrator_account_error(
             tmp
         })},
         "LimitExceededException" => crate::error::DisassociateFromAdministratorAccountError { meta: generic, kind: crate::error::DisassociateFromAdministratorAccountErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFromAdministratorAccountError::unhandled)?;
                     output.build()
@@ -2988,9 +2996,11 @@ pub fn parse_disassociate_from_administrator_account_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateFromAdministratorAccountError { meta: generic, kind: crate::error::DisassociateFromAdministratorAccountErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFromAdministratorAccountError::unhandled)?;
                     output.build()

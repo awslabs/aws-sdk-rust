@@ -141,7 +141,8 @@ pub fn parse_create_batch_prediction_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBatchPredictionError::unhandled)?;
                             output.build()
@@ -238,7 +239,8 @@ pub fn parse_create_data_source_from_rds_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataSourceFromRDSError::unhandled)?;
                             output.build()
@@ -329,9 +331,11 @@ pub fn parse_create_data_source_from_redshift_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "IdempotentParameterMismatchException" => crate::error::CreateDataSourceFromRedshiftError { meta: generic, kind: crate::error::CreateDataSourceFromRedshiftErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataSourceFromRedshiftError::unhandled)?;
                     output.build()
@@ -343,9 +347,11 @@ pub fn parse_create_data_source_from_redshift_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateDataSourceFromRedshiftError { meta: generic, kind: crate::error::CreateDataSourceFromRedshiftErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataSourceFromRedshiftError::unhandled)?;
                     output.build()
@@ -357,9 +363,11 @@ pub fn parse_create_data_source_from_redshift_error(
             tmp
         })},
         "InvalidInputException" => crate::error::CreateDataSourceFromRedshiftError { meta: generic, kind: crate::error::CreateDataSourceFromRedshiftErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataSourceFromRedshiftError::unhandled)?;
                     output.build()
@@ -422,7 +430,8 @@ pub fn parse_create_data_source_from_s3_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataSourceFromS3Error::unhandled)?;
                             output.build()

@@ -1822,7 +1822,8 @@ impl CreateSqlInjectionMatchSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_sql_injection_match_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2244,7 +2245,8 @@ impl CreateWebAclMigrationStackInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_web_acl_migration_stack(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4536,7 +4538,8 @@ impl DeleteSqlInjectionMatchSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_sql_injection_match_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6352,7 +6355,8 @@ impl GetRateBasedRuleManagedKeysInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_rate_based_rule_managed_keys(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8072,7 +8076,8 @@ impl ListActivatedRulesInRuleGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_activated_rules_in_rule_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10005,7 +10010,8 @@ impl ListSqlInjectionMatchSetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_sql_injection_match_sets(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13506,7 +13512,8 @@ impl UpdateSqlInjectionMatchSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_sql_injection_match_set(&self)?
         );
         if let Some(content_length) = body.content_length() {

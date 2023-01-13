@@ -20,9 +20,11 @@ pub fn parse_associate_assessment_report_evidence_folder_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::AssociateAssessmentReportEvidenceFolderError { meta: generic, kind: crate::error::AssociateAssessmentReportEvidenceFolderErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAssessmentReportEvidenceFolderError::unhandled)?;
                     output.build()
@@ -34,9 +36,11 @@ pub fn parse_associate_assessment_report_evidence_folder_error(
             tmp
         })},
         "InternalServerException" => crate::error::AssociateAssessmentReportEvidenceFolderError { meta: generic, kind: crate::error::AssociateAssessmentReportEvidenceFolderErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAssessmentReportEvidenceFolderError::unhandled)?;
                     output.build()
@@ -48,9 +52,11 @@ pub fn parse_associate_assessment_report_evidence_folder_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateAssessmentReportEvidenceFolderError { meta: generic, kind: crate::error::AssociateAssessmentReportEvidenceFolderErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAssessmentReportEvidenceFolderError::unhandled)?;
                     output.build()
@@ -62,9 +68,11 @@ pub fn parse_associate_assessment_report_evidence_folder_error(
             tmp
         })},
         "ValidationException" => crate::error::AssociateAssessmentReportEvidenceFolderError { meta: generic, kind: crate::error::AssociateAssessmentReportEvidenceFolderErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAssessmentReportEvidenceFolderError::unhandled)?;
                     output.build()
@@ -116,9 +124,11 @@ pub fn parse_batch_associate_assessment_report_evidence_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::BatchAssociateAssessmentReportEvidenceError { meta: generic, kind: crate::error::BatchAssociateAssessmentReportEvidenceErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateAssessmentReportEvidenceError::unhandled)?;
                     output.build()
@@ -130,9 +140,11 @@ pub fn parse_batch_associate_assessment_report_evidence_error(
             tmp
         })},
         "InternalServerException" => crate::error::BatchAssociateAssessmentReportEvidenceError { meta: generic, kind: crate::error::BatchAssociateAssessmentReportEvidenceErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateAssessmentReportEvidenceError::unhandled)?;
                     output.build()
@@ -144,9 +156,11 @@ pub fn parse_batch_associate_assessment_report_evidence_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchAssociateAssessmentReportEvidenceError { meta: generic, kind: crate::error::BatchAssociateAssessmentReportEvidenceErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateAssessmentReportEvidenceError::unhandled)?;
                     output.build()
@@ -158,9 +172,11 @@ pub fn parse_batch_associate_assessment_report_evidence_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchAssociateAssessmentReportEvidenceError { meta: generic, kind: crate::error::BatchAssociateAssessmentReportEvidenceErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateAssessmentReportEvidenceError::unhandled)?;
                     output.build()
@@ -445,9 +461,11 @@ pub fn parse_batch_disassociate_assessment_report_evidence_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::BatchDisassociateAssessmentReportEvidenceError { meta: generic, kind: crate::error::BatchDisassociateAssessmentReportEvidenceErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateAssessmentReportEvidenceError::unhandled)?;
                     output.build()
@@ -459,9 +477,11 @@ pub fn parse_batch_disassociate_assessment_report_evidence_error(
             tmp
         })},
         "InternalServerException" => crate::error::BatchDisassociateAssessmentReportEvidenceError { meta: generic, kind: crate::error::BatchDisassociateAssessmentReportEvidenceErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateAssessmentReportEvidenceError::unhandled)?;
                     output.build()
@@ -473,9 +493,11 @@ pub fn parse_batch_disassociate_assessment_report_evidence_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchDisassociateAssessmentReportEvidenceError { meta: generic, kind: crate::error::BatchDisassociateAssessmentReportEvidenceErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateAssessmentReportEvidenceError::unhandled)?;
                     output.build()
@@ -487,9 +509,11 @@ pub fn parse_batch_disassociate_assessment_report_evidence_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchDisassociateAssessmentReportEvidenceError { meta: generic, kind: crate::error::BatchDisassociateAssessmentReportEvidenceErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateAssessmentReportEvidenceError::unhandled)?;
                     output.build()
@@ -542,9 +566,11 @@ pub fn parse_batch_import_evidence_to_assessment_control_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::BatchImportEvidenceToAssessmentControlError { meta: generic, kind: crate::error::BatchImportEvidenceToAssessmentControlErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchImportEvidenceToAssessmentControlError::unhandled)?;
                     output.build()
@@ -556,9 +582,11 @@ pub fn parse_batch_import_evidence_to_assessment_control_error(
             tmp
         })},
         "InternalServerException" => crate::error::BatchImportEvidenceToAssessmentControlError { meta: generic, kind: crate::error::BatchImportEvidenceToAssessmentControlErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchImportEvidenceToAssessmentControlError::unhandled)?;
                     output.build()
@@ -570,9 +598,11 @@ pub fn parse_batch_import_evidence_to_assessment_control_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchImportEvidenceToAssessmentControlError { meta: generic, kind: crate::error::BatchImportEvidenceToAssessmentControlErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchImportEvidenceToAssessmentControlError::unhandled)?;
                     output.build()
@@ -584,9 +614,11 @@ pub fn parse_batch_import_evidence_to_assessment_control_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchImportEvidenceToAssessmentControlError { meta: generic, kind: crate::error::BatchImportEvidenceToAssessmentControlErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchImportEvidenceToAssessmentControlError::unhandled)?;
                     output.build()
@@ -1862,9 +1894,11 @@ pub fn parse_disassociate_assessment_report_evidence_folder_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateAssessmentReportEvidenceFolderError { meta: generic, kind: crate::error::DisassociateAssessmentReportEvidenceFolderErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateAssessmentReportEvidenceFolderError::unhandled)?;
                     output.build()
@@ -1876,9 +1910,11 @@ pub fn parse_disassociate_assessment_report_evidence_folder_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateAssessmentReportEvidenceFolderError { meta: generic, kind: crate::error::DisassociateAssessmentReportEvidenceFolderErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateAssessmentReportEvidenceFolderError::unhandled)?;
                     output.build()
@@ -1890,9 +1926,11 @@ pub fn parse_disassociate_assessment_report_evidence_folder_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateAssessmentReportEvidenceFolderError { meta: generic, kind: crate::error::DisassociateAssessmentReportEvidenceFolderErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateAssessmentReportEvidenceFolderError::unhandled)?;
                     output.build()
@@ -1904,9 +1942,11 @@ pub fn parse_disassociate_assessment_report_evidence_folder_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateAssessmentReportEvidenceFolderError { meta: generic, kind: crate::error::DisassociateAssessmentReportEvidenceFolderErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateAssessmentReportEvidenceFolderError::unhandled)?;
                     output.build()
@@ -3059,9 +3099,11 @@ pub fn parse_get_evidence_folders_by_assessment_control_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetEvidenceFoldersByAssessmentControlError { meta: generic, kind: crate::error::GetEvidenceFoldersByAssessmentControlErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEvidenceFoldersByAssessmentControlError::unhandled)?;
                     output.build()
@@ -3073,9 +3115,11 @@ pub fn parse_get_evidence_folders_by_assessment_control_error(
             tmp
         })},
         "InternalServerException" => crate::error::GetEvidenceFoldersByAssessmentControlError { meta: generic, kind: crate::error::GetEvidenceFoldersByAssessmentControlErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEvidenceFoldersByAssessmentControlError::unhandled)?;
                     output.build()
@@ -3087,9 +3131,11 @@ pub fn parse_get_evidence_folders_by_assessment_control_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetEvidenceFoldersByAssessmentControlError { meta: generic, kind: crate::error::GetEvidenceFoldersByAssessmentControlErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEvidenceFoldersByAssessmentControlError::unhandled)?;
                     output.build()
@@ -3101,9 +3147,11 @@ pub fn parse_get_evidence_folders_by_assessment_control_error(
             tmp
         })},
         "ValidationException" => crate::error::GetEvidenceFoldersByAssessmentControlError { meta: generic, kind: crate::error::GetEvidenceFoldersByAssessmentControlErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEvidenceFoldersByAssessmentControlError::unhandled)?;
                     output.build()
@@ -3607,9 +3655,11 @@ pub fn parse_list_assessment_control_insights_by_control_domain_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListAssessmentControlInsightsByControlDomainError { meta: generic, kind: crate::error::ListAssessmentControlInsightsByControlDomainErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
                     output.build()
@@ -3621,9 +3671,11 @@ pub fn parse_list_assessment_control_insights_by_control_domain_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListAssessmentControlInsightsByControlDomainError { meta: generic, kind: crate::error::ListAssessmentControlInsightsByControlDomainErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
                     output.build()
@@ -3635,9 +3687,11 @@ pub fn parse_list_assessment_control_insights_by_control_domain_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListAssessmentControlInsightsByControlDomainError { meta: generic, kind: crate::error::ListAssessmentControlInsightsByControlDomainErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
                     output.build()
@@ -3649,9 +3703,11 @@ pub fn parse_list_assessment_control_insights_by_control_domain_error(
             tmp
         })},
         "ValidationException" => crate::error::ListAssessmentControlInsightsByControlDomainError { meta: generic, kind: crate::error::ListAssessmentControlInsightsByControlDomainErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
                     output.build()
@@ -3674,7 +3730,8 @@ pub fn parse_list_assessment_control_insights_by_control_domain_response(
     crate::error::ListAssessmentControlInsightsByControlDomainError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::list_assessment_control_insights_by_control_domain_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_assessment_control_insights_by_control_domain_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_assessment_control_insights_by_control_domain(response.body().as_ref(), output).map_err(crate::error::ListAssessmentControlInsightsByControlDomainError::unhandled)?;
         output.build()
@@ -4185,9 +4242,11 @@ pub fn parse_list_control_domain_insights_by_assessment_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListControlDomainInsightsByAssessmentError { meta: generic, kind: crate::error::ListControlDomainInsightsByAssessmentErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
                     output.build()
@@ -4199,9 +4258,11 @@ pub fn parse_list_control_domain_insights_by_assessment_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListControlDomainInsightsByAssessmentError { meta: generic, kind: crate::error::ListControlDomainInsightsByAssessmentErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
                     output.build()
@@ -4213,9 +4274,11 @@ pub fn parse_list_control_domain_insights_by_assessment_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListControlDomainInsightsByAssessmentError { meta: generic, kind: crate::error::ListControlDomainInsightsByAssessmentErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
                     output.build()
@@ -4227,9 +4290,11 @@ pub fn parse_list_control_domain_insights_by_assessment_error(
             tmp
         })},
         "ValidationException" => crate::error::ListControlDomainInsightsByAssessmentError { meta: generic, kind: crate::error::ListControlDomainInsightsByAssessmentErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListControlDomainInsightsByAssessmentError::unhandled)?;
                     output.build()

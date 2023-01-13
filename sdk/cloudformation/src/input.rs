@@ -414,7 +414,8 @@ impl BatchDescribeTypeConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_describe_type_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4684,7 +4685,8 @@ impl DescribeStackDriftDetectionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_drift_detection_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5488,7 +5490,8 @@ impl DescribeStackResourceDriftsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_resource_drifts(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9860,7 +9863,8 @@ impl ListStackSetOperationResultsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_stack_set_operation_results(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14947,7 +14951,8 @@ impl UpdateTerminationProtectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_termination_protection(&self)?
         );
         if let Some(content_length) = body.content_length() {

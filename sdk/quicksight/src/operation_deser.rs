@@ -8193,9 +8193,11 @@ pub fn parse_describe_folder_resolved_permissions_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeFolderResolvedPermissionsError { meta: generic, kind: crate::error::DescribeFolderResolvedPermissionsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFolderResolvedPermissionsError::unhandled)?;
                     output.build()
@@ -8207,9 +8209,11 @@ pub fn parse_describe_folder_resolved_permissions_error(
             tmp
         })},
         "InternalFailureException" => crate::error::DescribeFolderResolvedPermissionsError { meta: generic, kind: crate::error::DescribeFolderResolvedPermissionsErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFolderResolvedPermissionsError::unhandled)?;
                     output.build()
@@ -8221,9 +8225,11 @@ pub fn parse_describe_folder_resolved_permissions_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::DescribeFolderResolvedPermissionsError { meta: generic, kind: crate::error::DescribeFolderResolvedPermissionsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFolderResolvedPermissionsError::unhandled)?;
                     output.build()
@@ -8235,9 +8241,11 @@ pub fn parse_describe_folder_resolved_permissions_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeFolderResolvedPermissionsError { meta: generic, kind: crate::error::DescribeFolderResolvedPermissionsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFolderResolvedPermissionsError::unhandled)?;
                     output.build()
@@ -8249,9 +8257,11 @@ pub fn parse_describe_folder_resolved_permissions_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeFolderResolvedPermissionsError { meta: generic, kind: crate::error::DescribeFolderResolvedPermissionsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFolderResolvedPermissionsError::unhandled)?;
                     output.build()
@@ -8263,9 +8273,11 @@ pub fn parse_describe_folder_resolved_permissions_error(
             tmp
         })},
         "UnsupportedUserEditionException" => crate::error::DescribeFolderResolvedPermissionsError { meta: generic, kind: crate::error::DescribeFolderResolvedPermissionsErrorKind::UnsupportedUserEditionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFolderResolvedPermissionsError::unhandled)?;
                     output.build()
@@ -10449,9 +10461,11 @@ pub fn parse_generate_embed_url_for_anonymous_user_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
                     output.build()
@@ -10463,9 +10477,11 @@ pub fn parse_generate_embed_url_for_anonymous_user_error(
             tmp
         })},
         "InternalFailureException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
                     output.build()
@@ -10477,9 +10493,11 @@ pub fn parse_generate_embed_url_for_anonymous_user_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
                     output.build()
@@ -10491,9 +10509,11 @@ pub fn parse_generate_embed_url_for_anonymous_user_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
                     output.build()
@@ -10505,9 +10525,11 @@ pub fn parse_generate_embed_url_for_anonymous_user_error(
             tmp
         })},
         "SessionLifetimeInMinutesInvalidException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_session_lifetime_in_minutes_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
                     output.build()
@@ -10519,9 +10541,11 @@ pub fn parse_generate_embed_url_for_anonymous_user_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
                     output.build()
@@ -10533,9 +10557,11 @@ pub fn parse_generate_embed_url_for_anonymous_user_error(
             tmp
         })},
         "UnsupportedPricingPlanException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_pricing_plan_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_pricing_plan_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_pricing_plan_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
                     output.build()
@@ -10547,9 +10573,11 @@ pub fn parse_generate_embed_url_for_anonymous_user_error(
             tmp
         })},
         "UnsupportedUserEditionException" => crate::error::GenerateEmbedUrlForAnonymousUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
                     output.build()
@@ -10601,9 +10629,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10615,9 +10645,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
             tmp
         })},
         "InternalFailureException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10629,9 +10661,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10643,9 +10677,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
             tmp
         })},
         "QuickSightUserNotFoundException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::quick_sight_user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::quick_sight_user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_quick_sight_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10657,9 +10693,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10671,9 +10709,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
             tmp
         })},
         "SessionLifetimeInMinutesInvalidException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_session_lifetime_in_minutes_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10685,9 +10725,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10699,9 +10741,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
             tmp
         })},
         "UnsupportedPricingPlanException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_pricing_plan_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_pricing_plan_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_pricing_plan_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10713,9 +10757,11 @@ pub fn parse_generate_embed_url_for_registered_user_error(
             tmp
         })},
         "UnsupportedUserEditionException" => crate::error::GenerateEmbedUrlForRegisteredUserError { meta: generic, kind: crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateEmbedUrlForRegisteredUserError::unhandled)?;
                     output.build()
@@ -10765,9 +10811,11 @@ pub fn parse_get_dashboard_embed_url_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10779,9 +10827,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "DomainNotWhitelistedException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::DomainNotWhitelistedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::domain_not_whitelisted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::domain_not_whitelisted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_domain_not_whitelisted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10793,9 +10843,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "IdentityTypeNotSupportedException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::IdentityTypeNotSupportedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::identity_type_not_supported_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::identity_type_not_supported_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_identity_type_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10807,9 +10859,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "InternalFailureException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10821,9 +10875,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10835,9 +10891,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "QuickSightUserNotFoundException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::QuickSightUserNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::quick_sight_user_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::quick_sight_user_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_quick_sight_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10849,9 +10907,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "ResourceExistsException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::ResourceExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10863,9 +10923,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10877,9 +10939,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "SessionLifetimeInMinutesInvalidException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::SessionLifetimeInMinutesInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_session_lifetime_in_minutes_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10891,9 +10955,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10905,9 +10971,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "UnsupportedPricingPlanException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::UnsupportedPricingPlanException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_pricing_plan_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_pricing_plan_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_pricing_plan_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -10919,9 +10987,11 @@ pub fn parse_get_dashboard_embed_url_error(
             tmp
         })},
         "UnsupportedUserEditionException" => crate::error::GetDashboardEmbedUrlError { meta: generic, kind: crate::error::GetDashboardEmbedUrlErrorKind::UnsupportedUserEditionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
                     output.build()
@@ -11084,7 +11154,8 @@ pub fn parse_get_session_embed_url_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_session_lifetime_in_minutes_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
                             output.build()
@@ -12586,9 +12657,11 @@ pub fn parse_list_iam_policy_assignments_for_user_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListIAMPolicyAssignmentsForUserError { meta: generic, kind: crate::error::ListIAMPolicyAssignmentsForUserErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIAMPolicyAssignmentsForUserError::unhandled)?;
                     output.build()
@@ -12600,9 +12673,11 @@ pub fn parse_list_iam_policy_assignments_for_user_error(
             tmp
         })},
         "ConcurrentUpdatingException" => crate::error::ListIAMPolicyAssignmentsForUserError { meta: generic, kind: crate::error::ListIAMPolicyAssignmentsForUserErrorKind::ConcurrentUpdatingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_updating_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_updating_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_updating_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIAMPolicyAssignmentsForUserError::unhandled)?;
                     output.build()
@@ -12614,9 +12689,11 @@ pub fn parse_list_iam_policy_assignments_for_user_error(
             tmp
         })},
         "InternalFailureException" => crate::error::ListIAMPolicyAssignmentsForUserError { meta: generic, kind: crate::error::ListIAMPolicyAssignmentsForUserErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIAMPolicyAssignmentsForUserError::unhandled)?;
                     output.build()
@@ -12628,9 +12705,11 @@ pub fn parse_list_iam_policy_assignments_for_user_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::ListIAMPolicyAssignmentsForUserError { meta: generic, kind: crate::error::ListIAMPolicyAssignmentsForUserErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIAMPolicyAssignmentsForUserError::unhandled)?;
                     output.build()
@@ -12642,9 +12721,11 @@ pub fn parse_list_iam_policy_assignments_for_user_error(
             tmp
         })},
         "ResourceExistsException" => crate::error::ListIAMPolicyAssignmentsForUserError { meta: generic, kind: crate::error::ListIAMPolicyAssignmentsForUserErrorKind::ResourceExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIAMPolicyAssignmentsForUserError::unhandled)?;
                     output.build()
@@ -12656,9 +12737,11 @@ pub fn parse_list_iam_policy_assignments_for_user_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListIAMPolicyAssignmentsForUserError { meta: generic, kind: crate::error::ListIAMPolicyAssignmentsForUserErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIAMPolicyAssignmentsForUserError::unhandled)?;
                     output.build()
@@ -12670,9 +12753,11 @@ pub fn parse_list_iam_policy_assignments_for_user_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListIAMPolicyAssignmentsForUserError { meta: generic, kind: crate::error::ListIAMPolicyAssignmentsForUserErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIAMPolicyAssignmentsForUserError::unhandled)?;
                     output.build()
@@ -16868,9 +16953,11 @@ pub fn parse_update_dashboard_published_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => crate::error::UpdateDashboardPublishedVersionError { meta: generic, kind: crate::error::UpdateDashboardPublishedVersionErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDashboardPublishedVersionError::unhandled)?;
                     output.build()
@@ -16882,9 +16969,11 @@ pub fn parse_update_dashboard_published_version_error(
             tmp
         })},
         "InternalFailureException" => crate::error::UpdateDashboardPublishedVersionError { meta: generic, kind: crate::error::UpdateDashboardPublishedVersionErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDashboardPublishedVersionError::unhandled)?;
                     output.build()
@@ -16896,9 +16985,11 @@ pub fn parse_update_dashboard_published_version_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::UpdateDashboardPublishedVersionError { meta: generic, kind: crate::error::UpdateDashboardPublishedVersionErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDashboardPublishedVersionError::unhandled)?;
                     output.build()
@@ -16910,9 +17001,11 @@ pub fn parse_update_dashboard_published_version_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateDashboardPublishedVersionError { meta: generic, kind: crate::error::UpdateDashboardPublishedVersionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDashboardPublishedVersionError::unhandled)?;
                     output.build()
@@ -16924,9 +17017,11 @@ pub fn parse_update_dashboard_published_version_error(
             tmp
         })},
         "ThrottlingException" => crate::error::UpdateDashboardPublishedVersionError { meta: generic, kind: crate::error::UpdateDashboardPublishedVersionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDashboardPublishedVersionError::unhandled)?;
                     output.build()
@@ -16938,9 +17033,11 @@ pub fn parse_update_dashboard_published_version_error(
             tmp
         })},
         "UnsupportedUserEditionException" => crate::error::UpdateDashboardPublishedVersionError { meta: generic, kind: crate::error::UpdateDashboardPublishedVersionErrorKind::UnsupportedUserEditionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_user_edition_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDashboardPublishedVersionError::unhandled)?;
                     output.build()

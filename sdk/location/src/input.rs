@@ -352,7 +352,8 @@ impl BatchDeleteDevicePositionHistoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_device_position_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9698,7 +9699,8 @@ impl SearchPlaceIndexForPositionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_search_place_index_for_position(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10020,7 +10022,8 @@ impl SearchPlaceIndexForSuggestionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_search_place_index_for_suggestions(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -69,27 +69,27 @@ pub fn parse_cancel_image_creation_error(
                 tmp
             }),
         },
-        "IdempotentParameterMismatchException" => {
-            crate::error::CancelImageCreationError {
-                meta: generic,
-                kind:
-                    crate::error::CancelImageCreationErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelImageCreationError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::CancelImageCreationError {
+            meta: generic,
+            kind: crate::error::CancelImageCreationErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelImageCreationError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidRequestException" => crate::error::CancelImageCreationError {
             meta: generic,
             kind: crate::error::CancelImageCreationErrorKind::InvalidRequestException({
@@ -493,7 +493,8 @@ pub fn parse_create_container_recipe_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateContainerRecipeError::unhandled)?;
                             output.build()
@@ -671,9 +672,11 @@ pub fn parse_create_distribution_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -685,9 +688,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "ClientException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -699,9 +704,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "ForbiddenException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -713,9 +720,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "IdempotentParameterMismatchException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -727,9 +736,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -741,9 +752,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -755,9 +768,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -769,9 +784,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -783,9 +800,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "ServiceException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -797,9 +816,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -811,9 +832,11 @@ pub fn parse_create_distribution_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::CreateDistributionConfigurationError { meta: generic, kind: crate::error::CreateDistributionConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -1115,27 +1138,27 @@ pub fn parse_create_image_pipeline_error(
                 tmp
             }),
         },
-        "IdempotentParameterMismatchException" => {
-            crate::error::CreateImagePipelineError {
-                meta: generic,
-                kind:
-                    crate::error::CreateImagePipelineErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImagePipelineError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::CreateImagePipelineError {
+            meta: generic,
+            kind: crate::error::CreateImagePipelineErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImagePipelineError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidRequestException" => crate::error::CreateImagePipelineError {
             meta: generic,
             kind: crate::error::CreateImagePipelineErrorKind::InvalidRequestException({
@@ -1519,9 +1542,11 @@ pub fn parse_create_infrastructure_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1533,9 +1558,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "ClientException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1547,9 +1574,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "ForbiddenException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1561,9 +1590,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "IdempotentParameterMismatchException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1575,9 +1606,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1589,9 +1622,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1603,9 +1638,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1617,9 +1654,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "ServiceException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1631,9 +1670,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -1645,9 +1686,11 @@ pub fn parse_create_infrastructure_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::CreateInfrastructureConfigurationError { meta: generic, kind: crate::error::CreateInfrastructureConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -2027,9 +2070,11 @@ pub fn parse_delete_distribution_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::DeleteDistributionConfigurationError { meta: generic, kind: crate::error::DeleteDistributionConfigurationErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -2041,9 +2086,11 @@ pub fn parse_delete_distribution_configuration_error(
             tmp
         })},
         "ClientException" => crate::error::DeleteDistributionConfigurationError { meta: generic, kind: crate::error::DeleteDistributionConfigurationErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -2055,9 +2102,11 @@ pub fn parse_delete_distribution_configuration_error(
             tmp
         })},
         "ForbiddenException" => crate::error::DeleteDistributionConfigurationError { meta: generic, kind: crate::error::DeleteDistributionConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -2069,9 +2118,11 @@ pub fn parse_delete_distribution_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteDistributionConfigurationError { meta: generic, kind: crate::error::DeleteDistributionConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -2083,9 +2134,11 @@ pub fn parse_delete_distribution_configuration_error(
             tmp
         })},
         "ResourceDependencyException" => crate::error::DeleteDistributionConfigurationError { meta: generic, kind: crate::error::DeleteDistributionConfigurationErrorKind::ResourceDependencyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_dependency_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_dependency_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -2097,9 +2150,11 @@ pub fn parse_delete_distribution_configuration_error(
             tmp
         })},
         "ServiceException" => crate::error::DeleteDistributionConfigurationError { meta: generic, kind: crate::error::DeleteDistributionConfigurationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -2111,9 +2166,11 @@ pub fn parse_delete_distribution_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DeleteDistributionConfigurationError { meta: generic, kind: crate::error::DeleteDistributionConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -2657,9 +2714,11 @@ pub fn parse_delete_infrastructure_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::DeleteInfrastructureConfigurationError { meta: generic, kind: crate::error::DeleteInfrastructureConfigurationErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -2671,9 +2730,11 @@ pub fn parse_delete_infrastructure_configuration_error(
             tmp
         })},
         "ClientException" => crate::error::DeleteInfrastructureConfigurationError { meta: generic, kind: crate::error::DeleteInfrastructureConfigurationErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -2685,9 +2746,11 @@ pub fn parse_delete_infrastructure_configuration_error(
             tmp
         })},
         "ForbiddenException" => crate::error::DeleteInfrastructureConfigurationError { meta: generic, kind: crate::error::DeleteInfrastructureConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -2699,9 +2762,11 @@ pub fn parse_delete_infrastructure_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteInfrastructureConfigurationError { meta: generic, kind: crate::error::DeleteInfrastructureConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -2713,9 +2778,11 @@ pub fn parse_delete_infrastructure_configuration_error(
             tmp
         })},
         "ResourceDependencyException" => crate::error::DeleteInfrastructureConfigurationError { meta: generic, kind: crate::error::DeleteInfrastructureConfigurationErrorKind::ResourceDependencyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_dependency_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_dependency_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -2727,9 +2794,11 @@ pub fn parse_delete_infrastructure_configuration_error(
             tmp
         })},
         "ServiceException" => crate::error::DeleteInfrastructureConfigurationError { meta: generic, kind: crate::error::DeleteInfrastructureConfigurationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -2741,9 +2810,11 @@ pub fn parse_delete_infrastructure_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DeleteInfrastructureConfigurationError { meta: generic, kind: crate::error::DeleteInfrastructureConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -4257,9 +4328,11 @@ pub fn parse_get_infrastructure_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::GetInfrastructureConfigurationError { meta: generic, kind: crate::error::GetInfrastructureConfigurationErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -4271,9 +4344,11 @@ pub fn parse_get_infrastructure_configuration_error(
             tmp
         })},
         "ClientException" => crate::error::GetInfrastructureConfigurationError { meta: generic, kind: crate::error::GetInfrastructureConfigurationErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -4285,9 +4360,11 @@ pub fn parse_get_infrastructure_configuration_error(
             tmp
         })},
         "ForbiddenException" => crate::error::GetInfrastructureConfigurationError { meta: generic, kind: crate::error::GetInfrastructureConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -4299,9 +4376,11 @@ pub fn parse_get_infrastructure_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::GetInfrastructureConfigurationError { meta: generic, kind: crate::error::GetInfrastructureConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -4313,9 +4392,11 @@ pub fn parse_get_infrastructure_configuration_error(
             tmp
         })},
         "ServiceException" => crate::error::GetInfrastructureConfigurationError { meta: generic, kind: crate::error::GetInfrastructureConfigurationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -4327,9 +4408,11 @@ pub fn parse_get_infrastructure_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetInfrastructureConfigurationError { meta: generic, kind: crate::error::GetInfrastructureConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -5187,9 +5270,11 @@ pub fn parse_list_distribution_configurations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::ListDistributionConfigurationsError { meta: generic, kind: crate::error::ListDistributionConfigurationsErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionConfigurationsError::unhandled)?;
                     output.build()
@@ -5201,9 +5286,11 @@ pub fn parse_list_distribution_configurations_error(
             tmp
         })},
         "ClientException" => crate::error::ListDistributionConfigurationsError { meta: generic, kind: crate::error::ListDistributionConfigurationsErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionConfigurationsError::unhandled)?;
                     output.build()
@@ -5215,9 +5302,11 @@ pub fn parse_list_distribution_configurations_error(
             tmp
         })},
         "ForbiddenException" => crate::error::ListDistributionConfigurationsError { meta: generic, kind: crate::error::ListDistributionConfigurationsErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionConfigurationsError::unhandled)?;
                     output.build()
@@ -5229,9 +5318,11 @@ pub fn parse_list_distribution_configurations_error(
             tmp
         })},
         "InvalidPaginationTokenException" => crate::error::ListDistributionConfigurationsError { meta: generic, kind: crate::error::ListDistributionConfigurationsErrorKind::InvalidPaginationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionConfigurationsError::unhandled)?;
                     output.build()
@@ -5243,9 +5334,11 @@ pub fn parse_list_distribution_configurations_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListDistributionConfigurationsError { meta: generic, kind: crate::error::ListDistributionConfigurationsErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionConfigurationsError::unhandled)?;
                     output.build()
@@ -5257,9 +5350,11 @@ pub fn parse_list_distribution_configurations_error(
             tmp
         })},
         "ServiceException" => crate::error::ListDistributionConfigurationsError { meta: generic, kind: crate::error::ListDistributionConfigurationsErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionConfigurationsError::unhandled)?;
                     output.build()
@@ -5271,9 +5366,11 @@ pub fn parse_list_distribution_configurations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ListDistributionConfigurationsError { meta: generic, kind: crate::error::ListDistributionConfigurationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionConfigurationsError::unhandled)?;
                     output.build()
@@ -6354,9 +6451,11 @@ pub fn parse_list_infrastructure_configurations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::ListInfrastructureConfigurationsError { meta: generic, kind: crate::error::ListInfrastructureConfigurationsErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInfrastructureConfigurationsError::unhandled)?;
                     output.build()
@@ -6368,9 +6467,11 @@ pub fn parse_list_infrastructure_configurations_error(
             tmp
         })},
         "ClientException" => crate::error::ListInfrastructureConfigurationsError { meta: generic, kind: crate::error::ListInfrastructureConfigurationsErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInfrastructureConfigurationsError::unhandled)?;
                     output.build()
@@ -6382,9 +6483,11 @@ pub fn parse_list_infrastructure_configurations_error(
             tmp
         })},
         "ForbiddenException" => crate::error::ListInfrastructureConfigurationsError { meta: generic, kind: crate::error::ListInfrastructureConfigurationsErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInfrastructureConfigurationsError::unhandled)?;
                     output.build()
@@ -6396,9 +6499,11 @@ pub fn parse_list_infrastructure_configurations_error(
             tmp
         })},
         "InvalidPaginationTokenException" => crate::error::ListInfrastructureConfigurationsError { meta: generic, kind: crate::error::ListInfrastructureConfigurationsErrorKind::InvalidPaginationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInfrastructureConfigurationsError::unhandled)?;
                     output.build()
@@ -6410,9 +6515,11 @@ pub fn parse_list_infrastructure_configurations_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListInfrastructureConfigurationsError { meta: generic, kind: crate::error::ListInfrastructureConfigurationsErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInfrastructureConfigurationsError::unhandled)?;
                     output.build()
@@ -6424,9 +6531,11 @@ pub fn parse_list_infrastructure_configurations_error(
             tmp
         })},
         "ServiceException" => crate::error::ListInfrastructureConfigurationsError { meta: generic, kind: crate::error::ListInfrastructureConfigurationsErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInfrastructureConfigurationsError::unhandled)?;
                     output.build()
@@ -6438,9 +6547,11 @@ pub fn parse_list_infrastructure_configurations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ListInfrastructureConfigurationsError { meta: generic, kind: crate::error::ListInfrastructureConfigurationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInfrastructureConfigurationsError::unhandled)?;
                     output.build()
@@ -7325,9 +7436,11 @@ pub fn parse_start_image_pipeline_execution_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7339,9 +7452,11 @@ pub fn parse_start_image_pipeline_execution_error(
             tmp
         })},
         "ClientException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7353,9 +7468,11 @@ pub fn parse_start_image_pipeline_execution_error(
             tmp
         })},
         "ForbiddenException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7367,9 +7484,11 @@ pub fn parse_start_image_pipeline_execution_error(
             tmp
         })},
         "IdempotentParameterMismatchException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7381,9 +7500,11 @@ pub fn parse_start_image_pipeline_execution_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7395,9 +7516,11 @@ pub fn parse_start_image_pipeline_execution_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7409,9 +7532,11 @@ pub fn parse_start_image_pipeline_execution_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7423,9 +7548,11 @@ pub fn parse_start_image_pipeline_execution_error(
             tmp
         })},
         "ServiceException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7437,9 +7564,11 @@ pub fn parse_start_image_pipeline_execution_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::StartImagePipelineExecutionError { meta: generic, kind: crate::error::StartImagePipelineExecutionErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImagePipelineExecutionError::unhandled)?;
                     output.build()
@@ -7655,9 +7784,11 @@ pub fn parse_update_distribution_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7669,9 +7800,11 @@ pub fn parse_update_distribution_configuration_error(
             tmp
         })},
         "ClientException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7683,9 +7816,11 @@ pub fn parse_update_distribution_configuration_error(
             tmp
         })},
         "ForbiddenException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7697,9 +7832,11 @@ pub fn parse_update_distribution_configuration_error(
             tmp
         })},
         "IdempotentParameterMismatchException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7711,9 +7848,11 @@ pub fn parse_update_distribution_configuration_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7725,9 +7864,11 @@ pub fn parse_update_distribution_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7739,9 +7880,11 @@ pub fn parse_update_distribution_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7753,9 +7896,11 @@ pub fn parse_update_distribution_configuration_error(
             tmp
         })},
         "ServiceException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7767,9 +7912,11 @@ pub fn parse_update_distribution_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::UpdateDistributionConfigurationError { meta: generic, kind: crate::error::UpdateDistributionConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionConfigurationError::unhandled)?;
                     output.build()
@@ -7876,27 +8023,27 @@ pub fn parse_update_image_pipeline_error(
                 tmp
             }),
         },
-        "IdempotentParameterMismatchException" => {
-            crate::error::UpdateImagePipelineError {
-                meta: generic,
-                kind:
-                    crate::error::UpdateImagePipelineErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImagePipelineError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::UpdateImagePipelineError {
+            meta: generic,
+            kind: crate::error::UpdateImagePipelineErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImagePipelineError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidRequestException" => crate::error::UpdateImagePipelineError {
             meta: generic,
             kind: crate::error::UpdateImagePipelineErrorKind::InvalidRequestException({
@@ -8011,9 +8158,11 @@ pub fn parse_update_infrastructure_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CallRateLimitExceededException" => crate::error::UpdateInfrastructureConfigurationError { meta: generic, kind: crate::error::UpdateInfrastructureConfigurationErrorKind::CallRateLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::call_rate_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -8025,9 +8174,11 @@ pub fn parse_update_infrastructure_configuration_error(
             tmp
         })},
         "ClientException" => crate::error::UpdateInfrastructureConfigurationError { meta: generic, kind: crate::error::UpdateInfrastructureConfigurationErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -8039,9 +8190,11 @@ pub fn parse_update_infrastructure_configuration_error(
             tmp
         })},
         "ForbiddenException" => crate::error::UpdateInfrastructureConfigurationError { meta: generic, kind: crate::error::UpdateInfrastructureConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -8053,9 +8206,11 @@ pub fn parse_update_infrastructure_configuration_error(
             tmp
         })},
         "IdempotentParameterMismatchException" => crate::error::UpdateInfrastructureConfigurationError { meta: generic, kind: crate::error::UpdateInfrastructureConfigurationErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -8067,9 +8222,11 @@ pub fn parse_update_infrastructure_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateInfrastructureConfigurationError { meta: generic, kind: crate::error::UpdateInfrastructureConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -8081,9 +8238,11 @@ pub fn parse_update_infrastructure_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::UpdateInfrastructureConfigurationError { meta: generic, kind: crate::error::UpdateInfrastructureConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -8095,9 +8254,11 @@ pub fn parse_update_infrastructure_configuration_error(
             tmp
         })},
         "ServiceException" => crate::error::UpdateInfrastructureConfigurationError { meta: generic, kind: crate::error::UpdateInfrastructureConfigurationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInfrastructureConfigurationError::unhandled)?;
                     output.build()
@@ -8109,9 +8270,11 @@ pub fn parse_update_infrastructure_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::UpdateInfrastructureConfigurationError { meta: generic, kind: crate::error::UpdateInfrastructureConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateInfrastructureConfigurationError::unhandled)?;
                     output.build()

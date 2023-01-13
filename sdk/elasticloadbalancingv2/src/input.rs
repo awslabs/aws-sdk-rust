@@ -2750,7 +2750,8 @@ impl DescribeListenerCertificatesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_listener_certificates(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3118,7 +3119,8 @@ impl DescribeLoadBalancerAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4069,7 +4071,8 @@ impl DescribeTargetGroupAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_target_group_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4944,7 +4947,8 @@ impl ModifyLoadBalancerAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_load_balancer_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5612,7 +5616,8 @@ impl ModifyTargetGroupAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_target_group_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {

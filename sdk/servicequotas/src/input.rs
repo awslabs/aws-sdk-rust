@@ -87,7 +87,8 @@ impl AssociateServiceQuotaTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_service_quota_template(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -269,7 +270,8 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_service_quota_increase_request_from_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -419,7 +421,8 @@ impl DisassociateServiceQuotaTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_service_quota_template(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -561,7 +564,8 @@ impl GetAssociationForServiceQuotaTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_association_for_service_quota_template(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -729,7 +733,8 @@ impl GetAwsDefaultServiceQuotaInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_aws_default_service_quota(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -892,7 +897,8 @@ impl GetRequestedServiceQuotaChangeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_requested_service_quota_change(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1255,7 +1261,8 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_service_quota_increase_request_from_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1443,7 +1450,8 @@ impl ListAwsDefaultServiceQuotasInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_aws_default_service_quotas(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1645,7 +1653,8 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_requested_service_quota_change_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1861,7 +1870,8 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_requested_service_quota_change_history_by_quota(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2063,7 +2073,8 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_service_quota_increase_requests_in_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2793,7 +2804,8 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_service_quota_increase_request_into_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2981,7 +2993,8 @@ impl RequestServiceQuotaIncreaseInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_request_service_quota_increase(&self)?
         );
         if let Some(content_length) = body.content_length() {

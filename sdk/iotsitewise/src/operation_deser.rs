@@ -168,9 +168,11 @@ pub fn parse_associate_time_series_to_asset_property_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingOperationException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ConflictingOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     output.build()
@@ -182,9 +184,11 @@ pub fn parse_associate_time_series_to_asset_property_error(
             tmp
         })},
         "InternalFailureException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     output.build()
@@ -196,9 +200,11 @@ pub fn parse_associate_time_series_to_asset_property_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     output.build()
@@ -210,9 +216,11 @@ pub fn parse_associate_time_series_to_asset_property_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     output.build()
@@ -224,9 +232,11 @@ pub fn parse_associate_time_series_to_asset_property_error(
             tmp
         })},
         "ThrottlingException" => crate::error::AssociateTimeSeriesToAssetPropertyError { meta: generic, kind: crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTimeSeriesToAssetPropertyError::unhandled)?;
                     output.build()
@@ -754,9 +764,11 @@ pub fn parse_batch_get_asset_property_value_history_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::BatchGetAssetPropertyValueHistoryError { meta: generic, kind: crate::error::BatchGetAssetPropertyValueHistoryErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     output.build()
@@ -768,9 +780,11 @@ pub fn parse_batch_get_asset_property_value_history_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::BatchGetAssetPropertyValueHistoryError { meta: generic, kind: crate::error::BatchGetAssetPropertyValueHistoryErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     output.build()
@@ -782,9 +796,11 @@ pub fn parse_batch_get_asset_property_value_history_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::BatchGetAssetPropertyValueHistoryError { meta: generic, kind: crate::error::BatchGetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     output.build()
@@ -796,9 +812,11 @@ pub fn parse_batch_get_asset_property_value_history_error(
             tmp
         })},
         "ThrottlingException" => crate::error::BatchGetAssetPropertyValueHistoryError { meta: generic, kind: crate::error::BatchGetAssetPropertyValueHistoryErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     output.build()
@@ -3604,9 +3622,11 @@ pub fn parse_describe_default_encryption_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::DescribeDefaultEncryptionConfigurationError { meta: generic, kind: crate::error::DescribeDefaultEncryptionConfigurationErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3618,9 +3638,11 @@ pub fn parse_describe_default_encryption_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeDefaultEncryptionConfigurationError { meta: generic, kind: crate::error::DescribeDefaultEncryptionConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3632,9 +3654,11 @@ pub fn parse_describe_default_encryption_configuration_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeDefaultEncryptionConfigurationError { meta: generic, kind: crate::error::DescribeDefaultEncryptionConfigurationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3789,9 +3813,11 @@ pub fn parse_describe_gateway_capability_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::DescribeGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::DescribeGatewayCapabilityConfigurationErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -3803,9 +3829,11 @@ pub fn parse_describe_gateway_capability_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::DescribeGatewayCapabilityConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -3817,9 +3845,11 @@ pub fn parse_describe_gateway_capability_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::DescribeGatewayCapabilityConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -3831,9 +3861,11 @@ pub fn parse_describe_gateway_capability_configuration_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::DescribeGatewayCapabilityConfigurationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -4581,9 +4613,11 @@ pub fn parse_disassociate_time_series_from_asset_property_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingOperationException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ConflictingOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     output.build()
@@ -4595,9 +4629,11 @@ pub fn parse_disassociate_time_series_from_asset_property_error(
             tmp
         })},
         "InternalFailureException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     output.build()
@@ -4609,9 +4645,11 @@ pub fn parse_disassociate_time_series_from_asset_property_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     output.build()
@@ -4623,9 +4661,11 @@ pub fn parse_disassociate_time_series_from_asset_property_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     output.build()
@@ -4637,9 +4677,11 @@ pub fn parse_disassociate_time_series_from_asset_property_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateTimeSeriesFromAssetPropertyError { meta: generic, kind: crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     output.build()
@@ -5078,9 +5120,11 @@ pub fn parse_get_interpolated_asset_property_values_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::GetInterpolatedAssetPropertyValuesError { meta: generic, kind: crate::error::GetInterpolatedAssetPropertyValuesErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInterpolatedAssetPropertyValuesError::unhandled)?;
                     output.build()
@@ -5092,9 +5136,11 @@ pub fn parse_get_interpolated_asset_property_values_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::GetInterpolatedAssetPropertyValuesError { meta: generic, kind: crate::error::GetInterpolatedAssetPropertyValuesErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInterpolatedAssetPropertyValuesError::unhandled)?;
                     output.build()
@@ -5106,9 +5152,11 @@ pub fn parse_get_interpolated_asset_property_values_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetInterpolatedAssetPropertyValuesError { meta: generic, kind: crate::error::GetInterpolatedAssetPropertyValuesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInterpolatedAssetPropertyValuesError::unhandled)?;
                     output.build()
@@ -5120,9 +5168,11 @@ pub fn parse_get_interpolated_asset_property_values_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetInterpolatedAssetPropertyValuesError { meta: generic, kind: crate::error::GetInterpolatedAssetPropertyValuesErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInterpolatedAssetPropertyValuesError::unhandled)?;
                     output.build()
@@ -5134,9 +5184,11 @@ pub fn parse_get_interpolated_asset_property_values_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetInterpolatedAssetPropertyValuesError { meta: generic, kind: crate::error::GetInterpolatedAssetPropertyValuesErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInterpolatedAssetPropertyValuesError::unhandled)?;
                     output.build()
@@ -6702,9 +6754,11 @@ pub fn parse_put_default_encryption_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingOperationException" => crate::error::PutDefaultEncryptionConfigurationError { meta: generic, kind: crate::error::PutDefaultEncryptionConfigurationErrorKind::ConflictingOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutDefaultEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -6716,9 +6770,11 @@ pub fn parse_put_default_encryption_configuration_error(
             tmp
         })},
         "InternalFailureException" => crate::error::PutDefaultEncryptionConfigurationError { meta: generic, kind: crate::error::PutDefaultEncryptionConfigurationErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutDefaultEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -6730,9 +6786,11 @@ pub fn parse_put_default_encryption_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::PutDefaultEncryptionConfigurationError { meta: generic, kind: crate::error::PutDefaultEncryptionConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutDefaultEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -6744,9 +6802,11 @@ pub fn parse_put_default_encryption_configuration_error(
             tmp
         })},
         "LimitExceededException" => crate::error::PutDefaultEncryptionConfigurationError { meta: generic, kind: crate::error::PutDefaultEncryptionConfigurationErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutDefaultEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -6758,9 +6818,11 @@ pub fn parse_put_default_encryption_configuration_error(
             tmp
         })},
         "ThrottlingException" => crate::error::PutDefaultEncryptionConfigurationError { meta: generic, kind: crate::error::PutDefaultEncryptionConfigurationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutDefaultEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -8139,9 +8201,11 @@ pub fn parse_update_gateway_capability_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingOperationException" => crate::error::UpdateGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::UpdateGatewayCapabilityConfigurationErrorKind::ConflictingOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -8153,9 +8217,11 @@ pub fn parse_update_gateway_capability_configuration_error(
             tmp
         })},
         "InternalFailureException" => crate::error::UpdateGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::UpdateGatewayCapabilityConfigurationErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -8167,9 +8233,11 @@ pub fn parse_update_gateway_capability_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::UpdateGatewayCapabilityConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -8181,9 +8249,11 @@ pub fn parse_update_gateway_capability_configuration_error(
             tmp
         })},
         "LimitExceededException" => crate::error::UpdateGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::UpdateGatewayCapabilityConfigurationErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -8195,9 +8265,11 @@ pub fn parse_update_gateway_capability_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::UpdateGatewayCapabilityConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()
@@ -8209,9 +8281,11 @@ pub fn parse_update_gateway_capability_configuration_error(
             tmp
         })},
         "ThrottlingException" => crate::error::UpdateGatewayCapabilityConfigurationError { meta: generic, kind: crate::error::UpdateGatewayCapabilityConfigurationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayCapabilityConfigurationError::unhandled)?;
                     output.build()

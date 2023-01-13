@@ -201,7 +201,8 @@ impl AssociateFirewallRuleGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_firewall_rule_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -382,7 +383,8 @@ impl AssociateResolverEndpointIpAddressInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_resolver_endpoint_ip_address(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -567,7 +569,8 @@ impl AssociateResolverQueryLogConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_resolver_query_log_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1990,7 +1993,8 @@ impl CreateResolverQueryLogConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_resolver_query_log_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3119,7 +3123,8 @@ impl DeleteResolverQueryLogConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_resolver_query_log_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3455,7 +3460,8 @@ impl DisassociateFirewallRuleGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_firewall_rule_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3636,7 +3642,8 @@ impl DisassociateResolverEndpointIpAddressInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_endpoint_ip_address(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3817,7 +3824,8 @@ impl DisassociateResolverQueryLogConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_query_log_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4669,7 +4677,8 @@ impl GetFirewallRuleGroupAssociationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4830,7 +4839,8 @@ impl GetFirewallRuleGroupPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5496,7 +5506,8 @@ impl GetResolverQueryLogConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5667,7 +5678,8 @@ impl GetResolverQueryLogConfigAssociationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5828,7 +5840,8 @@ impl GetResolverQueryLogConfigPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6162,7 +6175,8 @@ impl GetResolverRuleAssociationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7317,7 +7331,8 @@ impl ListFirewallRuleGroupAssociationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_firewall_rule_group_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8307,7 +8322,8 @@ impl ListResolverEndpointIpAddressesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_resolver_endpoint_ip_addresses(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8795,7 +8811,8 @@ impl ListResolverQueryLogConfigAssociationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_config_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9078,7 +9095,8 @@ impl ListResolverQueryLogConfigsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_configs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9280,7 +9298,8 @@ impl ListResolverRuleAssociationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_resolver_rule_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9853,7 +9872,8 @@ impl PutFirewallRuleGroupPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_firewall_rule_group_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10048,7 +10068,8 @@ impl PutResolverQueryLogConfigPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_resolver_query_log_config_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11574,7 +11595,8 @@ impl UpdateFirewallRuleGroupAssociationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule_group_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11943,7 +11965,8 @@ impl UpdateResolverDnssecConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_resolver_dnssec_config(&self)?
         );
         if let Some(content_length) = body.content_length() {

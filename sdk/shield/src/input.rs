@@ -633,7 +633,8 @@ impl AssociateProactiveEngagementDetailsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_proactive_engagement_details(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2335,7 +2336,8 @@ impl DescribeEmergencyContactSettingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_emergency_contact_settings(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -2984,7 +2986,8 @@ impl DisableApplicationLayerAutomaticResponseInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disable_application_layer_automatic_response(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3800,7 +3803,8 @@ impl EnableApplicationLayerAutomaticResponseInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_enable_application_layer_automatic_response(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4923,7 +4927,8 @@ impl ListResourcesInProtectionGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_resources_in_protection_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5633,7 +5638,8 @@ impl UpdateApplicationLayerAutomaticResponseInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_application_layer_automatic_response(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5808,7 +5814,8 @@ impl UpdateEmergencyContactSettingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_emergency_contact_settings(&self)?
         );
         if let Some(content_length) = body.content_length() {

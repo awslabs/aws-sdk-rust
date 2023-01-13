@@ -1013,7 +1013,8 @@ impl CreateCloudFormationChangeSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_cloud_formation_change_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1215,7 +1216,8 @@ impl CreateCloudFormationTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_cloud_formation_template(&self)?
         );
         if let Some(content_length) = body.content_length() {

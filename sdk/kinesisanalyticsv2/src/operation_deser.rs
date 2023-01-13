@@ -20,9 +20,11 @@ pub fn parse_add_application_cloud_watch_logging_option_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::AddApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -34,9 +36,11 @@ pub fn parse_add_application_cloud_watch_logging_option_error(
             tmp
         })},
         "InvalidApplicationConfigurationException" => crate::error::AddApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::InvalidApplicationConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -48,9 +52,11 @@ pub fn parse_add_application_cloud_watch_logging_option_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::AddApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -62,9 +68,11 @@ pub fn parse_add_application_cloud_watch_logging_option_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::AddApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -76,9 +84,11 @@ pub fn parse_add_application_cloud_watch_logging_option_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::AddApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -90,9 +100,11 @@ pub fn parse_add_application_cloud_watch_logging_option_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AddApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -288,9 +300,11 @@ pub fn parse_add_application_input_processing_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::AddApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::AddApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -302,9 +316,11 @@ pub fn parse_add_application_input_processing_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::AddApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::AddApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -316,9 +332,11 @@ pub fn parse_add_application_input_processing_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::AddApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::AddApplicationInputProcessingConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -330,9 +348,11 @@ pub fn parse_add_application_input_processing_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::AddApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::AddApplicationInputProcessingConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -344,9 +364,11 @@ pub fn parse_add_application_input_processing_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AddApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::AddApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -524,9 +546,11 @@ pub fn parse_add_application_reference_data_source_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::AddApplicationReferenceDataSourceError { meta: generic, kind: crate::error::AddApplicationReferenceDataSourceErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -538,9 +562,11 @@ pub fn parse_add_application_reference_data_source_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::AddApplicationReferenceDataSourceError { meta: generic, kind: crate::error::AddApplicationReferenceDataSourceErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -552,9 +578,11 @@ pub fn parse_add_application_reference_data_source_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::AddApplicationReferenceDataSourceError { meta: generic, kind: crate::error::AddApplicationReferenceDataSourceErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -566,9 +594,11 @@ pub fn parse_add_application_reference_data_source_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::AddApplicationReferenceDataSourceError { meta: generic, kind: crate::error::AddApplicationReferenceDataSourceErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -580,9 +610,11 @@ pub fn parse_add_application_reference_data_source_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AddApplicationReferenceDataSourceError { meta: generic, kind: crate::error::AddApplicationReferenceDataSourceErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -631,9 +663,11 @@ pub fn parse_add_application_vpc_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::AddApplicationVpcConfigurationError { meta: generic, kind: crate::error::AddApplicationVpcConfigurationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -645,9 +679,11 @@ pub fn parse_add_application_vpc_configuration_error(
             tmp
         })},
         "InvalidApplicationConfigurationException" => crate::error::AddApplicationVpcConfigurationError { meta: generic, kind: crate::error::AddApplicationVpcConfigurationErrorKind::InvalidApplicationConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -659,9 +695,11 @@ pub fn parse_add_application_vpc_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::AddApplicationVpcConfigurationError { meta: generic, kind: crate::error::AddApplicationVpcConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -673,9 +711,11 @@ pub fn parse_add_application_vpc_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::AddApplicationVpcConfigurationError { meta: generic, kind: crate::error::AddApplicationVpcConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -687,9 +727,11 @@ pub fn parse_add_application_vpc_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AddApplicationVpcConfigurationError { meta: generic, kind: crate::error::AddApplicationVpcConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -1020,9 +1062,11 @@ pub fn parse_create_application_snapshot_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidApplicationConfigurationException" => crate::error::CreateApplicationSnapshotError { meta: generic, kind: crate::error::CreateApplicationSnapshotErrorKind::InvalidApplicationConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationSnapshotError::unhandled)?;
                     output.build()
@@ -1034,9 +1078,11 @@ pub fn parse_create_application_snapshot_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::CreateApplicationSnapshotError { meta: generic, kind: crate::error::CreateApplicationSnapshotErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationSnapshotError::unhandled)?;
                     output.build()
@@ -1048,9 +1094,11 @@ pub fn parse_create_application_snapshot_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::CreateApplicationSnapshotError { meta: generic, kind: crate::error::CreateApplicationSnapshotErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationSnapshotError::unhandled)?;
                     output.build()
@@ -1062,9 +1110,11 @@ pub fn parse_create_application_snapshot_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreateApplicationSnapshotError { meta: generic, kind: crate::error::CreateApplicationSnapshotErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationSnapshotError::unhandled)?;
                     output.build()
@@ -1076,9 +1126,11 @@ pub fn parse_create_application_snapshot_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::CreateApplicationSnapshotError { meta: generic, kind: crate::error::CreateApplicationSnapshotErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationSnapshotError::unhandled)?;
                     output.build()
@@ -1090,9 +1142,11 @@ pub fn parse_create_application_snapshot_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreateApplicationSnapshotError { meta: generic, kind: crate::error::CreateApplicationSnapshotErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationSnapshotError::unhandled)?;
                     output.build()
@@ -1104,9 +1158,11 @@ pub fn parse_create_application_snapshot_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::CreateApplicationSnapshotError { meta: generic, kind: crate::error::CreateApplicationSnapshotErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationSnapshotError::unhandled)?;
                     output.build()
@@ -1175,7 +1231,8 @@ pub fn parse_delete_application_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationError::unhandled)?;
                             output.build()
@@ -1293,9 +1350,11 @@ pub fn parse_delete_application_cloud_watch_logging_option_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::DeleteApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -1307,9 +1366,11 @@ pub fn parse_delete_application_cloud_watch_logging_option_error(
             tmp
         })},
         "InvalidApplicationConfigurationException" => crate::error::DeleteApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidApplicationConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -1321,9 +1382,11 @@ pub fn parse_delete_application_cloud_watch_logging_option_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DeleteApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -1335,9 +1398,11 @@ pub fn parse_delete_application_cloud_watch_logging_option_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -1349,9 +1414,11 @@ pub fn parse_delete_application_cloud_watch_logging_option_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::DeleteApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -1363,9 +1430,11 @@ pub fn parse_delete_application_cloud_watch_logging_option_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteApplicationCloudWatchLoggingOptionError { meta: generic, kind: crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationCloudWatchLoggingOptionError::unhandled)?;
                     output.build()
@@ -1420,9 +1489,11 @@ pub fn parse_delete_application_input_processing_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::DeleteApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -1434,9 +1505,11 @@ pub fn parse_delete_application_input_processing_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DeleteApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -1448,9 +1521,11 @@ pub fn parse_delete_application_input_processing_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -1462,9 +1537,11 @@ pub fn parse_delete_application_input_processing_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::DeleteApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -1476,9 +1553,11 @@ pub fn parse_delete_application_input_processing_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteApplicationInputProcessingConfigurationError { meta: generic, kind: crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationInputProcessingConfigurationError::unhandled)?;
                     output.build()
@@ -1501,7 +1580,8 @@ pub fn parse_delete_application_input_processing_configuration_response(
     crate::error::DeleteApplicationInputProcessingConfigurationError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::delete_application_input_processing_configuration_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_application_input_processing_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_delete_application_input_processing_configuration(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationInputProcessingConfigurationError::unhandled)?;
         output.build()
@@ -1659,9 +1739,11 @@ pub fn parse_delete_application_reference_data_source_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::DeleteApplicationReferenceDataSourceError { meta: generic, kind: crate::error::DeleteApplicationReferenceDataSourceErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -1673,9 +1755,11 @@ pub fn parse_delete_application_reference_data_source_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DeleteApplicationReferenceDataSourceError { meta: generic, kind: crate::error::DeleteApplicationReferenceDataSourceErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -1687,9 +1771,11 @@ pub fn parse_delete_application_reference_data_source_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteApplicationReferenceDataSourceError { meta: generic, kind: crate::error::DeleteApplicationReferenceDataSourceErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -1701,9 +1787,11 @@ pub fn parse_delete_application_reference_data_source_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::DeleteApplicationReferenceDataSourceError { meta: generic, kind: crate::error::DeleteApplicationReferenceDataSourceErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -1715,9 +1803,11 @@ pub fn parse_delete_application_reference_data_source_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteApplicationReferenceDataSourceError { meta: generic, kind: crate::error::DeleteApplicationReferenceDataSourceErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationReferenceDataSourceError::unhandled)?;
                     output.build()
@@ -1915,9 +2005,11 @@ pub fn parse_delete_application_vpc_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::DeleteApplicationVpcConfigurationError { meta: generic, kind: crate::error::DeleteApplicationVpcConfigurationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -1929,9 +2021,11 @@ pub fn parse_delete_application_vpc_configuration_error(
             tmp
         })},
         "InvalidApplicationConfigurationException" => crate::error::DeleteApplicationVpcConfigurationError { meta: generic, kind: crate::error::DeleteApplicationVpcConfigurationErrorKind::InvalidApplicationConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -1943,9 +2037,11 @@ pub fn parse_delete_application_vpc_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DeleteApplicationVpcConfigurationError { meta: generic, kind: crate::error::DeleteApplicationVpcConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -1957,9 +2053,11 @@ pub fn parse_delete_application_vpc_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::DeleteApplicationVpcConfigurationError { meta: generic, kind: crate::error::DeleteApplicationVpcConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -1971,9 +2069,11 @@ pub fn parse_delete_application_vpc_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteApplicationVpcConfigurationError { meta: generic, kind: crate::error::DeleteApplicationVpcConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVpcConfigurationError::unhandled)?;
                     output.build()
@@ -2309,9 +2409,11 @@ pub fn parse_discover_input_schema_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidArgumentException" => crate::error::DiscoverInputSchemaError { meta: generic, kind: crate::error::DiscoverInputSchemaErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInputSchemaError::unhandled)?;
                     output.build()
@@ -2323,9 +2425,11 @@ pub fn parse_discover_input_schema_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DiscoverInputSchemaError { meta: generic, kind: crate::error::DiscoverInputSchemaErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInputSchemaError::unhandled)?;
                     output.build()
@@ -2337,9 +2441,11 @@ pub fn parse_discover_input_schema_error(
             tmp
         })},
         "ResourceProvisionedThroughputExceededException" => crate::error::DiscoverInputSchemaError { meta: generic, kind: crate::error::DiscoverInputSchemaErrorKind::ResourceProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInputSchemaError::unhandled)?;
                     output.build()
@@ -2351,9 +2457,11 @@ pub fn parse_discover_input_schema_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DiscoverInputSchemaError { meta: generic, kind: crate::error::DiscoverInputSchemaErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInputSchemaError::unhandled)?;
                     output.build()
@@ -2365,9 +2473,11 @@ pub fn parse_discover_input_schema_error(
             tmp
         })},
         "UnableToDetectSchemaException" => crate::error::DiscoverInputSchemaError { meta: generic, kind: crate::error::DiscoverInputSchemaErrorKind::UnableToDetectSchemaException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unable_to_detect_schema_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unable_to_detect_schema_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unable_to_detect_schema_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInputSchemaError::unhandled)?;
                     output.build()
@@ -2379,9 +2489,11 @@ pub fn parse_discover_input_schema_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::DiscoverInputSchemaError { meta: generic, kind: crate::error::DiscoverInputSchemaErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInputSchemaError::unhandled)?;
                     output.build()
@@ -2900,7 +3012,8 @@ pub fn parse_start_application_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartApplicationError::unhandled)?;
                         output.build()
@@ -3034,7 +3147,8 @@ pub fn parse_stop_application_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopApplicationError::unhandled)?;
                         output.build()
@@ -3416,7 +3530,8 @@ pub fn parse_update_application_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_application_configuration_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_application_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                             output.build()
@@ -3556,9 +3671,11 @@ pub fn parse_update_application_maintenance_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::UpdateApplicationMaintenanceConfigurationError { meta: generic, kind: crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationMaintenanceConfigurationError::unhandled)?;
                     output.build()
@@ -3570,9 +3687,11 @@ pub fn parse_update_application_maintenance_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::UpdateApplicationMaintenanceConfigurationError { meta: generic, kind: crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationMaintenanceConfigurationError::unhandled)?;
                     output.build()
@@ -3584,9 +3703,11 @@ pub fn parse_update_application_maintenance_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::UpdateApplicationMaintenanceConfigurationError { meta: generic, kind: crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationMaintenanceConfigurationError::unhandled)?;
                     output.build()
@@ -3598,9 +3719,11 @@ pub fn parse_update_application_maintenance_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateApplicationMaintenanceConfigurationError { meta: generic, kind: crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationMaintenanceConfigurationError::unhandled)?;
                     output.build()
@@ -3612,9 +3735,11 @@ pub fn parse_update_application_maintenance_configuration_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::UpdateApplicationMaintenanceConfigurationError { meta: generic, kind: crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationMaintenanceConfigurationError::unhandled)?;
                     output.build()

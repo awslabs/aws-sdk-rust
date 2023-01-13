@@ -1061,7 +1061,8 @@ impl CreateSecurityConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_security_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1623,7 +1624,8 @@ impl CreateStudioSessionMappingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_studio_session_mapping(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1784,7 +1786,8 @@ impl DeleteSecurityConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_security_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2151,7 +2154,8 @@ impl DeleteStudioSessionMappingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_studio_session_mapping(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3061,7 +3065,8 @@ impl DescribeSecurityConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_security_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3712,7 +3717,8 @@ impl GetBlockPublicAccessConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_block_public_access_configuration(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -3883,7 +3889,8 @@ impl GetClusterSessionCredentialsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_cluster_session_credentials(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7525,7 +7532,8 @@ impl PutBlockPublicAccessConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_block_public_access_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8050,7 +8058,8 @@ impl RemoveAutoTerminationPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_auto_termination_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8213,7 +8222,8 @@ impl RemoveManagedScalingPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_managed_scaling_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10506,7 +10516,8 @@ impl UpdateStudioSessionMappingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_studio_session_mapping(&self)?
         );
         if let Some(content_length) = body.content_length() {

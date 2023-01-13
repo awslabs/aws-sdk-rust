@@ -3851,7 +3851,8 @@ impl CreateSnapshotFromVolumeRecoveryPointInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_snapshot_from_volume_recovery_point(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5102,7 +5103,8 @@ impl DeleteAutomaticTapeCreationPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_automatic_tape_creation_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6822,7 +6824,8 @@ impl DescribeAvailabilityMonitorTestInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_availability_monitor_test(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6985,7 +6988,8 @@ impl DescribeBandwidthRateLimitInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_bandwidth_rate_limit(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7148,7 +7152,8 @@ impl DescribeBandwidthRateLimitScheduleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_bandwidth_rate_limit_schedule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7482,7 +7487,8 @@ impl DescribeCachediScsiVolumesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cachedi_scsi_volumes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7824,7 +7830,8 @@ impl DescribeFileSystemAssociationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_file_system_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8153,7 +8160,8 @@ impl DescribeMaintenanceStartTimeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_maintenance_start_time(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9005,7 +9013,8 @@ impl DescribeStorediScsiVolumesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_storedi_scsi_volumes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9391,7 +9400,8 @@ impl DescribeTapeRecoveryPointsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_tape_recovery_points(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11093,7 +11103,8 @@ impl ListAutomaticTapeCreationPoliciesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_automatic_tape_creation_policies(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11466,7 +11477,8 @@ impl ListFileSystemAssociationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_file_system_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14670,7 +14682,8 @@ impl StartAvailabilityMonitorTestInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_availability_monitor_test(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15020,7 +15033,8 @@ impl UpdateAutomaticTapeCreationPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_automatic_tape_creation_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15406,7 +15420,8 @@ impl UpdateBandwidthRateLimitScheduleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_bandwidth_rate_limit_schedule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15886,7 +15901,8 @@ impl UpdateFileSystemAssociationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_file_system_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16488,7 +16504,8 @@ impl UpdateMaintenanceStartTimeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_maintenance_start_time(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17544,7 +17561,8 @@ impl UpdateSmbFileShareVisibilityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_smb_file_share_visibility(&self)?
         );
         if let Some(content_length) = body.content_length() {

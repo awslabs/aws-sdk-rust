@@ -293,7 +293,8 @@ impl AssociateServiceRoleToAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_service_role_to_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -740,7 +741,8 @@ impl CreateConnectorDefinitionVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_connector_definition_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1185,7 +1187,8 @@ impl CreateCoreDefinitionVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_core_definition_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1876,7 +1879,8 @@ impl CreateDeviceDefinitionVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_device_definition_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2338,7 +2342,8 @@ impl CreateFunctionDefinitionVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_function_definition_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3514,7 +3519,8 @@ impl CreateLoggerDefinitionVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_logger_definition_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3961,7 +3967,8 @@ impl CreateResourceDefinitionVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_resource_definition_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4455,7 +4462,8 @@ impl CreateSubscriptionDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_subscription_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4680,7 +4688,8 @@ impl CreateSubscriptionDefinitionVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_subscription_definition_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17314,7 +17323,8 @@ impl UpdateGroupCertificateConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_group_certificate_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17911,7 +17921,8 @@ impl UpdateSubscriptionDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_subscription_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18112,7 +18123,8 @@ impl UpdateThingRuntimeConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_thing_runtime_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {

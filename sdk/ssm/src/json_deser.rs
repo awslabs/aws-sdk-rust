@@ -22371,7 +22371,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::maintenance_window_execution_task_invocation_identity::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::maintenance_window_execution_task_invocation_identity::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

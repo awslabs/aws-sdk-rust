@@ -165,7 +165,8 @@ impl AssociatePhoneNumbersWithVoiceConnectorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_phone_numbers_with_voice_connector(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -394,7 +395,8 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_phone_numbers_with_voice_connector_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -642,7 +644,8 @@ impl AssociatePhoneNumberWithUserInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_phone_number_with_user(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -853,7 +856,8 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_signin_delegate_groups_with_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1308,7 +1312,8 @@ impl BatchCreateChannelMembershipInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_create_channel_membership(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5009,7 +5014,8 @@ impl CreateMediaCapturePipelineInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_media_capture_pipeline(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5803,7 +5809,8 @@ impl CreateMeetingWithAttendeesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_meeting_with_attendees(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7217,7 +7224,8 @@ impl CreateSipMediaApplicationCallInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_sip_media_application_call(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13299,7 +13307,8 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_voice_connector_termination_credentials(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15570,7 +15579,8 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_phone_numbers_from_voice_connector(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15788,7 +15798,8 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_phone_numbers_from_voice_connector_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16000,7 +16011,8 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_signin_delegate_groups_from_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -28728,7 +28740,8 @@ impl PutAppInstanceRetentionSettingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_app_instance_retention_settings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -28944,7 +28957,8 @@ impl PutAppInstanceStreamingConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_app_instance_streaming_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -29614,7 +29628,8 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_sip_media_application_logging_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -29821,7 +29836,8 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_emergency_calling_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30022,7 +30038,8 @@ impl PutVoiceConnectorLoggingConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_logging_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30222,7 +30239,8 @@ impl PutVoiceConnectorOriginationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_origination(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30698,7 +30716,8 @@ impl PutVoiceConnectorStreamingConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_streaming_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30898,7 +30917,8 @@ impl PutVoiceConnectorTerminationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_termination(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -31113,7 +31133,8 @@ impl PutVoiceConnectorTerminationCredentialsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_voice_connector_termination_credentials(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -38242,7 +38263,8 @@ impl UpdateSipMediaApplicationCallInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_sip_media_application_call(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -902,7 +902,8 @@ impl CreateSourceRepositoryBranchInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_source_repository_branch(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3687,7 +3688,8 @@ impl ListSourceRepositoryBranchesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_source_repository_branches(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4365,7 +4367,8 @@ impl StartDevEnvironmentSessionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_dev_environment_session(&self)?
         );
         if let Some(content_length) = body.content_length() {

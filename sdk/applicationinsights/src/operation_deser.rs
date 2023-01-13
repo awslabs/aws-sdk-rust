@@ -910,9 +910,11 @@ pub fn parse_describe_component_configuration_recommendation_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => crate::error::DescribeComponentConfigurationRecommendationError { meta: generic, kind: crate::error::DescribeComponentConfigurationRecommendationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeComponentConfigurationRecommendationError::unhandled)?;
                     output.build()
@@ -924,9 +926,11 @@ pub fn parse_describe_component_configuration_recommendation_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeComponentConfigurationRecommendationError { meta: generic, kind: crate::error::DescribeComponentConfigurationRecommendationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeComponentConfigurationRecommendationError::unhandled)?;
                     output.build()
@@ -938,9 +942,11 @@ pub fn parse_describe_component_configuration_recommendation_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribeComponentConfigurationRecommendationError { meta: generic, kind: crate::error::DescribeComponentConfigurationRecommendationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeComponentConfigurationRecommendationError::unhandled)?;
                     output.build()

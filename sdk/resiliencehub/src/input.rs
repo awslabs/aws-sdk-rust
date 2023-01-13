@@ -119,7 +119,8 @@ impl AddDraftAppVersionResourceMappingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_add_draft_app_version_resource_mappings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -746,7 +747,8 @@ impl CreateRecommendationTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_recommendation_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1584,7 +1586,8 @@ impl DeleteRecommendationTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_recommendation_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2269,7 +2272,8 @@ impl DescribeAppVersionResourcesResolutionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_app_version_resources_resolution_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2441,7 +2445,8 @@ impl DescribeAppVersionTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_app_version_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2605,7 +2610,8 @@ impl DescribeDraftAppVersionResourcesImportStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_draft_app_version_resources_import_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2969,7 +2975,8 @@ impl ImportResourcesToDraftAppVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_import_resources_to_draft_app_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3656,7 +3663,8 @@ impl ListAppComponentCompliancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_app_component_compliances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3842,7 +3850,8 @@ impl ListAppComponentRecommendationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_app_component_recommendations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4245,7 +4254,8 @@ impl ListAppVersionResourceMappingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_app_version_resource_mappings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6068,7 +6078,8 @@ impl ListUnsupportedAppVersionResourcesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_unsupported_app_version_resources(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6401,7 +6412,8 @@ impl PutDraftAppVersionTemplateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_draft_app_version_template(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6665,7 +6677,8 @@ impl RemoveDraftAppVersionResourceMappingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_draft_app_version_resource_mappings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6836,7 +6849,8 @@ impl ResolveAppVersionResourcesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_resolve_app_version_resources(&self)?
         );
         if let Some(content_length) = body.content_length() {

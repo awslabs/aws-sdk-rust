@@ -144,9 +144,11 @@ pub fn parse_copy_distribution_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -158,9 +160,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "CNAMEAlreadyExists" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::CnameAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -172,9 +176,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "DistributionAlreadyExists" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::DistributionAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::distribution_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::distribution_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -186,9 +192,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -200,9 +208,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -214,9 +224,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -228,9 +240,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidDefaultRootObject" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidDefaultRootObject({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_default_root_object::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -242,9 +256,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidErrorCode" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidErrorCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_error_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_error_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -256,9 +272,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidForwardCookies" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidForwardCookies({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_forward_cookies::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_forward_cookies::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -270,9 +288,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidFunctionAssociation" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -284,9 +304,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidGeoRestrictionParameter" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidGeoRestrictionParameter({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -298,9 +320,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidHeadersForS3Origin" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidHeadersForS3Origin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -312,9 +336,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -326,9 +352,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidLambdaFunctionAssociation" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidLambdaFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -340,9 +368,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidLocationCode" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidLocationCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_location_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_location_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -354,9 +384,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidMinimumProtocolVersion" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidMinimumProtocolVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -368,9 +400,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidOrigin" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -382,9 +416,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidOriginAccessControl" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -396,9 +432,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidOriginAccessIdentity" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -410,9 +448,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidOriginKeepaliveTimeout" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOriginKeepaliveTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -424,9 +464,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidOriginReadTimeout" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidOriginReadTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -438,9 +480,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidProtocolSettings" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidProtocolSettings({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_protocol_settings::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_protocol_settings::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_protocol_settings_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -452,9 +496,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidQueryStringParameters" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -466,9 +512,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidRelativePath" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidRelativePath({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_path::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_relative_path::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -480,9 +528,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidRequiredProtocol" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidRequiredProtocol({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_required_protocol::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_required_protocol::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -494,9 +544,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidResponseCode" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidResponseCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_response_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_response_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -508,9 +560,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidTTLOrder" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidTtlOrder({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_ttl_order::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_ttl_order::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -522,9 +576,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidViewerCertificate" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidViewerCertificate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_viewer_certificate::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_viewer_certificate::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -536,9 +592,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "InvalidWebACLId" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::InvalidWebAclId({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_web_acl_id::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -550,9 +608,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "MissingBody" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -564,9 +624,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "NoSuchCachePolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -578,9 +640,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "NoSuchDistribution" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -592,9 +656,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionConfig" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -606,9 +672,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "NoSuchOrigin" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -620,9 +688,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "NoSuchOriginRequestPolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -634,9 +704,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "NoSuchRealtimeLogConfig" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchRealtimeLogConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_realtime_log_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_realtime_log_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -648,9 +720,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "NoSuchResponseHeadersPolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::NoSuchResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -662,9 +736,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -676,9 +752,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "RealtimeLogConfigOwnerMismatch" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::RealtimeLogConfigOwnerMismatch({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -690,9 +768,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyCacheBehaviors" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyCacheBehaviors({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cache_behaviors::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cache_behaviors::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -704,9 +784,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyCertificates" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyCertificates({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_certificates::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_certificates::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -718,9 +800,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyCookieNamesInWhiteList" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyCookieNamesInWhiteList({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -732,9 +816,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionCNAMEs" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionCnamEs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -746,9 +832,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributions" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributions({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -760,9 +848,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToCachePolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -774,9 +864,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -788,9 +880,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToKeyGroup" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -802,9 +896,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -816,9 +912,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -830,9 +928,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithFunctionAssociations" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsWithFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -844,9 +944,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithLambdaAssociations" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsWithLambdaAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -858,9 +960,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithSingleFunctionARN" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -872,9 +976,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyFunctionAssociations" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -886,9 +992,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyHeadersInForwardedValues" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyHeadersInForwardedValues({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -900,9 +1008,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyKeyGroupsAssociatedToDistribution" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -914,9 +1024,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyLambdaFunctionAssociations" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyLambdaFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -928,9 +1040,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyOriginCustomHeaders" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyOriginCustomHeaders({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -942,9 +1056,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyOriginGroupsPerDistribution" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyOriginGroupsPerDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -956,9 +1072,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyOrigins" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyOrigins({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origins::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origins::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -970,9 +1088,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyQueryStringParameters" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -984,9 +1104,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TooManyTrustedSigners" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TooManyTrustedSigners({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -998,9 +1120,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TrustedKeyGroupDoesNotExist" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TrustedKeyGroupDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -1012,9 +1136,11 @@ pub fn parse_copy_distribution_error(
             tmp
         })},
         "TrustedSignerDoesNotExist" => crate::error::CopyDistributionError { meta: generic, kind: crate::error::CopyDistributionErrorKind::TrustedSignerDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDistributionError::unhandled)?;
                     output.build()
@@ -1280,9 +1406,11 @@ pub fn parse_create_cloud_front_origin_access_identity_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudFrontOriginAccessIdentityAlreadyExists" => crate::error::CreateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_front_origin_access_identity_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_front_origin_access_identity_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cloud_front_origin_access_identity_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -1294,9 +1422,11 @@ pub fn parse_create_cloud_front_origin_access_identity_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -1308,9 +1438,11 @@ pub fn parse_create_cloud_front_origin_access_identity_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -1322,9 +1454,11 @@ pub fn parse_create_cloud_front_origin_access_identity_error(
             tmp
         })},
         "MissingBody" => crate::error::CreateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -1336,9 +1470,11 @@ pub fn parse_create_cloud_front_origin_access_identity_error(
             tmp
         })},
         "TooManyCloudFrontOriginAccessIdentities" => crate::error::CreateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::TooManyCloudFrontOriginAccessIdentities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cloud_front_origin_access_identities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cloud_front_origin_access_identities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cloud_front_origin_access_identities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -1399,9 +1535,11 @@ pub fn parse_create_continuous_deployment_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -1413,9 +1551,11 @@ pub fn parse_create_continuous_deployment_policy_error(
             tmp
         })},
         "ContinuousDeploymentPolicyAlreadyExists" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::continuous_deployment_policy_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -1427,9 +1567,11 @@ pub fn parse_create_continuous_deployment_policy_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -1441,9 +1583,11 @@ pub fn parse_create_continuous_deployment_policy_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -1455,9 +1599,11 @@ pub fn parse_create_continuous_deployment_policy_error(
             tmp
         })},
         "StagingDistributionInUse" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::staging_distribution_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::staging_distribution_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_staging_distribution_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -1469,9 +1615,11 @@ pub fn parse_create_continuous_deployment_policy_error(
             tmp
         })},
         "TooManyContinuousDeploymentPolicies" => crate::error::CreateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::CreateContinuousDeploymentPolicyErrorKind::TooManyContinuousDeploymentPolicies({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_continuous_deployment_policies::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_continuous_deployment_policies::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_continuous_deployment_policies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -1530,9 +1678,11 @@ pub fn parse_create_distribution_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1544,9 +1694,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "CNAMEAlreadyExists" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::CnameAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1558,9 +1710,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "ContinuousDeploymentPolicyInUse" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::ContinuousDeploymentPolicyInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1572,9 +1726,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "DistributionAlreadyExists" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::DistributionAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::distribution_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::distribution_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1586,9 +1742,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1600,9 +1758,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "IllegalOriginAccessConfiguration" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::IllegalOriginAccessConfiguration({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_origin_access_configuration::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_origin_access_configuration::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_origin_access_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1614,9 +1774,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1628,9 +1790,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1642,9 +1806,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidDefaultRootObject" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidDefaultRootObject({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_default_root_object::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1656,9 +1822,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidDomainNameForOriginAccessControl" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidDomainNameForOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_domain_name_for_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1670,9 +1838,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidErrorCode" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidErrorCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_error_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_error_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1684,9 +1854,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidForwardCookies" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidForwardCookies({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_forward_cookies::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_forward_cookies::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1698,9 +1870,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidFunctionAssociation" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1712,9 +1886,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidGeoRestrictionParameter" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidGeoRestrictionParameter({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1726,9 +1902,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidHeadersForS3Origin" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidHeadersForS3Origin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1740,9 +1918,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidLambdaFunctionAssociation" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidLambdaFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1754,9 +1934,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidLocationCode" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidLocationCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_location_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_location_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1768,9 +1950,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidMinimumProtocolVersion" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidMinimumProtocolVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1782,9 +1966,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidOrigin" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1796,9 +1982,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidOriginAccessControl" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1810,9 +1998,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidOriginAccessIdentity" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1824,9 +2014,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidOriginKeepaliveTimeout" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidOriginKeepaliveTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1838,9 +2030,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidOriginReadTimeout" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidOriginReadTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1852,9 +2046,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidProtocolSettings" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidProtocolSettings({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_protocol_settings::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_protocol_settings::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_protocol_settings_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1866,9 +2062,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidQueryStringParameters" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1880,9 +2078,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidRelativePath" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidRelativePath({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_path::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_relative_path::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1894,9 +2094,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidRequiredProtocol" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidRequiredProtocol({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_required_protocol::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_required_protocol::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1908,9 +2110,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidResponseCode" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidResponseCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_response_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_response_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1922,9 +2126,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidTTLOrder" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidTtlOrder({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_ttl_order::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_ttl_order::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1936,9 +2142,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidViewerCertificate" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidViewerCertificate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_viewer_certificate::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_viewer_certificate::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1950,9 +2158,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "InvalidWebACLId" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::InvalidWebAclId({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_web_acl_id::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1964,9 +2174,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "MissingBody" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1978,9 +2190,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "NoSuchCachePolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -1992,9 +2206,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "NoSuchContinuousDeploymentPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2006,9 +2222,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionConfig" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2020,9 +2238,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "NoSuchOrigin" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2034,9 +2254,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "NoSuchOriginRequestPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2048,9 +2270,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "NoSuchRealtimeLogConfig" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchRealtimeLogConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_realtime_log_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_realtime_log_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2062,9 +2286,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "NoSuchResponseHeadersPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::NoSuchResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2076,9 +2302,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "RealtimeLogConfigOwnerMismatch" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2090,9 +2318,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyCacheBehaviors" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyCacheBehaviors({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cache_behaviors::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cache_behaviors::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2104,9 +2334,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyCertificates" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyCertificates({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_certificates::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_certificates::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2118,9 +2350,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyCookieNamesInWhiteList" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyCookieNamesInWhiteList({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2132,9 +2366,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionCNAMEs" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionCnamEs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2146,9 +2382,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributions" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributions({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2160,9 +2398,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToCachePolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2174,9 +2414,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2188,9 +2430,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToKeyGroup" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2202,9 +2446,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToOriginAccessControl" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2216,9 +2462,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2230,9 +2478,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2244,9 +2494,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithFunctionAssociations" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2258,9 +2510,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithLambdaAssociations" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2272,9 +2526,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithSingleFunctionARN" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2286,9 +2542,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyFunctionAssociations" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2300,9 +2558,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyHeadersInForwardedValues" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyHeadersInForwardedValues({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2314,9 +2574,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyKeyGroupsAssociatedToDistribution" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2328,9 +2590,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyLambdaFunctionAssociations" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyLambdaFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2342,9 +2606,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyOriginCustomHeaders" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyOriginCustomHeaders({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2356,9 +2622,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyOriginGroupsPerDistribution" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyOriginGroupsPerDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2370,9 +2638,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyOrigins" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyOrigins({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origins::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origins::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2384,9 +2654,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyQueryStringParameters" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2398,9 +2670,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TooManyTrustedSigners" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TooManyTrustedSigners({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2412,9 +2686,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TrustedKeyGroupDoesNotExist" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TrustedKeyGroupDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2426,9 +2702,11 @@ pub fn parse_create_distribution_error(
             tmp
         })},
         "TrustedSignerDoesNotExist" => crate::error::CreateDistributionError { meta: generic, kind: crate::error::CreateDistributionErrorKind::TrustedSignerDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
                     output.build()
@@ -2496,9 +2774,11 @@ pub fn parse_create_distribution_with_tags_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2510,9 +2790,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "CNAMEAlreadyExists" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::CnameAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2524,9 +2806,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "ContinuousDeploymentPolicyInUse" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::ContinuousDeploymentPolicyInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2538,9 +2822,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "DistributionAlreadyExists" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::DistributionAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::distribution_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::distribution_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2552,9 +2838,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2566,9 +2854,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2580,9 +2870,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2594,9 +2886,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidDefaultRootObject" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidDefaultRootObject({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_default_root_object::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2608,9 +2902,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidDomainNameForOriginAccessControl" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidDomainNameForOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_domain_name_for_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2622,9 +2918,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidErrorCode" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidErrorCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_error_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_error_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2636,9 +2934,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidForwardCookies" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidForwardCookies({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_forward_cookies::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_forward_cookies::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2650,9 +2950,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidFunctionAssociation" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2664,9 +2966,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidGeoRestrictionParameter" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidGeoRestrictionParameter({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2678,9 +2982,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidHeadersForS3Origin" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidHeadersForS3Origin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2692,9 +2998,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidLambdaFunctionAssociation" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidLambdaFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2706,9 +3014,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidLocationCode" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidLocationCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_location_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_location_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2720,9 +3030,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidMinimumProtocolVersion" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidMinimumProtocolVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2734,9 +3046,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidOrigin" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2748,9 +3062,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidOriginAccessControl" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2762,9 +3078,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidOriginAccessIdentity" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2776,9 +3094,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidOriginKeepaliveTimeout" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginKeepaliveTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2790,9 +3110,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidOriginReadTimeout" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginReadTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2804,9 +3126,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidProtocolSettings" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidProtocolSettings({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_protocol_settings::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_protocol_settings::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_protocol_settings_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2818,9 +3142,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidQueryStringParameters" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2832,9 +3158,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidRelativePath" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidRelativePath({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_path::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_relative_path::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2846,9 +3174,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidRequiredProtocol" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidRequiredProtocol({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_required_protocol::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_required_protocol::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2860,9 +3190,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidResponseCode" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidResponseCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_response_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_response_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2874,9 +3206,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidTagging" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidTagging({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_tagging::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_tagging::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_tagging_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2888,9 +3222,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidTTLOrder" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidTtlOrder({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_ttl_order::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_ttl_order::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2902,9 +3238,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidViewerCertificate" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidViewerCertificate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_viewer_certificate::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_viewer_certificate::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2916,9 +3254,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "InvalidWebACLId" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::InvalidWebAclId({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_web_acl_id::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2930,9 +3270,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "MissingBody" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2944,9 +3286,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "NoSuchCachePolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2958,9 +3302,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "NoSuchContinuousDeploymentPolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2972,9 +3318,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionConfig" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -2986,9 +3334,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "NoSuchOrigin" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3000,9 +3350,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "NoSuchOriginRequestPolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3014,9 +3366,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "NoSuchRealtimeLogConfig" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_realtime_log_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_realtime_log_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3028,9 +3382,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "NoSuchResponseHeadersPolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3042,9 +3398,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "RealtimeLogConfigOwnerMismatch" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3056,9 +3414,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyCacheBehaviors" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyCacheBehaviors({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cache_behaviors::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cache_behaviors::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3070,9 +3430,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyCertificates" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyCertificates({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_certificates::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_certificates::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3084,9 +3446,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyCookieNamesInWhiteList" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyCookieNamesInWhiteList({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3098,9 +3462,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionCNAMEs" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionCnamEs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3112,9 +3478,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributions" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributions({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3126,9 +3494,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToCachePolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3140,9 +3510,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3154,9 +3526,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToKeyGroup" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToKeyGroup({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3168,9 +3542,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3182,9 +3558,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3196,9 +3574,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionsWithFunctionAssociations" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3210,9 +3590,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionsWithLambdaAssociations" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithLambdaAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3224,9 +3606,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyDistributionsWithSingleFunctionARN" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithSingleFunctionArn({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3238,9 +3622,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyFunctionAssociations" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3252,9 +3638,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyHeadersInForwardedValues" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyHeadersInForwardedValues({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3266,9 +3654,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyKeyGroupsAssociatedToDistribution" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyKeyGroupsAssociatedToDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3280,9 +3670,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyLambdaFunctionAssociations" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyLambdaFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3294,9 +3686,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyOriginCustomHeaders" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyOriginCustomHeaders({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3308,9 +3702,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyOriginGroupsPerDistribution" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyOriginGroupsPerDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3322,9 +3718,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyOrigins" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyOrigins({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origins::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origins::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3336,9 +3734,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyQueryStringParameters" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3350,9 +3750,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TooManyTrustedSigners" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TooManyTrustedSigners({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3364,9 +3766,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TrustedKeyGroupDoesNotExist" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TrustedKeyGroupDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3378,9 +3782,11 @@ pub fn parse_create_distribution_with_tags_error(
             tmp
         })},
         "TrustedSignerDoesNotExist" => crate::error::CreateDistributionWithTagsError { meta: generic, kind: crate::error::CreateDistributionWithTagsErrorKind::TrustedSignerDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -3440,9 +3846,11 @@ pub fn parse_create_field_level_encryption_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "FieldLevelEncryptionConfigAlreadyExists" => crate::error::CreateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::field_level_encryption_config_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::field_level_encryption_config_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_field_level_encryption_config_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -3454,9 +3862,11 @@ pub fn parse_create_field_level_encryption_config_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -3468,9 +3878,11 @@ pub fn parse_create_field_level_encryption_config_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionConfigErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -3482,9 +3894,11 @@ pub fn parse_create_field_level_encryption_config_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionProfile" => crate::error::CreateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_profile_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -3496,9 +3910,11 @@ pub fn parse_create_field_level_encryption_config_error(
             tmp
         })},
         "QueryArgProfileEmpty" => crate::error::CreateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::query_arg_profile_empty::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::query_arg_profile_empty::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_query_arg_profile_empty_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -3510,9 +3926,11 @@ pub fn parse_create_field_level_encryption_config_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionConfigs" => crate::error::CreateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionConfigs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_configs::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_configs::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_configs_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -3524,9 +3942,11 @@ pub fn parse_create_field_level_encryption_config_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionContentTypeProfiles" => crate::error::CreateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_content_type_profiles::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_content_type_profiles::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_content_type_profiles_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -3538,9 +3958,11 @@ pub fn parse_create_field_level_encryption_config_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionQueryArgProfiles" => crate::error::CreateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_query_arg_profiles::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_query_arg_profiles::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_query_arg_profiles_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -3601,9 +4023,11 @@ pub fn parse_create_field_level_encryption_profile_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "FieldLevelEncryptionProfileAlreadyExists" => crate::error::CreateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::field_level_encryption_profile_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::field_level_encryption_profile_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_field_level_encryption_profile_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -3615,9 +4039,11 @@ pub fn parse_create_field_level_encryption_profile_error(
             tmp
         })},
         "FieldLevelEncryptionProfileSizeExceeded" => crate::error::CreateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::field_level_encryption_profile_size_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::field_level_encryption_profile_size_exceeded::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_field_level_encryption_profile_size_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -3629,9 +4055,11 @@ pub fn parse_create_field_level_encryption_profile_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -3643,9 +4071,11 @@ pub fn parse_create_field_level_encryption_profile_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionProfileErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -3657,9 +4087,11 @@ pub fn parse_create_field_level_encryption_profile_error(
             tmp
         })},
         "NoSuchPublicKey" => crate::error::CreateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_public_key::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_public_key::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_public_key_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -3671,9 +4103,11 @@ pub fn parse_create_field_level_encryption_profile_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionEncryptionEntities" => crate::error::CreateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_encryption_entities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_encryption_entities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_encryption_entities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -3685,9 +4119,11 @@ pub fn parse_create_field_level_encryption_profile_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionFieldPatterns" => crate::error::CreateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_field_patterns::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_field_patterns::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_field_patterns_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -3699,9 +4135,11 @@ pub fn parse_create_field_level_encryption_profile_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionProfiles" => crate::error::CreateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionProfiles({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_profiles::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_profiles::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_profiles_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -4219,9 +4657,11 @@ pub fn parse_create_monitoring_subscription_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CreateMonitoringSubscriptionError { meta: generic, kind: crate::error::CreateMonitoringSubscriptionErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
                     output.build()
@@ -4233,9 +4673,11 @@ pub fn parse_create_monitoring_subscription_error(
             tmp
         })},
         "MonitoringSubscriptionAlreadyExists" => crate::error::CreateMonitoringSubscriptionError { meta: generic, kind: crate::error::CreateMonitoringSubscriptionErrorKind::MonitoringSubscriptionAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::monitoring_subscription_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::monitoring_subscription_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_monitoring_subscription_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
                     output.build()
@@ -4247,9 +4689,11 @@ pub fn parse_create_monitoring_subscription_error(
             tmp
         })},
         "NoSuchDistribution" => crate::error::CreateMonitoringSubscriptionError { meta: generic, kind: crate::error::CreateMonitoringSubscriptionErrorKind::NoSuchDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
                     output.build()
@@ -4261,9 +4705,11 @@ pub fn parse_create_monitoring_subscription_error(
             tmp
         })},
         "UnsupportedOperation" => crate::error::CreateMonitoringSubscriptionError { meta: generic, kind: crate::error::CreateMonitoringSubscriptionErrorKind::UnsupportedOperation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateMonitoringSubscriptionError::unhandled)?;
                     output.build()
@@ -4345,7 +4791,8 @@ pub fn parse_create_origin_access_control_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::origin_access_control_already_exists::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::origin_access_control_already_exists::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_origin_access_control_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginAccessControlError::unhandled)?;
                             output.build()
@@ -4426,9 +4873,11 @@ pub fn parse_create_origin_request_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CreateOriginRequestPolicyError { meta: generic, kind: crate::error::CreateOriginRequestPolicyErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -4440,9 +4889,11 @@ pub fn parse_create_origin_request_policy_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateOriginRequestPolicyError { meta: generic, kind: crate::error::CreateOriginRequestPolicyErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -4454,9 +4905,11 @@ pub fn parse_create_origin_request_policy_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateOriginRequestPolicyError { meta: generic, kind: crate::error::CreateOriginRequestPolicyErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -4468,9 +4921,11 @@ pub fn parse_create_origin_request_policy_error(
             tmp
         })},
         "OriginRequestPolicyAlreadyExists" => crate::error::CreateOriginRequestPolicyError { meta: generic, kind: crate::error::CreateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::origin_request_policy_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::origin_request_policy_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_origin_request_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -4482,9 +4937,11 @@ pub fn parse_create_origin_request_policy_error(
             tmp
         })},
         "TooManyCookiesInOriginRequestPolicy" => crate::error::CreateOriginRequestPolicyError { meta: generic, kind: crate::error::CreateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookies_in_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cookies_in_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cookies_in_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -4496,9 +4953,11 @@ pub fn parse_create_origin_request_policy_error(
             tmp
         })},
         "TooManyHeadersInOriginRequestPolicy" => crate::error::CreateOriginRequestPolicyError { meta: generic, kind: crate::error::CreateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_headers_in_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -4510,9 +4969,11 @@ pub fn parse_create_origin_request_policy_error(
             tmp
         })},
         "TooManyOriginRequestPolicies" => crate::error::CreateOriginRequestPolicyError { meta: generic, kind: crate::error::CreateOriginRequestPolicyErrorKind::TooManyOriginRequestPolicies({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_request_policies::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_request_policies::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_request_policies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -4524,9 +4985,11 @@ pub fn parse_create_origin_request_policy_error(
             tmp
         })},
         "TooManyQueryStringsInOriginRequestPolicy" => crate::error::CreateOriginRequestPolicyError { meta: generic, kind: crate::error::CreateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_strings_in_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_query_strings_in_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_query_strings_in_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -4823,9 +5286,11 @@ pub fn parse_create_response_headers_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -4837,9 +5302,11 @@ pub fn parse_create_response_headers_policy_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -4851,9 +5318,11 @@ pub fn parse_create_response_headers_policy_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -4865,9 +5334,11 @@ pub fn parse_create_response_headers_policy_error(
             tmp
         })},
         "ResponseHeadersPolicyAlreadyExists" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::response_headers_policy_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::response_headers_policy_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_response_headers_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -4879,9 +5350,11 @@ pub fn parse_create_response_headers_policy_error(
             tmp
         })},
         "TooLongCSPInResponseHeadersPolicy" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_long_csp_in_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_long_csp_in_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_long_csp_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -4893,9 +5366,11 @@ pub fn parse_create_response_headers_policy_error(
             tmp
         })},
         "TooManyCustomHeadersInResponseHeadersPolicy" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_custom_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -4907,9 +5382,11 @@ pub fn parse_create_response_headers_policy_error(
             tmp
         })},
         "TooManyRemoveHeadersInResponseHeadersPolicy" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_remove_headers_in_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_remove_headers_in_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_remove_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -4921,9 +5398,11 @@ pub fn parse_create_response_headers_policy_error(
             tmp
         })},
         "TooManyResponseHeadersPolicies" => crate::error::CreateResponseHeadersPolicyError { meta: generic, kind: crate::error::CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_response_headers_policies::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_response_headers_policies::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_response_headers_policies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -4985,9 +5464,11 @@ pub fn parse_create_streaming_distribution_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -4999,9 +5480,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "CNAMEAlreadyExists" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::CnameAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5013,9 +5496,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5027,9 +5512,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5041,9 +5528,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "InvalidOrigin" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::InvalidOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5055,9 +5544,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "InvalidOriginAccessControl" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5069,9 +5560,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "InvalidOriginAccessIdentity" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5083,9 +5576,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "MissingBody" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5097,9 +5592,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "StreamingDistributionAlreadyExists" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::StreamingDistributionAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::streaming_distribution_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::streaming_distribution_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_streaming_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5111,9 +5608,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "TooManyStreamingDistributionCNAMEs" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_streaming_distribution_cnam_es::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_streaming_distribution_cnam_es::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_streaming_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5125,9 +5624,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "TooManyStreamingDistributions" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::TooManyStreamingDistributions({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_streaming_distributions::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_streaming_distributions::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_streaming_distributions_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5139,9 +5640,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "TooManyTrustedSigners" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::TooManyTrustedSigners({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5153,9 +5656,11 @@ pub fn parse_create_streaming_distribution_error(
             tmp
         })},
         "TrustedSignerDoesNotExist" => crate::error::CreateStreamingDistributionError { meta: generic, kind: crate::error::CreateStreamingDistributionErrorKind::TrustedSignerDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -5215,9 +5720,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5229,9 +5736,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "CNAMEAlreadyExists" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::CnameAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5243,9 +5752,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5257,9 +5768,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "InvalidArgument" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5271,9 +5784,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "InvalidOrigin" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5285,9 +5800,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "InvalidOriginAccessControl" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5299,9 +5816,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "InvalidOriginAccessIdentity" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5313,9 +5832,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "InvalidTagging" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidTagging({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_tagging::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_tagging::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_tagging_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5327,9 +5848,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "MissingBody" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5341,9 +5864,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "StreamingDistributionAlreadyExists" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::StreamingDistributionAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::streaming_distribution_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::streaming_distribution_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_streaming_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5355,9 +5880,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "TooManyStreamingDistributionCNAMEs" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributionCnamEs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_streaming_distribution_cnam_es::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_streaming_distribution_cnam_es::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_streaming_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5369,9 +5896,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "TooManyStreamingDistributions" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributions({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_streaming_distributions::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_streaming_distributions::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_streaming_distributions_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5383,9 +5912,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "TooManyTrustedSigners" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyTrustedSigners({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5397,9 +5928,11 @@ pub fn parse_create_streaming_distribution_with_tags_error(
             tmp
         })},
         "TrustedSignerDoesNotExist" => crate::error::CreateStreamingDistributionWithTagsError { meta: generic, kind: crate::error::CreateStreamingDistributionWithTagsErrorKind::TrustedSignerDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)?;
                     output.build()
@@ -5607,9 +6140,11 @@ pub fn parse_delete_cloud_front_origin_access_identity_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::DeleteCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -5621,9 +6156,11 @@ pub fn parse_delete_cloud_front_origin_access_identity_error(
             tmp
         })},
         "CloudFrontOriginAccessIdentityInUse" => crate::error::DeleteCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_front_origin_access_identity_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_front_origin_access_identity_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cloud_front_origin_access_identity_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -5635,9 +6172,11 @@ pub fn parse_delete_cloud_front_origin_access_identity_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::DeleteCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -5649,9 +6188,11 @@ pub fn parse_delete_cloud_front_origin_access_identity_error(
             tmp
         })},
         "NoSuchCloudFrontOriginAccessIdentity" => crate::error::DeleteCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cloud_front_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cloud_front_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cloud_front_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -5663,9 +6204,11 @@ pub fn parse_delete_cloud_front_origin_access_identity_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::DeleteCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -5715,9 +6258,11 @@ pub fn parse_delete_continuous_deployment_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -5729,9 +6274,11 @@ pub fn parse_delete_continuous_deployment_policy_error(
             tmp
         })},
         "ContinuousDeploymentPolicyInUse" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::ContinuousDeploymentPolicyInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -5743,9 +6290,11 @@ pub fn parse_delete_continuous_deployment_policy_error(
             tmp
         })},
         "InvalidArgument" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -5757,9 +6306,11 @@ pub fn parse_delete_continuous_deployment_policy_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -5771,9 +6322,11 @@ pub fn parse_delete_continuous_deployment_policy_error(
             tmp
         })},
         "NoSuchContinuousDeploymentPolicy" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -5785,9 +6338,11 @@ pub fn parse_delete_continuous_deployment_policy_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::DeleteContinuousDeploymentPolicyError { meta: generic, kind: crate::error::DeleteContinuousDeploymentPolicyErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -5965,9 +6520,11 @@ pub fn parse_delete_field_level_encryption_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::DeleteFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionConfigErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -5979,9 +6536,11 @@ pub fn parse_delete_field_level_encryption_config_error(
             tmp
         })},
         "FieldLevelEncryptionConfigInUse" => crate::error::DeleteFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::field_level_encryption_config_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::field_level_encryption_config_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_field_level_encryption_config_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -5993,9 +6552,11 @@ pub fn parse_delete_field_level_encryption_config_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::DeleteFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -6007,9 +6568,11 @@ pub fn parse_delete_field_level_encryption_config_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionConfig" => crate::error::DeleteFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -6021,9 +6584,11 @@ pub fn parse_delete_field_level_encryption_config_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::DeleteFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionConfigErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -6073,9 +6638,11 @@ pub fn parse_delete_field_level_encryption_profile_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::DeleteFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionProfileErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -6087,9 +6654,11 @@ pub fn parse_delete_field_level_encryption_profile_error(
             tmp
         })},
         "FieldLevelEncryptionProfileInUse" => crate::error::DeleteFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::field_level_encryption_profile_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::field_level_encryption_profile_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_field_level_encryption_profile_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -6101,9 +6670,11 @@ pub fn parse_delete_field_level_encryption_profile_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::DeleteFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -6115,9 +6686,11 @@ pub fn parse_delete_field_level_encryption_profile_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionProfile" => crate::error::DeleteFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_profile_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -6129,9 +6702,11 @@ pub fn parse_delete_field_level_encryption_profile_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::DeleteFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::DeleteFieldLevelEncryptionProfileErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -7585,9 +8160,11 @@ pub fn parse_get_cloud_front_origin_access_identity_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::GetCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::GetCloudFrontOriginAccessIdentityErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -7599,9 +8176,11 @@ pub fn parse_get_cloud_front_origin_access_identity_error(
             tmp
         })},
         "NoSuchCloudFrontOriginAccessIdentity" => crate::error::GetCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::GetCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cloud_front_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cloud_front_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cloud_front_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -7660,9 +8239,11 @@ pub fn parse_get_cloud_front_origin_access_identity_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::GetCloudFrontOriginAccessIdentityConfigError { meta: generic, kind: crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFrontOriginAccessIdentityConfigError::unhandled)?;
                     output.build()
@@ -7674,9 +8255,11 @@ pub fn parse_get_cloud_front_origin_access_identity_config_error(
             tmp
         })},
         "NoSuchCloudFrontOriginAccessIdentity" => crate::error::GetCloudFrontOriginAccessIdentityConfigError { meta: generic, kind: crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::NoSuchCloudFrontOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cloud_front_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cloud_front_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cloud_front_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFrontOriginAccessIdentityConfigError::unhandled)?;
                     output.build()
@@ -7735,9 +8318,11 @@ pub fn parse_get_continuous_deployment_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::GetContinuousDeploymentPolicyError { meta: generic, kind: crate::error::GetContinuousDeploymentPolicyErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -7749,9 +8334,11 @@ pub fn parse_get_continuous_deployment_policy_error(
             tmp
         })},
         "NoSuchContinuousDeploymentPolicy" => crate::error::GetContinuousDeploymentPolicyError { meta: generic, kind: crate::error::GetContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -7807,9 +8394,11 @@ pub fn parse_get_continuous_deployment_policy_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::GetContinuousDeploymentPolicyConfigError { meta: generic, kind: crate::error::GetContinuousDeploymentPolicyConfigErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContinuousDeploymentPolicyConfigError::unhandled)?;
                     output.build()
@@ -7821,9 +8410,11 @@ pub fn parse_get_continuous_deployment_policy_config_error(
             tmp
         })},
         "NoSuchContinuousDeploymentPolicy" => crate::error::GetContinuousDeploymentPolicyConfigError { meta: generic, kind: crate::error::GetContinuousDeploymentPolicyConfigErrorKind::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContinuousDeploymentPolicyConfigError::unhandled)?;
                     output.build()
@@ -8135,9 +8726,11 @@ pub fn parse_get_field_level_encryption_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::GetFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::GetFieldLevelEncryptionConfigErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -8149,9 +8742,11 @@ pub fn parse_get_field_level_encryption_config_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionConfig" => crate::error::GetFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::GetFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -8206,9 +8801,11 @@ pub fn parse_get_field_level_encryption_profile_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::GetFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::GetFieldLevelEncryptionProfileErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -8220,9 +8817,11 @@ pub fn parse_get_field_level_encryption_profile_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionProfile" => crate::error::GetFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::GetFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_profile_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -8279,9 +8878,11 @@ pub fn parse_get_field_level_encryption_profile_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::GetFieldLevelEncryptionProfileConfigError { meta: generic, kind: crate::error::GetFieldLevelEncryptionProfileConfigErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFieldLevelEncryptionProfileConfigError::unhandled)?;
                     output.build()
@@ -8293,9 +8894,11 @@ pub fn parse_get_field_level_encryption_profile_config_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionProfile" => crate::error::GetFieldLevelEncryptionProfileConfigError { meta: generic, kind: crate::error::GetFieldLevelEncryptionProfileConfigErrorKind::NoSuchFieldLevelEncryptionProfile({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_profile_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFieldLevelEncryptionProfileConfigError::unhandled)?;
                     output.build()
@@ -9963,9 +10566,11 @@ pub fn parse_list_continuous_deployment_policies_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::ListContinuousDeploymentPoliciesError { meta: generic, kind: crate::error::ListContinuousDeploymentPoliciesErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::ListContinuousDeploymentPoliciesError::unhandled)?;
                     output.build()
@@ -9977,9 +10582,11 @@ pub fn parse_list_continuous_deployment_policies_error(
             tmp
         })},
         "InvalidArgument" => crate::error::ListContinuousDeploymentPoliciesError { meta: generic, kind: crate::error::ListContinuousDeploymentPoliciesErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::ListContinuousDeploymentPoliciesError::unhandled)?;
                     output.build()
@@ -9991,9 +10598,11 @@ pub fn parse_list_continuous_deployment_policies_error(
             tmp
         })},
         "NoSuchContinuousDeploymentPolicy" => crate::error::ListContinuousDeploymentPoliciesError { meta: generic, kind: crate::error::ListContinuousDeploymentPoliciesErrorKind::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListContinuousDeploymentPoliciesError::unhandled)?;
                     output.build()
@@ -10293,9 +10902,11 @@ pub fn parse_list_distributions_by_origin_request_policy_id_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::ListDistributionsByOriginRequestPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByOriginRequestPolicyIdError::unhandled)?;
                     output.build()
@@ -10307,9 +10918,11 @@ pub fn parse_list_distributions_by_origin_request_policy_id_error(
             tmp
         })},
         "InvalidArgument" => crate::error::ListDistributionsByOriginRequestPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByOriginRequestPolicyIdError::unhandled)?;
                     output.build()
@@ -10321,9 +10934,11 @@ pub fn parse_list_distributions_by_origin_request_policy_id_error(
             tmp
         })},
         "NoSuchOriginRequestPolicy" => crate::error::ListDistributionsByOriginRequestPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::NoSuchOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByOriginRequestPolicyIdError::unhandled)?;
                     output.build()
@@ -10441,9 +11056,11 @@ pub fn parse_list_distributions_by_response_headers_policy_id_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::ListDistributionsByResponseHeadersPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled)?;
                     output.build()
@@ -10455,9 +11072,11 @@ pub fn parse_list_distributions_by_response_headers_policy_id_error(
             tmp
         })},
         "InvalidArgument" => crate::error::ListDistributionsByResponseHeadersPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled)?;
                     output.build()
@@ -10469,9 +11088,11 @@ pub fn parse_list_distributions_by_response_headers_policy_id_error(
             tmp
         })},
         "NoSuchResponseHeadersPolicy" => crate::error::ListDistributionsByResponseHeadersPolicyIdError { meta: generic, kind: crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByResponseHeadersPolicyIdError::unhandled)?;
                     output.build()
@@ -10494,7 +11115,8 @@ pub fn parse_list_distributions_by_response_headers_policy_id_response(
     crate::error::ListDistributionsByResponseHeadersPolicyIdError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::list_distributions_by_response_headers_policy_id_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_distributions_by_response_headers_policy_id_output::Builder::default();
         let _ = response;
         output = output.set_distribution_id_list(
             crate::http_serde::deser_payload_list_distributions_by_response_headers_policy_id_list_distributions_by_response_headers_policy_id_output_distribution_id_list(response.body().as_ref())?
@@ -12301,9 +12923,11 @@ pub fn parse_update_cloud_front_origin_access_identity_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -12315,9 +12939,11 @@ pub fn parse_update_cloud_front_origin_access_identity_error(
             tmp
         })},
         "IllegalUpdate" => crate::error::UpdateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::IllegalUpdate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -12329,9 +12955,11 @@ pub fn parse_update_cloud_front_origin_access_identity_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -12343,9 +12971,11 @@ pub fn parse_update_cloud_front_origin_access_identity_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -12357,9 +12987,11 @@ pub fn parse_update_cloud_front_origin_access_identity_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -12371,9 +13003,11 @@ pub fn parse_update_cloud_front_origin_access_identity_error(
             tmp
         })},
         "MissingBody" => crate::error::UpdateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -12385,9 +13019,11 @@ pub fn parse_update_cloud_front_origin_access_identity_error(
             tmp
         })},
         "NoSuchCloudFrontOriginAccessIdentity" => crate::error::UpdateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cloud_front_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cloud_front_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cloud_front_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -12399,9 +13035,11 @@ pub fn parse_update_cloud_front_origin_access_identity_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateCloudFrontOriginAccessIdentityError { meta: generic, kind: crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCloudFrontOriginAccessIdentityError::unhandled)?;
                     output.build()
@@ -12458,9 +13096,11 @@ pub fn parse_update_continuous_deployment_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -12472,9 +13112,11 @@ pub fn parse_update_continuous_deployment_policy_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -12486,9 +13128,11 @@ pub fn parse_update_continuous_deployment_policy_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -12500,9 +13144,11 @@ pub fn parse_update_continuous_deployment_policy_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -12514,9 +13160,11 @@ pub fn parse_update_continuous_deployment_policy_error(
             tmp
         })},
         "NoSuchContinuousDeploymentPolicy" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -12528,9 +13176,11 @@ pub fn parse_update_continuous_deployment_policy_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -12542,9 +13192,11 @@ pub fn parse_update_continuous_deployment_policy_error(
             tmp
         })},
         "StagingDistributionInUse" => crate::error::UpdateContinuousDeploymentPolicyError { meta: generic, kind: crate::error::UpdateContinuousDeploymentPolicyErrorKind::StagingDistributionInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::staging_distribution_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::staging_distribution_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_staging_distribution_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)?;
                     output.build()
@@ -12599,9 +13251,11 @@ pub fn parse_update_distribution_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12613,9 +13267,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "CNAMEAlreadyExists" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::CnameAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12627,9 +13283,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "ContinuousDeploymentPolicyInUse" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::ContinuousDeploymentPolicyInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12641,9 +13299,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12655,9 +13315,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "IllegalOriginAccessConfiguration" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::IllegalOriginAccessConfiguration({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_origin_access_configuration::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_origin_access_configuration::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_origin_access_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12669,9 +13331,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "IllegalUpdate" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::IllegalUpdate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12683,9 +13347,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12697,9 +13363,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12711,9 +13379,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidDefaultRootObject" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidDefaultRootObject({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_default_root_object::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12725,9 +13395,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidDomainNameForOriginAccessControl" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidDomainNameForOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_domain_name_for_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12739,9 +13411,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidErrorCode" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidErrorCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_error_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_error_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12753,9 +13427,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidForwardCookies" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidForwardCookies({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_forward_cookies::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_forward_cookies::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12767,9 +13443,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidFunctionAssociation" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12781,9 +13459,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidGeoRestrictionParameter" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidGeoRestrictionParameter({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12795,9 +13475,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidHeadersForS3Origin" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidHeadersForS3Origin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12809,9 +13491,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12823,9 +13507,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidLambdaFunctionAssociation" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidLambdaFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12837,9 +13523,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidLocationCode" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidLocationCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_location_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_location_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12851,9 +13539,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidMinimumProtocolVersion" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidMinimumProtocolVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12865,9 +13555,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidOriginAccessControl" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12879,9 +13571,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidOriginAccessIdentity" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12893,9 +13587,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidOriginKeepaliveTimeout" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidOriginKeepaliveTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12907,9 +13603,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidOriginReadTimeout" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidOriginReadTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12921,9 +13619,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidQueryStringParameters" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12935,9 +13635,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidRelativePath" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidRelativePath({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_path::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_relative_path::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12949,9 +13651,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidRequiredProtocol" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidRequiredProtocol({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_required_protocol::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_required_protocol::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12963,9 +13667,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidResponseCode" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidResponseCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_response_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_response_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12977,9 +13683,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidTTLOrder" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidTtlOrder({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_ttl_order::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_ttl_order::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -12991,9 +13699,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidViewerCertificate" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidViewerCertificate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_viewer_certificate::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_viewer_certificate::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13005,9 +13715,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "InvalidWebACLId" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::InvalidWebAclId({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_web_acl_id::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13019,9 +13731,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "MissingBody" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13033,9 +13747,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "NoSuchCachePolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13047,9 +13763,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "NoSuchContinuousDeploymentPolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13061,9 +13779,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "NoSuchDistribution" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13075,9 +13795,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionConfig" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13089,9 +13811,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "NoSuchOrigin" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13103,9 +13827,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "NoSuchOriginRequestPolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13117,9 +13843,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "NoSuchRealtimeLogConfig" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchRealtimeLogConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_realtime_log_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_realtime_log_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13131,9 +13859,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "NoSuchResponseHeadersPolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13145,9 +13875,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13159,9 +13891,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "RealtimeLogConfigOwnerMismatch" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13173,9 +13907,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "StagingDistributionInUse" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::StagingDistributionInUse({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::staging_distribution_in_use::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::staging_distribution_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_staging_distribution_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13187,9 +13923,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyCacheBehaviors" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyCacheBehaviors({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cache_behaviors::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cache_behaviors::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13201,9 +13939,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyCertificates" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyCertificates({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_certificates::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_certificates::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13215,9 +13955,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyCookieNamesInWhiteList" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyCookieNamesInWhiteList({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13229,9 +13971,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionCNAMEs" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionCnamEs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13243,9 +13987,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToCachePolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13257,9 +14003,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13271,9 +14019,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToKeyGroup" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13285,9 +14035,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13299,9 +14051,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13313,9 +14067,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithFunctionAssociations" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13327,9 +14083,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithLambdaAssociations" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13341,9 +14099,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyDistributionsWithSingleFunctionARN" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13355,9 +14115,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyFunctionAssociations" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13369,9 +14131,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyHeadersInForwardedValues" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyHeadersInForwardedValues({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13383,9 +14147,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyKeyGroupsAssociatedToDistribution" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13397,9 +14163,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyLambdaFunctionAssociations" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyLambdaFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13411,9 +14179,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyOriginCustomHeaders" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyOriginCustomHeaders({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13425,9 +14195,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyOriginGroupsPerDistribution" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyOriginGroupsPerDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13439,9 +14211,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyOrigins" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyOrigins({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origins::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origins::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13453,9 +14227,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyQueryStringParameters" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13467,9 +14243,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TooManyTrustedSigners" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TooManyTrustedSigners({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13481,9 +14259,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TrustedKeyGroupDoesNotExist" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TrustedKeyGroupDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13495,9 +14275,11 @@ pub fn parse_update_distribution_error(
             tmp
         })},
         "TrustedSignerDoesNotExist" => crate::error::UpdateDistributionError { meta: generic, kind: crate::error::UpdateDistributionErrorKind::TrustedSignerDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionError::unhandled)?;
                     output.build()
@@ -13559,9 +14341,11 @@ pub fn parse_update_distribution_with_staging_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13573,9 +14357,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "CNAMEAlreadyExists" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::CnameAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13587,9 +14373,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13601,9 +14389,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "IllegalUpdate" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::IllegalUpdate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13615,9 +14405,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13629,9 +14421,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13643,9 +14437,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidDefaultRootObject" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidDefaultRootObject({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_default_root_object::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_default_root_object::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13657,9 +14453,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidErrorCode" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidErrorCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_error_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_error_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13671,9 +14469,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidForwardCookies" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidForwardCookies({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_forward_cookies::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_forward_cookies::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13685,9 +14485,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidFunctionAssociation" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13699,9 +14501,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidGeoRestrictionParameter" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidGeoRestrictionParameter({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13713,9 +14517,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidHeadersForS3Origin" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidHeadersForS3Origin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13727,9 +14533,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13741,9 +14549,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidLambdaFunctionAssociation" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidLambdaFunctionAssociation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_function_association::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_lambda_function_association::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13755,9 +14565,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidLocationCode" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidLocationCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_location_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_location_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13769,9 +14581,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidMinimumProtocolVersion" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidMinimumProtocolVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13783,9 +14597,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidOriginAccessControl" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13797,9 +14613,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidOriginAccessIdentity" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13811,9 +14629,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidOriginKeepaliveTimeout" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginKeepaliveTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13825,9 +14645,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidOriginReadTimeout" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidOriginReadTimeout({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13839,9 +14661,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidQueryStringParameters" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13853,9 +14677,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidRelativePath" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidRelativePath({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_path::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_relative_path::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13867,9 +14693,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidRequiredProtocol" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidRequiredProtocol({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_required_protocol::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_required_protocol::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13881,9 +14709,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidResponseCode" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidResponseCode({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_response_code::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_response_code::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13895,9 +14725,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidTTLOrder" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidTtlOrder({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_ttl_order::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_ttl_order::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13909,9 +14741,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidViewerCertificate" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidViewerCertificate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_viewer_certificate::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_viewer_certificate::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13923,9 +14757,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "InvalidWebACLId" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::InvalidWebAclId({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_web_acl_id::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13937,9 +14773,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "MissingBody" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13951,9 +14789,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "NoSuchCachePolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13965,9 +14805,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "NoSuchDistribution" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13979,9 +14821,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionConfig" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -13993,9 +14837,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "NoSuchOrigin" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchOrigin({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14007,9 +14853,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "NoSuchOriginRequestPolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14021,9 +14869,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "NoSuchRealtimeLogConfig" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchRealtimeLogConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_realtime_log_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_realtime_log_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14035,9 +14885,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "NoSuchResponseHeadersPolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::NoSuchResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14049,9 +14901,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14063,9 +14917,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "RealtimeLogConfigOwnerMismatch" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::RealtimeLogConfigOwnerMismatch({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14077,9 +14933,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyCacheBehaviors" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCacheBehaviors({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cache_behaviors::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cache_behaviors::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14091,9 +14949,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyCertificates" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCertificates({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_certificates::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_certificates::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14105,9 +14965,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyCookieNamesInWhiteList" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyCookieNamesInWhiteList({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14119,9 +14981,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionCNAMEs" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionCnamEs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14133,9 +14997,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToCachePolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToCachePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14147,9 +15013,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14161,9 +15029,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToKeyGroup" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToKeyGroup({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14175,9 +15045,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14189,9 +15061,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14203,9 +15077,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionsWithFunctionAssociations" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14217,9 +15093,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionsWithLambdaAssociations" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithLambdaAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14231,9 +15109,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyDistributionsWithSingleFunctionARN" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyDistributionsWithSingleFunctionArn({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14245,9 +15125,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyFunctionAssociations" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14259,9 +15141,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyHeadersInForwardedValues" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyHeadersInForwardedValues({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14273,9 +15157,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyKeyGroupsAssociatedToDistribution" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyKeyGroupsAssociatedToDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14287,9 +15173,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyLambdaFunctionAssociations" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyLambdaFunctionAssociations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14301,9 +15189,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyOriginCustomHeaders" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOriginCustomHeaders({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14315,9 +15205,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyOriginGroupsPerDistribution" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOriginGroupsPerDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14329,9 +15221,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyOrigins" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyOrigins({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_origins::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_origins::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14343,9 +15237,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyQueryStringParameters" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyQueryStringParameters({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_string_parameters::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_query_string_parameters::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14357,9 +15253,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TooManyTrustedSigners" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TooManyTrustedSigners({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14371,9 +15269,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TrustedKeyGroupDoesNotExist" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TrustedKeyGroupDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14385,9 +15285,11 @@ pub fn parse_update_distribution_with_staging_config_error(
             tmp
         })},
         "TrustedSignerDoesNotExist" => crate::error::UpdateDistributionWithStagingConfigError { meta: generic, kind: crate::error::UpdateDistributionWithStagingConfigErrorKind::TrustedSignerDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDistributionWithStagingConfigError::unhandled)?;
                     output.build()
@@ -14444,9 +15346,11 @@ pub fn parse_update_field_level_encryption_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14458,9 +15362,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "IllegalUpdate" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::IllegalUpdate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14472,9 +15378,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14486,9 +15394,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14500,9 +15410,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14514,9 +15426,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionConfig" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14528,9 +15442,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionProfile" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_profile_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14542,9 +15458,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14556,9 +15474,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "QueryArgProfileEmpty" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::query_arg_profile_empty::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::query_arg_profile_empty::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_query_arg_profile_empty_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14570,9 +15490,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionContentTypeProfiles" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_content_type_profiles::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_content_type_profiles::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_content_type_profiles_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14584,9 +15506,11 @@ pub fn parse_update_field_level_encryption_config_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionQueryArgProfiles" => crate::error::UpdateFieldLevelEncryptionConfigError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_query_arg_profiles::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_query_arg_profiles::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_query_arg_profiles_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionConfigError::unhandled)?;
                     output.build()
@@ -14643,9 +15567,11 @@ pub fn parse_update_field_level_encryption_profile_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14657,9 +15583,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "FieldLevelEncryptionProfileAlreadyExists" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::field_level_encryption_profile_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::field_level_encryption_profile_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_field_level_encryption_profile_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14671,9 +15599,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "FieldLevelEncryptionProfileSizeExceeded" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::field_level_encryption_profile_size_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::field_level_encryption_profile_size_exceeded::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_field_level_encryption_profile_size_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14685,9 +15615,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "IllegalUpdate" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::IllegalUpdate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14699,9 +15631,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14713,9 +15647,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14727,9 +15663,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14741,9 +15679,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "NoSuchFieldLevelEncryptionProfile" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_field_level_encryption_profile_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14755,9 +15695,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "NoSuchPublicKey" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_public_key::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_public_key::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_public_key_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14769,9 +15711,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14783,9 +15727,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionEncryptionEntities" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_encryption_entities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_encryption_entities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_encryption_entities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -14797,9 +15743,11 @@ pub fn parse_update_field_level_encryption_profile_error(
             tmp
         })},
         "TooManyFieldLevelEncryptionFieldPatterns" => crate::error::UpdateFieldLevelEncryptionProfileError { meta: generic, kind: crate::error::UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_field_level_encryption_field_patterns::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_field_level_encryption_field_patterns::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_field_level_encryption_field_patterns_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateFieldLevelEncryptionProfileError::unhandled)?;
                     output.build()
@@ -15273,7 +16221,8 @@ pub fn parse_update_origin_access_control_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::origin_access_control_already_exists::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::origin_access_control_already_exists::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_origin_access_control_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginAccessControlError::unhandled)?;
                             output.build()
@@ -15351,9 +16300,11 @@ pub fn parse_update_origin_request_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15365,9 +16316,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "IllegalUpdate" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::IllegalUpdate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15379,9 +16332,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15393,9 +16348,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15407,9 +16364,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15421,9 +16380,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "NoSuchOriginRequestPolicy" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15435,9 +16396,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "OriginRequestPolicyAlreadyExists" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::origin_request_policy_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::origin_request_policy_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_origin_request_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15449,9 +16412,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15463,9 +16428,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "TooManyCookiesInOriginRequestPolicy" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_cookies_in_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_cookies_in_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_cookies_in_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15477,9 +16444,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "TooManyHeadersInOriginRequestPolicy" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_headers_in_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_headers_in_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_headers_in_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15491,9 +16460,11 @@ pub fn parse_update_origin_request_policy_error(
             tmp
         })},
         "TooManyQueryStringsInOriginRequestPolicy" => crate::error::UpdateOriginRequestPolicyError { meta: generic, kind: crate::error::UpdateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_query_strings_in_origin_request_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_query_strings_in_origin_request_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_query_strings_in_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)?;
                     output.build()
@@ -15836,9 +16807,11 @@ pub fn parse_update_response_headers_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15850,9 +16823,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "IllegalUpdate" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::IllegalUpdate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15864,9 +16839,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15878,9 +16855,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15892,9 +16871,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15906,9 +16887,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "NoSuchResponseHeadersPolicy" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15920,9 +16903,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15934,9 +16919,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "ResponseHeadersPolicyAlreadyExists" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::response_headers_policy_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::response_headers_policy_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_response_headers_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15948,9 +16935,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "TooLongCSPInResponseHeadersPolicy" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_long_csp_in_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_long_csp_in_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_long_csp_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15962,9 +16951,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "TooManyCustomHeadersInResponseHeadersPolicy" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_custom_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -15976,9 +16967,11 @@ pub fn parse_update_response_headers_policy_error(
             tmp
         })},
         "TooManyRemoveHeadersInResponseHeadersPolicy" => crate::error::UpdateResponseHeadersPolicyError { meta: generic, kind: crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyRemoveHeadersInResponseHeadersPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_remove_headers_in_response_headers_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_remove_headers_in_response_headers_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_remove_headers_in_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateResponseHeadersPolicyError::unhandled)?;
                     output.build()
@@ -16036,9 +17029,11 @@ pub fn parse_update_streaming_distribution_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::AccessDenied({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16050,9 +17045,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "CNAMEAlreadyExists" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::CnameAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cname_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cname_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16064,9 +17061,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "IllegalUpdate" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::IllegalUpdate({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::illegal_update::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::illegal_update::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_illegal_update_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16078,9 +17077,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "InconsistentQuantities" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::InconsistentQuantities({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inconsistent_quantities::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16092,9 +17093,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "InvalidArgument" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::InvalidArgument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16106,9 +17109,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "InvalidIfMatchVersion" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::InvalidIfMatchVersion({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_if_match_version::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_if_match_version::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_if_match_version_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16120,9 +17125,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "InvalidOriginAccessControl" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessControl({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16134,9 +17141,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "InvalidOriginAccessIdentity" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessIdentity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16148,9 +17157,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "MissingBody" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::MissingBody({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_body::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_body::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16162,9 +17173,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "NoSuchStreamingDistribution" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::NoSuchStreamingDistribution({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_streaming_distribution::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_streaming_distribution::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_streaming_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16176,9 +17189,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "PreconditionFailed" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::PreconditionFailed({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_precondition_failed_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16190,9 +17205,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "TooManyStreamingDistributionCNAMEs" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_streaming_distribution_cnam_es::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_streaming_distribution_cnam_es::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_streaming_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16204,9 +17221,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "TooManyTrustedSigners" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::TooManyTrustedSigners({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()
@@ -16218,9 +17237,11 @@ pub fn parse_update_streaming_distribution_error(
             tmp
         })},
         "TrustedSignerDoesNotExist" => crate::error::UpdateStreamingDistributionError { meta: generic, kind: crate::error::UpdateStreamingDistributionErrorKind::TrustedSignerDoesNotExist({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamingDistributionError::unhandled)?;
                     output.build()

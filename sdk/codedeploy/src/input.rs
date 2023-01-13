@@ -133,7 +133,8 @@ impl AddTagsToOnPremisesInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_add_tags_to_on_premises_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -320,7 +321,8 @@ impl BatchGetApplicationRevisionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_get_application_revisions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -872,7 +874,8 @@ impl BatchGetDeploymentInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_get_deployment_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1427,7 +1430,8 @@ impl BatchGetOnPremisesInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_get_on_premises_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3729,7 +3733,8 @@ impl DeleteResourcesByExternalIdInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_resources_by_external_id(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3895,7 +3900,8 @@ impl DeregisterOnPremisesInstanceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_deregister_on_premises_instance(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6980,7 +6986,8 @@ impl ListGitHubAccountTokenNamesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_git_hub_account_token_names(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7567,7 +7574,8 @@ impl PutLifecycleEventHookExecutionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_lifecycle_event_hook_execution_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7760,7 +7768,8 @@ impl RegisterApplicationRevisionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_register_application_revision(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7953,7 +7962,8 @@ impl RegisterOnPremisesInstanceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_register_on_premises_instance(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8146,7 +8156,8 @@ impl RemoveTagsFromOnPremisesInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_on_premises_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8312,7 +8323,8 @@ impl SkipWaitTimeForInstanceTerminationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_skip_wait_time_for_instance_termination(&self)?
         );
         if let Some(content_length) = body.content_length() {

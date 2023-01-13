@@ -1355,9 +1355,11 @@ pub fn parse_describe_organization_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::DescribeOrganizationConfigurationError { meta: generic, kind: crate::error::DescribeOrganizationConfigurationErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationConfigurationError::unhandled)?;
                     output.build()
@@ -1369,9 +1371,11 @@ pub fn parse_describe_organization_configuration_error(
             tmp
         })},
         "InternalServerErrorException" => crate::error::DescribeOrganizationConfigurationError { meta: generic, kind: crate::error::DescribeOrganizationConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationConfigurationError::unhandled)?;
                     output.build()
@@ -1584,9 +1588,11 @@ pub fn parse_disassociate_from_administrator_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::DisassociateFromAdministratorAccountError { meta: generic, kind: crate::error::DisassociateFromAdministratorAccountErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFromAdministratorAccountError::unhandled)?;
                     output.build()
@@ -1598,9 +1604,11 @@ pub fn parse_disassociate_from_administrator_account_error(
             tmp
         })},
         "InternalServerErrorException" => crate::error::DisassociateFromAdministratorAccountError { meta: generic, kind: crate::error::DisassociateFromAdministratorAccountErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFromAdministratorAccountError::unhandled)?;
                     output.build()

@@ -1234,9 +1234,11 @@ pub fn parse_create_predictor_backtest_export_job_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInputException" => crate::error::CreatePredictorBacktestExportJobError { meta: generic, kind: crate::error::CreatePredictorBacktestExportJobErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePredictorBacktestExportJobError::unhandled)?;
                     output.build()
@@ -1248,9 +1250,11 @@ pub fn parse_create_predictor_backtest_export_job_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreatePredictorBacktestExportJobError { meta: generic, kind: crate::error::CreatePredictorBacktestExportJobErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePredictorBacktestExportJobError::unhandled)?;
                     output.build()
@@ -1262,9 +1266,11 @@ pub fn parse_create_predictor_backtest_export_job_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::CreatePredictorBacktestExportJobError { meta: generic, kind: crate::error::CreatePredictorBacktestExportJobErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePredictorBacktestExportJobError::unhandled)?;
                     output.build()
@@ -1276,9 +1282,11 @@ pub fn parse_create_predictor_backtest_export_job_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::CreatePredictorBacktestExportJobError { meta: generic, kind: crate::error::CreatePredictorBacktestExportJobErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePredictorBacktestExportJobError::unhandled)?;
                     output.build()
@@ -1290,9 +1298,11 @@ pub fn parse_create_predictor_backtest_export_job_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreatePredictorBacktestExportJobError { meta: generic, kind: crate::error::CreatePredictorBacktestExportJobErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePredictorBacktestExportJobError::unhandled)?;
                     output.build()

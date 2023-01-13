@@ -128,7 +128,8 @@ impl AssociateDelegateToResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_delegate_to_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1113,7 +1114,8 @@ impl CreateAvailabilityConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_availability_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1927,7 +1929,8 @@ impl CreateMobileDeviceAccessRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_mobile_device_access_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3111,7 +3114,8 @@ impl DeleteAvailabilityConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_availability_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3277,7 +3281,8 @@ impl DeleteEmailMonitoringConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_email_monitoring_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4031,7 +4036,8 @@ impl DeleteMobileDeviceAccessOverrideInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_mobile_device_access_override(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4215,7 +4221,8 @@ impl DeleteMobileDeviceAccessRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_mobile_device_access_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5472,7 +5479,8 @@ impl DescribeEmailMonitoringConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_email_monitoring_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5815,7 +5823,8 @@ impl DescribeInboundDmarcSettingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_inbound_dmarc_settings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6709,7 +6718,8 @@ impl DisassociateDelegateFromResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_delegate_from_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6899,7 +6909,8 @@ impl DisassociateMemberFromGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_member_from_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7675,7 +7686,8 @@ impl GetImpersonationRoleEffectInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_impersonation_role_effect(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8251,7 +8263,8 @@ impl GetMobileDeviceAccessEffectInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_mobile_device_access_effect(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8451,7 +8464,8 @@ impl GetMobileDeviceAccessOverrideInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_mobile_device_access_override(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9011,7 +9025,8 @@ impl ListAvailabilityConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_availability_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10407,7 +10422,8 @@ impl ListMobileDeviceAccessOverridesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_mobile_device_access_overrides(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10573,7 +10589,8 @@ impl ListMobileDeviceAccessRulesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_mobile_device_access_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12066,7 +12083,8 @@ impl PutEmailMonitoringConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_email_monitoring_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12689,7 +12707,8 @@ impl PutMobileDeviceAccessOverrideInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_mobile_device_access_override(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14158,7 +14177,8 @@ impl TestAvailabilityConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_test_availability_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14549,7 +14569,8 @@ impl UpdateAvailabilityConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_availability_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15561,7 +15582,8 @@ impl UpdateMobileDeviceAccessRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_mobile_device_access_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {

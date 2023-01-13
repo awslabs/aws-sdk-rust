@@ -9994,9 +9994,11 @@ pub fn parse_get_journey_execution_activity_metrics_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::GetJourneyExecutionActivityMetricsError { meta: generic, kind: crate::error::GetJourneyExecutionActivityMetricsErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)?;
                     output.build()
@@ -10008,9 +10010,11 @@ pub fn parse_get_journey_execution_activity_metrics_error(
             tmp
         })},
         "ForbiddenException" => crate::error::GetJourneyExecutionActivityMetricsError { meta: generic, kind: crate::error::GetJourneyExecutionActivityMetricsErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)?;
                     output.build()
@@ -10022,9 +10026,11 @@ pub fn parse_get_journey_execution_activity_metrics_error(
             tmp
         })},
         "InternalServerErrorException" => crate::error::GetJourneyExecutionActivityMetricsError { meta: generic, kind: crate::error::GetJourneyExecutionActivityMetricsErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)?;
                     output.build()
@@ -10036,9 +10042,11 @@ pub fn parse_get_journey_execution_activity_metrics_error(
             tmp
         })},
         "MethodNotAllowedException" => crate::error::GetJourneyExecutionActivityMetricsError { meta: generic, kind: crate::error::GetJourneyExecutionActivityMetricsErrorKind::MethodNotAllowedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)?;
                     output.build()
@@ -10050,9 +10058,11 @@ pub fn parse_get_journey_execution_activity_metrics_error(
             tmp
         })},
         "NotFoundException" => crate::error::GetJourneyExecutionActivityMetricsError { meta: generic, kind: crate::error::GetJourneyExecutionActivityMetricsErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)?;
                     output.build()
@@ -10064,9 +10074,11 @@ pub fn parse_get_journey_execution_activity_metrics_error(
             tmp
         })},
         "PayloadTooLargeException" => crate::error::GetJourneyExecutionActivityMetricsError { meta: generic, kind: crate::error::GetJourneyExecutionActivityMetricsErrorKind::PayloadTooLargeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::payload_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)?;
                     output.build()
@@ -10078,9 +10090,11 @@ pub fn parse_get_journey_execution_activity_metrics_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::GetJourneyExecutionActivityMetricsError { meta: generic, kind: crate::error::GetJourneyExecutionActivityMetricsErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetJourneyExecutionActivityMetricsError::unhandled)?;
                     output.build()

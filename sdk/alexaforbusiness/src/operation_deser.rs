@@ -152,9 +152,11 @@ pub fn parse_associate_device_with_network_profile_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::AssociateDeviceWithNetworkProfileError { meta: generic, kind: crate::error::AssociateDeviceWithNetworkProfileErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateDeviceWithNetworkProfileError::unhandled)?;
                     output.build()
@@ -166,9 +168,11 @@ pub fn parse_associate_device_with_network_profile_error(
             tmp
         })},
         "DeviceNotRegisteredException" => crate::error::AssociateDeviceWithNetworkProfileError { meta: generic, kind: crate::error::AssociateDeviceWithNetworkProfileErrorKind::DeviceNotRegisteredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::device_not_registered_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::device_not_registered_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_device_not_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateDeviceWithNetworkProfileError::unhandled)?;
                     output.build()
@@ -180,9 +184,11 @@ pub fn parse_associate_device_with_network_profile_error(
             tmp
         })},
         "NotFoundException" => crate::error::AssociateDeviceWithNetworkProfileError { meta: generic, kind: crate::error::AssociateDeviceWithNetworkProfileErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateDeviceWithNetworkProfileError::unhandled)?;
                     output.build()
@@ -951,7 +957,8 @@ pub fn parse_create_network_profile_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_service_linked_role_state_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_service_linked_role_state_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_service_linked_role_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNetworkProfileError::unhandled)?;
                             output.build()
@@ -2422,9 +2429,11 @@ pub fn parse_disassociate_skill_from_skill_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::DisassociateSkillFromSkillGroupError { meta: generic, kind: crate::error::DisassociateSkillFromSkillGroupErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateSkillFromSkillGroupError::unhandled)?;
                     output.build()
@@ -2436,9 +2445,11 @@ pub fn parse_disassociate_skill_from_skill_group_error(
             tmp
         })},
         "NotFoundException" => crate::error::DisassociateSkillFromSkillGroupError { meta: generic, kind: crate::error::DisassociateSkillFromSkillGroupErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateSkillFromSkillGroupError::unhandled)?;
                     output.build()
@@ -2563,9 +2574,11 @@ pub fn parse_disassociate_skill_group_from_room_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::DisassociateSkillGroupFromRoomError { meta: generic, kind: crate::error::DisassociateSkillGroupFromRoomErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateSkillGroupFromRoomError::unhandled)?;
                     output.build()
@@ -3106,7 +3119,8 @@ pub fn parse_get_network_profile_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_secrets_manager_resource_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_secrets_manager_resource_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_secrets_manager_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNetworkProfileError::unhandled)?;
                         output.build()
@@ -5409,7 +5423,8 @@ pub fn parse_update_network_profile_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_secrets_manager_resource_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_secrets_manager_resource_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_secrets_manager_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNetworkProfileError::unhandled)?;
                             output.build()

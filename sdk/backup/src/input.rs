@@ -11583,7 +11583,8 @@ impl PutBackupVaultAccessPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_access_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11818,7 +11819,8 @@ impl PutBackupVaultLockConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_lock_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12060,7 +12062,8 @@ impl PutBackupVaultNotificationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_notifications(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14555,7 +14558,8 @@ impl UpdateRecoveryPointLifecycleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_recovery_point_lifecycle(&self)?
         );
         if let Some(content_length) = body.content_length() {

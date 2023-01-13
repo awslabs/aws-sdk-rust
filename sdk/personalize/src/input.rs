@@ -6377,7 +6377,8 @@ impl DescribeFeatureTransformationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_feature_transformation(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9586,7 +9587,8 @@ impl ListMetricAttributionMetricsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_metric_attribution_metrics(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11388,7 +11390,8 @@ impl StopSolutionVersionCreationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_solution_version_creation(&self)?
         );
         if let Some(content_length) = body.content_length() {

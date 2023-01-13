@@ -2191,7 +2191,8 @@ impl DescribeBudgetActionHistoriesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_action_histories(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2378,7 +2379,8 @@ impl DescribeBudgetActionsForAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2577,7 +2579,8 @@ impl DescribeBudgetActionsForBudgetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_budget(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2764,7 +2767,8 @@ impl DescribeBudgetNotificationsForAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_notifications_for_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2978,7 +2982,8 @@ impl DescribeBudgetPerformanceHistoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_performance_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3363,7 +3368,8 @@ impl DescribeNotificationsForBudgetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_notifications_for_budget(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3577,7 +3583,8 @@ impl DescribeSubscribersForNotificationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_subscribers_for_notification(&self)?
         );
         if let Some(content_length) = body.content_length() {

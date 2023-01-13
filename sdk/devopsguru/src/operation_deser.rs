@@ -1314,9 +1314,11 @@ pub fn parse_describe_organization_resource_collection_health_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeOrganizationResourceCollectionHealthError { meta: generic, kind: crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
                     output.build()
@@ -1328,9 +1330,11 @@ pub fn parse_describe_organization_resource_collection_health_error(
             tmp
         })},
         "InternalServerException" => crate::error::DescribeOrganizationResourceCollectionHealthError { meta: generic, kind: crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -1346,9 +1350,11 @@ pub fn parse_describe_organization_resource_collection_health_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeOrganizationResourceCollectionHealthError { meta: generic, kind: crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -1364,9 +1370,11 @@ pub fn parse_describe_organization_resource_collection_health_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribeOrganizationResourceCollectionHealthError { meta: generic, kind: crate::error::DescribeOrganizationResourceCollectionHealthErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
                     output.build()
@@ -1389,7 +1397,8 @@ pub fn parse_describe_organization_resource_collection_health_response(
     crate::error::DescribeOrganizationResourceCollectionHealthError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_organization_resource_collection_health_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_organization_resource_collection_health_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_organization_resource_collection_health(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
         output.build()

@@ -4567,7 +4567,8 @@ impl DescribeClientAuthenticationSettingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_client_authentication_settings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4751,7 +4752,8 @@ impl DescribeConditionalForwardersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_conditional_forwarders(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6942,7 +6944,8 @@ impl DisableClientAuthenticationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disable_client_authentication(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12092,7 +12095,8 @@ impl UpdateNumberOfDomainControllersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_number_of_domain_controllers(&self)?
         );
         if let Some(content_length) = body.content_length() {

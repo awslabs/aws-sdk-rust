@@ -324,7 +324,8 @@ impl AssociateWebsiteAuthorizationProviderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_website_authorization_provider(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -507,7 +508,8 @@ impl AssociateWebsiteCertificateAuthorityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_website_certificate_authority(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1036,7 +1038,8 @@ impl DescribeAuditStreamConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_audit_stream_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1195,7 +1198,8 @@ impl DescribeCompanyNetworkConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_company_network_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1523,7 +1527,8 @@ impl DescribeDevicePolicyConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_device_policy_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2012,7 +2017,8 @@ impl DescribeIdentityProviderConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_identity_provider_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2186,7 +2192,8 @@ impl DescribeWebsiteCertificateAuthorityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_website_certificate_authority(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2533,7 +2540,8 @@ impl DisassociateWebsiteAuthorizationProviderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_website_authorization_provider(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2707,7 +2715,8 @@ impl DisassociateWebsiteCertificateAuthorityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_website_certificate_authority(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3586,7 +3595,8 @@ impl ListWebsiteAuthorizationProvidersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_website_authorization_providers(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3769,7 +3779,8 @@ impl ListWebsiteCertificateAuthoritiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_website_certificate_authorities(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4862,7 +4873,8 @@ impl UpdateAuditStreamConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_audit_stream_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5075,7 +5087,8 @@ impl UpdateCompanyNetworkConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_company_network_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5249,7 +5262,8 @@ impl UpdateDevicePolicyConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_device_policy_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5812,7 +5826,8 @@ impl UpdateIdentityProviderConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_identity_provider_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {

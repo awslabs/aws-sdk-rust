@@ -2258,9 +2258,11 @@ pub fn parse_describe_dominant_language_detection_job_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => crate::error::DescribeDominantLanguageDetectionJobError { meta: generic, kind: crate::error::DescribeDominantLanguageDetectionJobErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDominantLanguageDetectionJobError::unhandled)?;
                     output.build()
@@ -2272,9 +2274,11 @@ pub fn parse_describe_dominant_language_detection_job_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeDominantLanguageDetectionJobError { meta: generic, kind: crate::error::DescribeDominantLanguageDetectionJobErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDominantLanguageDetectionJobError::unhandled)?;
                     output.build()
@@ -2286,9 +2290,11 @@ pub fn parse_describe_dominant_language_detection_job_error(
             tmp
         })},
         "JobNotFoundException" => crate::error::DescribeDominantLanguageDetectionJobError { meta: generic, kind: crate::error::DescribeDominantLanguageDetectionJobErrorKind::JobNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::job_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::job_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_job_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDominantLanguageDetectionJobError::unhandled)?;
                     output.build()
@@ -2300,9 +2306,11 @@ pub fn parse_describe_dominant_language_detection_job_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeDominantLanguageDetectionJobError { meta: generic, kind: crate::error::DescribeDominantLanguageDetectionJobErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDominantLanguageDetectionJobError::unhandled)?;
                     output.build()
@@ -3236,9 +3244,11 @@ pub fn parse_describe_targeted_sentiment_detection_job_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => crate::error::DescribeTargetedSentimentDetectionJobError { meta: generic, kind: crate::error::DescribeTargetedSentimentDetectionJobErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
                     output.build()
@@ -3250,9 +3260,11 @@ pub fn parse_describe_targeted_sentiment_detection_job_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeTargetedSentimentDetectionJobError { meta: generic, kind: crate::error::DescribeTargetedSentimentDetectionJobErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
                     output.build()
@@ -3264,9 +3276,11 @@ pub fn parse_describe_targeted_sentiment_detection_job_error(
             tmp
         })},
         "JobNotFoundException" => crate::error::DescribeTargetedSentimentDetectionJobError { meta: generic, kind: crate::error::DescribeTargetedSentimentDetectionJobErrorKind::JobNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::job_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::job_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_job_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
                     output.build()
@@ -3278,9 +3292,11 @@ pub fn parse_describe_targeted_sentiment_detection_job_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeTargetedSentimentDetectionJobError { meta: generic, kind: crate::error::DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetedSentimentDetectionJobError::unhandled)?;
                     output.build()

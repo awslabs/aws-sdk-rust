@@ -278,7 +278,8 @@ impl AssociateContactWithAddressBookInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_contact_with_address_book(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -456,7 +457,8 @@ impl AssociateDeviceWithNetworkProfileInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_device_with_network_profile(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -812,7 +814,8 @@ impl AssociateSkillGroupWithRoomInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_skill_group_with_room(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -990,7 +993,8 @@ impl AssociateSkillWithSkillGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_skill_with_skill_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1651,7 +1655,8 @@ impl CreateBusinessReportScheduleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_business_report_schedule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4147,7 +4152,8 @@ impl DeleteBusinessReportScheduleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_business_report_schedule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6374,7 +6380,8 @@ impl DisassociateContactFromAddressBookInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_contact_from_address_book(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6537,7 +6544,8 @@ impl DisassociateDeviceFromRoomInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_device_from_room(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6715,7 +6723,8 @@ impl DisassociateSkillFromSkillGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_from_skill_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6878,7 +6887,8 @@ impl DisassociateSkillFromUsersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_from_users(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7056,7 +7066,8 @@ impl DisassociateSkillGroupFromRoomInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_skill_group_from_room(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9517,7 +9528,8 @@ impl ListBusinessReportSchedulesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_business_report_schedules(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10847,7 +10859,8 @@ impl ListSkillsStoreSkillsByCategoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_skills_store_skills_by_category(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15238,7 +15251,8 @@ impl StartSmartHomeApplianceDiscoveryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_smart_home_appliance_discovery(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16033,7 +16047,8 @@ impl UpdateBusinessReportScheduleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_business_report_schedule(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -331,7 +331,8 @@ impl AssociateBudgetWithResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_budget_with_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -551,7 +552,8 @@ impl AssociatePrincipalWithPortfolioInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_principal_with_portfolio(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -766,7 +768,8 @@ impl AssociateProductWithPortfolioInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_product_with_portfolio(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -986,7 +989,8 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_service_action_with_provisioning_artifact(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1165,7 +1169,8 @@ impl AssociateTagOptionWithResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_tag_option_with_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1368,7 +1373,8 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_service_action_with_provisioning_artifact(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1573,7 +1579,8 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_service_action_from_provisioning_artifact(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3447,7 +3454,8 @@ impl CreateProvisionedProductPlanInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_provisioned_product_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5153,7 +5161,8 @@ impl DeleteProvisionedProductPlanInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_provisioned_product_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6659,7 +6668,8 @@ impl DescribePortfolioShareStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_portfolio_share_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7686,7 +7696,8 @@ impl DescribeProvisionedProductPlanInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_provisioned_product_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7928,7 +7939,8 @@ impl DescribeProvisioningArtifactInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_artifact(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8182,7 +8194,8 @@ impl DescribeProvisioningParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8792,7 +8805,8 @@ impl DescribeServiceActionExecutionParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_service_action_execution_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9103,7 +9117,8 @@ impl DisableAwsOrganizationsAccessInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disable_aws_organizations_access(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -9271,7 +9286,8 @@ impl DisassociateBudgetFromResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_budget_from_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9489,7 +9505,8 @@ impl DisassociatePrincipalFromPortfolioInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_principal_from_portfolio(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9689,7 +9706,8 @@ impl DisassociateProductFromPortfolioInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_product_from_portfolio(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9909,7 +9927,8 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_service_action_from_provisioning_artifact(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10089,7 +10108,8 @@ impl DisassociateTagOptionFromResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_tag_option_from_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10238,7 +10258,8 @@ impl EnableAwsOrganizationsAccessInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_enable_aws_organizations_access(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -10437,7 +10458,8 @@ impl ExecuteProvisionedProductPlanInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10690,7 +10712,8 @@ impl ExecuteProvisionedProductServiceActionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_service_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10839,7 +10862,8 @@ impl GetAwsOrganizationsAccessStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_aws_organizations_access_status(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -11083,7 +11107,8 @@ impl GetProvisionedProductOutputsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_provisioned_product_outputs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11331,7 +11356,8 @@ impl ImportAsProvisionedProductInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_import_as_provisioned_product(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11556,7 +11582,8 @@ impl ListAcceptedPortfolioSharesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_accepted_portfolio_shares(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11995,7 +12022,8 @@ impl ListConstraintsForPortfolioInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_constraints_for_portfolio(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12443,7 +12471,8 @@ impl ListOrganizationPortfolioAccessInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_organization_portfolio_access(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13297,7 +13326,8 @@ impl ListPrincipalsForPortfolioInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_principals_for_portfolio(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13527,7 +13557,8 @@ impl ListProvisionedProductPlansInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_provisioned_product_plans(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13935,7 +13966,8 @@ impl ListProvisioningArtifactsForServiceActionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_provisioning_artifacts_for_service_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14380,7 +14412,8 @@ impl ListResourcesForTagOptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_resources_for_tag_option(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14810,7 +14843,8 @@ impl ListServiceActionsForProvisioningArtifactInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_service_actions_for_provisioning_artifact(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15026,7 +15060,8 @@ impl ListStackInstancesForProvisionedProductInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_stack_instances_for_provisioned_product(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17116,7 +17151,8 @@ impl TerminateProvisionedProductInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_terminate_provisioned_product(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18890,7 +18926,8 @@ impl UpdateProvisionedProductPropertiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_provisioned_product_properties(&self)?
         );
         if let Some(content_length) = body.content_length() {

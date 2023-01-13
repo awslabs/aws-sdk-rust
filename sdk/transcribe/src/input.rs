@@ -148,7 +148,8 @@ impl CreateCallAnalyticsCategoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_call_analytics_category(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1294,7 +1295,8 @@ impl DeleteCallAnalyticsCategoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_call_analytics_category(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1796,7 +1798,8 @@ impl DeleteMedicalTranscriptionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_medical_transcription_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3143,7 +3146,8 @@ impl GetMedicalTranscriptionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_medical_transcription_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4007,7 +4011,8 @@ impl ListCallAnalyticsCategoriesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_call_analytics_categories(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4731,7 +4736,8 @@ impl ListMedicalTranscriptionJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_medical_transcription_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6612,7 +6618,8 @@ impl StartMedicalTranscriptionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_medical_transcription_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7759,7 +7766,8 @@ impl UpdateCallAnalyticsCategoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_call_analytics_category(&self)?
         );
         if let Some(content_length) = body.content_length() {

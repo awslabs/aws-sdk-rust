@@ -5923,7 +5923,8 @@ impl GetDeleteEventsByEventTypeStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_delete_events_by_event_type_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7202,7 +7203,8 @@ impl GetEventPredictionMetadataInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_event_prediction_metadata(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11933,7 +11935,8 @@ impl UpdateDetectorVersionMetadataInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_detector_version_metadata(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12128,7 +12131,8 @@ impl UpdateDetectorVersionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_detector_version_status(&self)?
         );
         if let Some(content_length) = body.content_length() {

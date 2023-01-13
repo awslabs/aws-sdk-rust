@@ -145,9 +145,11 @@ pub fn parse_create_configuration_set_event_destination_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AlreadyExistsException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -159,9 +161,11 @@ pub fn parse_create_configuration_set_event_destination_error(
             tmp
         })},
         "BadRequestException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -173,9 +177,11 @@ pub fn parse_create_configuration_set_event_destination_error(
             tmp
         })},
         "InternalServiceErrorException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -187,9 +193,11 @@ pub fn parse_create_configuration_set_event_destination_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -201,9 +209,11 @@ pub fn parse_create_configuration_set_event_destination_error(
             tmp
         })},
         "NotFoundException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -215,9 +225,11 @@ pub fn parse_create_configuration_set_event_destination_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -377,9 +389,11 @@ pub fn parse_delete_configuration_set_event_destination_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -391,9 +405,11 @@ pub fn parse_delete_configuration_set_event_destination_error(
             tmp
         })},
         "InternalServiceErrorException" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -405,9 +421,11 @@ pub fn parse_delete_configuration_set_event_destination_error(
             tmp
         })},
         "NotFoundException" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -419,9 +437,11 @@ pub fn parse_delete_configuration_set_event_destination_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -471,9 +491,11 @@ pub fn parse_get_configuration_set_event_destinations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::GetConfigurationSetEventDestinationsError { meta: generic, kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
                     output.build()
@@ -485,9 +507,11 @@ pub fn parse_get_configuration_set_event_destinations_error(
             tmp
         })},
         "InternalServiceErrorException" => crate::error::GetConfigurationSetEventDestinationsError { meta: generic, kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
                     output.build()
@@ -499,9 +523,11 @@ pub fn parse_get_configuration_set_event_destinations_error(
             tmp
         })},
         "NotFoundException" => crate::error::GetConfigurationSetEventDestinationsError { meta: generic, kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
                     output.build()
@@ -513,9 +539,11 @@ pub fn parse_get_configuration_set_event_destinations_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::GetConfigurationSetEventDestinationsError { meta: generic, kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
                     output.build()
@@ -748,9 +776,11 @@ pub fn parse_update_configuration_set_event_destination_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -762,9 +792,11 @@ pub fn parse_update_configuration_set_event_destination_error(
             tmp
         })},
         "InternalServiceErrorException" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -776,9 +808,11 @@ pub fn parse_update_configuration_set_event_destination_error(
             tmp
         })},
         "NotFoundException" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()
@@ -790,9 +824,11 @@ pub fn parse_update_configuration_set_event_destination_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
                     output.build()

@@ -718,9 +718,11 @@ pub fn parse_describe_trusted_advisor_check_refresh_statuses_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerError" => crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError { meta: generic, kind: crate::error::DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError::unhandled)?;
                     output.build()

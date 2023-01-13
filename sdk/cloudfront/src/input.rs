@@ -701,7 +701,8 @@ impl CreateCloudFrontOriginAccessIdentityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_payload_create_cloud_front_origin_access_identity_input(& self.cloud_front_origin_access_identity_config)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12951,7 +12952,8 @@ impl ListDistributionsByRealtimeLogConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_distributions_by_realtime_log_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16849,7 +16851,8 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_payload_update_cloud_front_origin_access_identity_input(& self.cloud_front_origin_access_identity_config)?
         );
         if let Some(content_length) = body.content_length() {

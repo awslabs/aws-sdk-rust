@@ -842,7 +842,8 @@ pub fn parse_create_data_cells_filter_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::resource_number_limit_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::resource_number_limit_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_resource_number_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataCellsFilterError::unhandled)?;
                             output.build()
@@ -971,24 +972,24 @@ pub fn parse_create_lf_tag_error(
                 tmp
             }),
         },
-        "ResourceNumberLimitExceededException" => {
-            crate::error::CreateLFTagError {
-                meta: generic,
-                kind: crate::error::CreateLFTagErrorKind::ResourceNumberLimitExceededException({
+        "ResourceNumberLimitExceededException" => crate::error::CreateLFTagError {
+            meta: generic,
+            kind: crate::error::CreateLFTagErrorKind::ResourceNumberLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::resource_number_limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_number_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLFTagError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::resource_number_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_number_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLFTagError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateLFTagError::generic(generic),
     })
 }
@@ -2749,9 +2750,11 @@ pub fn parse_get_temporary_glue_partition_credentials_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetTemporaryGluePartitionCredentialsError { meta: generic, kind: crate::error::GetTemporaryGluePartitionCredentialsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGluePartitionCredentialsError::unhandled)?;
                     output.build()
@@ -2763,9 +2766,11 @@ pub fn parse_get_temporary_glue_partition_credentials_error(
             tmp
         })},
         "EntityNotFoundException" => crate::error::GetTemporaryGluePartitionCredentialsError { meta: generic, kind: crate::error::GetTemporaryGluePartitionCredentialsErrorKind::EntityNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGluePartitionCredentialsError::unhandled)?;
                     output.build()
@@ -2777,9 +2782,11 @@ pub fn parse_get_temporary_glue_partition_credentials_error(
             tmp
         })},
         "InternalServiceException" => crate::error::GetTemporaryGluePartitionCredentialsError { meta: generic, kind: crate::error::GetTemporaryGluePartitionCredentialsErrorKind::InternalServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGluePartitionCredentialsError::unhandled)?;
                     output.build()
@@ -2791,9 +2798,11 @@ pub fn parse_get_temporary_glue_partition_credentials_error(
             tmp
         })},
         "InvalidInputException" => crate::error::GetTemporaryGluePartitionCredentialsError { meta: generic, kind: crate::error::GetTemporaryGluePartitionCredentialsErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGluePartitionCredentialsError::unhandled)?;
                     output.build()
@@ -2805,9 +2814,11 @@ pub fn parse_get_temporary_glue_partition_credentials_error(
             tmp
         })},
         "OperationTimeoutException" => crate::error::GetTemporaryGluePartitionCredentialsError { meta: generic, kind: crate::error::GetTemporaryGluePartitionCredentialsErrorKind::OperationTimeoutException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGluePartitionCredentialsError::unhandled)?;
                     output.build()
@@ -2819,9 +2830,11 @@ pub fn parse_get_temporary_glue_partition_credentials_error(
             tmp
         })},
         "PermissionTypeMismatchException" => crate::error::GetTemporaryGluePartitionCredentialsError { meta: generic, kind: crate::error::GetTemporaryGluePartitionCredentialsErrorKind::PermissionTypeMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::permission_type_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::permission_type_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_permission_type_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGluePartitionCredentialsError::unhandled)?;
                     output.build()
@@ -2872,9 +2885,11 @@ pub fn parse_get_temporary_glue_table_credentials_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetTemporaryGlueTableCredentialsError { meta: generic, kind: crate::error::GetTemporaryGlueTableCredentialsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGlueTableCredentialsError::unhandled)?;
                     output.build()
@@ -2886,9 +2901,11 @@ pub fn parse_get_temporary_glue_table_credentials_error(
             tmp
         })},
         "EntityNotFoundException" => crate::error::GetTemporaryGlueTableCredentialsError { meta: generic, kind: crate::error::GetTemporaryGlueTableCredentialsErrorKind::EntityNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGlueTableCredentialsError::unhandled)?;
                     output.build()
@@ -2900,9 +2917,11 @@ pub fn parse_get_temporary_glue_table_credentials_error(
             tmp
         })},
         "InternalServiceException" => crate::error::GetTemporaryGlueTableCredentialsError { meta: generic, kind: crate::error::GetTemporaryGlueTableCredentialsErrorKind::InternalServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGlueTableCredentialsError::unhandled)?;
                     output.build()
@@ -2914,9 +2933,11 @@ pub fn parse_get_temporary_glue_table_credentials_error(
             tmp
         })},
         "InvalidInputException" => crate::error::GetTemporaryGlueTableCredentialsError { meta: generic, kind: crate::error::GetTemporaryGlueTableCredentialsErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGlueTableCredentialsError::unhandled)?;
                     output.build()
@@ -2928,9 +2949,11 @@ pub fn parse_get_temporary_glue_table_credentials_error(
             tmp
         })},
         "OperationTimeoutException" => crate::error::GetTemporaryGlueTableCredentialsError { meta: generic, kind: crate::error::GetTemporaryGlueTableCredentialsErrorKind::OperationTimeoutException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGlueTableCredentialsError::unhandled)?;
                     output.build()
@@ -2942,9 +2965,11 @@ pub fn parse_get_temporary_glue_table_credentials_error(
             tmp
         })},
         "PermissionTypeMismatchException" => crate::error::GetTemporaryGlueTableCredentialsError { meta: generic, kind: crate::error::GetTemporaryGlueTableCredentialsErrorKind::PermissionTypeMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::permission_type_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::permission_type_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_permission_type_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTemporaryGlueTableCredentialsError::unhandled)?;
                     output.build()
@@ -5211,7 +5236,8 @@ pub fn parse_update_table_objects_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::transaction_commit_in_progress_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::transaction_commit_in_progress_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_transaction_commit_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTableObjectsError::unhandled)?;
                         output.build()

@@ -3557,7 +3557,8 @@ pub fn deser_operation_crate_operation_create_local_gateway_route_table(
     Ok(builder)
 }
 
-#[allow(unused_mut)]pub fn deser_operation_crate_operation_create_local_gateway_route_table_virtual_interface_group_association(inp: &[u8], mut builder: crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder) -> Result<crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder, aws_smithy_xml::decode::XmlDecodeError>{
+#[allow(unused_mut)]
+pub fn deser_operation_crate_operation_create_local_gateway_route_table_virtual_interface_group_association(inp: &[u8], mut builder: crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder) -> Result<crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -6658,7 +6659,8 @@ pub fn deser_operation_crate_operation_delete_local_gateway_route_table(
     Ok(builder)
 }
 
-#[allow(unused_mut)]pub fn deser_operation_crate_operation_delete_local_gateway_route_table_virtual_interface_group_association(inp: &[u8], mut builder: crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder) -> Result<crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder, aws_smithy_xml::decode::XmlDecodeError>{
+#[allow(unused_mut)]
+pub fn deser_operation_crate_operation_delete_local_gateway_route_table_virtual_interface_group_association(inp: &[u8], mut builder: crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder) -> Result<crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -11532,7 +11534,8 @@ pub fn deser_operation_crate_operation_describe_local_gateway_route_tables(
     Ok(builder)
 }
 
-#[allow(unused_mut)]pub fn deser_operation_crate_operation_describe_local_gateway_route_table_virtual_interface_group_associations(inp: &[u8], mut builder: crate::output::describe_local_gateway_route_table_virtual_interface_group_associations_output::Builder) -> Result<crate::output::describe_local_gateway_route_table_virtual_interface_group_associations_output::Builder, aws_smithy_xml::decode::XmlDecodeError>{
+#[allow(unused_mut)]
+pub fn deser_operation_crate_operation_describe_local_gateway_route_table_virtual_interface_group_associations(inp: &[u8], mut builder: crate::output::describe_local_gateway_route_table_virtual_interface_group_associations_output::Builder) -> Result<crate::output::describe_local_gateway_route_table_virtual_interface_group_associations_output::Builder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

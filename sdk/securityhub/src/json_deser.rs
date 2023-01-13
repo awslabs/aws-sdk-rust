@@ -22281,7 +22281,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -22388,7 +22389,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24316,7 +24318,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24551,7 +24554,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_elasticsearch_domain_node_to_node_encryption_options::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_elasticsearch_domain_node_to_node_encryption_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -24843,7 +24847,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30640,7 +30645,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30696,7 +30702,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_launch_configuration_metadata_options::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_launch_configuration_metadata_options::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30925,7 +30932,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_encryption_at_rest_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_encryption_at_rest_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30990,7 +30998,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_node_to_node_encryption_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_node_to_node_encryption_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31046,7 +31055,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_service_software_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_service_software_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31161,7 +31171,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_cluster_config_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_cluster_config_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31290,7 +31301,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_domain_endpoint_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_domain_endpoint_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31442,7 +31454,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_log_publishing_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_log_publishing_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31506,7 +31519,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_advanced_security_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_advanced_security_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31718,7 +31732,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecr_repository_image_scanning_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecr_repository_image_scanning_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -33179,7 +33194,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_backup_recovery_point_calculated_lifecycle_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_backup_recovery_point_calculated_lifecycle_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -33628,7 +33644,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_sage_maker_notebook_instance_metadata_service_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_sage_maker_notebook_instance_metadata_service_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -34112,7 +34129,8 @@ where I: Iterator<Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smi
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -34215,7 +34233,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -34274,7 +34293,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_availability_zones_list_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_availability_zones_list_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -34505,7 +34525,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_code_build_project_environment_registry_credential::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_code_build_project_environment_registry_credential::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -34572,7 +34593,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_code_build_project_logs_config_cloud_watch_logs_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_code_build_project_logs_config_cloud_watch_logs_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35914,7 +35936,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35972,7 +35995,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_elasticsearch_domain_log_publishing_options_log_config::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_elasticsearch_domain_log_publishing_options_log_config::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -37413,7 +37437,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_certificate_manager_certificate_domain_validation_option::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_certificate_manager_certificate_domain_validation_option::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -37508,7 +37533,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_certificate_manager_certificate_extended_key_usage::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_certificate_manager_certificate_extended_key_usage::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39996,7 +40022,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_cluster_configuration_execute_command_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_cluster_configuration_execute_command_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40068,7 +40095,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_cluster_default_capacity_provider_strategy_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_cluster_default_capacity_provider_strategy_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40209,7 +40237,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40505,7 +40534,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_inference_accelerators_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_inference_accelerators_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40572,7 +40602,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_placement_constraints_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_placement_constraints_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40904,7 +40935,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -41051,7 +41083,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -41335,7 +41368,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -41630,7 +41664,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_cluster_config_zone_awareness_config_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_cluster_config_zone_awareness_config_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -41688,7 +41723,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_log_publishing_option::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_log_publishing_option::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -41753,7 +41789,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_open_search_service_domain_master_user_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_open_search_service_domain_master_user_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -42224,7 +42261,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_network_firewall_firewall_subnet_mappings_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_network_firewall_firewall_subnet_mappings_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -42559,7 +42597,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_efs_access_point_root_directory_creation_info_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_efs_access_point_root_directory_creation_info_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -43527,7 +43566,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -43656,7 +43696,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_credit_specification_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_credit_specification_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -43812,7 +43853,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_enclave_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_enclave_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -43868,7 +43910,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_hibernation_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_hibernation_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -43924,7 +43967,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_iam_instance_profile_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_iam_instance_profile_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -43991,7 +44035,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_market_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_market_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44054,7 +44099,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44279,7 +44325,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_maintenance_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_maintenance_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44337,7 +44384,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_metadata_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_metadata_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44654,7 +44702,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_private_dns_name_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_private_dns_name_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44726,7 +44775,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_wafv2_web_acl_captcha_config_immunity_time_property_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_wafv2_web_acl_captcha_config_immunity_time_property_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -45145,7 +45195,8 @@ where I: Iterator<Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smi
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -45254,7 +45305,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_code_build_project_environment_environment_variables_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_code_build_project_environment_environment_variables_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -45891,7 +45943,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -47013,7 +47066,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -47299,7 +47353,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_firelens_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_firelens_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -47362,7 +47417,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_health_check_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_health_check_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -47452,7 +47508,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -47550,7 +47607,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_log_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_log_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -47716,7 +47774,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_repository_credentials_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_repository_credentials_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48020,7 +48079,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48087,7 +48147,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_volumes_docker_volume_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_volumes_docker_volume_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48171,7 +48232,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48318,7 +48380,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48417,7 +48480,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48642,7 +48706,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::firewall_policy_stateful_rule_group_references_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::firewall_policy_stateful_rule_group_references_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48762,7 +48827,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::firewall_policy_stateless_rule_group_references_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::firewall_policy_stateless_rule_group_references_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49046,7 +49112,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::rule_group_source_stateless_rules_and_custom_actions_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::rule_group_source_stateless_rules_and_custom_actions_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49336,7 +49403,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_waf_regional_web_acl_rules_list_override_action_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_waf_regional_web_acl_rules_list_override_action_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49507,7 +49575,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_backup_backup_plan_advanced_backup_settings_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_backup_backup_plan_advanced_backup_settings_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49688,7 +49757,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_block_device_mapping_set_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_block_device_mapping_set_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49754,7 +49824,8 @@ where I: Iterator<Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smi
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49821,7 +49892,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_elastic_gpu_specification_set_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_elastic_gpu_specification_set_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49879,7 +49951,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_elastic_inference_accelerator_set_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_elastic_inference_accelerator_set_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49946,7 +50019,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_market_options_spot_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_market_options_spot_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50040,7 +50114,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50109,7 +50184,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50178,7 +50254,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50245,7 +50322,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50310,7 +50388,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50377,7 +50456,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50444,7 +50524,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50509,7 +50590,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -50633,7 +50715,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -51151,7 +51234,8 @@ where I: Iterator<Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smi
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -51218,7 +51302,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_cloud_front_distribution_origin_s3_origin_config::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_cloud_front_distribution_origin_s3_origin_config::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -51276,7 +51361,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_cloud_front_distribution_origin_custom_origin_config::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_cloud_front_distribution_origin_custom_origin_config::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -51754,7 +51840,8 @@ where I: Iterator<Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smi
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -51812,7 +51899,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -51949,7 +52037,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -52016,7 +52105,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -52568,7 +52658,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_depends_on_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_depends_on_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -52635,7 +52726,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_environment_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_environment_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -52702,7 +52794,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_environment_files_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_environment_files_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -52769,7 +52862,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_extra_hosts_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_extra_hosts_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -52838,7 +52932,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53034,7 +53129,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_mount_points_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_mount_points_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53108,7 +53204,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_port_mappings_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_port_mappings_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53184,7 +53281,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_resource_requirements_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_resource_requirements_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53251,7 +53349,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_secrets_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_secrets_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53318,7 +53417,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_system_controls_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_system_controls_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53385,7 +53485,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_ulimits_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_ulimits_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53461,7 +53562,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_volumes_from_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_volumes_from_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53528,7 +53630,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53962,7 +54065,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_block_device_mapping_set_ebs_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_block_device_mapping_set_ebs_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54668,7 +54772,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_cloud_front_distribution_origin_group_failover_status_codes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_cloud_front_distribution_origin_group_failover_status_codes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54731,7 +54836,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54793,7 +54899,8 @@ where I: Iterator<Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smi
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54860,7 +54967,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54936,7 +55044,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54990,7 +55099,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_devices_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_devices_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55062,7 +55172,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55136,7 +55247,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55592,7 +55704,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55650,7 +55763,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55708,7 +55822,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55766,7 +55881,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -56252,7 +56368,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -56537,7 +56654,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -56609,7 +56727,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -56863,7 +56982,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57219,7 +57339,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_destination_ports::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_destination_ports::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57286,7 +57407,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_destinations::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_destinations::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57344,7 +57466,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_source_ports::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_source_ports::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57411,7 +57534,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_sources::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_sources::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57469,7 +57593,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_tcp_flags::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::rule_group_source_stateless_rule_match_attributes_tcp_flags::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

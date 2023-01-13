@@ -1346,9 +1346,11 @@ pub fn parse_disassociate_user_from_permission_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateUserFromPermissionGroupError { meta: generic, kind: crate::error::DisassociateUserFromPermissionGroupErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserFromPermissionGroupError::unhandled)?;
                     output.build()
@@ -1360,9 +1362,11 @@ pub fn parse_disassociate_user_from_permission_group_error(
             tmp
         })},
         "ConflictException" => crate::error::DisassociateUserFromPermissionGroupError { meta: generic, kind: crate::error::DisassociateUserFromPermissionGroupErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserFromPermissionGroupError::unhandled)?;
                     output.build()
@@ -1374,9 +1378,11 @@ pub fn parse_disassociate_user_from_permission_group_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateUserFromPermissionGroupError { meta: generic, kind: crate::error::DisassociateUserFromPermissionGroupErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserFromPermissionGroupError::unhandled)?;
                     output.build()
@@ -1388,9 +1394,11 @@ pub fn parse_disassociate_user_from_permission_group_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateUserFromPermissionGroupError { meta: generic, kind: crate::error::DisassociateUserFromPermissionGroupErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserFromPermissionGroupError::unhandled)?;
                     output.build()
@@ -1402,9 +1410,11 @@ pub fn parse_disassociate_user_from_permission_group_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateUserFromPermissionGroupError { meta: generic, kind: crate::error::DisassociateUserFromPermissionGroupErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserFromPermissionGroupError::unhandled)?;
                     output.build()
@@ -1416,9 +1426,11 @@ pub fn parse_disassociate_user_from_permission_group_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateUserFromPermissionGroupError { meta: generic, kind: crate::error::DisassociateUserFromPermissionGroupErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserFromPermissionGroupError::unhandled)?;
                     output.build()

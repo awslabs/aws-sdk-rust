@@ -3358,7 +3358,8 @@ impl CreateDataQualityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_data_quality_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6761,7 +6762,8 @@ impl CreateHyperParameterTuningJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_hyper_parameter_tuning_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7957,7 +7959,8 @@ impl CreateInferenceRecommendationsJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_inference_recommendations_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8950,7 +8953,8 @@ impl CreateModelBiasJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_model_bias_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9736,7 +9740,8 @@ impl CreateModelExplainabilityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_model_explainability_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10747,7 +10752,8 @@ impl CreateModelQualityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_model_quality_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11602,7 +11608,8 @@ impl CreateNotebookInstanceLifecycleConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_notebook_instance_lifecycle_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12302,7 +12309,8 @@ impl CreatePresignedNotebookInstanceUrlInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_presigned_notebook_instance_url(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13315,7 +13323,8 @@ impl CreateStudioLifecycleConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_studio_lifecycle_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17208,7 +17217,8 @@ impl DeleteDataQualityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_data_quality_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20117,7 +20127,8 @@ impl DeleteModelBiasJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_model_bias_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20448,7 +20459,8 @@ impl DeleteModelExplainabilityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_model_explainability_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20952,7 +20964,8 @@ impl DeleteModelPackageGroupPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_model_package_group_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21118,7 +21131,8 @@ impl DeleteModelQualityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_model_quality_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21627,7 +21641,8 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_notebook_instance_lifecycle_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22315,7 +22330,8 @@ impl DeleteStudioLifecycleConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_studio_lifecycle_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -25234,7 +25250,8 @@ impl DescribeDataQualityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_data_quality_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -25942,7 +25959,8 @@ impl DescribeEdgeDeploymentPlanInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_edge_deployment_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -27854,7 +27872,8 @@ impl DescribeHyperParameterTuningJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_hyper_parameter_tuning_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -28367,7 +28386,8 @@ impl DescribeInferenceExperimentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_inference_experiment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -28530,7 +28550,8 @@ impl DescribeInferenceRecommendationsJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_inference_recommendations_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -29194,7 +29215,8 @@ impl DescribeModelBiasJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_model_bias_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -29539,7 +29561,8 @@ impl DescribeModelCardExportJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_model_card_export_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -29707,7 +29730,8 @@ impl DescribeModelExplainabilityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_model_explainability_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30213,7 +30237,8 @@ impl DescribeModelQualityJobDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_model_quality_job_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30722,7 +30747,8 @@ impl DescribeNotebookInstanceLifecycleConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_notebook_instance_lifecycle_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -31055,7 +31081,8 @@ impl DescribePipelineDefinitionForExecutionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_pipeline_definition_for_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -31898,7 +31925,8 @@ impl DescribeStudioLifecycleConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_studio_lifecycle_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -33393,7 +33421,8 @@ impl DisableSagemakerServicecatalogPortfolioInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disable_sagemaker_servicecatalog_portfolio(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -33716,7 +33745,8 @@ impl EnableSagemakerServicecatalogPortfolioInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_enable_sagemaker_servicecatalog_portfolio(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -34213,7 +34243,8 @@ impl GetModelPackageGroupPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_model_package_group_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -34362,7 +34393,8 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_sagemaker_servicecatalog_portfolio_status(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -37223,7 +37255,8 @@ impl ListCandidatesForAutoMlJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_candidates_for_auto_ml_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -38325,7 +38358,8 @@ impl ListDataQualityJobDefinitionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_data_quality_job_definitions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -42287,7 +42321,8 @@ impl ListHyperParameterTuningJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_hyper_parameter_tuning_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -43456,7 +43491,8 @@ impl ListInferenceRecommendationsJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_inference_recommendations_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -43675,7 +43711,8 @@ impl ListInferenceRecommendationsJobStepsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_inference_recommendations_job_steps(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -44237,7 +44274,8 @@ impl ListLabelingJobsForWorkteamInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_labeling_jobs_for_workteam(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -44738,7 +44776,8 @@ impl ListModelBiasJobDefinitionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_model_bias_job_definitions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -45833,7 +45872,8 @@ impl ListModelExplainabilityJobDefinitionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_model_explainability_job_definitions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -46852,7 +46892,8 @@ impl ListModelQualityJobDefinitionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_model_quality_job_definitions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -47381,7 +47422,8 @@ impl ListMonitoringAlertHistoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_monitoring_alert_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -48584,7 +48626,8 @@ impl ListNotebookInstanceLifecycleConfigsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_notebook_instance_lifecycle_configs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -49400,7 +49443,8 @@ impl ListPipelineExecutionStepsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_pipeline_execution_steps(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -49590,7 +49634,8 @@ impl ListPipelineParametersForExecutionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_pipeline_parameters_for_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -51133,7 +51178,8 @@ impl ListStudioLifecycleConfigsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_studio_lifecycle_configs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -52064,7 +52110,8 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_training_jobs_for_hyper_parameter_tuning_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -53752,7 +53799,8 @@ impl PutModelPackageGroupPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_model_package_group_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -55067,7 +55115,8 @@ impl SendPipelineExecutionStepFailureInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_send_pipeline_execution_step_failure(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -55273,7 +55322,8 @@ impl SendPipelineExecutionStepSuccessInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_send_pipeline_execution_step_success(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -57070,7 +57120,8 @@ impl StopHyperParameterTuningJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_hyper_parameter_tuning_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -57499,7 +57550,8 @@ impl StopInferenceRecommendationsJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_inference_recommendations_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -60828,7 +60880,8 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_endpoint_weights_and_capacities(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -63990,7 +64043,8 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_notebook_instance_lifecycle_config(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -20,9 +20,11 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DomainLimitExceeded" => crate::error::AcceptDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::domain_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::domain_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_domain_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -34,9 +36,11 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
             tmp
         })},
         "InvalidInput" => crate::error::AcceptDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -48,9 +52,11 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
             tmp
         })},
         "OperationLimitExceeded" => crate::error::AcceptDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -62,9 +68,11 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
             tmp
         })},
         "UnsupportedTLD" => crate::error::AcceptDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_tld::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -269,9 +277,11 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::error::CancelDomainTransferToAnotherAwsAccountError { meta: generic, kind: crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -283,9 +293,11 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
             tmp
         })},
         "OperationLimitExceeded" => crate::error::CancelDomainTransferToAnotherAwsAccountError { meta: generic, kind: crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -297,9 +309,11 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
             tmp
         })},
         "UnsupportedTLD" => crate::error::CancelDomainTransferToAnotherAwsAccountError { meta: generic, kind: crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_tld::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -938,9 +952,11 @@ pub fn parse_disassociate_delegation_signer_from_domain_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DuplicateRequest" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_request::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_request::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
                     output.build()
@@ -952,9 +968,11 @@ pub fn parse_disassociate_delegation_signer_from_domain_error(
             tmp
         })},
         "InvalidInput" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
                     output.build()
@@ -966,9 +984,11 @@ pub fn parse_disassociate_delegation_signer_from_domain_error(
             tmp
         })},
         "OperationLimitExceeded" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
                     output.build()
@@ -980,9 +1000,11 @@ pub fn parse_disassociate_delegation_signer_from_domain_error(
             tmp
         })},
         "TLDRulesViolation" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tld_rules_violation::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tld_rules_violation::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
                     output.build()
@@ -994,9 +1016,11 @@ pub fn parse_disassociate_delegation_signer_from_domain_error(
             tmp
         })},
         "UnsupportedTLD" => crate::error::DisassociateDelegationSignerFromDomainError { meta: generic, kind: crate::error::DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_tld::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateDelegationSignerFromDomainError::unhandled)?;
                     output.build()
@@ -2102,9 +2126,11 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::error::RejectDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -2116,9 +2142,11 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
             tmp
         })},
         "OperationLimitExceeded" => crate::error::RejectDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
@@ -2130,9 +2158,11 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
             tmp
         })},
         "UnsupportedTLD" => crate::error::RejectDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_tld::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_tld::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()

@@ -117,7 +117,8 @@ impl BatchDetectDominantLanguageInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_detect_dominant_language(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1104,7 +1105,8 @@ impl BatchDetectTargetedSentimentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_detect_targeted_sentiment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3323,7 +3325,8 @@ impl DescribeDocumentClassificationJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_document_classification_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3655,7 +3658,8 @@ impl DescribeDominantLanguageDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_dominant_language_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3982,7 +3986,8 @@ impl DescribeEntitiesDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_entities_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4314,7 +4319,8 @@ impl DescribeEventsDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_events_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4477,7 +4483,8 @@ impl DescribeKeyPhrasesDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_key_phrases_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4640,7 +4647,8 @@ impl DescribePiiEntitiesDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_pii_entities_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4969,7 +4977,8 @@ impl DescribeSentimentDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_sentiment_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5132,7 +5141,8 @@ impl DescribeTargetedSentimentDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_targeted_sentiment_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5295,7 +5305,8 @@ impl DescribeTopicsDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_topics_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7076,7 +7087,8 @@ impl ListDocumentClassificationJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_document_classification_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7444,7 +7456,8 @@ impl ListDocumentClassifierSummariesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_document_classifier_summaries(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7634,7 +7647,8 @@ impl ListDominantLanguageDetectionJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_dominant_language_detection_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8384,7 +8398,8 @@ impl ListEntityRecognizerSummariesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_entity_recognizer_summaries(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8767,7 +8782,8 @@ impl ListKeyPhrasesDetectionJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_key_phrases_detection_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8957,7 +8973,8 @@ impl ListPiiEntitiesDetectionJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_pii_entities_detection_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9147,7 +9164,8 @@ impl ListSentimentDetectionJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_sentiment_detection_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9503,7 +9521,8 @@ impl ListTargetedSentimentDetectionJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_targeted_sentiment_detection_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10196,7 +10215,8 @@ impl StartDocumentClassificationJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_document_classification_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10481,7 +10501,8 @@ impl StartDominantLanguageDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_dominant_language_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11385,7 +11406,8 @@ impl StartKeyPhrasesDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_key_phrases_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11679,7 +11701,8 @@ impl StartPiiEntitiesDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_pii_entities_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11979,7 +12002,8 @@ impl StartSentimentDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_sentiment_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12279,7 +12303,8 @@ impl StartTargetedSentimentDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_targeted_sentiment_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12742,7 +12767,8 @@ impl StopDominantLanguageDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_dominant_language_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13237,7 +13263,8 @@ impl StopKeyPhrasesDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_key_phrases_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13400,7 +13427,8 @@ impl StopPiiEntitiesDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_pii_entities_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13729,7 +13757,8 @@ impl StopTargetedSentimentDetectionJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_targeted_sentiment_detection_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13895,7 +13924,8 @@ impl StopTrainingDocumentClassifierInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_training_document_classifier(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14061,7 +14091,8 @@ impl StopTrainingEntityRecognizerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_stop_training_entity_recognizer(&self)?
         );
         if let Some(content_length) = body.content_length() {

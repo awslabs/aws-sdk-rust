@@ -20,9 +20,11 @@ pub fn parse_associate_configuration_items_to_application_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AuthorizationErrorException" => crate::error::AssociateConfigurationItemsToApplicationError { meta: generic, kind: crate::error::AssociateConfigurationItemsToApplicationErrorKind::AuthorizationErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::authorization_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::authorization_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConfigurationItemsToApplicationError::unhandled)?;
                     output.build()
@@ -34,9 +36,11 @@ pub fn parse_associate_configuration_items_to_application_error(
             tmp
         })},
         "HomeRegionNotSetException" => crate::error::AssociateConfigurationItemsToApplicationError { meta: generic, kind: crate::error::AssociateConfigurationItemsToApplicationErrorKind::HomeRegionNotSetException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::home_region_not_set_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::home_region_not_set_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConfigurationItemsToApplicationError::unhandled)?;
                     output.build()
@@ -48,9 +52,11 @@ pub fn parse_associate_configuration_items_to_application_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::AssociateConfigurationItemsToApplicationError { meta: generic, kind: crate::error::AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConfigurationItemsToApplicationError::unhandled)?;
                     output.build()
@@ -62,9 +68,11 @@ pub fn parse_associate_configuration_items_to_application_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::AssociateConfigurationItemsToApplicationError { meta: generic, kind: crate::error::AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConfigurationItemsToApplicationError::unhandled)?;
                     output.build()
@@ -76,9 +84,11 @@ pub fn parse_associate_configuration_items_to_application_error(
             tmp
         })},
         "ServerInternalErrorException" => crate::error::AssociateConfigurationItemsToApplicationError { meta: generic, kind: crate::error::AssociateConfigurationItemsToApplicationErrorKind::ServerInternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConfigurationItemsToApplicationError::unhandled)?;
                     output.build()
@@ -1763,9 +1773,11 @@ pub fn parse_disassociate_configuration_items_from_application_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AuthorizationErrorException" => crate::error::DisassociateConfigurationItemsFromApplicationError { meta: generic, kind: crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::AuthorizationErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::authorization_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::authorization_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConfigurationItemsFromApplicationError::unhandled)?;
                     output.build()
@@ -1777,9 +1789,11 @@ pub fn parse_disassociate_configuration_items_from_application_error(
             tmp
         })},
         "HomeRegionNotSetException" => crate::error::DisassociateConfigurationItemsFromApplicationError { meta: generic, kind: crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::HomeRegionNotSetException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::home_region_not_set_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::home_region_not_set_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConfigurationItemsFromApplicationError::unhandled)?;
                     output.build()
@@ -1791,9 +1805,11 @@ pub fn parse_disassociate_configuration_items_from_application_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DisassociateConfigurationItemsFromApplicationError { meta: generic, kind: crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConfigurationItemsFromApplicationError::unhandled)?;
                     output.build()
@@ -1805,9 +1821,11 @@ pub fn parse_disassociate_configuration_items_from_application_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::DisassociateConfigurationItemsFromApplicationError { meta: generic, kind: crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConfigurationItemsFromApplicationError::unhandled)?;
                     output.build()
@@ -1819,9 +1837,11 @@ pub fn parse_disassociate_configuration_items_from_application_error(
             tmp
         })},
         "ServerInternalErrorException" => crate::error::DisassociateConfigurationItemsFromApplicationError { meta: generic, kind: crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::ServerInternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConfigurationItemsFromApplicationError::unhandled)?;
                     output.build()
@@ -1844,7 +1864,8 @@ pub fn parse_disassociate_configuration_items_from_application_response(
     crate::error::DisassociateConfigurationItemsFromApplicationError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::disassociate_configuration_items_from_application_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::disassociate_configuration_items_from_application_output::Builder::default();
         let _ = response;
         output.build()
     })

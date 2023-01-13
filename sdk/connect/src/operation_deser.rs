@@ -16141,9 +16141,11 @@ pub fn parse_start_outbound_voice_contact_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DestinationNotAllowedException" => crate::error::StartOutboundVoiceContactError { meta: generic, kind: crate::error::StartOutboundVoiceContactErrorKind::DestinationNotAllowedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::destination_not_allowed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::destination_not_allowed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_destination_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOutboundVoiceContactError::unhandled)?;
                     output.build()
@@ -16155,9 +16157,11 @@ pub fn parse_start_outbound_voice_contact_error(
             tmp
         })},
         "InternalServiceException" => crate::error::StartOutboundVoiceContactError { meta: generic, kind: crate::error::StartOutboundVoiceContactErrorKind::InternalServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOutboundVoiceContactError::unhandled)?;
                     output.build()
@@ -16169,9 +16173,11 @@ pub fn parse_start_outbound_voice_contact_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::StartOutboundVoiceContactError { meta: generic, kind: crate::error::StartOutboundVoiceContactErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOutboundVoiceContactError::unhandled)?;
                     output.build()
@@ -16183,9 +16189,11 @@ pub fn parse_start_outbound_voice_contact_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::StartOutboundVoiceContactError { meta: generic, kind: crate::error::StartOutboundVoiceContactErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOutboundVoiceContactError::unhandled)?;
                     output.build()
@@ -16197,9 +16205,11 @@ pub fn parse_start_outbound_voice_contact_error(
             tmp
         })},
         "LimitExceededException" => crate::error::StartOutboundVoiceContactError { meta: generic, kind: crate::error::StartOutboundVoiceContactErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOutboundVoiceContactError::unhandled)?;
                     output.build()
@@ -16211,9 +16221,11 @@ pub fn parse_start_outbound_voice_contact_error(
             tmp
         })},
         "OutboundContactNotPermittedException" => crate::error::StartOutboundVoiceContactError { meta: generic, kind: crate::error::StartOutboundVoiceContactErrorKind::OutboundContactNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::outbound_contact_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::outbound_contact_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_outbound_contact_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOutboundVoiceContactError::unhandled)?;
                     output.build()
@@ -16225,9 +16237,11 @@ pub fn parse_start_outbound_voice_contact_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::StartOutboundVoiceContactError { meta: generic, kind: crate::error::StartOutboundVoiceContactErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartOutboundVoiceContactError::unhandled)?;
                     output.build()
@@ -17847,9 +17861,11 @@ pub fn parse_update_contact_flow_module_content_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::UpdateContactFlowModuleContentError { meta: generic, kind: crate::error::UpdateContactFlowModuleContentErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateContactFlowModuleContentError::unhandled)?;
                     output.build()
@@ -17861,9 +17877,11 @@ pub fn parse_update_contact_flow_module_content_error(
             tmp
         })},
         "InternalServiceException" => crate::error::UpdateContactFlowModuleContentError { meta: generic, kind: crate::error::UpdateContactFlowModuleContentErrorKind::InternalServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateContactFlowModuleContentError::unhandled)?;
                     output.build()
@@ -17875,9 +17893,11 @@ pub fn parse_update_contact_flow_module_content_error(
             tmp
         })},
         "InvalidContactFlowModuleException" => crate::error::UpdateContactFlowModuleContentError { meta: generic, kind: crate::error::UpdateContactFlowModuleContentErrorKind::InvalidContactFlowModuleException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_contact_flow_module_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_contact_flow_module_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_contact_flow_module_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateContactFlowModuleContentError::unhandled)?;
                     output.build()
@@ -17889,9 +17909,11 @@ pub fn parse_update_contact_flow_module_content_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateContactFlowModuleContentError { meta: generic, kind: crate::error::UpdateContactFlowModuleContentErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateContactFlowModuleContentError::unhandled)?;
                     output.build()
@@ -17903,9 +17925,11 @@ pub fn parse_update_contact_flow_module_content_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateContactFlowModuleContentError { meta: generic, kind: crate::error::UpdateContactFlowModuleContentErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateContactFlowModuleContentError::unhandled)?;
                     output.build()
@@ -17917,9 +17941,11 @@ pub fn parse_update_contact_flow_module_content_error(
             tmp
         })},
         "ThrottlingException" => crate::error::UpdateContactFlowModuleContentError { meta: generic, kind: crate::error::UpdateContactFlowModuleContentErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateContactFlowModuleContentError::unhandled)?;
                     output.build()
@@ -20110,9 +20136,11 @@ pub fn parse_update_routing_profile_default_outbound_queue_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceException" => crate::error::UpdateRoutingProfileDefaultOutboundQueueError { meta: generic, kind: crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::InternalServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingProfileDefaultOutboundQueueError::unhandled)?;
                     output.build()
@@ -20124,9 +20152,11 @@ pub fn parse_update_routing_profile_default_outbound_queue_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::UpdateRoutingProfileDefaultOutboundQueueError { meta: generic, kind: crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingProfileDefaultOutboundQueueError::unhandled)?;
                     output.build()
@@ -20138,9 +20168,11 @@ pub fn parse_update_routing_profile_default_outbound_queue_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateRoutingProfileDefaultOutboundQueueError { meta: generic, kind: crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingProfileDefaultOutboundQueueError::unhandled)?;
                     output.build()
@@ -20152,9 +20184,11 @@ pub fn parse_update_routing_profile_default_outbound_queue_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateRoutingProfileDefaultOutboundQueueError { meta: generic, kind: crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingProfileDefaultOutboundQueueError::unhandled)?;
                     output.build()
@@ -20166,9 +20200,11 @@ pub fn parse_update_routing_profile_default_outbound_queue_error(
             tmp
         })},
         "ThrottlingException" => crate::error::UpdateRoutingProfileDefaultOutboundQueueError { meta: generic, kind: crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingProfileDefaultOutboundQueueError::unhandled)?;
                     output.build()

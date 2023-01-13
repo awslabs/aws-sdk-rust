@@ -43,7 +43,8 @@ pub fn parse_create_signaling_channel_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::account_channel_limit_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::account_channel_limit_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_account_channel_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSignalingChannelError::unhandled)?;
                             output.build()
@@ -114,7 +115,8 @@ pub fn parse_create_signaling_channel_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::tags_per_resource_exceeded_limit_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::tags_per_resource_exceeded_limit_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_tags_per_resource_exceeded_limit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSignalingChannelError::unhandled)?;
                             output.build()
@@ -274,7 +276,8 @@ pub fn parse_create_stream_error(
                 kind: crate::error::CreateStreamErrorKind::TagsPerResourceExceededLimitException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::tags_per_resource_exceeded_limit_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::tags_per_resource_exceeded_limit_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_tags_per_resource_exceeded_limit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamError::unhandled)?;
                         output.build()
@@ -602,9 +605,11 @@ pub fn parse_describe_edge_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeEdgeConfigurationError { meta: generic, kind: crate::error::DescribeEdgeConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEdgeConfigurationError::unhandled)?;
                     output.build()
@@ -616,9 +621,11 @@ pub fn parse_describe_edge_configuration_error(
             tmp
         })},
         "ClientLimitExceededException" => crate::error::DescribeEdgeConfigurationError { meta: generic, kind: crate::error::DescribeEdgeConfigurationErrorKind::ClientLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEdgeConfigurationError::unhandled)?;
                     output.build()
@@ -630,9 +637,11 @@ pub fn parse_describe_edge_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DescribeEdgeConfigurationError { meta: generic, kind: crate::error::DescribeEdgeConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEdgeConfigurationError::unhandled)?;
                     output.build()
@@ -644,9 +653,11 @@ pub fn parse_describe_edge_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeEdgeConfigurationError { meta: generic, kind: crate::error::DescribeEdgeConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEdgeConfigurationError::unhandled)?;
                     output.build()
@@ -658,9 +669,11 @@ pub fn parse_describe_edge_configuration_error(
             tmp
         })},
         "StreamEdgeConfigurationNotFoundException" => crate::error::DescribeEdgeConfigurationError { meta: generic, kind: crate::error::DescribeEdgeConfigurationErrorKind::StreamEdgeConfigurationNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::stream_edge_configuration_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::stream_edge_configuration_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_stream_edge_configuration_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEdgeConfigurationError::unhandled)?;
                     output.build()
@@ -714,9 +727,11 @@ pub fn parse_describe_image_generation_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeImageGenerationConfigurationError { meta: generic, kind: crate::error::DescribeImageGenerationConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -728,9 +743,11 @@ pub fn parse_describe_image_generation_configuration_error(
             tmp
         })},
         "ClientLimitExceededException" => crate::error::DescribeImageGenerationConfigurationError { meta: generic, kind: crate::error::DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -742,9 +759,11 @@ pub fn parse_describe_image_generation_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DescribeImageGenerationConfigurationError { meta: generic, kind: crate::error::DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -756,9 +775,11 @@ pub fn parse_describe_image_generation_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeImageGenerationConfigurationError { meta: generic, kind: crate::error::DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -809,9 +830,11 @@ pub fn parse_describe_mapped_resource_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeMappedResourceConfigurationError { meta: generic, kind: crate::error::DescribeMappedResourceConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMappedResourceConfigurationError::unhandled)?;
                     output.build()
@@ -823,9 +846,11 @@ pub fn parse_describe_mapped_resource_configuration_error(
             tmp
         })},
         "ClientLimitExceededException" => crate::error::DescribeMappedResourceConfigurationError { meta: generic, kind: crate::error::DescribeMappedResourceConfigurationErrorKind::ClientLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMappedResourceConfigurationError::unhandled)?;
                     output.build()
@@ -837,9 +862,11 @@ pub fn parse_describe_mapped_resource_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DescribeMappedResourceConfigurationError { meta: generic, kind: crate::error::DescribeMappedResourceConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMappedResourceConfigurationError::unhandled)?;
                     output.build()
@@ -851,9 +878,11 @@ pub fn parse_describe_mapped_resource_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeMappedResourceConfigurationError { meta: generic, kind: crate::error::DescribeMappedResourceConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMappedResourceConfigurationError::unhandled)?;
                     output.build()
@@ -904,9 +933,11 @@ pub fn parse_describe_media_storage_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeMediaStorageConfigurationError { meta: generic, kind: crate::error::DescribeMediaStorageConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMediaStorageConfigurationError::unhandled)?;
                     output.build()
@@ -918,9 +949,11 @@ pub fn parse_describe_media_storage_configuration_error(
             tmp
         })},
         "ClientLimitExceededException" => crate::error::DescribeMediaStorageConfigurationError { meta: generic, kind: crate::error::DescribeMediaStorageConfigurationErrorKind::ClientLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMediaStorageConfigurationError::unhandled)?;
                     output.build()
@@ -932,9 +965,11 @@ pub fn parse_describe_media_storage_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DescribeMediaStorageConfigurationError { meta: generic, kind: crate::error::DescribeMediaStorageConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMediaStorageConfigurationError::unhandled)?;
                     output.build()
@@ -946,9 +981,11 @@ pub fn parse_describe_media_storage_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeMediaStorageConfigurationError { meta: generic, kind: crate::error::DescribeMediaStorageConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMediaStorageConfigurationError::unhandled)?;
                     output.build()
@@ -999,9 +1036,11 @@ pub fn parse_describe_notification_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeNotificationConfigurationError { meta: generic, kind: crate::error::DescribeNotificationConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1013,9 +1052,11 @@ pub fn parse_describe_notification_configuration_error(
             tmp
         })},
         "ClientLimitExceededException" => crate::error::DescribeNotificationConfigurationError { meta: generic, kind: crate::error::DescribeNotificationConfigurationErrorKind::ClientLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1027,9 +1068,11 @@ pub fn parse_describe_notification_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::DescribeNotificationConfigurationError { meta: generic, kind: crate::error::DescribeNotificationConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1041,9 +1084,11 @@ pub fn parse_describe_notification_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeNotificationConfigurationError { meta: generic, kind: crate::error::DescribeNotificationConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -2162,7 +2207,8 @@ pub fn parse_tag_resource_error(
                 kind: crate::error::TagResourceErrorKind::TagsPerResourceExceededLimitException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::tags_per_resource_exceeded_limit_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::tags_per_resource_exceeded_limit_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_tags_per_resource_exceeded_limit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()
@@ -2296,7 +2342,8 @@ pub fn parse_tag_stream_error(
                 kind: crate::error::TagStreamErrorKind::TagsPerResourceExceededLimitException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::tags_per_resource_exceeded_limit_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::tags_per_resource_exceeded_limit_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_tags_per_resource_exceeded_limit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagStreamError::unhandled)?;
                         output.build()
@@ -2695,9 +2742,11 @@ pub fn parse_update_image_generation_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::UpdateImageGenerationConfigurationError { meta: generic, kind: crate::error::UpdateImageGenerationConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -2709,9 +2758,11 @@ pub fn parse_update_image_generation_configuration_error(
             tmp
         })},
         "ClientLimitExceededException" => crate::error::UpdateImageGenerationConfigurationError { meta: generic, kind: crate::error::UpdateImageGenerationConfigurationErrorKind::ClientLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -2723,9 +2774,11 @@ pub fn parse_update_image_generation_configuration_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::UpdateImageGenerationConfigurationError { meta: generic, kind: crate::error::UpdateImageGenerationConfigurationErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -2737,9 +2790,11 @@ pub fn parse_update_image_generation_configuration_error(
             tmp
         })},
         "NoDataRetentionException" => crate::error::UpdateImageGenerationConfigurationError { meta: generic, kind: crate::error::UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_data_retention_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_data_retention_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_data_retention_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -2751,9 +2806,11 @@ pub fn parse_update_image_generation_configuration_error(
             tmp
         })},
         "ResourceInUseException" => crate::error::UpdateImageGenerationConfigurationError { meta: generic, kind: crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImageGenerationConfigurationError::unhandled)?;
                     output.build()
@@ -2765,9 +2822,11 @@ pub fn parse_update_image_generation_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateImageGenerationConfigurationError { meta: generic, kind: crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateImageGenerationConfigurationError::unhandled)?;
                     output.build()

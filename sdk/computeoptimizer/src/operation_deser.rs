@@ -16,9 +16,11 @@ pub fn parse_delete_recommendation_preferences_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DeleteRecommendationPreferencesError { meta: generic, kind: crate::error::DeleteRecommendationPreferencesErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -30,9 +32,11 @@ pub fn parse_delete_recommendation_preferences_error(
             tmp
         })},
         "InternalServerException" => crate::error::DeleteRecommendationPreferencesError { meta: generic, kind: crate::error::DeleteRecommendationPreferencesErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -44,9 +48,11 @@ pub fn parse_delete_recommendation_preferences_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::DeleteRecommendationPreferencesError { meta: generic, kind: crate::error::DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -58,9 +64,11 @@ pub fn parse_delete_recommendation_preferences_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::DeleteRecommendationPreferencesError { meta: generic, kind: crate::error::DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -72,9 +80,11 @@ pub fn parse_delete_recommendation_preferences_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::DeleteRecommendationPreferencesError { meta: generic, kind: crate::error::DeleteRecommendationPreferencesErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -86,9 +96,11 @@ pub fn parse_delete_recommendation_preferences_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteRecommendationPreferencesError { meta: generic, kind: crate::error::DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -100,9 +112,11 @@ pub fn parse_delete_recommendation_preferences_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DeleteRecommendationPreferencesError { meta: generic, kind: crate::error::DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -114,9 +128,11 @@ pub fn parse_delete_recommendation_preferences_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DeleteRecommendationPreferencesError { meta: generic, kind: crate::error::DeleteRecommendationPreferencesErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -166,9 +182,11 @@ pub fn parse_describe_recommendation_export_jobs_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeRecommendationExportJobsError { meta: generic, kind: crate::error::DescribeRecommendationExportJobsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
@@ -180,9 +198,11 @@ pub fn parse_describe_recommendation_export_jobs_error(
             tmp
         })},
         "InternalServerException" => crate::error::DescribeRecommendationExportJobsError { meta: generic, kind: crate::error::DescribeRecommendationExportJobsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
@@ -194,9 +214,11 @@ pub fn parse_describe_recommendation_export_jobs_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::DescribeRecommendationExportJobsError { meta: generic, kind: crate::error::DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
@@ -208,9 +230,11 @@ pub fn parse_describe_recommendation_export_jobs_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::DescribeRecommendationExportJobsError { meta: generic, kind: crate::error::DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
@@ -222,9 +246,11 @@ pub fn parse_describe_recommendation_export_jobs_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::DescribeRecommendationExportJobsError { meta: generic, kind: crate::error::DescribeRecommendationExportJobsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
@@ -236,9 +262,11 @@ pub fn parse_describe_recommendation_export_jobs_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeRecommendationExportJobsError { meta: generic, kind: crate::error::DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
@@ -250,9 +278,11 @@ pub fn parse_describe_recommendation_export_jobs_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DescribeRecommendationExportJobsError { meta: generic, kind: crate::error::DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
@@ -264,9 +294,11 @@ pub fn parse_describe_recommendation_export_jobs_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeRecommendationExportJobsError { meta: generic, kind: crate::error::DescribeRecommendationExportJobsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
@@ -324,9 +356,11 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ExportAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -338,9 +372,11 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
             tmp
         })},
         "InternalServerException" => crate::error::ExportAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -352,9 +388,11 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::ExportAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -366,9 +404,11 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
             tmp
         })},
         "LimitExceededException" => crate::error::ExportAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -380,9 +420,11 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::ExportAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -394,9 +436,11 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::ExportAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -408,9 +452,11 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ExportAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -422,9 +468,11 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ExportAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -473,9 +521,11 @@ pub fn parse_export_ebs_volume_recommendations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ExportEBSVolumeRecommendationsError { meta: generic, kind: crate::error::ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
@@ -487,9 +537,11 @@ pub fn parse_export_ebs_volume_recommendations_error(
             tmp
         })},
         "InternalServerException" => crate::error::ExportEBSVolumeRecommendationsError { meta: generic, kind: crate::error::ExportEBSVolumeRecommendationsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
@@ -501,9 +553,11 @@ pub fn parse_export_ebs_volume_recommendations_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::ExportEBSVolumeRecommendationsError { meta: generic, kind: crate::error::ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
@@ -515,9 +569,11 @@ pub fn parse_export_ebs_volume_recommendations_error(
             tmp
         })},
         "LimitExceededException" => crate::error::ExportEBSVolumeRecommendationsError { meta: generic, kind: crate::error::ExportEBSVolumeRecommendationsErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
@@ -529,9 +585,11 @@ pub fn parse_export_ebs_volume_recommendations_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::ExportEBSVolumeRecommendationsError { meta: generic, kind: crate::error::ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
@@ -543,9 +601,11 @@ pub fn parse_export_ebs_volume_recommendations_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::ExportEBSVolumeRecommendationsError { meta: generic, kind: crate::error::ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
@@ -557,9 +617,11 @@ pub fn parse_export_ebs_volume_recommendations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ExportEBSVolumeRecommendationsError { meta: generic, kind: crate::error::ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
@@ -571,9 +633,11 @@ pub fn parse_export_ebs_volume_recommendations_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ExportEBSVolumeRecommendationsError { meta: generic, kind: crate::error::ExportEBSVolumeRecommendationsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
@@ -629,9 +693,11 @@ pub fn parse_export_ec2_instance_recommendations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ExportEC2InstanceRecommendationsError { meta: generic, kind: crate::error::ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
@@ -643,9 +709,11 @@ pub fn parse_export_ec2_instance_recommendations_error(
             tmp
         })},
         "InternalServerException" => crate::error::ExportEC2InstanceRecommendationsError { meta: generic, kind: crate::error::ExportEC2InstanceRecommendationsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
@@ -657,9 +725,11 @@ pub fn parse_export_ec2_instance_recommendations_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::ExportEC2InstanceRecommendationsError { meta: generic, kind: crate::error::ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
@@ -671,9 +741,11 @@ pub fn parse_export_ec2_instance_recommendations_error(
             tmp
         })},
         "LimitExceededException" => crate::error::ExportEC2InstanceRecommendationsError { meta: generic, kind: crate::error::ExportEC2InstanceRecommendationsErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
@@ -685,9 +757,11 @@ pub fn parse_export_ec2_instance_recommendations_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::ExportEC2InstanceRecommendationsError { meta: generic, kind: crate::error::ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
@@ -699,9 +773,11 @@ pub fn parse_export_ec2_instance_recommendations_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::ExportEC2InstanceRecommendationsError { meta: generic, kind: crate::error::ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
@@ -713,9 +789,11 @@ pub fn parse_export_ec2_instance_recommendations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ExportEC2InstanceRecommendationsError { meta: generic, kind: crate::error::ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
@@ -727,9 +805,11 @@ pub fn parse_export_ec2_instance_recommendations_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ExportEC2InstanceRecommendationsError { meta: generic, kind: crate::error::ExportEC2InstanceRecommendationsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
@@ -783,9 +863,11 @@ pub fn parse_export_ecs_service_recommendations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
                     output.build()
@@ -797,9 +879,11 @@ pub fn parse_export_ecs_service_recommendations_error(
             tmp
         })},
         "InternalServerException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
                     output.build()
@@ -811,9 +895,11 @@ pub fn parse_export_ecs_service_recommendations_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
                     output.build()
@@ -825,9 +911,11 @@ pub fn parse_export_ecs_service_recommendations_error(
             tmp
         })},
         "LimitExceededException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
                     output.build()
@@ -839,9 +927,11 @@ pub fn parse_export_ecs_service_recommendations_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
                     output.build()
@@ -853,9 +943,11 @@ pub fn parse_export_ecs_service_recommendations_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
                     output.build()
@@ -867,9 +959,11 @@ pub fn parse_export_ecs_service_recommendations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
                     output.build()
@@ -881,9 +975,11 @@ pub fn parse_export_ecs_service_recommendations_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ExportECSServiceRecommendationsError { meta: generic, kind: crate::error::ExportECSServiceRecommendationsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportECSServiceRecommendationsError::unhandled)?;
                     output.build()
@@ -939,9 +1035,11 @@ pub fn parse_export_lambda_function_recommendations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ExportLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -953,9 +1051,11 @@ pub fn parse_export_lambda_function_recommendations_error(
             tmp
         })},
         "InternalServerException" => crate::error::ExportLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::ExportLambdaFunctionRecommendationsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -967,9 +1067,11 @@ pub fn parse_export_lambda_function_recommendations_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::ExportLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -981,9 +1083,11 @@ pub fn parse_export_lambda_function_recommendations_error(
             tmp
         })},
         "LimitExceededException" => crate::error::ExportLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -995,9 +1099,11 @@ pub fn parse_export_lambda_function_recommendations_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::ExportLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -1009,9 +1115,11 @@ pub fn parse_export_lambda_function_recommendations_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::ExportLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -1023,9 +1131,11 @@ pub fn parse_export_lambda_function_recommendations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ExportLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -1037,9 +1147,11 @@ pub fn parse_export_lambda_function_recommendations_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ExportLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -1090,9 +1202,11 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -1104,9 +1218,11 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
             tmp
         })},
         "InternalServerException" => crate::error::GetAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::GetAutoScalingGroupRecommendationsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -1118,9 +1234,11 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GetAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -1132,9 +1250,11 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::GetAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -1146,9 +1266,11 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::GetAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -1160,9 +1282,11 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -1174,9 +1298,11 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -1188,9 +1314,11 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetAutoScalingGroupRecommendationsError { meta: generic, kind: crate::error::GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
@@ -1622,9 +1750,11 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetEC2RecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1636,9 +1766,11 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
             tmp
         })},
         "InternalServerException" => crate::error::GetEC2RecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1650,9 +1782,11 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GetEC2RecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1664,9 +1798,11 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::GetEC2RecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1678,9 +1814,11 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::GetEC2RecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1692,9 +1830,11 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetEC2RecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1706,9 +1846,11 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetEC2RecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1720,9 +1862,11 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetEC2RecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1775,9 +1919,11 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1789,9 +1935,11 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
             tmp
         })},
         "InternalServerException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1803,9 +1951,11 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1817,9 +1967,11 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1831,9 +1983,11 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1845,9 +1999,11 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1859,9 +2015,11 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1873,9 +2031,11 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetECSServiceRecommendationProjectedMetricsError { meta: generic, kind: crate::error::GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
                     output.build()
@@ -1898,7 +2058,8 @@ pub fn parse_get_ecs_service_recommendation_projected_metrics_response(
     crate::error::GetECSServiceRecommendationProjectedMetricsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_ecs_service_recommendation_projected_metrics(response.body().as_ref(), output).map_err(crate::error::GetECSServiceRecommendationProjectedMetricsError::unhandled)?;
         output.build()
@@ -2117,9 +2278,11 @@ pub fn parse_get_effective_recommendation_preferences_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetEffectiveRecommendationPreferencesError { meta: generic, kind: crate::error::GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEffectiveRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -2131,9 +2294,11 @@ pub fn parse_get_effective_recommendation_preferences_error(
             tmp
         })},
         "InternalServerException" => crate::error::GetEffectiveRecommendationPreferencesError { meta: generic, kind: crate::error::GetEffectiveRecommendationPreferencesErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEffectiveRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -2145,9 +2310,11 @@ pub fn parse_get_effective_recommendation_preferences_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GetEffectiveRecommendationPreferencesError { meta: generic, kind: crate::error::GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEffectiveRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -2159,9 +2326,11 @@ pub fn parse_get_effective_recommendation_preferences_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::GetEffectiveRecommendationPreferencesError { meta: generic, kind: crate::error::GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetEffectiveRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -2173,9 +2342,11 @@ pub fn parse_get_effective_recommendation_preferences_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::GetEffectiveRecommendationPreferencesError { meta: generic, kind: crate::error::GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEffectiveRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -2187,9 +2358,11 @@ pub fn parse_get_effective_recommendation_preferences_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetEffectiveRecommendationPreferencesError { meta: generic, kind: crate::error::GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEffectiveRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -2201,9 +2374,11 @@ pub fn parse_get_effective_recommendation_preferences_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetEffectiveRecommendationPreferencesError { meta: generic, kind: crate::error::GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEffectiveRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -2215,9 +2390,11 @@ pub fn parse_get_effective_recommendation_preferences_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetEffectiveRecommendationPreferencesError { meta: generic, kind: crate::error::GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEffectiveRecommendationPreferencesError::unhandled)?;
                     output.build()
@@ -2412,9 +2589,11 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
@@ -2426,9 +2605,11 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
             tmp
         })},
         "InternalServerException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
@@ -2440,9 +2621,11 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
@@ -2454,9 +2637,11 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
@@ -2468,9 +2653,11 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
@@ -2482,9 +2669,11 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
@@ -2535,9 +2724,11 @@ pub fn parse_get_lambda_function_recommendations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -2549,9 +2740,11 @@ pub fn parse_get_lambda_function_recommendations_error(
             tmp
         })},
         "InternalServerException" => crate::error::GetLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::GetLambdaFunctionRecommendationsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -2563,9 +2756,11 @@ pub fn parse_get_lambda_function_recommendations_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::GetLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -2577,9 +2772,11 @@ pub fn parse_get_lambda_function_recommendations_error(
             tmp
         })},
         "LimitExceededException" => crate::error::GetLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::GetLambdaFunctionRecommendationsErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -2591,9 +2788,11 @@ pub fn parse_get_lambda_function_recommendations_error(
             tmp
         })},
         "MissingAuthenticationToken" => crate::error::GetLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -2605,9 +2804,11 @@ pub fn parse_get_lambda_function_recommendations_error(
             tmp
         })},
         "OptInRequiredException" => crate::error::GetLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -2619,9 +2820,11 @@ pub fn parse_get_lambda_function_recommendations_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
@@ -2633,9 +2836,11 @@ pub fn parse_get_lambda_function_recommendations_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetLambdaFunctionRecommendationsError { meta: generic, kind: crate::error::GetLambdaFunctionRecommendationsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()

@@ -1123,9 +1123,11 @@ pub fn parse_list_application_components_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListApplicationComponentsError { meta: generic, kind: crate::error::ListApplicationComponentsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationComponentsError::unhandled)?;
                     output.build()
@@ -1137,9 +1139,11 @@ pub fn parse_list_application_components_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListApplicationComponentsError { meta: generic, kind: crate::error::ListApplicationComponentsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationComponentsError::unhandled)?;
                     output.build()
@@ -1151,9 +1155,11 @@ pub fn parse_list_application_components_error(
             tmp
         })},
         "ServiceLinkedRoleLockClientException" => crate::error::ListApplicationComponentsError { meta: generic, kind: crate::error::ListApplicationComponentsErrorKind::ServiceLinkedRoleLockClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_lock_client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_lock_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_linked_role_lock_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationComponentsError::unhandled)?;
                     output.build()
@@ -1165,9 +1171,11 @@ pub fn parse_list_application_components_error(
             tmp
         })},
         "ValidationException" => crate::error::ListApplicationComponentsError { meta: generic, kind: crate::error::ListApplicationComponentsErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationComponentsError::unhandled)?;
                     output.build()

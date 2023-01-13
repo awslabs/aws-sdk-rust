@@ -999,7 +999,8 @@ impl AssociateTransitGatewayConnectPeerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_transit_gateway_connect_peer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3255,7 +3256,8 @@ impl CreateSiteToSiteVpnAttachmentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_site_to_site_vpn_attachment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3467,7 +3469,8 @@ impl CreateTransitGatewayPeeringInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_transit_gateway_peering(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3682,7 +3685,8 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_transit_gateway_route_table_attachment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16489,7 +16493,8 @@ impl StartOrganizationServiceAccessUpdateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_organization_service_access_update(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18658,7 +18663,8 @@ impl UpdateNetworkResourceMetadataInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_network_resource_metadata(&self)?
         );
         if let Some(content_length) = body.content_length() {

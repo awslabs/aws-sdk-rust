@@ -3175,7 +3175,8 @@ impl CreatePredictorBacktestExportJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_predictor_backtest_export_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3897,7 +3898,8 @@ impl CreateWhatIfForecastExportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_what_if_forecast_export(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5558,7 +5560,8 @@ impl DeletePredictorBacktestExportJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_predictor_backtest_export_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6229,7 +6232,8 @@ impl DeleteWhatIfForecastExportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_what_if_forecast_export(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7233,7 +7237,8 @@ impl DescribeExplainabilityExportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_explainability_export(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8064,7 +8069,8 @@ impl DescribePredictorBacktestExportJobInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_predictor_backtest_export_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8571,7 +8577,8 @@ impl DescribeWhatIfForecastExportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_what_if_forecast_export(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10801,7 +10808,8 @@ impl ListPredictorBacktestExportJobsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_predictor_backtest_export_jobs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11615,7 +11623,8 @@ impl ListWhatIfForecastExportsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_what_if_forecast_exports(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -5648,7 +5648,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::network_firewall_internet_traffic_not_inspected_violation::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::network_firewall_internet_traffic_not_inspected_violation::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -5810,7 +5811,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::network_firewall_invalid_route_configuration_violation::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::network_firewall_invalid_route_configuration_violation::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -5977,7 +5979,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::network_firewall_black_hole_route_detected_violation::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::network_firewall_black_hole_route_detected_violation::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6058,7 +6061,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::network_firewall_unexpected_firewall_routes_violation::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::network_firewall_unexpected_firewall_routes_violation::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6148,7 +6152,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::network_firewall_unexpected_gateway_routes_violation::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::network_firewall_unexpected_gateway_routes_violation::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6999,7 +7004,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::third_party_firewall_missing_expected_route_table_violation::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::third_party_firewall_missing_expected_route_table_violation::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

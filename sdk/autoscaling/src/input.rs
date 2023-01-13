@@ -484,7 +484,8 @@ impl AttachLoadBalancerTargetGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_target_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -854,7 +855,8 @@ impl BatchDeleteScheduledActionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_scheduled_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1042,7 +1044,8 @@ impl BatchPutScheduledUpdateGroupActionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_put_scheduled_update_group_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3370,7 +3373,8 @@ impl DeleteNotificationConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_notification_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4748,7 +4752,8 @@ impl DescribeAutoScalingInstancesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_instances(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4892,7 +4897,8 @@ impl DescribeAutoScalingNotificationTypesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_notification_types(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -5288,7 +5294,8 @@ impl DescribeLaunchConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_launch_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5617,7 +5624,8 @@ impl DescribeLifecycleHookTypesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_lifecycle_hook_types(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -5983,7 +5991,8 @@ impl DescribeLoadBalancerTargetGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_target_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6127,7 +6136,8 @@ impl DescribeMetricCollectionTypesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_metric_collection_types(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -6312,7 +6322,8 @@ impl DescribeNotificationConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_notification_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6909,7 +6920,8 @@ impl DescribeScalingProcessTypesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_scaling_process_types(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -7477,7 +7489,8 @@ impl DescribeTerminationPolicyTypesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_termination_policy_types(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -8420,7 +8433,8 @@ impl DetachLoadBalancerTargetGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_detach_load_balancer_target_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9888,7 +9902,8 @@ impl GetPredictiveScalingForecastInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_predictive_scaling_forecast(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10363,7 +10378,8 @@ impl PutNotificationConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_notification_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11065,7 +11081,8 @@ impl PutScheduledUpdateGroupActionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_scheduled_update_group_action(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11490,7 +11507,8 @@ impl RecordLifecycleActionHeartbeatInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_record_lifecycle_action_heartbeat(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12863,7 +12881,8 @@ impl TerminateInstanceInAutoScalingGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_terminate_instance_in_auto_scaling_group(&self)?
         );
         if let Some(content_length) = body.content_length() {

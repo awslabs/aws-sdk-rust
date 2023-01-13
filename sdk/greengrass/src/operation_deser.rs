@@ -1855,9 +1855,11 @@ pub fn parse_disassociate_service_role_from_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerErrorException" => crate::error::DisassociateServiceRoleFromAccountError { meta: generic, kind: crate::error::DisassociateServiceRoleFromAccountErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceRoleFromAccountError::unhandled)?;
                     output.build()
@@ -2779,9 +2781,11 @@ pub fn parse_get_group_certificate_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::GetGroupCertificateConfigurationError { meta: generic, kind: crate::error::GetGroupCertificateConfigurationErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGroupCertificateConfigurationError::unhandled)?;
                     output.build()
@@ -2793,9 +2797,11 @@ pub fn parse_get_group_certificate_configuration_error(
             tmp
         })},
         "InternalServerErrorException" => crate::error::GetGroupCertificateConfigurationError { meta: generic, kind: crate::error::GetGroupCertificateConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGroupCertificateConfigurationError::unhandled)?;
                     output.build()
@@ -5030,9 +5036,11 @@ pub fn parse_update_group_certificate_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateGroupCertificateConfigurationError { meta: generic, kind: crate::error::UpdateGroupCertificateConfigurationErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGroupCertificateConfigurationError::unhandled)?;
                     output.build()
@@ -5044,9 +5052,11 @@ pub fn parse_update_group_certificate_configuration_error(
             tmp
         })},
         "InternalServerErrorException" => crate::error::UpdateGroupCertificateConfigurationError { meta: generic, kind: crate::error::UpdateGroupCertificateConfigurationErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGroupCertificateConfigurationError::unhandled)?;
                     output.build()

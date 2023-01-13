@@ -4672,7 +4672,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::cloud_formation_cost_estimation_resource_collection_filter::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::cloud_formation_cost_estimation_resource_collection_filter::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -9399,7 +9400,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::recommendation_related_cloud_watch_metrics_source_detail::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::recommendation_related_cloud_watch_metrics_source_detail::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

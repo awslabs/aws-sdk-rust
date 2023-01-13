@@ -4766,9 +4766,11 @@ pub fn parse_purchase_reserved_instance_offering_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DisabledOperationException" => crate::error::PurchaseReservedInstanceOfferingError { meta: generic, kind: crate::error::PurchaseReservedInstanceOfferingErrorKind::DisabledOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::disabled_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedInstanceOfferingError::unhandled)?;
                     output.build()
@@ -4780,9 +4782,11 @@ pub fn parse_purchase_reserved_instance_offering_error(
             tmp
         })},
         "InternalException" => crate::error::PurchaseReservedInstanceOfferingError { meta: generic, kind: crate::error::PurchaseReservedInstanceOfferingErrorKind::InternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedInstanceOfferingError::unhandled)?;
                     output.build()
@@ -4794,9 +4798,11 @@ pub fn parse_purchase_reserved_instance_offering_error(
             tmp
         })},
         "LimitExceededException" => crate::error::PurchaseReservedInstanceOfferingError { meta: generic, kind: crate::error::PurchaseReservedInstanceOfferingErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedInstanceOfferingError::unhandled)?;
                     output.build()
@@ -4808,9 +4814,11 @@ pub fn parse_purchase_reserved_instance_offering_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::PurchaseReservedInstanceOfferingError { meta: generic, kind: crate::error::PurchaseReservedInstanceOfferingErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedInstanceOfferingError::unhandled)?;
                     output.build()
@@ -4822,9 +4830,11 @@ pub fn parse_purchase_reserved_instance_offering_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::PurchaseReservedInstanceOfferingError { meta: generic, kind: crate::error::PurchaseReservedInstanceOfferingErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedInstanceOfferingError::unhandled)?;
                     output.build()
@@ -4836,9 +4846,11 @@ pub fn parse_purchase_reserved_instance_offering_error(
             tmp
         })},
         "ValidationException" => crate::error::PurchaseReservedInstanceOfferingError { meta: generic, kind: crate::error::PurchaseReservedInstanceOfferingErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedInstanceOfferingError::unhandled)?;
                     output.build()

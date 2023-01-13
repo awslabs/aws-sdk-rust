@@ -824,7 +824,8 @@ impl DisassociateGatewayFromServerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_gateway_from_server(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -987,7 +988,8 @@ impl GetBandwidthRateLimitScheduleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_bandwidth_rate_limit_schedule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1480,7 +1482,8 @@ impl GetHypervisorPropertyMappingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_hypervisor_property_mappings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1888,7 +1891,8 @@ impl ImportHypervisorConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_import_hypervisor_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2781,7 +2785,8 @@ impl PutBandwidthRateLimitScheduleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_bandwidth_rate_limit_schedule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2984,7 +2989,8 @@ impl PutHypervisorPropertyMappingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_hypervisor_property_mappings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3366,7 +3372,8 @@ impl StartVirtualMachinesMetadataSyncInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_virtual_machines_metadata_sync(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3758,7 +3765,8 @@ impl TestHypervisorConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_test_hypervisor_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {

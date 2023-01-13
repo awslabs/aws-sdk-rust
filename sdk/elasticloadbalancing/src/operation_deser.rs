@@ -99,9 +99,11 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::ApplySecurityGroupsToLoadBalancerError { meta: generic, kind: crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
                     output.build()
@@ -113,9 +115,11 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::ApplySecurityGroupsToLoadBalancerError { meta: generic, kind: crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
                     output.build()
@@ -127,9 +131,11 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
             tmp
         })},
         "InvalidSecurityGroup" => crate::error::ApplySecurityGroupsToLoadBalancerError { meta: generic, kind: crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::InvalidSecurityGroupException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_security_group_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_group_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_security_group_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
                     output.build()
@@ -182,9 +188,11 @@ pub fn parse_attach_load_balancer_to_subnets_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::AttachLoadBalancerToSubnetsError { meta: generic, kind: crate::error::AttachLoadBalancerToSubnetsErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
                     output.build()
@@ -196,9 +204,11 @@ pub fn parse_attach_load_balancer_to_subnets_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::AttachLoadBalancerToSubnetsError { meta: generic, kind: crate::error::AttachLoadBalancerToSubnetsErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
                     output.build()
@@ -210,9 +220,11 @@ pub fn parse_attach_load_balancer_to_subnets_error(
             tmp
         })},
         "InvalidSubnet" => crate::error::AttachLoadBalancerToSubnetsError { meta: generic, kind: crate::error::AttachLoadBalancerToSubnetsErrorKind::InvalidSubnetException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_subnet_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_subnet_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
                     output.build()
@@ -224,9 +236,11 @@ pub fn parse_attach_load_balancer_to_subnets_error(
             tmp
         })},
         "SubnetNotFound" => crate::error::AttachLoadBalancerToSubnetsError { meta: generic, kind: crate::error::AttachLoadBalancerToSubnetsErrorKind::SubnetNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::subnet_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::subnet_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_subnet_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
                     output.build()
@@ -336,9 +350,11 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::CreateAppCookieStickinessPolicyError { meta: generic, kind: crate::error::CreateAppCookieStickinessPolicyErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
                     output.build()
@@ -350,9 +366,11 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
             tmp
         })},
         "DuplicatePolicyName" => crate::error::CreateAppCookieStickinessPolicyError { meta: generic, kind: crate::error::CreateAppCookieStickinessPolicyErrorKind::DuplicatePolicyNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
                     output.build()
@@ -364,9 +382,11 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::CreateAppCookieStickinessPolicyError { meta: generic, kind: crate::error::CreateAppCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
                     output.build()
@@ -378,9 +398,11 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
             tmp
         })},
         "TooManyPolicies" => crate::error::CreateAppCookieStickinessPolicyError { meta: generic, kind: crate::error::CreateAppCookieStickinessPolicyErrorKind::TooManyPoliciesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_policies_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_policies_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
                     output.build()
@@ -428,9 +450,11 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::CreateLBCookieStickinessPolicyError { meta: generic, kind: crate::error::CreateLBCookieStickinessPolicyErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
                     output.build()
@@ -442,9 +466,11 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
             tmp
         })},
         "DuplicatePolicyName" => crate::error::CreateLBCookieStickinessPolicyError { meta: generic, kind: crate::error::CreateLBCookieStickinessPolicyErrorKind::DuplicatePolicyNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
                     output.build()
@@ -456,9 +482,11 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::CreateLBCookieStickinessPolicyError { meta: generic, kind: crate::error::CreateLBCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
                     output.build()
@@ -470,9 +498,11 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
             tmp
         })},
         "TooManyPolicies" => crate::error::CreateLBCookieStickinessPolicyError { meta: generic, kind: crate::error::CreateLBCookieStickinessPolicyErrorKind::TooManyPoliciesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_policies_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_policies_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
                     output.build()
@@ -572,27 +602,27 @@ pub fn parse_create_load_balancer_error(
                 tmp
             }),
         },
-        "InvalidConfigurationRequest" => {
-            crate::error::CreateLoadBalancerError {
-                meta: generic,
-                kind:
-                    crate::error::CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidConfigurationRequest" => crate::error::CreateLoadBalancerError {
+            meta: generic,
+            kind: crate::error::CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_configuration_request_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidScheme" => crate::error::CreateLoadBalancerError {
             meta: generic,
             kind: crate::error::CreateLoadBalancerErrorKind::InvalidSchemeException({
@@ -778,9 +808,11 @@ pub fn parse_create_load_balancer_listeners_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::CreateLoadBalancerListenersError { meta: generic, kind: crate::error::CreateLoadBalancerListenersErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
@@ -792,9 +824,11 @@ pub fn parse_create_load_balancer_listeners_error(
             tmp
         })},
         "CertificateNotFound" => crate::error::CreateLoadBalancerListenersError { meta: generic, kind: crate::error::CreateLoadBalancerListenersErrorKind::CertificateNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::certificate_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::certificate_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
@@ -806,9 +840,11 @@ pub fn parse_create_load_balancer_listeners_error(
             tmp
         })},
         "DuplicateListener" => crate::error::CreateLoadBalancerListenersError { meta: generic, kind: crate::error::CreateLoadBalancerListenersErrorKind::DuplicateListenerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_listener_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_listener_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_listener_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
@@ -820,9 +856,11 @@ pub fn parse_create_load_balancer_listeners_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::CreateLoadBalancerListenersError { meta: generic, kind: crate::error::CreateLoadBalancerListenersErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
@@ -834,9 +872,11 @@ pub fn parse_create_load_balancer_listeners_error(
             tmp
         })},
         "UnsupportedProtocol" => crate::error::CreateLoadBalancerListenersError { meta: generic, kind: crate::error::CreateLoadBalancerListenersErrorKind::UnsupportedProtocolException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_protocol_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_protocol_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
                     output.build()
@@ -887,9 +927,11 @@ pub fn parse_create_load_balancer_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::CreateLoadBalancerPolicyError { meta: generic, kind: crate::error::CreateLoadBalancerPolicyErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
@@ -901,9 +943,11 @@ pub fn parse_create_load_balancer_policy_error(
             tmp
         })},
         "DuplicatePolicyName" => crate::error::CreateLoadBalancerPolicyError { meta: generic, kind: crate::error::CreateLoadBalancerPolicyErrorKind::DuplicatePolicyNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_policy_name_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
@@ -915,9 +959,11 @@ pub fn parse_create_load_balancer_policy_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::CreateLoadBalancerPolicyError { meta: generic, kind: crate::error::CreateLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
@@ -929,9 +975,11 @@ pub fn parse_create_load_balancer_policy_error(
             tmp
         })},
         "PolicyTypeNotFound" => crate::error::CreateLoadBalancerPolicyError { meta: generic, kind: crate::error::CreateLoadBalancerPolicyErrorKind::PolicyTypeNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::policy_type_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::policy_type_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
@@ -943,9 +991,11 @@ pub fn parse_create_load_balancer_policy_error(
             tmp
         })},
         "TooManyPolicies" => crate::error::CreateLoadBalancerPolicyError { meta: generic, kind: crate::error::CreateLoadBalancerPolicyErrorKind::TooManyPoliciesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_policies_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_policies_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
                     output.build()
@@ -1082,9 +1132,11 @@ pub fn parse_delete_load_balancer_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::DeleteLoadBalancerPolicyError { meta: generic, kind: crate::error::DeleteLoadBalancerPolicyErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
                     output.build()
@@ -1096,9 +1148,11 @@ pub fn parse_delete_load_balancer_policy_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::DeleteLoadBalancerPolicyError { meta: generic, kind: crate::error::DeleteLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
                     output.build()
@@ -1147,9 +1201,11 @@ pub fn parse_deregister_instances_from_load_balancer_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::DeregisterInstancesFromLoadBalancerError { meta: generic, kind: crate::error::DeregisterInstancesFromLoadBalancerErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
                     output.build()
@@ -1161,9 +1217,11 @@ pub fn parse_deregister_instances_from_load_balancer_error(
             tmp
         })},
         "InvalidInstance" => crate::error::DeregisterInstancesFromLoadBalancerError { meta: generic, kind: crate::error::DeregisterInstancesFromLoadBalancerErrorKind::InvalidEndPointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_end_point_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_end_point_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
                     output.build()
@@ -1323,9 +1381,11 @@ pub fn parse_describe_load_balancer_attributes_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::DescribeLoadBalancerAttributesError { meta: generic, kind: crate::error::DescribeLoadBalancerAttributesErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
                     output.build()
@@ -1337,9 +1397,11 @@ pub fn parse_describe_load_balancer_attributes_error(
             tmp
         })},
         "LoadBalancerAttributeNotFound" => crate::error::DescribeLoadBalancerAttributesError { meta: generic, kind: crate::error::DescribeLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::load_balancer_attribute_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::load_balancer_attribute_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_load_balancer_attribute_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
                     output.build()
@@ -1669,9 +1731,11 @@ pub fn parse_detach_load_balancer_from_subnets_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::DetachLoadBalancerFromSubnetsError { meta: generic, kind: crate::error::DetachLoadBalancerFromSubnetsErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
                     output.build()
@@ -1683,9 +1747,11 @@ pub fn parse_detach_load_balancer_from_subnets_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::DetachLoadBalancerFromSubnetsError { meta: generic, kind: crate::error::DetachLoadBalancerFromSubnetsErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
                     output.build()
@@ -1743,9 +1809,11 @@ pub fn parse_disable_availability_zones_for_load_balancer_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::DisableAvailabilityZonesForLoadBalancerError { meta: generic, kind: crate::error::DisableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
                     output.build()
@@ -1757,9 +1825,11 @@ pub fn parse_disable_availability_zones_for_load_balancer_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::DisableAvailabilityZonesForLoadBalancerError { meta: generic, kind: crate::error::DisableAvailabilityZonesForLoadBalancerErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
                     output.build()
@@ -1812,9 +1882,11 @@ pub fn parse_enable_availability_zones_for_load_balancer_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::EnableAvailabilityZonesForLoadBalancerError { meta: generic, kind: crate::error::EnableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableAvailabilityZonesForLoadBalancerError::unhandled)?;
                     output.build()
@@ -1867,9 +1939,11 @@ pub fn parse_modify_load_balancer_attributes_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::ModifyLoadBalancerAttributesError { meta: generic, kind: crate::error::ModifyLoadBalancerAttributesErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
                     output.build()
@@ -1881,9 +1955,11 @@ pub fn parse_modify_load_balancer_attributes_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::ModifyLoadBalancerAttributesError { meta: generic, kind: crate::error::ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
                     output.build()
@@ -1895,9 +1971,11 @@ pub fn parse_modify_load_balancer_attributes_error(
             tmp
         })},
         "LoadBalancerAttributeNotFound" => crate::error::ModifyLoadBalancerAttributesError { meta: generic, kind: crate::error::ModifyLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::load_balancer_attribute_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::load_balancer_attribute_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_load_balancer_attribute_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
                     output.build()
@@ -1951,9 +2029,11 @@ pub fn parse_register_instances_with_load_balancer_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::RegisterInstancesWithLoadBalancerError { meta: generic, kind: crate::error::RegisterInstancesWithLoadBalancerErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
                     output.build()
@@ -1965,9 +2045,11 @@ pub fn parse_register_instances_with_load_balancer_error(
             tmp
         })},
         "InvalidInstance" => crate::error::RegisterInstancesWithLoadBalancerError { meta: generic, kind: crate::error::RegisterInstancesWithLoadBalancerErrorKind::InvalidEndPointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_end_point_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_end_point_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
                     output.build()
@@ -2067,9 +2149,11 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::SetLoadBalancerListenerSSLCertificateError { meta: generic, kind: crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
@@ -2081,9 +2165,11 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
             tmp
         })},
         "CertificateNotFound" => crate::error::SetLoadBalancerListenerSSLCertificateError { meta: generic, kind: crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::CertificateNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::certificate_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::certificate_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
@@ -2095,9 +2181,11 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::SetLoadBalancerListenerSSLCertificateError { meta: generic, kind: crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
@@ -2109,9 +2197,11 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
             tmp
         })},
         "ListenerNotFound" => crate::error::SetLoadBalancerListenerSSLCertificateError { meta: generic, kind: crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::ListenerNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::listener_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
@@ -2123,9 +2213,11 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
             tmp
         })},
         "UnsupportedProtocol" => crate::error::SetLoadBalancerListenerSSLCertificateError { meta: generic, kind: crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::UnsupportedProtocolException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_protocol_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_protocol_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
                     output.build()
@@ -2177,9 +2269,11 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::SetLoadBalancerPoliciesForBackendServerError { meta: generic, kind: crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
                     output.build()
@@ -2191,9 +2285,11 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::SetLoadBalancerPoliciesForBackendServerError { meta: generic, kind: crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
                     output.build()
@@ -2205,9 +2301,11 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
             tmp
         })},
         "PolicyNotFound" => crate::error::SetLoadBalancerPoliciesForBackendServerError { meta: generic, kind: crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::PolicyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::policy_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::policy_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
                     output.build()
@@ -2257,9 +2355,11 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "LoadBalancerNotFound" => crate::error::SetLoadBalancerPoliciesOfListenerError { meta: generic, kind: crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::AccessPointNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_point_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_point_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
                     output.build()
@@ -2271,9 +2371,11 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
             tmp
         })},
         "InvalidConfigurationRequest" => crate::error::SetLoadBalancerPoliciesOfListenerError { meta: generic, kind: crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::InvalidConfigurationRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_configuration_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
                     output.build()
@@ -2285,9 +2387,11 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
             tmp
         })},
         "ListenerNotFound" => crate::error::SetLoadBalancerPoliciesOfListenerError { meta: generic, kind: crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::ListenerNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::listener_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
                     output.build()
@@ -2299,9 +2403,11 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
             tmp
         })},
         "PolicyNotFound" => crate::error::SetLoadBalancerPoliciesOfListenerError { meta: generic, kind: crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::PolicyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::policy_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::policy_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
                     output.build()

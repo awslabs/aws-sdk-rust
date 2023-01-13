@@ -452,27 +452,27 @@ pub fn parse_cancel_instance_refresh_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ActiveInstanceRefreshNotFound" => {
-            crate::error::CancelInstanceRefreshError {
-                meta: generic,
-                kind:
-                    crate::error::CancelInstanceRefreshErrorKind::ActiveInstanceRefreshNotFoundFault(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::active_instance_refresh_not_found_fault::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_crate_error_active_instance_refresh_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "ActiveInstanceRefreshNotFound" => crate::error::CancelInstanceRefreshError {
+            meta: generic,
+            kind: crate::error::CancelInstanceRefreshErrorKind::ActiveInstanceRefreshNotFoundFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::active_instance_refresh_not_found_fault::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_active_instance_refresh_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "LimitExceeded" => {
             crate::error::CancelInstanceRefreshError {
                 meta: generic,
@@ -4426,9 +4426,11 @@ pub fn parse_terminate_instance_in_auto_scaling_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceContention" => crate::error::TerminateInstanceInAutoScalingGroupError { meta: generic, kind: crate::error::TerminateInstanceInAutoScalingGroupErrorKind::ResourceContentionFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_contention_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
                     output.build()
@@ -4440,9 +4442,11 @@ pub fn parse_terminate_instance_in_auto_scaling_group_error(
             tmp
         })},
         "ScalingActivityInProgress" => crate::error::TerminateInstanceInAutoScalingGroupError { meta: generic, kind: crate::error::TerminateInstanceInAutoScalingGroupErrorKind::ScalingActivityInProgressFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::scaling_activity_in_progress_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
                     output.build()

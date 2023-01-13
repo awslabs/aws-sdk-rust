@@ -317,7 +317,8 @@ impl AuthorizeCacheSecurityGroupIngressInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_authorize_cache_security_group_ingress(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2766,7 +2767,8 @@ impl CreateGlobalReplicationGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_global_replication_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4636,7 +4638,8 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_decrease_node_groups_in_global_replication_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5746,7 +5749,8 @@ impl DeleteGlobalReplicationGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_global_replication_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6881,7 +6885,8 @@ impl DescribeCacheEngineVersionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_engine_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7070,7 +7075,8 @@ impl DescribeCacheParameterGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_parameter_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7465,7 +7471,8 @@ impl DescribeCacheSecurityGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_security_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7851,7 +7858,8 @@ impl DescribeEngineDefaultParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8300,7 +8308,8 @@ impl DescribeGlobalReplicationGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_global_replication_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8818,7 +8827,8 @@ impl DescribeReservedCacheNodesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9129,7 +9139,8 @@ impl DescribeReservedCacheNodesOfferingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes_offerings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10496,7 +10507,8 @@ impl DisassociateGlobalReplicationGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_global_replication_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10693,7 +10705,8 @@ impl FailoverGlobalReplicationGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_failover_global_replication_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10908,7 +10921,8 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_increase_node_groups_in_global_replication_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11303,7 +11317,8 @@ impl ListAllowedNodeTypeModificationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_allowed_node_type_modifications(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12778,7 +12793,8 @@ impl ModifyGlobalReplicationGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_global_replication_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13715,7 +13731,8 @@ impl ModifyReplicationGroupShardConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_replication_group_shard_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14374,7 +14391,8 @@ impl PurchaseReservedCacheNodesOfferingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_cache_nodes_offering(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14550,7 +14568,8 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_rebalance_slots_in_global_replication_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15315,7 +15334,8 @@ impl RevokeCacheSecurityGroupIngressInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_revoke_cache_security_group_ingress(&self)?
         );
         if let Some(content_length) = body.content_length() {

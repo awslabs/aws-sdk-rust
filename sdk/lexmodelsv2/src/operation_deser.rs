@@ -16,9 +16,11 @@ pub fn parse_batch_create_custom_vocabulary_item_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => crate::error::BatchCreateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchCreateCustomVocabularyItemErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -30,9 +32,11 @@ pub fn parse_batch_create_custom_vocabulary_item_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchCreateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchCreateCustomVocabularyItemErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -44,9 +48,11 @@ pub fn parse_batch_create_custom_vocabulary_item_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::BatchCreateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchCreateCustomVocabularyItemErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -58,9 +64,11 @@ pub fn parse_batch_create_custom_vocabulary_item_error(
             tmp
         })},
         "ThrottlingException" => crate::error::BatchCreateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchCreateCustomVocabularyItemErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateCustomVocabularyItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -76,9 +84,11 @@ pub fn parse_batch_create_custom_vocabulary_item_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchCreateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchCreateCustomVocabularyItemErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -132,9 +142,11 @@ pub fn parse_batch_delete_custom_vocabulary_item_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => crate::error::BatchDeleteCustomVocabularyItemError { meta: generic, kind: crate::error::BatchDeleteCustomVocabularyItemErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -146,9 +158,11 @@ pub fn parse_batch_delete_custom_vocabulary_item_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchDeleteCustomVocabularyItemError { meta: generic, kind: crate::error::BatchDeleteCustomVocabularyItemErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -160,9 +174,11 @@ pub fn parse_batch_delete_custom_vocabulary_item_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::BatchDeleteCustomVocabularyItemError { meta: generic, kind: crate::error::BatchDeleteCustomVocabularyItemErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -174,9 +190,11 @@ pub fn parse_batch_delete_custom_vocabulary_item_error(
             tmp
         })},
         "ThrottlingException" => crate::error::BatchDeleteCustomVocabularyItemError { meta: generic, kind: crate::error::BatchDeleteCustomVocabularyItemErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteCustomVocabularyItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -192,9 +210,11 @@ pub fn parse_batch_delete_custom_vocabulary_item_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchDeleteCustomVocabularyItemError { meta: generic, kind: crate::error::BatchDeleteCustomVocabularyItemErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -248,9 +268,11 @@ pub fn parse_batch_update_custom_vocabulary_item_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => crate::error::BatchUpdateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchUpdateCustomVocabularyItemErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -262,9 +284,11 @@ pub fn parse_batch_update_custom_vocabulary_item_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchUpdateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchUpdateCustomVocabularyItemErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -276,9 +300,11 @@ pub fn parse_batch_update_custom_vocabulary_item_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::BatchUpdateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchUpdateCustomVocabularyItemErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -290,9 +316,11 @@ pub fn parse_batch_update_custom_vocabulary_item_error(
             tmp
         })},
         "ThrottlingException" => crate::error::BatchUpdateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchUpdateCustomVocabularyItemErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateCustomVocabularyItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -308,9 +336,11 @@ pub fn parse_batch_update_custom_vocabulary_item_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchUpdateCustomVocabularyItemError { meta: generic, kind: crate::error::BatchUpdateCustomVocabularyItemErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateCustomVocabularyItemError::unhandled)?;
                     output.build()
@@ -4459,9 +4489,11 @@ pub fn parse_describe_custom_vocabulary_metadata_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => crate::error::DescribeCustomVocabularyMetadataError { meta: generic, kind: crate::error::DescribeCustomVocabularyMetadataErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
                     output.build()
@@ -4473,9 +4505,11 @@ pub fn parse_describe_custom_vocabulary_metadata_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeCustomVocabularyMetadataError { meta: generic, kind: crate::error::DescribeCustomVocabularyMetadataErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
                     output.build()
@@ -4487,9 +4521,11 @@ pub fn parse_describe_custom_vocabulary_metadata_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::DescribeCustomVocabularyMetadataError { meta: generic, kind: crate::error::DescribeCustomVocabularyMetadataErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
                     output.build()
@@ -4501,9 +4537,11 @@ pub fn parse_describe_custom_vocabulary_metadata_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeCustomVocabularyMetadataError { meta: generic, kind: crate::error::DescribeCustomVocabularyMetadataErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -4519,9 +4557,11 @@ pub fn parse_describe_custom_vocabulary_metadata_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribeCustomVocabularyMetadataError { meta: generic, kind: crate::error::DescribeCustomVocabularyMetadataErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
                     output.build()

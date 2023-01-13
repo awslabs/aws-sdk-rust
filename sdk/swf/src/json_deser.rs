@@ -4078,7 +4078,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::workflow_execution_continued_as_new_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::workflow_execution_continued_as_new_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -4223,7 +4224,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::continue_as_new_workflow_execution_failed_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::continue_as_new_workflow_execution_failed_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -4383,7 +4385,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::workflow_execution_cancel_requested_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::workflow_execution_cancel_requested_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -5809,7 +5812,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::start_child_workflow_execution_initiated_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::start_child_workflow_execution_initiated_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6407,7 +6411,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::child_workflow_execution_terminated_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::child_workflow_execution_terminated_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6486,7 +6491,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6589,7 +6595,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::external_workflow_execution_signaled_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::external_workflow_execution_signaled_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6652,7 +6659,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::signal_external_workflow_execution_failed_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::signal_external_workflow_execution_failed_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6755,7 +6763,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::external_workflow_execution_cancel_requested_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::external_workflow_execution_cancel_requested_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6818,7 +6827,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::request_cancel_external_workflow_execution_initiated_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::request_cancel_external_workflow_execution_initiated_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6903,7 +6913,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::request_cancel_external_workflow_execution_failed_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::request_cancel_external_workflow_execution_failed_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -7094,7 +7105,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::request_cancel_activity_task_failed_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::request_cancel_activity_task_failed_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -7327,7 +7339,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::start_child_workflow_execution_failed_event_attributes::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::start_child_workflow_execution_failed_event_attributes::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

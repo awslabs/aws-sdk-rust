@@ -755,27 +755,27 @@ pub fn parse_create_deployment_job_error(
                 tmp
             }),
         },
-        "IdempotentParameterMismatchException" => {
-            crate::error::CreateDeploymentJobError {
-                meta: generic,
-                kind:
-                    crate::error::CreateDeploymentJobErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeploymentJobError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::CreateDeploymentJobError {
+            meta: generic,
+            kind: crate::error::CreateDeploymentJobErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeploymentJobError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServerException" => crate::error::CreateDeploymentJobError {
             meta: generic,
             kind: crate::error::CreateDeploymentJobErrorKind::InternalServerException({
@@ -1134,7 +1134,8 @@ pub fn parse_create_robot_application_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRobotApplicationError::unhandled)?;
                             output.build()
@@ -1277,9 +1278,11 @@ pub fn parse_create_robot_application_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "IdempotentParameterMismatchException" => crate::error::CreateRobotApplicationVersionError { meta: generic, kind: crate::error::CreateRobotApplicationVersionErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRobotApplicationVersionError::unhandled)?;
                     output.build()
@@ -1291,9 +1294,11 @@ pub fn parse_create_robot_application_version_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateRobotApplicationVersionError { meta: generic, kind: crate::error::CreateRobotApplicationVersionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRobotApplicationVersionError::unhandled)?;
                     output.build()
@@ -1305,9 +1310,11 @@ pub fn parse_create_robot_application_version_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::CreateRobotApplicationVersionError { meta: generic, kind: crate::error::CreateRobotApplicationVersionErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRobotApplicationVersionError::unhandled)?;
                     output.build()
@@ -1319,9 +1326,11 @@ pub fn parse_create_robot_application_version_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreateRobotApplicationVersionError { meta: generic, kind: crate::error::CreateRobotApplicationVersionErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRobotApplicationVersionError::unhandled)?;
                     output.build()
@@ -1333,9 +1342,11 @@ pub fn parse_create_robot_application_version_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateRobotApplicationVersionError { meta: generic, kind: crate::error::CreateRobotApplicationVersionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRobotApplicationVersionError::unhandled)?;
                     output.build()
@@ -1392,9 +1403,11 @@ pub fn parse_create_simulation_application_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "IdempotentParameterMismatchException" => crate::error::CreateSimulationApplicationError { meta: generic, kind: crate::error::CreateSimulationApplicationErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationError::unhandled)?;
                     output.build()
@@ -1406,9 +1419,11 @@ pub fn parse_create_simulation_application_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateSimulationApplicationError { meta: generic, kind: crate::error::CreateSimulationApplicationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationError::unhandled)?;
                     output.build()
@@ -1420,9 +1435,11 @@ pub fn parse_create_simulation_application_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::CreateSimulationApplicationError { meta: generic, kind: crate::error::CreateSimulationApplicationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationError::unhandled)?;
                     output.build()
@@ -1434,9 +1451,11 @@ pub fn parse_create_simulation_application_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreateSimulationApplicationError { meta: generic, kind: crate::error::CreateSimulationApplicationErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationError::unhandled)?;
                     output.build()
@@ -1448,9 +1467,11 @@ pub fn parse_create_simulation_application_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::CreateSimulationApplicationError { meta: generic, kind: crate::error::CreateSimulationApplicationErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationError::unhandled)?;
                     output.build()
@@ -1462,9 +1483,11 @@ pub fn parse_create_simulation_application_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateSimulationApplicationError { meta: generic, kind: crate::error::CreateSimulationApplicationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationError::unhandled)?;
                     output.build()
@@ -1518,9 +1541,11 @@ pub fn parse_create_simulation_application_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "IdempotentParameterMismatchException" => crate::error::CreateSimulationApplicationVersionError { meta: generic, kind: crate::error::CreateSimulationApplicationVersionErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationVersionError::unhandled)?;
                     output.build()
@@ -1532,9 +1557,11 @@ pub fn parse_create_simulation_application_version_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateSimulationApplicationVersionError { meta: generic, kind: crate::error::CreateSimulationApplicationVersionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationVersionError::unhandled)?;
                     output.build()
@@ -1546,9 +1573,11 @@ pub fn parse_create_simulation_application_version_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::CreateSimulationApplicationVersionError { meta: generic, kind: crate::error::CreateSimulationApplicationVersionErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationVersionError::unhandled)?;
                     output.build()
@@ -1560,9 +1589,11 @@ pub fn parse_create_simulation_application_version_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreateSimulationApplicationVersionError { meta: generic, kind: crate::error::CreateSimulationApplicationVersionErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationVersionError::unhandled)?;
                     output.build()
@@ -1574,9 +1605,11 @@ pub fn parse_create_simulation_application_version_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateSimulationApplicationVersionError { meta: generic, kind: crate::error::CreateSimulationApplicationVersionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationApplicationVersionError::unhandled)?;
                     output.build()
@@ -1624,27 +1657,27 @@ pub fn parse_create_simulation_job_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "IdempotentParameterMismatchException" => {
-            crate::error::CreateSimulationJobError {
-                meta: generic,
-                kind:
-                    crate::error::CreateSimulationJobErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationJobError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::CreateSimulationJobError {
+            meta: generic,
+            kind: crate::error::CreateSimulationJobErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSimulationJobError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServerException" => crate::error::CreateSimulationJobError {
             meta: generic,
             kind: crate::error::CreateSimulationJobErrorKind::InternalServerException({
@@ -1940,9 +1973,11 @@ pub fn parse_create_world_generation_job_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "IdempotentParameterMismatchException" => crate::error::CreateWorldGenerationJobError { meta: generic, kind: crate::error::CreateWorldGenerationJobErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWorldGenerationJobError::unhandled)?;
                     output.build()
@@ -1954,9 +1989,11 @@ pub fn parse_create_world_generation_job_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateWorldGenerationJobError { meta: generic, kind: crate::error::CreateWorldGenerationJobErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWorldGenerationJobError::unhandled)?;
                     output.build()
@@ -1968,9 +2005,11 @@ pub fn parse_create_world_generation_job_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::CreateWorldGenerationJobError { meta: generic, kind: crate::error::CreateWorldGenerationJobErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWorldGenerationJobError::unhandled)?;
                     output.build()
@@ -1982,9 +2021,11 @@ pub fn parse_create_world_generation_job_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreateWorldGenerationJobError { meta: generic, kind: crate::error::CreateWorldGenerationJobErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWorldGenerationJobError::unhandled)?;
                     output.build()
@@ -1996,9 +2037,11 @@ pub fn parse_create_world_generation_job_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreateWorldGenerationJobError { meta: generic, kind: crate::error::CreateWorldGenerationJobErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWorldGenerationJobError::unhandled)?;
                     output.build()
@@ -2010,9 +2053,11 @@ pub fn parse_create_world_generation_job_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::CreateWorldGenerationJobError { meta: generic, kind: crate::error::CreateWorldGenerationJobErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWorldGenerationJobError::unhandled)?;
                     output.build()
@@ -2024,9 +2069,11 @@ pub fn parse_create_world_generation_job_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateWorldGenerationJobError { meta: generic, kind: crate::error::CreateWorldGenerationJobErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWorldGenerationJobError::unhandled)?;
                     output.build()
@@ -5440,7 +5487,8 @@ pub fn parse_start_simulation_job_batch_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSimulationJobBatchError::unhandled)?;
                             output.build()

@@ -1809,7 +1809,8 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_refresh_statuses(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2013,7 +2014,8 @@ impl DescribeTrustedAdvisorCheckResultInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_result(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2204,7 +2206,8 @@ impl DescribeTrustedAdvisorChecksInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_checks(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2376,7 +2379,8 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_trusted_advisor_check_summaries(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2543,7 +2547,8 @@ impl RefreshTrustedAdvisorCheckInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_refresh_trusted_advisor_check(&self)?
         );
         if let Some(content_length) = body.content_length() {

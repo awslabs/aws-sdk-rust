@@ -20688,7 +20688,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::load_balancer_tls_certificate_domain_validation_record::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::load_balancer_tls_certificate_domain_validation_record::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21198,7 +21199,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::load_balancer_tls_certificate_dns_record_creation_state::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::load_balancer_tls_certificate_dns_record_creation_state::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -21265,7 +21267,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::load_balancer_tls_certificate_domain_validation_option::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::load_balancer_tls_certificate_domain_validation_option::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

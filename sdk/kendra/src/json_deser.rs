@@ -13994,7 +13994,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::salesforce_standard_knowledge_article_type_configuration::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::salesforce_standard_knowledge_article_type_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15233,7 +15234,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::salesforce_custom_knowledge_article_type_configuration::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::salesforce_custom_knowledge_article_type_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -137,7 +137,8 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_attach_customer_managed_policy_reference_to_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -332,7 +333,8 @@ impl AttachManagedPolicyToPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_attach_managed_policy_to_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -752,7 +754,8 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_instance_access_control_attribute_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1403,7 +1406,8 @@ impl DeleteInlinePolicyFromPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_inline_policy_from_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1568,7 +1572,8 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_instance_access_control_attribute_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1750,7 +1755,8 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_permissions_boundary_from_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2111,7 +2117,8 @@ impl DescribeAccountAssignmentCreationStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_creation_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2292,7 +2299,8 @@ impl DescribeAccountAssignmentDeletionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_deletion_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2457,7 +2465,8 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_instance_access_control_attribute_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2820,7 +2829,8 @@ impl DescribePermissionSetProvisioningStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_permission_set_provisioning_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3019,7 +3029,8 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_detach_customer_managed_policy_reference_from_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3214,7 +3225,8 @@ impl DetachManagedPolicyFromPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_detach_managed_policy_from_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3392,7 +3404,8 @@ impl GetInlinePolicyForPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_inline_policy_for_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3570,7 +3583,8 @@ impl GetPermissionsBoundaryForPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_permissions_boundary_for_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3772,7 +3786,8 @@ impl ListAccountAssignmentCreationStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_creation_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3974,7 +3989,8 @@ impl ListAccountAssignmentDeletionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_deletion_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4408,7 +4424,8 @@ impl ListAccountsForProvisionedPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_accounts_for_provisioned_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4612,7 +4629,8 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_customer_managed_policy_references_in_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4990,7 +5008,8 @@ impl ListManagedPoliciesInPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_managed_policies_in_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5192,7 +5211,8 @@ impl ListPermissionSetProvisioningStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_permission_set_provisioning_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5594,7 +5614,8 @@ impl ListPermissionSetsProvisionedToAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_permission_sets_provisioned_to_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6185,7 +6206,8 @@ impl PutInlinePolicyToPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_inline_policy_to_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6378,7 +6400,8 @@ impl PutPermissionsBoundaryToPermissionSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_permissions_boundary_to_permission_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6953,7 +6976,8 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_instance_access_control_attribute_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {

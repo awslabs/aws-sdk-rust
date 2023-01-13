@@ -606,9 +606,11 @@ pub fn parse_create_replication_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequest" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::BadRequest({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -620,9 +622,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "FileSystemLimitExceeded" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::FileSystemLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_system_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_system_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_system_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -634,9 +638,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "FileSystemNotFound" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::FileSystemNotFound({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_system_not_found::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_system_not_found::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -648,9 +654,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "IncorrectFileSystemLifeCycleState" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::IncorrectFileSystemLifeCycleState({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::incorrect_file_system_life_cycle_state::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::incorrect_file_system_life_cycle_state::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -662,9 +670,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "InsufficientThroughputCapacity" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::InsufficientThroughputCapacity({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_throughput_capacity::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_throughput_capacity::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_throughput_capacity_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -676,9 +686,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "InternalServerError" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -690,9 +702,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "ReplicationNotFound" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::ReplicationNotFound({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_not_found::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_not_found::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replication_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -704,9 +718,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "ThroughputLimitExceeded" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::ThroughputLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throughput_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throughput_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throughput_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -718,9 +734,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "UnsupportedAvailabilityZone" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::UnsupportedAvailabilityZone({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_availability_zone::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_availability_zone::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_availability_zone_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -732,9 +750,11 @@ pub fn parse_create_replication_configuration_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateReplicationConfigurationError { meta: generic, kind: crate::error::CreateReplicationConfigurationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationError::unhandled)?;
                     output.build()
@@ -1103,27 +1123,27 @@ pub fn parse_delete_file_system_policy_error(
                 tmp
             }),
         },
-        "IncorrectFileSystemLifeCycleState" => {
-            crate::error::DeleteFileSystemPolicyError {
-                meta: generic,
-                kind:
-                    crate::error::DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::incorrect_file_system_life_cycle_state::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IncorrectFileSystemLifeCycleState" => crate::error::DeleteFileSystemPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::incorrect_file_system_life_cycle_state::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServerError" => crate::error::DeleteFileSystemPolicyError {
             meta: generic,
             kind: crate::error::DeleteFileSystemPolicyErrorKind::InternalServerError({
@@ -3193,7 +3213,8 @@ pub fn parse_put_lifecycle_configuration_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::incorrect_file_system_life_cycle_state::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::incorrect_file_system_life_cycle_state::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleConfigurationError::unhandled)?;
                             output.build()

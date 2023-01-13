@@ -109,7 +109,8 @@ pub fn parse_associate_team_member_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::team_member_already_associated_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::team_member_already_associated_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_team_member_already_associated_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
                         output.build()

@@ -7758,7 +7758,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::batch_get_asset_property_value_history_skipped_entry::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::batch_get_asset_property_value_history_skipped_entry::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -7836,7 +7837,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::batch_get_asset_property_value_history_success_entry::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::batch_get_asset_property_value_history_success_entry::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

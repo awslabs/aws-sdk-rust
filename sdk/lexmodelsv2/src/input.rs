@@ -202,7 +202,8 @@ impl BatchCreateCustomVocabularyItemInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_create_custom_vocabulary_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -466,7 +467,8 @@ impl BatchDeleteCustomVocabularyItemInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_custom_vocabulary_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -730,7 +732,8 @@ impl BatchUpdateCustomVocabularyItemInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_update_custom_vocabulary_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3232,7 +3235,8 @@ impl CreateResourcePolicyStatementInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_resource_policy_statement(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13977,7 +13981,8 @@ impl SearchAssociatedTranscriptsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_search_associated_transcripts(&self)?
         );
         if let Some(content_length) = body.content_length() {

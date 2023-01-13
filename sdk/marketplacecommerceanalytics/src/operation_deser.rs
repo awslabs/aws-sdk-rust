@@ -78,7 +78,8 @@ pub fn parse_start_support_data_export_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::marketplace_commerce_analytics_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::marketplace_commerce_analytics_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSupportDataExportError::unhandled)?;
                             output.build()

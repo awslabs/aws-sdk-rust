@@ -6923,7 +6923,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::recovery_instance_data_replication_info_replicated_disk::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::recovery_instance_data_replication_info_replicated_disk::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

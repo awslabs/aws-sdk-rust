@@ -2780,7 +2780,8 @@ impl DeregisterDelegatedAdministratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_deregister_delegated_administrator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3112,7 +3113,8 @@ impl DescribeCreateAccountStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_create_account_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5373,7 +5375,8 @@ impl InviteAccountToOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_invite_account_to_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6055,7 +6058,8 @@ impl ListAwsServiceAccessForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_aws_service_access_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6657,7 +6661,8 @@ impl ListDelegatedAdministratorsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_delegated_administrators(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6844,7 +6849,8 @@ impl ListDelegatedServicesForAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_delegated_services_for_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7227,7 +7233,8 @@ impl ListHandshakesForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_handshakes_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7424,7 +7431,8 @@ impl ListOrganizationalUnitsForParentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_organizational_units_for_parent(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9181,7 +9189,8 @@ impl RegisterDelegatedAdministratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_register_delegated_administrator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9346,7 +9355,8 @@ impl RemoveAccountFromOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_account_from_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -1495,7 +1495,8 @@ impl AdminDisableProviderForUserInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_admin_disable_provider_for_user(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4463,7 +4464,8 @@ impl AdminRespondToAuthChallengeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_admin_respond_to_auth_challenge(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4685,7 +4687,8 @@ impl AdminSetUserMfaPreferenceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_admin_set_user_mfa_preference(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5317,7 +5320,8 @@ impl AdminUpdateAuthEventFeedbackInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_admin_update_auth_event_feedback(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13439,7 +13443,8 @@ impl GetIdentityProviderByIdentifierInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_identity_provider_by_identifier(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14191,7 +14196,8 @@ impl GetUserAttributeVerificationCodeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_user_attribute_verification_code(&self)?
         );
         if let Some(content_length) = body.content_length() {

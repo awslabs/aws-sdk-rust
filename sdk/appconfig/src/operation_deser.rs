@@ -568,9 +568,11 @@ pub fn parse_create_hosted_configuration_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::CreateHostedConfigurationVersionError { meta: generic, kind: crate::error::CreateHostedConfigurationVersionErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHostedConfigurationVersionError::unhandled)?;
                     output.build()
@@ -582,9 +584,11 @@ pub fn parse_create_hosted_configuration_version_error(
             tmp
         })},
         "ConflictException" => crate::error::CreateHostedConfigurationVersionError { meta: generic, kind: crate::error::CreateHostedConfigurationVersionErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHostedConfigurationVersionError::unhandled)?;
                     output.build()
@@ -596,9 +600,11 @@ pub fn parse_create_hosted_configuration_version_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateHostedConfigurationVersionError { meta: generic, kind: crate::error::CreateHostedConfigurationVersionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHostedConfigurationVersionError::unhandled)?;
                     output.build()
@@ -610,9 +616,11 @@ pub fn parse_create_hosted_configuration_version_error(
             tmp
         })},
         "PayloadTooLargeException" => crate::error::CreateHostedConfigurationVersionError { meta: generic, kind: crate::error::CreateHostedConfigurationVersionErrorKind::PayloadTooLargeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::payload_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHostedConfigurationVersionError::unhandled)?;
                     output.build()
@@ -624,9 +632,11 @@ pub fn parse_create_hosted_configuration_version_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreateHostedConfigurationVersionError { meta: generic, kind: crate::error::CreateHostedConfigurationVersionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHostedConfigurationVersionError::unhandled)?;
                     output.build()
@@ -638,9 +648,11 @@ pub fn parse_create_hosted_configuration_version_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::CreateHostedConfigurationVersionError { meta: generic, kind: crate::error::CreateHostedConfigurationVersionErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHostedConfigurationVersionError::unhandled)?;
                     output.build()

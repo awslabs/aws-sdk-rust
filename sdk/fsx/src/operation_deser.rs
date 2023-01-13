@@ -2362,9 +2362,11 @@ pub fn parse_delete_data_repository_association_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequest" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::BadRequest({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -2376,9 +2378,11 @@ pub fn parse_delete_data_repository_association_error(
             tmp
         })},
         "DataRepositoryAssociationNotFound" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::DataRepositoryAssociationNotFound({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::data_repository_association_not_found::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::data_repository_association_not_found::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_repository_association_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -2390,9 +2394,11 @@ pub fn parse_delete_data_repository_association_error(
             tmp
         })},
         "IncompatibleParameterError" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::IncompatibleParameterError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::incompatible_parameter_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::incompatible_parameter_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incompatible_parameter_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -2404,9 +2410,11 @@ pub fn parse_delete_data_repository_association_error(
             tmp
         })},
         "InternalServerError" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -2418,9 +2426,11 @@ pub fn parse_delete_data_repository_association_error(
             tmp
         })},
         "ServiceLimitExceeded" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::ServiceLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -3169,9 +3179,11 @@ pub fn parse_describe_data_repository_associations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequest" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::BadRequest({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
                     output.build()
@@ -3183,9 +3195,11 @@ pub fn parse_describe_data_repository_associations_error(
             tmp
         })},
         "DataRepositoryAssociationNotFound" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::DataRepositoryAssociationNotFound({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::data_repository_association_not_found::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::data_repository_association_not_found::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_repository_association_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
                     output.build()
@@ -3197,9 +3211,11 @@ pub fn parse_describe_data_repository_associations_error(
             tmp
         })},
         "FileSystemNotFound" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::FileSystemNotFound({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_system_not_found::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_system_not_found::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
                     output.build()
@@ -3211,9 +3227,11 @@ pub fn parse_describe_data_repository_associations_error(
             tmp
         })},
         "InternalServerError" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
                     output.build()
@@ -3225,9 +3243,11 @@ pub fn parse_describe_data_repository_associations_error(
             tmp
         })},
         "InvalidDataRepositoryType" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::InvalidDataRepositoryType({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_data_repository_type::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_data_repository_type::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_data_repository_type_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
                     output.build()
@@ -4676,9 +4696,11 @@ pub fn parse_update_data_repository_association_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequest" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::BadRequest({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -4690,9 +4712,11 @@ pub fn parse_update_data_repository_association_error(
             tmp
         })},
         "DataRepositoryAssociationNotFound" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::DataRepositoryAssociationNotFound({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::data_repository_association_not_found::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::data_repository_association_not_found::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_repository_association_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -4704,9 +4728,11 @@ pub fn parse_update_data_repository_association_error(
             tmp
         })},
         "IncompatibleParameterError" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::IncompatibleParameterError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::incompatible_parameter_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::incompatible_parameter_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incompatible_parameter_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -4718,9 +4744,11 @@ pub fn parse_update_data_repository_association_error(
             tmp
         })},
         "InternalServerError" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
                     output.build()
@@ -4732,9 +4760,11 @@ pub fn parse_update_data_repository_association_error(
             tmp
         })},
         "ServiceLimitExceeded" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::ServiceLimitExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_limit_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
                     output.build()

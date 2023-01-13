@@ -126,7 +126,8 @@ pub fn parse_add_tags_error(
                 kind: crate::error::AddTagsErrorKind::NoManagementAccountSlrExistsException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                         output.build()
@@ -138,24 +139,24 @@ pub fn parse_add_tags_error(
                 }),
             }
         }
-        "NotOrganizationMasterAccountException" => {
-            crate::error::AddTagsError {
-                meta: generic,
-                kind: crate::error::AddTagsErrorKind::NotOrganizationMasterAccountException({
+        "NotOrganizationMasterAccountException" => crate::error::AddTagsError {
+            meta: generic,
+            kind: crate::error::AddTagsErrorKind::NotOrganizationMasterAccountException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::not_organization_master_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "OperationNotPermittedException" => crate::error::AddTagsError {
             meta: generic,
             kind: crate::error::AddTagsErrorKind::OperationNotPermittedException({
@@ -387,7 +388,8 @@ pub fn parse_cancel_query_error(
                 kind: crate::error::CancelQueryErrorKind::NoManagementAccountSlrExistsException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
                         output.build()
@@ -490,9 +492,11 @@ pub fn parse_create_event_data_store_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailAccessNotEnabledException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -504,9 +508,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "ConflictException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -518,9 +524,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "EventDataStoreAlreadyExistsException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::EventDataStoreAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -532,9 +540,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "EventDataStoreMaxLimitExceededException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_max_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_max_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_max_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -546,9 +556,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -560,9 +572,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "InsufficientEncryptionPolicyException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InsufficientEncryptionPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -574,9 +588,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "InvalidEventSelectorsException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidEventSelectorsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_event_selectors_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -588,9 +604,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "InvalidKmsKeyIdException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidKmsKeyIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -602,9 +620,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -616,9 +636,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "InvalidTagParameterException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidTagParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_tag_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_tag_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -630,9 +652,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "KmsException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::KmsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -644,9 +668,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "KmsKeyNotFoundException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::KmsKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -658,9 +684,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -672,9 +700,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -686,9 +716,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -700,9 +732,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "OrganizationNotInAllFeaturesModeException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -714,9 +748,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "OrganizationsNotInUseException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::OrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -728,9 +764,11 @@ pub fn parse_create_event_data_store_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
                     output.build()
@@ -779,9 +817,11 @@ pub fn parse_create_trail_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailAccessNotEnabledException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::CloudTrailAccessNotEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -793,9 +833,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "CloudTrailInvalidClientTokenIdException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::CloudTrailInvalidClientTokenIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_invalid_client_token_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_invalid_client_token_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_invalid_client_token_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -807,9 +849,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "CloudWatchLogsDeliveryUnavailableException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_watch_logs_delivery_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_watch_logs_delivery_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_watch_logs_delivery_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -821,9 +865,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "ConflictException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -835,9 +881,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -849,9 +897,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InsufficientEncryptionPolicyException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InsufficientEncryptionPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -863,9 +913,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InsufficientS3BucketPolicyException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InsufficientS3BucketPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_s3_bucket_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_s3_bucket_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_s3_bucket_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -877,9 +929,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InsufficientSnsTopicPolicyException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InsufficientSnsTopicPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_sns_topic_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_sns_topic_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_sns_topic_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -891,9 +945,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidCloudWatchLogsLogGroupArnException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidCloudWatchLogsLogGroupArnException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cloud_watch_logs_log_group_arn_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cloud_watch_logs_log_group_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_cloud_watch_logs_log_group_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -905,9 +961,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidCloudWatchLogsRoleArnException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidCloudWatchLogsRoleArnException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cloud_watch_logs_role_arn_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cloud_watch_logs_role_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_cloud_watch_logs_role_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -919,9 +977,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidKmsKeyIdException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidKmsKeyIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -933,9 +993,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -947,9 +1009,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidS3BucketNameException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidS3BucketNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_bucket_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_bucket_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_s3_bucket_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -961,9 +1025,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidS3PrefixException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidS3PrefixException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_prefix_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_prefix_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_s3_prefix_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -975,9 +1041,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidSnsTopicNameException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidSnsTopicNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sns_topic_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sns_topic_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sns_topic_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -989,9 +1057,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidTagParameterException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidTagParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_tag_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_tag_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1003,9 +1073,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "InvalidTrailNameException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::InvalidTrailNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1017,9 +1089,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "KmsException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::KmsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1031,9 +1105,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "KmsKeyDisabledException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::KmsKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1045,9 +1121,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "KmsKeyNotFoundException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::KmsKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1059,9 +1137,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "MaximumNumberOfTrailsExceededException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::MaximumNumberOfTrailsExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_number_of_trails_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_number_of_trails_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_number_of_trails_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1073,9 +1153,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1087,9 +1169,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1101,9 +1185,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1115,9 +1201,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "OrganizationNotInAllFeaturesModeException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::OrganizationNotInAllFeaturesModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1129,9 +1217,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "OrganizationsNotInUseException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::OrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1143,9 +1233,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "S3BucketDoesNotExistException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::S3BucketDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::s3_bucket_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::s3_bucket_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_s3_bucket_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1157,9 +1249,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "TagsLimitExceededException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::TagsLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tags_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tags_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tags_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1171,9 +1265,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "TrailAlreadyExistsException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::TrailAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trail_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trail_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_trail_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1185,9 +1281,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "TrailNotProvidedException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::TrailNotProvidedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trail_not_provided_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trail_not_provided_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_trail_not_provided_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1199,9 +1297,11 @@ pub fn parse_create_trail_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
@@ -1250,9 +1350,11 @@ pub fn parse_delete_event_data_store_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EventDataStoreARNInvalidException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1264,9 +1366,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "EventDataStoreHasOngoingImportException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreHasOngoingImportException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_has_ongoing_import_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_has_ongoing_import_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_has_ongoing_import_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1278,9 +1382,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "EventDataStoreNotFoundException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1292,9 +1398,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "EventDataStoreTerminationProtectedException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_termination_protected_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_termination_protected_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_termination_protected_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1306,9 +1414,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "InactiveEventDataStoreException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::InactiveEventDataStoreException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inactive_event_data_store_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inactive_event_data_store_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1320,9 +1430,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1334,9 +1446,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1348,9 +1462,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1362,9 +1478,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1376,9 +1494,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1390,9 +1510,11 @@ pub fn parse_delete_event_data_store_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
                     output.build()
@@ -1436,9 +1558,11 @@ pub fn parse_delete_trail_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailARNInvalidException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::CloudTrailArnInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1450,9 +1574,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "ConflictException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1464,9 +1590,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1478,9 +1606,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "InvalidHomeRegionException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::InvalidHomeRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_home_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_home_region_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_home_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1492,9 +1622,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "InvalidTrailNameException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::InvalidTrailNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1506,9 +1638,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1520,9 +1654,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1534,9 +1670,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1548,9 +1686,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "TrailNotFoundException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::TrailNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trail_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trail_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_trail_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1562,9 +1702,11 @@ pub fn parse_delete_trail_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::DeleteTrailError { meta: generic, kind: crate::error::DeleteTrailErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrailError::unhandled)?;
                     output.build()
@@ -1610,9 +1752,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccountNotFoundException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1624,9 +1768,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "AccountNotRegisteredException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::AccountNotRegisteredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_registered_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_registered_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1638,9 +1784,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "CloudTrailAccessNotEnabledException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1652,9 +1800,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1666,9 +1816,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1680,9 +1832,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "NotOrganizationManagementAccountException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_management_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_management_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_management_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1694,9 +1848,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1708,9 +1864,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "OrganizationNotInAllFeaturesModeException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1722,9 +1880,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "OrganizationsNotInUseException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -1736,9 +1896,11 @@ pub fn parse_deregister_organization_delegated_admin_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::DeregisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::DeregisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -2230,7 +2392,8 @@ pub fn parse_get_event_data_store_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventDataStoreError::unhandled)?;
                         output.build()
@@ -2355,7 +2518,8 @@ pub fn parse_get_event_selectors_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSelectorsError::unhandled)?;
                         output.build()
@@ -2621,7 +2785,8 @@ pub fn parse_get_insight_selectors_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightSelectorsError::unhandled)?;
                         output.build()
@@ -3328,7 +3493,8 @@ pub fn parse_list_event_data_stores_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventDataStoresError::unhandled)?;
                         output.build()
@@ -3879,7 +4045,8 @@ pub fn parse_list_queries_error(
                 kind: crate::error::ListQueriesErrorKind::NoManagementAccountSlrExistsException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
                         output.build()
@@ -4055,7 +4222,8 @@ pub fn parse_list_tags_error(
                 kind: crate::error::ListTagsErrorKind::NoManagementAccountSlrExistsException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                         output.build()
@@ -4402,9 +4570,11 @@ pub fn parse_put_event_selectors_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailARNInvalidException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::CloudTrailArnInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4416,9 +4586,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4430,9 +4602,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "InvalidEventSelectorsException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::InvalidEventSelectorsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_event_selectors_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4444,9 +4618,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "InvalidHomeRegionException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::InvalidHomeRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_home_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_home_region_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_home_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4458,9 +4634,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "InvalidTrailNameException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::InvalidTrailNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4472,9 +4650,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4486,9 +4666,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4500,9 +4682,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4514,9 +4698,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "TrailNotFoundException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::TrailNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trail_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trail_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_trail_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4528,9 +4714,11 @@ pub fn parse_put_event_selectors_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::PutEventSelectorsError { meta: generic, kind: crate::error::PutEventSelectorsErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEventSelectorsError::unhandled)?;
                     output.build()
@@ -4603,7 +4791,8 @@ pub fn parse_put_insight_selectors_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutInsightSelectorsError::unhandled)?;
                         output.build()
@@ -4615,27 +4804,27 @@ pub fn parse_put_insight_selectors_error(
                 },
             ),
         },
-        "InsufficientS3BucketPolicyException" => {
-            crate::error::PutInsightSelectorsError {
-                meta: generic,
-                kind:
-                    crate::error::PutInsightSelectorsErrorKind::InsufficientS3BucketPolicyException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::insufficient_s3_bucket_policy_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_insufficient_s3_bucket_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutInsightSelectorsError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InsufficientS3BucketPolicyException" => crate::error::PutInsightSelectorsError {
+            meta: generic,
+            kind: crate::error::PutInsightSelectorsErrorKind::InsufficientS3BucketPolicyException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::insufficient_s3_bucket_policy_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_insufficient_s3_bucket_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutInsightSelectorsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidHomeRegionException" => crate::error::PutInsightSelectorsError {
             meta: generic,
             kind: crate::error::PutInsightSelectorsErrorKind::InvalidHomeRegionException({
@@ -4716,7 +4905,8 @@ pub fn parse_put_insight_selectors_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutInsightSelectorsError::unhandled)?;
                         output.build()
@@ -4734,7 +4924,8 @@ pub fn parse_put_insight_selectors_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutInsightSelectorsError::unhandled)?;
                         output.build()
@@ -4860,9 +5051,11 @@ pub fn parse_register_organization_delegated_admin_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccountNotFoundException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4874,9 +5067,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "AccountRegisteredException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::AccountRegisteredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_registered_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_registered_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4888,9 +5083,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "CannotDelegateManagementAccountException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::CannotDelegateManagementAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cannot_delegate_management_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cannot_delegate_management_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cannot_delegate_management_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4902,9 +5099,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "CloudTrailAccessNotEnabledException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::CloudTrailAccessNotEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4916,9 +5115,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "DelegatedAdminAccountLimitExceededException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::DelegatedAdminAccountLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::delegated_admin_account_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::delegated_admin_account_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_delegated_admin_account_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4930,9 +5131,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4944,9 +5147,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4958,9 +5163,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "NotOrganizationManagementAccountException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::NotOrganizationManagementAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_management_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_management_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_management_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4972,9 +5179,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -4986,9 +5195,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "OrganizationNotInAllFeaturesModeException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::OrganizationNotInAllFeaturesModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -5000,9 +5211,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "OrganizationsNotInUseException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::OrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -5014,9 +5227,11 @@ pub fn parse_register_organization_delegated_admin_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::RegisterOrganizationDelegatedAdminError { meta: generic, kind: crate::error::RegisterOrganizationDelegatedAdminErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterOrganizationDelegatedAdminError::unhandled)?;
                     output.build()
@@ -5155,7 +5370,8 @@ pub fn parse_remove_tags_error(
                 kind: crate::error::RemoveTagsErrorKind::NoManagementAccountSlrExistsException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
                         output.build()
@@ -5167,24 +5383,24 @@ pub fn parse_remove_tags_error(
                 }),
             }
         }
-        "NotOrganizationMasterAccountException" => {
-            crate::error::RemoveTagsError {
-                meta: generic,
-                kind: crate::error::RemoveTagsErrorKind::NotOrganizationMasterAccountException({
+        "NotOrganizationMasterAccountException" => crate::error::RemoveTagsError {
+            meta: generic,
+            kind: crate::error::RemoveTagsErrorKind::NotOrganizationMasterAccountException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::not_organization_master_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "OperationNotPermittedException" => crate::error::RemoveTagsError {
             meta: generic,
             kind: crate::error::RemoveTagsErrorKind::OperationNotPermittedException({
@@ -5289,9 +5505,11 @@ pub fn parse_restore_event_data_store_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailAccessNotEnabledException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::CloudTrailAccessNotEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5303,9 +5521,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "EventDataStoreARNInvalidException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::EventDataStoreArnInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5317,9 +5537,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "EventDataStoreMaxLimitExceededException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_max_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_max_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_max_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5331,9 +5553,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "EventDataStoreNotFoundException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::EventDataStoreNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5345,9 +5569,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5359,9 +5585,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "InvalidEventDataStoreStatusException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::InvalidEventDataStoreStatusException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_event_data_store_status_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_event_data_store_status_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_event_data_store_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5373,9 +5601,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5387,9 +5617,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5401,9 +5633,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5415,9 +5649,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5429,9 +5665,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "OrganizationNotInAllFeaturesModeException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5443,9 +5681,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "OrganizationsNotInUseException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::OrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5457,9 +5697,11 @@ pub fn parse_restore_event_data_store_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
                     output.build()
@@ -5602,7 +5844,8 @@ pub fn parse_start_import_error(
                 kind: crate::error::StartImportErrorKind::InvalidEventDataStoreCategoryException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_event_data_store_category_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_event_data_store_category_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_event_data_store_category_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
                         output.build()
@@ -5614,24 +5857,24 @@ pub fn parse_start_import_error(
                 }),
             }
         }
-        "InvalidEventDataStoreStatusException" => {
-            crate::error::StartImportError {
-                meta: generic,
-                kind: crate::error::StartImportErrorKind::InvalidEventDataStoreStatusException({
+        "InvalidEventDataStoreStatusException" => crate::error::StartImportError {
+            meta: generic,
+            kind: crate::error::StartImportErrorKind::InvalidEventDataStoreStatusException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_event_data_store_status_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_event_data_store_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_event_data_store_status_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_event_data_store_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidImportSourceException" => crate::error::StartImportError {
             meta: generic,
             kind: crate::error::StartImportErrorKind::InvalidImportSourceException({
@@ -5738,9 +5981,11 @@ pub fn parse_start_logging_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailARNInvalidException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::CloudTrailArnInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5752,9 +5997,11 @@ pub fn parse_start_logging_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5766,9 +6013,11 @@ pub fn parse_start_logging_error(
             tmp
         })},
         "InvalidHomeRegionException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::InvalidHomeRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_home_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_home_region_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_home_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5780,9 +6029,11 @@ pub fn parse_start_logging_error(
             tmp
         })},
         "InvalidTrailNameException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::InvalidTrailNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5794,9 +6045,11 @@ pub fn parse_start_logging_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5808,9 +6061,11 @@ pub fn parse_start_logging_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5822,9 +6077,11 @@ pub fn parse_start_logging_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5836,9 +6093,11 @@ pub fn parse_start_logging_error(
             tmp
         })},
         "TrailNotFoundException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::TrailNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trail_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trail_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_trail_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5850,9 +6109,11 @@ pub fn parse_start_logging_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::StartLoggingError { meta: generic, kind: crate::error::StartLoggingErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLoggingError::unhandled)?;
                     output.build()
@@ -5946,24 +6207,24 @@ pub fn parse_start_query_error(
                 tmp
             }),
         },
-        "InsufficientEncryptionPolicyException" => {
-            crate::error::StartQueryError {
-                meta: generic,
-                kind: crate::error::StartQueryErrorKind::InsufficientEncryptionPolicyException({
+        "InsufficientEncryptionPolicyException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::InsufficientEncryptionPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::insufficient_encryption_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InsufficientS3BucketPolicyException" => crate::error::StartQueryError {
             meta: generic,
             kind: crate::error::StartQueryErrorKind::InsufficientS3BucketPolicyException({
@@ -6076,7 +6337,8 @@ pub fn parse_start_query_error(
                 kind: crate::error::StartQueryErrorKind::NoManagementAccountSlrExistsException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
                         output.build()
@@ -6281,9 +6543,11 @@ pub fn parse_stop_logging_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailARNInvalidException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::CloudTrailArnInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6295,9 +6559,11 @@ pub fn parse_stop_logging_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6309,9 +6575,11 @@ pub fn parse_stop_logging_error(
             tmp
         })},
         "InvalidHomeRegionException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::InvalidHomeRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_home_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_home_region_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_home_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6323,9 +6591,11 @@ pub fn parse_stop_logging_error(
             tmp
         })},
         "InvalidTrailNameException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::InvalidTrailNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6337,9 +6607,11 @@ pub fn parse_stop_logging_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6351,9 +6623,11 @@ pub fn parse_stop_logging_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6365,9 +6639,11 @@ pub fn parse_stop_logging_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6379,9 +6655,11 @@ pub fn parse_stop_logging_error(
             tmp
         })},
         "TrailNotFoundException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::TrailNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trail_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trail_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_trail_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6393,9 +6671,11 @@ pub fn parse_stop_logging_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::StopLoggingError { meta: generic, kind: crate::error::StopLoggingErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopLoggingError::unhandled)?;
                     output.build()
@@ -6439,9 +6719,11 @@ pub fn parse_update_event_data_store_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailAccessNotEnabledException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6453,9 +6735,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "EventDataStoreARNInvalidException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6467,9 +6751,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "EventDataStoreHasOngoingImportException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::EventDataStoreHasOngoingImportException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_has_ongoing_import_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_has_ongoing_import_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_has_ongoing_import_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6481,9 +6767,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "EventDataStoreNotFoundException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6495,9 +6783,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "InactiveEventDataStoreException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InactiveEventDataStoreException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::inactive_event_data_store_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inactive_event_data_store_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6509,9 +6799,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6523,9 +6815,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "InsufficientEncryptionPolicyException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InsufficientEncryptionPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6537,9 +6831,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "InvalidEventSelectorsException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InvalidEventSelectorsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_event_selectors_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6551,9 +6847,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "InvalidKmsKeyIdException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InvalidKmsKeyIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6565,9 +6863,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6579,9 +6879,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "KmsException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::KmsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6593,9 +6895,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "KmsKeyNotFoundException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::KmsKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6607,9 +6911,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6621,9 +6927,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6635,9 +6943,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6649,9 +6959,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "OrganizationNotInAllFeaturesModeException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6663,9 +6975,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "OrganizationsNotInUseException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::OrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6677,9 +6991,11 @@ pub fn parse_update_event_data_store_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
                     output.build()
@@ -6728,9 +7044,11 @@ pub fn parse_update_trail_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudTrailAccessNotEnabledException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::CloudTrailAccessNotEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6742,9 +7060,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "CloudTrailARNInvalidException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::CloudTrailArnInvalidException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6756,9 +7076,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "CloudTrailInvalidClientTokenIdException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::CloudTrailInvalidClientTokenIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_invalid_client_token_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_trail_invalid_client_token_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_invalid_client_token_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6770,9 +7092,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "CloudWatchLogsDeliveryUnavailableException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_watch_logs_delivery_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_watch_logs_delivery_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_watch_logs_delivery_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6784,9 +7108,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InsufficientDependencyServiceAccessPermissionException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6798,9 +7124,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InsufficientEncryptionPolicyException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InsufficientEncryptionPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_encryption_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_encryption_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6812,9 +7140,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InsufficientS3BucketPolicyException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InsufficientS3BucketPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_s3_bucket_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_s3_bucket_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_s3_bucket_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6826,9 +7156,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InsufficientSnsTopicPolicyException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InsufficientSnsTopicPolicyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_sns_topic_policy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_sns_topic_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_sns_topic_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6840,9 +7172,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidCloudWatchLogsLogGroupArnException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidCloudWatchLogsLogGroupArnException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cloud_watch_logs_log_group_arn_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cloud_watch_logs_log_group_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_cloud_watch_logs_log_group_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6854,9 +7188,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidCloudWatchLogsRoleArnException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidCloudWatchLogsRoleArnException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cloud_watch_logs_role_arn_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cloud_watch_logs_role_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_cloud_watch_logs_role_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6868,9 +7204,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidEventSelectorsException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidEventSelectorsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_event_selectors_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_event_selectors_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6882,9 +7220,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidHomeRegionException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidHomeRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_home_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_home_region_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_home_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6896,9 +7236,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidKmsKeyIdException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidKmsKeyIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_kms_key_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6910,9 +7252,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6924,9 +7268,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6938,9 +7284,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidS3BucketNameException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidS3BucketNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_bucket_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_bucket_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_s3_bucket_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6952,9 +7300,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidS3PrefixException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidS3PrefixException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_prefix_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_prefix_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_s3_prefix_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6966,9 +7316,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidSnsTopicNameException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidSnsTopicNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_sns_topic_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_sns_topic_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_sns_topic_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6980,9 +7332,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "InvalidTrailNameException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::InvalidTrailNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_trail_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_trail_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_trail_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -6994,9 +7348,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "KmsException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::KmsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7008,9 +7364,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "KmsKeyDisabledException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::KmsKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7022,9 +7380,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "KmsKeyNotFoundException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::KmsKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7036,9 +7396,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "NoManagementAccountSLRExistsException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::NoManagementAccountSlrExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_management_account_slr_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_management_account_slr_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7050,9 +7412,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "NotOrganizationMasterAccountException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::NotOrganizationMasterAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_organization_master_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7064,9 +7428,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7078,9 +7444,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "OrganizationNotInAllFeaturesModeException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::OrganizationNotInAllFeaturesModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7092,9 +7460,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "OrganizationsNotInUseException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::OrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7106,9 +7476,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "S3BucketDoesNotExistException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::S3BucketDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::s3_bucket_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::s3_bucket_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_s3_bucket_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7120,9 +7492,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "TrailNotFoundException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::TrailNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trail_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trail_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_trail_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7134,9 +7508,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "TrailNotProvidedException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::TrailNotProvidedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::trail_not_provided_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::trail_not_provided_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_trail_not_provided_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()
@@ -7148,9 +7524,11 @@ pub fn parse_update_trail_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::UpdateTrailError { meta: generic, kind: crate::error::UpdateTrailErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTrailError::unhandled)?;
                     output.build()

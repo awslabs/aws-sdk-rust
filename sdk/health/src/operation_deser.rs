@@ -20,9 +20,11 @@ pub fn parse_describe_affected_accounts_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidPaginationToken" => crate::error::DescribeAffectedAccountsForOrganizationError { meta: generic, kind: crate::error::DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
                     output.build()
@@ -155,9 +157,11 @@ pub fn parse_describe_affected_entities_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidPaginationToken" => crate::error::DescribeAffectedEntitiesForOrganizationError { meta: generic, kind: crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
                     output.build()
@@ -169,9 +173,11 @@ pub fn parse_describe_affected_entities_for_organization_error(
             tmp
         })},
         "UnsupportedLocale" => crate::error::DescribeAffectedEntitiesForOrganizationError { meta: generic, kind: crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_locale::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_locale::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
                     output.build()
@@ -695,9 +701,11 @@ pub fn parse_disable_health_service_access_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::DisableHealthServiceAccessForOrganizationError { meta: generic, kind: crate::error::DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableHealthServiceAccessForOrganizationError::unhandled)?;
                     output.build()
@@ -750,9 +758,11 @@ pub fn parse_enable_health_service_access_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::EnableHealthServiceAccessForOrganizationError { meta: generic, kind: crate::error::EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableHealthServiceAccessForOrganizationError::unhandled)?;
                     output.build()

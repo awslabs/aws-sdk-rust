@@ -6500,7 +6500,8 @@ impl DescribeElasticLoadBalancersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_elastic_load_balancers(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7052,7 +7053,8 @@ impl DescribeLoadBasedAutoScalingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_load_based_auto_scaling(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8264,7 +8266,8 @@ impl DescribeStackProvisioningParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_provisioning_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8773,7 +8776,8 @@ impl DescribeTimeBasedAutoScalingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_time_based_auto_scaling(&self)?
         );
         if let Some(content_length) = body.content_length() {

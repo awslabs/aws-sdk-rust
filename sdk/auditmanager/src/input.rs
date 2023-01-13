@@ -138,7 +138,8 @@ impl AssociateAssessmentReportEvidenceFolderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_assessment_report_evidence_folder(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -359,7 +360,8 @@ impl BatchAssociateAssessmentReportEvidenceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_assessment_report_evidence(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -569,7 +571,8 @@ impl BatchCreateDelegationByAssessmentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_create_delegation_by_assessment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -775,7 +778,8 @@ impl BatchDeleteDelegationByAssessmentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_delegation_by_assessment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -998,7 +1002,8 @@ impl BatchDisassociateAssessmentReportEvidenceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_assessment_report_evidence(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1265,7 +1270,8 @@ impl BatchImportEvidenceToAssessmentControlInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_import_evidence_to_assessment_control(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3481,7 +3487,8 @@ impl DeregisterOrganizationAdminAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_deregister_organization_admin_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3683,7 +3690,8 @@ impl DisassociateAssessmentReportEvidenceFolderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_assessment_report_evidence_folder(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9671,7 +9679,8 @@ impl RegisterOrganizationAdminAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_register_organization_admin_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9895,7 +9904,8 @@ impl StartAssessmentFrameworkShareInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_assessment_framework_share(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11100,7 +11110,8 @@ impl UpdateAssessmentControlSetStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_assessment_control_set_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11563,7 +11574,8 @@ impl UpdateAssessmentFrameworkShareInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_assessment_framework_share(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12438,7 +12450,8 @@ impl ValidateAssessmentReportIntegrityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_validate_assessment_report_integrity(&self)?
         );
         if let Some(content_length) = body.content_length() {

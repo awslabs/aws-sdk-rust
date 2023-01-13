@@ -1680,7 +1680,8 @@ impl DeleteFirewallManagerRuleGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_firewall_manager_rule_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3418,7 +3419,8 @@ impl GenerateMobileSdkReleaseUrlInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_generate_mobile_sdk_release_url(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4546,7 +4548,8 @@ impl GetRateBasedStatementManagedKeysInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_rate_based_statement_managed_keys(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5751,7 +5754,8 @@ impl ListAvailableManagedRuleGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_available_managed_rule_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5972,7 +5976,8 @@ impl ListAvailableManagedRuleGroupVersionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_available_managed_rule_group_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8151,7 +8156,8 @@ impl PutManagedRuleSetVersionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_managed_rule_set_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9225,7 +9231,8 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_managed_rule_set_version_expiry_date(&self)?
         );
         if let Some(content_length) = body.content_length() {

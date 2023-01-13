@@ -15258,7 +15258,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -15463,7 +15464,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -17981,7 +17983,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::pull_request_source_reference_updated_event_metadata::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::pull_request_source_reference_updated_event_metadata::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

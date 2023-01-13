@@ -135,7 +135,8 @@ impl AssociateEntitiesToExperienceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_entities_to_experience(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -332,7 +333,8 @@ impl AssociatePersonasToEntitiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_personas_to_entities(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1371,7 +1373,8 @@ impl CreateAccessControlConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_access_control_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2829,7 +2832,8 @@ impl CreateQuerySuggestionsBlockListInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_query_suggestions_block_list(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3253,7 +3257,8 @@ impl DeleteAccessControlConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_access_control_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4323,7 +4328,8 @@ impl DeleteQuerySuggestionsBlockListInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_query_suggestions_block_list(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4672,7 +4678,8 @@ impl DescribeAccessControlConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_access_control_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5726,7 +5733,8 @@ impl DescribeQuerySuggestionsBlockListInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_query_suggestions_block_list(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5889,7 +5897,8 @@ impl DescribeQuerySuggestionsConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_query_suggestions_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6262,7 +6271,8 @@ impl DisassociateEntitiesFromExperienceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_entities_from_experience(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6458,7 +6468,8 @@ impl DisassociatePersonasFromEntitiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_personas_from_entities(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7068,7 +7079,8 @@ impl ListAccessControlConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_access_control_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8459,7 +8471,8 @@ impl ListGroupsOlderThanOrderingIdInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_groups_older_than_ordering_id(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8822,7 +8835,8 @@ impl ListQuerySuggestionsBlockListsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_query_suggestions_block_lists(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10969,7 +10983,8 @@ impl UpdateAccessControlConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_access_control_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12022,7 +12037,8 @@ impl UpdateQuerySuggestionsBlockListInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_query_suggestions_block_list(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12277,7 +12293,8 @@ impl UpdateQuerySuggestionsConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_query_suggestions_config(&self)?
         );
         if let Some(content_length) = body.content_length() {

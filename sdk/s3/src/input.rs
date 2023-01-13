@@ -17191,7 +17191,8 @@ impl PutBucketIntelligentTieringConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_payload_put_bucket_intelligent_tiering_configuration_input(& self.intelligent_tiering_configuration)?
         );
         if let Some(content_length) = body.content_length() {

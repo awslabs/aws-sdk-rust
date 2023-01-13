@@ -16272,7 +16272,8 @@ impl GenerateEmbedUrlForAnonymousUserInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_generate_embed_url_for_anonymous_user(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16525,7 +16526,8 @@ impl GenerateEmbedUrlForRegisteredUserInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_generate_embed_url_for_registered_user(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -28125,7 +28127,8 @@ impl UpdateDataSourcePermissionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_data_source_permissions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -29615,7 +29618,8 @@ impl UpdatePublicSharingSettingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_public_sharing_settings(&self)?
         );
         if let Some(content_length) = body.content_length() {

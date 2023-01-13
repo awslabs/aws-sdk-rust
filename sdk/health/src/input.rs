@@ -129,7 +129,8 @@ impl DescribeAffectedAccountsForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_affected_accounts_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -546,7 +547,8 @@ impl DescribeAffectedEntitiesForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_affected_entities_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1301,7 +1303,8 @@ impl DescribeEventDetailsForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_event_details_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1701,7 +1704,8 @@ impl DescribeEventsForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_events_for_organization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2053,7 +2057,8 @@ impl DescribeHealthServiceStatusForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_health_service_status_for_organization(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -2196,7 +2201,8 @@ impl DisableHealthServiceAccessForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disable_health_service_access_for_organization(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -2339,7 +2345,8 @@ impl EnableHealthServiceAccessForOrganizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_enable_health_service_access_for_organization(&self)?
         );
         let request = request.body(body).expect("should be valid request");

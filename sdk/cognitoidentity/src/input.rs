@@ -2010,7 +2010,8 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_open_id_token_for_developer_identity(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2191,7 +2192,8 @@ impl GetPrincipalTagAttributeMapInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_principal_tag_attribute_map(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3622,7 +3624,8 @@ impl SetPrincipalTagAttributeMapInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_principal_tag_attribute_map(&self)?
         );
         if let Some(content_length) = body.content_length() {

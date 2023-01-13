@@ -653,7 +653,8 @@ impl CreateCostCategoryDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_cost_category_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1154,7 +1155,8 @@ impl DeleteCostCategoryDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_cost_category_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1332,7 +1334,8 @@ impl DescribeCostCategoryDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cost_category_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2509,7 +2512,8 @@ impl GetCostAndUsageWithResourcesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_cost_and_usage_with_resources(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4355,7 +4359,8 @@ impl GetReservationPurchaseRecommendationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_reservation_purchase_recommendation(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4979,7 +4984,8 @@ impl GetRightsizingRecommendationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_rightsizing_recommendation(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5569,7 +5575,8 @@ impl GetSavingsPlansPurchaseRecommendationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_purchase_recommendation(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5815,7 +5822,8 @@ impl GetSavingsPlansUtilizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_utilization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6092,7 +6100,8 @@ impl GetSavingsPlansUtilizationDetailsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_utilization_details(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7136,7 +7145,8 @@ impl ListCostCategoryDefinitionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_cost_category_definitions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7352,7 +7362,8 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_savings_plans_purchase_recommendation_generation(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7850,7 +7861,8 @@ impl StartSavingsPlansPurchaseRecommendationGenerationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_savings_plans_purchase_recommendation_generation(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -8873,7 +8885,8 @@ impl UpdateCostAllocationTagsStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_cost_allocation_tags_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9130,7 +9143,8 @@ impl UpdateCostCategoryDefinitionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_cost_category_definition(&self)?
         );
         if let Some(content_length) = body.content_length() {

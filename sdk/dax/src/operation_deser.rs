@@ -29,24 +29,24 @@ pub fn parse_create_cluster_error(
                 tmp
             }),
         },
-        "ClusterQuotaForCustomerExceededFault" => {
-            crate::error::CreateClusterError {
-                meta: generic,
-                kind: crate::error::CreateClusterErrorKind::ClusterQuotaForCustomerExceededFault({
+        "ClusterQuotaForCustomerExceededFault" => crate::error::CreateClusterError {
+            meta: generic,
+            kind: crate::error::CreateClusterErrorKind::ClusterQuotaForCustomerExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InsufficientClusterCapacityFault" => crate::error::CreateClusterError {
             meta: generic,
             kind: crate::error::CreateClusterErrorKind::InsufficientClusterCapacityFault({
@@ -601,9 +601,11 @@ pub fn parse_decrease_replication_factor_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterNotFoundFault" => crate::error::DecreaseReplicationFactorError { meta: generic, kind: crate::error::DecreaseReplicationFactorErrorKind::ClusterNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cluster_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cluster_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -615,9 +617,11 @@ pub fn parse_decrease_replication_factor_error(
             tmp
         })},
         "InvalidClusterStateFault" => crate::error::DecreaseReplicationFactorError { meta: generic, kind: crate::error::DecreaseReplicationFactorErrorKind::InvalidClusterStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -629,9 +633,11 @@ pub fn parse_decrease_replication_factor_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::DecreaseReplicationFactorError { meta: generic, kind: crate::error::DecreaseReplicationFactorErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -643,9 +649,11 @@ pub fn parse_decrease_replication_factor_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::DecreaseReplicationFactorError { meta: generic, kind: crate::error::DecreaseReplicationFactorErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -657,9 +665,11 @@ pub fn parse_decrease_replication_factor_error(
             tmp
         })},
         "NodeNotFoundFault" => crate::error::DecreaseReplicationFactorError { meta: generic, kind: crate::error::DecreaseReplicationFactorErrorKind::NodeNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_node_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -671,9 +681,11 @@ pub fn parse_decrease_replication_factor_error(
             tmp
         })},
         "ServiceLinkedRoleNotFoundFault" => crate::error::DecreaseReplicationFactorError { meta: generic, kind: crate::error::DecreaseReplicationFactorErrorKind::ServiceLinkedRoleNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1179,9 +1191,11 @@ pub fn parse_describe_default_parameters_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombinationException" => crate::error::DescribeDefaultParametersError { meta: generic, kind: crate::error::DescribeDefaultParametersErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
                     output.build()
@@ -1193,9 +1207,11 @@ pub fn parse_describe_default_parameters_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::DescribeDefaultParametersError { meta: generic, kind: crate::error::DescribeDefaultParametersErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
                     output.build()
@@ -1207,9 +1223,11 @@ pub fn parse_describe_default_parameters_error(
             tmp
         })},
         "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeDefaultParametersError { meta: generic, kind: crate::error::DescribeDefaultParametersErrorKind::ServiceLinkedRoleNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDefaultParametersError::unhandled)?;
                     output.build()
@@ -1359,7 +1377,8 @@ pub fn parse_describe_parameter_groups_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
                             output.build()
@@ -1465,27 +1484,27 @@ pub fn parse_describe_parameters_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombinationException" => {
-            crate::error::DescribeParametersError {
-                meta: generic,
-                kind:
-                    crate::error::DescribeParametersErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombinationException" => crate::error::DescribeParametersError {
+            meta: generic,
+            kind: crate::error::DescribeParametersErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidParameterValueException" => crate::error::DescribeParametersError {
             meta: generic,
             kind: crate::error::DescribeParametersErrorKind::InvalidParameterValueException({
@@ -1660,9 +1679,11 @@ pub fn parse_increase_replication_factor_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterNotFoundFault" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::ClusterNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cluster_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cluster_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1674,9 +1695,11 @@ pub fn parse_increase_replication_factor_error(
             tmp
         })},
         "InsufficientClusterCapacityFault" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::InsufficientClusterCapacityFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_cluster_capacity_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cluster_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_insufficient_cluster_capacity_fault_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1688,9 +1711,11 @@ pub fn parse_increase_replication_factor_error(
             tmp
         })},
         "InvalidClusterStateFault" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::InvalidClusterStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_cluster_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1702,9 +1727,11 @@ pub fn parse_increase_replication_factor_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1716,9 +1743,11 @@ pub fn parse_increase_replication_factor_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1730,9 +1759,11 @@ pub fn parse_increase_replication_factor_error(
             tmp
         })},
         "InvalidVPCNetworkStateFault" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::InvalidVpcNetworkStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1744,9 +1775,11 @@ pub fn parse_increase_replication_factor_error(
             tmp
         })},
         "NodeQuotaForClusterExceededFault" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::NodeQuotaForClusterExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1758,9 +1791,11 @@ pub fn parse_increase_replication_factor_error(
             tmp
         })},
         "NodeQuotaForCustomerExceededFault" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::NodeQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()
@@ -1772,9 +1807,11 @@ pub fn parse_increase_replication_factor_error(
             tmp
         })},
         "ServiceLinkedRoleNotFoundFault" => crate::error::IncreaseReplicationFactorError { meta: generic, kind: crate::error::IncreaseReplicationFactorErrorKind::ServiceLinkedRoleNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicationFactorError::unhandled)?;
                     output.build()

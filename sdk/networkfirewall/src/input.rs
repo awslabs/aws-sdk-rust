@@ -2559,7 +2559,8 @@ impl DescribeLoggingConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_logging_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4910,7 +4911,8 @@ impl UpdateFirewallDeleteProtectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_delete_protection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5336,7 +5338,8 @@ impl UpdateFirewallEncryptionConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_encryption_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5815,7 +5818,8 @@ impl UpdateFirewallPolicyChangeProtectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_firewall_policy_change_protection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6538,7 +6542,8 @@ impl UpdateSubnetChangeProtectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_subnet_change_protection(&self)?
         );
         if let Some(content_length) = body.content_length() {

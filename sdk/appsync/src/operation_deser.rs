@@ -252,24 +252,24 @@ pub fn parse_create_api_key_error(
                 tmp
             }),
         },
-        "ApiKeyValidityOutOfBoundsException" => {
-            crate::error::CreateApiKeyError {
-                meta: generic,
-                kind: crate::error::CreateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException({
+        "ApiKeyValidityOutOfBoundsException" => crate::error::CreateApiKeyError {
+            meta: generic,
+            kind: crate::error::CreateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::api_key_validity_out_of_bounds_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_api_key_validity_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApiKeyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::api_key_validity_out_of_bounds_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_api_key_validity_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApiKeyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::CreateApiKeyError {
             meta: generic,
             kind: crate::error::CreateApiKeyErrorKind::BadRequestException({
@@ -4937,24 +4937,24 @@ pub fn parse_update_api_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ApiKeyValidityOutOfBoundsException" => {
-            crate::error::UpdateApiKeyError {
-                meta: generic,
-                kind: crate::error::UpdateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException({
+        "ApiKeyValidityOutOfBoundsException" => crate::error::UpdateApiKeyError {
+            meta: generic,
+            kind: crate::error::UpdateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::api_key_validity_out_of_bounds_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_api_key_validity_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApiKeyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::api_key_validity_out_of_bounds_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_api_key_validity_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApiKeyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "BadRequestException" => crate::error::UpdateApiKeyError {
             meta: generic,
             kind: crate::error::UpdateApiKeyErrorKind::BadRequestException({

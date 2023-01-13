@@ -1541,7 +1541,8 @@ impl CreatePresignedNotebookUrlInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_presigned_notebook_url(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3097,7 +3098,8 @@ impl GetCalculationExecutionCodeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_calculation_execution_code(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3263,7 +3265,8 @@ impl GetCalculationExecutionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_calculation_execution_status(&self)?
         );
         if let Some(content_length) = body.content_length() {

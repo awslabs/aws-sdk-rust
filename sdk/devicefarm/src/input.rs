@@ -4415,7 +4415,8 @@ impl GetDevicePoolCompatibilityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_device_pool_compatibility(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6711,7 +6712,8 @@ impl InstallToRemoteAccessSessionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_install_to_remote_access_session(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9980,7 +9982,8 @@ impl ListTestGridSessionActionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_test_grid_session_actions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10182,7 +10185,8 @@ impl ListTestGridSessionArtifactsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_test_grid_session_artifacts(&self)?
         );
         if let Some(content_length) = body.content_length() {

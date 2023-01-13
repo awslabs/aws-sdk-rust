@@ -2490,9 +2490,11 @@ pub fn parse_describe_stack_provisioning_parameters_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundException" => crate::error::DescribeStackProvisioningParametersError { meta: generic, kind: crate::error::DescribeStackProvisioningParametersErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackProvisioningParametersError::unhandled)?;
                     output.build()
@@ -2504,9 +2506,11 @@ pub fn parse_describe_stack_provisioning_parameters_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribeStackProvisioningParametersError { meta: generic, kind: crate::error::DescribeStackProvisioningParametersErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStackProvisioningParametersError::unhandled)?;
                     output.build()

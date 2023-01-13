@@ -1334,9 +1334,11 @@ pub fn parse_delete_backup_vault_lock_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::DeleteBackupVaultLockConfigurationError { meta: generic, kind: crate::error::DeleteBackupVaultLockConfigurationErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -1348,9 +1350,11 @@ pub fn parse_delete_backup_vault_lock_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteBackupVaultLockConfigurationError { meta: generic, kind: crate::error::DeleteBackupVaultLockConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -1362,9 +1366,11 @@ pub fn parse_delete_backup_vault_lock_configuration_error(
             tmp
         })},
         "MissingParameterValueException" => crate::error::DeleteBackupVaultLockConfigurationError { meta: generic, kind: crate::error::DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -1376,9 +1382,11 @@ pub fn parse_delete_backup_vault_lock_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteBackupVaultLockConfigurationError { meta: generic, kind: crate::error::DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -1390,9 +1398,11 @@ pub fn parse_delete_backup_vault_lock_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DeleteBackupVaultLockConfigurationError { meta: generic, kind: crate::error::DeleteBackupVaultLockConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -1440,9 +1450,11 @@ pub fn parse_delete_backup_vault_notifications_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::DeleteBackupVaultNotificationsError { meta: generic, kind: crate::error::DeleteBackupVaultNotificationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultNotificationsError::unhandled)?;
                     output.build()
@@ -1454,9 +1466,11 @@ pub fn parse_delete_backup_vault_notifications_error(
             tmp
         })},
         "MissingParameterValueException" => crate::error::DeleteBackupVaultNotificationsError { meta: generic, kind: crate::error::DeleteBackupVaultNotificationsErrorKind::MissingParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultNotificationsError::unhandled)?;
                     output.build()
@@ -1468,9 +1482,11 @@ pub fn parse_delete_backup_vault_notifications_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteBackupVaultNotificationsError { meta: generic, kind: crate::error::DeleteBackupVaultNotificationsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultNotificationsError::unhandled)?;
                     output.build()
@@ -1482,9 +1498,11 @@ pub fn parse_delete_backup_vault_notifications_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DeleteBackupVaultNotificationsError { meta: generic, kind: crate::error::DeleteBackupVaultNotificationsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBackupVaultNotificationsError::unhandled)?;
                     output.build()
@@ -3212,9 +3230,11 @@ pub fn parse_disassociate_recovery_point_from_parent_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::DisassociateRecoveryPointFromParentError { meta: generic, kind: crate::error::DisassociateRecoveryPointFromParentErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateRecoveryPointFromParentError::unhandled)?;
                     output.build()
@@ -3226,9 +3246,11 @@ pub fn parse_disassociate_recovery_point_from_parent_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DisassociateRecoveryPointFromParentError { meta: generic, kind: crate::error::DisassociateRecoveryPointFromParentErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateRecoveryPointFromParentError::unhandled)?;
                     output.build()
@@ -3240,9 +3262,11 @@ pub fn parse_disassociate_recovery_point_from_parent_error(
             tmp
         })},
         "MissingParameterValueException" => crate::error::DisassociateRecoveryPointFromParentError { meta: generic, kind: crate::error::DisassociateRecoveryPointFromParentErrorKind::MissingParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateRecoveryPointFromParentError::unhandled)?;
                     output.build()
@@ -3254,9 +3278,11 @@ pub fn parse_disassociate_recovery_point_from_parent_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateRecoveryPointFromParentError { meta: generic, kind: crate::error::DisassociateRecoveryPointFromParentErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateRecoveryPointFromParentError::unhandled)?;
                     output.build()
@@ -3268,9 +3294,11 @@ pub fn parse_disassociate_recovery_point_from_parent_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DisassociateRecoveryPointFromParentError { meta: generic, kind: crate::error::DisassociateRecoveryPointFromParentErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateRecoveryPointFromParentError::unhandled)?;
                     output.build()
@@ -4247,9 +4275,11 @@ pub fn parse_get_recovery_point_restore_metadata_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::GetRecoveryPointRestoreMetadataError { meta: generic, kind: crate::error::GetRecoveryPointRestoreMetadataErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecoveryPointRestoreMetadataError::unhandled)?;
                     output.build()
@@ -4261,9 +4291,11 @@ pub fn parse_get_recovery_point_restore_metadata_error(
             tmp
         })},
         "MissingParameterValueException" => crate::error::GetRecoveryPointRestoreMetadataError { meta: generic, kind: crate::error::GetRecoveryPointRestoreMetadataErrorKind::MissingParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecoveryPointRestoreMetadataError::unhandled)?;
                     output.build()
@@ -4275,9 +4307,11 @@ pub fn parse_get_recovery_point_restore_metadata_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetRecoveryPointRestoreMetadataError { meta: generic, kind: crate::error::GetRecoveryPointRestoreMetadataErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecoveryPointRestoreMetadataError::unhandled)?;
                     output.build()
@@ -4289,9 +4323,11 @@ pub fn parse_get_recovery_point_restore_metadata_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::GetRecoveryPointRestoreMetadataError { meta: generic, kind: crate::error::GetRecoveryPointRestoreMetadataErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecoveryPointRestoreMetadataError::unhandled)?;
                     output.build()
@@ -5320,9 +5356,11 @@ pub fn parse_list_recovery_points_by_backup_vault_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::ListRecoveryPointsByBackupVaultError { meta: generic, kind: crate::error::ListRecoveryPointsByBackupVaultErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecoveryPointsByBackupVaultError::unhandled)?;
                     output.build()
@@ -5334,9 +5372,11 @@ pub fn parse_list_recovery_points_by_backup_vault_error(
             tmp
         })},
         "MissingParameterValueException" => crate::error::ListRecoveryPointsByBackupVaultError { meta: generic, kind: crate::error::ListRecoveryPointsByBackupVaultErrorKind::MissingParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecoveryPointsByBackupVaultError::unhandled)?;
                     output.build()
@@ -5348,9 +5388,11 @@ pub fn parse_list_recovery_points_by_backup_vault_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListRecoveryPointsByBackupVaultError { meta: generic, kind: crate::error::ListRecoveryPointsByBackupVaultErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecoveryPointsByBackupVaultError::unhandled)?;
                     output.build()
@@ -5362,9 +5404,11 @@ pub fn parse_list_recovery_points_by_backup_vault_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ListRecoveryPointsByBackupVaultError { meta: generic, kind: crate::error::ListRecoveryPointsByBackupVaultErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecoveryPointsByBackupVaultError::unhandled)?;
                     output.build()
@@ -6126,9 +6170,11 @@ pub fn parse_put_backup_vault_lock_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::PutBackupVaultLockConfigurationError { meta: generic, kind: crate::error::PutBackupVaultLockConfigurationErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -6140,9 +6186,11 @@ pub fn parse_put_backup_vault_lock_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::PutBackupVaultLockConfigurationError { meta: generic, kind: crate::error::PutBackupVaultLockConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -6154,9 +6202,11 @@ pub fn parse_put_backup_vault_lock_configuration_error(
             tmp
         })},
         "MissingParameterValueException" => crate::error::PutBackupVaultLockConfigurationError { meta: generic, kind: crate::error::PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -6168,9 +6218,11 @@ pub fn parse_put_backup_vault_lock_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::PutBackupVaultLockConfigurationError { meta: generic, kind: crate::error::PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupVaultLockConfigurationError::unhandled)?;
                     output.build()
@@ -6182,9 +6234,11 @@ pub fn parse_put_backup_vault_lock_configuration_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::PutBackupVaultLockConfigurationError { meta: generic, kind: crate::error::PutBackupVaultLockConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutBackupVaultLockConfigurationError::unhandled)?;
                     output.build()

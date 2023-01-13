@@ -99,7 +99,8 @@ impl AcceptEnvironmentAccountConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_accept_environment_account_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -434,7 +435,8 @@ impl CancelEnvironmentDeploymentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_cancel_environment_deployment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -612,7 +614,8 @@ impl CancelServiceInstanceDeploymentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_cancel_service_instance_deployment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -775,7 +778,8 @@ impl CancelServicePipelineDeploymentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_cancel_service_pipeline_deployment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1708,7 +1712,8 @@ impl CreateEnvironmentAccountConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_environment_account_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2223,7 +2228,8 @@ impl CreateEnvironmentTemplateVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_environment_template_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3347,7 +3353,8 @@ impl CreateServiceTemplateVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_service_template_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4068,7 +4075,8 @@ impl DeleteEnvironmentAccountConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_environment_account_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4428,7 +4436,8 @@ impl DeleteEnvironmentTemplateVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_environment_template_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5127,7 +5136,8 @@ impl DeleteServiceTemplateVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_service_template_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5935,7 +5945,8 @@ impl GetEnvironmentAccountConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_environment_account_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6295,7 +6306,8 @@ impl GetEnvironmentTemplateVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_environment_template_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8119,7 +8131,8 @@ impl ListComponentProvisionedResourcesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_component_provisioned_resources(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8570,7 +8583,8 @@ impl ListEnvironmentAccountConnectionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_environment_account_connections(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8929,7 +8943,8 @@ impl ListEnvironmentProvisionedResourcesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_environment_provisioned_resources(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9515,7 +9530,8 @@ impl ListEnvironmentTemplateVersionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_environment_template_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9896,7 +9912,8 @@ impl ListRepositorySyncDefinitionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_repository_sync_definitions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10086,7 +10103,8 @@ impl ListServiceInstanceOutputsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_service_instance_outputs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10276,7 +10294,8 @@ impl ListServiceInstanceProvisionedResourcesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_service_instance_provisioned_resources(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10699,7 +10718,8 @@ impl ListServicePipelineOutputsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_service_pipeline_outputs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10874,7 +10894,8 @@ impl ListServicePipelineProvisionedResourcesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_service_pipeline_provisioned_resources(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11433,7 +11454,8 @@ impl ListServiceTemplateVersionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_service_template_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11863,7 +11885,8 @@ impl NotifyResourceDeploymentStatusChangeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_notify_resource_deployment_status_change(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12024,7 +12047,8 @@ impl RejectEnvironmentAccountConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_reject_environment_account_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13498,7 +13522,8 @@ impl UpdateEnvironmentAccountConnectionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_environment_account_connection(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13931,7 +13956,8 @@ impl UpdateEnvironmentTemplateVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_environment_template_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15199,7 +15225,8 @@ impl UpdateServiceTemplateVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_service_template_version(&self)?
         );
         if let Some(content_length) = body.content_length() {

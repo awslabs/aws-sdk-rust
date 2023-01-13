@@ -1414,9 +1414,11 @@ pub fn parse_describe_app_version_resources_resolution_status_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeAppVersionResourcesResolutionStatusError { meta: generic, kind: crate::error::DescribeAppVersionResourcesResolutionStatusErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppVersionResourcesResolutionStatusError::unhandled)?;
                     output.build()
@@ -1428,9 +1430,11 @@ pub fn parse_describe_app_version_resources_resolution_status_error(
             tmp
         })},
         "InternalServerException" => crate::error::DescribeAppVersionResourcesResolutionStatusError { meta: generic, kind: crate::error::DescribeAppVersionResourcesResolutionStatusErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppVersionResourcesResolutionStatusError::unhandled)?;
                     output.build()
@@ -1442,9 +1446,11 @@ pub fn parse_describe_app_version_resources_resolution_status_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeAppVersionResourcesResolutionStatusError { meta: generic, kind: crate::error::DescribeAppVersionResourcesResolutionStatusErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppVersionResourcesResolutionStatusError::unhandled)?;
                     output.build()
@@ -1456,9 +1462,11 @@ pub fn parse_describe_app_version_resources_resolution_status_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeAppVersionResourcesResolutionStatusError { meta: generic, kind: crate::error::DescribeAppVersionResourcesResolutionStatusErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppVersionResourcesResolutionStatusError::unhandled)?;
                     output.build()
@@ -1470,9 +1478,11 @@ pub fn parse_describe_app_version_resources_resolution_status_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribeAppVersionResourcesResolutionStatusError { meta: generic, kind: crate::error::DescribeAppVersionResourcesResolutionStatusErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppVersionResourcesResolutionStatusError::unhandled)?;
                     output.build()
@@ -1495,7 +1505,8 @@ pub fn parse_describe_app_version_resources_resolution_status_response(
     crate::error::DescribeAppVersionResourcesResolutionStatusError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_app_version_resources_resolution_status_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_app_version_resources_resolution_status_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_app_version_resources_resolution_status(response.body().as_ref(), output).map_err(crate::error::DescribeAppVersionResourcesResolutionStatusError::unhandled)?;
         output.build()
@@ -1652,9 +1663,11 @@ pub fn parse_describe_draft_app_version_resources_import_status_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeDraftAppVersionResourcesImportStatusError { meta: generic, kind: crate::error::DescribeDraftAppVersionResourcesImportStatusErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDraftAppVersionResourcesImportStatusError::unhandled)?;
                     output.build()
@@ -1666,9 +1679,11 @@ pub fn parse_describe_draft_app_version_resources_import_status_error(
             tmp
         })},
         "InternalServerException" => crate::error::DescribeDraftAppVersionResourcesImportStatusError { meta: generic, kind: crate::error::DescribeDraftAppVersionResourcesImportStatusErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDraftAppVersionResourcesImportStatusError::unhandled)?;
                     output.build()
@@ -1680,9 +1695,11 @@ pub fn parse_describe_draft_app_version_resources_import_status_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeDraftAppVersionResourcesImportStatusError { meta: generic, kind: crate::error::DescribeDraftAppVersionResourcesImportStatusErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDraftAppVersionResourcesImportStatusError::unhandled)?;
                     output.build()
@@ -1694,9 +1711,11 @@ pub fn parse_describe_draft_app_version_resources_import_status_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeDraftAppVersionResourcesImportStatusError { meta: generic, kind: crate::error::DescribeDraftAppVersionResourcesImportStatusErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDraftAppVersionResourcesImportStatusError::unhandled)?;
                     output.build()
@@ -1708,9 +1727,11 @@ pub fn parse_describe_draft_app_version_resources_import_status_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribeDraftAppVersionResourcesImportStatusError { meta: generic, kind: crate::error::DescribeDraftAppVersionResourcesImportStatusErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDraftAppVersionResourcesImportStatusError::unhandled)?;
                     output.build()
@@ -1733,7 +1754,8 @@ pub fn parse_describe_draft_app_version_resources_import_status_response(
     crate::error::DescribeDraftAppVersionResourcesImportStatusError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_draft_app_version_resources_import_status_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_draft_app_version_resources_import_status_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_draft_app_version_resources_import_status(response.body().as_ref(), output).map_err(crate::error::DescribeDraftAppVersionResourcesImportStatusError::unhandled)?;
         output.build()
@@ -4276,9 +4298,11 @@ pub fn parse_remove_draft_app_version_resource_mappings_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::RemoveDraftAppVersionResourceMappingsError { meta: generic, kind: crate::error::RemoveDraftAppVersionResourceMappingsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveDraftAppVersionResourceMappingsError::unhandled)?;
                     output.build()
@@ -4290,9 +4314,11 @@ pub fn parse_remove_draft_app_version_resource_mappings_error(
             tmp
         })},
         "ConflictException" => crate::error::RemoveDraftAppVersionResourceMappingsError { meta: generic, kind: crate::error::RemoveDraftAppVersionResourceMappingsErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveDraftAppVersionResourceMappingsError::unhandled)?;
                     output.build()
@@ -4304,9 +4330,11 @@ pub fn parse_remove_draft_app_version_resource_mappings_error(
             tmp
         })},
         "InternalServerException" => crate::error::RemoveDraftAppVersionResourceMappingsError { meta: generic, kind: crate::error::RemoveDraftAppVersionResourceMappingsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveDraftAppVersionResourceMappingsError::unhandled)?;
                     output.build()
@@ -4318,9 +4346,11 @@ pub fn parse_remove_draft_app_version_resource_mappings_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::RemoveDraftAppVersionResourceMappingsError { meta: generic, kind: crate::error::RemoveDraftAppVersionResourceMappingsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveDraftAppVersionResourceMappingsError::unhandled)?;
                     output.build()
@@ -4332,9 +4362,11 @@ pub fn parse_remove_draft_app_version_resource_mappings_error(
             tmp
         })},
         "ThrottlingException" => crate::error::RemoveDraftAppVersionResourceMappingsError { meta: generic, kind: crate::error::RemoveDraftAppVersionResourceMappingsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveDraftAppVersionResourceMappingsError::unhandled)?;
                     output.build()
@@ -4346,9 +4378,11 @@ pub fn parse_remove_draft_app_version_resource_mappings_error(
             tmp
         })},
         "ValidationException" => crate::error::RemoveDraftAppVersionResourceMappingsError { meta: generic, kind: crate::error::RemoveDraftAppVersionResourceMappingsErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveDraftAppVersionResourceMappingsError::unhandled)?;
                     output.build()

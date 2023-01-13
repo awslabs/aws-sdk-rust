@@ -312,7 +312,8 @@ impl AssociateApplicationToEntitlementInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_application_to_entitlement(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -841,7 +842,8 @@ impl BatchDisassociateUserStackInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_user_stack(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3295,7 +3297,8 @@ impl CreateImageBuilderStreamingUrlInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_image_builder_streaming_url(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4302,7 +4305,8 @@ impl CreateUsageReportSubscriptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_usage_report_subscription(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -6169,7 +6173,8 @@ impl DeleteUsageReportSubscriptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_usage_report_subscription(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -6750,7 +6755,8 @@ impl DescribeApplicationFleetAssociationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_application_fleet_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8755,7 +8761,8 @@ impl DescribeUsageReportSubscriptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_usage_report_subscriptions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9173,7 +9180,8 @@ impl DescribeUserStackAssociationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_user_stack_associations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9540,7 +9548,8 @@ impl DisassociateApplicationFleetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_application_fleet(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9733,7 +9742,8 @@ impl DisassociateApplicationFromEntitlementInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_application_from_entitlement(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -215,7 +215,8 @@ impl CountClosedWorkflowExecutionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_count_closed_workflow_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -450,7 +451,8 @@ impl CountOpenWorkflowExecutionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_count_open_workflow_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2250,7 +2252,8 @@ impl GetWorkflowExecutionHistoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_workflow_execution_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2800,7 +2803,8 @@ impl ListClosedWorkflowExecutionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_closed_workflow_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3282,7 +3286,8 @@ impl ListOpenWorkflowExecutionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_open_workflow_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4290,7 +4295,8 @@ impl RecordActivityTaskHeartbeatInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_record_activity_task_heartbeat(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5352,7 +5358,8 @@ impl RequestCancelWorkflowExecutionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_request_cancel_workflow_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5531,7 +5538,8 @@ impl RespondActivityTaskCanceledInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_canceled(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5710,7 +5718,8 @@ impl RespondActivityTaskCompletedInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_completed(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6107,7 +6116,8 @@ impl RespondDecisionTaskCompletedInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_respond_decision_task_completed(&self)?
         );
         if let Some(content_length) = body.content_length() {

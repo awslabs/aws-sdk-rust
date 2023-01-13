@@ -1586,9 +1586,11 @@ pub fn parse_create_user_access_logging_settings_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::CreateUserAccessLoggingSettingsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserAccessLoggingSettingsError::unhandled)?;
                     output.build()
@@ -1600,9 +1602,11 @@ pub fn parse_create_user_access_logging_settings_error(
             tmp
         })},
         "ConflictException" => crate::error::CreateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::CreateUserAccessLoggingSettingsErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserAccessLoggingSettingsError::unhandled)?;
                     output.build()
@@ -1614,9 +1618,11 @@ pub fn parse_create_user_access_logging_settings_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::CreateUserAccessLoggingSettingsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserAccessLoggingSettingsError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -1632,9 +1638,11 @@ pub fn parse_create_user_access_logging_settings_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::CreateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::CreateUserAccessLoggingSettingsErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserAccessLoggingSettingsError::unhandled)?;
                     output.build()
@@ -1646,9 +1654,11 @@ pub fn parse_create_user_access_logging_settings_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::CreateUserAccessLoggingSettingsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserAccessLoggingSettingsError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -1664,9 +1674,11 @@ pub fn parse_create_user_access_logging_settings_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::CreateUserAccessLoggingSettingsErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserAccessLoggingSettingsError::unhandled)?;
                     output.build()
@@ -3181,9 +3193,11 @@ pub fn parse_disassociate_user_access_logging_settings_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::DisassociateUserAccessLoggingSettingsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserAccessLoggingSettingsError::unhandled)?;
                     output.build()
@@ -3195,9 +3209,11 @@ pub fn parse_disassociate_user_access_logging_settings_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::DisassociateUserAccessLoggingSettingsErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserAccessLoggingSettingsError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3213,9 +3229,11 @@ pub fn parse_disassociate_user_access_logging_settings_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::DisassociateUserAccessLoggingSettingsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserAccessLoggingSettingsError::unhandled)?;
                     output.build()
@@ -3227,9 +3245,11 @@ pub fn parse_disassociate_user_access_logging_settings_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::DisassociateUserAccessLoggingSettingsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserAccessLoggingSettingsError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3245,9 +3265,11 @@ pub fn parse_disassociate_user_access_logging_settings_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateUserAccessLoggingSettingsError { meta: generic, kind: crate::error::DisassociateUserAccessLoggingSettingsErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateUserAccessLoggingSettingsError::unhandled)?;
                     output.build()

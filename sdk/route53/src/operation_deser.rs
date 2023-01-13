@@ -384,7 +384,8 @@ pub fn parse_change_cidr_collection_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::cidr_collection_version_mismatch_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::cidr_collection_version_mismatch_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_cidr_collection_version_mismatch_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeCidrCollectionError::unhandled)?;
                             output.build()
@@ -788,7 +789,8 @@ pub fn parse_create_cidr_collection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::cidr_collection_already_exists_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::cidr_collection_already_exists_exception::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_cidr_collection_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCidrCollectionError::unhandled)?;
                         output.build()
@@ -1443,9 +1445,11 @@ pub fn parse_create_query_logging_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModification" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::ConcurrentModification({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
                     output.build()
@@ -1457,9 +1461,11 @@ pub fn parse_create_query_logging_config_error(
             tmp
         })},
         "InsufficientCloudWatchLogsResourcePolicy" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::InsufficientCloudWatchLogsResourcePolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_cloud_watch_logs_resource_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cloud_watch_logs_resource_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cloud_watch_logs_resource_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
                     output.build()
@@ -1471,9 +1477,11 @@ pub fn parse_create_query_logging_config_error(
             tmp
         })},
         "InvalidInput" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
                     output.build()
@@ -1485,9 +1493,11 @@ pub fn parse_create_query_logging_config_error(
             tmp
         })},
         "NoSuchCloudWatchLogsLogGroup" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::NoSuchCloudWatchLogsLogGroup({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_cloud_watch_logs_log_group::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_cloud_watch_logs_log_group::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_cloud_watch_logs_log_group_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
                     output.build()
@@ -1499,9 +1509,11 @@ pub fn parse_create_query_logging_config_error(
             tmp
         })},
         "NoSuchHostedZone" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::NoSuchHostedZone({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_hosted_zone::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
                     output.build()
@@ -1513,9 +1525,11 @@ pub fn parse_create_query_logging_config_error(
             tmp
         })},
         "QueryLoggingConfigAlreadyExists" => crate::error::CreateQueryLoggingConfigError { meta: generic, kind: crate::error::CreateQueryLoggingConfigErrorKind::QueryLoggingConfigAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::query_logging_config_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::query_logging_config_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_query_logging_config_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
                     output.build()
@@ -1879,9 +1893,11 @@ pub fn parse_create_traffic_policy_instance_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
                     output.build()
@@ -1893,9 +1909,11 @@ pub fn parse_create_traffic_policy_instance_error(
             tmp
         })},
         "NoSuchHostedZone" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::NoSuchHostedZone({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_hosted_zone::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
                     output.build()
@@ -1907,9 +1925,11 @@ pub fn parse_create_traffic_policy_instance_error(
             tmp
         })},
         "NoSuchTrafficPolicy" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_traffic_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_traffic_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
                     output.build()
@@ -1921,9 +1941,11 @@ pub fn parse_create_traffic_policy_instance_error(
             tmp
         })},
         "TooManyTrafficPolicyInstances" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::TooManyTrafficPolicyInstances({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_traffic_policy_instances::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_traffic_policy_instances::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_traffic_policy_instances_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
                     output.build()
@@ -1935,9 +1957,11 @@ pub fn parse_create_traffic_policy_instance_error(
             tmp
         })},
         "TrafficPolicyInstanceAlreadyExists" => crate::error::CreateTrafficPolicyInstanceError { meta: generic, kind: crate::error::CreateTrafficPolicyInstanceErrorKind::TrafficPolicyInstanceAlreadyExists({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::traffic_policy_instance_already_exists::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::traffic_policy_instance_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_traffic_policy_instance_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
                     output.build()
@@ -1997,9 +2021,11 @@ pub fn parse_create_traffic_policy_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModification" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::ConcurrentModification({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
                     output.build()
@@ -2011,9 +2037,11 @@ pub fn parse_create_traffic_policy_version_error(
             tmp
         })},
         "InvalidInput" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
                     output.build()
@@ -2025,9 +2053,11 @@ pub fn parse_create_traffic_policy_version_error(
             tmp
         })},
         "InvalidTrafficPolicyDocument" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::InvalidTrafficPolicyDocument({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_traffic_policy_document::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_traffic_policy_document::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_traffic_policy_document_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
                     output.build()
@@ -2039,9 +2069,11 @@ pub fn parse_create_traffic_policy_version_error(
             tmp
         })},
         "NoSuchTrafficPolicy" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::NoSuchTrafficPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_traffic_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_traffic_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
                     output.build()
@@ -2053,9 +2085,11 @@ pub fn parse_create_traffic_policy_version_error(
             tmp
         })},
         "TooManyTrafficPolicyVersionsForCurrentPolicy" => crate::error::CreateTrafficPolicyVersionError { meta: generic, kind: crate::error::CreateTrafficPolicyVersionErrorKind::TooManyTrafficPolicyVersionsForCurrentPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_traffic_policy_versions_for_current_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_traffic_policy_versions_for_current_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_traffic_policy_versions_for_current_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
                     output.build()
@@ -2113,9 +2147,11 @@ pub fn parse_create_vpc_association_authorization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModification" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::ConcurrentModification({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -2127,9 +2163,11 @@ pub fn parse_create_vpc_association_authorization_error(
             tmp
         })},
         "InvalidInput" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -2141,9 +2179,11 @@ pub fn parse_create_vpc_association_authorization_error(
             tmp
         })},
         "InvalidVPCId" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_id::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_vpc_id::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_id_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -2155,9 +2195,11 @@ pub fn parse_create_vpc_association_authorization_error(
             tmp
         })},
         "NoSuchHostedZone" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_hosted_zone::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -2169,9 +2211,11 @@ pub fn parse_create_vpc_association_authorization_error(
             tmp
         })},
         "TooManyVPCAssociationAuthorizations" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_vpc_association_authorizations::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_vpc_association_authorizations::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_vpc_association_authorizations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -3284,9 +3328,11 @@ pub fn parse_delete_vpc_association_authorization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModification" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::ConcurrentModification({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -3298,9 +3344,11 @@ pub fn parse_delete_vpc_association_authorization_error(
             tmp
         })},
         "InvalidInput" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -3312,9 +3360,11 @@ pub fn parse_delete_vpc_association_authorization_error(
             tmp
         })},
         "InvalidVPCId" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_id::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_vpc_id::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_id_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -3326,9 +3376,11 @@ pub fn parse_delete_vpc_association_authorization_error(
             tmp
         })},
         "NoSuchHostedZone" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_hosted_zone::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -3340,9 +3392,11 @@ pub fn parse_delete_vpc_association_authorization_error(
             tmp
         })},
         "VPCAssociationAuthorizationNotFound" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::vpc_association_authorization_not_found::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::vpc_association_authorization_not_found::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_vpc_association_authorization_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
                     output.build()
@@ -3884,7 +3938,8 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::key_signing_key_with_active_status_not_found::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::key_signing_key_with_active_status_not_found::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_key_signing_key_with_active_status_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
                             output.build()
@@ -6537,9 +6592,11 @@ pub fn parse_list_traffic_policy_instances_by_hosted_zone_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::error::ListTrafficPolicyInstancesByHostedZoneError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
                     output.build()
@@ -6551,9 +6608,11 @@ pub fn parse_list_traffic_policy_instances_by_hosted_zone_error(
             tmp
         })},
         "NoSuchHostedZone" => crate::error::ListTrafficPolicyInstancesByHostedZoneError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchHostedZone({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_hosted_zone::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_hosted_zone::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
                     output.build()
@@ -6565,9 +6624,11 @@ pub fn parse_list_traffic_policy_instances_by_hosted_zone_error(
             tmp
         })},
         "NoSuchTrafficPolicyInstance" => crate::error::ListTrafficPolicyInstancesByHostedZoneError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchTrafficPolicyInstance({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy_instance::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_traffic_policy_instance::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_traffic_policy_instance_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByHostedZoneError::unhandled)?;
                     output.build()
@@ -6618,9 +6679,11 @@ pub fn parse_list_traffic_policy_instances_by_policy_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::error::ListTrafficPolicyInstancesByPolicyError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::InvalidInput({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
                     output.build()
@@ -6632,9 +6695,11 @@ pub fn parse_list_traffic_policy_instances_by_policy_error(
             tmp
         })},
         "NoSuchTrafficPolicy" => crate::error::ListTrafficPolicyInstancesByPolicyError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicy({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_traffic_policy::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_traffic_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
                     output.build()
@@ -6646,9 +6711,11 @@ pub fn parse_list_traffic_policy_instances_by_policy_error(
             tmp
         })},
         "NoSuchTrafficPolicyInstance" => crate::error::ListTrafficPolicyInstancesByPolicyError { meta: generic, kind: crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicyInstance({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_traffic_policy_instance::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_traffic_policy_instance::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_traffic_policy_instance_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
                     output.build()

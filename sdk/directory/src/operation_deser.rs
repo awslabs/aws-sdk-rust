@@ -2977,9 +2977,11 @@ pub fn parse_describe_client_authentication_settings_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
                     output.build()
@@ -2991,9 +2993,11 @@ pub fn parse_describe_client_authentication_settings_error(
             tmp
         })},
         "ClientException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
                     output.build()
@@ -3005,9 +3009,11 @@ pub fn parse_describe_client_authentication_settings_error(
             tmp
         })},
         "DirectoryDoesNotExistException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::directory_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::directory_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_directory_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
                     output.build()
@@ -3019,9 +3025,11 @@ pub fn parse_describe_client_authentication_settings_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
                     output.build()
@@ -3033,9 +3041,11 @@ pub fn parse_describe_client_authentication_settings_error(
             tmp
         })},
         "ServiceException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
                     output.build()
@@ -3047,9 +3057,11 @@ pub fn parse_describe_client_authentication_settings_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
                     output.build()
@@ -4752,7 +4764,8 @@ pub fn parse_disable_client_authentication_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_client_auth_status_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_client_auth_status_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_client_auth_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableClientAuthenticationError::unhandled)?;
                             output.build()
@@ -5267,7 +5280,8 @@ pub fn parse_enable_client_authentication_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_client_auth_status_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_client_auth_status_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_client_auth_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableClientAuthenticationError::unhandled)?;
                             output.build()
@@ -8518,9 +8532,11 @@ pub fn parse_update_number_of_domain_controllers_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::UpdateNumberOfDomainControllersError { meta: generic, kind: crate::error::UpdateNumberOfDomainControllersErrorKind::ClientException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNumberOfDomainControllersError::unhandled)?;
                     output.build()
@@ -8532,9 +8548,11 @@ pub fn parse_update_number_of_domain_controllers_error(
             tmp
         })},
         "DirectoryUnavailableException" => crate::error::UpdateNumberOfDomainControllersError { meta: generic, kind: crate::error::UpdateNumberOfDomainControllersErrorKind::DirectoryUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::directory_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::directory_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_directory_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNumberOfDomainControllersError::unhandled)?;
                     output.build()
@@ -8546,9 +8564,11 @@ pub fn parse_update_number_of_domain_controllers_error(
             tmp
         })},
         "DomainControllerLimitExceededException" => crate::error::UpdateNumberOfDomainControllersError { meta: generic, kind: crate::error::UpdateNumberOfDomainControllersErrorKind::DomainControllerLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::domain_controller_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::domain_controller_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_domain_controller_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNumberOfDomainControllersError::unhandled)?;
                     output.build()
@@ -8560,9 +8580,11 @@ pub fn parse_update_number_of_domain_controllers_error(
             tmp
         })},
         "EntityDoesNotExistException" => crate::error::UpdateNumberOfDomainControllersError { meta: generic, kind: crate::error::UpdateNumberOfDomainControllersErrorKind::EntityDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::entity_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_entity_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNumberOfDomainControllersError::unhandled)?;
                     output.build()
@@ -8574,9 +8596,11 @@ pub fn parse_update_number_of_domain_controllers_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::UpdateNumberOfDomainControllersError { meta: generic, kind: crate::error::UpdateNumberOfDomainControllersErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNumberOfDomainControllersError::unhandled)?;
                     output.build()
@@ -8588,9 +8612,11 @@ pub fn parse_update_number_of_domain_controllers_error(
             tmp
         })},
         "ServiceException" => crate::error::UpdateNumberOfDomainControllersError { meta: generic, kind: crate::error::UpdateNumberOfDomainControllersErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNumberOfDomainControllersError::unhandled)?;
                     output.build()
@@ -8602,9 +8628,11 @@ pub fn parse_update_number_of_domain_controllers_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::UpdateNumberOfDomainControllersError { meta: generic, kind: crate::error::UpdateNumberOfDomainControllersErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNumberOfDomainControllersError::unhandled)?;
                     output.build()

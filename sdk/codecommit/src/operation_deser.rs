@@ -20,9 +20,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -34,9 +36,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -48,9 +52,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -62,9 +68,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -76,9 +84,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -90,9 +100,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -104,9 +116,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -118,9 +132,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -132,9 +148,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -146,9 +164,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "MaximumRuleTemplatesAssociatedWithRepositoryException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::MaximumRuleTemplatesAssociatedWithRepositoryException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_rule_templates_associated_with_repository_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_rule_templates_associated_with_repository_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_rule_templates_associated_with_repository_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -160,9 +180,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -174,9 +196,11 @@ pub fn parse_associate_approval_rule_template_with_repository_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::AssociateApprovalRuleTemplateWithRepositoryError { meta: generic, kind: crate::error::AssociateApprovalRuleTemplateWithRepositoryErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApprovalRuleTemplateWithRepositoryError::unhandled)?;
                     output.build()
@@ -199,7 +223,8 @@ pub fn parse_associate_approval_rule_template_with_repository_response(
     crate::error::AssociateApprovalRuleTemplateWithRepositoryError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::associate_approval_rule_template_with_repository_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::associate_approval_rule_template_with_repository_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -228,9 +253,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -242,9 +269,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -256,9 +285,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -270,9 +301,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -284,9 +317,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -298,9 +333,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -312,9 +349,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -326,9 +365,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -340,9 +381,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "MaximumRepositoryNamesExceededException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::MaximumRepositoryNamesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_repository_names_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_repository_names_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_repository_names_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -354,9 +397,11 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_error(
             tmp
         })},
         "RepositoryNamesRequiredException" => crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError { meta: generic, kind: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::RepositoryNamesRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_names_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_names_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_names_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
                     output.build()
@@ -379,7 +424,8 @@ pub fn parse_batch_associate_approval_rule_template_with_repositories_response(
     crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::batch_associate_approval_rule_template_with_repositories_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_associate_approval_rule_template_with_repositories_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_batch_associate_approval_rule_template_with_repositories(response.body().as_ref(), output).map_err(crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::unhandled)?;
         output.build()
@@ -407,9 +453,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CommitDoesNotExistException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -421,9 +469,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "CommitRequiredException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::CommitRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -435,9 +485,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -449,9 +501,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -463,9 +517,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -477,9 +533,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -491,9 +549,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -505,9 +565,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidCommitException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::InvalidCommitException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -519,9 +581,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidConflictDetailLevelException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::InvalidConflictDetailLevelException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_detail_level_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -533,9 +597,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidConflictResolutionStrategyException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::InvalidConflictResolutionStrategyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -547,9 +613,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidContinuationTokenException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::InvalidContinuationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_continuation_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -561,9 +629,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidMaxConflictFilesException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::InvalidMaxConflictFilesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_max_conflict_files_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_max_conflict_files_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_max_conflict_files_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -575,9 +645,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidMaxMergeHunksException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::InvalidMaxMergeHunksException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_max_merge_hunks_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_max_merge_hunks_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_max_merge_hunks_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -589,9 +661,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidMergeOptionException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::InvalidMergeOptionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_merge_option_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_merge_option_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_merge_option_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -603,9 +677,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -617,9 +693,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "MaximumFileContentToLoadExceededException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::MaximumFileContentToLoadExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -631,9 +709,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "MaximumItemsToCompareExceededException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::MaximumItemsToCompareExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -645,9 +725,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "MergeOptionRequiredException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::MergeOptionRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::merge_option_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::merge_option_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_merge_option_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -659,9 +741,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -673,9 +757,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -687,9 +773,11 @@ pub fn parse_batch_describe_merge_conflicts_error(
             tmp
         })},
         "TipsDivergenceExceededException" => crate::error::BatchDescribeMergeConflictsError { meta: generic, kind: crate::error::BatchDescribeMergeConflictsErrorKind::TipsDivergenceExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -747,9 +835,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -761,9 +851,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -775,9 +867,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -789,9 +883,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -803,9 +899,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -817,9 +915,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -831,9 +931,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -845,9 +947,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -859,9 +963,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "MaximumRepositoryNamesExceededException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::MaximumRepositoryNamesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_repository_names_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_repository_names_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_repository_names_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -873,9 +979,11 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_error(
             tmp
         })},
         "RepositoryNamesRequiredException" => crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError { meta: generic, kind: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::RepositoryNamesRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_names_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_names_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_names_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
                     output.build()
@@ -898,7 +1006,8 @@ pub fn parse_batch_disassociate_approval_rule_template_from_repositories_respons
     crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::batch_disassociate_approval_rule_template_from_repositories_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_disassociate_approval_rule_template_from_repositories_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_batch_disassociate_approval_rule_template_from_repositories(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::unhandled)?;
         output.build()
@@ -960,7 +1069,8 @@ pub fn parse_batch_get_commits_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetCommitsError::unhandled)?;
                         output.build()
@@ -1136,9 +1246,11 @@ pub fn parse_batch_get_repositories_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::BatchGetRepositoriesError { meta: generic, kind: crate::error::BatchGetRepositoriesErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoriesError::unhandled)?;
                     output.build()
@@ -1150,9 +1262,11 @@ pub fn parse_batch_get_repositories_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::BatchGetRepositoriesError { meta: generic, kind: crate::error::BatchGetRepositoriesErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoriesError::unhandled)?;
                     output.build()
@@ -1164,9 +1278,11 @@ pub fn parse_batch_get_repositories_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::BatchGetRepositoriesError { meta: generic, kind: crate::error::BatchGetRepositoriesErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoriesError::unhandled)?;
                     output.build()
@@ -1178,9 +1294,11 @@ pub fn parse_batch_get_repositories_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::BatchGetRepositoriesError { meta: generic, kind: crate::error::BatchGetRepositoriesErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoriesError::unhandled)?;
                     output.build()
@@ -1192,9 +1310,11 @@ pub fn parse_batch_get_repositories_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::BatchGetRepositoriesError { meta: generic, kind: crate::error::BatchGetRepositoriesErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoriesError::unhandled)?;
                     output.build()
@@ -1206,9 +1326,11 @@ pub fn parse_batch_get_repositories_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::BatchGetRepositoriesError { meta: generic, kind: crate::error::BatchGetRepositoriesErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoriesError::unhandled)?;
                     output.build()
@@ -1220,9 +1342,11 @@ pub fn parse_batch_get_repositories_error(
             tmp
         })},
         "MaximumRepositoryNamesExceededException" => crate::error::BatchGetRepositoriesError { meta: generic, kind: crate::error::BatchGetRepositoriesErrorKind::MaximumRepositoryNamesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_repository_names_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_repository_names_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_repository_names_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoriesError::unhandled)?;
                     output.build()
@@ -1234,9 +1358,11 @@ pub fn parse_batch_get_repositories_error(
             tmp
         })},
         "RepositoryNamesRequiredException" => crate::error::BatchGetRepositoriesError { meta: generic, kind: crate::error::BatchGetRepositoriesErrorKind::RepositoryNamesRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_names_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_names_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_names_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoriesError::unhandled)?;
                     output.build()
@@ -1292,9 +1418,11 @@ pub fn parse_create_approval_rule_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateContentRequiredException" => crate::error::CreateApprovalRuleTemplateError { meta: generic, kind: crate::error::CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -1306,9 +1434,11 @@ pub fn parse_create_approval_rule_template_error(
             tmp
         })},
         "ApprovalRuleTemplateNameAlreadyExistsException" => crate::error::CreateApprovalRuleTemplateError { meta: generic, kind: crate::error::CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -1320,9 +1450,11 @@ pub fn parse_create_approval_rule_template_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::CreateApprovalRuleTemplateError { meta: generic, kind: crate::error::CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -1334,9 +1466,11 @@ pub fn parse_create_approval_rule_template_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateContentException" => crate::error::CreateApprovalRuleTemplateError { meta: generic, kind: crate::error::CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -1348,9 +1482,11 @@ pub fn parse_create_approval_rule_template_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateDescriptionException" => crate::error::CreateApprovalRuleTemplateError { meta: generic, kind: crate::error::CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateDescriptionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_description_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_description_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_description_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -1362,9 +1498,11 @@ pub fn parse_create_approval_rule_template_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::CreateApprovalRuleTemplateError { meta: generic, kind: crate::error::CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -1376,9 +1514,11 @@ pub fn parse_create_approval_rule_template_error(
             tmp
         })},
         "NumberOfRuleTemplatesExceededException" => crate::error::CreateApprovalRuleTemplateError { meta: generic, kind: crate::error::CreateApprovalRuleTemplateErrorKind::NumberOfRuleTemplatesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::number_of_rule_templates_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::number_of_rule_templates_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_number_of_rule_templates_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -1501,7 +1641,8 @@ pub fn parse_create_branch_error(
             kind: crate::error::CreateBranchErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBranchError::unhandled)?;
                     output.build()
@@ -1756,31 +1897,32 @@ pub fn parse_create_commit_error(
                 tmp
             }),
         },
-        "CommitMessageLengthExceededException" => {
-            crate::error::CreateCommitError {
-                meta: generic,
-                kind: crate::error::CreateCommitErrorKind::CommitMessageLengthExceededException({
+        "CommitMessageLengthExceededException" => crate::error::CreateCommitError {
+            meta: generic,
+            kind: crate::error::CreateCommitErrorKind::CommitMessageLengthExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::commit_message_length_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "DirectoryNameConflictsWithFileNameException" => crate::error::CreateCommitError {
             meta: generic,
             kind: crate::error::CreateCommitErrorKind::DirectoryNameConflictsWithFileNameException(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::directory_name_conflicts_with_file_name_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::directory_name_conflicts_with_file_name_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_directory_name_conflicts_with_file_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
                         output.build()
@@ -1797,7 +1939,8 @@ pub fn parse_create_commit_error(
             kind: crate::error::CreateCommitErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
                     output.build()
@@ -1886,7 +2029,8 @@ pub fn parse_create_commit_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::file_content_and_source_file_specified_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::file_content_and_source_file_specified_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_file_content_and_source_file_specified_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
                         output.build()
@@ -1904,7 +2048,8 @@ pub fn parse_create_commit_error(
                 kind: crate::error::CreateCommitErrorKind::FileContentSizeLimitExceededException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_file_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
                         output.build()
@@ -1975,7 +2120,8 @@ pub fn parse_create_commit_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::file_name_conflicts_with_directory_name_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::file_name_conflicts_with_directory_name_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_file_name_conflicts_with_directory_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
                         output.build()
@@ -1993,7 +2139,8 @@ pub fn parse_create_commit_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::file_path_conflicts_with_submodule_path_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::file_path_conflicts_with_submodule_path_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_file_path_conflicts_with_submodule_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
                         output.build()
@@ -2010,7 +2157,8 @@ pub fn parse_create_commit_error(
             kind: crate::error::CreateCommitErrorKind::FolderContentSizeLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_folder_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
                     output.build()
@@ -2357,24 +2505,24 @@ pub fn parse_create_commit_error(
                 tmp
             }),
         },
-        "SourceFileOrContentRequiredException" => {
-            crate::error::CreateCommitError {
-                meta: generic,
-                kind: crate::error::CreateCommitErrorKind::SourceFileOrContentRequiredException({
+        "SourceFileOrContentRequiredException" => crate::error::CreateCommitError {
+            meta: generic,
+            kind: crate::error::CreateCommitErrorKind::SourceFileOrContentRequiredException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::source_file_or_content_required_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_source_file_or_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::source_file_or_content_required_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_source_file_or_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCommitError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateCommitError::generic(generic),
     })
 }
@@ -2435,7 +2583,8 @@ pub fn parse_create_pull_request_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestError::unhandled)?;
                             output.build()
@@ -2525,7 +2674,8 @@ pub fn parse_create_pull_request_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::idempotency_parameter_mismatch_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::idempotency_parameter_mismatch_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_idempotency_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestError::unhandled)?;
                         output.build()
@@ -2667,7 +2817,8 @@ pub fn parse_create_pull_request_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::maximum_open_pull_requests_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_open_pull_requests_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_maximum_open_pull_requests_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestError::unhandled)?;
                             output.build()
@@ -2686,7 +2837,8 @@ pub fn parse_create_pull_request_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::multiple_repositories_in_pull_request_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::multiple_repositories_in_pull_request_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_multiple_repositories_in_pull_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestError::unhandled)?;
                             output.build()
@@ -2900,9 +3052,11 @@ pub fn parse_create_pull_request_approval_rule_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleContentRequiredException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::ApprovalRuleContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -2914,9 +3068,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "ApprovalRuleNameAlreadyExistsException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::ApprovalRuleNameAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_name_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_name_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_name_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -2928,9 +3084,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "ApprovalRuleNameRequiredException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::ApprovalRuleNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -2942,9 +3100,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -2956,9 +3116,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -2970,9 +3132,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -2984,9 +3148,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -2998,9 +3164,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -3012,9 +3180,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "InvalidApprovalRuleContentException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::InvalidApprovalRuleContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -3026,9 +3196,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "InvalidApprovalRuleNameException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::InvalidApprovalRuleNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -3040,9 +3212,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -3054,9 +3228,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "NumberOfRulesExceededException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::NumberOfRulesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::number_of_rules_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::number_of_rules_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_number_of_rules_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -3068,9 +3244,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -3082,9 +3260,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -3096,9 +3276,11 @@ pub fn parse_create_pull_request_approval_rule_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::CreatePullRequestApprovalRuleError { meta: generic, kind: crate::error::CreatePullRequestApprovalRuleErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -3155,7 +3337,8 @@ pub fn parse_create_repository_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRepositoryError::unhandled)?;
                         output.build()
@@ -3441,9 +3624,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CommitDoesNotExistException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3455,9 +3640,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "CommitMessageLengthExceededException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::CommitMessageLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3469,9 +3656,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "CommitRequiredException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::CommitRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3483,9 +3672,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "ConcurrentReferenceUpdateException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::ConcurrentReferenceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_reference_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3497,9 +3688,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3511,9 +3704,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3525,9 +3720,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3539,9 +3736,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3553,9 +3752,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3567,9 +3768,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "FileContentSizeLimitExceededException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::FileContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3581,9 +3784,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "FileModeRequiredException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::FileModeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_mode_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_mode_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_mode_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3595,9 +3800,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "FolderContentSizeLimitExceededException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::FolderContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_folder_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3609,9 +3816,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidCommitException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidCommitException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3623,9 +3832,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidConflictDetailLevelException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidConflictDetailLevelException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_detail_level_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3637,9 +3848,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidConflictResolutionException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidConflictResolutionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3651,9 +3864,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidConflictResolutionStrategyException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidConflictResolutionStrategyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3665,9 +3880,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidEmailException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidEmailException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3679,9 +3896,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidFileModeException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidFileModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3693,9 +3912,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidMergeOptionException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidMergeOptionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_merge_option_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_merge_option_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_merge_option_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3707,9 +3928,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidPathException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidPathException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3721,9 +3944,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidReplacementContentException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidReplacementContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3735,9 +3960,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidReplacementTypeException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidReplacementTypeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3749,9 +3976,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3763,9 +3992,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "ManualMergeRequiredException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::ManualMergeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::manual_merge_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::manual_merge_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_manual_merge_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3777,9 +4008,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "MaximumConflictResolutionEntriesExceededException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::MaximumConflictResolutionEntriesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_conflict_resolution_entries_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3791,9 +4024,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "MaximumFileContentToLoadExceededException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::MaximumFileContentToLoadExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3805,9 +4040,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "MaximumItemsToCompareExceededException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::MaximumItemsToCompareExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3819,9 +4056,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "MergeOptionRequiredException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::MergeOptionRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::merge_option_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::merge_option_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_merge_option_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3833,9 +4072,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "MultipleConflictResolutionEntriesException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::MultipleConflictResolutionEntriesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_multiple_conflict_resolution_entries_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3847,9 +4088,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "NameLengthExceededException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::NameLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::name_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::name_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_name_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3861,9 +4104,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "PathRequiredException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::PathRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3875,9 +4120,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "ReplacementContentRequiredException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::ReplacementContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3889,9 +4136,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "ReplacementTypeRequiredException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::ReplacementTypeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_type_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_type_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_type_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3903,9 +4152,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3917,9 +4168,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3931,9 +4184,11 @@ pub fn parse_create_unreferenced_merge_commit_error(
             tmp
         })},
         "TipsDivergenceExceededException" => crate::error::CreateUnreferencedMergeCommitError { meta: generic, kind: crate::error::CreateUnreferencedMergeCommitErrorKind::TipsDivergenceExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUnreferencedMergeCommitError::unhandled)?;
                     output.build()
@@ -3990,9 +4245,11 @@ pub fn parse_delete_approval_rule_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateInUseException" => crate::error::DeleteApprovalRuleTemplateError { meta: generic, kind: crate::error::DeleteApprovalRuleTemplateErrorKind::ApprovalRuleTemplateInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -4004,9 +4261,11 @@ pub fn parse_delete_approval_rule_template_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::DeleteApprovalRuleTemplateError { meta: generic, kind: crate::error::DeleteApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -4018,9 +4277,11 @@ pub fn parse_delete_approval_rule_template_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::DeleteApprovalRuleTemplateError { meta: generic, kind: crate::error::DeleteApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -4092,7 +4353,8 @@ pub fn parse_delete_branch_error(
                 kind: crate::error::DeleteBranchErrorKind::DefaultBranchCannotBeDeletedException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::default_branch_cannot_be_deleted_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::default_branch_cannot_be_deleted_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_default_branch_cannot_be_deleted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBranchError::unhandled)?;
                         output.build()
@@ -4109,7 +4371,8 @@ pub fn parse_delete_branch_error(
             kind: crate::error::DeleteBranchErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBranchError::unhandled)?;
                     output.build()
@@ -4462,30 +4725,31 @@ pub fn parse_delete_file_error(
                 tmp
             }),
         },
-        "CommitMessageLengthExceededException" => {
-            crate::error::DeleteFileError {
-                meta: generic,
-                kind: crate::error::DeleteFileErrorKind::CommitMessageLengthExceededException({
+        "CommitMessageLengthExceededException" => crate::error::DeleteFileError {
+            meta: generic,
+            kind: crate::error::DeleteFileErrorKind::CommitMessageLengthExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::commit_message_length_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "EncryptionIntegrityChecksFailedException" => crate::error::DeleteFileError {
             meta: generic,
             kind: crate::error::DeleteFileErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileError::unhandled)?;
                     output.build()
@@ -4841,9 +5105,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleNameRequiredException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::ApprovalRuleNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4855,9 +5121,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "CannotDeleteApprovalRuleFromTemplateException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::CannotDeleteApprovalRuleFromTemplateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cannot_delete_approval_rule_from_template_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cannot_delete_approval_rule_from_template_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cannot_delete_approval_rule_from_template_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4869,9 +5137,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4883,9 +5153,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4897,9 +5169,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4911,9 +5185,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4925,9 +5201,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4939,9 +5217,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "InvalidApprovalRuleNameException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::InvalidApprovalRuleNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4953,9 +5233,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4967,9 +5249,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4981,9 +5265,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -4995,9 +5281,11 @@ pub fn parse_delete_pull_request_approval_rule_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::DeletePullRequestApprovalRuleError { meta: generic, kind: crate::error::DeletePullRequestApprovalRuleErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullRequestApprovalRuleError::unhandled)?;
                     output.build()
@@ -5054,7 +5342,8 @@ pub fn parse_delete_repository_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRepositoryError::unhandled)?;
                         output.build()
@@ -5217,9 +5506,11 @@ pub fn parse_describe_merge_conflicts_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CommitDoesNotExistException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5231,9 +5522,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "CommitRequiredException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::CommitRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5245,9 +5538,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5259,9 +5554,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5273,9 +5570,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5287,9 +5586,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5301,9 +5602,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5315,9 +5618,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "FileDoesNotExistException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::FileDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5329,9 +5634,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidCommitException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::InvalidCommitException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5343,9 +5650,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidConflictDetailLevelException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::InvalidConflictDetailLevelException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_detail_level_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5357,9 +5666,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidConflictResolutionStrategyException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::InvalidConflictResolutionStrategyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5371,9 +5682,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidContinuationTokenException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::InvalidContinuationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_continuation_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5385,9 +5698,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidMaxMergeHunksException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::InvalidMaxMergeHunksException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_max_merge_hunks_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_max_merge_hunks_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_max_merge_hunks_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5399,9 +5714,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidMergeOptionException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::InvalidMergeOptionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_merge_option_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_merge_option_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_merge_option_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5413,9 +5730,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidPathException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::InvalidPathException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5427,9 +5746,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5441,9 +5762,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "MaximumFileContentToLoadExceededException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::MaximumFileContentToLoadExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5455,9 +5778,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "MaximumItemsToCompareExceededException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::MaximumItemsToCompareExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5469,9 +5794,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "MergeOptionRequiredException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::MergeOptionRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::merge_option_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::merge_option_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_merge_option_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5483,9 +5810,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "PathRequiredException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::PathRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5497,9 +5826,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5511,9 +5842,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5525,9 +5858,11 @@ pub fn parse_describe_merge_conflicts_error(
             tmp
         })},
         "TipsDivergenceExceededException" => crate::error::DescribeMergeConflictsError { meta: generic, kind: crate::error::DescribeMergeConflictsErrorKind::TipsDivergenceExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMergeConflictsError::unhandled)?;
                     output.build()
@@ -5583,9 +5918,11 @@ pub fn parse_describe_pull_request_events_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ActorDoesNotExistException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::ActorDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::actor_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::actor_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_actor_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5597,9 +5934,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5611,9 +5950,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5625,9 +5966,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5639,9 +5982,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5653,9 +5998,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5667,9 +6014,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "InvalidActorArnException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::InvalidActorArnException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_actor_arn_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_actor_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_actor_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5681,9 +6030,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "InvalidContinuationTokenException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::InvalidContinuationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_continuation_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5695,9 +6046,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "InvalidMaxResultsException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::InvalidMaxResultsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_max_results_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_max_results_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_max_results_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5709,9 +6062,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "InvalidPullRequestEventTypeException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::InvalidPullRequestEventTypeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_event_type_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_event_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_event_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5723,9 +6078,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5737,9 +6094,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5751,9 +6110,11 @@ pub fn parse_describe_pull_request_events_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::DescribePullRequestEventsError { meta: generic, kind: crate::error::DescribePullRequestEventsErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullRequestEventsError::unhandled)?;
                     output.build()
@@ -5811,9 +6172,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5825,9 +6188,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5839,9 +6204,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5853,9 +6220,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5867,9 +6236,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5881,9 +6252,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5895,9 +6268,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5909,9 +6284,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5923,9 +6300,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5937,9 +6316,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5951,9 +6332,11 @@ pub fn parse_disassociate_approval_rule_template_from_repository_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::DisassociateApprovalRuleTemplateFromRepositoryError { meta: generic, kind: crate::error::DisassociateApprovalRuleTemplateFromRepositoryErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::unhandled)?;
                     output.build()
@@ -5976,7 +6359,8 @@ pub fn parse_disassociate_approval_rule_template_from_repository_response(
     crate::error::DisassociateApprovalRuleTemplateFromRepositoryError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::disassociate_approval_rule_template_from_repository_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::disassociate_approval_rule_template_from_repository_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -6001,9 +6385,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6015,9 +6401,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6029,9 +6417,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6043,9 +6433,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6057,9 +6449,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6071,9 +6465,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6085,9 +6481,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "InvalidRevisionIdException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::InvalidRevisionIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_revision_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_revision_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_revision_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6099,9 +6497,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6113,9 +6513,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6127,9 +6529,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "RevisionIdRequiredException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::RevisionIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::revision_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::revision_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_revision_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6141,9 +6545,11 @@ pub fn parse_evaluate_pull_request_approval_rules_error(
             tmp
         })},
         "RevisionNotCurrentException" => crate::error::EvaluatePullRequestApprovalRulesError { meta: generic, kind: crate::error::EvaluatePullRequestApprovalRulesErrorKind::RevisionNotCurrentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::revision_not_current_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::revision_not_current_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_revision_not_current_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluatePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -6196,9 +6602,11 @@ pub fn parse_get_approval_rule_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::GetApprovalRuleTemplateError { meta: generic, kind: crate::error::GetApprovalRuleTemplateErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -6210,9 +6618,11 @@ pub fn parse_get_approval_rule_template_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::GetApprovalRuleTemplateError { meta: generic, kind: crate::error::GetApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -6224,9 +6634,11 @@ pub fn parse_get_approval_rule_template_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::GetApprovalRuleTemplateError { meta: generic, kind: crate::error::GetApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -6314,7 +6726,8 @@ pub fn parse_get_blob_error(
             kind: crate::error::GetBlobErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBlobError::unhandled)?;
                     output.build()
@@ -6560,7 +6973,8 @@ pub fn parse_get_branch_error(
             kind: crate::error::GetBranchErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBranchError::unhandled)?;
                     output.build()
@@ -6807,7 +7221,8 @@ pub fn parse_get_comment_error(
             kind: crate::error::GetCommentErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentError::unhandled)?;
                     output.build()
@@ -7113,9 +7528,11 @@ pub fn parse_get_comments_for_compared_commit_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CommitDoesNotExistException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7127,9 +7544,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "CommitIdRequiredException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::CommitIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7141,9 +7560,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7155,9 +7576,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7169,9 +7592,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7183,9 +7608,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7197,9 +7624,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7211,9 +7640,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "InvalidCommitIdException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::InvalidCommitIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7225,9 +7656,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "InvalidContinuationTokenException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::InvalidContinuationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_continuation_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7239,9 +7672,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "InvalidMaxResultsException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::InvalidMaxResultsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_max_results_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_max_results_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_max_results_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7253,9 +7688,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7267,9 +7704,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7281,9 +7720,11 @@ pub fn parse_get_comments_for_compared_commit_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::GetCommentsForComparedCommitError { meta: generic, kind: crate::error::GetCommentsForComparedCommitErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForComparedCommitError::unhandled)?;
                     output.build()
@@ -7340,9 +7781,11 @@ pub fn parse_get_comments_for_pull_request_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CommitDoesNotExistException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7354,9 +7797,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "CommitIdRequiredException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::CommitIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7368,9 +7813,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7382,9 +7829,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7396,9 +7845,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7410,9 +7861,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7424,9 +7877,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7438,9 +7893,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "InvalidCommitIdException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::InvalidCommitIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7452,9 +7909,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "InvalidContinuationTokenException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::InvalidContinuationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_continuation_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7466,9 +7925,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "InvalidMaxResultsException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::InvalidMaxResultsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_max_results_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_max_results_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_max_results_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7480,9 +7941,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7494,9 +7957,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7508,9 +7973,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7522,9 +7989,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7536,9 +8005,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7550,9 +8021,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7564,9 +8037,11 @@ pub fn parse_get_comments_for_pull_request_error(
             tmp
         })},
         "RepositoryNotAssociatedWithPullRequestException" => crate::error::GetCommentsForPullRequestError { meta: generic, kind: crate::error::GetCommentsForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_associated_with_pull_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommentsForPullRequestError::unhandled)?;
                     output.build()
@@ -7654,7 +8129,8 @@ pub fn parse_get_commit_error(
             kind: crate::error::GetCommitErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCommitError::unhandled)?;
                     output.build()
@@ -7883,7 +8359,8 @@ pub fn parse_get_differences_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDifferencesError::unhandled)?;
                         output.build()
@@ -8183,7 +8660,8 @@ pub fn parse_get_file_error(
             kind: crate::error::GetFileErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFileError::unhandled)?;
                     output.build()
@@ -8463,7 +8941,8 @@ pub fn parse_get_folder_error(
             kind: crate::error::GetFolderErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFolderError::unhandled)?;
                     output.build()
@@ -8744,7 +9223,8 @@ pub fn parse_get_merge_commit_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeCommitError::unhandled)?;
                         output.build()
@@ -8869,7 +9349,8 @@ pub fn parse_get_merge_commit_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeCommitError::unhandled)?;
                         output.build()
@@ -9012,7 +9493,8 @@ pub fn parse_get_merge_conflicts_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeConflictsError::unhandled)?;
                             output.build()
@@ -9138,7 +9620,8 @@ pub fn parse_get_merge_conflicts_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeConflictsError::unhandled)?;
                             output.build()
@@ -9175,7 +9658,8 @@ pub fn parse_get_merge_conflicts_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_destination_commit_specifier_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_destination_commit_specifier_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_destination_commit_specifier_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeConflictsError::unhandled)?;
                             output.build()
@@ -9247,7 +9731,8 @@ pub fn parse_get_merge_conflicts_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_source_commit_specifier_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_source_commit_specifier_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_invalid_source_commit_specifier_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeConflictsError::unhandled)?;
                         output.build()
@@ -9266,7 +9751,8 @@ pub fn parse_get_merge_conflicts_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeConflictsError::unhandled)?;
                             output.build()
@@ -9284,7 +9770,8 @@ pub fn parse_get_merge_conflicts_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeConflictsError::unhandled)?;
                         output.build()
@@ -9444,7 +9931,8 @@ pub fn parse_get_merge_options_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeOptionsError::unhandled)?;
                         output.build()
@@ -9570,7 +10058,8 @@ pub fn parse_get_merge_options_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeOptionsError::unhandled)?;
                             output.build()
@@ -9606,7 +10095,8 @@ pub fn parse_get_merge_options_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMergeOptionsError::unhandled)?;
                         output.build()
@@ -9731,7 +10221,8 @@ pub fn parse_get_pull_request_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestError::unhandled)?;
                         output.build()
@@ -9911,9 +10402,11 @@ pub fn parse_get_pull_request_approval_states_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -9925,9 +10418,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -9939,9 +10434,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -9953,9 +10450,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -9967,9 +10466,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -9981,9 +10482,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -9995,9 +10498,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "InvalidRevisionIdException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::InvalidRevisionIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_revision_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_revision_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_revision_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -10009,9 +10514,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -10023,9 +10530,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -10037,9 +10546,11 @@ pub fn parse_get_pull_request_approval_states_error(
             tmp
         })},
         "RevisionIdRequiredException" => crate::error::GetPullRequestApprovalStatesError { meta: generic, kind: crate::error::GetPullRequestApprovalStatesErrorKind::RevisionIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::revision_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::revision_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_revision_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestApprovalStatesError::unhandled)?;
                     output.build()
@@ -10096,9 +10607,11 @@ pub fn parse_get_pull_request_override_state_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10110,9 +10623,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10124,9 +10639,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10138,9 +10655,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10152,9 +10671,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10166,9 +10687,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10180,9 +10703,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "InvalidRevisionIdException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::InvalidRevisionIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_revision_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_revision_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_revision_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10194,9 +10719,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10208,9 +10735,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10222,9 +10751,11 @@ pub fn parse_get_pull_request_override_state_error(
             tmp
         })},
         "RevisionIdRequiredException" => crate::error::GetPullRequestOverrideStateError { meta: generic, kind: crate::error::GetPullRequestOverrideStateErrorKind::RevisionIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::revision_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::revision_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_revision_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPullRequestOverrideStateError::unhandled)?;
                     output.build()
@@ -10278,7 +10809,8 @@ pub fn parse_get_repository_error(
             kind: crate::error::GetRepositoryErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryError::unhandled)?;
                     output.build()
@@ -10453,9 +10985,11 @@ pub fn parse_get_repository_triggers_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::GetRepositoryTriggersError { meta: generic, kind: crate::error::GetRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -10467,9 +11001,11 @@ pub fn parse_get_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::GetRepositoryTriggersError { meta: generic, kind: crate::error::GetRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -10481,9 +11017,11 @@ pub fn parse_get_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::GetRepositoryTriggersError { meta: generic, kind: crate::error::GetRepositoryTriggersErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -10495,9 +11033,11 @@ pub fn parse_get_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::GetRepositoryTriggersError { meta: generic, kind: crate::error::GetRepositoryTriggersErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -10509,9 +11049,11 @@ pub fn parse_get_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::GetRepositoryTriggersError { meta: generic, kind: crate::error::GetRepositoryTriggersErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -10523,9 +11065,11 @@ pub fn parse_get_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::GetRepositoryTriggersError { meta: generic, kind: crate::error::GetRepositoryTriggersErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -10537,9 +11081,11 @@ pub fn parse_get_repository_triggers_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::GetRepositoryTriggersError { meta: generic, kind: crate::error::GetRepositoryTriggersErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -10551,9 +11097,11 @@ pub fn parse_get_repository_triggers_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::GetRepositoryTriggersError { meta: generic, kind: crate::error::GetRepositoryTriggersErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -10615,7 +11163,8 @@ pub fn parse_list_approval_rule_templates_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_continuation_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApprovalRuleTemplatesError::unhandled)?;
                             output.build()
@@ -10692,9 +11241,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10706,9 +11257,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10720,9 +11273,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10734,9 +11289,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10748,9 +11305,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10762,9 +11321,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "InvalidContinuationTokenException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidContinuationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_continuation_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10776,9 +11337,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "InvalidMaxResultsException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidMaxResultsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_max_results_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_max_results_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_max_results_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10790,9 +11353,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10804,9 +11369,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10818,9 +11385,11 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError { meta: generic, kind: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
                     output.build()
@@ -10843,7 +11412,8 @@ pub fn parse_list_associated_approval_rule_templates_for_repository_response(
     crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::list_associated_approval_rule_templates_for_repository_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_associated_approval_rule_templates_for_repository_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_associated_approval_rule_templates_for_repository(response.body().as_ref(), output).map_err(crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::unhandled)?;
         output.build()
@@ -10868,7 +11438,8 @@ pub fn parse_list_branches_error(
             kind: crate::error::ListBranchesErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBranchesError::unhandled)?;
                     output.build()
@@ -11082,7 +11653,8 @@ pub fn parse_list_pull_requests_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPullRequestsError::unhandled)?;
                         output.build()
@@ -11422,9 +11994,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11436,9 +12010,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11450,9 +12026,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11464,9 +12042,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11478,9 +12058,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11492,9 +12074,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11506,9 +12090,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11520,9 +12106,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11534,9 +12122,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "InvalidContinuationTokenException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidContinuationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_continuation_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_continuation_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11548,9 +12138,11 @@ pub fn parse_list_repositories_for_approval_rule_template_error(
             tmp
         })},
         "InvalidMaxResultsException" => crate::error::ListRepositoriesForApprovalRuleTemplateError { meta: generic, kind: crate::error::ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidMaxResultsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_max_results_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_max_results_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_max_results_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRepositoriesForApprovalRuleTemplateError::unhandled)?;
                     output.build()
@@ -11715,9 +12307,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BranchDoesNotExistException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::BranchDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11729,9 +12323,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "BranchNameIsTagNameException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::BranchNameIsTagNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_name_is_tag_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_name_is_tag_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_name_is_tag_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11743,9 +12339,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "BranchNameRequiredException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::BranchNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11757,9 +12355,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "CommitDoesNotExistException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11771,9 +12371,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "CommitRequiredException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::CommitRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11785,9 +12387,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "ConcurrentReferenceUpdateException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::ConcurrentReferenceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_reference_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11799,9 +12403,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11813,9 +12419,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11827,9 +12435,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11841,9 +12451,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11855,9 +12467,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11869,9 +12483,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "InvalidBranchNameException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::InvalidBranchNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_branch_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_branch_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_branch_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11883,9 +12499,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "InvalidCommitException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::InvalidCommitException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11897,9 +12515,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11911,9 +12531,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "InvalidTargetBranchException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::InvalidTargetBranchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_target_branch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_target_branch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_target_branch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11925,9 +12547,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "ManualMergeRequiredException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::ManualMergeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::manual_merge_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::manual_merge_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_manual_merge_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11939,9 +12563,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11953,9 +12579,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -11967,9 +12595,11 @@ pub fn parse_merge_branches_by_fast_forward_error(
             tmp
         })},
         "TipsDivergenceExceededException" => crate::error::MergeBranchesByFastForwardError { meta: generic, kind: crate::error::MergeBranchesByFastForwardErrorKind::TipsDivergenceExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByFastForwardError::unhandled)?;
                     output.build()
@@ -12021,9 +12651,11 @@ pub fn parse_merge_branches_by_squash_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BranchDoesNotExistException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::BranchDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12035,9 +12667,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "BranchNameIsTagNameException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::BranchNameIsTagNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_name_is_tag_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_name_is_tag_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_name_is_tag_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12049,9 +12683,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "BranchNameRequiredException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::BranchNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12063,9 +12699,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "CommitDoesNotExistException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12077,9 +12715,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "CommitMessageLengthExceededException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::CommitMessageLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12091,9 +12731,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "CommitRequiredException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::CommitRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12105,9 +12747,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "ConcurrentReferenceUpdateException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::ConcurrentReferenceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_reference_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12119,9 +12763,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12133,9 +12779,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12147,9 +12795,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12161,9 +12811,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12175,9 +12827,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12189,9 +12843,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "FileContentSizeLimitExceededException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::FileContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12203,9 +12859,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "FileModeRequiredException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::FileModeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_mode_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_mode_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_mode_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12217,9 +12875,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "FolderContentSizeLimitExceededException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::FolderContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_folder_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12231,9 +12891,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidBranchNameException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidBranchNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_branch_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_branch_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_branch_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12245,9 +12907,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidCommitException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidCommitException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12259,9 +12923,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidConflictDetailLevelException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidConflictDetailLevelException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_detail_level_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12273,9 +12939,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidConflictResolutionException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidConflictResolutionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12287,9 +12955,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidConflictResolutionStrategyException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidConflictResolutionStrategyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12301,9 +12971,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidEmailException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidEmailException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12315,9 +12987,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidFileModeException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidFileModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12329,9 +13003,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidPathException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidPathException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12343,9 +13019,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidReplacementContentException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidReplacementContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12357,9 +13035,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidReplacementTypeException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidReplacementTypeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12371,9 +13051,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12385,9 +13067,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "InvalidTargetBranchException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::InvalidTargetBranchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_target_branch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_target_branch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_target_branch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12399,9 +13083,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "ManualMergeRequiredException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::ManualMergeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::manual_merge_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::manual_merge_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_manual_merge_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12413,9 +13099,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "MaximumConflictResolutionEntriesExceededException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::MaximumConflictResolutionEntriesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_conflict_resolution_entries_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12427,9 +13115,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "MaximumFileContentToLoadExceededException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::MaximumFileContentToLoadExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12441,9 +13131,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "MaximumItemsToCompareExceededException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::MaximumItemsToCompareExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12455,9 +13147,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "MultipleConflictResolutionEntriesException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::MultipleConflictResolutionEntriesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_multiple_conflict_resolution_entries_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12469,9 +13163,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "NameLengthExceededException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::NameLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::name_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::name_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_name_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12483,9 +13179,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "PathRequiredException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::PathRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12497,9 +13195,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "ReplacementContentRequiredException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::ReplacementContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12511,9 +13211,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "ReplacementTypeRequiredException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::ReplacementTypeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_type_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_type_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_type_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12525,9 +13227,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12539,9 +13243,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12553,9 +13259,11 @@ pub fn parse_merge_branches_by_squash_error(
             tmp
         })},
         "TipsDivergenceExceededException" => crate::error::MergeBranchesBySquashError { meta: generic, kind: crate::error::MergeBranchesBySquashErrorKind::TipsDivergenceExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesBySquashError::unhandled)?;
                     output.build()
@@ -12611,9 +13319,11 @@ pub fn parse_merge_branches_by_three_way_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BranchDoesNotExistException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::BranchDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12625,9 +13335,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "BranchNameIsTagNameException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::BranchNameIsTagNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_name_is_tag_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_name_is_tag_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_name_is_tag_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12639,9 +13351,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "BranchNameRequiredException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::BranchNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::branch_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::branch_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_branch_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12653,9 +13367,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "CommitDoesNotExistException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12667,9 +13383,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "CommitMessageLengthExceededException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::CommitMessageLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12681,9 +13399,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "CommitRequiredException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::CommitRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12695,9 +13415,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "ConcurrentReferenceUpdateException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::ConcurrentReferenceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_reference_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12709,9 +13431,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12723,9 +13447,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12737,9 +13463,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12751,9 +13479,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12765,9 +13495,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12779,9 +13511,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "FileContentSizeLimitExceededException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::FileContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12793,9 +13527,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "FileModeRequiredException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::FileModeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_mode_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_mode_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_mode_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12807,9 +13543,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "FolderContentSizeLimitExceededException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::FolderContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_folder_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12821,9 +13559,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidBranchNameException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidBranchNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_branch_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_branch_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_branch_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12835,9 +13575,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidCommitException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidCommitException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12849,9 +13591,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidConflictDetailLevelException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidConflictDetailLevelException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_detail_level_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12863,9 +13607,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidConflictResolutionException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidConflictResolutionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12877,9 +13623,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidConflictResolutionStrategyException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidConflictResolutionStrategyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12891,9 +13639,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidEmailException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidEmailException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12905,9 +13655,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidFileModeException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidFileModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12919,9 +13671,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidPathException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidPathException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12933,9 +13687,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidReplacementContentException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidReplacementContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12947,9 +13703,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidReplacementTypeException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidReplacementTypeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12961,9 +13719,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12975,9 +13735,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "InvalidTargetBranchException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::InvalidTargetBranchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_target_branch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_target_branch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_target_branch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -12989,9 +13751,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "ManualMergeRequiredException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::ManualMergeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::manual_merge_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::manual_merge_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_manual_merge_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13003,9 +13767,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "MaximumConflictResolutionEntriesExceededException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::MaximumConflictResolutionEntriesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_conflict_resolution_entries_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13017,9 +13783,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "MaximumFileContentToLoadExceededException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::MaximumFileContentToLoadExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13031,9 +13799,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "MaximumItemsToCompareExceededException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::MaximumItemsToCompareExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13045,9 +13815,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "MultipleConflictResolutionEntriesException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::MultipleConflictResolutionEntriesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_multiple_conflict_resolution_entries_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13059,9 +13831,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "NameLengthExceededException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::NameLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::name_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::name_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_name_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13073,9 +13847,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "PathRequiredException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::PathRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13087,9 +13863,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "ReplacementContentRequiredException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::ReplacementContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13101,9 +13879,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "ReplacementTypeRequiredException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::ReplacementTypeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_type_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_type_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_type_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13115,9 +13895,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13129,9 +13911,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13143,9 +13927,11 @@ pub fn parse_merge_branches_by_three_way_error(
             tmp
         })},
         "TipsDivergenceExceededException" => crate::error::MergeBranchesByThreeWayError { meta: generic, kind: crate::error::MergeBranchesByThreeWayErrorKind::TipsDivergenceExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergeBranchesByThreeWayError::unhandled)?;
                     output.build()
@@ -13201,9 +13987,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentReferenceUpdateException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::ConcurrentReferenceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_reference_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13215,9 +14003,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13229,9 +14019,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13243,9 +14035,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13257,9 +14051,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13271,9 +14067,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13285,9 +14083,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "InvalidCommitIdException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::InvalidCommitIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13299,9 +14099,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13313,9 +14115,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13327,9 +14131,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "ManualMergeRequiredException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::ManualMergeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::manual_merge_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::manual_merge_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_manual_merge_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13341,9 +14147,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13355,9 +14163,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "PullRequestApprovalRulesNotSatisfiedException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::PullRequestApprovalRulesNotSatisfiedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_approval_rules_not_satisfied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_approval_rules_not_satisfied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_approval_rules_not_satisfied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13369,9 +14179,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13383,9 +14195,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13397,9 +14211,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "ReferenceDoesNotExistException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::ReferenceDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reference_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reference_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_reference_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13411,9 +14227,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13425,9 +14243,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13439,9 +14259,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "RepositoryNotAssociatedWithPullRequestException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::RepositoryNotAssociatedWithPullRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_associated_with_pull_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13453,9 +14275,11 @@ pub fn parse_merge_pull_request_by_fast_forward_error(
             tmp
         })},
         "TipOfSourceReferenceIsDifferentException" => crate::error::MergePullRequestByFastForwardError { meta: generic, kind: crate::error::MergePullRequestByFastForwardErrorKind::TipOfSourceReferenceIsDifferentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tip_of_source_reference_is_different_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tip_of_source_reference_is_different_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tip_of_source_reference_is_different_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByFastForwardError::unhandled)?;
                     output.build()
@@ -13513,9 +14337,11 @@ pub fn parse_merge_pull_request_by_squash_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CommitMessageLengthExceededException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::CommitMessageLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13527,9 +14353,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "ConcurrentReferenceUpdateException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::ConcurrentReferenceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_reference_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13541,9 +14369,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13555,9 +14385,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13569,9 +14401,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13583,9 +14417,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13597,9 +14433,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13611,9 +14449,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "FileContentSizeLimitExceededException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::FileContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13625,9 +14465,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "FolderContentSizeLimitExceededException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::FolderContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_folder_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13639,9 +14481,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidCommitIdException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidCommitIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13653,9 +14497,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidConflictDetailLevelException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidConflictDetailLevelException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_detail_level_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13667,9 +14513,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidConflictResolutionException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidConflictResolutionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13681,9 +14529,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidConflictResolutionStrategyException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidConflictResolutionStrategyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13695,9 +14545,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidEmailException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidEmailException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13709,9 +14561,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidFileModeException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidFileModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13723,9 +14577,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidPathException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidPathException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13737,9 +14593,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13751,9 +14609,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidReplacementContentException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidReplacementContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13765,9 +14625,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidReplacementTypeException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidReplacementTypeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13779,9 +14641,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13793,9 +14657,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "ManualMergeRequiredException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::ManualMergeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::manual_merge_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::manual_merge_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_manual_merge_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13807,9 +14673,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "MaximumConflictResolutionEntriesExceededException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::MaximumConflictResolutionEntriesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_conflict_resolution_entries_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13821,9 +14689,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "MaximumFileContentToLoadExceededException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::MaximumFileContentToLoadExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13835,9 +14705,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "MaximumItemsToCompareExceededException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::MaximumItemsToCompareExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13849,9 +14721,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "MultipleConflictResolutionEntriesException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::MultipleConflictResolutionEntriesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_multiple_conflict_resolution_entries_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13863,9 +14737,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "NameLengthExceededException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::NameLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::name_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::name_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_name_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13877,9 +14753,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "PathRequiredException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::PathRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13891,9 +14769,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13905,9 +14785,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "PullRequestApprovalRulesNotSatisfiedException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::PullRequestApprovalRulesNotSatisfiedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_approval_rules_not_satisfied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_approval_rules_not_satisfied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_approval_rules_not_satisfied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13919,9 +14801,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13933,9 +14817,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13947,9 +14833,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "ReplacementContentRequiredException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::ReplacementContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13961,9 +14849,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "ReplacementTypeRequiredException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::ReplacementTypeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_type_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_type_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_type_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13975,9 +14865,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -13989,9 +14881,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -14003,9 +14897,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "RepositoryNotAssociatedWithPullRequestException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::RepositoryNotAssociatedWithPullRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_associated_with_pull_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -14017,9 +14913,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "TipOfSourceReferenceIsDifferentException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::TipOfSourceReferenceIsDifferentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tip_of_source_reference_is_different_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tip_of_source_reference_is_different_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tip_of_source_reference_is_different_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -14031,9 +14929,11 @@ pub fn parse_merge_pull_request_by_squash_error(
             tmp
         })},
         "TipsDivergenceExceededException" => crate::error::MergePullRequestBySquashError { meta: generic, kind: crate::error::MergePullRequestBySquashErrorKind::TipsDivergenceExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestBySquashError::unhandled)?;
                     output.build()
@@ -14089,9 +14989,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CommitMessageLengthExceededException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::CommitMessageLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14103,9 +15005,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "ConcurrentReferenceUpdateException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::ConcurrentReferenceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_reference_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_reference_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14117,9 +15021,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14131,9 +15037,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14145,9 +15053,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14159,9 +15069,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14173,9 +15085,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14187,9 +15101,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "FileContentSizeLimitExceededException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::FileContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14201,9 +15117,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "FolderContentSizeLimitExceededException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::FolderContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_folder_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14215,9 +15133,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidCommitIdException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidCommitIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14229,9 +15149,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidConflictDetailLevelException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidConflictDetailLevelException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_detail_level_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_detail_level_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14243,9 +15165,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidConflictResolutionException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidConflictResolutionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14257,9 +15181,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidConflictResolutionStrategyException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidConflictResolutionStrategyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_conflict_resolution_strategy_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_conflict_resolution_strategy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14271,9 +15197,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidEmailException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidEmailException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_email_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_email_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_email_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14285,9 +15213,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidFileModeException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidFileModeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_mode_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_mode_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14299,9 +15229,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidPathException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidPathException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14313,9 +15245,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14327,9 +15261,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidReplacementContentException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidReplacementContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14341,9 +15277,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidReplacementTypeException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidReplacementTypeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replacement_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_replacement_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14355,9 +15293,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14369,9 +15309,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "ManualMergeRequiredException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::ManualMergeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::manual_merge_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::manual_merge_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_manual_merge_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14383,9 +15325,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "MaximumConflictResolutionEntriesExceededException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::MaximumConflictResolutionEntriesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_conflict_resolution_entries_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_conflict_resolution_entries_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14397,9 +15341,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "MaximumFileContentToLoadExceededException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::MaximumFileContentToLoadExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_file_content_to_load_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_file_content_to_load_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14411,9 +15357,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "MaximumItemsToCompareExceededException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::MaximumItemsToCompareExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_items_to_compare_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_items_to_compare_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14425,9 +15373,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "MultipleConflictResolutionEntriesException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::MultipleConflictResolutionEntriesException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::multiple_conflict_resolution_entries_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_multiple_conflict_resolution_entries_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14439,9 +15389,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "NameLengthExceededException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::NameLengthExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::name_length_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::name_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_name_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14453,9 +15405,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "PathRequiredException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::PathRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14467,9 +15421,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14481,9 +15437,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "PullRequestApprovalRulesNotSatisfiedException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::PullRequestApprovalRulesNotSatisfiedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_approval_rules_not_satisfied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_approval_rules_not_satisfied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_approval_rules_not_satisfied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14495,9 +15453,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14509,9 +15469,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14523,9 +15485,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "ReplacementContentRequiredException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::ReplacementContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14537,9 +15501,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "ReplacementTypeRequiredException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::ReplacementTypeRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replacement_type_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replacement_type_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_replacement_type_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14551,9 +15517,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14565,9 +15533,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14579,9 +15549,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "RepositoryNotAssociatedWithPullRequestException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::RepositoryNotAssociatedWithPullRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_associated_with_pull_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14593,9 +15565,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "TipOfSourceReferenceIsDifferentException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::TipOfSourceReferenceIsDifferentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tip_of_source_reference_is_different_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tip_of_source_reference_is_different_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tip_of_source_reference_is_different_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14607,9 +15581,11 @@ pub fn parse_merge_pull_request_by_three_way_error(
             tmp
         })},
         "TipsDivergenceExceededException" => crate::error::MergePullRequestByThreeWayError { meta: generic, kind: crate::error::MergePullRequestByThreeWayErrorKind::TipsDivergenceExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tips_divergence_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tips_divergence_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MergePullRequestByThreeWayError::unhandled)?;
                     output.build()
@@ -14664,9 +15640,11 @@ pub fn parse_override_pull_request_approval_rules_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14678,9 +15656,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14692,9 +15672,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14706,9 +15688,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14720,9 +15704,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14734,9 +15720,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "InvalidOverrideStatusException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::InvalidOverrideStatusException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_override_status_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_override_status_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_override_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14748,9 +15736,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14762,9 +15752,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "InvalidRevisionIdException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::InvalidRevisionIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_revision_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_revision_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_revision_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14776,9 +15768,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "OverrideAlreadySetException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::OverrideAlreadySetException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::override_already_set_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::override_already_set_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_override_already_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14790,9 +15784,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "OverrideStatusRequiredException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::OverrideStatusRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::override_status_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::override_status_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_override_status_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14804,9 +15800,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14818,9 +15816,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14832,9 +15832,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14846,9 +15848,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "RevisionIdRequiredException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::RevisionIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::revision_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::revision_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_revision_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14860,9 +15864,11 @@ pub fn parse_override_pull_request_approval_rules_error(
             tmp
         })},
         "RevisionNotCurrentException" => crate::error::OverridePullRequestApprovalRulesError { meta: generic, kind: crate::error::OverridePullRequestApprovalRulesErrorKind::RevisionNotCurrentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::revision_not_current_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::revision_not_current_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_revision_not_current_exception_json_err(response.body().as_ref(), output).map_err(crate::error::OverridePullRequestApprovalRulesError::unhandled)?;
                     output.build()
@@ -14914,9 +15920,11 @@ pub fn parse_post_comment_for_compared_commit_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BeforeCommitIdAndAfterCommitIdAreSameException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::BeforeCommitIdAndAfterCommitIdAreSameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::before_commit_id_and_after_commit_id_are_same_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::before_commit_id_and_after_commit_id_are_same_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_before_commit_id_and_after_commit_id_are_same_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -14928,9 +15936,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "ClientRequestTokenRequiredException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::ClientRequestTokenRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_request_token_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_request_token_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_request_token_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -14942,9 +15952,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "CommentContentRequiredException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::CommentContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::comment_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::comment_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_comment_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -14956,9 +15968,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "CommentContentSizeLimitExceededException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::CommentContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::comment_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::comment_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_comment_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -14970,9 +15984,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "CommitDoesNotExistException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -14984,9 +16000,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "CommitIdRequiredException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::CommitIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -14998,9 +16016,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15012,9 +16032,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15026,9 +16048,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15040,9 +16064,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15054,9 +16080,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15068,9 +16096,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "IdempotencyParameterMismatchException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::IdempotencyParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotency_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotency_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotency_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15082,9 +16112,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "InvalidClientRequestTokenException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::InvalidClientRequestTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_client_request_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_client_request_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_client_request_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15096,9 +16128,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "InvalidCommitIdException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::InvalidCommitIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15110,9 +16144,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "InvalidFileLocationException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::InvalidFileLocationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_location_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_location_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_location_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15124,9 +16160,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "InvalidFilePositionException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::InvalidFilePositionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_position_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_position_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_position_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15138,9 +16176,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "InvalidPathException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::InvalidPathException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15152,9 +16192,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "InvalidRelativeFileVersionEnumException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::InvalidRelativeFileVersionEnumException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_file_version_enum_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_relative_file_version_enum_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_relative_file_version_enum_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15166,9 +16208,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15180,9 +16224,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "PathDoesNotExistException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::PathDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15194,9 +16240,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "PathRequiredException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::PathRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15208,9 +16256,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15222,9 +16272,11 @@ pub fn parse_post_comment_for_compared_commit_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::PostCommentForComparedCommitError { meta: generic, kind: crate::error::PostCommentForComparedCommitErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForComparedCommitError::unhandled)?;
                     output.build()
@@ -15281,9 +16333,11 @@ pub fn parse_post_comment_for_pull_request_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BeforeCommitIdAndAfterCommitIdAreSameException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::BeforeCommitIdAndAfterCommitIdAreSameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::before_commit_id_and_after_commit_id_are_same_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::before_commit_id_and_after_commit_id_are_same_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_before_commit_id_and_after_commit_id_are_same_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15295,9 +16349,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "ClientRequestTokenRequiredException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::ClientRequestTokenRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_request_token_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_request_token_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_request_token_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15309,9 +16365,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "CommentContentRequiredException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::CommentContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::comment_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::comment_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_comment_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15323,9 +16381,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "CommentContentSizeLimitExceededException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::CommentContentSizeLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::comment_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::comment_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_comment_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15337,9 +16397,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "CommitDoesNotExistException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::CommitDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15351,9 +16413,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "CommitIdRequiredException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::CommitIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::commit_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::commit_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_commit_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15365,9 +16429,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15379,9 +16445,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15393,9 +16461,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15407,9 +16477,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15421,9 +16493,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15435,9 +16509,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "IdempotencyParameterMismatchException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::IdempotencyParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotency_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotency_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotency_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15449,9 +16525,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "InvalidClientRequestTokenException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::InvalidClientRequestTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_client_request_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_client_request_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_client_request_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15463,9 +16541,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "InvalidCommitIdException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::InvalidCommitIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_commit_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_commit_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_commit_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15477,9 +16557,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "InvalidFileLocationException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::InvalidFileLocationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_location_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_location_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_location_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15491,9 +16573,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "InvalidFilePositionException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::InvalidFilePositionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_file_position_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_file_position_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_file_position_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15505,9 +16589,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "InvalidPathException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::InvalidPathException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15519,9 +16605,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15533,9 +16621,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "InvalidRelativeFileVersionEnumException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::InvalidRelativeFileVersionEnumException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_relative_file_version_enum_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_relative_file_version_enum_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_relative_file_version_enum_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15547,9 +16637,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15561,9 +16653,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "PathDoesNotExistException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::PathDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15575,9 +16669,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "PathRequiredException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::PathRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::path_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::path_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_path_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15589,9 +16685,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15603,9 +16701,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15617,9 +16717,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15631,9 +16733,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15645,9 +16749,11 @@ pub fn parse_post_comment_for_pull_request_error(
             tmp
         })},
         "RepositoryNotAssociatedWithPullRequestException" => crate::error::PostCommentForPullRequestError { meta: generic, kind: crate::error::PostCommentForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_associated_with_pull_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_associated_with_pull_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentForPullRequestError::unhandled)?;
                     output.build()
@@ -15738,7 +16844,8 @@ pub fn parse_post_comment_reply_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::comment_content_size_limit_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::comment_content_size_limit_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_comment_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostCommentReplyError::unhandled)?;
                         output.build()
@@ -16087,30 +17194,31 @@ pub fn parse_put_file_error(
                 tmp
             }),
         },
-        "CommitMessageLengthExceededException" => {
-            crate::error::PutFileError {
-                meta: generic,
-                kind: crate::error::PutFileErrorKind::CommitMessageLengthExceededException({
+        "CommitMessageLengthExceededException" => crate::error::PutFileError {
+            meta: generic,
+            kind: crate::error::PutFileErrorKind::CommitMessageLengthExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::commit_message_length_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::commit_message_length_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_commit_message_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "DirectoryNameConflictsWithFileNameException" => crate::error::PutFileError {
             meta: generic,
             kind: crate::error::PutFileErrorKind::DirectoryNameConflictsWithFileNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::directory_name_conflicts_with_file_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::directory_name_conflicts_with_file_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_directory_name_conflicts_with_file_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileError::unhandled)?;
                     output.build()
@@ -16126,7 +17234,8 @@ pub fn parse_put_file_error(
             kind: crate::error::PutFileErrorKind::EncryptionIntegrityChecksFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileError::unhandled)?;
                     output.build()
@@ -16233,7 +17342,8 @@ pub fn parse_put_file_error(
                 kind: crate::error::PutFileErrorKind::FileContentSizeLimitExceededException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::file_content_size_limit_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_file_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileError::unhandled)?;
                         output.build()
@@ -16250,7 +17360,8 @@ pub fn parse_put_file_error(
             kind: crate::error::PutFileErrorKind::FileNameConflictsWithDirectoryNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::file_name_conflicts_with_directory_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_name_conflicts_with_directory_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_name_conflicts_with_directory_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileError::unhandled)?;
                     output.build()
@@ -16266,7 +17377,8 @@ pub fn parse_put_file_error(
             kind: crate::error::PutFileErrorKind::FilePathConflictsWithSubmodulePathException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::file_path_conflicts_with_submodule_path_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_path_conflicts_with_submodule_path_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_file_path_conflicts_with_submodule_path_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileError::unhandled)?;
                     output.build()
@@ -16282,7 +17394,8 @@ pub fn parse_put_file_error(
             kind: crate::error::PutFileErrorKind::FolderContentSizeLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::folder_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_folder_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFileError::unhandled)?;
                     output.build()
@@ -16596,9 +17709,11 @@ pub fn parse_put_repository_triggers_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16610,9 +17725,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16624,9 +17741,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16638,9 +17757,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16652,9 +17773,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16666,9 +17789,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16680,9 +17805,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerBranchNameException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerBranchNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_branch_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_branch_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_branch_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16694,9 +17821,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerCustomDataException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerCustomDataException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_custom_data_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_custom_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_custom_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16708,9 +17837,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerDestinationArnException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerDestinationArnException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_destination_arn_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_destination_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_destination_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16722,9 +17853,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerEventsException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerEventsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_events_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_events_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_events_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16736,9 +17869,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerNameException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16750,9 +17885,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerRegionException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_region_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16764,9 +17901,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "MaximumBranchesExceededException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::MaximumBranchesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_branches_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_branches_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_branches_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16778,9 +17917,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "MaximumRepositoryTriggersExceededException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::MaximumRepositoryTriggersExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_repository_triggers_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_repository_triggers_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_repository_triggers_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16792,9 +17933,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16806,9 +17949,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16820,9 +17965,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggerBranchNameListRequiredException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::RepositoryTriggerBranchNameListRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_trigger_branch_name_list_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_trigger_branch_name_list_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_trigger_branch_name_list_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16834,9 +17981,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggerDestinationArnRequiredException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::RepositoryTriggerDestinationArnRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_trigger_destination_arn_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_trigger_destination_arn_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_trigger_destination_arn_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16848,9 +17997,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggerEventsListRequiredException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::RepositoryTriggerEventsListRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_trigger_events_list_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_trigger_events_list_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_trigger_events_list_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16862,9 +18013,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggerNameRequiredException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::RepositoryTriggerNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_trigger_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_trigger_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_trigger_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -16876,9 +18029,11 @@ pub fn parse_put_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggersListRequiredException" => crate::error::PutRepositoryTriggersError { meta: generic, kind: crate::error::PutRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_triggers_list_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_triggers_list_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_triggers_list_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17121,9 +18276,11 @@ pub fn parse_test_repository_triggers_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17135,9 +18292,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17149,9 +18308,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17163,9 +18324,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17177,9 +18340,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17191,9 +18356,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17205,9 +18372,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerBranchNameException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerBranchNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_branch_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_branch_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_branch_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17219,9 +18388,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerCustomDataException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerCustomDataException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_custom_data_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_custom_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_custom_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17233,9 +18404,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerDestinationArnException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerDestinationArnException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_destination_arn_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_destination_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_destination_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17247,9 +18420,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerEventsException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerEventsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_events_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_events_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_events_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17261,9 +18436,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerNameException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17275,9 +18452,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "InvalidRepositoryTriggerRegionException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerRegionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_trigger_region_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_trigger_region_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_trigger_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17289,9 +18468,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "MaximumBranchesExceededException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::MaximumBranchesExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_branches_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_branches_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_branches_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17303,9 +18484,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "MaximumRepositoryTriggersExceededException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::MaximumRepositoryTriggersExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_repository_triggers_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_repository_triggers_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_repository_triggers_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17317,9 +18500,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17331,9 +18516,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17345,9 +18532,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggerBranchNameListRequiredException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::RepositoryTriggerBranchNameListRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_trigger_branch_name_list_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_trigger_branch_name_list_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_trigger_branch_name_list_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17359,9 +18548,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggerDestinationArnRequiredException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::RepositoryTriggerDestinationArnRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_trigger_destination_arn_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_trigger_destination_arn_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_trigger_destination_arn_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17373,9 +18564,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggerEventsListRequiredException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::RepositoryTriggerEventsListRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_trigger_events_list_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_trigger_events_list_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_trigger_events_list_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17387,9 +18580,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggerNameRequiredException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::RepositoryTriggerNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_trigger_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_trigger_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_trigger_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17401,9 +18596,11 @@ pub fn parse_test_repository_triggers_error(
             tmp
         })},
         "RepositoryTriggersListRequiredException" => crate::error::TestRepositoryTriggersError { meta: generic, kind: crate::error::TestRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_triggers_list_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_triggers_list_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_triggers_list_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestRepositoryTriggersError::unhandled)?;
                     output.build()
@@ -17646,9 +18843,11 @@ pub fn parse_update_approval_rule_template_content_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateContentRequiredException" => crate::error::UpdateApprovalRuleTemplateContentError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     output.build()
@@ -17660,9 +18859,11 @@ pub fn parse_update_approval_rule_template_content_error(
             tmp
         })},
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::UpdateApprovalRuleTemplateContentError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     output.build()
@@ -17674,9 +18875,11 @@ pub fn parse_update_approval_rule_template_content_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::UpdateApprovalRuleTemplateContentError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     output.build()
@@ -17688,9 +18891,11 @@ pub fn parse_update_approval_rule_template_content_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateContentException" => crate::error::UpdateApprovalRuleTemplateContentError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateContentErrorKind::InvalidApprovalRuleTemplateContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     output.build()
@@ -17702,9 +18907,11 @@ pub fn parse_update_approval_rule_template_content_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::UpdateApprovalRuleTemplateContentError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateContentErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     output.build()
@@ -17716,9 +18923,11 @@ pub fn parse_update_approval_rule_template_content_error(
             tmp
         })},
         "InvalidRuleContentSha256Exception" => crate::error::UpdateApprovalRuleTemplateContentError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateContentErrorKind::InvalidRuleContentSha256Exception({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_rule_content_sha256_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_rule_content_sha256_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_rule_content_sha256_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateContentError::unhandled)?;
                     output.build()
@@ -17771,9 +18980,11 @@ pub fn parse_update_approval_rule_template_description_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::UpdateApprovalRuleTemplateDescriptionError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateDescriptionErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateDescriptionError::unhandled)?;
                     output.build()
@@ -17785,9 +18996,11 @@ pub fn parse_update_approval_rule_template_description_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::UpdateApprovalRuleTemplateDescriptionError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateDescriptionErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateDescriptionError::unhandled)?;
                     output.build()
@@ -17799,9 +19012,11 @@ pub fn parse_update_approval_rule_template_description_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateDescriptionException" => crate::error::UpdateApprovalRuleTemplateDescriptionError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateDescriptionErrorKind::InvalidApprovalRuleTemplateDescriptionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_description_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_description_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_description_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateDescriptionError::unhandled)?;
                     output.build()
@@ -17813,9 +19028,11 @@ pub fn parse_update_approval_rule_template_description_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::UpdateApprovalRuleTemplateDescriptionError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateDescriptionErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateDescriptionError::unhandled)?;
                     output.build()
@@ -17864,9 +19081,11 @@ pub fn parse_update_approval_rule_template_name_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleTemplateDoesNotExistException" => crate::error::UpdateApprovalRuleTemplateNameError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateNameError::unhandled)?;
                     output.build()
@@ -17878,9 +19097,11 @@ pub fn parse_update_approval_rule_template_name_error(
             tmp
         })},
         "ApprovalRuleTemplateNameAlreadyExistsException" => crate::error::UpdateApprovalRuleTemplateNameError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateNameAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateNameError::unhandled)?;
                     output.build()
@@ -17892,9 +19113,11 @@ pub fn parse_update_approval_rule_template_name_error(
             tmp
         })},
         "ApprovalRuleTemplateNameRequiredException" => crate::error::UpdateApprovalRuleTemplateNameError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_template_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_template_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateNameError::unhandled)?;
                     output.build()
@@ -17906,9 +19129,11 @@ pub fn parse_update_approval_rule_template_name_error(
             tmp
         })},
         "InvalidApprovalRuleTemplateNameException" => crate::error::UpdateApprovalRuleTemplateNameError { meta: generic, kind: crate::error::UpdateApprovalRuleTemplateNameErrorKind::InvalidApprovalRuleTemplateNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_template_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_template_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApprovalRuleTemplateNameError::unhandled)?;
                     output.build()
@@ -17981,7 +19206,8 @@ pub fn parse_update_comment_error(
             kind: crate::error::UpdateCommentErrorKind::CommentContentSizeLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::comment_content_size_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::comment_content_size_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_comment_content_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCommentError::unhandled)?;
                     output.build()
@@ -18160,7 +19386,8 @@ pub fn parse_update_default_branch_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDefaultBranchError::unhandled)?;
                             output.build()
@@ -18354,9 +19581,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalRuleContentRequiredException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleContentRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_content_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_content_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_content_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18368,9 +19597,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "ApprovalRuleDoesNotExistException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18382,9 +19613,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "ApprovalRuleNameRequiredException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_rule_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_rule_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_rule_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18396,9 +19629,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "CannotModifyApprovalRuleFromTemplateException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::CannotModifyApprovalRuleFromTemplateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cannot_modify_approval_rule_from_template_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cannot_modify_approval_rule_from_template_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cannot_modify_approval_rule_from_template_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18410,9 +19645,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18424,9 +19661,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18438,9 +19677,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18452,9 +19693,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18466,9 +19709,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18480,9 +19725,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "InvalidApprovalRuleContentException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::InvalidApprovalRuleContentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_content_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18494,9 +19741,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "InvalidApprovalRuleNameException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::InvalidApprovalRuleNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_rule_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_rule_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_rule_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18508,9 +19757,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18522,9 +19773,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "InvalidRuleContentSha256Exception" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::InvalidRuleContentSha256Exception({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_rule_content_sha256_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_rule_content_sha256_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_rule_content_sha256_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18536,9 +19789,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18550,9 +19805,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18564,9 +19821,11 @@ pub fn parse_update_pull_request_approval_rule_content_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::UpdatePullRequestApprovalRuleContentError { meta: generic, kind: crate::error::UpdatePullRequestApprovalRuleContentErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalRuleContentError::unhandled)?;
                     output.build()
@@ -18615,9 +19874,11 @@ pub fn parse_update_pull_request_approval_state_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ApprovalStateRequiredException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::ApprovalStateRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::approval_state_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::approval_state_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_approval_state_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18629,9 +19890,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "EncryptionIntegrityChecksFailedException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18643,9 +19906,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18657,9 +19922,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18671,9 +19938,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18685,9 +19954,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18699,9 +19970,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "InvalidApprovalStateException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::InvalidApprovalStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_approval_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_approval_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_approval_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18713,9 +19986,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18727,9 +20002,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "InvalidRevisionIdException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::InvalidRevisionIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_revision_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_revision_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_revision_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18741,9 +20018,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "MaximumNumberOfApprovalsExceededException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::MaximumNumberOfApprovalsExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::maximum_number_of_approvals_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::maximum_number_of_approvals_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_maximum_number_of_approvals_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18755,9 +20034,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18769,9 +20050,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "PullRequestCannotBeApprovedByAuthorException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::PullRequestCannotBeApprovedByAuthorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_cannot_be_approved_by_author_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_cannot_be_approved_by_author_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_cannot_be_approved_by_author_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18783,9 +20066,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18797,9 +20082,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18811,9 +20098,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "RevisionIdRequiredException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::RevisionIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::revision_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::revision_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_revision_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18825,9 +20114,11 @@ pub fn parse_update_pull_request_approval_state_error(
             tmp
         })},
         "RevisionNotCurrentException" => crate::error::UpdatePullRequestApprovalStateError { meta: generic, kind: crate::error::UpdatePullRequestApprovalStateErrorKind::RevisionNotCurrentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::revision_not_current_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::revision_not_current_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_revision_not_current_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestApprovalStateError::unhandled)?;
                     output.build()
@@ -18879,9 +20170,11 @@ pub fn parse_update_pull_request_description_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidDescriptionException" => crate::error::UpdatePullRequestDescriptionError { meta: generic, kind: crate::error::UpdatePullRequestDescriptionErrorKind::InvalidDescriptionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_description_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_description_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_description_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestDescriptionError::unhandled)?;
                     output.build()
@@ -18893,9 +20186,11 @@ pub fn parse_update_pull_request_description_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::UpdatePullRequestDescriptionError { meta: generic, kind: crate::error::UpdatePullRequestDescriptionErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestDescriptionError::unhandled)?;
                     output.build()
@@ -18907,9 +20202,11 @@ pub fn parse_update_pull_request_description_error(
             tmp
         })},
         "PullRequestAlreadyClosedException" => crate::error::UpdatePullRequestDescriptionError { meta: generic, kind: crate::error::UpdatePullRequestDescriptionErrorKind::PullRequestAlreadyClosedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_already_closed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_already_closed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestDescriptionError::unhandled)?;
                     output.build()
@@ -18921,9 +20218,11 @@ pub fn parse_update_pull_request_description_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::UpdatePullRequestDescriptionError { meta: generic, kind: crate::error::UpdatePullRequestDescriptionErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestDescriptionError::unhandled)?;
                     output.build()
@@ -18935,9 +20234,11 @@ pub fn parse_update_pull_request_description_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::UpdatePullRequestDescriptionError { meta: generic, kind: crate::error::UpdatePullRequestDescriptionErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestDescriptionError::unhandled)?;
                     output.build()
@@ -18994,9 +20295,11 @@ pub fn parse_update_pull_request_status_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19008,9 +20311,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19022,9 +20327,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19036,9 +20343,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19050,9 +20359,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19064,9 +20375,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "InvalidPullRequestIdException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::InvalidPullRequestIdException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19078,9 +20391,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "InvalidPullRequestStatusException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::InvalidPullRequestStatusException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_status_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_status_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19092,9 +20407,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "InvalidPullRequestStatusUpdateException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::InvalidPullRequestStatusUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pull_request_status_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pull_request_status_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pull_request_status_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19106,9 +20423,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "PullRequestDoesNotExistException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::PullRequestDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19120,9 +20439,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "PullRequestIdRequiredException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::PullRequestIdRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_id_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_id_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_id_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19134,9 +20455,11 @@ pub fn parse_update_pull_request_status_error(
             tmp
         })},
         "PullRequestStatusRequiredException" => crate::error::UpdatePullRequestStatusError { meta: generic, kind: crate::error::UpdatePullRequestStatusErrorKind::PullRequestStatusRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_request_status_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_request_status_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_request_status_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePullRequestStatusError::unhandled)?;
                     output.build()
@@ -19346,9 +20669,11 @@ pub fn parse_update_repository_description_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EncryptionIntegrityChecksFailedException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::EncryptionIntegrityChecksFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_integrity_checks_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_integrity_checks_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()
@@ -19360,9 +20685,11 @@ pub fn parse_update_repository_description_error(
             tmp
         })},
         "EncryptionKeyAccessDeniedException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::EncryptionKeyAccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()
@@ -19374,9 +20701,11 @@ pub fn parse_update_repository_description_error(
             tmp
         })},
         "EncryptionKeyDisabledException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::EncryptionKeyDisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()
@@ -19388,9 +20717,11 @@ pub fn parse_update_repository_description_error(
             tmp
         })},
         "EncryptionKeyNotFoundException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::EncryptionKeyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()
@@ -19402,9 +20733,11 @@ pub fn parse_update_repository_description_error(
             tmp
         })},
         "EncryptionKeyUnavailableException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::EncryptionKeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::encryption_key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_encryption_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()
@@ -19416,9 +20749,11 @@ pub fn parse_update_repository_description_error(
             tmp
         })},
         "InvalidRepositoryDescriptionException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::InvalidRepositoryDescriptionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_description_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_description_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_description_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()
@@ -19430,9 +20765,11 @@ pub fn parse_update_repository_description_error(
             tmp
         })},
         "InvalidRepositoryNameException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::InvalidRepositoryNameException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_repository_name_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_repository_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_repository_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()
@@ -19444,9 +20781,11 @@ pub fn parse_update_repository_description_error(
             tmp
         })},
         "RepositoryDoesNotExistException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::RepositoryDoesNotExistException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_does_not_exist_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()
@@ -19458,9 +20797,11 @@ pub fn parse_update_repository_description_error(
             tmp
         })},
         "RepositoryNameRequiredException" => crate::error::UpdateRepositoryDescriptionError { meta: generic, kind: crate::error::UpdateRepositoryDescriptionErrorKind::RepositoryNameRequiredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_name_required_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_name_required_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_name_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRepositoryDescriptionError::unhandled)?;
                     output.build()

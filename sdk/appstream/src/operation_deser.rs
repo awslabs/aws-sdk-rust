@@ -20,9 +20,11 @@ pub fn parse_associate_application_fleet_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::AssociateApplicationFleetError { meta: generic, kind: crate::error::AssociateApplicationFleetErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationFleetError::unhandled)?;
                     output.build()
@@ -34,9 +36,11 @@ pub fn parse_associate_application_fleet_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::AssociateApplicationFleetError { meta: generic, kind: crate::error::AssociateApplicationFleetErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationFleetError::unhandled)?;
                     output.build()
@@ -48,9 +52,11 @@ pub fn parse_associate_application_fleet_error(
             tmp
         })},
         "LimitExceededException" => crate::error::AssociateApplicationFleetError { meta: generic, kind: crate::error::AssociateApplicationFleetErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationFleetError::unhandled)?;
                     output.build()
@@ -62,9 +68,11 @@ pub fn parse_associate_application_fleet_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::AssociateApplicationFleetError { meta: generic, kind: crate::error::AssociateApplicationFleetErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationFleetError::unhandled)?;
                     output.build()
@@ -76,9 +84,11 @@ pub fn parse_associate_application_fleet_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateApplicationFleetError { meta: generic, kind: crate::error::AssociateApplicationFleetErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationFleetError::unhandled)?;
                     output.build()
@@ -132,9 +142,11 @@ pub fn parse_associate_application_to_entitlement_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EntitlementNotFoundException" => crate::error::AssociateApplicationToEntitlementError { meta: generic, kind: crate::error::AssociateApplicationToEntitlementErrorKind::EntitlementNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::entitlement_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entitlement_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_entitlement_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationToEntitlementError::unhandled)?;
                     output.build()
@@ -146,9 +158,11 @@ pub fn parse_associate_application_to_entitlement_error(
             tmp
         })},
         "LimitExceededException" => crate::error::AssociateApplicationToEntitlementError { meta: generic, kind: crate::error::AssociateApplicationToEntitlementErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationToEntitlementError::unhandled)?;
                     output.build()
@@ -160,9 +174,11 @@ pub fn parse_associate_application_to_entitlement_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::AssociateApplicationToEntitlementError { meta: generic, kind: crate::error::AssociateApplicationToEntitlementErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationToEntitlementError::unhandled)?;
                     output.build()
@@ -174,9 +190,11 @@ pub fn parse_associate_application_to_entitlement_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateApplicationToEntitlementError { meta: generic, kind: crate::error::AssociateApplicationToEntitlementErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateApplicationToEntitlementError::unhandled)?;
                     output.build()
@@ -368,7 +386,8 @@ pub fn parse_batch_associate_user_stack_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateUserStackError::unhandled)?;
                             output.build()
@@ -443,9 +462,11 @@ pub fn parse_batch_disassociate_user_stack_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombinationException" => crate::error::BatchDisassociateUserStackError { meta: generic, kind: crate::error::BatchDisassociateUserStackErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateUserStackError::unhandled)?;
                     output.build()
@@ -457,9 +478,11 @@ pub fn parse_batch_disassociate_user_stack_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::BatchDisassociateUserStackError { meta: generic, kind: crate::error::BatchDisassociateUserStackErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateUserStackError::unhandled)?;
                     output.build()
@@ -1410,27 +1433,27 @@ pub fn parse_create_image_builder_error(
                 tmp
             }),
         },
-        "InvalidParameterCombinationException" => {
-            crate::error::CreateImageBuilderError {
-                meta: generic,
-                kind:
-                    crate::error::CreateImageBuilderErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImageBuilderError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombinationException" => crate::error::CreateImageBuilderError {
+            meta: generic,
+            kind: crate::error::CreateImageBuilderErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImageBuilderError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidRoleException" => crate::error::CreateImageBuilderError {
             meta: generic,
             kind: crate::error::CreateImageBuilderErrorKind::InvalidRoleException({
@@ -1595,9 +1618,11 @@ pub fn parse_create_image_builder_streaming_url_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "OperationNotPermittedException" => crate::error::CreateImageBuilderStreamingURLError { meta: generic, kind: crate::error::CreateImageBuilderStreamingURLErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImageBuilderStreamingURLError::unhandled)?;
                     output.build()
@@ -1609,9 +1634,11 @@ pub fn parse_create_image_builder_streaming_url_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreateImageBuilderStreamingURLError { meta: generic, kind: crate::error::CreateImageBuilderStreamingURLErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateImageBuilderStreamingURLError::unhandled)?;
                     output.build()
@@ -1821,27 +1848,27 @@ pub fn parse_create_streaming_url_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombinationException" => {
-            crate::error::CreateStreamingURLError {
-                meta: generic,
-                kind:
-                    crate::error::CreateStreamingURLErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingURLError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombinationException" => crate::error::CreateStreamingURLError {
+            meta: generic,
+            kind: crate::error::CreateStreamingURLErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingURLError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "OperationNotPermittedException" => crate::error::CreateStreamingURLError {
             meta: generic,
             kind: crate::error::CreateStreamingURLErrorKind::OperationNotPermittedException({
@@ -3320,9 +3347,11 @@ pub fn parse_describe_application_fleet_associations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombinationException" => crate::error::DescribeApplicationFleetAssociationsError { meta: generic, kind: crate::error::DescribeApplicationFleetAssociationsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeApplicationFleetAssociationsError::unhandled)?;
                     output.build()
@@ -3334,9 +3363,11 @@ pub fn parse_describe_application_fleet_associations_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DescribeApplicationFleetAssociationsError { meta: generic, kind: crate::error::DescribeApplicationFleetAssociationsErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeApplicationFleetAssociationsError::unhandled)?;
                     output.build()
@@ -3959,9 +3990,11 @@ pub fn parse_describe_usage_report_subscriptions_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidAccountStatusException" => crate::error::DescribeUsageReportSubscriptionsError { meta: generic, kind: crate::error::DescribeUsageReportSubscriptionsErrorKind::InvalidAccountStatusException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_account_status_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_account_status_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_account_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsageReportSubscriptionsError::unhandled)?;
                     output.build()
@@ -3973,9 +4006,11 @@ pub fn parse_describe_usage_report_subscriptions_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeUsageReportSubscriptionsError { meta: generic, kind: crate::error::DescribeUsageReportSubscriptionsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUsageReportSubscriptionsError::unhandled)?;
                     output.build()
@@ -4120,9 +4155,11 @@ pub fn parse_describe_user_stack_associations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombinationException" => crate::error::DescribeUserStackAssociationsError { meta: generic, kind: crate::error::DescribeUserStackAssociationsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserStackAssociationsError::unhandled)?;
                     output.build()
@@ -4134,9 +4171,11 @@ pub fn parse_describe_user_stack_associations_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DescribeUserStackAssociationsError { meta: generic, kind: crate::error::DescribeUserStackAssociationsErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserStackAssociationsError::unhandled)?;
                     output.build()
@@ -4239,9 +4278,11 @@ pub fn parse_disassociate_application_fleet_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => crate::error::DisassociateApplicationFleetError { meta: generic, kind: crate::error::DisassociateApplicationFleetErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApplicationFleetError::unhandled)?;
                     output.build()
@@ -4253,9 +4294,11 @@ pub fn parse_disassociate_application_fleet_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::DisassociateApplicationFleetError { meta: generic, kind: crate::error::DisassociateApplicationFleetErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApplicationFleetError::unhandled)?;
                     output.build()
@@ -4267,9 +4310,11 @@ pub fn parse_disassociate_application_fleet_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DisassociateApplicationFleetError { meta: generic, kind: crate::error::DisassociateApplicationFleetErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApplicationFleetError::unhandled)?;
                     output.build()
@@ -4320,9 +4365,11 @@ pub fn parse_disassociate_application_from_entitlement_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "EntitlementNotFoundException" => crate::error::DisassociateApplicationFromEntitlementError { meta: generic, kind: crate::error::DisassociateApplicationFromEntitlementErrorKind::EntitlementNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::entitlement_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entitlement_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_entitlement_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApplicationFromEntitlementError::unhandled)?;
                     output.build()
@@ -4334,9 +4381,11 @@ pub fn parse_disassociate_application_from_entitlement_error(
             tmp
         })},
         "OperationNotPermittedException" => crate::error::DisassociateApplicationFromEntitlementError { meta: generic, kind: crate::error::DisassociateApplicationFromEntitlementErrorKind::OperationNotPermittedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_permitted_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApplicationFromEntitlementError::unhandled)?;
                     output.build()
@@ -4348,9 +4397,11 @@ pub fn parse_disassociate_application_from_entitlement_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateApplicationFromEntitlementError { meta: generic, kind: crate::error::DisassociateApplicationFromEntitlementErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateApplicationFromEntitlementError::unhandled)?;
                     output.build()

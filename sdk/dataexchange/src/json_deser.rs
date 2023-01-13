@@ -3603,7 +3603,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::import_assets_from_redshift_data_shares_response_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::import_assets_from_redshift_data_shares_response_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3828,7 +3829,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -3900,7 +3902,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

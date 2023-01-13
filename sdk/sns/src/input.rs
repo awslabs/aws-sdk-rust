@@ -309,7 +309,8 @@ impl CheckIfPhoneNumberIsOptedOutInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_check_if_phone_number_is_opted_out(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1093,7 +1094,8 @@ impl CreateSmsSandboxPhoneNumberInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_sms_sandbox_phone_number(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1852,7 +1854,8 @@ impl DeleteSmsSandboxPhoneNumberInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_sms_sandbox_phone_number(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2494,7 +2497,8 @@ impl GetPlatformApplicationAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_platform_application_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2810,7 +2814,8 @@ impl GetSmsSandboxAccountStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_sms_sandbox_account_status(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -3299,7 +3304,8 @@ impl ListEndpointsByPlatformApplicationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_endpoints_by_platform_application(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3964,7 +3970,8 @@ impl ListSmsSandboxPhoneNumbersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_sms_sandbox_phone_numbers(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6098,7 +6105,8 @@ impl SetPlatformApplicationAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_platform_application_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7786,7 +7794,8 @@ impl VerifySmsSandboxPhoneNumberInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_verify_sms_sandbox_phone_number(&self)?
         );
         if let Some(content_length) = body.content_length() {

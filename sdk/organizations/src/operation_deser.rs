@@ -1116,27 +1116,27 @@ pub fn parse_create_gov_cloud_account_error(
                 tmp
             }),
         },
-        "AWSOrganizationsNotInUseException" => {
-            crate::error::CreateGovCloudAccountError {
-                meta: generic,
-                kind:
-                    crate::error::CreateGovCloudAccountErrorKind::AwsOrganizationsNotInUseException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGovCloudAccountError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "AWSOrganizationsNotInUseException" => crate::error::CreateGovCloudAccountError {
+            meta: generic,
+            kind: crate::error::CreateGovCloudAccountErrorKind::AwsOrganizationsNotInUseException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::aws_organizations_not_in_use_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGovCloudAccountError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "ConcurrentModificationException" => crate::error::CreateGovCloudAccountError {
             meta: generic,
             kind: crate::error::CreateGovCloudAccountErrorKind::ConcurrentModificationException({
@@ -1489,9 +1489,11 @@ pub fn parse_create_organizational_unit_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1503,9 +1505,11 @@ pub fn parse_create_organizational_unit_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1517,9 +1521,11 @@ pub fn parse_create_organizational_unit_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1531,9 +1537,11 @@ pub fn parse_create_organizational_unit_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1545,9 +1553,11 @@ pub fn parse_create_organizational_unit_error(
             tmp
         })},
         "DuplicateOrganizationalUnitException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::DuplicateOrganizationalUnitException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_organizational_unit_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_organizational_unit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_organizational_unit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1559,9 +1569,11 @@ pub fn parse_create_organizational_unit_error(
             tmp
         })},
         "InvalidInputException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1573,9 +1585,11 @@ pub fn parse_create_organizational_unit_error(
             tmp
         })},
         "ParentNotFoundException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::ParentNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::parent_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::parent_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_parent_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1587,9 +1601,11 @@ pub fn parse_create_organizational_unit_error(
             tmp
         })},
         "ServiceException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1601,9 +1617,11 @@ pub fn parse_create_organizational_unit_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::CreateOrganizationalUnitError { meta: generic, kind: crate::error::CreateOrganizationalUnitErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -1781,7 +1799,8 @@ pub fn parse_create_policy_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::policy_type_not_available_for_organization_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::policy_type_not_available_for_organization_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_policy_type_not_available_for_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
                             output.build()
@@ -2249,7 +2268,8 @@ pub fn parse_delete_organizational_unit_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteOrganizationalUnitError::unhandled)?;
                             output.build()
@@ -2305,7 +2325,8 @@ pub fn parse_delete_organizational_unit_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::organizational_unit_not_empty_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::organizational_unit_not_empty_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_organizational_unit_not_empty_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteOrganizationalUnitError::unhandled)?;
                             output.build()
@@ -2324,7 +2345,8 @@ pub fn parse_delete_organizational_unit_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::organizational_unit_not_found_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::organizational_unit_not_found_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_organizational_unit_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteOrganizationalUnitError::unhandled)?;
                             output.build()
@@ -2775,9 +2797,11 @@ pub fn parse_deregister_delegated_administrator_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2789,9 +2813,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2803,9 +2829,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "AccountNotRegisteredException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::AccountNotRegisteredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_registered_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_registered_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2817,9 +2845,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2831,9 +2861,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2845,9 +2877,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2859,9 +2893,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "InvalidInputException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2873,9 +2909,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "ServiceException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2887,9 +2925,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -2901,9 +2941,11 @@ pub fn parse_deregister_delegated_administrator_error(
             tmp
         })},
         "UnsupportedAPIEndpointException" => crate::error::DeregisterDelegatedAdministratorError { meta: generic, kind: crate::error::DeregisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_api_endpoint_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -3094,9 +3136,11 @@ pub fn parse_describe_create_account_status_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeCreateAccountStatusError { meta: generic, kind: crate::error::DescribeCreateAccountStatusErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCreateAccountStatusError::unhandled)?;
                     output.build()
@@ -3108,9 +3152,11 @@ pub fn parse_describe_create_account_status_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::DescribeCreateAccountStatusError { meta: generic, kind: crate::error::DescribeCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCreateAccountStatusError::unhandled)?;
                     output.build()
@@ -3122,9 +3168,11 @@ pub fn parse_describe_create_account_status_error(
             tmp
         })},
         "CreateAccountStatusNotFoundException" => crate::error::DescribeCreateAccountStatusError { meta: generic, kind: crate::error::DescribeCreateAccountStatusErrorKind::CreateAccountStatusNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::create_account_status_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::create_account_status_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_create_account_status_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCreateAccountStatusError::unhandled)?;
                     output.build()
@@ -3136,9 +3184,11 @@ pub fn parse_describe_create_account_status_error(
             tmp
         })},
         "InvalidInputException" => crate::error::DescribeCreateAccountStatusError { meta: generic, kind: crate::error::DescribeCreateAccountStatusErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCreateAccountStatusError::unhandled)?;
                     output.build()
@@ -3150,9 +3200,11 @@ pub fn parse_describe_create_account_status_error(
             tmp
         })},
         "ServiceException" => crate::error::DescribeCreateAccountStatusError { meta: generic, kind: crate::error::DescribeCreateAccountStatusErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCreateAccountStatusError::unhandled)?;
                     output.build()
@@ -3164,9 +3216,11 @@ pub fn parse_describe_create_account_status_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeCreateAccountStatusError { meta: generic, kind: crate::error::DescribeCreateAccountStatusErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCreateAccountStatusError::unhandled)?;
                     output.build()
@@ -3178,9 +3232,11 @@ pub fn parse_describe_create_account_status_error(
             tmp
         })},
         "UnsupportedAPIEndpointException" => crate::error::DescribeCreateAccountStatusError { meta: generic, kind: crate::error::DescribeCreateAccountStatusErrorKind::UnsupportedApiEndpointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_api_endpoint_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCreateAccountStatusError::unhandled)?;
                     output.build()
@@ -3717,9 +3773,11 @@ pub fn parse_describe_organizational_unit_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeOrganizationalUnitError { meta: generic, kind: crate::error::DescribeOrganizationalUnitErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -3731,9 +3789,11 @@ pub fn parse_describe_organizational_unit_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::DescribeOrganizationalUnitError { meta: generic, kind: crate::error::DescribeOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -3745,9 +3805,11 @@ pub fn parse_describe_organizational_unit_error(
             tmp
         })},
         "InvalidInputException" => crate::error::DescribeOrganizationalUnitError { meta: generic, kind: crate::error::DescribeOrganizationalUnitErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -3759,9 +3821,11 @@ pub fn parse_describe_organizational_unit_error(
             tmp
         })},
         "OrganizationalUnitNotFoundException" => crate::error::DescribeOrganizationalUnitError { meta: generic, kind: crate::error::DescribeOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizational_unit_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizational_unit_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizational_unit_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -3773,9 +3837,11 @@ pub fn parse_describe_organizational_unit_error(
             tmp
         })},
         "ServiceException" => crate::error::DescribeOrganizationalUnitError { meta: generic, kind: crate::error::DescribeOrganizationalUnitErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -3787,9 +3853,11 @@ pub fn parse_describe_organizational_unit_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DescribeOrganizationalUnitError { meta: generic, kind: crate::error::DescribeOrganizationalUnitErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -4018,27 +4086,27 @@ pub fn parse_describe_resource_policy_error(
                 tmp
             }),
         },
-        "AWSOrganizationsNotInUseException" => {
-            crate::error::DescribeResourcePolicyError {
-                meta: generic,
-                kind:
-                    crate::error::DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "AWSOrganizationsNotInUseException" => crate::error::DescribeResourcePolicyError {
+            meta: generic,
+            kind: crate::error::DescribeResourcePolicyErrorKind::AwsOrganizationsNotInUseException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::aws_organizations_not_in_use_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "ConstraintViolationException" => crate::error::DescribeResourcePolicyError {
             meta: generic,
             kind: crate::error::DescribeResourcePolicyErrorKind::ConstraintViolationException({
@@ -4886,7 +4954,8 @@ pub fn parse_enable_all_features_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::handshake_constraint_violation_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::handshake_constraint_violation_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_handshake_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableAllFeaturesError::unhandled)?;
                         output.build()
@@ -5010,27 +5079,27 @@ pub fn parse_enable_aws_service_access_error(
                 tmp
             }),
         },
-        "AWSOrganizationsNotInUseException" => {
-            crate::error::EnableAWSServiceAccessError {
-                meta: generic,
-                kind:
-                    crate::error::EnableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableAWSServiceAccessError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "AWSOrganizationsNotInUseException" => crate::error::EnableAWSServiceAccessError {
+            meta: generic,
+            kind: crate::error::EnableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::aws_organizations_not_in_use_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableAWSServiceAccessError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "ConcurrentModificationException" => crate::error::EnableAWSServiceAccessError {
             meta: generic,
             kind: crate::error::EnableAWSServiceAccessErrorKind::ConcurrentModificationException({
@@ -5172,9 +5241,11 @@ pub fn parse_enable_policy_type_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5186,9 +5257,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5200,9 +5273,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5214,9 +5289,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5228,9 +5305,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "InvalidInputException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5242,9 +5321,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "PolicyChangesInProgressException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::PolicyChangesInProgressException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::policy_changes_in_progress_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::policy_changes_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_policy_changes_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5256,9 +5337,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "PolicyTypeAlreadyEnabledException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::PolicyTypeAlreadyEnabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::policy_type_already_enabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::policy_type_already_enabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_policy_type_already_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5270,9 +5353,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "PolicyTypeNotAvailableForOrganizationException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::PolicyTypeNotAvailableForOrganizationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::policy_type_not_available_for_organization_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::policy_type_not_available_for_organization_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_policy_type_not_available_for_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5284,9 +5369,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "RootNotFoundException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::RootNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::root_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::root_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_root_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5298,9 +5385,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "ServiceException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5312,9 +5401,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5326,9 +5417,11 @@ pub fn parse_enable_policy_type_error(
             tmp
         })},
         "UnsupportedAPIEndpointException" => crate::error::EnablePolicyTypeError { meta: generic, kind: crate::error::EnablePolicyTypeErrorKind::UnsupportedApiEndpointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_api_endpoint_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnablePolicyTypeError::unhandled)?;
                     output.build()
@@ -5382,9 +5475,11 @@ pub fn parse_invite_account_to_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5396,9 +5491,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "AccountOwnerNotVerifiedException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::AccountOwnerNotVerifiedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_owner_not_verified_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_owner_not_verified_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_owner_not_verified_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5410,9 +5507,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5424,9 +5523,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5438,9 +5539,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5452,9 +5555,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "DuplicateHandshakeException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::DuplicateHandshakeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_handshake_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_handshake_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_handshake_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5466,9 +5571,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "FinalizingOrganizationException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::FinalizingOrganizationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::finalizing_organization_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::finalizing_organization_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_finalizing_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5480,9 +5587,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "HandshakeConstraintViolationException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::HandshakeConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::handshake_constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::handshake_constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_handshake_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5494,9 +5603,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "InvalidInputException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5508,9 +5619,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "ServiceException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5522,9 +5635,11 @@ pub fn parse_invite_account_to_organization_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::InviteAccountToOrganizationError { meta: generic, kind: crate::error::InviteAccountToOrganizationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InviteAccountToOrganizationError::unhandled)?;
                     output.build()
@@ -5684,7 +5799,8 @@ pub fn parse_leave_organization_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::master_cannot_leave_organization_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::master_cannot_leave_organization_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_master_cannot_leave_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::LeaveOrganizationError::unhandled)?;
                         output.build()
@@ -5904,27 +6020,27 @@ pub fn parse_list_accounts_for_parent_error(
                 tmp
             }),
         },
-        "AWSOrganizationsNotInUseException" => {
-            crate::error::ListAccountsForParentError {
-                meta: generic,
-                kind:
-                    crate::error::ListAccountsForParentErrorKind::AwsOrganizationsNotInUseException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAccountsForParentError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "AWSOrganizationsNotInUseException" => crate::error::ListAccountsForParentError {
+            meta: generic,
+            kind: crate::error::ListAccountsForParentErrorKind::AwsOrganizationsNotInUseException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::aws_organizations_not_in_use_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAccountsForParentError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidInputException" => crate::error::ListAccountsForParentError {
             meta: generic,
             kind: crate::error::ListAccountsForParentErrorKind::InvalidInputException({
@@ -6038,9 +6154,11 @@ pub fn parse_list_aws_service_access_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListAWSServiceAccessForOrganizationError { meta: generic, kind: crate::error::ListAWSServiceAccessForOrganizationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSServiceAccessForOrganizationError::unhandled)?;
                     output.build()
@@ -6052,9 +6170,11 @@ pub fn parse_list_aws_service_access_for_organization_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::ListAWSServiceAccessForOrganizationError { meta: generic, kind: crate::error::ListAWSServiceAccessForOrganizationErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSServiceAccessForOrganizationError::unhandled)?;
                     output.build()
@@ -6066,9 +6186,11 @@ pub fn parse_list_aws_service_access_for_organization_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::ListAWSServiceAccessForOrganizationError { meta: generic, kind: crate::error::ListAWSServiceAccessForOrganizationErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSServiceAccessForOrganizationError::unhandled)?;
                     output.build()
@@ -6080,9 +6202,11 @@ pub fn parse_list_aws_service_access_for_organization_error(
             tmp
         })},
         "InvalidInputException" => crate::error::ListAWSServiceAccessForOrganizationError { meta: generic, kind: crate::error::ListAWSServiceAccessForOrganizationErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSServiceAccessForOrganizationError::unhandled)?;
                     output.build()
@@ -6094,9 +6218,11 @@ pub fn parse_list_aws_service_access_for_organization_error(
             tmp
         })},
         "ServiceException" => crate::error::ListAWSServiceAccessForOrganizationError { meta: generic, kind: crate::error::ListAWSServiceAccessForOrganizationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSServiceAccessForOrganizationError::unhandled)?;
                     output.build()
@@ -6108,9 +6234,11 @@ pub fn parse_list_aws_service_access_for_organization_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListAWSServiceAccessForOrganizationError { meta: generic, kind: crate::error::ListAWSServiceAccessForOrganizationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSServiceAccessForOrganizationError::unhandled)?;
                     output.build()
@@ -6122,9 +6250,11 @@ pub fn parse_list_aws_service_access_for_organization_error(
             tmp
         })},
         "UnsupportedAPIEndpointException" => crate::error::ListAWSServiceAccessForOrganizationError { meta: generic, kind: crate::error::ListAWSServiceAccessForOrganizationErrorKind::UnsupportedApiEndpointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_api_endpoint_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSServiceAccessForOrganizationError::unhandled)?;
                     output.build()
@@ -6471,9 +6601,11 @@ pub fn parse_list_delegated_administrators_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListDelegatedAdministratorsError { meta: generic, kind: crate::error::ListDelegatedAdministratorsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedAdministratorsError::unhandled)?;
                     output.build()
@@ -6485,9 +6617,11 @@ pub fn parse_list_delegated_administrators_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::ListDelegatedAdministratorsError { meta: generic, kind: crate::error::ListDelegatedAdministratorsErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedAdministratorsError::unhandled)?;
                     output.build()
@@ -6499,9 +6633,11 @@ pub fn parse_list_delegated_administrators_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::ListDelegatedAdministratorsError { meta: generic, kind: crate::error::ListDelegatedAdministratorsErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedAdministratorsError::unhandled)?;
                     output.build()
@@ -6513,9 +6649,11 @@ pub fn parse_list_delegated_administrators_error(
             tmp
         })},
         "InvalidInputException" => crate::error::ListDelegatedAdministratorsError { meta: generic, kind: crate::error::ListDelegatedAdministratorsErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedAdministratorsError::unhandled)?;
                     output.build()
@@ -6527,9 +6665,11 @@ pub fn parse_list_delegated_administrators_error(
             tmp
         })},
         "ServiceException" => crate::error::ListDelegatedAdministratorsError { meta: generic, kind: crate::error::ListDelegatedAdministratorsErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedAdministratorsError::unhandled)?;
                     output.build()
@@ -6541,9 +6681,11 @@ pub fn parse_list_delegated_administrators_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListDelegatedAdministratorsError { meta: generic, kind: crate::error::ListDelegatedAdministratorsErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedAdministratorsError::unhandled)?;
                     output.build()
@@ -6555,9 +6697,11 @@ pub fn parse_list_delegated_administrators_error(
             tmp
         })},
         "UnsupportedAPIEndpointException" => crate::error::ListDelegatedAdministratorsError { meta: generic, kind: crate::error::ListDelegatedAdministratorsErrorKind::UnsupportedApiEndpointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_api_endpoint_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedAdministratorsError::unhandled)?;
                     output.build()
@@ -6609,9 +6753,11 @@ pub fn parse_list_delegated_services_for_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6623,9 +6769,11 @@ pub fn parse_list_delegated_services_for_account_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6637,9 +6785,11 @@ pub fn parse_list_delegated_services_for_account_error(
             tmp
         })},
         "AccountNotRegisteredException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::AccountNotRegisteredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_registered_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_registered_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6651,9 +6801,11 @@ pub fn parse_list_delegated_services_for_account_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6665,9 +6817,11 @@ pub fn parse_list_delegated_services_for_account_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6679,9 +6833,11 @@ pub fn parse_list_delegated_services_for_account_error(
             tmp
         })},
         "InvalidInputException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6693,9 +6849,11 @@ pub fn parse_list_delegated_services_for_account_error(
             tmp
         })},
         "ServiceException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6707,9 +6865,11 @@ pub fn parse_list_delegated_services_for_account_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6721,9 +6881,11 @@ pub fn parse_list_delegated_services_for_account_error(
             tmp
         })},
         "UnsupportedAPIEndpointException" => crate::error::ListDelegatedServicesForAccountError { meta: generic, kind: crate::error::ListDelegatedServicesForAccountErrorKind::UnsupportedApiEndpointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_api_endpoint_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDelegatedServicesForAccountError::unhandled)?;
                     output.build()
@@ -6915,9 +7077,11 @@ pub fn parse_list_handshakes_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListHandshakesForOrganizationError { meta: generic, kind: crate::error::ListHandshakesForOrganizationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHandshakesForOrganizationError::unhandled)?;
                     output.build()
@@ -6929,9 +7093,11 @@ pub fn parse_list_handshakes_for_organization_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::ListHandshakesForOrganizationError { meta: generic, kind: crate::error::ListHandshakesForOrganizationErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHandshakesForOrganizationError::unhandled)?;
                     output.build()
@@ -6943,9 +7109,11 @@ pub fn parse_list_handshakes_for_organization_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::ListHandshakesForOrganizationError { meta: generic, kind: crate::error::ListHandshakesForOrganizationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHandshakesForOrganizationError::unhandled)?;
                     output.build()
@@ -6957,9 +7125,11 @@ pub fn parse_list_handshakes_for_organization_error(
             tmp
         })},
         "InvalidInputException" => crate::error::ListHandshakesForOrganizationError { meta: generic, kind: crate::error::ListHandshakesForOrganizationErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHandshakesForOrganizationError::unhandled)?;
                     output.build()
@@ -6971,9 +7141,11 @@ pub fn parse_list_handshakes_for_organization_error(
             tmp
         })},
         "ServiceException" => crate::error::ListHandshakesForOrganizationError { meta: generic, kind: crate::error::ListHandshakesForOrganizationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHandshakesForOrganizationError::unhandled)?;
                     output.build()
@@ -6985,9 +7157,11 @@ pub fn parse_list_handshakes_for_organization_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListHandshakesForOrganizationError { meta: generic, kind: crate::error::ListHandshakesForOrganizationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHandshakesForOrganizationError::unhandled)?;
                     output.build()
@@ -7042,9 +7216,11 @@ pub fn parse_list_organizational_units_for_parent_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListOrganizationalUnitsForParentError { meta: generic, kind: crate::error::ListOrganizationalUnitsForParentErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationalUnitsForParentError::unhandled)?;
                     output.build()
@@ -7056,9 +7232,11 @@ pub fn parse_list_organizational_units_for_parent_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::ListOrganizationalUnitsForParentError { meta: generic, kind: crate::error::ListOrganizationalUnitsForParentErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationalUnitsForParentError::unhandled)?;
                     output.build()
@@ -7070,9 +7248,11 @@ pub fn parse_list_organizational_units_for_parent_error(
             tmp
         })},
         "InvalidInputException" => crate::error::ListOrganizationalUnitsForParentError { meta: generic, kind: crate::error::ListOrganizationalUnitsForParentErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationalUnitsForParentError::unhandled)?;
                     output.build()
@@ -7084,9 +7264,11 @@ pub fn parse_list_organizational_units_for_parent_error(
             tmp
         })},
         "ParentNotFoundException" => crate::error::ListOrganizationalUnitsForParentError { meta: generic, kind: crate::error::ListOrganizationalUnitsForParentErrorKind::ParentNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::parent_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::parent_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_parent_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationalUnitsForParentError::unhandled)?;
                     output.build()
@@ -7098,9 +7280,11 @@ pub fn parse_list_organizational_units_for_parent_error(
             tmp
         })},
         "ServiceException" => crate::error::ListOrganizationalUnitsForParentError { meta: generic, kind: crate::error::ListOrganizationalUnitsForParentErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationalUnitsForParentError::unhandled)?;
                     output.build()
@@ -7112,9 +7296,11 @@ pub fn parse_list_organizational_units_for_parent_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListOrganizationalUnitsForParentError { meta: generic, kind: crate::error::ListOrganizationalUnitsForParentErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationalUnitsForParentError::unhandled)?;
                     output.build()
@@ -7458,27 +7644,27 @@ pub fn parse_list_policies_for_target_error(
                 tmp
             }),
         },
-        "AWSOrganizationsNotInUseException" => {
-            crate::error::ListPoliciesForTargetError {
-                meta: generic,
-                kind:
-                    crate::error::ListPoliciesForTargetErrorKind::AwsOrganizationsNotInUseException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesForTargetError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "AWSOrganizationsNotInUseException" => crate::error::ListPoliciesForTargetError {
+            meta: generic,
+            kind: crate::error::ListPoliciesForTargetErrorKind::AwsOrganizationsNotInUseException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::aws_organizations_not_in_use_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesForTargetError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidInputException" => crate::error::ListPoliciesForTargetError {
             meta: generic,
             kind: crate::error::ListPoliciesForTargetErrorKind::InvalidInputException({
@@ -8421,9 +8607,11 @@ pub fn parse_register_delegated_administrator_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8435,9 +8623,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "AccountAlreadyRegisteredException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::AccountAlreadyRegisteredException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_already_registered_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_already_registered_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_already_registered_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8449,9 +8639,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8463,9 +8655,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8477,9 +8671,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8491,9 +8687,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8505,9 +8703,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "InvalidInputException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8519,9 +8719,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "ServiceException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8533,9 +8735,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8547,9 +8751,11 @@ pub fn parse_register_delegated_administrator_error(
             tmp
         })},
         "UnsupportedAPIEndpointException" => crate::error::RegisterDelegatedAdministratorError { meta: generic, kind: crate::error::RegisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_api_endpoint_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_api_endpoint_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDelegatedAdministratorError::unhandled)?;
                     output.build()
@@ -8600,9 +8806,11 @@ pub fn parse_remove_account_from_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -8614,9 +8822,11 @@ pub fn parse_remove_account_from_organization_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -8628,9 +8838,11 @@ pub fn parse_remove_account_from_organization_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -8642,9 +8854,11 @@ pub fn parse_remove_account_from_organization_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -8656,9 +8870,11 @@ pub fn parse_remove_account_from_organization_error(
             tmp
         })},
         "ConstraintViolationException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::ConstraintViolationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::constraint_violation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::constraint_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_constraint_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -8670,9 +8886,11 @@ pub fn parse_remove_account_from_organization_error(
             tmp
         })},
         "InvalidInputException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -8684,9 +8902,11 @@ pub fn parse_remove_account_from_organization_error(
             tmp
         })},
         "MasterCannotLeaveOrganizationException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::MasterCannotLeaveOrganizationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::master_cannot_leave_organization_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::master_cannot_leave_organization_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_master_cannot_leave_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -8698,9 +8918,11 @@ pub fn parse_remove_account_from_organization_error(
             tmp
         })},
         "ServiceException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -8712,9 +8934,11 @@ pub fn parse_remove_account_from_organization_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::RemoveAccountFromOrganizationError { meta: generic, kind: crate::error::RemoveAccountFromOrganizationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveAccountFromOrganizationError::unhandled)?;
                     output.build()
@@ -9105,9 +9329,11 @@ pub fn parse_update_organizational_unit_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::UpdateOrganizationalUnitError { meta: generic, kind: crate::error::UpdateOrganizationalUnitErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -9119,9 +9345,11 @@ pub fn parse_update_organizational_unit_error(
             tmp
         })},
         "AWSOrganizationsNotInUseException" => crate::error::UpdateOrganizationalUnitError { meta: generic, kind: crate::error::UpdateOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::aws_organizations_not_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_aws_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -9133,9 +9361,11 @@ pub fn parse_update_organizational_unit_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::UpdateOrganizationalUnitError { meta: generic, kind: crate::error::UpdateOrganizationalUnitErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -9147,9 +9377,11 @@ pub fn parse_update_organizational_unit_error(
             tmp
         })},
         "DuplicateOrganizationalUnitException" => crate::error::UpdateOrganizationalUnitError { meta: generic, kind: crate::error::UpdateOrganizationalUnitErrorKind::DuplicateOrganizationalUnitException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_organizational_unit_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_organizational_unit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_organizational_unit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -9161,9 +9393,11 @@ pub fn parse_update_organizational_unit_error(
             tmp
         })},
         "InvalidInputException" => crate::error::UpdateOrganizationalUnitError { meta: generic, kind: crate::error::UpdateOrganizationalUnitErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -9175,9 +9409,11 @@ pub fn parse_update_organizational_unit_error(
             tmp
         })},
         "OrganizationalUnitNotFoundException" => crate::error::UpdateOrganizationalUnitError { meta: generic, kind: crate::error::UpdateOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::organizational_unit_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organizational_unit_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_organizational_unit_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -9189,9 +9425,11 @@ pub fn parse_update_organizational_unit_error(
             tmp
         })},
         "ServiceException" => crate::error::UpdateOrganizationalUnitError { meta: generic, kind: crate::error::UpdateOrganizationalUnitErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationalUnitError::unhandled)?;
                     output.build()
@@ -9203,9 +9441,11 @@ pub fn parse_update_organizational_unit_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::UpdateOrganizationalUnitError { meta: generic, kind: crate::error::UpdateOrganizationalUnitErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateOrganizationalUnitError::unhandled)?;
                     output.build()

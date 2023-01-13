@@ -329,7 +329,8 @@ pub fn parse_create_service_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::platform_task_definition_incompatibility_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::platform_task_definition_incompatibility_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_platform_task_definition_incompatibility_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceError::unhandled)?;
                             output.build()
@@ -524,7 +525,8 @@ pub fn parse_create_task_set_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::platform_task_definition_incompatibility_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::platform_task_definition_incompatibility_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_platform_task_definition_incompatibility_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTaskSetError::unhandled)?;
                             output.build()
@@ -964,7 +966,8 @@ pub fn parse_delete_cluster_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::cluster_contains_container_instances_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_contains_container_instances_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_cluster_contains_container_instances_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
                         output.build()
@@ -4576,7 +4579,8 @@ pub fn parse_run_task_error(
             kind: crate::error::RunTaskErrorKind::PlatformTaskDefinitionIncompatibilityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::platform_task_definition_incompatibility_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::platform_task_definition_incompatibility_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_platform_task_definition_incompatibility_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RunTaskError::unhandled)?;
                     output.build()
@@ -6147,7 +6151,8 @@ pub fn parse_update_service_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::platform_task_definition_incompatibility_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::platform_task_definition_incompatibility_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_platform_task_definition_incompatibility_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceError::unhandled)?;
                             output.build()

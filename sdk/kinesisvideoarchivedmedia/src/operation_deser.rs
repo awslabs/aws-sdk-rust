@@ -222,9 +222,11 @@ pub fn parse_get_dash_streaming_session_url_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientLimitExceededException" => crate::error::GetDASHStreamingSessionURLError { meta: generic, kind: crate::error::GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -236,9 +238,11 @@ pub fn parse_get_dash_streaming_session_url_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::GetDASHStreamingSessionURLError { meta: generic, kind: crate::error::GetDASHStreamingSessionURLErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -250,9 +254,11 @@ pub fn parse_get_dash_streaming_session_url_error(
             tmp
         })},
         "InvalidCodecPrivateDataException" => crate::error::GetDASHStreamingSessionURLError { meta: generic, kind: crate::error::GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_codec_private_data_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_codec_private_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_codec_private_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -264,9 +270,11 @@ pub fn parse_get_dash_streaming_session_url_error(
             tmp
         })},
         "MissingCodecPrivateDataException" => crate::error::GetDASHStreamingSessionURLError { meta: generic, kind: crate::error::GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_codec_private_data_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_codec_private_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_codec_private_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -278,9 +286,11 @@ pub fn parse_get_dash_streaming_session_url_error(
             tmp
         })},
         "NoDataRetentionException" => crate::error::GetDASHStreamingSessionURLError { meta: generic, kind: crate::error::GetDASHStreamingSessionURLErrorKind::NoDataRetentionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_data_retention_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_data_retention_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_data_retention_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -292,9 +302,11 @@ pub fn parse_get_dash_streaming_session_url_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::GetDASHStreamingSessionURLError { meta: generic, kind: crate::error::GetDASHStreamingSessionURLErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -306,9 +318,11 @@ pub fn parse_get_dash_streaming_session_url_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetDASHStreamingSessionURLError { meta: generic, kind: crate::error::GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -320,9 +334,11 @@ pub fn parse_get_dash_streaming_session_url_error(
             tmp
         })},
         "UnsupportedStreamMediaTypeException" => crate::error::GetDASHStreamingSessionURLError { meta: generic, kind: crate::error::GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_stream_media_type_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_stream_media_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_stream_media_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDASHStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -378,9 +394,11 @@ pub fn parse_get_hls_streaming_session_url_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientLimitExceededException" => crate::error::GetHLSStreamingSessionURLError { meta: generic, kind: crate::error::GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_client_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -392,9 +410,11 @@ pub fn parse_get_hls_streaming_session_url_error(
             tmp
         })},
         "InvalidArgumentException" => crate::error::GetHLSStreamingSessionURLError { meta: generic, kind: crate::error::GetHLSStreamingSessionURLErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -406,9 +426,11 @@ pub fn parse_get_hls_streaming_session_url_error(
             tmp
         })},
         "InvalidCodecPrivateDataException" => crate::error::GetHLSStreamingSessionURLError { meta: generic, kind: crate::error::GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_codec_private_data_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_codec_private_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_codec_private_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -420,9 +442,11 @@ pub fn parse_get_hls_streaming_session_url_error(
             tmp
         })},
         "MissingCodecPrivateDataException" => crate::error::GetHLSStreamingSessionURLError { meta: generic, kind: crate::error::GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::missing_codec_private_data_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::missing_codec_private_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_codec_private_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -434,9 +458,11 @@ pub fn parse_get_hls_streaming_session_url_error(
             tmp
         })},
         "NoDataRetentionException" => crate::error::GetHLSStreamingSessionURLError { meta: generic, kind: crate::error::GetHLSStreamingSessionURLErrorKind::NoDataRetentionException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_data_retention_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_data_retention_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_no_data_retention_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -448,9 +474,11 @@ pub fn parse_get_hls_streaming_session_url_error(
             tmp
         })},
         "NotAuthorizedException" => crate::error::GetHLSStreamingSessionURLError { meta: generic, kind: crate::error::GetHLSStreamingSessionURLErrorKind::NotAuthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_authorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_authorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -462,9 +490,11 @@ pub fn parse_get_hls_streaming_session_url_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetHLSStreamingSessionURLError { meta: generic, kind: crate::error::GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()
@@ -476,9 +506,11 @@ pub fn parse_get_hls_streaming_session_url_error(
             tmp
         })},
         "UnsupportedStreamMediaTypeException" => crate::error::GetHLSStreamingSessionURLError { meta: generic, kind: crate::error::GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_stream_media_type_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_stream_media_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_stream_media_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHLSStreamingSessionURLError::unhandled)?;
                     output.build()

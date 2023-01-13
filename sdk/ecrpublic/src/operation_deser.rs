@@ -1515,9 +1515,11 @@ pub fn parse_get_repository_catalog_data_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
                     output.build()
@@ -1529,9 +1531,11 @@ pub fn parse_get_repository_catalog_data_error(
             tmp
         })},
         "RepositoryCatalogDataNotFoundException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::RepositoryCatalogDataNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_catalog_data_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_catalog_data_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_catalog_data_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
                     output.build()
@@ -1543,9 +1547,11 @@ pub fn parse_get_repository_catalog_data_error(
             tmp
         })},
         "RepositoryNotFoundException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::RepositoryNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
                     output.build()
@@ -1557,9 +1563,11 @@ pub fn parse_get_repository_catalog_data_error(
             tmp
         })},
         "ServerException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::ServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
                     output.build()
@@ -1571,9 +1579,11 @@ pub fn parse_get_repository_catalog_data_error(
             tmp
         })},
         "UnsupportedCommandException" => crate::error::GetRepositoryCatalogDataError { meta: generic, kind: crate::error::GetRepositoryCatalogDataErrorKind::UnsupportedCommandException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_command_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_command_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_command_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
                     output.build()

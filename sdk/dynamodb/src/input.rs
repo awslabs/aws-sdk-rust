@@ -2772,7 +2772,8 @@ impl DescribeContributorInsightsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_contributor_insights(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3410,7 +3411,8 @@ impl DescribeGlobalTableSettingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_global_table_settings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3735,7 +3737,8 @@ impl DescribeKinesisStreamingDestinationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_kinesis_streaming_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4201,7 +4204,8 @@ impl DescribeTableReplicaAutoScalingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_table_replica_auto_scaling(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4540,7 +4544,8 @@ impl DisableKinesisStreamingDestinationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disable_kinesis_streaming_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4715,7 +4720,8 @@ impl EnableKinesisStreamingDestinationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_enable_kinesis_streaming_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5465,7 +5471,8 @@ impl ExportTableToPointInTimeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_export_table_to_point_in_time(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9097,7 +9104,8 @@ impl RestoreTableToPointInTimeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_restore_table_to_point_in_time(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12432,7 +12440,8 @@ impl UpdateTableReplicaAutoScalingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_table_replica_auto_scaling(&self)?
         );
         if let Some(content_length) = body.content_length() {

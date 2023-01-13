@@ -401,7 +401,8 @@ impl CreateConfigurationSetEventDestinationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -793,7 +794,8 @@ impl CreateDeliverabilityTestReportInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_deliverability_test_report(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4896,7 +4898,8 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_account_dedicated_ip_warmup_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5058,7 +5061,8 @@ impl PutAccountSendingAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_account_sending_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5273,7 +5277,8 @@ impl PutConfigurationSetDeliveryOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_delivery_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5470,7 +5475,8 @@ impl PutConfigurationSetReputationOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_reputation_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5667,7 +5673,8 @@ impl PutConfigurationSetSendingOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_sending_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5867,7 +5874,8 @@ impl PutConfigurationSetTrackingOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_tracking_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6253,7 +6261,8 @@ impl PutDedicatedIpWarmupAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_dedicated_ip_warmup_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6439,7 +6448,8 @@ impl PutDeliverabilityDashboardOptionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_deliverability_dashboard_option(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6638,7 +6648,8 @@ impl PutEmailIdentityDkimAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_email_identity_dkim_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6839,7 +6850,8 @@ impl PutEmailIdentityFeedbackAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_email_identity_feedback_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7066,7 +7078,8 @@ impl PutEmailIdentityMailFromAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_email_identity_mail_from_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7942,7 +7955,8 @@ impl UpdateConfigurationSetEventDestinationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {

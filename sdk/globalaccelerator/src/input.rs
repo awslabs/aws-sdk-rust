@@ -1257,7 +1257,8 @@ impl CreateCustomRoutingAcceleratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_accelerator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1480,7 +1481,8 @@ impl CreateCustomRoutingEndpointGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_endpoint_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1687,7 +1689,8 @@ impl CreateCustomRoutingListenerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2587,7 +2590,8 @@ impl DeleteCustomRoutingAcceleratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_accelerator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2753,7 +2757,8 @@ impl DeleteCustomRoutingEndpointGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_endpoint_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2916,7 +2921,8 @@ impl DeleteCustomRoutingListenerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3986,7 +3992,8 @@ impl DescribeAcceleratorAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_accelerator_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4152,7 +4159,8 @@ impl DescribeCustomRoutingAcceleratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4320,7 +4328,8 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4487,7 +4496,8 @@ impl DescribeCustomRoutingEndpointGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_endpoint_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4650,7 +4660,8 @@ impl DescribeCustomRoutingListenerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5508,7 +5519,8 @@ impl ListCustomRoutingAcceleratorsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_accelerators(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5695,7 +5707,8 @@ impl ListCustomRoutingEndpointGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_endpoint_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5885,7 +5898,8 @@ impl ListCustomRoutingListenersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_listeners(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6090,7 +6104,8 @@ impl ListCustomRoutingPortMappingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6294,7 +6309,8 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings_by_destination(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7208,7 +7224,8 @@ impl RemoveCustomRoutingEndpointsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_custom_routing_endpoints(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8183,7 +8200,8 @@ impl UpdateAcceleratorAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_accelerator_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8390,7 +8408,8 @@ impl UpdateCustomRoutingAcceleratorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8606,7 +8625,8 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8792,7 +8812,8 @@ impl UpdateCustomRoutingListenerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -355,7 +355,8 @@ impl AssociateVpcWithHostedZoneInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_vpc_with_hosted_zone(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2307,7 +2308,8 @@ impl CreateReusableDelegationSetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_reusable_delegation_set(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2703,7 +2705,8 @@ impl CreateTrafficPolicyInstanceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_traffic_policy_instance(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2905,7 +2908,8 @@ impl CreateTrafficPolicyVersionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_traffic_policy_version(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3103,7 +3107,8 @@ impl CreateVpcAssociationAuthorizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_vpc_association_authorization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4903,7 +4908,8 @@ impl DeleteVpcAssociationAuthorizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_vpc_association_authorization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5286,7 +5292,8 @@ impl DisassociateVpcFromHostedZoneInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_vpc_from_hosted_zone(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14014,7 +14021,8 @@ impl UpdateTrafficPolicyCommentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_traffic_policy_comment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14231,7 +14239,8 @@ impl UpdateTrafficPolicyInstanceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_traffic_policy_instance(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -20,9 +20,11 @@ pub fn parse_associate_aws_account_with_partner_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::AssociateAwsAccountWithPartnerAccountError { meta: generic, kind: crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAwsAccountWithPartnerAccountError::unhandled)?;
                     output.build()
@@ -34,9 +36,11 @@ pub fn parse_associate_aws_account_with_partner_account_error(
             tmp
         })},
         "ConflictException" => crate::error::AssociateAwsAccountWithPartnerAccountError { meta: generic, kind: crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAwsAccountWithPartnerAccountError::unhandled)?;
                     output.build()
@@ -48,9 +52,11 @@ pub fn parse_associate_aws_account_with_partner_account_error(
             tmp
         })},
         "InternalServerException" => crate::error::AssociateAwsAccountWithPartnerAccountError { meta: generic, kind: crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAwsAccountWithPartnerAccountError::unhandled)?;
                     output.build()
@@ -62,9 +68,11 @@ pub fn parse_associate_aws_account_with_partner_account_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateAwsAccountWithPartnerAccountError { meta: generic, kind: crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAwsAccountWithPartnerAccountError::unhandled)?;
                     output.build()
@@ -76,9 +84,11 @@ pub fn parse_associate_aws_account_with_partner_account_error(
             tmp
         })},
         "ThrottlingException" => crate::error::AssociateAwsAccountWithPartnerAccountError { meta: generic, kind: crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAwsAccountWithPartnerAccountError::unhandled)?;
                     output.build()
@@ -90,9 +100,11 @@ pub fn parse_associate_aws_account_with_partner_account_error(
             tmp
         })},
         "ValidationException" => crate::error::AssociateAwsAccountWithPartnerAccountError { meta: generic, kind: crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateAwsAccountWithPartnerAccountError::unhandled)?;
                     output.build()
@@ -143,9 +155,11 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::AssociateMulticastGroupWithFuotaTaskError { meta: generic, kind: crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMulticastGroupWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -157,9 +171,11 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
             tmp
         })},
         "ConflictException" => crate::error::AssociateMulticastGroupWithFuotaTaskError { meta: generic, kind: crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMulticastGroupWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -171,9 +187,11 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
             tmp
         })},
         "InternalServerException" => crate::error::AssociateMulticastGroupWithFuotaTaskError { meta: generic, kind: crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMulticastGroupWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -185,9 +203,11 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateMulticastGroupWithFuotaTaskError { meta: generic, kind: crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMulticastGroupWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -199,9 +219,11 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
             tmp
         })},
         "ThrottlingException" => crate::error::AssociateMulticastGroupWithFuotaTaskError { meta: generic, kind: crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMulticastGroupWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -213,9 +235,11 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
             tmp
         })},
         "ValidationException" => crate::error::AssociateMulticastGroupWithFuotaTaskError { meta: generic, kind: crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMulticastGroupWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -265,9 +289,11 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::AssociateWirelessDeviceWithFuotaTaskError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -279,9 +305,11 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
             tmp
         })},
         "ConflictException" => crate::error::AssociateWirelessDeviceWithFuotaTaskError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -293,9 +321,11 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
             tmp
         })},
         "InternalServerException" => crate::error::AssociateWirelessDeviceWithFuotaTaskError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -307,9 +337,11 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateWirelessDeviceWithFuotaTaskError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -321,9 +353,11 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
             tmp
         })},
         "ThrottlingException" => crate::error::AssociateWirelessDeviceWithFuotaTaskError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -335,9 +369,11 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
             tmp
         })},
         "ValidationException" => crate::error::AssociateWirelessDeviceWithFuotaTaskError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithFuotaTaskError::unhandled)?;
                     output.build()
@@ -389,9 +425,11 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::AssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -403,9 +441,11 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "ConflictException" => crate::error::AssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -417,9 +457,11 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "InternalServerException" => crate::error::AssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -431,9 +473,11 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -445,9 +489,11 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "ThrottlingException" => crate::error::AssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -459,9 +505,11 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "ValidationException" => crate::error::AssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -663,9 +711,11 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::AssociateWirelessGatewayWithCertificateError { meta: generic, kind: crate::error::AssociateWirelessGatewayWithCertificateErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithCertificateError::unhandled)?;
                     output.build()
@@ -677,9 +727,11 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
             tmp
         })},
         "ConflictException" => crate::error::AssociateWirelessGatewayWithCertificateError { meta: generic, kind: crate::error::AssociateWirelessGatewayWithCertificateErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithCertificateError::unhandled)?;
                     output.build()
@@ -691,9 +743,11 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
             tmp
         })},
         "InternalServerException" => crate::error::AssociateWirelessGatewayWithCertificateError { meta: generic, kind: crate::error::AssociateWirelessGatewayWithCertificateErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithCertificateError::unhandled)?;
                     output.build()
@@ -705,9 +759,11 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateWirelessGatewayWithCertificateError { meta: generic, kind: crate::error::AssociateWirelessGatewayWithCertificateErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithCertificateError::unhandled)?;
                     output.build()
@@ -719,9 +775,11 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
             tmp
         })},
         "ThrottlingException" => crate::error::AssociateWirelessGatewayWithCertificateError { meta: generic, kind: crate::error::AssociateWirelessGatewayWithCertificateErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithCertificateError::unhandled)?;
                     output.build()
@@ -733,9 +791,11 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
             tmp
         })},
         "ValidationException" => crate::error::AssociateWirelessGatewayWithCertificateError { meta: generic, kind: crate::error::AssociateWirelessGatewayWithCertificateErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithCertificateError::unhandled)?;
                     output.build()
@@ -2332,9 +2392,11 @@ pub fn parse_create_wireless_gateway_task_definition_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -2346,9 +2408,11 @@ pub fn parse_create_wireless_gateway_task_definition_error(
             tmp
         })},
         "ConflictException" => crate::error::CreateWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -2360,9 +2424,11 @@ pub fn parse_create_wireless_gateway_task_definition_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -2374,9 +2440,11 @@ pub fn parse_create_wireless_gateway_task_definition_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreateWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -2388,9 +2456,11 @@ pub fn parse_create_wireless_gateway_task_definition_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -2402,9 +2472,11 @@ pub fn parse_create_wireless_gateway_task_definition_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -3759,9 +3831,11 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DeleteWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -3773,9 +3847,11 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
             tmp
         })},
         "InternalServerException" => crate::error::DeleteWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -3787,9 +3863,11 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -3801,9 +3879,11 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DeleteWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -3815,9 +3895,11 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
             tmp
         })},
         "ValidationException" => crate::error::DeleteWirelessGatewayTaskDefinitionError { meta: generic, kind: crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
@@ -3869,9 +3951,11 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => crate::error::DisassociateAwsAccountFromPartnerAccountError { meta: generic, kind: crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateAwsAccountFromPartnerAccountError::unhandled)?;
                     output.build()
@@ -3883,9 +3967,11 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateAwsAccountFromPartnerAccountError { meta: generic, kind: crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateAwsAccountFromPartnerAccountError::unhandled)?;
                     output.build()
@@ -3897,9 +3983,11 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateAwsAccountFromPartnerAccountError { meta: generic, kind: crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateAwsAccountFromPartnerAccountError::unhandled)?;
                     output.build()
@@ -3911,9 +3999,11 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateAwsAccountFromPartnerAccountError { meta: generic, kind: crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateAwsAccountFromPartnerAccountError::unhandled)?;
                     output.build()
@@ -3965,9 +4055,11 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateMulticastGroupFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateMulticastGroupFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -3979,9 +4071,11 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
             tmp
         })},
         "ConflictException" => crate::error::DisassociateMulticastGroupFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateMulticastGroupFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -3993,9 +4087,11 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateMulticastGroupFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateMulticastGroupFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4007,9 +4103,11 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateMulticastGroupFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateMulticastGroupFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4021,9 +4119,11 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateMulticastGroupFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateMulticastGroupFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4075,9 +4175,11 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateWirelessDeviceFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4089,9 +4191,11 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
             tmp
         })},
         "ConflictException" => crate::error::DisassociateWirelessDeviceFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4103,9 +4207,11 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateWirelessDeviceFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4117,9 +4223,11 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateWirelessDeviceFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4131,9 +4239,11 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateWirelessDeviceFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4145,9 +4255,11 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateWirelessDeviceFromFuotaTaskError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromFuotaTaskError::unhandled)?;
                     output.build()
@@ -4199,9 +4311,11 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -4213,9 +4327,11 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -4227,9 +4343,11 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -4241,9 +4359,11 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -4255,9 +4375,11 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -4280,7 +4402,8 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_response(
     crate::error::DisassociateWirelessDeviceFromMulticastGroupError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::disassociate_wireless_device_from_multicast_group_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::disassociate_wireless_device_from_multicast_group_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -4305,9 +4428,11 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateWirelessDeviceFromThingError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromThingErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromThingError::unhandled)?;
                     output.build()
@@ -4319,9 +4444,11 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
             tmp
         })},
         "ConflictException" => crate::error::DisassociateWirelessDeviceFromThingError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromThingErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromThingError::unhandled)?;
                     output.build()
@@ -4333,9 +4460,11 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateWirelessDeviceFromThingError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromThingErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromThingError::unhandled)?;
                     output.build()
@@ -4347,9 +4476,11 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateWirelessDeviceFromThingError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromThingErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromThingError::unhandled)?;
                     output.build()
@@ -4361,9 +4492,11 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateWirelessDeviceFromThingError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromThingErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromThingError::unhandled)?;
                     output.build()
@@ -4375,9 +4508,11 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateWirelessDeviceFromThingError { meta: generic, kind: crate::error::DisassociateWirelessDeviceFromThingErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessDeviceFromThingError::unhandled)?;
                     output.build()
@@ -4429,9 +4564,11 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateWirelessGatewayFromCertificateError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromCertificateError::unhandled)?;
                     output.build()
@@ -4443,9 +4580,11 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateWirelessGatewayFromCertificateError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromCertificateError::unhandled)?;
                     output.build()
@@ -4457,9 +4596,11 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateWirelessGatewayFromCertificateError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromCertificateError::unhandled)?;
                     output.build()
@@ -4471,9 +4612,11 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateWirelessGatewayFromCertificateError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromCertificateError::unhandled)?;
                     output.build()
@@ -4485,9 +4628,11 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateWirelessGatewayFromCertificateError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromCertificateError::unhandled)?;
                     output.build()
@@ -4538,9 +4683,11 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DisassociateWirelessGatewayFromThingError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromThingErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromThingError::unhandled)?;
                     output.build()
@@ -4552,9 +4699,11 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
             tmp
         })},
         "ConflictException" => crate::error::DisassociateWirelessGatewayFromThingError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromThingErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromThingError::unhandled)?;
                     output.build()
@@ -4566,9 +4715,11 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
             tmp
         })},
         "InternalServerException" => crate::error::DisassociateWirelessGatewayFromThingError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromThingErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromThingError::unhandled)?;
                     output.build()
@@ -4580,9 +4731,11 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociateWirelessGatewayFromThingError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromThingErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromThingError::unhandled)?;
                     output.build()
@@ -4594,9 +4747,11 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DisassociateWirelessGatewayFromThingError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromThingErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromThingError::unhandled)?;
                     output.build()
@@ -4608,9 +4763,11 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
             tmp
         })},
         "ValidationException" => crate::error::DisassociateWirelessGatewayFromThingError { meta: generic, kind: crate::error::DisassociateWirelessGatewayFromThingErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateWirelessGatewayFromThingError::unhandled)?;
                     output.build()
@@ -7227,9 +7384,11 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetWirelessGatewayFirmwareInformationError { meta: generic, kind: crate::error::GetWirelessGatewayFirmwareInformationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayFirmwareInformationError::unhandled)?;
                     output.build()
@@ -7241,9 +7400,11 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
             tmp
         })},
         "InternalServerException" => crate::error::GetWirelessGatewayFirmwareInformationError { meta: generic, kind: crate::error::GetWirelessGatewayFirmwareInformationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayFirmwareInformationError::unhandled)?;
                     output.build()
@@ -7255,9 +7416,11 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetWirelessGatewayFirmwareInformationError { meta: generic, kind: crate::error::GetWirelessGatewayFirmwareInformationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayFirmwareInformationError::unhandled)?;
                     output.build()
@@ -7269,9 +7432,11 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetWirelessGatewayFirmwareInformationError { meta: generic, kind: crate::error::GetWirelessGatewayFirmwareInformationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayFirmwareInformationError::unhandled)?;
                     output.build()
@@ -7283,9 +7448,11 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
             tmp
         })},
         "ValidationException" => crate::error::GetWirelessGatewayFirmwareInformationError { meta: generic, kind: crate::error::GetWirelessGatewayFirmwareInformationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayFirmwareInformationError::unhandled)?;
                     output.build()
@@ -10163,9 +10330,11 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -10177,9 +10346,11 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "InternalServerException" => crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -10191,9 +10362,11 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -10205,9 +10378,11 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "ThrottlingException" => crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -10219,9 +10394,11 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
             tmp
         })},
         "ValidationException" => crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError { meta: generic, kind: crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError::unhandled)?;
                     output.build()
@@ -10244,7 +10421,8 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_response(
     crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -10273,9 +10451,11 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -10287,9 +10467,11 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
             tmp
         })},
         "InternalServerException" => crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -10301,9 +10483,11 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -10315,9 +10499,11 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
             tmp
         })},
         "ThrottlingException" => crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -10329,9 +10515,11 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
             tmp
         })},
         "ValidationException" => crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError { meta: generic, kind: crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError::unhandled)?;
                     output.build()
@@ -10354,7 +10542,8 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_respon
     crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -11130,9 +11319,11 @@ pub fn parse_update_event_configuration_by_resource_types_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::UpdateEventConfigurationByResourceTypesError { meta: generic, kind: crate::error::UpdateEventConfigurationByResourceTypesErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventConfigurationByResourceTypesError::unhandled)?;
                     output.build()
@@ -11144,9 +11335,11 @@ pub fn parse_update_event_configuration_by_resource_types_error(
             tmp
         })},
         "InternalServerException" => crate::error::UpdateEventConfigurationByResourceTypesError { meta: generic, kind: crate::error::UpdateEventConfigurationByResourceTypesErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventConfigurationByResourceTypesError::unhandled)?;
                     output.build()
@@ -11158,9 +11351,11 @@ pub fn parse_update_event_configuration_by_resource_types_error(
             tmp
         })},
         "ThrottlingException" => crate::error::UpdateEventConfigurationByResourceTypesError { meta: generic, kind: crate::error::UpdateEventConfigurationByResourceTypesErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventConfigurationByResourceTypesError::unhandled)?;
                     output.build()
@@ -11172,9 +11367,11 @@ pub fn parse_update_event_configuration_by_resource_types_error(
             tmp
         })},
         "ValidationException" => crate::error::UpdateEventConfigurationByResourceTypesError { meta: generic, kind: crate::error::UpdateEventConfigurationByResourceTypesErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventConfigurationByResourceTypesError::unhandled)?;
                     output.build()

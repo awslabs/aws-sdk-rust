@@ -439,7 +439,8 @@ impl CreateAccessPointForObjectLambdaInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_access_point_for_object_lambda(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -722,8 +723,8 @@ impl CreateBucketInput {
             .set_use_arn_region(_config.use_arn_region)
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
-            .set_outpost_id(self.outpost_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_outpost_id(self.outpost_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1305,7 +1306,8 @@ impl CreateMultiRegionAccessPointInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_multi_region_access_point(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1868,8 +1870,8 @@ impl DeleteAccessPointPolicyInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_access_point_name(self.name.clone())
             .set_account_id(self.account_id.clone())
+            .set_access_point_name(self.name.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2683,8 +2685,8 @@ impl DeleteBucketPolicyInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2890,8 +2892,8 @@ impl DeleteBucketTaggingInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3325,7 +3327,8 @@ impl DeleteMultiRegionAccessPointInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_multi_region_access_point(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5762,8 +5765,8 @@ impl GetBucketInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5967,8 +5970,8 @@ impl GetBucketLifecycleConfigurationInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6385,8 +6388,8 @@ impl GetBucketTaggingInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9602,7 +9605,8 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_access_point_configuration_for_object_lambda(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10053,7 +10057,8 @@ impl PutAccessPointPolicyForObjectLambdaInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy_for_object_lambda(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10476,8 +10481,8 @@ impl PutBucketPolicyInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -11467,7 +11472,8 @@ impl PutMultiRegionAccessPointPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_multi_region_access_point_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11912,7 +11918,8 @@ impl PutStorageLensConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12139,7 +12146,8 @@ impl PutStorageLensConfigurationTaggingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration_tagging(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12363,7 +12371,8 @@ impl SubmitMultiRegionAccessPointRoutesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_submit_multi_region_access_point_routes(&self)?
         );
         if let Some(content_length) = body.content_length() {

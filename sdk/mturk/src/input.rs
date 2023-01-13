@@ -515,7 +515,8 @@ impl AssociateQualificationWithWorkerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_qualification_with_worker(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -708,7 +709,8 @@ impl CreateAdditionalAssignmentsForHitInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_additional_assignments_for_hit(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2838,7 +2840,8 @@ impl DisassociateQualificationFromWorkerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_qualification_from_worker(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4611,7 +4614,8 @@ impl ListHiTsForQualificationTypeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_hi_ts_for_qualification_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5454,7 +5458,8 @@ impl ListReviewPolicyResultsForHitInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_review_policy_results_for_hit(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5835,7 +5840,8 @@ impl ListWorkersWithQualificationTypeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_workers_with_qualification_type(&self)?
         );
         if let Some(content_length) = body.content_length() {

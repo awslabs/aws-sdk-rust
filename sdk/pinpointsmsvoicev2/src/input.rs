@@ -146,7 +146,8 @@ impl AssociateOriginationIdentityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_origination_identity(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2601,7 +2602,8 @@ impl DeleteTextMessageSpendLimitOverrideInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_text_message_spend_limit_override(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -2743,7 +2745,8 @@ impl DeleteVoiceMessageSpendLimitOverrideInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_voice_message_spend_limit_override(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -5018,7 +5021,8 @@ impl DisassociateOriginationIdentityInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_origination_identity(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5229,7 +5233,8 @@ impl ListPoolOriginationIdentitiesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_pool_origination_identities(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7446,7 +7451,8 @@ impl SetTextMessageSpendLimitOverrideInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_text_message_spend_limit_override(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7609,7 +7615,8 @@ impl SetVoiceMessageSpendLimitOverrideInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_voice_message_spend_limit_override(&self)?
         );
         if let Some(content_length) = body.content_length() {

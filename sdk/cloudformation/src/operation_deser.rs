@@ -84,9 +84,11 @@ pub fn parse_batch_describe_type_configurations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CFNRegistryException" => crate::error::BatchDescribeTypeConfigurationsError { meta: generic, kind: crate::error::BatchDescribeTypeConfigurationsErrorKind::CfnRegistryException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cfn_registry_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cfn_registry_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
                     output.build()
@@ -98,9 +100,11 @@ pub fn parse_batch_describe_type_configurations_error(
             tmp
         })},
         "TypeConfigurationNotFoundException" => crate::error::BatchDescribeTypeConfigurationsError { meta: generic, kind: crate::error::BatchDescribeTypeConfigurationsErrorKind::TypeConfigurationNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::type_configuration_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::type_configuration_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_type_configuration_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
                     output.build()

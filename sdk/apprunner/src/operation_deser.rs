@@ -300,9 +300,11 @@ pub fn parse_create_observability_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceErrorException" => crate::error::CreateObservabilityConfigurationError { meta: generic, kind: crate::error::CreateObservabilityConfigurationErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -314,9 +316,11 @@ pub fn parse_create_observability_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::CreateObservabilityConfigurationError { meta: generic, kind: crate::error::CreateObservabilityConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -328,9 +332,11 @@ pub fn parse_create_observability_configuration_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::CreateObservabilityConfigurationError { meta: generic, kind: crate::error::CreateObservabilityConfigurationErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -872,9 +878,11 @@ pub fn parse_delete_observability_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceErrorException" => crate::error::DeleteObservabilityConfigurationError { meta: generic, kind: crate::error::DeleteObservabilityConfigurationErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -886,9 +894,11 @@ pub fn parse_delete_observability_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteObservabilityConfigurationError { meta: generic, kind: crate::error::DeleteObservabilityConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -900,9 +910,11 @@ pub fn parse_delete_observability_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteObservabilityConfigurationError { meta: generic, kind: crate::error::DeleteObservabilityConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -1268,9 +1280,11 @@ pub fn parse_describe_auto_scaling_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceErrorException" => crate::error::DescribeAutoScalingConfigurationError { meta: generic, kind: crate::error::DescribeAutoScalingConfigurationErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingConfigurationError::unhandled)?;
                     output.build()
@@ -1282,9 +1296,11 @@ pub fn parse_describe_auto_scaling_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeAutoScalingConfigurationError { meta: generic, kind: crate::error::DescribeAutoScalingConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingConfigurationError::unhandled)?;
                     output.build()
@@ -1296,9 +1312,11 @@ pub fn parse_describe_auto_scaling_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeAutoScalingConfigurationError { meta: generic, kind: crate::error::DescribeAutoScalingConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingConfigurationError::unhandled)?;
                     output.build()
@@ -1446,9 +1464,11 @@ pub fn parse_describe_observability_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceErrorException" => crate::error::DescribeObservabilityConfigurationError { meta: generic, kind: crate::error::DescribeObservabilityConfigurationErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -1460,9 +1480,11 @@ pub fn parse_describe_observability_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeObservabilityConfigurationError { meta: generic, kind: crate::error::DescribeObservabilityConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -1474,9 +1496,11 @@ pub fn parse_describe_observability_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeObservabilityConfigurationError { meta: generic, kind: crate::error::DescribeObservabilityConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObservabilityConfigurationError::unhandled)?;
                     output.build()
@@ -2068,9 +2092,11 @@ pub fn parse_list_observability_configurations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceErrorException" => crate::error::ListObservabilityConfigurationsError { meta: generic, kind: crate::error::ListObservabilityConfigurationsErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListObservabilityConfigurationsError::unhandled)?;
                     output.build()
@@ -2082,9 +2108,11 @@ pub fn parse_list_observability_configurations_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListObservabilityConfigurationsError { meta: generic, kind: crate::error::ListObservabilityConfigurationsErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListObservabilityConfigurationsError::unhandled)?;
                     output.build()

@@ -2520,7 +2520,8 @@ pub fn parse_deactivate_mfa_device_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
                             output.build()
@@ -3162,7 +3163,8 @@ pub fn parse_delete_login_profile_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
                         output.build()
@@ -5317,9 +5319,11 @@ pub fn parse_generate_organizations_access_report_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ReportGenerationLimitExceeded" => crate::error::GenerateOrganizationsAccessReportError { meta: generic, kind: crate::error::GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::report_generation_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::report_generation_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_report_generation_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateOrganizationsAccessReportError::unhandled)?;
                     output.build()
@@ -5850,27 +5854,27 @@ pub fn parse_get_credential_report_error(
                 tmp
             }),
         },
-        "ReportNotPresent" => {
-            crate::error::GetCredentialReportError {
-                meta: generic,
-                kind:
-                    crate::error::GetCredentialReportErrorKind::CredentialReportNotPresentException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::credential_report_not_present_exception::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_crate_error_credential_report_not_present_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialReportError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "ReportNotPresent" => crate::error::GetCredentialReportError {
+            meta: generic,
+            kind: crate::error::GetCredentialReportErrorKind::CredentialReportNotPresentException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::credential_report_not_present_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_credential_report_not_present_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialReportError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "ReportInProgress" => crate::error::GetCredentialReportError {
             meta: generic,
             kind: crate::error::GetCredentialReportErrorKind::CredentialReportNotReadyException({
@@ -6932,9 +6936,11 @@ pub fn parse_get_service_last_accessed_details_with_entities_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::error::GetServiceLastAccessedDetailsWithEntitiesError { meta: generic, kind: crate::error::GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsWithEntitiesError::unhandled)?;
                     output.build()
@@ -6946,9 +6952,11 @@ pub fn parse_get_service_last_accessed_details_with_entities_error(
             tmp
         })},
         "NoSuchEntity" => crate::error::GetServiceLastAccessedDetailsWithEntitiesError { meta: generic, kind: crate::error::GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsWithEntitiesError::unhandled)?;
                     output.build()
@@ -10282,9 +10290,11 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::error::RemoveClientIDFromOpenIDConnectProviderError { meta: generic, kind: crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
                     output.build()
@@ -10296,9 +10306,11 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_error(
             tmp
         })},
         "NoSuchEntity" => crate::error::RemoveClientIDFromOpenIDConnectProviderError { meta: generic, kind: crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
                     output.build()
@@ -10310,9 +10322,11 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_error(
             tmp
         })},
         "ServiceFailure" => crate::error::RemoveClientIDFromOpenIDConnectProviderError { meta: generic, kind: crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
                     output.build()
@@ -13198,7 +13212,8 @@ pub fn parse_update_login_profile_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoginProfileError::unhandled)?;
                         output.build()
@@ -13319,9 +13334,11 @@ pub fn parse_update_open_id_connect_provider_thumbprint_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::error::UpdateOpenIDConnectProviderThumbprintError { meta: generic, kind: crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOpenIDConnectProviderThumbprintError::unhandled)?;
                     output.build()
@@ -13333,9 +13350,11 @@ pub fn parse_update_open_id_connect_provider_thumbprint_error(
             tmp
         })},
         "NoSuchEntity" => crate::error::UpdateOpenIDConnectProviderThumbprintError { meta: generic, kind: crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOpenIDConnectProviderThumbprintError::unhandled)?;
                     output.build()
@@ -13347,9 +13366,11 @@ pub fn parse_update_open_id_connect_provider_thumbprint_error(
             tmp
         })},
         "ServiceFailure" => crate::error::UpdateOpenIDConnectProviderThumbprintError { meta: generic, kind: crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOpenIDConnectProviderThumbprintError::unhandled)?;
                     output.build()
@@ -14013,24 +14034,24 @@ pub fn parse_update_user_error(
                 tmp
             }),
         },
-        "EntityTemporarilyUnmodifiable" => {
-            crate::error::UpdateUserError {
-                meta: generic,
-                kind: crate::error::UpdateUserErrorKind::EntityTemporarilyUnmodifiableException({
+        "EntityTemporarilyUnmodifiable" => crate::error::UpdateUserError {
+            meta: generic,
+            kind: crate::error::UpdateUserErrorKind::EntityTemporarilyUnmodifiableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "LimitExceeded" => crate::error::UpdateUserError {
             meta: generic,
             kind: crate::error::UpdateUserErrorKind::LimitExceededException({
@@ -14524,7 +14545,8 @@ pub fn parse_upload_ssh_public_key_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::unrecognized_public_key_encoding_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::unrecognized_public_key_encoding_exception::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_unrecognized_public_key_encoding_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
                         output.build()

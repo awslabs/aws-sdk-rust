@@ -6485,9 +6485,11 @@ pub fn parse_start_studio_sso_configuration_repair_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::StartStudioSSOConfigurationRepairError { meta: generic, kind: crate::error::StartStudioSSOConfigurationRepairErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStudioSSOConfigurationRepairError::unhandled)?;
                     output.build()
@@ -6499,9 +6501,11 @@ pub fn parse_start_studio_sso_configuration_repair_error(
             tmp
         })},
         "ConflictException" => crate::error::StartStudioSSOConfigurationRepairError { meta: generic, kind: crate::error::StartStudioSSOConfigurationRepairErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStudioSSOConfigurationRepairError::unhandled)?;
                     output.build()
@@ -6513,9 +6517,11 @@ pub fn parse_start_studio_sso_configuration_repair_error(
             tmp
         })},
         "InternalServerErrorException" => crate::error::StartStudioSSOConfigurationRepairError { meta: generic, kind: crate::error::StartStudioSSOConfigurationRepairErrorKind::InternalServerErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStudioSSOConfigurationRepairError::unhandled)?;
                     output.build()
@@ -6527,9 +6533,11 @@ pub fn parse_start_studio_sso_configuration_repair_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::StartStudioSSOConfigurationRepairError { meta: generic, kind: crate::error::StartStudioSSOConfigurationRepairErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStudioSSOConfigurationRepairError::unhandled)?;
                     output.build()
@@ -6541,9 +6549,11 @@ pub fn parse_start_studio_sso_configuration_repair_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::StartStudioSSOConfigurationRepairError { meta: generic, kind: crate::error::StartStudioSSOConfigurationRepairErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStudioSSOConfigurationRepairError::unhandled)?;
                     output.build()
@@ -6555,9 +6565,11 @@ pub fn parse_start_studio_sso_configuration_repair_error(
             tmp
         })},
         "ThrottlingException" => crate::error::StartStudioSSOConfigurationRepairError { meta: generic, kind: crate::error::StartStudioSSOConfigurationRepairErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStudioSSOConfigurationRepairError::unhandled)?;
                     output.build()
@@ -6569,9 +6581,11 @@ pub fn parse_start_studio_sso_configuration_repair_error(
             tmp
         })},
         "ValidationException" => crate::error::StartStudioSSOConfigurationRepairError { meta: generic, kind: crate::error::StartStudioSSOConfigurationRepairErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStudioSSOConfigurationRepairError::unhandled)?;
                     output.build()

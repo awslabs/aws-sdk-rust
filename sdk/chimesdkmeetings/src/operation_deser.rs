@@ -219,9 +219,11 @@ pub fn parse_batch_update_attendee_capabilities_except_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::BadRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     output.build()
@@ -233,9 +235,11 @@ pub fn parse_batch_update_attendee_capabilities_except_error(
             tmp
         })},
         "ConflictException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     output.build()
@@ -247,9 +251,11 @@ pub fn parse_batch_update_attendee_capabilities_except_error(
             tmp
         })},
         "ForbiddenException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ForbiddenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     output.build()
@@ -261,9 +267,11 @@ pub fn parse_batch_update_attendee_capabilities_except_error(
             tmp
         })},
         "NotFoundException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     output.build()
@@ -275,9 +283,11 @@ pub fn parse_batch_update_attendee_capabilities_except_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -293,9 +303,11 @@ pub fn parse_batch_update_attendee_capabilities_except_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::BatchUpdateAttendeeCapabilitiesExceptError { meta: generic, kind: crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdateAttendeeCapabilitiesExceptError::unhandled)?;
                     output.build()

@@ -2228,9 +2228,11 @@ pub fn parse_list_endpoints_by_platform_application_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AuthorizationError" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::authorization_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::authorization_error_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
                     output.build()
@@ -2242,9 +2244,11 @@ pub fn parse_list_endpoints_by_platform_application_error(
             tmp
         })},
         "InternalError" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
                     output.build()
@@ -2256,9 +2260,11 @@ pub fn parse_list_endpoints_by_platform_application_error(
             tmp
         })},
         "InvalidParameter" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
                     output.build()
@@ -2270,9 +2276,11 @@ pub fn parse_list_endpoints_by_platform_application_error(
             tmp
         })},
         "NotFound" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
                     output.build()
@@ -3934,7 +3942,8 @@ pub fn parse_publish_batch_error(
                 kind: crate::error::PublishBatchErrorKind::TooManyEntriesInBatchRequestException({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::too_many_entries_in_batch_request_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_entries_in_batch_request_exception::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_too_many_entries_in_batch_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
                         output.build()
@@ -4586,7 +4595,8 @@ pub fn parse_set_subscription_attributes_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::filter_policy_limit_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::filter_policy_limit_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
                             output.build()

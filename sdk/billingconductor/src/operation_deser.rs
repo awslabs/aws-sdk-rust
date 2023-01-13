@@ -356,9 +356,11 @@ pub fn parse_batch_associate_resources_to_custom_line_item_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::BatchAssociateResourcesToCustomLineItemError { meta: generic, kind: crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output.build()
@@ -370,9 +372,11 @@ pub fn parse_batch_associate_resources_to_custom_line_item_error(
             tmp
         })},
         "ConflictException" => crate::error::BatchAssociateResourcesToCustomLineItemError { meta: generic, kind: crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output.build()
@@ -384,9 +388,11 @@ pub fn parse_batch_associate_resources_to_custom_line_item_error(
             tmp
         })},
         "InternalServerException" => crate::error::BatchAssociateResourcesToCustomLineItemError { meta: generic, kind: crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -402,9 +408,11 @@ pub fn parse_batch_associate_resources_to_custom_line_item_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchAssociateResourcesToCustomLineItemError { meta: generic, kind: crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output.build()
@@ -416,9 +424,11 @@ pub fn parse_batch_associate_resources_to_custom_line_item_error(
             tmp
         })},
         "ServiceLimitExceededException" => crate::error::BatchAssociateResourcesToCustomLineItemError { meta: generic, kind: crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::ServiceLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output.build()
@@ -430,9 +440,11 @@ pub fn parse_batch_associate_resources_to_custom_line_item_error(
             tmp
         })},
         "ThrottlingException" => crate::error::BatchAssociateResourcesToCustomLineItemError { meta: generic, kind: crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -448,9 +460,11 @@ pub fn parse_batch_associate_resources_to_custom_line_item_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchAssociateResourcesToCustomLineItemError { meta: generic, kind: crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output.build()
@@ -503,9 +517,11 @@ pub fn parse_batch_disassociate_resources_from_custom_line_item_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::BatchDisassociateResourcesFromCustomLineItemError { meta: generic, kind: crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateResourcesFromCustomLineItemError::unhandled)?;
                     output.build()
@@ -517,9 +533,11 @@ pub fn parse_batch_disassociate_resources_from_custom_line_item_error(
             tmp
         })},
         "ConflictException" => crate::error::BatchDisassociateResourcesFromCustomLineItemError { meta: generic, kind: crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateResourcesFromCustomLineItemError::unhandled)?;
                     output.build()
@@ -531,9 +549,11 @@ pub fn parse_batch_disassociate_resources_from_custom_line_item_error(
             tmp
         })},
         "InternalServerException" => crate::error::BatchDisassociateResourcesFromCustomLineItemError { meta: generic, kind: crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateResourcesFromCustomLineItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -549,9 +569,11 @@ pub fn parse_batch_disassociate_resources_from_custom_line_item_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::BatchDisassociateResourcesFromCustomLineItemError { meta: generic, kind: crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateResourcesFromCustomLineItemError::unhandled)?;
                     output.build()
@@ -563,9 +585,11 @@ pub fn parse_batch_disassociate_resources_from_custom_line_item_error(
             tmp
         })},
         "ThrottlingException" => crate::error::BatchDisassociateResourcesFromCustomLineItemError { meta: generic, kind: crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateResourcesFromCustomLineItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -581,9 +605,11 @@ pub fn parse_batch_disassociate_resources_from_custom_line_item_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchDisassociateResourcesFromCustomLineItemError { meta: generic, kind: crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateResourcesFromCustomLineItemError::unhandled)?;
                     output.build()
@@ -606,7 +632,8 @@ pub fn parse_batch_disassociate_resources_from_custom_line_item_response(
     crate::error::BatchDisassociateResourcesFromCustomLineItemError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::batch_disassociate_resources_from_custom_line_item_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_disassociate_resources_from_custom_line_item_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_batch_disassociate_resources_from_custom_line_item(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateResourcesFromCustomLineItemError::unhandled)?;
         output.build()
@@ -2845,9 +2872,11 @@ pub fn parse_list_pricing_plans_associated_with_pricing_rule_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListPricingPlansAssociatedWithPricingRuleError { meta: generic, kind: crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingPlansAssociatedWithPricingRuleError::unhandled)?;
                     output.build()
@@ -2859,9 +2888,11 @@ pub fn parse_list_pricing_plans_associated_with_pricing_rule_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListPricingPlansAssociatedWithPricingRuleError { meta: generic, kind: crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingPlansAssociatedWithPricingRuleError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -2877,9 +2908,11 @@ pub fn parse_list_pricing_plans_associated_with_pricing_rule_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListPricingPlansAssociatedWithPricingRuleError { meta: generic, kind: crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingPlansAssociatedWithPricingRuleError::unhandled)?;
                     output.build()
@@ -2891,9 +2924,11 @@ pub fn parse_list_pricing_plans_associated_with_pricing_rule_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListPricingPlansAssociatedWithPricingRuleError { meta: generic, kind: crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingPlansAssociatedWithPricingRuleError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -2909,9 +2944,11 @@ pub fn parse_list_pricing_plans_associated_with_pricing_rule_error(
             tmp
         })},
         "ValidationException" => crate::error::ListPricingPlansAssociatedWithPricingRuleError { meta: generic, kind: crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingPlansAssociatedWithPricingRuleError::unhandled)?;
                     output.build()
@@ -3077,9 +3114,11 @@ pub fn parse_list_pricing_rules_associated_to_pricing_plan_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListPricingRulesAssociatedToPricingPlanError { meta: generic, kind: crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingRulesAssociatedToPricingPlanError::unhandled)?;
                     output.build()
@@ -3091,9 +3130,11 @@ pub fn parse_list_pricing_rules_associated_to_pricing_plan_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListPricingRulesAssociatedToPricingPlanError { meta: generic, kind: crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingRulesAssociatedToPricingPlanError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3109,9 +3150,11 @@ pub fn parse_list_pricing_rules_associated_to_pricing_plan_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListPricingRulesAssociatedToPricingPlanError { meta: generic, kind: crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingRulesAssociatedToPricingPlanError::unhandled)?;
                     output.build()
@@ -3123,9 +3166,11 @@ pub fn parse_list_pricing_rules_associated_to_pricing_plan_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListPricingRulesAssociatedToPricingPlanError { meta: generic, kind: crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingRulesAssociatedToPricingPlanError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3141,9 +3186,11 @@ pub fn parse_list_pricing_rules_associated_to_pricing_plan_error(
             tmp
         })},
         "ValidationException" => crate::error::ListPricingRulesAssociatedToPricingPlanError { meta: generic, kind: crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricingRulesAssociatedToPricingPlanError::unhandled)?;
                     output.build()
@@ -3196,9 +3243,11 @@ pub fn parse_list_resources_associated_to_custom_line_item_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListResourcesAssociatedToCustomLineItemError { meta: generic, kind: crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesAssociatedToCustomLineItemError::unhandled)?;
                     output.build()
@@ -3210,9 +3259,11 @@ pub fn parse_list_resources_associated_to_custom_line_item_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListResourcesAssociatedToCustomLineItemError { meta: generic, kind: crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesAssociatedToCustomLineItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3228,9 +3279,11 @@ pub fn parse_list_resources_associated_to_custom_line_item_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListResourcesAssociatedToCustomLineItemError { meta: generic, kind: crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesAssociatedToCustomLineItemError::unhandled)?;
                     output.build()
@@ -3242,9 +3295,11 @@ pub fn parse_list_resources_associated_to_custom_line_item_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListResourcesAssociatedToCustomLineItemError { meta: generic, kind: crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesAssociatedToCustomLineItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3260,9 +3315,11 @@ pub fn parse_list_resources_associated_to_custom_line_item_error(
             tmp
         })},
         "ValidationException" => crate::error::ListResourcesAssociatedToCustomLineItemError { meta: generic, kind: crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesAssociatedToCustomLineItemError::unhandled)?;
                     output.build()

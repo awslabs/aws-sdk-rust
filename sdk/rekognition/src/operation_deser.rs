@@ -261,7 +261,8 @@ pub fn parse_copy_project_version_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CopyProjectVersionError::unhandled)?;
                         output.build()
@@ -437,7 +438,8 @@ pub fn parse_create_collection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCollectionError::unhandled)?;
                         output.build()
@@ -958,7 +960,8 @@ pub fn parse_create_project_version_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectVersionError::unhandled)?;
                             output.build()
@@ -1154,7 +1157,8 @@ pub fn parse_create_stream_processor_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamProcessorError::unhandled)?;
                             output.build()
@@ -1313,7 +1317,8 @@ pub fn parse_delete_collection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCollectionError::unhandled)?;
                         output.build()
@@ -1611,24 +1616,24 @@ pub fn parse_delete_faces_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::DeleteFacesError {
-                meta: generic,
-                kind: crate::error::DeleteFacesErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::DeleteFacesError {
+            meta: generic,
+            kind: crate::error::DeleteFacesErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFacesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::DeleteFacesError {
             meta: generic,
             kind: crate::error::DeleteFacesErrorKind::ResourceNotFoundException({
@@ -1930,7 +1935,8 @@ pub fn parse_delete_project_policy_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectPolicyError::unhandled)?;
                             output.build()
@@ -2069,7 +2075,8 @@ pub fn parse_delete_project_version_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectVersionError::unhandled)?;
                             output.build()
@@ -2230,7 +2237,8 @@ pub fn parse_delete_stream_processor_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteStreamProcessorError::unhandled)?;
                             output.build()
@@ -2385,7 +2393,8 @@ pub fn parse_describe_collection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCollectionError::unhandled)?;
                         output.build()
@@ -2681,7 +2690,8 @@ pub fn parse_describe_projects_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectsError::unhandled)?;
                         output.build()
@@ -2753,9 +2763,11 @@ pub fn parse_describe_project_versions_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeProjectVersionsError { meta: generic, kind: crate::error::DescribeProjectVersionsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectVersionsError::unhandled)?;
                     output.build()
@@ -2767,9 +2779,11 @@ pub fn parse_describe_project_versions_error(
             tmp
         })},
         "InternalServerError" => crate::error::DescribeProjectVersionsError { meta: generic, kind: crate::error::DescribeProjectVersionsErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectVersionsError::unhandled)?;
                     output.build()
@@ -2781,9 +2795,11 @@ pub fn parse_describe_project_versions_error(
             tmp
         })},
         "InvalidPaginationTokenException" => crate::error::DescribeProjectVersionsError { meta: generic, kind: crate::error::DescribeProjectVersionsErrorKind::InvalidPaginationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectVersionsError::unhandled)?;
                     output.build()
@@ -2795,9 +2811,11 @@ pub fn parse_describe_project_versions_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DescribeProjectVersionsError { meta: generic, kind: crate::error::DescribeProjectVersionsErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectVersionsError::unhandled)?;
                     output.build()
@@ -2809,9 +2827,11 @@ pub fn parse_describe_project_versions_error(
             tmp
         })},
         "ProvisionedThroughputExceededException" => crate::error::DescribeProjectVersionsError { meta: generic, kind: crate::error::DescribeProjectVersionsErrorKind::ProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectVersionsError::unhandled)?;
                     output.build()
@@ -2823,9 +2843,11 @@ pub fn parse_describe_project_versions_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeProjectVersionsError { meta: generic, kind: crate::error::DescribeProjectVersionsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectVersionsError::unhandled)?;
                     output.build()
@@ -2837,9 +2859,11 @@ pub fn parse_describe_project_versions_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeProjectVersionsError { meta: generic, kind: crate::error::DescribeProjectVersionsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectVersionsError::unhandled)?;
                     output.build()
@@ -2895,9 +2919,11 @@ pub fn parse_describe_stream_processor_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DescribeStreamProcessorError { meta: generic, kind: crate::error::DescribeStreamProcessorErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStreamProcessorError::unhandled)?;
                     output.build()
@@ -2909,9 +2935,11 @@ pub fn parse_describe_stream_processor_error(
             tmp
         })},
         "InternalServerError" => crate::error::DescribeStreamProcessorError { meta: generic, kind: crate::error::DescribeStreamProcessorErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStreamProcessorError::unhandled)?;
                     output.build()
@@ -2923,9 +2951,11 @@ pub fn parse_describe_stream_processor_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DescribeStreamProcessorError { meta: generic, kind: crate::error::DescribeStreamProcessorErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStreamProcessorError::unhandled)?;
                     output.build()
@@ -2937,9 +2967,11 @@ pub fn parse_describe_stream_processor_error(
             tmp
         })},
         "ProvisionedThroughputExceededException" => crate::error::DescribeStreamProcessorError { meta: generic, kind: crate::error::DescribeStreamProcessorErrorKind::ProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStreamProcessorError::unhandled)?;
                     output.build()
@@ -2951,9 +2983,11 @@ pub fn parse_describe_stream_processor_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeStreamProcessorError { meta: generic, kind: crate::error::DescribeStreamProcessorErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStreamProcessorError::unhandled)?;
                     output.build()
@@ -2965,9 +2999,11 @@ pub fn parse_describe_stream_processor_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeStreamProcessorError { meta: generic, kind: crate::error::DescribeStreamProcessorErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStreamProcessorError::unhandled)?;
                     output.build()
@@ -3144,7 +3180,8 @@ pub fn parse_detect_custom_labels_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectCustomLabelsError::unhandled)?;
                         output.build()
@@ -3347,24 +3384,24 @@ pub fn parse_detect_faces_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::DetectFacesError {
-                meta: generic,
-                kind: crate::error::DetectFacesErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::DetectFacesError {
+            meta: generic,
+            kind: crate::error::DetectFacesErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectFacesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectFacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DetectFacesError {
             meta: generic,
             kind: crate::error::DetectFacesErrorKind::ThrottlingException({
@@ -3596,9 +3633,11 @@ pub fn parse_detect_moderation_labels_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3610,9 +3649,11 @@ pub fn parse_detect_moderation_labels_error(
             tmp
         })},
         "HumanLoopQuotaExceededException" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::HumanLoopQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::human_loop_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::human_loop_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_human_loop_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3624,9 +3665,11 @@ pub fn parse_detect_moderation_labels_error(
             tmp
         })},
         "ImageTooLargeException" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::ImageTooLargeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::image_too_large_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::image_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_image_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3638,9 +3681,11 @@ pub fn parse_detect_moderation_labels_error(
             tmp
         })},
         "InternalServerError" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3652,9 +3697,11 @@ pub fn parse_detect_moderation_labels_error(
             tmp
         })},
         "InvalidImageFormatException" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::InvalidImageFormatException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_image_format_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_image_format_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_image_format_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3666,9 +3713,11 @@ pub fn parse_detect_moderation_labels_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3680,9 +3729,11 @@ pub fn parse_detect_moderation_labels_error(
             tmp
         })},
         "InvalidS3ObjectException" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::InvalidS3ObjectException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_object_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3694,9 +3745,11 @@ pub fn parse_detect_moderation_labels_error(
             tmp
         })},
         "ProvisionedThroughputExceededException" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::ProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3708,9 +3761,11 @@ pub fn parse_detect_moderation_labels_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DetectModerationLabelsError { meta: generic, kind: crate::error::DetectModerationLabelsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectModerationLabelsError::unhandled)?;
                     output.build()
@@ -3766,9 +3821,11 @@ pub fn parse_detect_protective_equipment_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DetectProtectiveEquipmentError { meta: generic, kind: crate::error::DetectProtectiveEquipmentErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectProtectiveEquipmentError::unhandled)?;
                     output.build()
@@ -3780,9 +3837,11 @@ pub fn parse_detect_protective_equipment_error(
             tmp
         })},
         "ImageTooLargeException" => crate::error::DetectProtectiveEquipmentError { meta: generic, kind: crate::error::DetectProtectiveEquipmentErrorKind::ImageTooLargeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::image_too_large_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::image_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_image_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectProtectiveEquipmentError::unhandled)?;
                     output.build()
@@ -3794,9 +3853,11 @@ pub fn parse_detect_protective_equipment_error(
             tmp
         })},
         "InternalServerError" => crate::error::DetectProtectiveEquipmentError { meta: generic, kind: crate::error::DetectProtectiveEquipmentErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DetectProtectiveEquipmentError::unhandled)?;
                     output.build()
@@ -3808,9 +3869,11 @@ pub fn parse_detect_protective_equipment_error(
             tmp
         })},
         "InvalidImageFormatException" => crate::error::DetectProtectiveEquipmentError { meta: generic, kind: crate::error::DetectProtectiveEquipmentErrorKind::InvalidImageFormatException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_image_format_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_image_format_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_image_format_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectProtectiveEquipmentError::unhandled)?;
                     output.build()
@@ -3822,9 +3885,11 @@ pub fn parse_detect_protective_equipment_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DetectProtectiveEquipmentError { meta: generic, kind: crate::error::DetectProtectiveEquipmentErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectProtectiveEquipmentError::unhandled)?;
                     output.build()
@@ -3836,9 +3901,11 @@ pub fn parse_detect_protective_equipment_error(
             tmp
         })},
         "InvalidS3ObjectException" => crate::error::DetectProtectiveEquipmentError { meta: generic, kind: crate::error::DetectProtectiveEquipmentErrorKind::InvalidS3ObjectException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_object_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectProtectiveEquipmentError::unhandled)?;
                     output.build()
@@ -3850,9 +3917,11 @@ pub fn parse_detect_protective_equipment_error(
             tmp
         })},
         "ProvisionedThroughputExceededException" => crate::error::DetectProtectiveEquipmentError { meta: generic, kind: crate::error::DetectProtectiveEquipmentErrorKind::ProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectProtectiveEquipmentError::unhandled)?;
                     output.build()
@@ -3864,9 +3933,11 @@ pub fn parse_detect_protective_equipment_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DetectProtectiveEquipmentError { meta: generic, kind: crate::error::DetectProtectiveEquipmentErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectProtectiveEquipmentError::unhandled)?;
                     output.build()
@@ -4017,24 +4088,24 @@ pub fn parse_detect_text_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::DetectTextError {
-                meta: generic,
-                kind: crate::error::DetectTextErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::DetectTextError {
+            meta: generic,
+            kind: crate::error::DetectTextErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectTextError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectTextError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ThrottlingException" => crate::error::DetectTextError {
             meta: generic,
             kind: crate::error::DetectTextErrorKind::ThrottlingException({
@@ -4094,9 +4165,11 @@ pub fn parse_distribute_dataset_entries_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
                     output.build()
@@ -4108,9 +4181,11 @@ pub fn parse_distribute_dataset_entries_error(
             tmp
         })},
         "InternalServerError" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
                     output.build()
@@ -4122,9 +4197,11 @@ pub fn parse_distribute_dataset_entries_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
                     output.build()
@@ -4136,9 +4213,11 @@ pub fn parse_distribute_dataset_entries_error(
             tmp
         })},
         "ProvisionedThroughputExceededException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::ProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
                     output.build()
@@ -4150,9 +4229,11 @@ pub fn parse_distribute_dataset_entries_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
                     output.build()
@@ -4164,9 +4245,11 @@ pub fn parse_distribute_dataset_entries_error(
             tmp
         })},
         "ResourceNotReadyException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::ResourceNotReadyException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
                     output.build()
@@ -4178,9 +4261,11 @@ pub fn parse_distribute_dataset_entries_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
                     output.build()
@@ -4281,7 +4366,8 @@ pub fn parse_get_celebrity_info_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCelebrityInfoError::unhandled)?;
                         output.build()
@@ -4370,9 +4456,11 @@ pub fn parse_get_celebrity_recognition_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::GetCelebrityRecognitionError { meta: generic, kind: crate::error::GetCelebrityRecognitionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -4384,9 +4472,11 @@ pub fn parse_get_celebrity_recognition_error(
             tmp
         })},
         "InternalServerError" => crate::error::GetCelebrityRecognitionError { meta: generic, kind: crate::error::GetCelebrityRecognitionErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -4398,9 +4488,11 @@ pub fn parse_get_celebrity_recognition_error(
             tmp
         })},
         "InvalidPaginationTokenException" => crate::error::GetCelebrityRecognitionError { meta: generic, kind: crate::error::GetCelebrityRecognitionErrorKind::InvalidPaginationTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -4412,9 +4504,11 @@ pub fn parse_get_celebrity_recognition_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::GetCelebrityRecognitionError { meta: generic, kind: crate::error::GetCelebrityRecognitionErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -4426,9 +4520,11 @@ pub fn parse_get_celebrity_recognition_error(
             tmp
         })},
         "ProvisionedThroughputExceededException" => crate::error::GetCelebrityRecognitionError { meta: generic, kind: crate::error::GetCelebrityRecognitionErrorKind::ProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -4440,9 +4536,11 @@ pub fn parse_get_celebrity_recognition_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetCelebrityRecognitionError { meta: generic, kind: crate::error::GetCelebrityRecognitionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -4454,9 +4552,11 @@ pub fn parse_get_celebrity_recognition_error(
             tmp
         })},
         "ThrottlingException" => crate::error::GetCelebrityRecognitionError { meta: generic, kind: crate::error::GetCelebrityRecognitionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -4583,7 +4683,8 @@ pub fn parse_get_content_moderation_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetContentModerationError::unhandled)?;
                             output.build()
@@ -4742,7 +4843,8 @@ pub fn parse_get_face_detection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFaceDetectionError::unhandled)?;
                         output.build()
@@ -5054,7 +5156,8 @@ pub fn parse_get_label_detection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLabelDetectionError::unhandled)?;
                         output.build()
@@ -5211,7 +5314,8 @@ pub fn parse_get_person_tracking_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPersonTrackingError::unhandled)?;
                         output.build()
@@ -5371,7 +5475,8 @@ pub fn parse_get_segment_detection_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSegmentDetectionError::unhandled)?;
                             output.build()
@@ -5530,7 +5635,8 @@ pub fn parse_get_text_detection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTextDetectionError::unhandled)?;
                         output.build()
@@ -5714,24 +5820,24 @@ pub fn parse_index_faces_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::IndexFacesError {
-                meta: generic,
-                kind: crate::error::IndexFacesErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::IndexFacesError {
+            meta: generic,
+            kind: crate::error::IndexFacesErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::IndexFacesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::IndexFacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::IndexFacesError {
             meta: generic,
             kind: crate::error::IndexFacesErrorKind::ResourceNotFoundException({
@@ -6051,7 +6157,8 @@ pub fn parse_list_dataset_entries_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
                         output.build()
@@ -6244,7 +6351,8 @@ pub fn parse_list_dataset_labels_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
                         output.build()
@@ -6428,24 +6536,24 @@ pub fn parse_list_faces_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::ListFacesError {
-                meta: generic,
-                kind: crate::error::ListFacesErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::ListFacesError {
+            meta: generic,
+            kind: crate::error::ListFacesErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFacesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::ListFacesError {
             meta: generic,
             kind: crate::error::ListFacesErrorKind::ResourceNotFoundException({
@@ -6593,7 +6701,8 @@ pub fn parse_list_project_policies_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectPoliciesError::unhandled)?;
                             output.build()
@@ -6755,7 +6864,8 @@ pub fn parse_list_stream_processors_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStreamProcessorsError::unhandled)?;
                             output.build()
@@ -6882,7 +6992,8 @@ pub fn parse_list_tags_for_resource_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                             output.build()
@@ -7076,7 +7187,8 @@ pub fn parse_put_project_policy_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProjectPolicyError::unhandled)?;
                         output.build()
@@ -7306,7 +7418,8 @@ pub fn parse_recognize_celebrities_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RecognizeCelebritiesError::unhandled)?;
                             output.build()
@@ -7423,24 +7536,24 @@ pub fn parse_search_faces_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::SearchFacesError {
-                meta: generic,
-                kind: crate::error::SearchFacesErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::SearchFacesError {
+            meta: generic,
+            kind: crate::error::SearchFacesErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchFacesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchFacesError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::SearchFacesError {
             meta: generic,
             kind: crate::error::SearchFacesErrorKind::ResourceNotFoundException({
@@ -7621,7 +7734,8 @@ pub fn parse_search_faces_by_image_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchFacesByImageError::unhandled)?;
                         output.build()
@@ -7712,9 +7826,11 @@ pub fn parse_start_celebrity_recognition_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7726,9 +7842,11 @@ pub fn parse_start_celebrity_recognition_error(
             tmp
         })},
         "IdempotentParameterMismatchException" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7740,9 +7858,11 @@ pub fn parse_start_celebrity_recognition_error(
             tmp
         })},
         "InternalServerError" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7754,9 +7874,11 @@ pub fn parse_start_celebrity_recognition_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7768,9 +7890,11 @@ pub fn parse_start_celebrity_recognition_error(
             tmp
         })},
         "InvalidS3ObjectException" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::InvalidS3ObjectException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_object_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7782,9 +7906,11 @@ pub fn parse_start_celebrity_recognition_error(
             tmp
         })},
         "LimitExceededException" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7796,9 +7922,11 @@ pub fn parse_start_celebrity_recognition_error(
             tmp
         })},
         "ProvisionedThroughputExceededException" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::ProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7810,9 +7938,11 @@ pub fn parse_start_celebrity_recognition_error(
             tmp
         })},
         "ThrottlingException" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7824,9 +7954,11 @@ pub fn parse_start_celebrity_recognition_error(
             tmp
         })},
         "VideoTooLargeException" => crate::error::StartCelebrityRecognitionError { meta: generic, kind: crate::error::StartCelebrityRecognitionErrorKind::VideoTooLargeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::video_too_large_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::video_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_video_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCelebrityRecognitionError::unhandled)?;
                     output.build()
@@ -7882,9 +8014,11 @@ pub fn parse_start_content_moderation_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -7896,9 +8030,11 @@ pub fn parse_start_content_moderation_error(
             tmp
         })},
         "IdempotentParameterMismatchException" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::IdempotentParameterMismatchException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -7910,9 +8046,11 @@ pub fn parse_start_content_moderation_error(
             tmp
         })},
         "InternalServerError" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -7924,9 +8062,11 @@ pub fn parse_start_content_moderation_error(
             tmp
         })},
         "InvalidParameterException" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -7938,9 +8078,11 @@ pub fn parse_start_content_moderation_error(
             tmp
         })},
         "InvalidS3ObjectException" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::InvalidS3ObjectException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_s3_object_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -7952,9 +8094,11 @@ pub fn parse_start_content_moderation_error(
             tmp
         })},
         "LimitExceededException" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -7966,9 +8110,11 @@ pub fn parse_start_content_moderation_error(
             tmp
         })},
         "ProvisionedThroughputExceededException" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::ProvisionedThroughputExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -7980,9 +8126,11 @@ pub fn parse_start_content_moderation_error(
             tmp
         })},
         "ThrottlingException" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -7994,9 +8142,11 @@ pub fn parse_start_content_moderation_error(
             tmp
         })},
         "VideoTooLargeException" => crate::error::StartContentModerationError { meta: generic, kind: crate::error::StartContentModerationErrorKind::VideoTooLargeException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::video_too_large_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::video_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_video_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContentModerationError::unhandled)?;
                     output.build()
@@ -8064,27 +8214,27 @@ pub fn parse_start_face_detection_error(
                 tmp
             }),
         },
-        "IdempotentParameterMismatchException" => {
-            crate::error::StartFaceDetectionError {
-                meta: generic,
-                kind:
-                    crate::error::StartFaceDetectionErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFaceDetectionError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::StartFaceDetectionError {
+            meta: generic,
+            kind: crate::error::StartFaceDetectionErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFaceDetectionError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServerError" => crate::error::StartFaceDetectionError {
             meta: generic,
             kind: crate::error::StartFaceDetectionErrorKind::InternalServerError({
@@ -8159,7 +8309,8 @@ pub fn parse_start_face_detection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFaceDetectionError::unhandled)?;
                         output.build()
@@ -8468,27 +8619,27 @@ pub fn parse_start_label_detection_error(
                 tmp
             }),
         },
-        "IdempotentParameterMismatchException" => {
-            crate::error::StartLabelDetectionError {
-                meta: generic,
-                kind:
-                    crate::error::StartLabelDetectionErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLabelDetectionError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::StartLabelDetectionError {
+            meta: generic,
+            kind: crate::error::StartLabelDetectionErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLabelDetectionError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServerError" => crate::error::StartLabelDetectionError {
             meta: generic,
             kind: crate::error::StartLabelDetectionErrorKind::InternalServerError({
@@ -8564,7 +8715,8 @@ pub fn parse_start_label_detection_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLabelDetectionError::unhandled)?;
                             output.build()
@@ -8667,27 +8819,27 @@ pub fn parse_start_person_tracking_error(
                 tmp
             }),
         },
-        "IdempotentParameterMismatchException" => {
-            crate::error::StartPersonTrackingError {
-                meta: generic,
-                kind:
-                    crate::error::StartPersonTrackingErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartPersonTrackingError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::StartPersonTrackingError {
+            meta: generic,
+            kind: crate::error::StartPersonTrackingErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartPersonTrackingError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServerError" => crate::error::StartPersonTrackingError {
             meta: generic,
             kind: crate::error::StartPersonTrackingErrorKind::InternalServerError({
@@ -8763,7 +8915,8 @@ pub fn parse_start_person_tracking_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartPersonTrackingError::unhandled)?;
                             output.build()
@@ -8924,7 +9077,8 @@ pub fn parse_start_project_version_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartProjectVersionError::unhandled)?;
                             output.build()
@@ -9051,7 +9205,8 @@ pub fn parse_start_segment_detection_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSegmentDetectionError::unhandled)?;
                             output.build()
@@ -9138,7 +9293,8 @@ pub fn parse_start_segment_detection_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSegmentDetectionError::unhandled)?;
                             output.build()
@@ -9282,7 +9438,8 @@ pub fn parse_start_stream_processor_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStreamProcessorError::unhandled)?;
                             output.build()
@@ -9402,27 +9559,27 @@ pub fn parse_start_text_detection_error(
                 tmp
             }),
         },
-        "IdempotentParameterMismatchException" => {
-            crate::error::StartTextDetectionError {
-                meta: generic,
-                kind:
-                    crate::error::StartTextDetectionErrorKind::IdempotentParameterMismatchException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTextDetectionError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "IdempotentParameterMismatchException" => crate::error::StartTextDetectionError {
+            meta: generic,
+            kind: crate::error::StartTextDetectionErrorKind::IdempotentParameterMismatchException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::idempotent_parameter_mismatch_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTextDetectionError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServerError" => crate::error::StartTextDetectionError {
             meta: generic,
             kind: crate::error::StartTextDetectionErrorKind::InternalServerError({
@@ -9497,7 +9654,8 @@ pub fn parse_start_text_detection_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartTextDetectionError::unhandled)?;
                         output.build()
@@ -9640,7 +9798,8 @@ pub fn parse_stop_project_version_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopProjectVersionError::unhandled)?;
                         output.build()
@@ -9801,7 +9960,8 @@ pub fn parse_stop_stream_processor_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopStreamProcessorError::unhandled)?;
                             output.build()
@@ -9947,24 +10107,24 @@ pub fn parse_tag_resource_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
@@ -10256,7 +10416,8 @@ pub fn parse_update_dataset_entries_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
                             output.build()
@@ -10412,7 +10573,8 @@ pub fn parse_update_stream_processor_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStreamProcessorError::unhandled)?;
                             output.build()

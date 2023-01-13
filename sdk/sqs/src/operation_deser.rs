@@ -145,9 +145,11 @@ pub fn parse_change_message_visibility_batch_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AWS.SimpleQueueService.BatchEntryIdsNotDistinct" => crate::error::ChangeMessageVisibilityBatchError { meta: generic, kind: crate::error::ChangeMessageVisibilityBatchErrorKind::BatchEntryIdsNotDistinct({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::batch_entry_ids_not_distinct::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::batch_entry_ids_not_distinct::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
                     output.build()
@@ -159,9 +161,11 @@ pub fn parse_change_message_visibility_batch_error(
             tmp
         })},
         "AWS.SimpleQueueService.EmptyBatchRequest" => crate::error::ChangeMessageVisibilityBatchError { meta: generic, kind: crate::error::ChangeMessageVisibilityBatchErrorKind::EmptyBatchRequest({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::empty_batch_request::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::empty_batch_request::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
                     output.build()
@@ -173,9 +177,11 @@ pub fn parse_change_message_visibility_batch_error(
             tmp
         })},
         "AWS.SimpleQueueService.InvalidBatchEntryId" => crate::error::ChangeMessageVisibilityBatchError { meta: generic, kind: crate::error::ChangeMessageVisibilityBatchErrorKind::InvalidBatchEntryId({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_batch_entry_id::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_batch_entry_id::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
                     output.build()
@@ -187,9 +193,11 @@ pub fn parse_change_message_visibility_batch_error(
             tmp
         })},
         "AWS.SimpleQueueService.TooManyEntriesInBatchRequest" => crate::error::ChangeMessageVisibilityBatchError { meta: generic, kind: crate::error::ChangeMessageVisibilityBatchErrorKind::TooManyEntriesInBatchRequest({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_entries_in_batch_request::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_entries_in_batch_request::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
                     output.build()

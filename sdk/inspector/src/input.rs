@@ -1929,7 +1929,8 @@ impl DescribeAssessmentTemplatesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_assessment_templates(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2078,7 +2079,8 @@ impl DescribeCrossAccountAccessRoleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cross_account_access_role(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -5507,7 +5509,8 @@ impl RegisterCrossAccountAccessRoleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_register_cross_account_access_role(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5700,7 +5703,8 @@ impl RemoveAttributesFromFindingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_remove_attributes_from_findings(&self)?
         );
         if let Some(content_length) = body.content_length() {

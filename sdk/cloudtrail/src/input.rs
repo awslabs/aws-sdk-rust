@@ -1448,7 +1448,8 @@ impl DeregisterOrganizationDelegatedAdminInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_deregister_organization_delegated_admin(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5533,7 +5534,8 @@ impl RegisterOrganizationDelegatedAdminInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_register_organization_delegated_admin(&self)?
         );
         if let Some(content_length) = body.content_length() {

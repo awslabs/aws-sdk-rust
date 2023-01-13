@@ -96,7 +96,8 @@ impl AssociateServiceRoleToAccountInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_service_role_to_account(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -311,7 +312,8 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_client_device_with_core_device(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -527,7 +529,8 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_client_device_from_core_device(&self)?
         );
         if let Some(content_length) = body.content_length() {

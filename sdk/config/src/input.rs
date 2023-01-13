@@ -132,7 +132,8 @@ impl BatchGetAggregateResourceConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_get_aggregate_resource_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -488,7 +489,8 @@ impl DeleteAggregationAuthorizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_aggregation_authorization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -824,7 +826,8 @@ impl DeleteConfigurationAggregatorInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_configuration_aggregator(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -993,7 +996,8 @@ impl DeleteConfigurationRecorderInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_configuration_recorder(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1669,7 +1673,8 @@ impl DeleteOrganizationConfigRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_organization_config_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1838,7 +1843,8 @@ impl DeleteOrganizationConformancePackInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_organization_conformance_pack(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2019,7 +2025,8 @@ impl DeletePendingAggregationRequestInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_pending_aggregation_request(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2200,7 +2207,8 @@ impl DeleteRemediationConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_remediation_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2393,7 +2401,8 @@ impl DeleteRemediationExceptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_remediation_exceptions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2743,7 +2752,8 @@ impl DeleteRetentionConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_retention_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3286,7 +3296,8 @@ impl DescribeAggregateComplianceByConfigRulesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_aggregate_compliance_by_config_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3500,7 +3511,8 @@ impl DescribeAggregateComplianceByConformancePacksInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_aggregate_compliance_by_conformance_packs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3676,7 +3688,8 @@ impl DescribeAggregationAuthorizationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_aggregation_authorizations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3884,7 +3897,8 @@ impl DescribeComplianceByConfigRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_compliance_by_config_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4110,7 +4124,8 @@ impl DescribeComplianceByResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_compliance_by_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4310,7 +4325,8 @@ impl DescribeConfigRuleEvaluationStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_config_rule_evaluation_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4710,7 +4726,8 @@ impl DescribeConfigurationAggregatorsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_configuration_aggregators(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4937,7 +4954,8 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_configuration_aggregator_sources_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5114,7 +5132,8 @@ impl DescribeConfigurationRecordersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_configuration_recorders(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5290,7 +5309,8 @@ impl DescribeConfigurationRecorderStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_configuration_recorder_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5495,7 +5515,8 @@ impl DescribeConformancePackComplianceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_conformance_pack_compliance(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5890,7 +5911,8 @@ impl DescribeConformancePackStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_conformance_pack_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6237,7 +6259,8 @@ impl DescribeDeliveryChannelStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_delivery_channel_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6437,7 +6460,8 @@ impl DescribeOrganizationConfigRulesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_organization_config_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6637,7 +6661,8 @@ impl DescribeOrganizationConfigRuleStatusesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_organization_config_rule_statuses(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6837,7 +6862,8 @@ impl DescribeOrganizationConformancePacksInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_organization_conformance_packs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7039,7 +7065,8 @@ impl DescribeOrganizationConformancePackStatusesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_organization_conformance_pack_statuses(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7215,7 +7242,8 @@ impl DescribePendingAggregationRequestsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_pending_aggregation_requests(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7387,7 +7415,8 @@ impl DescribeRemediationConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_remediation_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7604,7 +7633,8 @@ impl DescribeRemediationExceptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_remediation_exceptions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7815,7 +7845,8 @@ impl DescribeRemediationExecutionStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_remediation_execution_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8007,7 +8038,8 @@ impl DescribeRetentionConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_retention_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8260,7 +8292,8 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_aggregate_compliance_details_by_config_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8488,7 +8521,8 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_aggregate_config_rule_compliance_summary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8725,7 +8759,8 @@ impl GetAggregateConformancePackComplianceSummaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_aggregate_conformance_pack_compliance_summary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8949,7 +8984,8 @@ impl GetAggregateDiscoveredResourceCountsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_aggregate_discovered_resource_counts(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9137,7 +9173,8 @@ impl GetAggregateResourceConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_aggregate_resource_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9351,7 +9388,8 @@ impl GetComplianceDetailsByConfigRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_compliance_details_by_config_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9584,7 +9622,8 @@ impl GetComplianceDetailsByResourceInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_compliance_details_by_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9733,7 +9772,8 @@ impl GetComplianceSummaryByConfigRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary_by_config_rule(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -9900,7 +9940,8 @@ impl GetComplianceSummaryByResourceTypeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary_by_resource_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10105,7 +10146,8 @@ impl GetConformancePackComplianceDetailsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_conformance_pack_compliance_details(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10301,7 +10343,8 @@ impl GetConformancePackComplianceSummaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_conformance_pack_compliance_summary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10672,7 +10715,8 @@ impl GetDiscoveredResourceCountsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_discovered_resource_counts(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10880,7 +10924,8 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_organization_config_rule_detailed_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11094,7 +11139,8 @@ impl GetOrganizationConformancePackDetailedStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_organization_conformance_pack_detailed_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11264,7 +11310,8 @@ impl GetOrganizationCustomRulePolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_organization_custom_rule_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11680,7 +11727,8 @@ impl GetResourceEvaluationSummaryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_resource_evaluation_summary(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12065,7 +12113,8 @@ impl ListAggregateDiscoveredResourcesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_aggregate_discovered_resources(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12292,7 +12341,8 @@ impl ListConformancePackComplianceScoresInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_conformance_pack_compliance_scores(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13294,7 +13344,8 @@ impl PutAggregationAuthorizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_aggregation_authorization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15264,7 +15315,8 @@ impl PutOrganizationConformancePackInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_organization_conformance_pack(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15440,7 +15492,8 @@ impl PutRemediationConfigurationsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_remediation_configurations(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16505,7 +16558,8 @@ impl SelectAggregateResourceConfigInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_select_aggregate_resource_config(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16867,7 +16921,8 @@ impl StartConfigRulesEvaluationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_start_config_rules_evaluation(&self)?
         );
         if let Some(content_length) = body.content_length() {

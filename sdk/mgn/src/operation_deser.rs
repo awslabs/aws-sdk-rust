@@ -662,9 +662,11 @@ pub fn parse_create_launch_configuration_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateLaunchConfigurationTemplateError { meta: generic, kind: crate::error::CreateLaunchConfigurationTemplateErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -676,9 +678,11 @@ pub fn parse_create_launch_configuration_template_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::CreateLaunchConfigurationTemplateError { meta: generic, kind: crate::error::CreateLaunchConfigurationTemplateErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -690,9 +694,11 @@ pub fn parse_create_launch_configuration_template_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateLaunchConfigurationTemplateError { meta: generic, kind: crate::error::CreateLaunchConfigurationTemplateErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -745,9 +751,11 @@ pub fn parse_create_replication_configuration_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -759,9 +767,11 @@ pub fn parse_create_replication_configuration_template_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::CreateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -773,9 +783,11 @@ pub fn parse_create_replication_configuration_template_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::CreateReplicationConfigurationTemplateErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -1083,9 +1095,11 @@ pub fn parse_delete_launch_configuration_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => crate::error::DeleteLaunchConfigurationTemplateError { meta: generic, kind: crate::error::DeleteLaunchConfigurationTemplateErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -1097,9 +1111,11 @@ pub fn parse_delete_launch_configuration_template_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteLaunchConfigurationTemplateError { meta: generic, kind: crate::error::DeleteLaunchConfigurationTemplateErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -1111,9 +1127,11 @@ pub fn parse_delete_launch_configuration_template_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::DeleteLaunchConfigurationTemplateError { meta: generic, kind: crate::error::DeleteLaunchConfigurationTemplateErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -1165,9 +1183,11 @@ pub fn parse_delete_replication_configuration_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => crate::error::DeleteReplicationConfigurationTemplateError { meta: generic, kind: crate::error::DeleteReplicationConfigurationTemplateErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -1179,9 +1199,11 @@ pub fn parse_delete_replication_configuration_template_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteReplicationConfigurationTemplateError { meta: generic, kind: crate::error::DeleteReplicationConfigurationTemplateErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -1193,9 +1215,11 @@ pub fn parse_delete_replication_configuration_template_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::DeleteReplicationConfigurationTemplateError { meta: generic, kind: crate::error::DeleteReplicationConfigurationTemplateErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -1648,9 +1672,11 @@ pub fn parse_describe_launch_configuration_templates_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundException" => crate::error::DescribeLaunchConfigurationTemplatesError { meta: generic, kind: crate::error::DescribeLaunchConfigurationTemplatesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationTemplatesError::unhandled)?;
                     output.build()
@@ -1662,9 +1688,11 @@ pub fn parse_describe_launch_configuration_templates_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::DescribeLaunchConfigurationTemplatesError { meta: generic, kind: crate::error::DescribeLaunchConfigurationTemplatesErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationTemplatesError::unhandled)?;
                     output.build()
@@ -1676,9 +1704,11 @@ pub fn parse_describe_launch_configuration_templates_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribeLaunchConfigurationTemplatesError { meta: generic, kind: crate::error::DescribeLaunchConfigurationTemplatesErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationTemplatesError::unhandled)?;
                     output.build()
@@ -1731,9 +1761,11 @@ pub fn parse_describe_replication_configuration_templates_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundException" => crate::error::DescribeReplicationConfigurationTemplatesError { meta: generic, kind: crate::error::DescribeReplicationConfigurationTemplatesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationTemplatesError::unhandled)?;
                     output.build()
@@ -1745,9 +1777,11 @@ pub fn parse_describe_replication_configuration_templates_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::DescribeReplicationConfigurationTemplatesError { meta: generic, kind: crate::error::DescribeReplicationConfigurationTemplatesErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationTemplatesError::unhandled)?;
                     output.build()
@@ -1759,9 +1793,11 @@ pub fn parse_describe_replication_configuration_templates_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribeReplicationConfigurationTemplatesError { meta: generic, kind: crate::error::DescribeReplicationConfigurationTemplatesErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationTemplatesError::unhandled)?;
                     output.build()
@@ -4594,9 +4630,11 @@ pub fn parse_update_launch_configuration_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::UpdateLaunchConfigurationTemplateError { meta: generic, kind: crate::error::UpdateLaunchConfigurationTemplateErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -4608,9 +4646,11 @@ pub fn parse_update_launch_configuration_template_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateLaunchConfigurationTemplateError { meta: generic, kind: crate::error::UpdateLaunchConfigurationTemplateErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -4622,9 +4662,11 @@ pub fn parse_update_launch_configuration_template_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::UpdateLaunchConfigurationTemplateError { meta: generic, kind: crate::error::UpdateLaunchConfigurationTemplateErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -4636,9 +4678,11 @@ pub fn parse_update_launch_configuration_template_error(
             tmp
         })},
         "ValidationException" => crate::error::UpdateLaunchConfigurationTemplateError { meta: generic, kind: crate::error::UpdateLaunchConfigurationTemplateErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLaunchConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -4826,9 +4870,11 @@ pub fn parse_update_replication_configuration_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::UpdateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -4840,9 +4886,11 @@ pub fn parse_update_replication_configuration_template_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::UpdateReplicationConfigurationTemplateErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -4854,9 +4902,11 @@ pub fn parse_update_replication_configuration_template_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::UpdateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::UpdateReplicationConfigurationTemplateErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -4868,9 +4918,11 @@ pub fn parse_update_replication_configuration_template_error(
             tmp
         })},
         "ValidationException" => crate::error::UpdateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::UpdateReplicationConfigurationTemplateErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateReplicationConfigurationTemplateError::unhandled)?;
                     output.build()
@@ -4921,9 +4973,11 @@ pub fn parse_update_source_server_replication_type_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => crate::error::UpdateSourceServerReplicationTypeError { meta: generic, kind: crate::error::UpdateSourceServerReplicationTypeErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSourceServerReplicationTypeError::unhandled)?;
                     output.build()
@@ -4935,9 +4989,11 @@ pub fn parse_update_source_server_replication_type_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateSourceServerReplicationTypeError { meta: generic, kind: crate::error::UpdateSourceServerReplicationTypeErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSourceServerReplicationTypeError::unhandled)?;
                     output.build()
@@ -4949,9 +5005,11 @@ pub fn parse_update_source_server_replication_type_error(
             tmp
         })},
         "UninitializedAccountException" => crate::error::UpdateSourceServerReplicationTypeError { meta: generic, kind: crate::error::UpdateSourceServerReplicationTypeErrorKind::UninitializedAccountException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::uninitialized_account_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::uninitialized_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSourceServerReplicationTypeError::unhandled)?;
                     output.build()
@@ -4963,9 +5021,11 @@ pub fn parse_update_source_server_replication_type_error(
             tmp
         })},
         "ValidationException" => crate::error::UpdateSourceServerReplicationTypeError { meta: generic, kind: crate::error::UpdateSourceServerReplicationTypeErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSourceServerReplicationTypeError::unhandled)?;
                     output.build()

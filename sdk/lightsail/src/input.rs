@@ -296,7 +296,8 @@ impl AttachCertificateToDistributionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_attach_certificate_to_distribution(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -676,7 +677,8 @@ impl AttachInstancesToLoadBalancerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_attach_instances_to_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -857,7 +859,8 @@ impl AttachLoadBalancerTlsCertificateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_tls_certificate(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3032,7 +3035,8 @@ impl CreateContainerServiceDeploymentInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_container_service_deployment(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3181,7 +3185,8 @@ impl CreateContainerServiceRegistryLoginInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_container_service_registry_login(&self)?
         );
         let request = request.body(body).expect("should be valid request");
@@ -5376,7 +5381,8 @@ impl CreateInstancesFromSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_instances_from_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6333,7 +6339,8 @@ impl CreateLoadBalancerTlsCertificateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_tls_certificate(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7145,7 +7152,8 @@ impl CreateRelationalDatabaseFromSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_relational_database_from_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7362,7 +7370,8 @@ impl CreateRelationalDatabaseSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_relational_database_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10682,7 +10691,8 @@ impl DeleteLoadBalancerTlsCertificateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_tls_certificate(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11070,7 +11080,8 @@ impl DeleteRelationalDatabaseSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_relational_database_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11238,7 +11249,8 @@ impl DetachCertificateFromDistributionInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_detach_certificate_from_distribution(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11587,7 +11599,8 @@ impl DetachInstancesFromLoadBalancerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_detach_instances_from_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14482,7 +14495,8 @@ impl GetCloudFormationStackRecordsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_cloud_formation_stack_records(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15448,7 +15462,8 @@ impl GetContainerServiceDeploymentsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_container_service_deployments(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15776,7 +15791,8 @@ impl GetContainerServiceMetricDataInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_container_service_metric_data(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17073,7 +17089,8 @@ impl GetDistributionLatestCacheResetInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_distribution_latest_cache_reset(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20362,7 +20379,8 @@ impl GetLoadBalancerMetricDataInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_load_balancer_metric_data(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20694,7 +20712,8 @@ impl GetLoadBalancerTlsCertificatesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_load_balancer_tls_certificates(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20859,7 +20878,8 @@ impl GetLoadBalancerTlsPoliciesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_load_balancer_tls_policies(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21880,7 +21900,8 @@ impl GetRelationalDatabaseBlueprintsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_blueprints(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22057,7 +22078,8 @@ impl GetRelationalDatabaseBundlesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_bundles(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22253,7 +22275,8 @@ impl GetRelationalDatabaseEventsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_events(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22516,7 +22539,8 @@ impl GetRelationalDatabaseLogEventsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_log_events(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22682,7 +22706,8 @@ impl GetRelationalDatabaseLogStreamsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_log_streams(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22871,7 +22896,8 @@ impl GetRelationalDatabaseMasterUserPasswordInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_master_user_password(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -23183,7 +23209,8 @@ impl GetRelationalDatabaseMetricDataInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_metric_data(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -23363,7 +23390,8 @@ impl GetRelationalDatabaseParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -23700,7 +23728,8 @@ impl GetRelationalDatabaseSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -23865,7 +23894,8 @@ impl GetRelationalDatabaseSnapshotsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_relational_database_snapshots(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -26457,7 +26487,8 @@ impl SendContactMethodVerificationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_send_contact_method_verification(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -26865,7 +26896,8 @@ impl SetResourceAccessForBucketInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_resource_access_for_bucket(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -29821,7 +29853,8 @@ impl UpdateInstanceMetadataOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_instance_metadata_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30033,7 +30066,8 @@ impl UpdateLoadBalancerAttributeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_load_balancer_attribute(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -30585,7 +30619,8 @@ impl UpdateRelationalDatabaseParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_relational_database_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {

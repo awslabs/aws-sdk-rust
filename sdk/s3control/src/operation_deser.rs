@@ -863,7 +863,8 @@ pub fn parse_get_access_point_configuration_for_object_lambda_response(
     crate::error::GetAccessPointConfigurationForObjectLambdaError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::get_access_point_configuration_for_object_lambda_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_access_point_configuration_for_object_lambda_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_access_point_configuration_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::GetAccessPointConfigurationForObjectLambdaError::unhandled)?;
         output.build()
@@ -1021,7 +1022,8 @@ pub fn parse_get_access_point_policy_status_for_object_lambda_response(
     crate::error::GetAccessPointPolicyStatusForObjectLambdaError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::get_access_point_policy_status_for_object_lambda_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_access_point_policy_status_for_object_lambda_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_access_point_policy_status_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::GetAccessPointPolicyStatusForObjectLambdaError::unhandled)?;
         output.build()
@@ -1420,7 +1422,8 @@ pub fn parse_get_public_access_block_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::no_such_public_access_block_configuration::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_public_access_block_configuration::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_no_such_public_access_block_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
                         output.build()
@@ -1785,7 +1788,8 @@ pub fn parse_put_access_point_configuration_for_object_lambda_response(
     crate::error::PutAccessPointConfigurationForObjectLambdaError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::put_access_point_configuration_for_object_lambda_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::put_access_point_configuration_for_object_lambda_output::Builder::default();
         let _ = response;
         output.build()
     })

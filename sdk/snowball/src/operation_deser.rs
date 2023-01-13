@@ -530,9 +530,11 @@ pub fn parse_create_return_shipping_label_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => crate::error::CreateReturnShippingLabelError { meta: generic, kind: crate::error::CreateReturnShippingLabelErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReturnShippingLabelError::unhandled)?;
                     output.build()
@@ -544,9 +546,11 @@ pub fn parse_create_return_shipping_label_error(
             tmp
         })},
         "InvalidInputCombinationException" => crate::error::CreateReturnShippingLabelError { meta: generic, kind: crate::error::CreateReturnShippingLabelErrorKind::InvalidInputCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReturnShippingLabelError::unhandled)?;
                     output.build()
@@ -558,9 +562,11 @@ pub fn parse_create_return_shipping_label_error(
             tmp
         })},
         "InvalidJobStateException" => crate::error::CreateReturnShippingLabelError { meta: generic, kind: crate::error::CreateReturnShippingLabelErrorKind::InvalidJobStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_job_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_job_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_job_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReturnShippingLabelError::unhandled)?;
                     output.build()
@@ -572,9 +578,11 @@ pub fn parse_create_return_shipping_label_error(
             tmp
         })},
         "InvalidResourceException" => crate::error::CreateReturnShippingLabelError { meta: generic, kind: crate::error::CreateReturnShippingLabelErrorKind::InvalidResourceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_resource_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_resource_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReturnShippingLabelError::unhandled)?;
                     output.build()
@@ -586,9 +594,11 @@ pub fn parse_create_return_shipping_label_error(
             tmp
         })},
         "ReturnShippingLabelAlreadyExistsException" => crate::error::CreateReturnShippingLabelError { meta: generic, kind: crate::error::CreateReturnShippingLabelErrorKind::ReturnShippingLabelAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::return_shipping_label_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::return_shipping_label_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_return_shipping_label_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateReturnShippingLabelError::unhandled)?;
                     output.build()

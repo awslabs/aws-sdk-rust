@@ -305,7 +305,8 @@ impl ApplySecurityGroupsToLoadBalancerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_apply_security_groups_to_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -487,7 +488,8 @@ impl AttachLoadBalancerToSubnetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_to_subnets(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -851,7 +853,8 @@ impl CreateAppCookieStickinessPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_app_cookie_stickiness_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1036,7 +1039,8 @@ impl CreateLbCookieStickinessPolicyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_lb_cookie_stickiness_policy(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1511,7 +1515,8 @@ impl CreateLoadBalancerListenersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_load_balancer_listeners(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2068,7 +2073,8 @@ impl DeleteLoadBalancerListenersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_load_balancer_listeners(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2426,7 +2432,8 @@ impl DeregisterInstancesFromLoadBalancerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_deregister_instances_from_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2945,7 +2952,8 @@ impl DescribeLoadBalancerAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3127,7 +3135,8 @@ impl DescribeLoadBalancerPoliciesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policies(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3294,7 +3303,8 @@ impl DescribeLoadBalancerPolicyTypesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_policy_types(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3836,7 +3846,8 @@ impl DetachLoadBalancerFromSubnetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_detach_load_balancer_from_subnets(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4018,7 +4029,8 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disable_availability_zones_for_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4200,7 +4212,8 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_enable_availability_zones_for_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4380,7 +4393,8 @@ impl ModifyLoadBalancerAttributesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_load_balancer_attributes(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4562,7 +4576,8 @@ impl RegisterInstancesWithLoadBalancerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_register_instances_with_load_balancer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4937,7 +4952,8 @@ impl SetLoadBalancerListenerSslCertificateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_listener_ssl_certificate(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5131,7 +5147,8 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_for_backend_server(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5325,7 +5342,8 @@ impl SetLoadBalancerPoliciesOfListenerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_set_load_balancer_policies_of_listener(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -2029,24 +2029,24 @@ pub fn parse_update_records_error(
                 tmp
             }),
         },
-        "InvalidLambdaFunctionOutputException" => {
-            crate::error::UpdateRecordsError {
-                meta: generic,
-                kind: crate::error::UpdateRecordsErrorKind::InvalidLambdaFunctionOutputException({
+        "InvalidLambdaFunctionOutputException" => crate::error::UpdateRecordsError {
+            meta: generic,
+            kind: crate::error::UpdateRecordsErrorKind::InvalidLambdaFunctionOutputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::invalid_lambda_function_output_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_lambda_function_output_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRecordsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::invalid_lambda_function_output_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_lambda_function_output_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRecordsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidParameterException" => crate::error::UpdateRecordsError {
             meta: generic,
             kind: crate::error::UpdateRecordsErrorKind::InvalidParameterException({

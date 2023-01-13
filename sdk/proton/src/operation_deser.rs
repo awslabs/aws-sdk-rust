@@ -1087,9 +1087,11 @@ pub fn parse_create_environment_account_connection_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateEnvironmentAccountConnectionError { meta: generic, kind: crate::error::CreateEnvironmentAccountConnectionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentAccountConnectionError::unhandled)?;
                     output.build()
@@ -1101,9 +1103,11 @@ pub fn parse_create_environment_account_connection_error(
             tmp
         })},
         "ConflictException" => crate::error::CreateEnvironmentAccountConnectionError { meta: generic, kind: crate::error::CreateEnvironmentAccountConnectionErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentAccountConnectionError::unhandled)?;
                     output.build()
@@ -1115,9 +1119,11 @@ pub fn parse_create_environment_account_connection_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateEnvironmentAccountConnectionError { meta: generic, kind: crate::error::CreateEnvironmentAccountConnectionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentAccountConnectionError::unhandled)?;
                     output.build()
@@ -1129,9 +1135,11 @@ pub fn parse_create_environment_account_connection_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::CreateEnvironmentAccountConnectionError { meta: generic, kind: crate::error::CreateEnvironmentAccountConnectionErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentAccountConnectionError::unhandled)?;
                     output.build()
@@ -1143,9 +1151,11 @@ pub fn parse_create_environment_account_connection_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateEnvironmentAccountConnectionError { meta: generic, kind: crate::error::CreateEnvironmentAccountConnectionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentAccountConnectionError::unhandled)?;
                     output.build()
@@ -1157,9 +1167,11 @@ pub fn parse_create_environment_account_connection_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateEnvironmentAccountConnectionError { meta: generic, kind: crate::error::CreateEnvironmentAccountConnectionErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentAccountConnectionError::unhandled)?;
                     output.build()
@@ -1361,9 +1373,11 @@ pub fn parse_create_environment_template_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateEnvironmentTemplateVersionError { meta: generic, kind: crate::error::CreateEnvironmentTemplateVersionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentTemplateVersionError::unhandled)?;
                     output.build()
@@ -1375,9 +1389,11 @@ pub fn parse_create_environment_template_version_error(
             tmp
         })},
         "ConflictException" => crate::error::CreateEnvironmentTemplateVersionError { meta: generic, kind: crate::error::CreateEnvironmentTemplateVersionErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentTemplateVersionError::unhandled)?;
                     output.build()
@@ -1389,9 +1405,11 @@ pub fn parse_create_environment_template_version_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateEnvironmentTemplateVersionError { meta: generic, kind: crate::error::CreateEnvironmentTemplateVersionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentTemplateVersionError::unhandled)?;
                     output.build()
@@ -1403,9 +1421,11 @@ pub fn parse_create_environment_template_version_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreateEnvironmentTemplateVersionError { meta: generic, kind: crate::error::CreateEnvironmentTemplateVersionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentTemplateVersionError::unhandled)?;
                     output.build()
@@ -1417,9 +1437,11 @@ pub fn parse_create_environment_template_version_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::CreateEnvironmentTemplateVersionError { meta: generic, kind: crate::error::CreateEnvironmentTemplateVersionErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentTemplateVersionError::unhandled)?;
                     output.build()
@@ -1431,9 +1453,11 @@ pub fn parse_create_environment_template_version_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateEnvironmentTemplateVersionError { meta: generic, kind: crate::error::CreateEnvironmentTemplateVersionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentTemplateVersionError::unhandled)?;
                     output.build()
@@ -1445,9 +1469,11 @@ pub fn parse_create_environment_template_version_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateEnvironmentTemplateVersionError { meta: generic, kind: crate::error::CreateEnvironmentTemplateVersionErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentTemplateVersionError::unhandled)?;
                     output.build()
@@ -6074,9 +6100,11 @@ pub fn parse_list_environment_provisioned_resources_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListEnvironmentProvisionedResourcesError { meta: generic, kind: crate::error::ListEnvironmentProvisionedResourcesErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6088,9 +6116,11 @@ pub fn parse_list_environment_provisioned_resources_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListEnvironmentProvisionedResourcesError { meta: generic, kind: crate::error::ListEnvironmentProvisionedResourcesErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6102,9 +6132,11 @@ pub fn parse_list_environment_provisioned_resources_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListEnvironmentProvisionedResourcesError { meta: generic, kind: crate::error::ListEnvironmentProvisionedResourcesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6116,9 +6148,11 @@ pub fn parse_list_environment_provisioned_resources_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListEnvironmentProvisionedResourcesError { meta: generic, kind: crate::error::ListEnvironmentProvisionedResourcesErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6130,9 +6164,11 @@ pub fn parse_list_environment_provisioned_resources_error(
             tmp
         })},
         "ValidationException" => crate::error::ListEnvironmentProvisionedResourcesError { meta: generic, kind: crate::error::ListEnvironmentProvisionedResourcesErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6914,9 +6950,11 @@ pub fn parse_list_service_instance_provisioned_resources_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListServiceInstanceProvisionedResourcesError { meta: generic, kind: crate::error::ListServiceInstanceProvisionedResourcesErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceInstanceProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6928,9 +6966,11 @@ pub fn parse_list_service_instance_provisioned_resources_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListServiceInstanceProvisionedResourcesError { meta: generic, kind: crate::error::ListServiceInstanceProvisionedResourcesErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceInstanceProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6942,9 +6982,11 @@ pub fn parse_list_service_instance_provisioned_resources_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListServiceInstanceProvisionedResourcesError { meta: generic, kind: crate::error::ListServiceInstanceProvisionedResourcesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceInstanceProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6956,9 +6998,11 @@ pub fn parse_list_service_instance_provisioned_resources_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListServiceInstanceProvisionedResourcesError { meta: generic, kind: crate::error::ListServiceInstanceProvisionedResourcesErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceInstanceProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -6970,9 +7014,11 @@ pub fn parse_list_service_instance_provisioned_resources_error(
             tmp
         })},
         "ValidationException" => crate::error::ListServiceInstanceProvisionedResourcesError { meta: generic, kind: crate::error::ListServiceInstanceProvisionedResourcesErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceInstanceProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -7279,9 +7325,11 @@ pub fn parse_list_service_pipeline_provisioned_resources_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::ListServicePipelineProvisionedResourcesError { meta: generic, kind: crate::error::ListServicePipelineProvisionedResourcesErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicePipelineProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -7293,9 +7341,11 @@ pub fn parse_list_service_pipeline_provisioned_resources_error(
             tmp
         })},
         "InternalServerException" => crate::error::ListServicePipelineProvisionedResourcesError { meta: generic, kind: crate::error::ListServicePipelineProvisionedResourcesErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicePipelineProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -7307,9 +7357,11 @@ pub fn parse_list_service_pipeline_provisioned_resources_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListServicePipelineProvisionedResourcesError { meta: generic, kind: crate::error::ListServicePipelineProvisionedResourcesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicePipelineProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -7321,9 +7373,11 @@ pub fn parse_list_service_pipeline_provisioned_resources_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListServicePipelineProvisionedResourcesError { meta: generic, kind: crate::error::ListServicePipelineProvisionedResourcesErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicePipelineProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -7335,9 +7389,11 @@ pub fn parse_list_service_pipeline_provisioned_resources_error(
             tmp
         })},
         "ValidationException" => crate::error::ListServicePipelineProvisionedResourcesError { meta: generic, kind: crate::error::ListServicePipelineProvisionedResourcesErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicePipelineProvisionedResourcesError::unhandled)?;
                     output.build()
@@ -7852,9 +7908,11 @@ pub fn parse_notify_resource_deployment_status_change_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::NotifyResourceDeploymentStatusChangeError { meta: generic, kind: crate::error::NotifyResourceDeploymentStatusChangeErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyResourceDeploymentStatusChangeError::unhandled)?;
                     output.build()
@@ -7866,9 +7924,11 @@ pub fn parse_notify_resource_deployment_status_change_error(
             tmp
         })},
         "ConflictException" => crate::error::NotifyResourceDeploymentStatusChangeError { meta: generic, kind: crate::error::NotifyResourceDeploymentStatusChangeErrorKind::ConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyResourceDeploymentStatusChangeError::unhandled)?;
                     output.build()
@@ -7880,9 +7940,11 @@ pub fn parse_notify_resource_deployment_status_change_error(
             tmp
         })},
         "InternalServerException" => crate::error::NotifyResourceDeploymentStatusChangeError { meta: generic, kind: crate::error::NotifyResourceDeploymentStatusChangeErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyResourceDeploymentStatusChangeError::unhandled)?;
                     output.build()
@@ -7894,9 +7956,11 @@ pub fn parse_notify_resource_deployment_status_change_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::NotifyResourceDeploymentStatusChangeError { meta: generic, kind: crate::error::NotifyResourceDeploymentStatusChangeErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyResourceDeploymentStatusChangeError::unhandled)?;
                     output.build()
@@ -7908,9 +7972,11 @@ pub fn parse_notify_resource_deployment_status_change_error(
             tmp
         })},
         "ServiceQuotaExceededException" => crate::error::NotifyResourceDeploymentStatusChangeError { meta: generic, kind: crate::error::NotifyResourceDeploymentStatusChangeErrorKind::ServiceQuotaExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyResourceDeploymentStatusChangeError::unhandled)?;
                     output.build()
@@ -7922,9 +7988,11 @@ pub fn parse_notify_resource_deployment_status_change_error(
             tmp
         })},
         "ThrottlingException" => crate::error::NotifyResourceDeploymentStatusChangeError { meta: generic, kind: crate::error::NotifyResourceDeploymentStatusChangeErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyResourceDeploymentStatusChangeError::unhandled)?;
                     output.build()
@@ -7936,9 +8004,11 @@ pub fn parse_notify_resource_deployment_status_change_error(
             tmp
         })},
         "ValidationException" => crate::error::NotifyResourceDeploymentStatusChangeError { meta: generic, kind: crate::error::NotifyResourceDeploymentStatusChangeErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyResourceDeploymentStatusChangeError::unhandled)?;
                     output.build()

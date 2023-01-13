@@ -112,7 +112,8 @@ pub fn parse_accept_certificate_transfer_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::transfer_already_completed_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::transfer_already_completed_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_transfer_already_completed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
                             output.build()
@@ -1405,7 +1406,8 @@ pub fn parse_cancel_certificate_transfer_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::transfer_already_completed_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::transfer_already_completed_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_transfer_already_completed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelCertificateTransferError::unhandled)?;
                             output.build()
@@ -1992,9 +1994,11 @@ pub fn parse_confirm_topic_rule_destination_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::error::ConfirmTopicRuleDestinationError { meta: generic, kind: crate::error::ConfirmTopicRuleDestinationErrorKind::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_resource_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -2006,9 +2010,11 @@ pub fn parse_confirm_topic_rule_destination_error(
             tmp
         })},
         "InternalException" => crate::error::ConfirmTopicRuleDestinationError { meta: generic, kind: crate::error::ConfirmTopicRuleDestinationErrorKind::InternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -2020,9 +2026,11 @@ pub fn parse_confirm_topic_rule_destination_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ConfirmTopicRuleDestinationError { meta: generic, kind: crate::error::ConfirmTopicRuleDestinationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -2034,9 +2042,11 @@ pub fn parse_confirm_topic_rule_destination_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::ConfirmTopicRuleDestinationError { meta: generic, kind: crate::error::ConfirmTopicRuleDestinationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -2048,9 +2058,11 @@ pub fn parse_confirm_topic_rule_destination_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::ConfirmTopicRuleDestinationError { meta: generic, kind: crate::error::ConfirmTopicRuleDestinationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -4782,9 +4794,11 @@ pub fn parse_create_provisioning_template_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::error::CreateProvisioningTemplateVersionError { meta: generic, kind: crate::error::CreateProvisioningTemplateVersionErrorKind::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_resource_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -4796,9 +4810,11 @@ pub fn parse_create_provisioning_template_version_error(
             tmp
         })},
         "InternalFailureException" => crate::error::CreateProvisioningTemplateVersionError { meta: generic, kind: crate::error::CreateProvisioningTemplateVersionErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -4810,9 +4826,11 @@ pub fn parse_create_provisioning_template_version_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::CreateProvisioningTemplateVersionError { meta: generic, kind: crate::error::CreateProvisioningTemplateVersionErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -4824,9 +4842,11 @@ pub fn parse_create_provisioning_template_version_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreateProvisioningTemplateVersionError { meta: generic, kind: crate::error::CreateProvisioningTemplateVersionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -4838,9 +4858,11 @@ pub fn parse_create_provisioning_template_version_error(
             tmp
         })},
         "ThrottlingException" => crate::error::CreateProvisioningTemplateVersionError { meta: generic, kind: crate::error::CreateProvisioningTemplateVersionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -4852,9 +4874,11 @@ pub fn parse_create_provisioning_template_version_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::CreateProvisioningTemplateVersionError { meta: generic, kind: crate::error::CreateProvisioningTemplateVersionErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -4866,9 +4890,11 @@ pub fn parse_create_provisioning_template_version_error(
             tmp
         })},
         "VersionsLimitExceededException" => crate::error::CreateProvisioningTemplateVersionError { meta: generic, kind: crate::error::CreateProvisioningTemplateVersionErrorKind::VersionsLimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::versions_limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::versions_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_versions_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -6017,9 +6043,11 @@ pub fn parse_create_topic_rule_destination_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::error::CreateTopicRuleDestinationError { meta: generic, kind: crate::error::CreateTopicRuleDestinationErrorKind::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_resource_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -6031,9 +6059,11 @@ pub fn parse_create_topic_rule_destination_error(
             tmp
         })},
         "InternalException" => crate::error::CreateTopicRuleDestinationError { meta: generic, kind: crate::error::CreateTopicRuleDestinationErrorKind::InternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -6045,9 +6075,11 @@ pub fn parse_create_topic_rule_destination_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::CreateTopicRuleDestinationError { meta: generic, kind: crate::error::CreateTopicRuleDestinationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -6059,9 +6091,11 @@ pub fn parse_create_topic_rule_destination_error(
             tmp
         })},
         "ResourceAlreadyExistsException" => crate::error::CreateTopicRuleDestinationError { meta: generic, kind: crate::error::CreateTopicRuleDestinationErrorKind::ResourceAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -6073,9 +6107,11 @@ pub fn parse_create_topic_rule_destination_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::CreateTopicRuleDestinationError { meta: generic, kind: crate::error::CreateTopicRuleDestinationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -8357,9 +8393,11 @@ pub fn parse_delete_provisioning_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::error::DeleteProvisioningTemplateError { meta: generic, kind: crate::error::DeleteProvisioningTemplateErrorKind::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_resource_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -8371,9 +8409,11 @@ pub fn parse_delete_provisioning_template_error(
             tmp
         })},
         "DeleteConflictException" => crate::error::DeleteProvisioningTemplateError { meta: generic, kind: crate::error::DeleteProvisioningTemplateErrorKind::DeleteConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::delete_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::delete_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_delete_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -8385,9 +8425,11 @@ pub fn parse_delete_provisioning_template_error(
             tmp
         })},
         "InternalFailureException" => crate::error::DeleteProvisioningTemplateError { meta: generic, kind: crate::error::DeleteProvisioningTemplateErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -8399,9 +8441,11 @@ pub fn parse_delete_provisioning_template_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteProvisioningTemplateError { meta: generic, kind: crate::error::DeleteProvisioningTemplateErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -8413,9 +8457,11 @@ pub fn parse_delete_provisioning_template_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteProvisioningTemplateError { meta: generic, kind: crate::error::DeleteProvisioningTemplateErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -8427,9 +8473,11 @@ pub fn parse_delete_provisioning_template_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DeleteProvisioningTemplateError { meta: generic, kind: crate::error::DeleteProvisioningTemplateErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -8441,9 +8489,11 @@ pub fn parse_delete_provisioning_template_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DeleteProvisioningTemplateError { meta: generic, kind: crate::error::DeleteProvisioningTemplateErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -8492,9 +8542,11 @@ pub fn parse_delete_provisioning_template_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::error::DeleteProvisioningTemplateVersionError { meta: generic, kind: crate::error::DeleteProvisioningTemplateVersionErrorKind::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_resource_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -8506,9 +8558,11 @@ pub fn parse_delete_provisioning_template_version_error(
             tmp
         })},
         "DeleteConflictException" => crate::error::DeleteProvisioningTemplateVersionError { meta: generic, kind: crate::error::DeleteProvisioningTemplateVersionErrorKind::DeleteConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::delete_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::delete_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_delete_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -8520,9 +8574,11 @@ pub fn parse_delete_provisioning_template_version_error(
             tmp
         })},
         "InternalFailureException" => crate::error::DeleteProvisioningTemplateVersionError { meta: generic, kind: crate::error::DeleteProvisioningTemplateVersionErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -8534,9 +8590,11 @@ pub fn parse_delete_provisioning_template_version_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteProvisioningTemplateVersionError { meta: generic, kind: crate::error::DeleteProvisioningTemplateVersionErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -8548,9 +8606,11 @@ pub fn parse_delete_provisioning_template_version_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteProvisioningTemplateVersionError { meta: generic, kind: crate::error::DeleteProvisioningTemplateVersionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -8562,9 +8622,11 @@ pub fn parse_delete_provisioning_template_version_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DeleteProvisioningTemplateVersionError { meta: generic, kind: crate::error::DeleteProvisioningTemplateVersionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -8576,9 +8638,11 @@ pub fn parse_delete_provisioning_template_version_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DeleteProvisioningTemplateVersionError { meta: generic, kind: crate::error::DeleteProvisioningTemplateVersionErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -9757,9 +9821,11 @@ pub fn parse_delete_topic_rule_destination_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::error::DeleteTopicRuleDestinationError { meta: generic, kind: crate::error::DeleteTopicRuleDestinationErrorKind::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_resource_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -9771,9 +9837,11 @@ pub fn parse_delete_topic_rule_destination_error(
             tmp
         })},
         "InternalException" => crate::error::DeleteTopicRuleDestinationError { meta: generic, kind: crate::error::DeleteTopicRuleDestinationErrorKind::InternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -9785,9 +9853,11 @@ pub fn parse_delete_topic_rule_destination_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DeleteTopicRuleDestinationError { meta: generic, kind: crate::error::DeleteTopicRuleDestinationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -9799,9 +9869,11 @@ pub fn parse_delete_topic_rule_destination_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::DeleteTopicRuleDestinationError { meta: generic, kind: crate::error::DeleteTopicRuleDestinationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -9813,9 +9885,11 @@ pub fn parse_delete_topic_rule_destination_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DeleteTopicRuleDestinationError { meta: generic, kind: crate::error::DeleteTopicRuleDestinationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -11403,9 +11477,11 @@ pub fn parse_describe_detect_mitigation_actions_task_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::DescribeDetectMitigationActionsTaskError { meta: generic, kind: crate::error::DescribeDetectMitigationActionsTaskErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectMitigationActionsTaskError::unhandled)?;
                     output.build()
@@ -11417,9 +11493,11 @@ pub fn parse_describe_detect_mitigation_actions_task_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeDetectMitigationActionsTaskError { meta: generic, kind: crate::error::DescribeDetectMitigationActionsTaskErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectMitigationActionsTaskError::unhandled)?;
                     output.build()
@@ -11431,9 +11509,11 @@ pub fn parse_describe_detect_mitigation_actions_task_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeDetectMitigationActionsTaskError { meta: generic, kind: crate::error::DescribeDetectMitigationActionsTaskErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectMitigationActionsTaskError::unhandled)?;
                     output.build()
@@ -11445,9 +11525,11 @@ pub fn parse_describe_detect_mitigation_actions_task_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeDetectMitigationActionsTaskError { meta: generic, kind: crate::error::DescribeDetectMitigationActionsTaskErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectMitigationActionsTaskError::unhandled)?;
                     output.build()
@@ -12886,9 +12968,11 @@ pub fn parse_describe_provisioning_template_version_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::DescribeProvisioningTemplateVersionError { meta: generic, kind: crate::error::DescribeProvisioningTemplateVersionErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -12900,9 +12984,11 @@ pub fn parse_describe_provisioning_template_version_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::DescribeProvisioningTemplateVersionError { meta: generic, kind: crate::error::DescribeProvisioningTemplateVersionErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -12914,9 +13000,11 @@ pub fn parse_describe_provisioning_template_version_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeProvisioningTemplateVersionError { meta: generic, kind: crate::error::DescribeProvisioningTemplateVersionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -12928,9 +13016,11 @@ pub fn parse_describe_provisioning_template_version_error(
             tmp
         })},
         "ThrottlingException" => crate::error::DescribeProvisioningTemplateVersionError { meta: generic, kind: crate::error::DescribeProvisioningTemplateVersionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -12942,9 +13032,11 @@ pub fn parse_describe_provisioning_template_version_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::DescribeProvisioningTemplateVersionError { meta: generic, kind: crate::error::DescribeProvisioningTemplateVersionErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProvisioningTemplateVersionError::unhandled)?;
                     output.build()
@@ -17332,9 +17424,11 @@ pub fn parse_list_audit_mitigation_actions_executions_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::ListAuditMitigationActionsExecutionsError { meta: generic, kind: crate::error::ListAuditMitigationActionsExecutionsErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAuditMitigationActionsExecutionsError::unhandled)?;
                     output.build()
@@ -17346,9 +17440,11 @@ pub fn parse_list_audit_mitigation_actions_executions_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListAuditMitigationActionsExecutionsError { meta: generic, kind: crate::error::ListAuditMitigationActionsExecutionsErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAuditMitigationActionsExecutionsError::unhandled)?;
                     output.build()
@@ -17360,9 +17456,11 @@ pub fn parse_list_audit_mitigation_actions_executions_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListAuditMitigationActionsExecutionsError { meta: generic, kind: crate::error::ListAuditMitigationActionsExecutionsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAuditMitigationActionsExecutionsError::unhandled)?;
                     output.build()
@@ -18375,9 +18473,11 @@ pub fn parse_list_detect_mitigation_actions_executions_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::ListDetectMitigationActionsExecutionsError { meta: generic, kind: crate::error::ListDetectMitigationActionsExecutionsErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDetectMitigationActionsExecutionsError::unhandled)?;
                     output.build()
@@ -18389,9 +18489,11 @@ pub fn parse_list_detect_mitigation_actions_executions_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListDetectMitigationActionsExecutionsError { meta: generic, kind: crate::error::ListDetectMitigationActionsExecutionsErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDetectMitigationActionsExecutionsError::unhandled)?;
                     output.build()
@@ -18403,9 +18505,11 @@ pub fn parse_list_detect_mitigation_actions_executions_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListDetectMitigationActionsExecutionsError { meta: generic, kind: crate::error::ListDetectMitigationActionsExecutionsErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDetectMitigationActionsExecutionsError::unhandled)?;
                     output.build()
@@ -20925,9 +21029,11 @@ pub fn parse_list_related_resources_for_audit_finding_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => crate::error::ListRelatedResourcesForAuditFindingError { meta: generic, kind: crate::error::ListRelatedResourcesForAuditFindingErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRelatedResourcesForAuditFindingError::unhandled)?;
                     output.build()
@@ -20939,9 +21045,11 @@ pub fn parse_list_related_resources_for_audit_finding_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::ListRelatedResourcesForAuditFindingError { meta: generic, kind: crate::error::ListRelatedResourcesForAuditFindingErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRelatedResourcesForAuditFindingError::unhandled)?;
                     output.build()
@@ -20953,9 +21061,11 @@ pub fn parse_list_related_resources_for_audit_finding_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListRelatedResourcesForAuditFindingError { meta: generic, kind: crate::error::ListRelatedResourcesForAuditFindingErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRelatedResourcesForAuditFindingError::unhandled)?;
                     output.build()
@@ -20967,9 +21077,11 @@ pub fn parse_list_related_resources_for_audit_finding_error(
             tmp
         })},
         "ThrottlingException" => crate::error::ListRelatedResourcesForAuditFindingError { meta: generic, kind: crate::error::ListRelatedResourcesForAuditFindingErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRelatedResourcesForAuditFindingError::unhandled)?;
                     output.build()
@@ -24361,7 +24473,8 @@ pub fn parse_reject_certificate_transfer_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::transfer_already_completed_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::transfer_already_completed_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_transfer_already_completed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RejectCertificateTransferError::unhandled)?;
                             output.build()
@@ -28796,9 +28909,11 @@ pub fn parse_update_provisioning_template_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::error::UpdateProvisioningTemplateError { meta: generic, kind: crate::error::UpdateProvisioningTemplateErrorKind::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_resource_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -28810,9 +28925,11 @@ pub fn parse_update_provisioning_template_error(
             tmp
         })},
         "InternalFailureException" => crate::error::UpdateProvisioningTemplateError { meta: generic, kind: crate::error::UpdateProvisioningTemplateErrorKind::InternalFailureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_failure_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -28824,9 +28941,11 @@ pub fn parse_update_provisioning_template_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateProvisioningTemplateError { meta: generic, kind: crate::error::UpdateProvisioningTemplateErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -28838,9 +28957,11 @@ pub fn parse_update_provisioning_template_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateProvisioningTemplateError { meta: generic, kind: crate::error::UpdateProvisioningTemplateErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -28852,9 +28973,11 @@ pub fn parse_update_provisioning_template_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::UpdateProvisioningTemplateError { meta: generic, kind: crate::error::UpdateProvisioningTemplateErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProvisioningTemplateError::unhandled)?;
                     output.build()
@@ -29789,9 +29912,11 @@ pub fn parse_update_topic_rule_destination_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::error::UpdateTopicRuleDestinationError { meta: generic, kind: crate::error::UpdateTopicRuleDestinationErrorKind::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflicting_resource_update_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_conflicting_resource_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -29803,9 +29928,11 @@ pub fn parse_update_topic_rule_destination_error(
             tmp
         })},
         "InternalException" => crate::error::UpdateTopicRuleDestinationError { meta: generic, kind: crate::error::UpdateTopicRuleDestinationErrorKind::InternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -29817,9 +29944,11 @@ pub fn parse_update_topic_rule_destination_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateTopicRuleDestinationError { meta: generic, kind: crate::error::UpdateTopicRuleDestinationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -29831,9 +29960,11 @@ pub fn parse_update_topic_rule_destination_error(
             tmp
         })},
         "ServiceUnavailableException" => crate::error::UpdateTopicRuleDestinationError { meta: generic, kind: crate::error::UpdateTopicRuleDestinationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTopicRuleDestinationError::unhandled)?;
                     output.build()
@@ -29845,9 +29976,11 @@ pub fn parse_update_topic_rule_destination_error(
             tmp
         })},
         "UnauthorizedException" => crate::error::UpdateTopicRuleDestinationError { meta: generic, kind: crate::error::UpdateTopicRuleDestinationErrorKind::UnauthorizedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unauthorized_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTopicRuleDestinationError::unhandled)?;
                     output.build()

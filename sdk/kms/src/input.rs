@@ -4776,7 +4776,8 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_generate_data_key_pair_without_plaintext(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5040,7 +5041,8 @@ impl GenerateDataKeyWithoutPlaintextInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_generate_data_key_without_plaintext(&self)?
         );
         if let Some(content_length) = body.content_length() {

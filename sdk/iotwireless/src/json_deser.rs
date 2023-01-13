@@ -4131,7 +4131,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::device_registration_state_resource_type_event_configuration::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::device_registration_state_resource_type_event_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -4238,7 +4239,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::message_delivery_status_resource_type_event_configuration::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::message_delivery_status_resource_type_event_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -6901,7 +6903,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -7346,7 +7349,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

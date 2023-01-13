@@ -80,7 +80,8 @@ pub fn parse_accept_transit_gateway_multicast_domain_associations_response(
     crate::error::AcceptTransitGatewayMulticastDomainAssociationsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::accept_transit_gateway_multicast_domain_associations_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::accept_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_accept_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::AcceptTransitGatewayMulticastDomainAssociationsError::unhandled)?;
         output.build()
@@ -349,7 +350,8 @@ pub fn parse_apply_security_groups_to_client_vpn_target_network_response(
     crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::apply_security_groups_to_client_vpn_target_network_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::apply_security_groups_to_client_vpn_target_network_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_apply_security_groups_to_client_vpn_target_network(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError::unhandled)?;
         output.build()
@@ -2392,7 +2394,8 @@ pub fn parse_create_local_gateway_route_table_virtual_interface_group_associatio
     crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_local_gateway_route_table_virtual_interface_group_association(response.body().as_ref(), output).map_err(crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled)?;
         output.build()
@@ -2419,7 +2422,8 @@ pub fn parse_create_local_gateway_route_table_vpc_association_response(
     crate::error::CreateLocalGatewayRouteTableVpcAssociationError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::create_local_gateway_route_table_vpc_association_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_local_gateway_route_table_vpc_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_local_gateway_route_table_vpc_association(response.body().as_ref(), output).map_err(crate::error::CreateLocalGatewayRouteTableVpcAssociationError::unhandled)?;
         output.build()
@@ -4642,7 +4646,8 @@ pub fn parse_delete_local_gateway_route_table_virtual_interface_group_associatio
     crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_local_gateway_route_table_virtual_interface_group_association(response.body().as_ref(), output).map_err(crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled)?;
         output.build()
@@ -4669,7 +4674,8 @@ pub fn parse_delete_local_gateway_route_table_vpc_association_response(
     crate::error::DeleteLocalGatewayRouteTableVpcAssociationError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::delete_local_gateway_route_table_vpc_association_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_local_gateway_route_table_vpc_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_local_gateway_route_table_vpc_association(response.body().as_ref(), output).map_err(crate::error::DeleteLocalGatewayRouteTableVpcAssociationError::unhandled)?;
         output.build()
@@ -6280,7 +6286,8 @@ pub fn parse_deregister_instance_event_notification_attributes_response(
     crate::error::DeregisterInstanceEventNotificationAttributesError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::deregister_instance_event_notification_attributes_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::deregister_instance_event_notification_attributes_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_deregister_instance_event_notification_attributes(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceEventNotificationAttributesError::unhandled)?;
         output.build()
@@ -6307,7 +6314,8 @@ pub fn parse_deregister_transit_gateway_multicast_group_members_response(
     crate::error::DeregisterTransitGatewayMulticastGroupMembersError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::deregister_transit_gateway_multicast_group_members_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::deregister_transit_gateway_multicast_group_members_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_deregister_transit_gateway_multicast_group_members(response.body().as_ref(), output).map_err(crate::error::DeregisterTransitGatewayMulticastGroupMembersError::unhandled)?;
         output.build()
@@ -6334,7 +6342,8 @@ pub fn parse_deregister_transit_gateway_multicast_group_sources_response(
     crate::error::DeregisterTransitGatewayMulticastGroupSourcesError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::deregister_transit_gateway_multicast_group_sources_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::deregister_transit_gateway_multicast_group_sources_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_deregister_transit_gateway_multicast_group_sources(response.body().as_ref(), output).map_err(crate::error::DeregisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
         output.build()
@@ -6559,7 +6568,8 @@ pub fn parse_describe_aws_network_performance_metric_subscriptions_response(
     crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_aws_network_performance_metric_subscriptions_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_aws_network_performance_metric_subscriptions_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_aws_network_performance_metric_subscriptions(response.body().as_ref(), output).map_err(crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError::unhandled)?;
         output.build()
@@ -8302,7 +8312,8 @@ pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associat
     crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_local_gateway_route_table_virtual_interface_group_associations_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_local_gateway_route_table_virtual_interface_group_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_route_table_virtual_interface_group_associations(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
         output.build()
@@ -8329,7 +8340,8 @@ pub fn parse_describe_local_gateway_route_table_vpc_associations_response(
     crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_local_gateway_route_table_vpc_associations_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_local_gateway_route_table_vpc_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_route_table_vpc_associations(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError::unhandled)?;
         output.build()
@@ -10027,7 +10039,8 @@ pub fn parse_describe_transit_gateway_route_table_announcements_response(
     crate::error::DescribeTransitGatewayRouteTableAnnouncementsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_transit_gateway_route_table_announcements_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_transit_gateway_route_table_announcements_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_route_table_announcements(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayRouteTableAnnouncementsError::unhandled)?;
         output.build()
@@ -10244,7 +10257,8 @@ pub fn parse_describe_verified_access_instance_logging_configurations_response(
     crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::describe_verified_access_instance_logging_configurations_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_verified_access_instance_logging_configurations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_verified_access_instance_logging_configurations(response.body().as_ref(), output).map_err(crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError::unhandled)?;
         output.build()
@@ -11064,7 +11078,8 @@ pub fn parse_disable_aws_network_performance_metric_subscription_response(
     crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::disable_aws_network_performance_metric_subscription_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::disable_aws_network_performance_metric_subscription_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disable_aws_network_performance_metric_subscription(response.body().as_ref(), output).map_err(crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError::unhandled)?;
         output.build()
@@ -11816,7 +11831,8 @@ pub fn parse_enable_aws_network_performance_metric_subscription_response(
     crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::enable_aws_network_performance_metric_subscription_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::enable_aws_network_performance_metric_subscription_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_enable_aws_network_performance_metric_subscription(response.body().as_ref(), output).map_err(crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError::unhandled)?;
         output.build()
@@ -12001,7 +12017,8 @@ pub fn parse_enable_reachability_analyzer_organization_sharing_response(
     crate::error::EnableReachabilityAnalyzerOrganizationSharingError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::enable_reachability_analyzer_organization_sharing_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::enable_reachability_analyzer_organization_sharing_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_enable_reachability_analyzer_organization_sharing(response.body().as_ref(), output).map_err(crate::error::EnableReachabilityAnalyzerOrganizationSharingError::unhandled)?;
         output.build()
@@ -12210,7 +12227,8 @@ pub fn parse_export_client_vpn_client_certificate_revocation_list_response(
     crate::error::ExportClientVpnClientCertificateRevocationListError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::export_client_vpn_client_certificate_revocation_list_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::export_client_vpn_client_certificate_revocation_list_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_export_client_vpn_client_certificate_revocation_list(response.body().as_ref(), output).map_err(crate::error::ExportClientVpnClientCertificateRevocationListError::unhandled)?;
         output.build()
@@ -13033,7 +13051,8 @@ pub fn parse_get_network_insights_access_scope_analysis_findings_response(
     crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::get_network_insights_access_scope_analysis_findings_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_network_insights_access_scope_analysis_findings_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_network_insights_access_scope_analysis_findings(response.body().as_ref(), output).map_err(crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError::unhandled)?;
         output.build()
@@ -13274,7 +13293,8 @@ pub fn parse_get_transit_gateway_multicast_domain_associations_response(
     crate::error::GetTransitGatewayMulticastDomainAssociationsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::get_transit_gateway_multicast_domain_associations_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::unhandled)?;
         output.build()
@@ -13581,7 +13601,8 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_response(
     crate::error::ImportClientVpnClientCertificateRevocationListError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::import_client_vpn_client_certificate_revocation_list_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::import_client_vpn_client_certificate_revocation_list_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_import_client_vpn_client_certificate_revocation_list(response.body().as_ref(), output).map_err(crate::error::ImportClientVpnClientCertificateRevocationListError::unhandled)?;
         output.build()
@@ -15272,7 +15293,8 @@ pub fn parse_modify_verified_access_instance_logging_configuration_response(
     crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::modify_verified_access_instance_logging_configuration_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_verified_access_instance_logging_configuration_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_verified_access_instance_logging_configuration(response.body().as_ref(), output).map_err(crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError::unhandled)?;
         output.build()
@@ -15494,7 +15516,8 @@ pub fn parse_modify_vpc_endpoint_service_payer_responsibility_response(
     crate::error::ModifyVpcEndpointServicePayerResponsibilityError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::modify_vpc_endpoint_service_payer_responsibility_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_vpc_endpoint_service_payer_responsibility_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_service_payer_responsibility(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointServicePayerResponsibilityError::unhandled)?;
         output.build()
@@ -16102,7 +16125,8 @@ pub fn parse_register_transit_gateway_multicast_group_members_response(
     crate::error::RegisterTransitGatewayMulticastGroupMembersError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::register_transit_gateway_multicast_group_members_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::register_transit_gateway_multicast_group_members_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_register_transit_gateway_multicast_group_members(response.body().as_ref(), output).map_err(crate::error::RegisterTransitGatewayMulticastGroupMembersError::unhandled)?;
         output.build()
@@ -16129,7 +16153,8 @@ pub fn parse_register_transit_gateway_multicast_group_sources_response(
     crate::error::RegisterTransitGatewayMulticastGroupSourcesError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::register_transit_gateway_multicast_group_sources_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::register_transit_gateway_multicast_group_sources_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_register_transit_gateway_multicast_group_sources(response.body().as_ref(), output).map_err(crate::error::RegisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
         output.build()
@@ -16156,7 +16181,8 @@ pub fn parse_reject_transit_gateway_multicast_domain_associations_response(
     crate::error::RejectTransitGatewayMulticastDomainAssociationsError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::reject_transit_gateway_multicast_domain_associations_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::reject_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_reject_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::RejectTransitGatewayMulticastDomainAssociationsError::unhandled)?;
         output.build()
@@ -17404,7 +17430,8 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_response(
     crate::error::StartVpcEndpointServicePrivateDnsVerificationError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::start_vpc_endpoint_service_private_dns_verification_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_vpc_endpoint_service_private_dns_verification_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_start_vpc_endpoint_service_private_dns_verification(response.body().as_ref(), output).map_err(crate::error::StartVpcEndpointServicePrivateDnsVerificationError::unhandled)?;
         output.build()

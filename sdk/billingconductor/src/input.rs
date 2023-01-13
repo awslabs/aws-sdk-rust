@@ -499,7 +499,8 @@ impl BatchAssociateResourcesToCustomLineItemInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_resources_to_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -703,7 +704,8 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_resources_from_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3237,7 +3239,8 @@ impl ListBillingGroupCostReportsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_billing_group_cost_reports(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3839,7 +3842,8 @@ impl ListCustomLineItemVersionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_custom_line_item_versions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4243,7 +4247,8 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_pricing_plans_associated_with_pricing_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4646,7 +4651,8 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_pricing_rules_associated_to_pricing_plan(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4863,7 +4869,8 @@ impl ListResourcesAssociatedToCustomLineItemInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_list_resources_associated_to_custom_line_item(&self)?
         );
         if let Some(content_length) = body.content_length() {

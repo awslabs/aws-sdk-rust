@@ -412,7 +412,8 @@ impl AssociateTimeSeriesToAssetPropertyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_time_series_to_asset_property(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -632,7 +633,8 @@ impl BatchAssociateProjectAssetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_associate_project_assets(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -852,7 +854,8 @@ impl BatchDisassociateProjectAssetsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_project_assets(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1059,7 +1062,8 @@ impl BatchGetAssetPropertyAggregatesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_get_asset_property_aggregates(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1243,7 +1247,8 @@ impl BatchGetAssetPropertyValueInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_get_asset_property_value(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1451,7 +1456,8 @@ impl BatchGetAssetPropertyValueHistoryInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_get_asset_property_value_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1621,7 +1627,8 @@ impl BatchPutAssetPropertyValueInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_put_asset_property_value(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8093,7 +8100,8 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_time_series_from_asset_property(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12981,7 +12989,8 @@ impl PutDefaultEncryptionConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_put_default_encryption_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15513,7 +15522,8 @@ impl UpdateGatewayCapabilityConfigurationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_gateway_capability_configuration(&self)?
         );
         if let Some(content_length) = body.content_length() {

@@ -1270,24 +1270,24 @@ pub fn parse_get_records_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::GetRecordsError {
-                meta: generic,
-                kind: crate::error::GetRecordsErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::GetRecordsError {
+            meta: generic,
+            kind: crate::error::GetRecordsErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArgumentException" => crate::error::GetRecordsError {
             meta: generic,
             kind: crate::error::GetRecordsErrorKind::InvalidArgumentException({
@@ -1397,7 +1397,8 @@ pub fn parse_get_shard_iterator_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetShardIteratorError::unhandled)?;
                         output.build()
@@ -2288,24 +2289,24 @@ pub fn parse_put_record_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::PutRecordError {
-                meta: generic,
-                kind: crate::error::PutRecordErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::PutRecordError {
+            meta: generic,
+            kind: crate::error::PutRecordErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArgumentException" => crate::error::PutRecordError {
             meta: generic,
             kind: crate::error::PutRecordErrorKind::InvalidArgumentException({
@@ -2493,24 +2494,24 @@ pub fn parse_put_records_error(
                 tmp
             }),
         },
-        "ProvisionedThroughputExceededException" => {
-            crate::error::PutRecordsError {
-                meta: generic,
-                kind: crate::error::PutRecordsErrorKind::ProvisionedThroughputExceededException({
+        "ProvisionedThroughputExceededException" => crate::error::PutRecordsError {
+            meta: generic,
+            kind: crate::error::PutRecordsErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordsError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidArgumentException" => crate::error::PutRecordsError {
             meta: generic,
             kind: crate::error::PutRecordsErrorKind::InvalidArgumentException({

@@ -3001,9 +3001,11 @@ pub fn parse_update_firewall_encryption_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerError" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3015,9 +3017,11 @@ pub fn parse_update_firewall_encryption_configuration_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3029,9 +3033,11 @@ pub fn parse_update_firewall_encryption_configuration_error(
             tmp
         })},
         "InvalidTokenException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::InvalidTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3043,9 +3049,11 @@ pub fn parse_update_firewall_encryption_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3057,9 +3065,11 @@ pub fn parse_update_firewall_encryption_configuration_error(
             tmp
         })},
         "ResourceOwnerCheckException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ResourceOwnerCheckException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_owner_check_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_owner_check_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_owner_check_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3071,9 +3081,11 @@ pub fn parse_update_firewall_encryption_configuration_error(
             tmp
         })},
         "ThrottlingException" => crate::error::UpdateFirewallEncryptionConfigurationError { meta: generic, kind: crate::error::UpdateFirewallEncryptionConfigurationErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallEncryptionConfigurationError::unhandled)?;
                     output.build()
@@ -3249,9 +3261,11 @@ pub fn parse_update_firewall_policy_change_protection_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerError" => crate::error::UpdateFirewallPolicyChangeProtectionError { meta: generic, kind: crate::error::UpdateFirewallPolicyChangeProtectionErrorKind::InternalServerError({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallPolicyChangeProtectionError::unhandled)?;
                     output.build()
@@ -3263,9 +3277,11 @@ pub fn parse_update_firewall_policy_change_protection_error(
             tmp
         })},
         "InvalidRequestException" => crate::error::UpdateFirewallPolicyChangeProtectionError { meta: generic, kind: crate::error::UpdateFirewallPolicyChangeProtectionErrorKind::InvalidRequestException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_request_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallPolicyChangeProtectionError::unhandled)?;
                     output.build()
@@ -3277,9 +3293,11 @@ pub fn parse_update_firewall_policy_change_protection_error(
             tmp
         })},
         "InvalidTokenException" => crate::error::UpdateFirewallPolicyChangeProtectionError { meta: generic, kind: crate::error::UpdateFirewallPolicyChangeProtectionErrorKind::InvalidTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallPolicyChangeProtectionError::unhandled)?;
                     output.build()
@@ -3291,9 +3309,11 @@ pub fn parse_update_firewall_policy_change_protection_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateFirewallPolicyChangeProtectionError { meta: generic, kind: crate::error::UpdateFirewallPolicyChangeProtectionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallPolicyChangeProtectionError::unhandled)?;
                     output.build()
@@ -3305,9 +3325,11 @@ pub fn parse_update_firewall_policy_change_protection_error(
             tmp
         })},
         "ResourceOwnerCheckException" => crate::error::UpdateFirewallPolicyChangeProtectionError { meta: generic, kind: crate::error::UpdateFirewallPolicyChangeProtectionErrorKind::ResourceOwnerCheckException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_owner_check_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_owner_check_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_owner_check_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallPolicyChangeProtectionError::unhandled)?;
                     output.build()
@@ -3319,9 +3341,11 @@ pub fn parse_update_firewall_policy_change_protection_error(
             tmp
         })},
         "ThrottlingException" => crate::error::UpdateFirewallPolicyChangeProtectionError { meta: generic, kind: crate::error::UpdateFirewallPolicyChangeProtectionErrorKind::ThrottlingException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFirewallPolicyChangeProtectionError::unhandled)?;
                     output.build()
@@ -3431,7 +3455,8 @@ pub fn parse_update_logging_configuration_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::log_destination_permission_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::log_destination_permission_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_log_destination_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoggingConfigurationError::unhandled)?;
                             output.build()

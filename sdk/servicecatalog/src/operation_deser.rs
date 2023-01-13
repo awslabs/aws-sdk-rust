@@ -405,9 +405,11 @@ pub fn parse_associate_service_action_with_provisioning_artifact_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DuplicateResourceException" => crate::error::AssociateServiceActionWithProvisioningArtifactError { meta: generic, kind: crate::error::AssociateServiceActionWithProvisioningArtifactErrorKind::DuplicateResourceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::duplicate_resource_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_resource_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceActionWithProvisioningArtifactError::unhandled)?;
                     output.build()
@@ -419,9 +421,11 @@ pub fn parse_associate_service_action_with_provisioning_artifact_error(
             tmp
         })},
         "LimitExceededException" => crate::error::AssociateServiceActionWithProvisioningArtifactError { meta: generic, kind: crate::error::AssociateServiceActionWithProvisioningArtifactErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceActionWithProvisioningArtifactError::unhandled)?;
                     output.build()
@@ -433,9 +437,11 @@ pub fn parse_associate_service_action_with_provisioning_artifact_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::AssociateServiceActionWithProvisioningArtifactError { meta: generic, kind: crate::error::AssociateServiceActionWithProvisioningArtifactErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceActionWithProvisioningArtifactError::unhandled)?;
                     output.build()
@@ -458,7 +464,8 @@ pub fn parse_associate_service_action_with_provisioning_artifact_response(
     crate::error::AssociateServiceActionWithProvisioningArtifactError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::associate_service_action_with_provisioning_artifact_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::associate_service_action_with_provisioning_artifact_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -638,9 +645,11 @@ pub fn parse_batch_associate_service_action_with_provisioning_artifact_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::BatchAssociateServiceActionWithProvisioningArtifactError { meta: generic, kind: crate::error::BatchAssociateServiceActionWithProvisioningArtifactErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchAssociateServiceActionWithProvisioningArtifactError::unhandled)?;
                     output.build()
@@ -663,7 +672,8 @@ pub fn parse_batch_associate_service_action_with_provisioning_artifact_response(
     crate::error::BatchAssociateServiceActionWithProvisioningArtifactError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::batch_associate_service_action_with_provisioning_artifact_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_associate_service_action_with_provisioning_artifact_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_batch_associate_service_action_with_provisioning_artifact(response.body().as_ref(), output).map_err(crate::error::BatchAssociateServiceActionWithProvisioningArtifactError::unhandled)?;
         output.build()
@@ -692,9 +702,11 @@ pub fn parse_batch_disassociate_service_action_from_provisioning_artifact_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::BatchDisassociateServiceActionFromProvisioningArtifactError { meta: generic, kind: crate::error::BatchDisassociateServiceActionFromProvisioningArtifactErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
                     output.build()
@@ -717,7 +729,8 @@ pub fn parse_batch_disassociate_service_action_from_provisioning_artifact_respon
     crate::error::BatchDisassociateServiceActionFromProvisioningArtifactError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::batch_disassociate_service_action_from_provisioning_artifact_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_disassociate_service_action_from_provisioning_artifact_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_batch_disassociate_service_action_from_provisioning_artifact(response.body().as_ref(), output).map_err(crate::error::BatchDisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
         output.build()
@@ -3257,9 +3270,11 @@ pub fn parse_describe_service_action_execution_parameters_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::DescribeServiceActionExecutionParametersError { meta: generic, kind: crate::error::DescribeServiceActionExecutionParametersErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceActionExecutionParametersError::unhandled)?;
                     output.build()
@@ -3271,9 +3286,11 @@ pub fn parse_describe_service_action_execution_parameters_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DescribeServiceActionExecutionParametersError { meta: generic, kind: crate::error::DescribeServiceActionExecutionParametersErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceActionExecutionParametersError::unhandled)?;
                     output.build()
@@ -3548,9 +3565,11 @@ pub fn parse_disassociate_principal_from_portfolio_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::DisassociatePrincipalFromPortfolioError { meta: generic, kind: crate::error::DisassociatePrincipalFromPortfolioErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePrincipalFromPortfolioError::unhandled)?;
                     output.build()
@@ -3562,9 +3581,11 @@ pub fn parse_disassociate_principal_from_portfolio_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DisassociatePrincipalFromPortfolioError { meta: generic, kind: crate::error::DisassociatePrincipalFromPortfolioErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePrincipalFromPortfolioError::unhandled)?;
                     output.build()
@@ -3718,9 +3739,11 @@ pub fn parse_disassociate_service_action_from_provisioning_artifact_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundException" => crate::error::DisassociateServiceActionFromProvisioningArtifactError { meta: generic, kind: crate::error::DisassociateServiceActionFromProvisioningArtifactErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceActionFromProvisioningArtifactError::unhandled)?;
                     output.build()
@@ -3743,7 +3766,8 @@ pub fn parse_disassociate_service_action_from_provisioning_artifact_response(
     crate::error::DisassociateServiceActionFromProvisioningArtifactError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::disassociate_service_action_from_provisioning_artifact_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::disassociate_service_action_from_provisioning_artifact_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -3768,9 +3792,11 @@ pub fn parse_disassociate_tag_option_from_resource_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundException" => crate::error::DisassociateTagOptionFromResourceError { meta: generic, kind: crate::error::DisassociateTagOptionFromResourceErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTagOptionFromResourceError::unhandled)?;
                     output.build()
@@ -3782,9 +3808,11 @@ pub fn parse_disassociate_tag_option_from_resource_error(
             tmp
         })},
         "TagOptionNotMigratedException" => crate::error::DisassociateTagOptionFromResourceError { meta: generic, kind: crate::error::DisassociateTagOptionFromResourceErrorKind::TagOptionNotMigratedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tag_option_not_migrated_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_option_not_migrated_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tag_option_not_migrated_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTagOptionFromResourceError::unhandled)?;
                     output.build()
@@ -4032,9 +4060,11 @@ pub fn parse_execute_provisioned_product_service_action_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::ExecuteProvisionedProductServiceActionError { meta: generic, kind: crate::error::ExecuteProvisionedProductServiceActionErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExecuteProvisionedProductServiceActionError::unhandled)?;
                     output.build()
@@ -4046,9 +4076,11 @@ pub fn parse_execute_provisioned_product_service_action_error(
             tmp
         })},
         "InvalidStateException" => crate::error::ExecuteProvisionedProductServiceActionError { meta: generic, kind: crate::error::ExecuteProvisionedProductServiceActionErrorKind::InvalidStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExecuteProvisionedProductServiceActionError::unhandled)?;
                     output.build()
@@ -4060,9 +4092,11 @@ pub fn parse_execute_provisioned_product_service_action_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ExecuteProvisionedProductServiceActionError { meta: generic, kind: crate::error::ExecuteProvisionedProductServiceActionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExecuteProvisionedProductServiceActionError::unhandled)?;
                     output.build()
@@ -4111,9 +4145,11 @@ pub fn parse_get_aws_organizations_access_status_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "OperationNotSupportedException" => crate::error::GetAWSOrganizationsAccessStatusError { meta: generic, kind: crate::error::GetAWSOrganizationsAccessStatusErrorKind::OperationNotSupportedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_supported_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_supported_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAWSOrganizationsAccessStatusError::unhandled)?;
                     output.build()
@@ -4125,9 +4161,11 @@ pub fn parse_get_aws_organizations_access_status_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetAWSOrganizationsAccessStatusError { meta: generic, kind: crate::error::GetAWSOrganizationsAccessStatusErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAWSOrganizationsAccessStatusError::unhandled)?;
                     output.build()
@@ -4681,9 +4719,11 @@ pub fn parse_list_organization_portfolio_access_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::ListOrganizationPortfolioAccessError { meta: generic, kind: crate::error::ListOrganizationPortfolioAccessErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationPortfolioAccessError::unhandled)?;
                     output.build()
@@ -4695,9 +4735,11 @@ pub fn parse_list_organization_portfolio_access_error(
             tmp
         })},
         "OperationNotSupportedException" => crate::error::ListOrganizationPortfolioAccessError { meta: generic, kind: crate::error::ListOrganizationPortfolioAccessErrorKind::OperationNotSupportedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::operation_not_supported_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_not_supported_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationPortfolioAccessError::unhandled)?;
                     output.build()
@@ -4709,9 +4751,11 @@ pub fn parse_list_organization_portfolio_access_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListOrganizationPortfolioAccessError { meta: generic, kind: crate::error::ListOrganizationPortfolioAccessErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOrganizationPortfolioAccessError::unhandled)?;
                     output.build()
@@ -5206,9 +5250,11 @@ pub fn parse_list_provisioning_artifacts_for_service_action_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::ListProvisioningArtifactsForServiceActionError { meta: generic, kind: crate::error::ListProvisioningArtifactsForServiceActionErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisioningArtifactsForServiceActionError::unhandled)?;
                     output.build()
@@ -5220,9 +5266,11 @@ pub fn parse_list_provisioning_artifacts_for_service_action_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListProvisioningArtifactsForServiceActionError { meta: generic, kind: crate::error::ListProvisioningArtifactsForServiceActionErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisioningArtifactsForServiceActionError::unhandled)?;
                     output.build()
@@ -5484,9 +5532,11 @@ pub fn parse_list_service_actions_for_provisioning_artifact_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::ListServiceActionsForProvisioningArtifactError { meta: generic, kind: crate::error::ListServiceActionsForProvisioningArtifactErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceActionsForProvisioningArtifactError::unhandled)?;
                     output.build()
@@ -5498,9 +5548,11 @@ pub fn parse_list_service_actions_for_provisioning_artifact_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListServiceActionsForProvisioningArtifactError { meta: generic, kind: crate::error::ListServiceActionsForProvisioningArtifactErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceActionsForProvisioningArtifactError::unhandled)?;
                     output.build()
@@ -5554,9 +5606,11 @@ pub fn parse_list_stack_instances_for_provisioned_product_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::ListStackInstancesForProvisionedProductError { meta: generic, kind: crate::error::ListStackInstancesForProvisionedProductErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStackInstancesForProvisionedProductError::unhandled)?;
                     output.build()
@@ -5568,9 +5622,11 @@ pub fn parse_list_stack_instances_for_provisioned_product_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListStackInstancesForProvisionedProductError { meta: generic, kind: crate::error::ListStackInstancesForProvisionedProductErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStackInstancesForProvisionedProductError::unhandled)?;
                     output.build()
@@ -6583,9 +6639,11 @@ pub fn parse_update_provisioned_product_properties_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParametersException" => crate::error::UpdateProvisionedProductPropertiesError { meta: generic, kind: crate::error::UpdateProvisionedProductPropertiesErrorKind::InvalidParametersException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameters_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameters_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameters_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProvisionedProductPropertiesError::unhandled)?;
                     output.build()
@@ -6597,9 +6655,11 @@ pub fn parse_update_provisioned_product_properties_error(
             tmp
         })},
         "InvalidStateException" => crate::error::UpdateProvisionedProductPropertiesError { meta: generic, kind: crate::error::UpdateProvisionedProductPropertiesErrorKind::InvalidStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProvisionedProductPropertiesError::unhandled)?;
                     output.build()
@@ -6611,9 +6671,11 @@ pub fn parse_update_provisioned_product_properties_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateProvisionedProductPropertiesError { meta: generic, kind: crate::error::UpdateProvisionedProductPropertiesErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProvisionedProductPropertiesError::unhandled)?;
                     output.build()

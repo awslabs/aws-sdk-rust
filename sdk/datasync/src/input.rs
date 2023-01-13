@@ -2577,7 +2577,8 @@ impl CreateLocationObjectStorageInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_location_object_storage(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4735,7 +4736,8 @@ impl DescribeLocationFsxOpenZfsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_open_zfs(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4898,7 +4900,8 @@ impl DescribeLocationFsxWindowsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_location_fsx_windows(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -5391,7 +5394,8 @@ impl DescribeLocationObjectStorageInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_location_object_storage(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -8614,7 +8618,8 @@ impl UpdateLocationObjectStorageInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_update_location_object_storage(&self)?
         );
         if let Some(content_length) = body.content_length() {

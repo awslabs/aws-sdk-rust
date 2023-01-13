@@ -298,9 +298,11 @@ pub fn parse_batch_get_repository_scanning_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => crate::error::BatchGetRepositoryScanningConfigurationError { meta: generic, kind: crate::error::BatchGetRepositoryScanningConfigurationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
                     output.build()
@@ -312,9 +314,11 @@ pub fn parse_batch_get_repository_scanning_configuration_error(
             tmp
         })},
         "RepositoryNotFoundException" => crate::error::BatchGetRepositoryScanningConfigurationError { meta: generic, kind: crate::error::BatchGetRepositoryScanningConfigurationErrorKind::RepositoryNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
                     output.build()
@@ -326,9 +330,11 @@ pub fn parse_batch_get_repository_scanning_configuration_error(
             tmp
         })},
         "ServerException" => crate::error::BatchGetRepositoryScanningConfigurationError { meta: generic, kind: crate::error::BatchGetRepositoryScanningConfigurationErrorKind::ServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
                     output.build()
@@ -340,9 +346,11 @@ pub fn parse_batch_get_repository_scanning_configuration_error(
             tmp
         })},
         "ValidationException" => crate::error::BatchGetRepositoryScanningConfigurationError { meta: generic, kind: crate::error::BatchGetRepositoryScanningConfigurationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
                     output.build()
@@ -597,9 +605,11 @@ pub fn parse_create_pull_through_cache_rule_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -611,9 +621,11 @@ pub fn parse_create_pull_through_cache_rule_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -625,9 +637,11 @@ pub fn parse_create_pull_through_cache_rule_error(
             tmp
         })},
         "PullThroughCacheRuleAlreadyExistsException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::PullThroughCacheRuleAlreadyExistsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_through_cache_rule_already_exists_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_through_cache_rule_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_through_cache_rule_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -639,9 +653,11 @@ pub fn parse_create_pull_through_cache_rule_error(
             tmp
         })},
         "ServerException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::ServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -653,9 +669,11 @@ pub fn parse_create_pull_through_cache_rule_error(
             tmp
         })},
         "UnsupportedUpstreamRegistryException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::UnsupportedUpstreamRegistryException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_upstream_registry_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_upstream_registry_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_upstream_registry_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -667,9 +685,11 @@ pub fn parse_create_pull_through_cache_rule_error(
             tmp
         })},
         "ValidationException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -1000,9 +1020,11 @@ pub fn parse_delete_pull_through_cache_rule_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => crate::error::DeletePullThroughCacheRuleError { meta: generic, kind: crate::error::DeletePullThroughCacheRuleErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -1014,9 +1036,11 @@ pub fn parse_delete_pull_through_cache_rule_error(
             tmp
         })},
         "PullThroughCacheRuleNotFoundException" => crate::error::DeletePullThroughCacheRuleError { meta: generic, kind: crate::error::DeletePullThroughCacheRuleErrorKind::PullThroughCacheRuleNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_through_cache_rule_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_through_cache_rule_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_through_cache_rule_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -1028,9 +1052,11 @@ pub fn parse_delete_pull_through_cache_rule_error(
             tmp
         })},
         "ServerException" => crate::error::DeletePullThroughCacheRuleError { meta: generic, kind: crate::error::DeletePullThroughCacheRuleErrorKind::ServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -1042,9 +1068,11 @@ pub fn parse_delete_pull_through_cache_rule_error(
             tmp
         })},
         "ValidationException" => crate::error::DeletePullThroughCacheRuleError { meta: generic, kind: crate::error::DeletePullThroughCacheRuleErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
                     output.build()
@@ -1848,9 +1876,11 @@ pub fn parse_describe_pull_through_cache_rules_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => crate::error::DescribePullThroughCacheRulesError { meta: generic, kind: crate::error::DescribePullThroughCacheRulesErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
                     output.build()
@@ -1862,9 +1892,11 @@ pub fn parse_describe_pull_through_cache_rules_error(
             tmp
         })},
         "PullThroughCacheRuleNotFoundException" => crate::error::DescribePullThroughCacheRulesError { meta: generic, kind: crate::error::DescribePullThroughCacheRulesErrorKind::PullThroughCacheRuleNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::pull_through_cache_rule_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::pull_through_cache_rule_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_pull_through_cache_rule_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
                     output.build()
@@ -1876,9 +1908,11 @@ pub fn parse_describe_pull_through_cache_rules_error(
             tmp
         })},
         "ServerException" => crate::error::DescribePullThroughCacheRulesError { meta: generic, kind: crate::error::DescribePullThroughCacheRulesErrorKind::ServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
                     output.build()
@@ -1890,9 +1924,11 @@ pub fn parse_describe_pull_through_cache_rules_error(
             tmp
         })},
         "ValidationException" => crate::error::DescribePullThroughCacheRulesError { meta: generic, kind: crate::error::DescribePullThroughCacheRulesErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
                     output.build()
@@ -2453,9 +2489,11 @@ pub fn parse_get_lifecycle_policy_preview_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => crate::error::GetLifecyclePolicyPreviewError { meta: generic, kind: crate::error::GetLifecyclePolicyPreviewErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLifecyclePolicyPreviewError::unhandled)?;
                     output.build()
@@ -2467,9 +2505,11 @@ pub fn parse_get_lifecycle_policy_preview_error(
             tmp
         })},
         "LifecyclePolicyPreviewNotFoundException" => crate::error::GetLifecyclePolicyPreviewError { meta: generic, kind: crate::error::GetLifecyclePolicyPreviewErrorKind::LifecyclePolicyPreviewNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::lifecycle_policy_preview_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::lifecycle_policy_preview_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_lifecycle_policy_preview_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLifecyclePolicyPreviewError::unhandled)?;
                     output.build()
@@ -2481,9 +2521,11 @@ pub fn parse_get_lifecycle_policy_preview_error(
             tmp
         })},
         "RepositoryNotFoundException" => crate::error::GetLifecyclePolicyPreviewError { meta: generic, kind: crate::error::GetLifecyclePolicyPreviewErrorKind::RepositoryNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLifecyclePolicyPreviewError::unhandled)?;
                     output.build()
@@ -2495,9 +2537,11 @@ pub fn parse_get_lifecycle_policy_preview_error(
             tmp
         })},
         "ServerException" => crate::error::GetLifecyclePolicyPreviewError { meta: generic, kind: crate::error::GetLifecyclePolicyPreviewErrorKind::ServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLifecyclePolicyPreviewError::unhandled)?;
                     output.build()
@@ -4232,9 +4276,11 @@ pub fn parse_start_lifecycle_policy_preview_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => crate::error::StartLifecyclePolicyPreviewError { meta: generic, kind: crate::error::StartLifecyclePolicyPreviewErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLifecyclePolicyPreviewError::unhandled)?;
                     output.build()
@@ -4246,9 +4292,11 @@ pub fn parse_start_lifecycle_policy_preview_error(
             tmp
         })},
         "LifecyclePolicyNotFoundException" => crate::error::StartLifecyclePolicyPreviewError { meta: generic, kind: crate::error::StartLifecyclePolicyPreviewErrorKind::LifecyclePolicyNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::lifecycle_policy_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::lifecycle_policy_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_lifecycle_policy_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLifecyclePolicyPreviewError::unhandled)?;
                     output.build()
@@ -4260,9 +4308,11 @@ pub fn parse_start_lifecycle_policy_preview_error(
             tmp
         })},
         "LifecyclePolicyPreviewInProgressException" => crate::error::StartLifecyclePolicyPreviewError { meta: generic, kind: crate::error::StartLifecyclePolicyPreviewErrorKind::LifecyclePolicyPreviewInProgressException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::lifecycle_policy_preview_in_progress_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::lifecycle_policy_preview_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_lifecycle_policy_preview_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLifecyclePolicyPreviewError::unhandled)?;
                     output.build()
@@ -4274,9 +4324,11 @@ pub fn parse_start_lifecycle_policy_preview_error(
             tmp
         })},
         "RepositoryNotFoundException" => crate::error::StartLifecyclePolicyPreviewError { meta: generic, kind: crate::error::StartLifecyclePolicyPreviewErrorKind::RepositoryNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::repository_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::repository_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_repository_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLifecyclePolicyPreviewError::unhandled)?;
                     output.build()
@@ -4288,9 +4340,11 @@ pub fn parse_start_lifecycle_policy_preview_error(
             tmp
         })},
         "ServerException" => crate::error::StartLifecyclePolicyPreviewError { meta: generic, kind: crate::error::StartLifecyclePolicyPreviewErrorKind::ServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartLifecyclePolicyPreviewError::unhandled)?;
                     output.build()

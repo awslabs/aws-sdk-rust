@@ -521,7 +521,8 @@ impl DecreaseStreamRetentionPeriodInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_decrease_stream_retention_period(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -852,8 +853,8 @@ impl DeregisterStreamConsumerInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_operation_type(Some("control".to_string()))
-            .set_stream_arn(self.stream_arn.clone())
             .set_consumer_arn(self.consumer_arn.clone())
+            .set_stream_arn(self.stream_arn.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1396,8 +1397,8 @@ impl DescribeStreamConsumerInput {
             .set_use_fips(_config.use_fips)
             .set_use_dual_stack(_config.use_dual_stack)
             .set_operation_type(Some("control".to_string()))
-            .set_consumer_arn(self.consumer_arn.clone())
             .set_stream_arn(self.stream_arn.clone())
+            .set_consumer_arn(self.consumer_arn.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2712,7 +2713,8 @@ impl IncreaseStreamRetentionPeriodInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_increase_stream_retention_period(&self)?
         );
         if let Some(content_length) = body.content_length() {

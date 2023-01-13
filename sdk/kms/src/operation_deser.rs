@@ -137,9 +137,11 @@ pub fn parse_connect_custom_key_store_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudHsmClusterInvalidConfigurationException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -151,9 +153,11 @@ pub fn parse_connect_custom_key_store_error(
             tmp
         })},
         "CloudHsmClusterNotActiveException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_active_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -165,9 +169,11 @@ pub fn parse_connect_custom_key_store_error(
             tmp
         })},
         "CustomKeyStoreInvalidStateException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -179,9 +185,11 @@ pub fn parse_connect_custom_key_store_error(
             tmp
         })},
         "CustomKeyStoreNotFoundException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::custom_key_store_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::custom_key_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -193,9 +201,11 @@ pub fn parse_connect_custom_key_store_error(
             tmp
         })},
         "KMSInternalException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::KmsInternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -390,9 +400,11 @@ pub fn parse_create_custom_key_store_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudHsmClusterInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -404,9 +416,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "CloudHsmClusterInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -418,9 +432,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "CloudHsmClusterNotActiveException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_active_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -432,9 +448,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "CloudHsmClusterNotFoundException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -446,9 +464,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "CustomKeyStoreNameInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::custom_key_store_name_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::custom_key_store_name_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_name_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -460,9 +480,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "IncorrectTrustAnchorException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::incorrect_trust_anchor_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::incorrect_trust_anchor_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incorrect_trust_anchor_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -474,9 +496,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "KMSInternalException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::KmsInternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -488,9 +512,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "LimitExceededException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::LimitExceededException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -502,9 +528,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyIncorrectAuthenticationCredentialException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_incorrect_authentication_credential_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -516,9 +544,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_invalid_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -530,9 +560,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyInvalidResponseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_invalid_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_invalid_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -544,9 +576,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyUriEndpointInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_endpoint_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -558,9 +592,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyUriInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_uri_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -572,9 +608,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyUriUnreachableException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_unreachable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_uri_unreachable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_unreachable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -586,9 +624,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyVpcEndpointServiceInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -600,9 +640,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyVpcEndpointServiceInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -614,9 +656,11 @@ pub fn parse_create_custom_key_store_error(
             tmp
         })},
         "XksProxyVpcEndpointServiceNotFoundException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -842,7 +886,8 @@ pub fn parse_create_key_error(
             kind: crate::error::CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
                     output.build()
@@ -853,24 +898,24 @@ pub fn parse_create_key_error(
                 tmp
             }),
         },
-        "CustomKeyStoreInvalidStateException" => {
-            crate::error::CreateKeyError {
-                meta: generic,
-                kind: crate::error::CreateKeyErrorKind::CustomKeyStoreInvalidStateException({
+        "CustomKeyStoreInvalidStateException" => crate::error::CreateKeyError {
+            meta: generic,
+            kind: crate::error::CreateKeyErrorKind::CustomKeyStoreInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::custom_key_store_invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "CustomKeyStoreNotFoundException" => crate::error::CreateKeyError {
             meta: generic,
             kind: crate::error::CreateKeyErrorKind::CustomKeyStoreNotFoundException({
@@ -1432,7 +1477,8 @@ pub fn parse_delete_custom_key_store_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
                         let _ = response;
                         output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomKeyStoreError::unhandled)?;
                         output.build()
@@ -2140,7 +2186,8 @@ pub fn parse_disconnect_custom_key_store_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectCustomKeyStoreError::unhandled)?;
                             output.build()
@@ -3054,9 +3101,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DependencyTimeoutException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3068,9 +3117,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
             tmp
         })},
         "DisabledException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::disabled_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3082,9 +3133,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
             tmp
         })},
         "InvalidGrantTokenException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_grant_token_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_grant_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3096,9 +3149,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
             tmp
         })},
         "InvalidKeyUsageException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3110,9 +3165,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
             tmp
         })},
         "KeyUnavailableException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::key_unavailable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3124,9 +3181,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
             tmp
         })},
         "KMSInternalException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3138,9 +3197,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
             tmp
         })},
         "KMSInvalidStateException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3152,9 +3213,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
             tmp
         })},
         "NotFoundException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3166,9 +3229,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
             tmp
         })},
         "UnsupportedOperationException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
                     output.build()
@@ -3566,24 +3631,24 @@ pub fn parse_generate_random_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomKeyStoreInvalidStateException" => {
-            crate::error::GenerateRandomError {
-                meta: generic,
-                kind: crate::error::GenerateRandomErrorKind::CustomKeyStoreInvalidStateException({
+        "CustomKeyStoreInvalidStateException" => crate::error::GenerateRandomError {
+            meta: generic,
+            kind: crate::error::GenerateRandomErrorKind::CustomKeyStoreInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::custom_key_store_invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "CustomKeyStoreNotFoundException" => crate::error::GenerateRandomError {
             meta: generic,
             kind: crate::error::GenerateRandomErrorKind::CustomKeyStoreNotFoundException({
@@ -6750,9 +6815,11 @@ pub fn parse_update_custom_key_store_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CloudHsmClusterInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6764,9 +6831,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "CloudHsmClusterNotActiveException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_active_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6778,9 +6847,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "CloudHsmClusterNotFoundException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6792,9 +6863,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "CloudHsmClusterNotRelatedException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cloud_hsm_cluster_not_related_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cloud_hsm_cluster_not_related_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_related_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6806,9 +6879,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "CustomKeyStoreInvalidStateException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6820,9 +6895,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "CustomKeyStoreNameInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::custom_key_store_name_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::custom_key_store_name_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_name_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6834,9 +6911,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "CustomKeyStoreNotFoundException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::custom_key_store_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::custom_key_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6848,9 +6927,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "KMSInternalException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::KmsInternalException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::kms_internal_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6862,9 +6943,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyIncorrectAuthenticationCredentialException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_incorrect_authentication_credential_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6876,9 +6959,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_invalid_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6890,9 +6975,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyInvalidResponseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_invalid_response_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_invalid_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6904,9 +6991,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyUriEndpointInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_endpoint_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6918,9 +7007,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyUriInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_uri_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6932,9 +7023,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyUriUnreachableException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_uri_unreachable_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_uri_unreachable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_unreachable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6946,9 +7039,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyVpcEndpointServiceInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6960,9 +7055,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyVpcEndpointServiceInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()
@@ -6974,9 +7071,11 @@ pub fn parse_update_custom_key_store_error(
             tmp
         })},
         "XksProxyVpcEndpointServiceNotFoundException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
                     output.build()

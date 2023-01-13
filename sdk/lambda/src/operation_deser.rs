@@ -1506,9 +1506,11 @@ pub fn parse_delete_function_code_signing_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CodeSigningConfigNotFoundException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -1520,9 +1522,11 @@ pub fn parse_delete_function_code_signing_config_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -1534,9 +1538,11 @@ pub fn parse_delete_function_code_signing_config_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -1548,9 +1554,11 @@ pub fn parse_delete_function_code_signing_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -1562,9 +1570,11 @@ pub fn parse_delete_function_code_signing_config_error(
             tmp
         })},
         "ServiceException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -1576,9 +1586,11 @@ pub fn parse_delete_function_code_signing_config_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -1763,9 +1775,11 @@ pub fn parse_delete_function_event_invoke_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
@@ -1777,9 +1791,11 @@ pub fn parse_delete_function_event_invoke_config_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
@@ -1791,9 +1807,11 @@ pub fn parse_delete_function_event_invoke_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
@@ -1805,9 +1823,11 @@ pub fn parse_delete_function_event_invoke_config_error(
             tmp
         })},
         "ServiceException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
@@ -1819,9 +1839,11 @@ pub fn parse_delete_function_event_invoke_config_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -2063,9 +2085,11 @@ pub fn parse_delete_provisioned_concurrency_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -2077,9 +2101,11 @@ pub fn parse_delete_provisioned_concurrency_config_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -2091,9 +2117,11 @@ pub fn parse_delete_provisioned_concurrency_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -2105,9 +2133,11 @@ pub fn parse_delete_provisioned_concurrency_config_error(
             tmp
         })},
         "ServiceException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -2119,9 +2149,11 @@ pub fn parse_delete_provisioned_concurrency_config_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3729,9 +3761,11 @@ pub fn parse_get_provisioned_concurrency_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -3743,9 +3777,11 @@ pub fn parse_get_provisioned_concurrency_config_error(
             tmp
         })},
         "ProvisionedConcurrencyConfigNotFoundException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::provisioned_concurrency_config_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::provisioned_concurrency_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_concurrency_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -3757,9 +3793,11 @@ pub fn parse_get_provisioned_concurrency_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -3771,9 +3809,11 @@ pub fn parse_get_provisioned_concurrency_config_error(
             tmp
         })},
         "ServiceException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -3785,9 +3825,11 @@ pub fn parse_get_provisioned_concurrency_config_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -4292,24 +4334,24 @@ pub fn parse_invoke_error(
                 tmp
             }),
         },
-        "SubnetIPAddressLimitReachedException" => {
-            crate::error::InvokeError {
-                meta: generic,
-                kind: crate::error::InvokeErrorKind::SubnetIpAddressLimitReachedException({
+        "SubnetIPAddressLimitReachedException" => crate::error::InvokeError {
+            meta: generic,
+            kind: crate::error::InvokeErrorKind::SubnetIpAddressLimitReachedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::subnet_ip_address_limit_reached_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_subnet_ip_address_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::subnet_ip_address_limit_reached_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_subnet_ip_address_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "TooManyRequestsException" => crate::error::InvokeError {
             meta: generic,
             kind: crate::error::InvokeErrorKind::TooManyRequestsException({
@@ -4841,9 +4883,11 @@ pub fn parse_list_function_event_invoke_configs_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::ListFunctionEventInvokeConfigsError { meta: generic, kind: crate::error::ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                     output.build()
@@ -4855,9 +4899,11 @@ pub fn parse_list_function_event_invoke_configs_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListFunctionEventInvokeConfigsError { meta: generic, kind: crate::error::ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                     output.build()
@@ -4869,9 +4915,11 @@ pub fn parse_list_function_event_invoke_configs_error(
             tmp
         })},
         "ServiceException" => crate::error::ListFunctionEventInvokeConfigsError { meta: generic, kind: crate::error::ListFunctionEventInvokeConfigsErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                     output.build()
@@ -4883,9 +4931,11 @@ pub fn parse_list_function_event_invoke_configs_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListFunctionEventInvokeConfigsError { meta: generic, kind: crate::error::ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -5037,9 +5087,11 @@ pub fn parse_list_functions_by_code_signing_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::ListFunctionsByCodeSigningConfigError { meta: generic, kind: crate::error::ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -5051,9 +5103,11 @@ pub fn parse_list_functions_by_code_signing_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListFunctionsByCodeSigningConfigError { meta: generic, kind: crate::error::ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -5065,9 +5119,11 @@ pub fn parse_list_functions_by_code_signing_config_error(
             tmp
         })},
         "ServiceException" => crate::error::ListFunctionsByCodeSigningConfigError { meta: generic, kind: crate::error::ListFunctionsByCodeSigningConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -5440,9 +5496,11 @@ pub fn parse_list_provisioned_concurrency_configs_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::ListProvisionedConcurrencyConfigsError { meta: generic, kind: crate::error::ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     output.build()
@@ -5454,9 +5512,11 @@ pub fn parse_list_provisioned_concurrency_configs_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::ListProvisionedConcurrencyConfigsError { meta: generic, kind: crate::error::ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     output.build()
@@ -5468,9 +5528,11 @@ pub fn parse_list_provisioned_concurrency_configs_error(
             tmp
         })},
         "ServiceException" => crate::error::ListProvisionedConcurrencyConfigsError { meta: generic, kind: crate::error::ListProvisionedConcurrencyConfigsErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     output.build()
@@ -5482,9 +5544,11 @@ pub fn parse_list_provisioned_concurrency_configs_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::ListProvisionedConcurrencyConfigsError { meta: generic, kind: crate::error::ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -6064,9 +6128,11 @@ pub fn parse_put_function_code_signing_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CodeSigningConfigNotFoundException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -6078,9 +6144,11 @@ pub fn parse_put_function_code_signing_config_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -6092,9 +6160,11 @@ pub fn parse_put_function_code_signing_config_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -6106,9 +6176,11 @@ pub fn parse_put_function_code_signing_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -6120,9 +6192,11 @@ pub fn parse_put_function_code_signing_config_error(
             tmp
         })},
         "ServiceException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
@@ -6134,9 +6208,11 @@ pub fn parse_put_function_code_signing_config_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -6469,9 +6545,11 @@ pub fn parse_put_provisioned_concurrency_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -6483,9 +6561,11 @@ pub fn parse_put_provisioned_concurrency_config_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -6497,9 +6577,11 @@ pub fn parse_put_provisioned_concurrency_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -6511,9 +6593,11 @@ pub fn parse_put_provisioned_concurrency_config_error(
             tmp
         })},
         "ServiceException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
@@ -6525,9 +6609,11 @@ pub fn parse_put_provisioned_concurrency_config_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -7711,9 +7797,11 @@ pub fn parse_update_function_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CodeSigningConfigNotFoundException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
@@ -7725,9 +7813,11 @@ pub fn parse_update_function_configuration_error(
             tmp
         })},
         "CodeVerificationFailedException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::CodeVerificationFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::code_verification_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::code_verification_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
@@ -7739,9 +7829,11 @@ pub fn parse_update_function_configuration_error(
             tmp
         })},
         "InvalidCodeSignatureException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_code_signature_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_code_signature_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
@@ -7753,9 +7845,11 @@ pub fn parse_update_function_configuration_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
@@ -7767,9 +7861,11 @@ pub fn parse_update_function_configuration_error(
             tmp
         })},
         "PreconditionFailedException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::PreconditionFailedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::precondition_failed_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
@@ -7781,9 +7877,11 @@ pub fn parse_update_function_configuration_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
@@ -7795,9 +7893,11 @@ pub fn parse_update_function_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
@@ -7809,9 +7909,11 @@ pub fn parse_update_function_configuration_error(
             tmp
         })},
         "ServiceException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
@@ -7823,9 +7925,11 @@ pub fn parse_update_function_configuration_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -7881,9 +7985,11 @@ pub fn parse_update_function_event_invoke_config_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
@@ -7895,9 +8001,11 @@ pub fn parse_update_function_event_invoke_config_error(
             tmp
         })},
         "ResourceConflictException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
@@ -7909,9 +8017,11 @@ pub fn parse_update_function_event_invoke_config_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
@@ -7923,9 +8033,11 @@ pub fn parse_update_function_event_invoke_config_error(
             tmp
         })},
         "ServiceException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
@@ -7937,9 +8049,11 @@ pub fn parse_update_function_event_invoke_config_error(
             tmp
         })},
         "TooManyRequestsException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(

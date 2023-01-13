@@ -7202,7 +7202,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::iot_site_wise_customer_managed_datastore_s3_storage_summary::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::iot_site_wise_customer_managed_datastore_s3_storage_summary::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

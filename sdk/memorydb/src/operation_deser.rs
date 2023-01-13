@@ -453,24 +453,24 @@ pub fn parse_create_cluster_error(
                 tmp
             }),
         },
-        "ClusterQuotaForCustomerExceededFault" => {
-            crate::error::CreateClusterError {
-                meta: generic,
-                kind: crate::error::CreateClusterErrorKind::ClusterQuotaForCustomerExceededFault({
+        "ClusterQuotaForCustomerExceededFault" => crate::error::CreateClusterError {
+            meta: generic,
+            kind: crate::error::CreateClusterErrorKind::ClusterQuotaForCustomerExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InsufficientClusterCapacityFault" => crate::error::CreateClusterError {
             meta: generic,
             kind: crate::error::CreateClusterErrorKind::InsufficientClusterCapacityFault({
@@ -2230,7 +2230,8 @@ pub fn parse_describe_engine_versions_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEngineVersionsError::unhandled)?;
                             output.build()
@@ -2417,7 +2418,8 @@ pub fn parse_describe_parameter_groups_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeParameterGroupsError::unhandled)?;
                             output.build()
@@ -2523,27 +2525,27 @@ pub fn parse_describe_parameters_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombinationException" => {
-            crate::error::DescribeParametersError {
-                meta: generic,
-                kind:
-                    crate::error::DescribeParametersErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombinationException" => crate::error::DescribeParametersError {
+            meta: generic,
+            kind: crate::error::DescribeParametersErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeParametersError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidParameterValueException" => crate::error::DescribeParametersError {
             meta: generic,
             kind: crate::error::DescribeParametersErrorKind::InvalidParameterValueException({
@@ -2645,7 +2647,8 @@ pub fn parse_describe_reserved_nodes_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesError::unhandled)?;
                             output.build()
@@ -2752,9 +2755,11 @@ pub fn parse_describe_reserved_nodes_offerings_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombinationException" => crate::error::DescribeReservedNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedNodesOfferingsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
                     output.build()
@@ -2766,9 +2771,11 @@ pub fn parse_describe_reserved_nodes_offerings_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::DescribeReservedNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedNodesOfferingsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
                     output.build()
@@ -2780,9 +2787,11 @@ pub fn parse_describe_reserved_nodes_offerings_error(
             tmp
         })},
         "ReservedNodesOfferingNotFoundFault" => crate::error::DescribeReservedNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedNodesOfferingsErrorKind::ReservedNodesOfferingNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_nodes_offering_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_nodes_offering_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_reserved_nodes_offering_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
                     output.build()
@@ -2794,9 +2803,11 @@ pub fn parse_describe_reserved_nodes_offerings_error(
             tmp
         })},
         "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeReservedNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedNodesOfferingsErrorKind::ServiceLinkedRoleNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodesOfferingsError::unhandled)?;
                     output.build()
@@ -2860,7 +2871,8 @@ pub fn parse_describe_service_updates_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
                             output.build()
@@ -3178,24 +3190,24 @@ pub fn parse_failover_shard_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "APICallRateForCustomerExceededFault" => {
-            crate::error::FailoverShardError {
-                meta: generic,
-                kind: crate::error::FailoverShardErrorKind::ApiCallRateForCustomerExceededFault({
+        "APICallRateForCustomerExceededFault" => crate::error::FailoverShardError {
+            meta: generic,
+            kind: crate::error::FailoverShardErrorKind::ApiCallRateForCustomerExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::api_call_rate_for_customer_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::FailoverShardError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::api_call_rate_for_customer_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::FailoverShardError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ClusterNotFoundFault" => crate::error::FailoverShardError {
             meta: generic,
             kind: crate::error::FailoverShardErrorKind::ClusterNotFoundFault({
@@ -3360,9 +3372,11 @@ pub fn parse_list_allowed_node_type_updates_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterNotFoundFault" => crate::error::ListAllowedNodeTypeUpdatesError { meta: generic, kind: crate::error::ListAllowedNodeTypeUpdatesErrorKind::ClusterNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cluster_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cluster_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeUpdatesError::unhandled)?;
                     output.build()
@@ -3374,9 +3388,11 @@ pub fn parse_list_allowed_node_type_updates_error(
             tmp
         })},
         "InvalidParameterCombinationException" => crate::error::ListAllowedNodeTypeUpdatesError { meta: generic, kind: crate::error::ListAllowedNodeTypeUpdatesErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeUpdatesError::unhandled)?;
                     output.build()
@@ -3388,9 +3404,11 @@ pub fn parse_list_allowed_node_type_updates_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::ListAllowedNodeTypeUpdatesError { meta: generic, kind: crate::error::ListAllowedNodeTypeUpdatesErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeUpdatesError::unhandled)?;
                     output.build()
@@ -3402,9 +3420,11 @@ pub fn parse_list_allowed_node_type_updates_error(
             tmp
         })},
         "ServiceLinkedRoleNotFoundFault" => crate::error::ListAllowedNodeTypeUpdatesError { meta: generic, kind: crate::error::ListAllowedNodeTypeUpdatesErrorKind::ServiceLinkedRoleNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeUpdatesError::unhandled)?;
                     output.build()
@@ -3651,9 +3671,11 @@ pub fn parse_purchase_reserved_nodes_offering_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombinationException" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
                     output.build()
@@ -3665,9 +3687,11 @@ pub fn parse_purchase_reserved_nodes_offering_error(
             tmp
         })},
         "InvalidParameterValueException" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
                     output.build()
@@ -3679,9 +3703,11 @@ pub fn parse_purchase_reserved_nodes_offering_error(
             tmp
         })},
         "ReservedNodeAlreadyExistsFault" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodeAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_node_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_reserved_node_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
                     output.build()
@@ -3693,9 +3719,11 @@ pub fn parse_purchase_reserved_nodes_offering_error(
             tmp
         })},
         "ReservedNodeQuotaExceededFault" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodeQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_node_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_reserved_node_quota_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
                     output.build()
@@ -3707,9 +3735,11 @@ pub fn parse_purchase_reserved_nodes_offering_error(
             tmp
         })},
         "ReservedNodesOfferingNotFoundFault" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::ReservedNodesOfferingNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_nodes_offering_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_nodes_offering_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_reserved_nodes_offering_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
                     output.build()
@@ -3721,9 +3751,11 @@ pub fn parse_purchase_reserved_nodes_offering_error(
             tmp
         })},
         "ServiceLinkedRoleNotFoundFault" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::ServiceLinkedRoleNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_linked_role_not_found_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
                     output.build()
@@ -3735,9 +3767,11 @@ pub fn parse_purchase_reserved_nodes_offering_error(
             tmp
         })},
         "TagQuotaPerResourceExceeded" => crate::error::PurchaseReservedNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedNodesOfferingErrorKind::TagQuotaPerResourceExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodesOfferingError::unhandled)?;
                     output.build()
@@ -3789,27 +3823,27 @@ pub fn parse_reset_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombinationException" => {
-            crate::error::ResetParameterGroupError {
-                meta: generic,
-                kind:
-                    crate::error::ResetParameterGroupErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetParameterGroupError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombinationException" => crate::error::ResetParameterGroupError {
+            meta: generic,
+            kind: crate::error::ResetParameterGroupErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_combination_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetParameterGroupError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidParameterGroupStateFault" => crate::error::ResetParameterGroupError {
             meta: generic,
             kind: crate::error::ResetParameterGroupErrorKind::InvalidParameterGroupStateFault({
@@ -4525,24 +4559,24 @@ pub fn parse_update_cluster_error(
                 tmp
             }),
         },
-        "ClusterQuotaForCustomerExceededFault" => {
-            crate::error::UpdateClusterError {
-                meta: generic,
-                kind: crate::error::UpdateClusterErrorKind::ClusterQuotaForCustomerExceededFault({
+        "ClusterQuotaForCustomerExceededFault" => crate::error::UpdateClusterError {
+            meta: generic,
+            kind: crate::error::UpdateClusterErrorKind::ClusterQuotaForCustomerExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateClusterError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidACLStateFault" => crate::error::UpdateClusterError {
             meta: generic,
             kind: crate::error::UpdateClusterErrorKind::InvalidAclStateFault({

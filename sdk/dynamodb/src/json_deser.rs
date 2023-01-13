@@ -12124,7 +12124,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::replica_global_secondary_index_auto_scaling_description::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::replica_global_secondary_index_auto_scaling_description::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -12204,7 +12205,8 @@ where
     match tokens.next().transpose()? {
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]let mut builder = crate::model::auto_scaling_target_tracking_scaling_policy_configuration_description::Builder::default();
+            #[allow(unused_mut)]
+            let mut builder = crate::model::auto_scaling_target_tracking_scaling_policy_configuration_description::Builder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

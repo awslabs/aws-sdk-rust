@@ -270,9 +270,11 @@ pub fn parse_authorize_cache_security_group_ingress_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AuthorizationAlreadyExists" => crate::error::AuthorizeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::authorization_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::authorization_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_authorization_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -284,9 +286,11 @@ pub fn parse_authorize_cache_security_group_ingress_error(
             tmp
         })},
         "CacheSecurityGroupNotFound" => crate::error::AuthorizeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -298,9 +302,11 @@ pub fn parse_authorize_cache_security_group_ingress_error(
             tmp
         })},
         "InvalidCacheSecurityGroupState" => crate::error::AuthorizeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -312,9 +318,11 @@ pub fn parse_authorize_cache_security_group_ingress_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::AuthorizeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -326,9 +334,11 @@ pub fn parse_authorize_cache_security_group_ingress_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::AuthorizeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -572,7 +582,8 @@ pub fn parse_complete_migration_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::replication_group_not_under_migration_fault::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_not_under_migration_fault::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_replication_group_not_under_migration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteMigrationError::unhandled)?;
                         output.build()
@@ -858,7 +869,8 @@ pub fn parse_create_cache_cluster_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                         output.build()
@@ -876,7 +888,8 @@ pub fn parse_create_cache_cluster_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
                         output.build()
@@ -888,27 +901,27 @@ pub fn parse_create_cache_cluster_error(
                 },
             ),
         },
-        "InvalidParameterCombination" => {
-            crate::error::CreateCacheClusterError {
-                meta: generic,
-                kind:
-                    crate::error::CreateCacheClusterErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombination" => crate::error::CreateCacheClusterError {
+            meta: generic,
+            kind: crate::error::CreateCacheClusterErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidParameterValue" => crate::error::CreateCacheClusterError {
             meta: generic,
             kind: crate::error::CreateCacheClusterErrorKind::InvalidParameterValueException({
@@ -1080,9 +1093,11 @@ pub fn parse_create_cache_parameter_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheParameterGroupAlreadyExists" => crate::error::CreateCacheParameterGroupError { meta: generic, kind: crate::error::CreateCacheParameterGroupErrorKind::CacheParameterGroupAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_parameter_group_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -1094,9 +1109,11 @@ pub fn parse_create_cache_parameter_group_error(
             tmp
         })},
         "CacheParameterGroupQuotaExceeded" => crate::error::CreateCacheParameterGroupError { meta: generic, kind: crate::error::CreateCacheParameterGroupErrorKind::CacheParameterGroupQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_parameter_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -1108,9 +1125,11 @@ pub fn parse_create_cache_parameter_group_error(
             tmp
         })},
         "InvalidCacheParameterGroupState" => crate::error::CreateCacheParameterGroupError { meta: generic, kind: crate::error::CreateCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -1122,9 +1141,11 @@ pub fn parse_create_cache_parameter_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::CreateCacheParameterGroupError { meta: generic, kind: crate::error::CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -1136,9 +1157,11 @@ pub fn parse_create_cache_parameter_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::CreateCacheParameterGroupError { meta: generic, kind: crate::error::CreateCacheParameterGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -1150,9 +1173,11 @@ pub fn parse_create_cache_parameter_group_error(
             tmp
         })},
         "TagQuotaPerResourceExceeded" => crate::error::CreateCacheParameterGroupError { meta: generic, kind: crate::error::CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -1208,9 +1233,11 @@ pub fn parse_create_cache_security_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheSecurityGroupAlreadyExists" => crate::error::CreateCacheSecurityGroupError { meta: generic, kind: crate::error::CreateCacheSecurityGroupErrorKind::CacheSecurityGroupAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_security_group_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_security_group_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -1222,9 +1249,11 @@ pub fn parse_create_cache_security_group_error(
             tmp
         })},
         "QuotaExceeded.CacheSecurityGroup" => crate::error::CreateCacheSecurityGroupError { meta: generic, kind: crate::error::CreateCacheSecurityGroupErrorKind::CacheSecurityGroupQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_security_group_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_security_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -1236,9 +1265,11 @@ pub fn parse_create_cache_security_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::CreateCacheSecurityGroupError { meta: generic, kind: crate::error::CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -1250,9 +1281,11 @@ pub fn parse_create_cache_security_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::CreateCacheSecurityGroupError { meta: generic, kind: crate::error::CreateCacheSecurityGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -1264,9 +1297,11 @@ pub fn parse_create_cache_security_group_error(
             tmp
         })},
         "TagQuotaPerResourceExceeded" => crate::error::CreateCacheSecurityGroupError { meta: generic, kind: crate::error::CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -1482,9 +1517,11 @@ pub fn parse_create_global_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupAlreadyExistsFault" => crate::error::CreateGlobalReplicationGroupError { meta: generic, kind: crate::error::CreateGlobalReplicationGroupErrorKind::GlobalReplicationGroupAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -1496,9 +1533,11 @@ pub fn parse_create_global_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::CreateGlobalReplicationGroupError { meta: generic, kind: crate::error::CreateGlobalReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -1510,9 +1549,11 @@ pub fn parse_create_global_replication_group_error(
             tmp
         })},
         "InvalidReplicationGroupState" => crate::error::CreateGlobalReplicationGroupError { meta: generic, kind: crate::error::CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -1524,9 +1565,11 @@ pub fn parse_create_global_replication_group_error(
             tmp
         })},
         "ReplicationGroupNotFoundFault" => crate::error::CreateGlobalReplicationGroupError { meta: generic, kind: crate::error::CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -1538,9 +1581,11 @@ pub fn parse_create_global_replication_group_error(
             tmp
         })},
         "ServiceLinkedRoleNotFoundFault" => crate::error::CreateGlobalReplicationGroupError { meta: generic, kind: crate::error::CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -1596,9 +1641,11 @@ pub fn parse_create_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheClusterNotFound" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::CacheClusterNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_cluster_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1610,9 +1657,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "CacheParameterGroupNotFound" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::CacheParameterGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1624,9 +1673,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "CacheSecurityGroupNotFound" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::CacheSecurityGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1638,9 +1689,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "CacheSubnetGroupNotFoundFault" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::CacheSubnetGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_subnet_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1652,9 +1705,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "ClusterQuotaForCustomerExceeded" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::ClusterQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1666,9 +1721,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "GlobalReplicationGroupNotFoundFault" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1680,9 +1737,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "InsufficientCacheClusterCapacity" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::InsufficientCacheClusterCapacityFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1694,9 +1753,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "InvalidCacheClusterState" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::InvalidCacheClusterStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1708,9 +1769,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1722,9 +1785,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1736,9 +1801,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1750,9 +1817,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "InvalidUserGroupState" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::InvalidUserGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_user_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_user_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1764,9 +1833,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "InvalidVPCNetworkStateFault" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::InvalidVpcNetworkStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1778,9 +1849,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "NodeGroupsPerReplicationGroupQuotaExceeded" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1792,9 +1865,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "NodeQuotaForClusterExceeded" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::NodeQuotaForClusterExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1806,9 +1881,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "NodeQuotaForCustomerExceeded" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1820,9 +1897,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "ReplicationGroupAlreadyExists" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_group_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1834,9 +1913,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "TagQuotaPerResourceExceeded" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -1848,9 +1929,11 @@ pub fn parse_create_replication_group_error(
             tmp
         })},
         "UserGroupNotFound" => crate::error::CreateReplicationGroupError { meta: generic, kind: crate::error::CreateReplicationGroupErrorKind::UserGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::user_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
                     output.build()
@@ -2454,9 +2537,11 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupNotFoundFault" => crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError { meta: generic, kind: crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -2468,9 +2553,11 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError { meta: generic, kind: crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -2482,9 +2569,11 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError { meta: generic, kind: crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -2496,9 +2585,11 @@ pub fn parse_decrease_node_groups_in_global_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError { meta: generic, kind: crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -2521,7 +2612,8 @@ pub fn parse_decrease_node_groups_in_global_replication_group_response(
     crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::decrease_node_groups_in_global_replication_group_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::decrease_node_groups_in_global_replication_group_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_decrease_node_groups_in_global_replication_group(response.body().as_ref(), output).map_err(crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
         output.build()
@@ -2545,9 +2637,11 @@ pub fn parse_decrease_replica_count_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterQuotaForCustomerExceeded" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2559,9 +2653,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "InsufficientCacheClusterCapacity" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2573,9 +2669,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "InvalidCacheClusterState" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::InvalidCacheClusterStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2587,9 +2685,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2601,9 +2701,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2615,9 +2717,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "InvalidReplicationGroupState" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2629,9 +2733,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "InvalidVPCNetworkStateFault" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2643,9 +2749,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "NodeGroupsPerReplicationGroupQuotaExceeded" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2657,9 +2765,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "NodeQuotaForCustomerExceeded" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2671,9 +2781,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "NoOperationFault" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::NoOperationFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_operation_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_operation_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2685,9 +2797,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "ReplicationGroupNotFoundFault" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2699,9 +2813,11 @@ pub fn parse_decrease_replica_count_error(
             tmp
         })},
         "ServiceLinkedRoleNotFoundFault" => crate::error::DecreaseReplicaCountError { meta: generic, kind: crate::error::DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_linked_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -2788,27 +2904,27 @@ pub fn parse_delete_cache_cluster_error(
                 tmp
             }),
         },
-        "InvalidParameterCombination" => {
-            crate::error::DeleteCacheClusterError {
-                meta: generic,
-                kind:
-                    crate::error::DeleteCacheClusterErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombination" => crate::error::DeleteCacheClusterError {
+            meta: generic,
+            kind: crate::error::DeleteCacheClusterErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheClusterError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidParameterValue" => crate::error::DeleteCacheClusterError {
             meta: generic,
             kind: crate::error::DeleteCacheClusterErrorKind::InvalidParameterValueException({
@@ -2926,9 +3042,11 @@ pub fn parse_delete_cache_parameter_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheParameterGroupNotFound" => crate::error::DeleteCacheParameterGroupError { meta: generic, kind: crate::error::DeleteCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -2940,9 +3058,11 @@ pub fn parse_delete_cache_parameter_group_error(
             tmp
         })},
         "InvalidCacheParameterGroupState" => crate::error::DeleteCacheParameterGroupError { meta: generic, kind: crate::error::DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -2954,9 +3074,11 @@ pub fn parse_delete_cache_parameter_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::DeleteCacheParameterGroupError { meta: generic, kind: crate::error::DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -2968,9 +3090,11 @@ pub fn parse_delete_cache_parameter_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DeleteCacheParameterGroupError { meta: generic, kind: crate::error::DeleteCacheParameterGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -3021,9 +3145,11 @@ pub fn parse_delete_cache_security_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheSecurityGroupNotFound" => crate::error::DeleteCacheSecurityGroupError { meta: generic, kind: crate::error::DeleteCacheSecurityGroupErrorKind::CacheSecurityGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -3035,9 +3161,11 @@ pub fn parse_delete_cache_security_group_error(
             tmp
         })},
         "InvalidCacheSecurityGroupState" => crate::error::DeleteCacheSecurityGroupError { meta: generic, kind: crate::error::DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -3049,9 +3177,11 @@ pub fn parse_delete_cache_security_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::DeleteCacheSecurityGroupError { meta: generic, kind: crate::error::DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -3063,9 +3193,11 @@ pub fn parse_delete_cache_security_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DeleteCacheSecurityGroupError { meta: generic, kind: crate::error::DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSecurityGroupError::unhandled)?;
                     output.build()
@@ -3190,9 +3322,11 @@ pub fn parse_delete_global_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupNotFoundFault" => crate::error::DeleteGlobalReplicationGroupError { meta: generic, kind: crate::error::DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -3204,9 +3338,11 @@ pub fn parse_delete_global_replication_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::DeleteGlobalReplicationGroupError { meta: generic, kind: crate::error::DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -3218,9 +3354,11 @@ pub fn parse_delete_global_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DeleteGlobalReplicationGroupError { meta: generic, kind: crate::error::DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -3282,7 +3420,8 @@ pub fn parse_delete_replication_group_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
                             output.build()
@@ -3553,7 +3692,8 @@ pub fn parse_delete_user_error(
                 kind: crate::error::DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault({
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::default_user_associated_to_user_group_fault::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::default_user_associated_to_user_group_fault::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_default_user_associated_to_user_group_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
                         output.build()
@@ -3804,7 +3944,8 @@ pub fn parse_describe_cache_clusters_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheClustersError::unhandled)?;
                             output.build()
@@ -3913,9 +4054,11 @@ pub fn parse_describe_cache_parameter_groups_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheParameterGroupNotFound" => crate::error::DescribeCacheParameterGroupsError { meta: generic, kind: crate::error::DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
                     output.build()
@@ -3927,9 +4070,11 @@ pub fn parse_describe_cache_parameter_groups_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::DescribeCacheParameterGroupsError { meta: generic, kind: crate::error::DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
                     output.build()
@@ -3941,9 +4086,11 @@ pub fn parse_describe_cache_parameter_groups_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DescribeCacheParameterGroupsError { meta: generic, kind: crate::error::DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
                     output.build()
@@ -4025,7 +4172,8 @@ pub fn parse_describe_cache_parameters_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParametersError::unhandled)?;
                             output.build()
@@ -4100,9 +4248,11 @@ pub fn parse_describe_cache_security_groups_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheSecurityGroupNotFound" => crate::error::DescribeCacheSecurityGroupsError { meta: generic, kind: crate::error::DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
                     output.build()
@@ -4114,9 +4264,11 @@ pub fn parse_describe_cache_security_groups_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::DescribeCacheSecurityGroupsError { meta: generic, kind: crate::error::DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
                     output.build()
@@ -4128,9 +4280,11 @@ pub fn parse_describe_cache_security_groups_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DescribeCacheSecurityGroupsError { meta: generic, kind: crate::error::DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheSecurityGroupsError::unhandled)?;
                     output.build()
@@ -4246,9 +4400,11 @@ pub fn parse_describe_engine_default_parameters_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombination" => crate::error::DescribeEngineDefaultParametersError { meta: generic, kind: crate::error::DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
                     output.build()
@@ -4260,9 +4416,11 @@ pub fn parse_describe_engine_default_parameters_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DescribeEngineDefaultParametersError { meta: generic, kind: crate::error::DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
                     output.build()
@@ -4386,9 +4544,11 @@ pub fn parse_describe_global_replication_groups_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupNotFoundFault" => crate::error::DescribeGlobalReplicationGroupsError { meta: generic, kind: crate::error::DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
                     output.build()
@@ -4400,9 +4560,11 @@ pub fn parse_describe_global_replication_groups_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::DescribeGlobalReplicationGroupsError { meta: generic, kind: crate::error::DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
                     output.build()
@@ -4414,9 +4576,11 @@ pub fn parse_describe_global_replication_groups_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DescribeGlobalReplicationGroupsError { meta: generic, kind: crate::error::DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalReplicationGroupsError::unhandled)?;
                     output.build()
@@ -4474,9 +4638,11 @@ pub fn parse_describe_replication_groups_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombination" => crate::error::DescribeReplicationGroupsError { meta: generic, kind: crate::error::DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
                     output.build()
@@ -4488,9 +4654,11 @@ pub fn parse_describe_replication_groups_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DescribeReplicationGroupsError { meta: generic, kind: crate::error::DescribeReplicationGroupsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
                     output.build()
@@ -4502,9 +4670,11 @@ pub fn parse_describe_replication_groups_error(
             tmp
         })},
         "ReplicationGroupNotFoundFault" => crate::error::DescribeReplicationGroupsError { meta: generic, kind: crate::error::DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationGroupsError::unhandled)?;
                     output.build()
@@ -4560,9 +4730,11 @@ pub fn parse_describe_reserved_cache_nodes_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombination" => crate::error::DescribeReservedCacheNodesError { meta: generic, kind: crate::error::DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
                     output.build()
@@ -4574,9 +4746,11 @@ pub fn parse_describe_reserved_cache_nodes_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DescribeReservedCacheNodesError { meta: generic, kind: crate::error::DescribeReservedCacheNodesErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
                     output.build()
@@ -4588,9 +4762,11 @@ pub fn parse_describe_reserved_cache_nodes_error(
             tmp
         })},
         "ReservedCacheNodeNotFound" => crate::error::DescribeReservedCacheNodesError { meta: generic, kind: crate::error::DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_cache_node_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_cache_node_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesError::unhandled)?;
                     output.build()
@@ -4644,9 +4820,11 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombination" => crate::error::DescribeReservedCacheNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
                     output.build()
@@ -4658,9 +4836,11 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DescribeReservedCacheNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
                     output.build()
@@ -4672,9 +4852,11 @@ pub fn parse_describe_reserved_cache_nodes_offerings_error(
             tmp
         })},
         "ReservedCacheNodesOfferingNotFound" => crate::error::DescribeReservedCacheNodesOfferingsError { meta: generic, kind: crate::error::DescribeReservedCacheNodesOfferingsErrorKind::ReservedCacheNodesOfferingNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_cache_nodes_offering_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_cache_nodes_offering_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_reserved_cache_nodes_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedCacheNodesOfferingsError::unhandled)?;
                     output.build()
@@ -4733,7 +4915,8 @@ pub fn parse_describe_service_updates_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
                             output.build()
@@ -4935,7 +5118,8 @@ pub fn parse_describe_update_actions_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUpdateActionsError::unhandled)?;
                             output.build()
@@ -5005,27 +5189,27 @@ pub fn parse_describe_user_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombination" => {
-            crate::error::DescribeUserGroupsError {
-                meta: generic,
-                kind:
-                    crate::error::DescribeUserGroupsErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombination" => crate::error::DescribeUserGroupsError {
+            meta: generic,
+            kind: crate::error::DescribeUserGroupsErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserGroupsError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "ServiceLinkedRoleNotFoundFault" => crate::error::DescribeUserGroupsError {
             meta: generic,
             kind: crate::error::DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault({
@@ -5193,9 +5377,11 @@ pub fn parse_disassociate_global_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupNotFoundFault" => crate::error::DisassociateGlobalReplicationGroupError { meta: generic, kind: crate::error::DisassociateGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5207,9 +5393,11 @@ pub fn parse_disassociate_global_replication_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::DisassociateGlobalReplicationGroupError { meta: generic, kind: crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5221,9 +5409,11 @@ pub fn parse_disassociate_global_replication_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::DisassociateGlobalReplicationGroupError { meta: generic, kind: crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5235,9 +5425,11 @@ pub fn parse_disassociate_global_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::DisassociateGlobalReplicationGroupError { meta: generic, kind: crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5286,9 +5478,11 @@ pub fn parse_failover_global_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupNotFoundFault" => crate::error::FailoverGlobalReplicationGroupError { meta: generic, kind: crate::error::FailoverGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5300,9 +5494,11 @@ pub fn parse_failover_global_replication_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::FailoverGlobalReplicationGroupError { meta: generic, kind: crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5314,9 +5510,11 @@ pub fn parse_failover_global_replication_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::FailoverGlobalReplicationGroupError { meta: generic, kind: crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5328,9 +5526,11 @@ pub fn parse_failover_global_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::FailoverGlobalReplicationGroupError { meta: generic, kind: crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5388,9 +5588,11 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupNotFoundFault" => crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError { meta: generic, kind: crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5402,9 +5604,11 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError { meta: generic, kind: crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5416,9 +5620,11 @@ pub fn parse_increase_node_groups_in_global_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError { meta: generic, kind: crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -5441,7 +5647,8 @@ pub fn parse_increase_node_groups_in_global_replication_group_response(
     crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError,
 > {
     Ok({
-        #[allow(unused_mut)]let mut output = crate::output::increase_node_groups_in_global_replication_group_output::Builder::default();
+        #[allow(unused_mut)]
+        let mut output = crate::output::increase_node_groups_in_global_replication_group_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_increase_node_groups_in_global_replication_group(response.body().as_ref(), output).map_err(crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError::unhandled)?;
         output.build()
@@ -5465,9 +5672,11 @@ pub fn parse_increase_replica_count_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterQuotaForCustomerExceeded" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::ClusterQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5479,9 +5688,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "InsufficientCacheClusterCapacity" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::InsufficientCacheClusterCapacityFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5493,9 +5704,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "InvalidCacheClusterState" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::InvalidCacheClusterStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5507,9 +5720,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "InvalidKMSKeyFault" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::InvalidKmsKeyFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_kms_key_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5521,9 +5736,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5535,9 +5752,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5549,9 +5768,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "InvalidReplicationGroupState" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::InvalidReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5563,9 +5784,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "InvalidVPCNetworkStateFault" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::InvalidVpcNetworkStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5577,9 +5800,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "NodeGroupsPerReplicationGroupQuotaExceeded" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5591,9 +5816,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "NodeQuotaForCustomerExceeded" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5605,9 +5832,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "NoOperationFault" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::NoOperationFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::no_operation_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_operation_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5619,9 +5848,11 @@ pub fn parse_increase_replica_count_error(
             tmp
         })},
         "ReplicationGroupNotFoundFault" => crate::error::IncreaseReplicaCountError { meta: generic, kind: crate::error::IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::IncreaseReplicaCountError::unhandled)?;
                     output.build()
@@ -5675,9 +5906,11 @@ pub fn parse_list_allowed_node_type_modifications_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheClusterNotFound" => crate::error::ListAllowedNodeTypeModificationsError { meta: generic, kind: crate::error::ListAllowedNodeTypeModificationsErrorKind::CacheClusterNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_cluster_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
                     output.build()
@@ -5689,9 +5922,11 @@ pub fn parse_list_allowed_node_type_modifications_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::ListAllowedNodeTypeModificationsError { meta: generic, kind: crate::error::ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
                     output.build()
@@ -5703,9 +5938,11 @@ pub fn parse_list_allowed_node_type_modifications_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::ListAllowedNodeTypeModificationsError { meta: generic, kind: crate::error::ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
                     output.build()
@@ -5717,9 +5954,11 @@ pub fn parse_list_allowed_node_type_modifications_error(
             tmp
         })},
         "ReplicationGroupNotFoundFault" => crate::error::ListAllowedNodeTypeModificationsError { meta: generic, kind: crate::error::ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAllowedNodeTypeModificationsError::unhandled)?;
                     output.build()
@@ -6070,7 +6309,8 @@ pub fn parse_modify_cache_cluster_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
                         output.build()
@@ -6118,27 +6358,27 @@ pub fn parse_modify_cache_cluster_error(
                 tmp
             }),
         },
-        "InvalidParameterCombination" => {
-            crate::error::ModifyCacheClusterError {
-                meta: generic,
-                kind:
-                    crate::error::ModifyCacheClusterErrorKind::InvalidParameterCombinationException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterCombination" => crate::error::ModifyCacheClusterError {
+            meta: generic,
+            kind: crate::error::ModifyCacheClusterErrorKind::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_combination_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheClusterError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InvalidParameterValue" => crate::error::ModifyCacheClusterError {
             meta: generic,
             kind: crate::error::ModifyCacheClusterErrorKind::InvalidParameterValueException({
@@ -6256,9 +6496,11 @@ pub fn parse_modify_cache_parameter_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheParameterGroupNotFound" => crate::error::ModifyCacheParameterGroupError { meta: generic, kind: crate::error::ModifyCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -6270,9 +6512,11 @@ pub fn parse_modify_cache_parameter_group_error(
             tmp
         })},
         "InvalidCacheParameterGroupState" => crate::error::ModifyCacheParameterGroupError { meta: generic, kind: crate::error::ModifyCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -6284,9 +6528,11 @@ pub fn parse_modify_cache_parameter_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::ModifyCacheParameterGroupError { meta: generic, kind: crate::error::ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -6298,9 +6544,11 @@ pub fn parse_modify_cache_parameter_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::ModifyCacheParameterGroupError { meta: generic, kind: crate::error::ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -6312,9 +6560,11 @@ pub fn parse_modify_cache_parameter_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::ModifyCacheParameterGroupError { meta: generic, kind: crate::error::ModifyCacheParameterGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -6509,9 +6759,11 @@ pub fn parse_modify_global_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupNotFoundFault" => crate::error::ModifyGlobalReplicationGroupError { meta: generic, kind: crate::error::ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -6523,9 +6775,11 @@ pub fn parse_modify_global_replication_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::ModifyGlobalReplicationGroupError { meta: generic, kind: crate::error::ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -6537,9 +6791,11 @@ pub fn parse_modify_global_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::ModifyGlobalReplicationGroupError { meta: generic, kind: crate::error::ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -6657,7 +6913,8 @@ pub fn parse_modify_replication_group_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
@@ -6694,7 +6951,8 @@ pub fn parse_modify_replication_group_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
@@ -6730,7 +6988,8 @@ pub fn parse_modify_replication_group_error(
                     {
                         #[allow(unused_mut)]
                         let mut tmp = {
-                            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                            #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                             let _ = response;
                             output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
                             output.build()
@@ -6836,27 +7095,27 @@ pub fn parse_modify_replication_group_error(
                 },
             ),
         },
-        "NodeQuotaForCustomerExceeded" => {
-            crate::error::ModifyReplicationGroupError {
-                meta: generic,
-                kind:
-                    crate::error::ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(
-                        {
-                            #[allow(unused_mut)]
-                            let mut tmp = {
-                                #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
-                                let _ = response;
-                                output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
-                                output.build()
-                            };
-                            if tmp.message.is_none() {
-                                tmp.message = _error_message;
-                            }
-                            tmp
-                        },
-                    ),
-            }
-        }
+        "NodeQuotaForCustomerExceeded" => crate::error::ModifyReplicationGroupError {
+            meta: generic,
+            kind: crate::error::ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::node_quota_for_customer_exceeded_fault::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupError::unhandled)?;
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "ReplicationGroupNotFoundFault" => crate::error::ModifyReplicationGroupError {
             meta: generic,
             kind: crate::error::ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault({
@@ -6937,9 +7196,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientCacheClusterCapacity" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InsufficientCacheClusterCapacityFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -6951,9 +7212,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "InvalidCacheClusterState" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidCacheClusterStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -6965,9 +7228,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "InvalidKMSKeyFault" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidKmsKeyFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_kms_key_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -6979,9 +7244,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -6993,9 +7260,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -7007,9 +7276,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "InvalidReplicationGroupState" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -7021,9 +7292,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "InvalidVPCNetworkStateFault" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::InvalidVpcNetworkStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -7035,9 +7308,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "NodeGroupsPerReplicationGroupQuotaExceeded" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -7049,9 +7324,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "NodeQuotaForCustomerExceeded" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::NodeQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -7063,9 +7340,11 @@ pub fn parse_modify_replication_group_shard_configuration_error(
             tmp
         })},
         "ReplicationGroupNotFoundFault" => crate::error::ModifyReplicationGroupShardConfigurationError { meta: generic, kind: crate::error::ModifyReplicationGroupShardConfigurationErrorKind::ReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyReplicationGroupShardConfigurationError::unhandled)?;
                     output.build()
@@ -7416,9 +7695,11 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterCombination" => crate::error::PurchaseReservedCacheNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
@@ -7430,9 +7711,11 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::PurchaseReservedCacheNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedCacheNodesOfferingErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
@@ -7444,9 +7727,11 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
             tmp
         })},
         "ReservedCacheNodeAlreadyExists" => crate::error::PurchaseReservedCacheNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeAlreadyExistsFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_cache_node_already_exists_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_cache_node_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
@@ -7458,9 +7743,11 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
             tmp
         })},
         "ReservedCacheNodeQuotaExceeded" => crate::error::PurchaseReservedCacheNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeQuotaExceededFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_cache_node_quota_exceeded_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_cache_node_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_reserved_cache_node_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
@@ -7472,9 +7759,11 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
             tmp
         })},
         "ReservedCacheNodesOfferingNotFound" => crate::error::PurchaseReservedCacheNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodesOfferingNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::reserved_cache_nodes_offering_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::reserved_cache_nodes_offering_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_reserved_cache_nodes_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
@@ -7486,9 +7775,11 @@ pub fn parse_purchase_reserved_cache_nodes_offering_error(
             tmp
         })},
         "TagQuotaPerResourceExceeded" => crate::error::PurchaseReservedCacheNodesOfferingError { meta: generic, kind: crate::error::PurchaseReservedCacheNodesOfferingErrorKind::TagQuotaPerResourceExceeded({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedCacheNodesOfferingError::unhandled)?;
                     output.build()
@@ -7541,9 +7832,11 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "GlobalReplicationGroupNotFoundFault" => crate::error::RebalanceSlotsInGlobalReplicationGroupError { meta: generic, kind: crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -7555,9 +7848,11 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::RebalanceSlotsInGlobalReplicationGroupError { meta: generic, kind: crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -7569,9 +7864,11 @@ pub fn parse_rebalance_slots_in_global_replication_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::RebalanceSlotsInGlobalReplicationGroupError { meta: generic, kind: crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RebalanceSlotsInGlobalReplicationGroupError::unhandled)?;
                     output.build()
@@ -7965,9 +8262,11 @@ pub fn parse_reset_cache_parameter_group_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheParameterGroupNotFound" => crate::error::ResetCacheParameterGroupError { meta: generic, kind: crate::error::ResetCacheParameterGroupErrorKind::CacheParameterGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -7979,9 +8278,11 @@ pub fn parse_reset_cache_parameter_group_error(
             tmp
         })},
         "InvalidCacheParameterGroupState" => crate::error::ResetCacheParameterGroupError { meta: generic, kind: crate::error::ResetCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_parameter_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -7993,9 +8294,11 @@ pub fn parse_reset_cache_parameter_group_error(
             tmp
         })},
         "InvalidGlobalReplicationGroupState" => crate::error::ResetCacheParameterGroupError { meta: generic, kind: crate::error::ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -8007,9 +8310,11 @@ pub fn parse_reset_cache_parameter_group_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::ResetCacheParameterGroupError { meta: generic, kind: crate::error::ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -8021,9 +8326,11 @@ pub fn parse_reset_cache_parameter_group_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::ResetCacheParameterGroupError { meta: generic, kind: crate::error::ResetCacheParameterGroupErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheParameterGroupError::unhandled)?;
                     output.build()
@@ -8075,9 +8382,11 @@ pub fn parse_revoke_cache_security_group_ingress_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AuthorizationNotFound" => crate::error::RevokeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::RevokeCacheSecurityGroupIngressErrorKind::AuthorizationNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::authorization_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::authorization_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -8089,9 +8398,11 @@ pub fn parse_revoke_cache_security_group_ingress_error(
             tmp
         })},
         "CacheSecurityGroupNotFound" => crate::error::RevokeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::RevokeCacheSecurityGroupIngressErrorKind::CacheSecurityGroupNotFoundFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -8103,9 +8414,11 @@ pub fn parse_revoke_cache_security_group_ingress_error(
             tmp
         })},
         "InvalidCacheSecurityGroupState" => crate::error::RevokeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_cache_security_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cache_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -8117,9 +8430,11 @@ pub fn parse_revoke_cache_security_group_ingress_error(
             tmp
         })},
         "InvalidParameterCombination" => crate::error::RevokeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -8131,9 +8446,11 @@ pub fn parse_revoke_cache_security_group_ingress_error(
             tmp
         })},
         "InvalidParameterValue" => crate::error::RevokeCacheSecurityGroupIngressError { meta: generic, kind: crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeCacheSecurityGroupIngressError::unhandled)?;
                     output.build()
@@ -8225,7 +8542,8 @@ pub fn parse_start_migration_error(
                 {
                     #[allow(unused_mut)]
                     let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::replication_group_already_under_migration_fault::Builder::default();
+                        #[allow(unused_mut)]
+                    let mut output = crate::error::replication_group_already_under_migration_fault::Builder::default();
                         let _ = response;
                         output = crate::xml_deser::deser_structure_crate_error_replication_group_already_under_migration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMigrationError::unhandled)?;
                         output.build()
@@ -8289,24 +8607,24 @@ pub fn parse_test_failover_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "APICallRateForCustomerExceeded" => {
-            crate::error::TestFailoverError {
-                meta: generic,
-                kind: crate::error::TestFailoverErrorKind::ApiCallRateForCustomerExceededFault({
+        "APICallRateForCustomerExceeded" => crate::error::TestFailoverError {
+            meta: generic,
+            kind: crate::error::TestFailoverErrorKind::ApiCallRateForCustomerExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]let mut output = crate::error::api_call_rate_for_customer_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output =
+                        crate::error::api_call_rate_for_customer_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidCacheClusterState" => crate::error::TestFailoverError {
             meta: generic,
             kind: crate::error::TestFailoverErrorKind::InvalidCacheClusterStateFault({

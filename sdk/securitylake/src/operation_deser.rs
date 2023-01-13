@@ -717,9 +717,11 @@ pub fn parse_create_datalake_exceptions_subscription_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -731,9 +733,11 @@ pub fn parse_create_datalake_exceptions_subscription_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::CreateDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -745,9 +749,11 @@ pub fn parse_create_datalake_exceptions_subscription_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatalakeExceptionsSubscriptionError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -763,9 +769,11 @@ pub fn parse_create_datalake_exceptions_subscription_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -994,9 +1002,11 @@ pub fn parse_create_subscription_notification_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::CreateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::CreateSubscriptionNotificationConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1008,9 +1018,11 @@ pub fn parse_create_subscription_notification_configuration_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::CreateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::CreateSubscriptionNotificationConfigurationErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1022,9 +1034,11 @@ pub fn parse_create_subscription_notification_configuration_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::CreateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::CreateSubscriptionNotificationConfigurationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1036,9 +1050,11 @@ pub fn parse_create_subscription_notification_configuration_error(
             tmp
         })},
         "InternalServerException" => crate::error::CreateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::CreateSubscriptionNotificationConfigurationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSubscriptionNotificationConfigurationError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -1054,9 +1070,11 @@ pub fn parse_create_subscription_notification_configuration_error(
             tmp
         })},
         "InvalidInputException" => crate::error::CreateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::CreateSubscriptionNotificationConfigurationErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1068,9 +1086,11 @@ pub fn parse_create_subscription_notification_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::CreateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::CreateSubscriptionNotificationConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1082,9 +1102,11 @@ pub fn parse_create_subscription_notification_configuration_error(
             tmp
         })},
         "ValidationException" => crate::error::CreateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::CreateSubscriptionNotificationConfigurationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -1797,9 +1819,11 @@ pub fn parse_delete_datalake_exceptions_subscription_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DeleteDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -1811,9 +1835,11 @@ pub fn parse_delete_datalake_exceptions_subscription_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::DeleteDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -1825,9 +1851,11 @@ pub fn parse_delete_datalake_exceptions_subscription_error(
             tmp
         })},
         "InternalServerException" => crate::error::DeleteDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatalakeExceptionsSubscriptionError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -1843,9 +1871,11 @@ pub fn parse_delete_datalake_exceptions_subscription_error(
             tmp
         })},
         "ValidationException" => crate::error::DeleteDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -2070,9 +2100,11 @@ pub fn parse_delete_subscription_notification_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::DeleteSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -2084,9 +2116,11 @@ pub fn parse_delete_subscription_notification_configuration_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::DeleteSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -2098,9 +2132,11 @@ pub fn parse_delete_subscription_notification_configuration_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::DeleteSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -2112,9 +2148,11 @@ pub fn parse_delete_subscription_notification_configuration_error(
             tmp
         })},
         "InternalServerException" => crate::error::DeleteSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubscriptionNotificationConfigurationError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -2130,9 +2168,11 @@ pub fn parse_delete_subscription_notification_configuration_error(
             tmp
         })},
         "InvalidInputException" => crate::error::DeleteSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -2144,9 +2184,11 @@ pub fn parse_delete_subscription_notification_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::DeleteSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -2158,9 +2200,11 @@ pub fn parse_delete_subscription_notification_configuration_error(
             tmp
         })},
         "ValidationException" => crate::error::DeleteSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -3521,9 +3565,11 @@ pub fn parse_update_datalake_exceptions_subscription_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::UpdateDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -3535,9 +3581,11 @@ pub fn parse_update_datalake_exceptions_subscription_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::UpdateDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -3549,9 +3597,11 @@ pub fn parse_update_datalake_exceptions_subscription_error(
             tmp
         })},
         "InternalServerException" => crate::error::UpdateDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatalakeExceptionsSubscriptionError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3567,9 +3617,11 @@ pub fn parse_update_datalake_exceptions_subscription_error(
             tmp
         })},
         "ValidationException" => crate::error::UpdateDatalakeExceptionsSubscriptionError { meta: generic, kind: crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatalakeExceptionsSubscriptionError::unhandled)?;
                     output.build()
@@ -3782,9 +3834,11 @@ pub fn parse_update_subscription_notification_configuration_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::error::UpdateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -3796,9 +3850,11 @@ pub fn parse_update_subscription_notification_configuration_error(
             tmp
         })},
         "AccountNotFoundException" => crate::error::UpdateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::AccountNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::account_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::account_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -3810,9 +3866,11 @@ pub fn parse_update_subscription_notification_configuration_error(
             tmp
         })},
         "ConcurrentModificationException" => crate::error::UpdateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::ConcurrentModificationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -3824,9 +3882,11 @@ pub fn parse_update_subscription_notification_configuration_error(
             tmp
         })},
         "InternalServerException" => crate::error::UpdateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::InternalServerException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionNotificationConfigurationError::unhandled)?;
                     output = output.set_retry_after_seconds(
@@ -3842,9 +3902,11 @@ pub fn parse_update_subscription_notification_configuration_error(
             tmp
         })},
         "InvalidInputException" => crate::error::UpdateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::InvalidInputException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -3856,9 +3918,11 @@ pub fn parse_update_subscription_notification_configuration_error(
             tmp
         })},
         "ResourceNotFoundException" => crate::error::UpdateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()
@@ -3870,9 +3934,11 @@ pub fn parse_update_subscription_notification_configuration_error(
             tmp
         })},
         "ValidationException" => crate::error::UpdateSubscriptionNotificationConfigurationError { meta: generic, kind: crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::ValidationException({
-            #[allow(unused_mut)]let mut tmp =
+            #[allow(unused_mut)]
+            let mut tmp =
                  {
-                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSubscriptionNotificationConfigurationError::unhandled)?;
                     output.build()

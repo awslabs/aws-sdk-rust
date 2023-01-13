@@ -117,7 +117,8 @@ impl AcceptReservedNodeExchangeInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_accept_reserved_node_exchange(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -516,7 +517,8 @@ impl AssociateDataShareConsumerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_associate_data_share_consumer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -727,7 +729,8 @@ impl AuthorizeClusterSecurityGroupIngressInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_authorize_cluster_security_group_ingress(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1483,7 +1486,8 @@ impl BatchDeleteClusterSnapshotsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_cluster_snapshots(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -1682,7 +1686,8 @@ impl BatchModifyClusterSnapshotsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_batch_modify_cluster_snapshots(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -2270,7 +2275,8 @@ impl CreateAuthenticationProfileInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_authentication_profile(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3316,7 +3322,8 @@ impl CreateClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -3527,7 +3534,8 @@ impl CreateClusterSecurityGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_cluster_security_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -4713,7 +4721,8 @@ impl CreateHsmClientCertificateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_create_hsm_client_certificate(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6476,7 +6485,8 @@ impl DeleteAuthenticationProfileInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_authentication_profile(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -6889,7 +6899,8 @@ impl DeleteClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7053,7 +7064,8 @@ impl DeleteClusterSecurityGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_cluster_security_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -7895,7 +7907,8 @@ impl DeleteHsmClientCertificateInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_delete_hsm_client_certificate(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9430,7 +9443,8 @@ impl DescribeAuthenticationProfilesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_authentication_profiles(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9621,7 +9635,8 @@ impl DescribeClusterDbRevisionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster_db_revisions(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -9852,7 +9867,8 @@ impl DescribeClusterParameterGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster_parameter_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -10534,7 +10550,8 @@ impl DescribeClusterSecurityGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster_security_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11138,7 +11155,8 @@ impl DescribeClusterSubnetGroupsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster_subnet_groups(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -11933,7 +11951,8 @@ impl DescribeDataSharesForConsumerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_data_shares_for_consumer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12130,7 +12149,8 @@ impl DescribeDataSharesForProducerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_data_shares_for_producer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12319,7 +12339,8 @@ impl DescribeDefaultClusterParametersInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_default_cluster_parameters(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -12758,7 +12779,8 @@ impl DescribeEndpointAuthorizationInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_authorization(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -13672,7 +13694,8 @@ impl DescribeHsmClientCertificatesInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_hsm_client_certificates(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14343,7 +14366,8 @@ impl DescribeNodeConfigurationOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_node_configuration_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14548,7 +14572,8 @@ impl DescribeOrderableClusterOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_orderable_cluster_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -14952,7 +14977,8 @@ impl DescribeReservedNodeExchangeStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_reserved_node_exchange_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -15141,7 +15167,8 @@ impl DescribeReservedNodeOfferingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_reserved_node_offerings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16001,7 +16028,8 @@ impl DescribeSnapshotCopyGrantsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_snapshot_copy_grants(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -16582,7 +16610,8 @@ impl DescribeTableRestoreStatusInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_describe_table_restore_status(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -17637,7 +17666,8 @@ impl DisassociateDataShareConsumerInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_disassociate_data_share_consumer(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18599,7 +18629,8 @@ impl GetClusterCredentialsWithIamInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_cluster_credentials_with_iam(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -18816,7 +18847,8 @@ impl GetReservedNodeExchangeConfigurationOptionsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_reserved_node_exchange_configuration_options(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -19002,7 +19034,8 @@ impl GetReservedNodeExchangeOfferingsInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_get_reserved_node_exchange_offerings(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -19367,7 +19400,8 @@ impl ModifyAuthenticationProfileInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_authentication_profile(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -20813,7 +20847,8 @@ impl ModifyClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -21196,7 +21231,8 @@ impl ModifyClusterSnapshotScheduleInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_cluster_snapshot_schedule(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -22307,7 +22343,8 @@ impl ModifySnapshotCopyRetentionPeriodInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_modify_snapshot_copy_retention_period(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -23016,7 +23053,8 @@ impl PurchaseReservedNodeOfferingInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_node_offering(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -23534,7 +23572,8 @@ impl ResetClusterParameterGroupInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_reset_cluster_parameter_group(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -24505,7 +24544,8 @@ impl RestoreFromClusterSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_restore_from_cluster_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -24786,7 +24826,8 @@ impl RestoreTableFromClusterSnapshotInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_restore_table_from_cluster_snapshot(&self)?
         );
         if let Some(content_length) = body.content_length() {
@@ -25157,7 +25198,8 @@ impl RevokeClusterSecurityGroupIngressInput {
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
-        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
             crate::operation_ser::serialize_operation_crate_operation_revoke_cluster_security_group_ingress(&self)?
         );
         if let Some(content_length) = body.content_length() {
