@@ -42,15 +42,15 @@ pub(super) fn resolve_endpoint(
                                         String,
                                         aws_smithy_types::Document,
                                     >::new();
-                                    out.insert(
-                                        "signingRegionSet".to_string(),
-                                        vec![aws_smithy_types::Document::from("*".to_string())]
-                                            .into(),
-                                    );
                                     out.insert("name".to_string(), "sigv4a".to_string().into());
                                     out.insert(
                                         "signingName".to_string(),
                                         "events".to_string().into(),
+                                    );
+                                    out.insert(
+                                        "signingRegionSet".to_string(),
+                                        vec![aws_smithy_types::Document::from("*".to_string())]
+                                            .into(),
                                     );
                                     out
                                 })],
@@ -78,15 +78,15 @@ pub(super) fn resolve_endpoint(
                                             aws_smithy_types::Document,
                                         >::new(
                                         );
-                                        out.insert(
-                                            "signingRegionSet".to_string(),
-                                            vec![aws_smithy_types::Document::from("*".to_string())]
-                                                .into(),
-                                        );
                                         out.insert("name".to_string(), "sigv4a".to_string().into());
                                         out.insert(
                                             "signingName".to_string(),
                                             "events".to_string().into(),
+                                        );
+                                        out.insert(
+                                            "signingRegionSet".to_string(),
+                                            vec![aws_smithy_types::Document::from("*".to_string())]
+                                                .into(),
                                         );
                                         out
                                     })],
@@ -116,12 +116,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4a".to_string().into());
+                                out.insert("signingName".to_string(), "events".to_string().into());
                                 out.insert(
                                     "signingRegionSet".to_string(),
                                     vec![aws_smithy_types::Document::from("*".to_string())].into(),
                                 );
-                                out.insert("name".to_string(), "sigv4a".to_string().into());
-                                out.insert("signingName".to_string(), "events".to_string().into());
                                 out
                             })],
                         )

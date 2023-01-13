@@ -10,6 +10,7 @@ use std::collections::HashMap;
 
 type MaybeStatic = Cow<'static, str>;
 
+/* ANCHOR: endpoint */
 /// Smithy Endpoint Type
 ///
 /// Generally, this type should not be used from user code
@@ -19,6 +20,8 @@ pub struct Endpoint {
     headers: HashMap<MaybeStatic, Vec<MaybeStatic>>,
     properties: HashMap<MaybeStatic, Document>,
 }
+
+/* ANCHOR_END: endpoint */
 
 #[allow(unused)]
 impl Endpoint {

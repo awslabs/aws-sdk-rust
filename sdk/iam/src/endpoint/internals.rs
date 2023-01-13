@@ -66,14 +66,14 @@ pub(super) fn resolve_endpoint(
                                             aws_smithy_types::Document,
                                         >::new(
                                         );
-                                        out.insert(
-                                            "signingRegion".to_string(),
-                                            "us-east-1".to_string().into(),
-                                        );
                                         out.insert("name".to_string(), "sigv4".to_string().into());
                                         out.insert(
                                             "signingName".to_string(),
                                             "iam".to_string().into(),
+                                        );
+                                        out.insert(
+                                            "signingRegion".to_string(),
+                                            "us-east-1".to_string().into(),
                                         );
                                         out
                                     })],
@@ -96,12 +96,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-east-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -129,12 +129,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-east-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -152,9 +152,9 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "iam".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })],
                 )
@@ -182,14 +182,14 @@ pub(super) fn resolve_endpoint(
                                             aws_smithy_types::Document,
                                         >::new(
                                         );
-                                        out.insert(
-                                            "signingRegion".to_string(),
-                                            "cn-north-1".to_string().into(),
-                                        );
                                         out.insert("name".to_string(), "sigv4".to_string().into());
                                         out.insert(
                                             "signingName".to_string(),
                                             "iam".to_string().into(),
+                                        );
+                                        out.insert(
+                                            "signingRegion".to_string(),
+                                            "cn-north-1".to_string().into(),
                                         );
                                         out
                                     })],
@@ -219,12 +219,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "cn-north-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -252,12 +252,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "cn-north-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -275,9 +275,9 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "iam".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out
                     })],
                 )
@@ -305,14 +305,14 @@ pub(super) fn resolve_endpoint(
                                             aws_smithy_types::Document,
                                         >::new(
                                         );
-                                        out.insert(
-                                            "signingRegion".to_string(),
-                                            "us-gov-west-1".to_string().into(),
-                                        );
                                         out.insert("name".to_string(), "sigv4".to_string().into());
                                         out.insert(
                                             "signingName".to_string(),
                                             "iam".to_string().into(),
+                                        );
+                                        out.insert(
+                                            "signingRegion".to_string(),
+                                            "us-gov-west-1".to_string().into(),
                                         );
                                         out
                                     })],
@@ -335,12 +335,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-gov-west-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -368,12 +368,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-gov-west-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -391,12 +391,12 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-west-1".to_string().into(),
                         );
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out
                     })],
                 )
@@ -421,12 +421,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-iso-east-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -443,12 +443,12 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-iso-east-1".to_string().into(),
                         );
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out
                     })],
                 )
@@ -473,12 +473,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-isob-east-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -495,12 +495,12 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-isob-east-1".to_string().into(),
                         );
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out
                     })],
                 )
@@ -540,12 +540,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-east-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -561,12 +561,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-east-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -582,12 +582,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-gov-west-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -603,12 +603,12 @@ pub(super) fn resolve_endpoint(
                                     String,
                                     aws_smithy_types::Document,
                                 >::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out.insert(
                                     "signingRegion".to_string(),
                                     "us-gov-west-1".to_string().into(),
                                 );
-                                out.insert("name".to_string(), "sigv4".to_string().into());
-                                out.insert("signingName".to_string(), "iam".to_string().into());
                                 out
                             })],
                         )
@@ -658,9 +658,9 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "iam".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     })],
                 )
@@ -674,9 +674,9 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "iam".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out
                     })],
                 )
@@ -690,12 +690,12 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-gov-west-1".to_string().into(),
                         );
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out
                     })],
                 )
@@ -709,12 +709,12 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-iso-east-1".to_string().into(),
                         );
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out
                     })],
                 )
@@ -728,12 +728,12 @@ pub(super) fn resolve_endpoint(
                     vec![aws_smithy_types::Document::from({
                         let mut out =
                             std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out.insert(
                             "signingRegion".to_string(),
                             "us-isob-east-1".to_string().into(),
                         );
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "iam".to_string().into());
                         out
                     })],
                 )
